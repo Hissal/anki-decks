@@ -88,6 +88,16 @@ Rules:
   "Pick tier tag" section).
 - **Pinyin** always with tone marks, never digit tones.
 - **Hanzi** simplified only.
+- **Note (Idioms deck only)** — every Idioms candidate's `note` value must
+  end with a char-by-char gloss line. If the candidate has other note
+  content (usage hint, fable origin, register warning), put that first,
+  then `<br>`, then the gloss line. If there is no other content, the
+  gloss line is the entire note (no leading `<br>`). Format:
+  `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in the
+  Hanzi. Dedup repeated chars. Skip punctuation. Pick the contextual
+  meaning for polysemous chars. Gloss is lowercase English, 1–3 words,
+  no period. See `anki-import` SKILL.md "Note" section for the
+  authoritative spec.
 
 ## Dedupe before showing
 

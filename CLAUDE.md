@@ -24,6 +24,7 @@ Columns (in order):
 2. `Pinyin` — with tone marks (e.g. `nèige`, not `nei4ge`). Lowercase. Spaces between syllables for multi-syllable phrases when natural.
 3. `English` — short gloss. Multiple senses separated by `/`.
 4. `Note` — usage notes, register warnings, example sentence. Example sentences use the convention: `Example: 中文句子。 / English translation.`
+   - **Idioms deck only**: every row's Note ends with a char-by-char gloss line, separated from any preceding note text by the literal string `<br>` (Anki renders this as a line break). Format: `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in the Hanzi. Dedup repeated characters. Skip punctuation (`，` `、` `。` etc.). For polysemous characters, pick the meaning that applies in this idiom's context. Gloss text is lowercase English, 1–3 words, no period. If the row has no other note, the char-gloss line is the entire Note (no leading `<br>`). Example: `From a fable — extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
 5. `Audio` — currently empty everywhere. Reserved for `[sound:file.mp3]` Anki syntax later.
 6. `Tags` — space-separated tags. See tag conventions below.
 

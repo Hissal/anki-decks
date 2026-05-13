@@ -89,6 +89,23 @@ Rules:
     not treat as standard Mandarin.")
   - a useful example sentence exists. Use the project convention exactly:
     `Example: 中文。 / English.`
+  - **Idioms deck only:** every Idioms-deck row must end with a
+    char-by-char gloss line. Append it to whatever other note text exists,
+    separated by the literal string `<br>` (Anki renders as line break).
+    Format: `char₁ (gloss₁) char₂ (gloss₂) …`. Rules:
+    - Order chars by first appearance in the Hanzi.
+    - Dedup repeated characters (e.g. `君君臣臣` → `君 (ruler) 臣 (minister)`).
+    - Skip punctuation (`，` `、` `。` `；` `！` `？` etc.).
+    - For polysemous characters, pick the meaning that applies in this
+      idiom (e.g. `长` in `吃一堑，长一智` → "gain", not "long").
+    - Gloss is lowercase English, 1–3 words, no period.
+    - If the row has no other note, the gloss line is the entire Note —
+      no leading `<br>`.
+
+    Example: `From a fable — extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
+
+    This rule applies only to the Idioms deck. Core and Slang rows keep
+    their existing Note conventions unchanged.
 - **Audio** — always empty (HyperTTS fills this inside Anki).
 - **Tags** — see "Pick tags" below.
 
