@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# Pre-commit hook: run the deck validator before allowing the commit.
+#
+# Enable once per clone:
+#   git config core.hooksPath .githooks
+#
+# To bypass in a real emergency (do not make this a habit):
+#   git commit --no-verify
+
+set -e
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+# Find a Python interpreter. Prefer `python`, then `py` (Windows launcher), then `python3`.
+if command -v python >/dev/null 2>&1; then
+  PY=python
+elif command -v py >/dev/null 2>&1; then
+  PY="py -3"
+elif command -v python3 >/dev/null 2>&1; then
+  PY=python3
+else
+  echo "pre-commit: no python interpreter found on PATH; skipping validator." >&2
+  exit 0
+fi
+
+echo "pre-commit: validating decks..."
+if ! $PY scripts/validate.py; then
+  echo "pre-commit: validation failed. fix the errors above or use --no-verify to bypass." >&2
+  exit 1
+fi
