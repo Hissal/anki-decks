@@ -9,6 +9,13 @@
  *   mountRuby(containerId, { revealed })   - builds <ruby> from data-hanzi + data-pinyin
  *   attachToggle(containerId, buttonId)     - wires the toggle-pinyin button
  *   mountExamples(selector)                 - turns Examples field into <ul><li> ...
+ *   attachAudioButton(buttonId, filename)   - wires a button to play `filename`
+ *                                             via HTML5 <audio>, bypassing Anki
+ *                                             autoplay. Pass a bare filename
+ *                                             like `foo.mp3` (no `[sound:...]`
+ *                                             wrapper — use the `soundfile:`
+ *                                             template filter shipped in the
+ *                                             addon to obtain it).
  */
 (function () {
   "use strict";
@@ -110,9 +117,58 @@
     }
   }
 
+  function attachAudioButton(buttonId, filename) {
+    var btn = document.getElementById(buttonId);
+    if (!btn) return;
+    filename = (filename || "").trim();
+    console.log("ankiDecks audio: filename =", JSON.stringify(filename));
+    if (!filename) {
+      btn.disabled = true;
+      btn.textContent = "No audio";
+      return;
+    }
+    // If the filter add-on isn't installed, {{soundfile:Audio}} may have
+    // returned the raw `[sound:foo.mp3]` token. Recover the filename so the
+    // button at least works while the user installs the add-on.
+    var m = filename.match(/\[sound:([^\]]+)\]/);
+    if (m) {
+      console.warn(
+        "ankiDecks audio: got raw [sound:...] token — install the " +
+        "chinese_anki_decks_nosound add-on to suppress autoplay."
+      );
+      filename = m[1];
+    }
+    // Encode unicode / spaces for URL resolution. Preserves path separators.
+    var src = encodeURI(filename);
+    var audio = new Audio(src);
+    audio.preload = "auto";
+    audio.addEventListener("error", function () {
+      console.error(
+        "ankiDecks audio: load error for src=" + audio.src,
+        audio.error
+      );
+    });
+    btn.title = "play: " + filename;
+    btn.addEventListener("click", function () {
+      console.log("ankiDecks audio: click play src=" + audio.src);
+      try {
+        audio.currentTime = 0;
+        var p = audio.play();
+        if (p && typeof p.catch === "function") {
+          p.catch(function (err) {
+            console.warn("ankiDecks audio: play() rejected:", err);
+          });
+        }
+      } catch (err) {
+        console.warn("ankiDecks audio: play() threw:", err);
+      }
+    });
+  }
+
   window.ankiDecks = {
     mountRuby: mountRuby,
     attachToggle: attachToggle,
     mountExamples: mountExamples,
+    attachAudioButton: attachAudioButton,
   };
 })();

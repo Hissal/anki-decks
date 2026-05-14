@@ -1,7 +1,10 @@
-<!-- Card 2 front: Hanzi recognition.
-     Hanzi rendered as ruby with pinyin hidden. No {{Audio}} in the front HTML
-     so Anki does not autoplay. Audio is gated behind {{hint:Audio}}; clicking
-     the hint reveals the audio control and plays the sound. -->
+<!-- Card 1 front: Hanzi recognition.
+     Hanzi rendered as ruby with pinyin hidden. No `[sound:...]` token appears
+     anywhere in the front HTML — the {{soundfile:Audio}} filter (registered
+     by the addon under note_type/Chinese_anki_decks/addon/) returns just the
+     filename `foo.mp3`, so Anki's autoplay scanner has nothing to match. The
+     Play Audio button feeds the filename to an HTML5 <audio> element on
+     click. Backs still use {{Audio}} and autoplay normally. -->
 
 <div class="card-side card-front">
   <div class="hanzi-block"
@@ -10,7 +13,8 @@
        data-pinyin="{{text:Pinyin}}"></div>
   <button class="toggle-btn" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
 
-  <div class="hint-row">{{hint:Audio}}</div>
+  <div class="audio-filename" id="audio-filename" hidden>{{soundfile:Audio}}</div>
+  <button class="hint-btn" id="play-audio-btn" type="button">▶ Play Audio</button>
 </div>
 
 <script src="_ruby.js"></script>
@@ -18,5 +22,9 @@
   (function () {
     window.ankiDecks.mountRuby("hanzi-block", { revealed: false });
     window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
+
+    var nameEl = document.getElementById("audio-filename");
+    var filename = nameEl ? nameEl.textContent.trim() : "";
+    window.ankiDecks.attachAudioButton("play-audio-btn", filename);
   })();
 </script>

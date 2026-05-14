@@ -9,678 +9,678 @@ _158 entries — `Chinese_Core_Conversation.tsv`_
 
 ### `agreement` (7)
 
-- **确实** (quèshí) — indeed / true
-- **我同意** (wǒ tóngyì) — I agree
-- **没错** (méicuò) — exactly / that’s right
+- **确实** (què shí) — indeed / true
+- **我同意** (wǒ tóng yì) — I agree
+- **没错** (méi cuò) — exactly / that’s right
 - **对对对** (duì duì duì) — right, right, right
 - **也是** (yě shì) — that’s true
-- **你说得对** (nǐ shuō de duì) — you’re right
-- **有道理** (yǒu dàolǐ) — makes sense / reasonable
+- **你说得对** (nǐ shuō dé duì) — you’re right
+- **有道理** (yǒu dào lǐ) — makes sense / reasonable
 
 ### `clarification` (6)
 
-- **就是说** (jiùshì shuō) — what I mean is / that is to say
-- **换句话说** (huànjùhuàshuō) — in other words
-- **我的意思是** (wǒ de yìsi shì) — what I mean is
-- **简单来说** (jiǎndān lái shuō) — simply put
-- **所以说** (suǒyǐ shuō) — so what I’m saying is
-- **我不是说** (wǒ bùshì shuō) — I’m not saying
+- **就是说** (jiù shì shuō) — what I mean is / that is to say
+- **换句话说** (huàn jù huà shuō) — in other words
+- **我的意思是** (wǒ de yì si shì) — what I mean is
+- **简单来说** (jiǎn dān lái shuō) — simply put
+- **所以说** (suǒ yǐ shuō) — so what I’m saying is
+- **我不是说** (wǒ bú shì shuō) — I’m not saying
 
 ### `closing` (5)
 
-- **那就这样吧** (nà jiù zhèyàng ba) — let’s leave it at that
-- **先这样** (xiān zhèyàng) — that’s all for now
-- **回头再说** (huítóu zàishuō) — let’s talk later / we’ll discuss it later
+- **那就这样吧** (nà jiù zhè yàng ba) — let’s leave it at that
+- **先这样** (xiān zhè yàng) — that’s all for now
+- **回头再说** (huí tóu zài shuō) — let’s talk later / we’ll discuss it later
 - **我先走了** (wǒ xiān zǒu le) — I’ll get going
-- **改天再聊** (gǎitiān zài liáo) — let’s chat another day
+- **改天再聊** (gǎi tiān zài liáo) — let’s chat another day
 
 ### `connector` (22)
 
-- **然后** (ránhòu) — and then
-- **其实** (qíshí) — actually
-- **而且** (érqiě) — and also / moreover
-- **另外** (lìngwài) — additionally / also
-- **还有** (háiyǒu) — and another thing / also
-- **不但…而且** (bùdàn…érqiě) — not only…but also
-- **甚至** (shènzhì) — even
-- **再加上** (zài jiāshang) — on top of that
-- **特别是** (tèbié shì) — especially
-- **不过** (bùguò) — but / however
-- **虽然…但是** (suīrán…dànshì) — although…but
-- **反而** (fǎn'ér) — instead / on the contrary
-- **另一方面** (lìngyì fāngmiàn) — on the other hand
-- **相反** (xiāngfǎn) — on the contrary
-- **不管怎样** (bùguǎn zěnyàng) — anyway / no matter what
-- **因为…所以** (yīnwèi…suǒyǐ) — because…so
-- **这就是为什么** (zhè jiùshì wèishénme) — this is why
-- **既然** (jìrán) — since / now that
-- **结果** (jiéguǒ) — as a result
-- **要不然** (yàoburán) — otherwise
-- **毕竟** (bìjìng) — after all
-- **一般来说** (yìbān lái shuō) — generally speaking
+- **然后** (rán hòu) — and then
+- **其实** (qí shí) — actually
+- **而且** (ér qiě) — and also / moreover
+- **另外** (lìng wài) — additionally / also
+- **还有** (hái yǒu) — and another thing / also
+- **不但…而且** (bú dàn ér qiě) — not only…but also
+- **甚至** (shèn zhì) — even
+- **再加上** (zài jiā shàng) — on top of that
+- **特别是** (tè bié shì) — especially
+- **不过** (bú guò) — but / however
+- **虽然…但是** (suī rán dàn shì) — although…but
+- **反而** (fǎn ér) — instead / on the contrary
+- **另一方面** (lìng yì fāng miàn) — on the other hand
+- **相反** (xiāng fǎn) — on the contrary
+- **不管怎样** (bù guǎn zěn yàng) — anyway / no matter what
+- **因为…所以** (yīn wèi suǒ yǐ) — because…so
+- **这就是为什么** (zhè jiù shì wèi shén me) — this is why
+- **既然** (jì rán) — since / now that
+- **结果** (jié guǒ) — as a result
+- **要不然** (yào bù rán) — otherwise
+- **毕竟** (bì jìng) — after all
+- **一般来说** (yì bān lái shuō) — generally speaking
 
 ### `contrast` (4)
 
-- **不过** (bùguò) — but / however
-- **反而** (fǎn'ér) — instead / on the contrary
-- **另一方面** (lìngyì fāngmiàn) — on the other hand
-- **相反** (xiāngfǎn) — on the contrary
+- **不过** (bú guò) — but / however
+- **反而** (fǎn ér) — instead / on the contrary
+- **另一方面** (lìng yì fāng miàn) — on the other hand
+- **相反** (xiāng fǎn) — on the contrary
 
 ### `conversation-glue` (33)
 
-- **那个** (nèige) — um / uh
-- **怎么说呢** (zěnme shuō ne) — how should I put it
-- **就是说** (jiùshì shuō) — what I mean is / that is to say
-- **我想想** (wǒ xiǎngxiang) — let me think
-- **等一下** (děng yīxià) — hold on a sec
-- **然后** (ránhòu) — and then
-- **我觉得** (wǒ juéde) — I think
-- **我感觉** (wǒ gǎnjué) — I feel / I feel like
-- **说实话** (shuō shíhuà) — to be honest
-- **其实** (qíshí) — actually
-- **坦白说** (tǎnbái shuō) — frankly speaking
+- **那个** (nà ge) — um / uh
+- **怎么说呢** (zěn me shuō ne) — how should I put it
+- **就是说** (jiù shì shuō) — what I mean is / that is to say
+- **我想想** (wǒ xiǎng xiǎng) — let me think
+- **等一下** (děng yí xià) — hold on a sec
+- **然后** (rán hòu) — and then
+- **我觉得** (wǒ jué de) — I think
+- **我感觉** (wǒ gǎn jué) — I feel / I feel like
+- **说实话** (shuō shí huà) — to be honest
+- **其实** (qí shí) — actually
+- **坦白说** (tǎn bái shuō) — frankly speaking
 - **要我说** (yào wǒ shuō) — if you ask me
 - **我看** (wǒ kàn) — I’d say / in my view
-- **原来如此** (yuánlái rúcǐ) — I see / so that’s how it is
-- **然后呢** (ránhòu ne) — and then what?
-- **确实** (quèshí) — indeed / true
-- **这样啊** (zhèyàng a) — oh, I see
-- **难怪** (nánguài) — no wonder
-- **反正** (fǎnzheng) — anyway / in any case
-- **对了** (duìle) — by the way / oh right
-- **说到这个** (shuōdào zhège) — speaking of this
-- **换个话题** (huàn ge huàtí) — change the subject
-- **过奖了** (guòjiǎng le) — you flatter me
-- **一般来说** (yìbān lái shuō) — generally speaking
-- **有道理吗** (yǒu dàolǐ ma) — does that make sense?
-- **有道理** (yǒu dàolǐ) — makes sense / reasonable
-- **可惜啦** (kěxī la) — that’s a pity
-- **那必须的！** (nà bìxū de) — of course! / absolutely!
-- **这么说吧** (zhème shuō ba) — let’s put it this way
-- **看个人吧** (kàn gèrén ba) — depends on the person
-- **还行吧，还行吧** (hái xíng ba, hái xíng ba) — it’s okay / just so-so
-- **客观地来讲** (kèguān de lái jiǎng) — objectively speaking
+- **原来如此** (yuán lái rú cǐ) — I see / so that’s how it is
+- **然后呢** (rán hòu ne) — and then what?
+- **确实** (què shí) — indeed / true
+- **这样啊** (zhè yàng a) — oh, I see
+- **难怪** (nán guài) — no wonder
+- **反正** (fǎn zhèng) — anyway / in any case
+- **对了** (duì le) — by the way / oh right
+- **说到这个** (shuō dào zhè ge) — speaking of this
+- **换个话题** (huàn gè huà tí) — change the subject
+- **过奖了** (guò jiǎng le) — you flatter me
+- **一般来说** (yì bān lái shuō) — generally speaking
+- **有道理吗** (yǒu dào lǐ ma) — does that make sense?
+- **有道理** (yǒu dào lǐ) — makes sense / reasonable
+- **可惜啦** (kě xī la) — that’s a pity
+- **那必须的！** (nà bì xū de) — of course! / absolutely!
+- **这么说吧** (zhè me shuō ba) — let’s put it this way
+- **看个人吧** (kàn gè rén ba) — depends on the person
+- **还行吧，还行吧** (hái xíng ba hái xíng ba) — it’s okay / just so-so
+- **客观地来讲** (kè guān dì lái jiǎng) — objectively speaking
 - **你懂的** (nǐ dǒng de) — you know what I mean
 
 ### `culture` (13)
 
-- **民歌** (míngē) — folk song
-- **省份** (shěngfèn) — province
-- **心灵鸡汤** (xīnlíng jītāng) — motivational / inspirational content, often cliché or cheesy
-- **圣诞节** (Shèngdàn jié) — Christmas
-- **圣诞老人** (Shèngdàn lǎorén) — Santa Claus
-- **诗词** (shīcí) — poetry / classical poetry
-- **土生土长** (tǔshēng-tǔzhǎng) — born and raised locally
-- **经典** (jīngdiǎn) — classic
-- **女士优先** (nǚshì yōuxiān) — ladies first
-- **特别的风土人情** (tèbié de fēngtǔ rénqíng) — unique local customs and traditions
-- **儿化音** (érhuàyīn) — erhua / northern -r sound
-- **基督教** (Jīdūjiào) — Christianity
-- **十字架** (shízìjià) — cross
+- **民歌** (mín gē) — folk song
+- **省份** (shěng fèn) — province
+- **心灵鸡汤** (xīn líng jī tāng) — motivational / inspirational content, often cliché or cheesy
+- **圣诞节** (shèng dàn jié) — Christmas
+- **圣诞老人** (shèng dàn lǎo rén) — Santa Claus
+- **诗词** (shī cí) — poetry / classical poetry
+- **土生土长** (tǔ shēng tǔ zhǎng) — born and raised locally
+- **经典** (jīng diǎn) — classic
+- **女士优先** (nǚ shì yōu xiān) — ladies first
+- **特别的风土人情** (tè bié de fēng tǔ rén qíng) — unique local customs and traditions
+- **儿化音** (ér huà yīn) — erhua / northern -r sound
+- **基督教** (jī dū jiào) — Christianity
+- **十字架** (shí zì jià) — cross
 
 ### `culture-history` (2)
 
-- **朝代** (cháodài) — dynasty
-- **文言文** (wényánwén) — Classical Chinese
+- **朝代** (cháo dài) — dynasty
+- **文言文** (wén yán wén) — Classical Chinese
 
 ### `culture-society` (3)
 
-- **少数民族** (shǎoshù mínzú) — ethnic minority
+- **少数民族** (shǎo shù mín zú) — ethnic minority
 - **白幼瘦** (bái yòu shòu) — pale, youthful, and thin beauty standard
-- **三观** (sānguān) — worldview / core values
+- **三观** (sān guān) — worldview / core values
 
 ### `disagreement-softener` (4)
 
-- **话是这么说** (huà shì zhème shuō) — that may be true, but…
-- **也许我是错的** (yěxǔ wǒ shì cuò de) — I may be wrong
-- **不一定** (bù yídìng) — not necessarily
-- **也不能这么说** (yě bùnéng zhème shuō) — not quite / you can’t really say that
+- **话是这么说** (huà shì zhè me shuō) — that may be true, but…
+- **也许我是错的** (yě xǔ wǒ shì cuò de) — I may be wrong
+- **不一定** (bù yí dìng) — not necessarily
+- **也不能这么说** (yě bù néng zhè me shuō) — not quite / you can’t really say that
 
 ### `education` (4)
 
-- **本科** (běnkē) — bachelor’s degree / undergraduate program
-- **积累知识** (jīlěi zhīshi) — to accumulate knowledge
-- **学者** (xuézhě) — scholar
-- **掌握** (zhǎngwò) — to master / grasp
+- **本科** (běn kē) — bachelor’s degree / undergraduate program
+- **积累知识** (jī lěi zhī shí) — to accumulate knowledge
+- **学者** (xué zhě) — scholar
+- **掌握** (zhǎng wò) — to master / grasp
 
 ### `emotions` (2)
 
-- **疲惫** (píbèi) — exhausted / fatigued
-- **羡慕嫉妒恨** (xiànmù jídù hèn) — extremely envious / jealous
+- **疲惫** (pí bèi) — exhausted / fatigued
+- **羡慕嫉妒恨** (xiàn mù jí dù hèn) — extremely envious / jealous
 
 ### `emotions-opinions` (2)
 
-- **佩服** (pèifu) — to admire / respect
-- **顾虑** (gùlǜ) — concern / worry; to have concerns
+- **佩服** (pèi fú) — to admire / respect
+- **顾虑** (gù lǜ) — concern / worry; to have concerns
 
 ### `emphasis` (3)
 
-- **最重要的是** (zuì zhòngyào de shì) — the most important thing is
-- **关键是** (guānjiàn shì) — the key is
-- **更重要的是** (gèng zhòngyào de shì) — more importantly
+- **最重要的是** (zuì zhòng yào de shì) — the most important thing is
+- **关键是** (guān jiàn shì) — the key is
+- **更重要的是** (gèng zhòng yào de shì) — more importantly
 
 ### `everyday-vocab` (59)
 
-- **油管** (yóuguǎn) — YouTube
-- **蛋白质** (dànbáizhì) — protein
-- **碳水** (tànshuǐ) — carbs / carbohydrates
-- **抖音** (Dǒuyīn) — Douyin / Chinese TikTok
-- **民歌** (míngē) — folk song
-- **省份** (shěngfèn) — province
-- **母语** (mǔyǔ) — native language
-- **网飞** (Wǎngfēi) — Netflix
-- **歌词** (gēcí) — lyrics
-- **本科** (běnkē) — bachelor’s degree / undergraduate program
-- **发财** (fācái) — to get rich / make a fortune
-- **抱负** (bàofù) — aspiration / ambition
-- **圣诞节** (Shèngdàn jié) — Christmas
-- **圣诞老人** (Shèngdàn lǎorén) — Santa Claus
-- **朝代** (cháodài) — dynasty
-- **下载** (xiàzài) — to download
-- **座右铭** (zuòyòumíng) — motto / life motto
-- **目标** (mùbiāo) — goal / target
-- **极光** (jíguāng) — aurora / northern lights
-- **诗词** (shīcí) — poetry / classical poetry
-- **俚语** (lǐyǔ) — slang
-- **本地** (běndì) — local
-- **佩服** (pèifu) — to admire / respect
-- **八卦** (bāguà) — gossip / to gossip
-- **热身** (rèshēn) — warm up
-- **间谍** (jiàndié) — spy
-- **少数民族** (shǎoshù mínzú) — ethnic minority
-- **直播** (zhíbō) — livestream / to livestream
-- **经典** (jīngdiǎn) — classic
-- **延迟** (yánchí) — delay / latency
-- **风景** (fēngjǐng) — scenery
-- **不知不觉地** (bùzhībùjué de) — unconsciously / without realizing it
-- **点赞** (diǎnzàn) — to like / give a thumbs up online
-- **地道** (dìdao) — authentic / genuine
-- **加密** (jiāmì) — encryption / to encrypt
-- **模仿** (mófǎng) — to imitate
-- **天才** (tiāncái) — genius
-- **障碍** (zhàng'ài) — barrier / obstacle
-- **网名** (wǎngmíng) — username / online name
-- **一模一样** (yīmúyīyàng) — exactly the same / identical
-- **零星** (língxīng) — scattered / here and there
-- **服兵役** (fú bīngyì) — to serve in the military
-- **强制的** (qiángzhì de) — mandatory / compulsory
-- **时髦** (shímáo) — fashionable / trendy
-- **贬义词** (biǎnyìcí) — derogatory term
-- **超模** (chāomó) — supermodel
-- **沉稳** (chénwěn) — composed / steady
-- **学者** (xuézhě) — scholar
-- **顾虑** (gùlǜ) — concern / worry; to have concerns
-- **疲惫** (píbèi) — exhausted / fatigued
-- **噩梦** (èmèng) — nightmare
-- **滤镜** (lǜjìng) — filter
-- **美颜** (měiyán) — beauty filter / beautifying effect
-- **精髓** (jīngsuǐ) — essence / core idea
-- **复杂** (fùzá) — complicated / complex
-- **掌握** (zhǎngwò) — to master / grasp
-- **提示** (tíshì) — hint / prompt / reminder
-- **人工智能** (réngōng zhìnéng) — artificial intelligence
-- **不可思议的** (bùkěsīyì de) — unbelievable / incredible
+- **油管** (yóu guǎn) — YouTube
+- **蛋白质** (dàn bái zhì) — protein
+- **碳水** (tàn shuǐ) — carbs / carbohydrates
+- **抖音** (dǒu yīn) — Douyin / Chinese TikTok
+- **民歌** (mín gē) — folk song
+- **省份** (shěng fèn) — province
+- **母语** (mǔ yǔ) — native language
+- **网飞** (wǎng fēi) — Netflix
+- **歌词** (gē cí) — lyrics
+- **本科** (běn kē) — bachelor’s degree / undergraduate program
+- **发财** (fā cái) — to get rich / make a fortune
+- **抱负** (bào fù) — aspiration / ambition
+- **圣诞节** (shèng dàn jié) — Christmas
+- **圣诞老人** (shèng dàn lǎo rén) — Santa Claus
+- **朝代** (cháo dài) — dynasty
+- **下载** (xià zài) — to download
+- **座右铭** (zuò yòu míng) — motto / life motto
+- **目标** (mù biāo) — goal / target
+- **极光** (jí guāng) — aurora / northern lights
+- **诗词** (shī cí) — poetry / classical poetry
+- **俚语** (lǐ yǔ) — slang
+- **本地** (běn dì) — local
+- **佩服** (pèi fú) — to admire / respect
+- **八卦** (bā guà) — gossip / to gossip
+- **热身** (rè shēn) — warm up
+- **间谍** (jiàn dié) — spy
+- **少数民族** (shǎo shù mín zú) — ethnic minority
+- **直播** (zhí bō) — livestream / to livestream
+- **经典** (jīng diǎn) — classic
+- **延迟** (yán chí) — delay / latency
+- **风景** (fēng jǐng) — scenery
+- **不知不觉地** (bù zhī bù jué dì) — unconsciously / without realizing it
+- **点赞** (diǎn zàn) — to like / give a thumbs up online
+- **地道** (dì dào) — authentic / genuine
+- **加密** (jiā mì) — encryption / to encrypt
+- **模仿** (mó fǎng) — to imitate
+- **天才** (tiān cái) — genius
+- **障碍** (zhàng ài) — barrier / obstacle
+- **网名** (wǎng míng) — username / online name
+- **一模一样** (yì mú yí yàng) — exactly the same / identical
+- **零星** (líng xīng) — scattered / here and there
+- **服兵役** (fú bīng yì) — to serve in the military
+- **强制的** (qiáng zhì de) — mandatory / compulsory
+- **时髦** (shí máo) — fashionable / trendy
+- **贬义词** (biǎn yì cí) — derogatory term
+- **超模** (chāo mó) — supermodel
+- **沉稳** (chén wěn) — composed / steady
+- **学者** (xué zhě) — scholar
+- **顾虑** (gù lǜ) — concern / worry; to have concerns
+- **疲惫** (pí bèi) — exhausted / fatigued
+- **噩梦** (è mèng) — nightmare
+- **滤镜** (lǜ jìng) — filter
+- **美颜** (měi yán) — beauty filter / beautifying effect
+- **精髓** (jīng suǐ) — essence / core idea
+- **复杂** (fù zá) — complicated / complex
+- **掌握** (zhǎng wò) — to master / grasp
+- **提示** (tí shì) — hint / prompt / reminder
+- **人工智能** (rén gōng zhì néng) — artificial intelligence
+- **不可思议的** (bù kě sī yì de) — unbelievable / incredible
 
 ### `filler` (3)
 
-- **那个** (nèige) — um / uh
-- **怎么说呢** (zěnme shuō ne) — how should I put it
-- **我想想** (wǒ xiǎngxiang) — let me think
+- **那个** (nà ge) — um / uh
+- **怎么说呢** (zěn me shuō ne) — how should I put it
+- **我想想** (wǒ xiǎng xiǎng) — let me think
 
 ### `food` (2)
 
-- **蛋白质** (dànbáizhì) — protein
-- **碳水** (tànshuǐ) — carbs / carbohydrates
+- **蛋白质** (dàn bái zhì) — protein
+- **碳水** (tàn shuǐ) — carbs / carbohydrates
 
 ### `formal` (1)
 
-- **幸会** (xìnghuì) — pleasure to meet you
+- **幸会** (xìng huì) — pleasure to meet you
 
 ### `greeting` (1)
 
-- **幸会** (xìnghuì) — pleasure to meet you
+- **幸会** (xìng huì) — pleasure to meet you
 
 ### `health` (2)
 
-- **蛋白质** (dànbáizhì) — protein
-- **碳水** (tànshuǐ) — carbs / carbohydrates
+- **蛋白质** (dàn bái zhì) — protein
+- **碳水** (tàn shuǐ) — carbs / carbohydrates
 
 ### `holiday` (2)
 
-- **圣诞节** (Shèngdàn jié) — Christmas
-- **圣诞老人** (Shèngdàn lǎorén) — Santa Claus
+- **圣诞节** (shèng dàn jié) — Christmas
+- **圣诞老人** (shèng dàn lǎo rén) — Santa Claus
 
 ### `internet-media` (11)
 
-- **油管** (yóuguǎn) — YouTube
-- **抖音** (Dǒuyīn) — Douyin / Chinese TikTok
-- **网飞** (Wǎngfēi) — Netflix
-- **心灵鸡汤** (xīnlíng jītāng) — motivational / inspirational content, often cliché or cheesy
-- **直播** (zhíbō) — livestream / to livestream
-- **铁粉** (tiěfěn) — hardcore fan / big fan
-- **点赞** (diǎnzàn) — to like / give a thumbs up online
-- **网名** (wǎngmíng) — username / online name
-- **滤镜** (lǜjìng) — filter
-- **美颜** (měiyán) — beauty filter / beautifying effect
-- **火起来** (huǒ qǐlái) — to become popular / blow up online
+- **油管** (yóu guǎn) — YouTube
+- **抖音** (dǒu yīn) — Douyin / Chinese TikTok
+- **网飞** (wǎng fēi) — Netflix
+- **心灵鸡汤** (xīn líng jī tāng) — motivational / inspirational content, often cliché or cheesy
+- **直播** (zhí bō) — livestream / to livestream
+- **铁粉** (tiě fěn) — hardcore fan / big fan
+- **点赞** (diǎn zàn) — to like / give a thumbs up online
+- **网名** (wǎng míng) — username / online name
+- **滤镜** (lǜ jìng) — filter
+- **美颜** (měi yán) — beauty filter / beautifying effect
+- **火起来** (huǒ qǐ lái) — to become popular / blow up online
 
 ### `internet-slang` (1)
 
-- **羡慕嫉妒恨** (xiànmù jídù hèn) — extremely envious / jealous
+- **羡慕嫉妒恨** (xiàn mù jí dù hèn) — extremely envious / jealous
 
 ### `language-learning` (6)
 
-- **母语** (mǔyǔ) — native language
-- **俚语** (lǐyǔ) — slang
-- **弹舌** (tán shé) — to roll the tongue / rolled R sound
-- **儿化音** (érhuàyīn) — erhua / northern -r sound
-- **贬义词** (biǎnyìcí) — derogatory term
-- **文言文** (wényánwén) — Classical Chinese
+- **母语** (mǔ yǔ) — native language
+- **俚语** (lǐ yǔ) — slang
+- **弹舌** (dàn shé) — to roll the tongue / rolled R sound
+- **儿化音** (ér huà yīn) — erhua / northern -r sound
+- **贬义词** (biǎn yì cí) — derogatory term
+- **文言文** (wén yán wén) — Classical Chinese
 
 ### `media` (3)
 
-- **歌词** (gēcí) — lyrics
-- **经典** (jīngdiǎn) — classic
-- **超模** (chāomó) — supermodel
+- **歌词** (gē cí) — lyrics
+- **经典** (jīng diǎn) — classic
+- **超模** (chāo mó) — supermodel
 
 ### `nature` (2)
 
-- **极光** (jíguāng) — aurora / northern lights
-- **风景** (fēngjǐng) — scenery
+- **极光** (jí guāng) — aurora / northern lights
+- **风景** (fēng jǐng) — scenery
 
 ### `opinion` (8)
 
-- **我觉得** (wǒ juéde) — I think
-- **我感觉** (wǒ gǎnjué) — I feel / I feel like
-- **说实话** (shuō shíhuà) — to be honest
-- **坦白说** (tǎnbái shuō) — frankly speaking
+- **我觉得** (wǒ jué de) — I think
+- **我感觉** (wǒ gǎn jué) — I feel / I feel like
+- **说实话** (shuō shí huà) — to be honest
+- **坦白说** (tǎn bái shuō) — frankly speaking
 - **要我说** (yào wǒ shuō) — if you ask me
 - **我看** (wǒ kàn) — I’d say / in my view
-- **看个人吧** (kàn gèrén ba) — depends on the person
-- **客观地来讲** (kèguān de lái jiǎng) — objectively speaking
+- **看个人吧** (kàn gè rén ba) — depends on the person
+- **客观地来讲** (kè guān dì lái jiǎng) — objectively speaking
 
 ### `pattern` (3)
 
-- **不但…而且** (bùdàn…érqiě) — not only…but also
-- **虽然…但是** (suīrán…dànshì) — although…but
-- **因为…所以** (yīnwèi…suǒyǐ) — because…so
+- **不但…而且** (bú dàn ér qiě) — not only…but also
+- **虽然…但是** (suī rán dàn shì) — although…but
+- **因为…所以** (yīn wèi suǒ yǐ) — because…so
 
 ### `personality` (2)
 
-- **抱负** (bàofù) — aspiration / ambition
-- **沉稳** (chénwěn) — composed / steady
+- **抱负** (bào fù) — aspiration / ambition
+- **沉稳** (chén wěn) — composed / steady
 
 ### `production-ready` (82)
 
-- **那个** (nèige) — um / uh
-- **怎么说呢** (zěnme shuō ne) — how should I put it
-- **就是说** (jiùshì shuō) — what I mean is / that is to say
-- **我想想** (wǒ xiǎngxiang) — let me think
-- **等一下** (děng yīxià) — hold on a sec
-- **然后** (ránhòu) — and then
-- **我觉得** (wǒ juéde) — I think
-- **我感觉** (wǒ gǎnjué) — I feel / I feel like
-- **说实话** (shuō shíhuà) — to be honest
-- **其实** (qíshí) — actually
-- **坦白说** (tǎnbái shuō) — frankly speaking
+- **那个** (nà ge) — um / uh
+- **怎么说呢** (zěn me shuō ne) — how should I put it
+- **就是说** (jiù shì shuō) — what I mean is / that is to say
+- **我想想** (wǒ xiǎng xiǎng) — let me think
+- **等一下** (děng yí xià) — hold on a sec
+- **然后** (rán hòu) — and then
+- **我觉得** (wǒ jué de) — I think
+- **我感觉** (wǒ gǎn jué) — I feel / I feel like
+- **说实话** (shuō shí huà) — to be honest
+- **其实** (qí shí) — actually
+- **坦白说** (tǎn bái shuō) — frankly speaking
 - **要我说** (yào wǒ shuō) — if you ask me
 - **我看** (wǒ kàn) — I’d say / in my view
 - **真的吗** (zhēn de ma) — really?
-- **不会吧** (bù huì ba) — no way / seriously?
-- **原来如此** (yuánlái rúcǐ) — I see / so that’s how it is
-- **没想到** (méi xiǎngdào) — I didn’t expect that
-- **有意思** (yǒuyìsi) — interesting
-- **然后呢** (ránhòu ne) — and then what?
-- **确实** (quèshí) — indeed / true
-- **这样啊** (zhèyàng a) — oh, I see
-- **难怪** (nánguài) — no wonder
-- **而且** (érqiě) — and also / moreover
-- **另外** (lìngwài) — additionally / also
-- **还有** (háiyǒu) — and another thing / also
-- **不但…而且** (bùdàn…érqiě) — not only…but also
-- **甚至** (shènzhì) — even
-- **再加上** (zài jiāshang) — on top of that
-- **特别是** (tèbié shì) — especially
-- **不过** (bùguò) — but / however
-- **虽然…但是** (suīrán…dànshì) — although…but
-- **反而** (fǎn'ér) — instead / on the contrary
-- **另一方面** (lìngyì fāngmiàn) — on the other hand
-- **相反** (xiāngfǎn) — on the contrary
-- **不管怎样** (bùguǎn zěnyàng) — anyway / no matter what
-- **因为…所以** (yīnwèi…suǒyǐ) — because…so
-- **这就是为什么** (zhè jiùshì wèishénme) — this is why
-- **反正** (fǎnzheng) — anyway / in any case
-- **既然** (jìrán) — since / now that
-- **结果** (jiéguǒ) — as a result
-- **换句话说** (huànjùhuàshuō) — in other words
-- **我的意思是** (wǒ de yìsi shì) — what I mean is
-- **简单来说** (jiǎndān lái shuō) — simply put
-- **所以说** (suǒyǐ shuō) — so what I’m saying is
-- **要不然** (yàoburán) — otherwise
-- **对了** (duìle) — by the way / oh right
-- **说到这个** (shuōdào zhège) — speaking of this
-- **总之** (zǒngzhī) — in short / anyway
-- **顺便说一下** (shùnbiàn shuō yīxià) — by the way
-- **换个话题** (huàn ge huàtí) — change the subject
-- **我同意** (wǒ tóngyì) — I agree
-- **没错** (méicuò) — exactly / that’s right
+- **不会吧** (bú huì ba) — no way / seriously?
+- **原来如此** (yuán lái rú cǐ) — I see / so that’s how it is
+- **没想到** (méi xiǎng dào) — I didn’t expect that
+- **有意思** (yǒu yì si) — interesting
+- **然后呢** (rán hòu ne) — and then what?
+- **确实** (què shí) — indeed / true
+- **这样啊** (zhè yàng a) — oh, I see
+- **难怪** (nán guài) — no wonder
+- **而且** (ér qiě) — and also / moreover
+- **另外** (lìng wài) — additionally / also
+- **还有** (hái yǒu) — and another thing / also
+- **不但…而且** (bú dàn ér qiě) — not only…but also
+- **甚至** (shèn zhì) — even
+- **再加上** (zài jiā shàng) — on top of that
+- **特别是** (tè bié shì) — especially
+- **不过** (bú guò) — but / however
+- **虽然…但是** (suī rán dàn shì) — although…but
+- **反而** (fǎn ér) — instead / on the contrary
+- **另一方面** (lìng yì fāng miàn) — on the other hand
+- **相反** (xiāng fǎn) — on the contrary
+- **不管怎样** (bù guǎn zěn yàng) — anyway / no matter what
+- **因为…所以** (yīn wèi suǒ yǐ) — because…so
+- **这就是为什么** (zhè jiù shì wèi shén me) — this is why
+- **反正** (fǎn zhèng) — anyway / in any case
+- **既然** (jì rán) — since / now that
+- **结果** (jié guǒ) — as a result
+- **换句话说** (huàn jù huà shuō) — in other words
+- **我的意思是** (wǒ de yì si shì) — what I mean is
+- **简单来说** (jiǎn dān lái shuō) — simply put
+- **所以说** (suǒ yǐ shuō) — so what I’m saying is
+- **要不然** (yào bù rán) — otherwise
+- **对了** (duì le) — by the way / oh right
+- **说到这个** (shuō dào zhè ge) — speaking of this
+- **总之** (zǒng zhī) — in short / anyway
+- **顺便说一下** (shùn biàn shuō yí xià) — by the way
+- **换个话题** (huàn gè huà tí) — change the subject
+- **我同意** (wǒ tóng yì) — I agree
+- **没错** (méi cuò) — exactly / that’s right
 - **对对对** (duì duì duì) — right, right, right
 - **也是** (yě shì) — that’s true
-- **你说得对** (nǐ shuō de duì) — you’re right
-- **我不是说** (wǒ bùshì shuō) — I’m not saying
-- **话是这么说** (huà shì zhème shuō) — that may be true, but…
-- **也许我是错的** (yěxǔ wǒ shì cuò de) — I may be wrong
-- **不一定** (bù yídìng) — not necessarily
-- **也不能这么说** (yě bùnéng zhème shuō) — not quite / you can’t really say that
-- **最重要的是** (zuì zhòngyào de shì) — the most important thing is
-- **关键是** (guānjiàn shì) — the key is
-- **毕竟** (bìjìng) — after all
-- **更重要的是** (gèng zhòngyào de shì) — more importantly
-- **最后** (zuìhòu) — finally
-- **那就这样吧** (nà jiù zhèyàng ba) — let’s leave it at that
-- **先这样** (xiān zhèyàng) — that’s all for now
-- **回头再说** (huítóu zàishuō) — let’s talk later / we’ll discuss it later
+- **你说得对** (nǐ shuō dé duì) — you’re right
+- **我不是说** (wǒ bú shì shuō) — I’m not saying
+- **话是这么说** (huà shì zhè me shuō) — that may be true, but…
+- **也许我是错的** (yě xǔ wǒ shì cuò de) — I may be wrong
+- **不一定** (bù yí dìng) — not necessarily
+- **也不能这么说** (yě bù néng zhè me shuō) — not quite / you can’t really say that
+- **最重要的是** (zuì zhòng yào de shì) — the most important thing is
+- **关键是** (guān jiàn shì) — the key is
+- **毕竟** (bì jìng) — after all
+- **更重要的是** (gèng zhòng yào de shì) — more importantly
+- **最后** (zuì hòu) — finally
+- **那就这样吧** (nà jiù zhè yàng ba) — let’s leave it at that
+- **先这样** (xiān zhè yàng) — that’s all for now
+- **回头再说** (huí tóu zài shuō) — let’s talk later / we’ll discuss it later
 - **我先走了** (wǒ xiān zǒu le) — I’ll get going
-- **改天再聊** (gǎitiān zài liáo) — let’s chat another day
-- **过奖了** (guòjiǎng le) — you flatter me
-- **一般来说** (yìbān lái shuō) — generally speaking
-- **有道理吗** (yǒu dàolǐ ma) — does that make sense?
-- **有道理** (yǒu dàolǐ) — makes sense / reasonable
-- **可惜啦** (kěxī la) — that’s a pity
-- **那必须的！** (nà bìxū de) — of course! / absolutely!
+- **改天再聊** (gǎi tiān zài liáo) — let’s chat another day
+- **过奖了** (guò jiǎng le) — you flatter me
+- **一般来说** (yì bān lái shuō) — generally speaking
+- **有道理吗** (yǒu dào lǐ ma) — does that make sense?
+- **有道理** (yǒu dào lǐ) — makes sense / reasonable
+- **可惜啦** (kě xī la) — that’s a pity
+- **那必须的！** (nà bì xū de) — of course! / absolutely!
 - **卡了** (kǎ le) — it froze / the connection lagged
-- **这么说吧** (zhème shuō ba) — let’s put it this way
-- **看个人吧** (kàn gèrén ba) — depends on the person
-- **还行吧，还行吧** (hái xíng ba, hái xíng ba) — it’s okay / just so-so
-- **客观地来讲** (kèguān de lái jiǎng) — objectively speaking
+- **这么说吧** (zhè me shuō ba) — let’s put it this way
+- **看个人吧** (kàn gè rén ba) — depends on the person
+- **还行吧，还行吧** (hái xíng ba hái xíng ba) — it’s okay / just so-so
+- **客观地来讲** (kè guān dì lái jiǎng) — objectively speaking
 - **你懂的** (nǐ dǒng de) — you know what I mean
 
 ### `pronunciation` (2)
 
-- **弹舌** (tán shé) — to roll the tongue / rolled R sound
-- **儿化音** (érhuàyīn) — erhua / northern -r sound
+- **弹舌** (dàn shé) — to roll the tongue / rolled R sound
+- **儿化音** (ér huà yīn) — erhua / northern -r sound
 
 ### `reaction` (10)
 
 - **真的吗** (zhēn de ma) — really?
-- **不会吧** (bù huì ba) — no way / seriously?
-- **原来如此** (yuánlái rúcǐ) — I see / so that’s how it is
-- **没想到** (méi xiǎngdào) — I didn’t expect that
-- **有意思** (yǒuyìsi) — interesting
-- **这样啊** (zhèyàng a) — oh, I see
-- **难怪** (nánguài) — no wonder
-- **可惜啦** (kěxī la) — that’s a pity
-- **那必须的！** (nà bìxū de) — of course! / absolutely!
-- **还行吧，还行吧** (hái xíng ba, hái xíng ba) — it’s okay / just so-so
+- **不会吧** (bú huì ba) — no way / seriously?
+- **原来如此** (yuán lái rú cǐ) — I see / so that’s how it is
+- **没想到** (méi xiǎng dào) — I didn’t expect that
+- **有意思** (yǒu yì si) — interesting
+- **这样啊** (zhè yàng a) — oh, I see
+- **难怪** (nán guài) — no wonder
+- **可惜啦** (kě xī la) — that’s a pity
+- **那必须的！** (nà bì xū de) — of course! / absolutely!
+- **还行吧，还行吧** (hái xíng ba hái xíng ba) — it’s okay / just so-so
 
 ### `recognition-first` (2)
 
 - **白幼瘦** (bái yòu shòu) — pale, youthful, and thin beauty standard
-- **羡慕嫉妒恨** (xiànmù jídù hèn) — extremely envious / jealous
+- **羡慕嫉妒恨** (xiàn mù jí dù hèn) — extremely envious / jealous
 
 ### `recognition-ready` (5)
 
-- **油管** (yóuguǎn) — YouTube
-- **幸会** (xìnghuì) — pleasure to meet you
-- **抖音** (Dǒuyīn) — Douyin / Chinese TikTok
-- **心灵鸡汤** (xīnlíng jītāng) — motivational / inspirational content, often cliché or cheesy
-- **三观** (sānguān) — worldview / core values
+- **油管** (yóu guǎn) — YouTube
+- **幸会** (xìng huì) — pleasure to meet you
+- **抖音** (dǒu yīn) — Douyin / Chinese TikTok
+- **心灵鸡汤** (xīn líng jī tāng) — motivational / inspirational content, often cliché or cheesy
+- **三观** (sān guān) — worldview / core values
 
 ### `relationships` (1)
 
-- **一见钟情** (yījiàn zhōngqíng) — love at first sight
+- **一见钟情** (yí jiàn zhōng qíng) — love at first sight
 
 ### `religion` (2)
 
-- **基督教** (Jīdūjiào) — Christianity
-- **十字架** (shízìjià) — cross
+- **基督教** (jī dū jiào) — Christianity
+- **十字架** (shí zì jià) — cross
 
 ### `slang` (2)
 
-- **铁粉** (tiěfěn) — hardcore fan / big fan
+- **铁粉** (tiě fěn) — hardcore fan / big fan
 - **你懂的** (nǐ dǒng de) — you know what I mean
 
 ### `society` (1)
 
-- **服兵役** (fú bīngyì) — to serve in the military
+- **服兵役** (fú bīng yì) — to serve in the military
 
 ### `summary` (2)
 
-- **总之** (zǒngzhī) — in short / anyway
-- **最后** (zuìhòu) — finally
+- **总之** (zǒng zhī) — in short / anyway
+- **最后** (zuì hòu) — finally
 
 ### `technology` (6)
 
-- **下载** (xiàzài) — to download
-- **延迟** (yánchí) — delay / latency
-- **加密** (jiāmì) — encryption / to encrypt
+- **下载** (xià zài) — to download
+- **延迟** (yán chí) — delay / latency
+- **加密** (jiā mì) — encryption / to encrypt
 - **卡了** (kǎ le) — it froze / the connection lagged
-- **提示** (tíshì) — hint / prompt / reminder
-- **人工智能** (réngōng zhìnéng) — artificial intelligence
+- **提示** (tí shì) — hint / prompt / reminder
+- **人工智能** (rén gōng zhì néng) — artificial intelligence
 
 ### `transition` (4)
 
-- **对了** (duìle) — by the way / oh right
-- **说到这个** (shuōdào zhège) — speaking of this
-- **顺便说一下** (shùnbiàn shuō yīxià) — by the way
-- **换个话题** (huàn ge huàtí) — change the subject
+- **对了** (duì le) — by the way / oh right
+- **说到这个** (shuō dào zhè ge) — speaking of this
+- **顺便说一下** (shùn biàn shuō yí xià) — by the way
+- **换个话题** (huàn gè huà tí) — change the subject
 
 ### `useful-phrases` (12)
 
-- **幸会** (xìnghuì) — pleasure to meet you
-- **过奖了** (guòjiǎng le) — you flatter me
-- **积累知识** (jīlěi zhīshi) — to accumulate knowledge
-- **有道理吗** (yǒu dàolǐ ma) — does that make sense?
-- **土生土长** (tǔshēng-tǔzhǎng) — born and raised locally
-- **一见钟情** (yījiàn zhōngqíng) — love at first sight
-- **女士优先** (nǚshì yōuxiān) — ladies first
-- **特别的风土人情** (tèbié de fēngtǔ rénqíng) — unique local customs and traditions
-- **不知不觉地** (bùzhībùjué de) — unconsciously / without realizing it
-- **一模一样** (yīmúyīyàng) — exactly the same / identical
+- **幸会** (xìng huì) — pleasure to meet you
+- **过奖了** (guò jiǎng le) — you flatter me
+- **积累知识** (jī lěi zhī shí) — to accumulate knowledge
+- **有道理吗** (yǒu dào lǐ ma) — does that make sense?
+- **土生土长** (tǔ shēng tǔ zhǎng) — born and raised locally
+- **一见钟情** (yí jiàn zhōng qíng) — love at first sight
+- **女士优先** (nǚ shì yōu xiān) — ladies first
+- **特别的风土人情** (tè bié de fēng tǔ rén qíng) — unique local customs and traditions
+- **不知不觉地** (bù zhī bù jué dì) — unconsciously / without realizing it
+- **一模一样** (yì mú yí yàng) — exactly the same / identical
 - **卡了** (kǎ le) — it froze / the connection lagged
-- **火起来** (huǒ qǐlái) — to become popular / blow up online
+- **火起来** (huǒ qǐ lái) — to become popular / blow up online
 
 ## Idioms / Proverbs / Classical
 _40 entries — `Chinese_Idioms_Proverbs_Classical.tsv`_
 
 ### `chengyu` (27)
 
-- **面红耳赤** (miànhóng ěrchì) — red-faced / flushed
+- **面红耳赤** (miàn hóng ěr chì) — red-faced / flushed
 - **苦尽甘来** (kǔ jìn gān lái) — after bitterness comes sweetness
-- **彻头彻尾** (chètóu chèwěi) — through and through / complete
-- **炉火纯青** (lúhuǒ chúnqīng) — brought to perfection
-- **礼尚往来** (lǐshàng wǎnglái) — courtesy should be reciprocated
-- **天伦之乐** (tiānlún zhī lè) — family happiness
-- **绞尽脑汁** (jiǎojìn nǎozhī) — to rack one’s brains
-- **截然不同** (jiérán bù tóng) — completely different
-- **志同道合** (zhìtóng dàohé) — like-minded
-- **深情厚谊** (shēnqíng hòuyì) — deep affection and friendship
-- **知音难觅** (zhīyīn nán mì) — a true soulmate is hard to find
+- **彻头彻尾** (chè tóu chè wěi) — through and through / complete
+- **炉火纯青** (lú huǒ chún qīng) — brought to perfection
+- **礼尚往来** (lǐ shàng wǎng lái) — courtesy should be reciprocated
+- **天伦之乐** (tiān lún zhī lè) — family happiness
+- **绞尽脑汁** (jiǎo jìn nǎo zhī) — to rack one’s brains
+- **截然不同** (jié rán bù tóng) — completely different
+- **志同道合** (zhì tóng dào hé) — like-minded
+- **深情厚谊** (shēn qíng hòu yì) — deep affection and friendship
+- **知音难觅** (zhī yīn nán mì) — a true soulmate is hard to find
 - **火上浇油** (huǒ shàng jiāo yóu) — to add fuel to the fire
 - **怒火中烧** (nù huǒ zhōng shāo) — burning with anger / seething
 - **熟能生巧** (shú néng shēng qiǎo) — practice makes perfect
-- **大器晚成** (dàqì wǎnchéng) — great talent matures late
+- **大器晚成** (dà qì wǎn chéng) — great talent matures late
 - **文武双全** (wén wǔ shuāng quán) — skilled in both pen and sword
 - **杞人忧天** (qǐ rén yōu tiān) — to worry unnecessarily
-- **画蛇添足** (huàshé tiānzú) — draw a snake and add feet / overdo it
-- **守株待兔** (shǒuzhū dàitù) — wait by the stump for a rabbit
+- **画蛇添足** (huà shé tiān zú) — draw a snake and add feet / overdo it
+- **守株待兔** (shǒu zhū dài tù) — wait by the stump for a rabbit
 - **塞翁失马** (sài wēng shī mǎ) — old frontier-man lost his horse / blessing in disguise
-- **一举两得** (yìjǔ liǎngdé) — one stroke, two gains / kill two birds
+- **一举两得** (yì jǔ liǎng dé) — one stroke, two gains / kill two birds
 - **入乡随俗** (rù xiāng suí sú) — when in Rome, do as the Romans
 - **自相矛盾** (zì xiāng máo dùn) — self-contradictory
 - **望梅止渴** (wàng méi zhǐ kě) — quench thirst by gazing at plums / false hope
-- **半途而废** (bàntú érfèi) — give up halfway
-- **水滴石穿** (shuǐdī shíchuān) — dripping water pierces stone / persistence wins
-- **井底之蛙** (jǐngdǐ zhī wā) — frog at the bottom of a well / narrow worldview
+- **半途而废** (bàn tú ér fèi) — give up halfway
+- **水滴石穿** (shuǐ dī shí chuān) — dripping water pierces stone / persistence wins
+- **井底之蛙** (jǐng dǐ zhī wā) — frog at the bottom of a well / narrow worldview
 
 ### `classical-flavor` (6)
 
 - **别来无恙** (bié lái wú yàng) — have you been well since we last met?
 - **文武双全** (wén wǔ shuāng quán) — skilled in both pen and sword
-- **君君臣臣父父子子** (jūn jūn, chén chén, fù fù, zǐ zǐ) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
-- **舍得一身剐，敢把皇帝拉下马** (shěde yìshēn guǎ, gǎn bǎ huángdì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
+- **君君臣臣父父子子** (jūn jūn chén chén fù fù zǐ zi) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
+- **舍得一身剐，敢把皇帝拉下马** (shě de yì shēn guǎ gǎn bǎ huáng dì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
 - **望梅止渴** (wàng méi zhǐ kě) — quench thirst by gazing at plums / false hope
-- **滴水之恩，当涌泉相报** (dīshuǐ zhī ēn, dāng yǒngquán xiāng bào) — repay a drop of kindness with a gushing spring
+- **滴水之恩，当涌泉相报** (dī shuǐ zhī ēn dāng yǒng quán xiāng bào) — repay a drop of kindness with a gushing spring
 
 ### `culture` (2)
 
-- **礼尚往来** (lǐshàng wǎnglái) — courtesy should be reciprocated
+- **礼尚往来** (lǐ shàng wǎng lái) — courtesy should be reciprocated
 - **入乡随俗** (rù xiāng suí sú) — when in Rome, do as the Romans
 
 ### `culture-history` (3)
 
-- **摸着石头过河** (mōzhe shítou guòhé) — cross the river by feeling the stones
+- **摸着石头过河** (mō zhe shí tou guò hé) — cross the river by feeling the stones
 - **塞翁失马** (sài wēng shī mǎ) — old frontier-man lost his horse / blessing in disguise
-- **知己知彼，百战不殆** (zhījǐ zhībǐ, bǎizhàn búdài) — know yourself and your enemy — never lose
+- **知己知彼，百战不殆** (zhī jǐ zhī bǐ bǎi zhàn bú dài) — know yourself and your enemy — never lose
 
 ### `emotions` (2)
 
-- **面红耳赤** (miànhóng ěrchì) — red-faced / flushed
+- **面红耳赤** (miàn hóng ěr chì) — red-faced / flushed
 - **怒火中烧** (nù huǒ zhōng shāo) — burning with anger / seething
 
 ### `life-advice` (18)
 
 - **苦尽甘来** (kǔ jìn gān lái) — after bitterness comes sweetness
-- **吃一堑，长一智** (chī yí qiàn, zhǎng yí zhì) — learn from a setback
+- **吃一堑，长一智** (chī yí qiàn zhǎng yí zhì) — learn from a setback
 - **熟能生巧** (shú néng shēng qiǎo) — practice makes perfect
-- **大器晚成** (dàqì wǎnchéng) — great talent matures late
-- **逆境出人才** (nìjìng chū réncái) — hardship produces talent
-- **功到自然成** (gōng dào zìrán chéng) — constant effort brings sure success
-- **不怕慢，就怕站** (bù pà màn, jiù pà zhàn) — better slow progress than standing still
-- **谦虚使人进步，骄傲使人落后** (qiānxū shǐ rén jìnbù, jiāo'ào shǐ rén luòhòu) — modesty helps one progress; pride makes one fall behind
+- **大器晚成** (dà qì wǎn chéng) — great talent matures late
+- **逆境出人才** (nì jìng chū rén cái) — hardship produces talent
+- **功到自然成** (gōng dào zì rán chéng) — constant effort brings sure success
+- **不怕慢，就怕站** (bú pà màn jiù pà zhàn) — better slow progress than standing still
+- **谦虚使人进步，骄傲使人落后** (qiān xū shǐ rén jìn bù jiāo ào shǐ rén luò hòu) — modesty helps one progress; pride makes one fall behind
 - **有志者事竟成** (yǒu zhì zhě shì jìng chéng) — where there is a will, there is a way
-- **画蛇添足** (huàshé tiānzú) — draw a snake and add feet / overdo it
-- **守株待兔** (shǒuzhū dàitù) — wait by the stump for a rabbit
+- **画蛇添足** (huà shé tiān zú) — draw a snake and add feet / overdo it
+- **守株待兔** (shǒu zhū dài tù) — wait by the stump for a rabbit
 - **塞翁失马** (sài wēng shī mǎ) — old frontier-man lost his horse / blessing in disguise
 - **入乡随俗** (rù xiāng suí sú) — when in Rome, do as the Romans
-- **半途而废** (bàntú érfèi) — give up halfway
-- **水滴石穿** (shuǐdī shíchuān) — dripping water pierces stone / persistence wins
-- **井底之蛙** (jǐngdǐ zhī wā) — frog at the bottom of a well / narrow worldview
-- **滴水之恩，当涌泉相报** (dīshuǐ zhī ēn, dāng yǒngquán xiāng bào) — repay a drop of kindness with a gushing spring
-- **知己知彼，百战不殆** (zhījǐ zhībǐ, bǎizhàn búdài) — know yourself and your enemy — never lose
+- **半途而废** (bàn tú ér fèi) — give up halfway
+- **水滴石穿** (shuǐ dī shí chuān) — dripping water pierces stone / persistence wins
+- **井底之蛙** (jǐng dǐ zhī wā) — frog at the bottom of a well / narrow worldview
+- **滴水之恩，当涌泉相报** (dī shuǐ zhī ēn dāng yǒng quán xiāng bào) — repay a drop of kindness with a gushing spring
+- **知己知彼，百战不殆** (zhī jǐ zhī bǐ bǎi zhàn bú dài) — know yourself and your enemy — never lose
 
 ### `literary` (6)
 
-- **银装素裹** (yínzhuāng sùguǒ) — wrapped in white / covered in snow
+- **银装素裹** (yín zhuāng sù guǒ) — wrapped in white / covered in snow
 - **别来无恙** (bié lái wú yàng) — have you been well since we last met?
-- **天伦之乐** (tiānlún zhī lè) — family happiness
-- **深情厚谊** (shēnqíng hòuyì) — deep affection and friendship
-- **知音难觅** (zhīyīn nán mì) — a true soulmate is hard to find
-- **君君臣臣父父子子** (jūn jūn, chén chén, fù fù, zǐ zǐ) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
+- **天伦之乐** (tiān lún zhī lè) — family happiness
+- **深情厚谊** (shēn qíng hòu yì) — deep affection and friendship
+- **知音难觅** (zhī yīn nán mì) — a true soulmate is hard to find
+- **君君臣臣父父子子** (jūn jūn chén chén fù fù zǐ zi) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
 
 ### `nature` (1)
 
-- **银装素裹** (yínzhuāng sùguǒ) — wrapped in white / covered in snow
+- **银装素裹** (yín zhuāng sù guǒ) — wrapped in white / covered in snow
 
 ### `production-ready` (7)
 
-- **绞尽脑汁** (jiǎojìn nǎozhī) — to rack one’s brains
-- **截然不同** (jiérán bù tóng) — completely different
+- **绞尽脑汁** (jiǎo jìn nǎo zhī) — to rack one’s brains
+- **截然不同** (jié rán bù tóng) — completely different
 - **火上浇油** (huǒ shàng jiāo yóu) — to add fuel to the fire
 - **熟能生巧** (shú néng shēng qiǎo) — practice makes perfect
-- **一举两得** (yìjǔ liǎngdé) — one stroke, two gains / kill two birds
+- **一举两得** (yì jǔ liǎng dé) — one stroke, two gains / kill two birds
 - **入乡随俗** (rù xiāng suí sú) — when in Rome, do as the Romans
-- **半途而废** (bàntú érfèi) — give up halfway
+- **半途而废** (bàn tú ér fèi) — give up halfway
 
 ### `proverb` (11)
 
-- **吃一堑，长一智** (chī yí qiàn, zhǎng yí zhì) — learn from a setback
+- **吃一堑，长一智** (chī yí qiàn zhǎng yí zhì) — learn from a setback
 - **熟能生巧** (shú néng shēng qiǎo) — practice makes perfect
-- **逆境出人才** (nìjìng chū réncái) — hardship produces talent
-- **功到自然成** (gōng dào zìrán chéng) — constant effort brings sure success
-- **不怕慢，就怕站** (bù pà màn, jiù pà zhàn) — better slow progress than standing still
-- **谦虚使人进步，骄傲使人落后** (qiānxū shǐ rén jìnbù, jiāo'ào shǐ rén luòhòu) — modesty helps one progress; pride makes one fall behind
+- **逆境出人才** (nì jìng chū rén cái) — hardship produces talent
+- **功到自然成** (gōng dào zì rán chéng) — constant effort brings sure success
+- **不怕慢，就怕站** (bú pà màn jiù pà zhàn) — better slow progress than standing still
+- **谦虚使人进步，骄傲使人落后** (qiān xū shǐ rén jìn bù jiāo ào shǐ rén luò hòu) — modesty helps one progress; pride makes one fall behind
 - **有志者事竟成** (yǒu zhì zhě shì jìng chéng) — where there is a will, there is a way
-- **舍得一身剐，敢把皇帝拉下马** (shěde yìshēn guǎ, gǎn bǎ huángdì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
-- **摸着石头过河** (mōzhe shítou guòhé) — cross the river by feeling the stones
-- **滴水之恩，当涌泉相报** (dīshuǐ zhī ēn, dāng yǒngquán xiāng bào) — repay a drop of kindness with a gushing spring
-- **知己知彼，百战不殆** (zhījǐ zhībǐ, bǎizhàn búdài) — know yourself and your enemy — never lose
+- **舍得一身剐，敢把皇帝拉下马** (shě de yì shēn guǎ gǎn bǎ huáng dì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
+- **摸着石头过河** (mō zhe shí tou guò hé) — cross the river by feeling the stones
+- **滴水之恩，当涌泉相报** (dī shuǐ zhī ēn dāng yǒng quán xiāng bào) — repay a drop of kindness with a gushing spring
+- **知己知彼，百战不殆** (zhī jǐ zhī bǐ bǎi zhàn bú dài) — know yourself and your enemy — never lose
 
 ### `recognition-first` (10)
 
-- **银装素裹** (yínzhuāng sùguǒ) — wrapped in white / covered in snow
+- **银装素裹** (yín zhuāng sù guǒ) — wrapped in white / covered in snow
 - **别来无恙** (bié lái wú yàng) — have you been well since we last met?
-- **天伦之乐** (tiānlún zhī lè) — family happiness
-- **深情厚谊** (shēnqíng hòuyì) — deep affection and friendship
-- **知音难觅** (zhīyīn nán mì) — a true soulmate is hard to find
+- **天伦之乐** (tiān lún zhī lè) — family happiness
+- **深情厚谊** (shēn qíng hòu yì) — deep affection and friendship
+- **知音难觅** (zhī yīn nán mì) — a true soulmate is hard to find
 - **文武双全** (wén wǔ shuāng quán) — skilled in both pen and sword
-- **君君臣臣父父子子** (jūn jūn, chén chén, fù fù, zǐ zǐ) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
-- **舍得一身剐，敢把皇帝拉下马** (shěde yìshēn guǎ, gǎn bǎ huángdì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
+- **君君臣臣父父子子** (jūn jūn chén chén fù fù zǐ zi) — rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons
+- **舍得一身剐，敢把皇帝拉下马** (shě de yì shēn guǎ gǎn bǎ huáng dì lā xià mǎ) — one who fears not being cut to pieces dares to unhorse the emperor
 - **望梅止渴** (wàng méi zhǐ kě) — quench thirst by gazing at plums / false hope
-- **滴水之恩，当涌泉相报** (dīshuǐ zhī ēn, dāng yǒngquán xiāng bào) — repay a drop of kindness with a gushing spring
+- **滴水之恩，当涌泉相报** (dī shuǐ zhī ēn dāng yǒng quán xiāng bào) — repay a drop of kindness with a gushing spring
 
 ### `recognition-ready` (23)
 
-- **面红耳赤** (miànhóng ěrchì) — red-faced / flushed
+- **面红耳赤** (miàn hóng ěr chì) — red-faced / flushed
 - **苦尽甘来** (kǔ jìn gān lái) — after bitterness comes sweetness
-- **彻头彻尾** (chètóu chèwěi) — through and through / complete
-- **炉火纯青** (lúhuǒ chúnqīng) — brought to perfection
-- **礼尚往来** (lǐshàng wǎnglái) — courtesy should be reciprocated
-- **志同道合** (zhìtóng dàohé) — like-minded
+- **彻头彻尾** (chè tóu chè wěi) — through and through / complete
+- **炉火纯青** (lú huǒ chún qīng) — brought to perfection
+- **礼尚往来** (lǐ shàng wǎng lái) — courtesy should be reciprocated
+- **志同道合** (zhì tóng dào hé) — like-minded
 - **怒火中烧** (nù huǒ zhōng shāo) — burning with anger / seething
-- **吃一堑，长一智** (chī yí qiàn, zhǎng yí zhì) — learn from a setback
-- **大器晚成** (dàqì wǎnchéng) — great talent matures late
-- **逆境出人才** (nìjìng chū réncái) — hardship produces talent
-- **功到自然成** (gōng dào zìrán chéng) — constant effort brings sure success
-- **不怕慢，就怕站** (bù pà màn, jiù pà zhàn) — better slow progress than standing still
-- **谦虚使人进步，骄傲使人落后** (qiānxū shǐ rén jìnbù, jiāo'ào shǐ rén luòhòu) — modesty helps one progress; pride makes one fall behind
+- **吃一堑，长一智** (chī yí qiàn zhǎng yí zhì) — learn from a setback
+- **大器晚成** (dà qì wǎn chéng) — great talent matures late
+- **逆境出人才** (nì jìng chū rén cái) — hardship produces talent
+- **功到自然成** (gōng dào zì rán chéng) — constant effort brings sure success
+- **不怕慢，就怕站** (bú pà màn jiù pà zhàn) — better slow progress than standing still
+- **谦虚使人进步，骄傲使人落后** (qiān xū shǐ rén jìn bù jiāo ào shǐ rén luò hòu) — modesty helps one progress; pride makes one fall behind
 - **有志者事竟成** (yǒu zhì zhě shì jìng chéng) — where there is a will, there is a way
-- **摸着石头过河** (mōzhe shítou guòhé) — cross the river by feeling the stones
+- **摸着石头过河** (mō zhe shí tou guò hé) — cross the river by feeling the stones
 - **杞人忧天** (qǐ rén yōu tiān) — to worry unnecessarily
-- **画蛇添足** (huàshé tiānzú) — draw a snake and add feet / overdo it
-- **守株待兔** (shǒuzhū dàitù) — wait by the stump for a rabbit
+- **画蛇添足** (huà shé tiān zú) — draw a snake and add feet / overdo it
+- **守株待兔** (shǒu zhū dài tù) — wait by the stump for a rabbit
 - **塞翁失马** (sài wēng shī mǎ) — old frontier-man lost his horse / blessing in disguise
 - **自相矛盾** (zì xiāng máo dùn) — self-contradictory
-- **水滴石穿** (shuǐdī shíchuān) — dripping water pierces stone / persistence wins
-- **井底之蛙** (jǐngdǐ zhī wā) — frog at the bottom of a well / narrow worldview
-- **知己知彼，百战不殆** (zhījǐ zhībǐ, bǎizhàn búdài) — know yourself and your enemy — never lose
+- **水滴石穿** (shuǐ dī shí chuān) — dripping water pierces stone / persistence wins
+- **井底之蛙** (jǐng dǐ zhī wā) — frog at the bottom of a well / narrow worldview
+- **知己知彼，百战不殆** (zhī jǐ zhī bǐ bǎi zhàn bú dài) — know yourself and your enemy — never lose
 
 ### `relationships` (3)
 
-- **志同道合** (zhìtóng dàohé) — like-minded
-- **深情厚谊** (shēnqíng hòuyì) — deep affection and friendship
-- **知音难觅** (zhīyīn nán mì) — a true soulmate is hard to find
+- **志同道合** (zhì tóng dào hé) — like-minded
+- **深情厚谊** (shēn qíng hòu yì) — deep affection and friendship
+- **知音难觅** (zhī yīn nán mì) — a true soulmate is hard to find
 
 ### `skill` (1)
 
-- **炉火纯青** (lúhuǒ chúnqīng) — brought to perfection
+- **炉火纯青** (lú huǒ chún qīng) — brought to perfection
 
 ## Slang / Dialect / Flavor
 _20 entries — `Chinese_Slang_Dialect_Flavor.tsv`_
 
 ### `conversation-glue` (1)
 
-- **还凑合吧** (hái còuhe ba) — it’ll do / passable
+- **还凑合吧** (hái còu hé ba) — it’ll do / passable
 
 ### `culture` (2)
 
 - **泰斗** (tài dǒu) — leading authority / grand master
-- **辣妹子** (là mèizi) — spicy girl / bold girl
+- **辣妹子** (là mèi zi) — spicy girl / bold girl
 
 ### `dialect` (5)
 
-- **你爪子嘛** (nǐ zhuǎzi ma) — what’s up? / what are you doing?
-- **杠杠的** (gànggàng de) — awesome / excellent
-- **抗造** (kàngzào) — tough / durable / resilient
+- **你爪子嘛** (nǐ zhuǎ zi ma) — what’s up? / what are you doing?
+- **杠杠的** (gàng gàng de) — awesome / excellent
+- **抗造** (kàng zào) — tough / durable / resilient
 - **儿豁** (ér huō) — no cap / for real
 - **瞅啥呀** (chǒu shá ya) — what the hell are you looking at?
 
 ### `education` (1)
 
-- **学霸** (xuébà) — straight-A student / top student
+- **学霸** (xué bà) — straight-A student / top student
 
 ### `erhua` (1)
 
-- **媳妇儿** (xífur) — wife / wifey
+- **媳妇儿** (xí fù er) — wife / wifey
 
 ### `everyday-vocab` (1)
 
-- **家伙** (jiāhuo) — guy / fellow / bloke
+- **家伙** (jiā huo) — guy / fellow / bloke
 
 ### `flavor` (2)
 
 - **泰斗** (tài dǒu) — leading authority / grand master
-- **洒脱** (sǎtuō) — carefree and unrestrained
+- **洒脱** (sǎ tuō) — carefree and unrestrained
 
 ### `food` (1)
 
@@ -688,7 +688,7 @@ _20 entries — `Chinese_Slang_Dialect_Flavor.tsv`_
 
 ### `internet-slang` (2)
 
-- **菜鸟** (càiniǎo) — noob / newbie
+- **菜鸟** (cài niǎo) — noob / newbie
 - **儿豁** (ér huō) — no cap / for real
 
 ### `old-slang` (1)
@@ -697,16 +697,16 @@ _20 entries — `Chinese_Slang_Dialect_Flavor.tsv`_
 
 ### `personality` (1)
 
-- **洒脱** (sǎtuō) — carefree and unrestrained
+- **洒脱** (sǎ tuō) — carefree and unrestrained
 
 ### `production-ready` (7)
 
-- **学霸** (xuébà) — straight-A student / top student
+- **学霸** (xué bà) — straight-A student / top student
 - **哇塞** (wā sāi) — wow!
-- **杠杠的** (gànggàng de) — awesome / excellent
-- **还凑合吧** (hái còuhe ba) — it’ll do / passable
-- **菜鸟** (càiniǎo) — noob / newbie
-- **家伙** (jiāhuo) — guy / fellow / bloke
+- **杠杠的** (gàng gàng de) — awesome / excellent
+- **还凑合吧** (hái còu hé ba) — it’ll do / passable
+- **菜鸟** (cài niǎo) — noob / newbie
+- **家伙** (jiā huo) — guy / fellow / bloke
 - **无辣不欢** (wú là bù huān) — not spicy, not happy / can’t enjoy food without spice
 
 ### `reaction` (1)
@@ -716,58 +716,58 @@ _20 entries — `Chinese_Slang_Dialect_Flavor.tsv`_
 ### `recognition-first` (10)
 
 - **酷毙了** (kù bì le) — super cool
-- **你爪子嘛** (nǐ zhuǎzi ma) — what’s up? / what are you doing?
-- **媳妇儿** (xífur) — wife / wifey
-- **变态** (biàntài) — pervert / abnormal
-- **抗造** (kàngzào) — tough / durable / resilient
-- **辣妹子** (là mèizi) — spicy girl / bold girl
-- **你皮子是不是痒了?** (nǐ pízi shìbúshì yǎng le?) — are you asking for a beating?
-- **小屁孩** (xiǎopìhái) — little brat
+- **你爪子嘛** (nǐ zhuǎ zi ma) — what’s up? / what are you doing?
+- **媳妇儿** (xí fù er) — wife / wifey
+- **变态** (biàn tài) — pervert / abnormal
+- **抗造** (kàng zào) — tough / durable / resilient
+- **辣妹子** (là mèi zi) — spicy girl / bold girl
+- **你皮子是不是痒了?** (nǐ pí zi shì bú shì yǎng le) — are you asking for a beating?
+- **小屁孩** (xiǎo pì hái) — little brat
 - **儿豁** (ér huō) — no cap / for real
 - **瞅啥呀** (chǒu shá ya) — what the hell are you looking at?
 
 ### `recognition-ready` (3)
 
 - **泰斗** (tài dǒu) — leading authority / grand master
-- **洒脱** (sǎtuō) — carefree and unrestrained
-- **牛逼** (niúbī) — awesome / badass / impressive
+- **洒脱** (sǎ tuō) — carefree and unrestrained
+- **牛逼** (niú bī) — awesome / badass / impressive
 
 ### `relationships` (1)
 
-- **媳妇儿** (xífur) — wife / wifey
+- **媳妇儿** (xí fù er) — wife / wifey
 
 ### `rude-playful` (4)
 
-- **变态** (biàntài) — pervert / abnormal
-- **你皮子是不是痒了?** (nǐ pízi shìbúshì yǎng le?) — are you asking for a beating?
-- **小屁孩** (xiǎopìhái) — little brat
+- **变态** (biàn tài) — pervert / abnormal
+- **你皮子是不是痒了?** (nǐ pí zi shì bú shì yǎng le) — are you asking for a beating?
+- **小屁孩** (xiǎo pì hái) — little brat
 - **瞅啥呀** (chǒu shá ya) — what the hell are you looking at?
 
 ### `slang` (15)
 
 - **酷毙了** (kù bì le) — super cool
-- **你爪子嘛** (nǐ zhuǎzi ma) — what’s up? / what are you doing?
-- **学霸** (xuébà) — straight-A student / top student
+- **你爪子嘛** (nǐ zhuǎ zi ma) — what’s up? / what are you doing?
+- **学霸** (xué bà) — straight-A student / top student
 - **哇塞** (wā sāi) — wow!
-- **媳妇儿** (xífur) — wife / wifey
-- **杠杠的** (gànggàng de) — awesome / excellent
-- **还凑合吧** (hái còuhe ba) — it’ll do / passable
-- **菜鸟** (càiniǎo) — noob / newbie
-- **抗造** (kàngzào) — tough / durable / resilient
-- **辣妹子** (là mèizi) — spicy girl / bold girl
-- **小屁孩** (xiǎopìhái) — little brat
-- **家伙** (jiāhuo) — guy / fellow / bloke
+- **媳妇儿** (xí fù er) — wife / wifey
+- **杠杠的** (gàng gàng de) — awesome / excellent
+- **还凑合吧** (hái còu hé ba) — it’ll do / passable
+- **菜鸟** (cài niǎo) — noob / newbie
+- **抗造** (kàng zào) — tough / durable / resilient
+- **辣妹子** (là mèi zi) — spicy girl / bold girl
+- **小屁孩** (xiǎo pì hái) — little brat
+- **家伙** (jiā huo) — guy / fellow / bloke
 - **无辣不欢** (wú là bù huān) — not spicy, not happy / can’t enjoy food without spice
 - **儿豁** (ér huō) — no cap / for real
-- **牛逼** (niúbī) — awesome / badass / impressive
+- **牛逼** (niú bī) — awesome / badass / impressive
 
 ### `tone-risky` (5)
 
-- **变态** (biàntài) — pervert / abnormal
-- **辣妹子** (là mèizi) — spicy girl / bold girl
-- **你皮子是不是痒了?** (nǐ pízi shìbúshì yǎng le?) — are you asking for a beating?
+- **变态** (biàn tài) — pervert / abnormal
+- **辣妹子** (là mèi zi) — spicy girl / bold girl
+- **你皮子是不是痒了?** (nǐ pí zi shì bú shì yǎng le) — are you asking for a beating?
 - **瞅啥呀** (chǒu shá ya) — what the hell are you looking at?
-- **牛逼** (niúbī) — awesome / badass / impressive
+- **牛逼** (niú bī) — awesome / badass / impressive
 
 ### `useful-phrases` (1)
 
@@ -775,4 +775,4 @@ _20 entries — `Chinese_Slang_Dialect_Flavor.tsv`_
 
 ### `vulgar` (1)
 
-- **牛逼** (niúbī) — awesome / badass / impressive
+- **牛逼** (niú bī) — awesome / badass / impressive
