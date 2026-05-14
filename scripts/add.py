@@ -104,7 +104,6 @@ def main() -> int:
 
     english = prompt("English (use / to separate senses)")
     note = prompt("Note (optional; include Example: 中文 / English)", allow_empty=True)
-    audio = ""  # reserved.
 
     print("\ntiers: production-ready, recognition-ready, recognition-first")
     while True:
@@ -125,10 +124,10 @@ def main() -> int:
                 print("aborted.")
                 return 1
 
-    fields = [hanzi, pinyin, english, note, audio, " ".join(tags)]
+    fields = [hanzi, pinyin, english, note, " ".join(tags)]
     print("\nrow to append:")
     for label, value in zip(
-        ["Hanzi", "Pinyin", "English", "Note", "Audio", "Tags"], fields
+        ["Hanzi", "Pinyin", "English", "Note", "Tags"], fields
     ):
         print(f"  {label:<7} {value}")
 

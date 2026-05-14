@@ -1,159 +1,162 @@
-﻿Hanzi	Pinyin	English	Note	Audio	Tags
-那个	nèige	um / uh	Example: 那个……我刚刚要说什么来着？ / Uh… what was I about to say?		conversation-glue filler production-ready
-怎么说呢	zěnme shuō ne	how should I put it	Example: 他这个人嘛，怎么说呢，挺有意思的。 / This guy, how should I put it… he’s quite interesting.		conversation-glue filler production-ready
-就是说	jiùshì shuō	what I mean is / that is to say	Example: 就是说，你不同意这个方案？ / So what you mean is, you don’t agree with this plan?		conversation-glue clarification production-ready
-我想想	wǒ xiǎngxiang	let me think	Example: 我想想，上次见他好像是去年的事了。 / Let me think, last time I saw him was last year.		conversation-glue filler production-ready
-等一下	děng yīxià	hold on a sec	Example: 等一下，你刚才说的那个地方叫什么？ / Hold on, what was that place you mentioned?		conversation-glue production-ready
-然后	ránhòu	and then	Example: 我们先吃饭，然后去看电影。 / We’ll eat first, and then go watch a movie.		conversation-glue connector production-ready
-我觉得	wǒ juéde	I think	Example: 我觉得你说的有道理。 / I think what you said makes sense.		conversation-glue opinion production-ready
-我感觉	wǒ gǎnjué	I feel / I feel like	Example: 我感觉这样做不太合适。 / I feel like doing it this way is not very suitable.		conversation-glue opinion production-ready
-说实话	shuō shíhuà	to be honest	Example: 说实话，我一开始觉得我学不会中文。 / To be honest, at first I thought I couldn’t learn Chinese.		conversation-glue opinion production-ready
-其实	qíshí	actually	Example: 其实我以前也不喜欢吃辣的。 / Actually, I didn’t use to like spicy food.		conversation-glue connector production-ready
-坦白说	tǎnbái shuō	frankly speaking	Example: 坦白说，我对这个结果不太满意。 / Frankly speaking, I’m not very satisfied with this result.		conversation-glue opinion production-ready
-要我说	yào wǒ shuō	if you ask me	Example: 要我说，这个办法更好。 / If you ask me, this method is better.		conversation-glue opinion production-ready
-我看	wǒ kàn	I’d say / in my view	Example: 我看这件事没那么简单。 / I’d say this matter isn’t that simple.		conversation-glue opinion production-ready
-真的吗	zhēn de ma	really?	Example: 真的吗？太好了！ / Really? That’s great!		reaction production-ready
-不会吧	bù huì ba	no way / seriously?	Example: 不会吧！你真的做到了？ / No way! You actually did it?		reaction production-ready
-原来如此	yuánlái rúcǐ	I see / so that’s how it is	Example: 原来如此，我明白了。 / So that’s how it is — I understand now.		conversation-glue reaction production-ready
-没想到	méi xiǎngdào	I didn’t expect that	Example: 没想到他会来！ / I didn’t expect him to come!		reaction production-ready
-有意思	yǒuyìsi	interesting	Example: 这个想法很有意思。 / This idea is interesting.		reaction production-ready
-然后呢	ránhòu ne	and then what?	Example: 你到了那里，然后呢？ / You got there, and then what?		conversation-glue production-ready
-确实	quèshí	indeed / true	Example: 确实，这个问题比我想的更复杂。 / Indeed, this problem is more complicated than I thought.		conversation-glue agreement production-ready
-这样啊	zhèyàng a	oh, I see	Example: 这样啊，那我明白了。 / Oh, I see — I understand now.		conversation-glue reaction production-ready
-难怪	nánguài	no wonder	Example: 难怪他昨天那么累。 / No wonder he was so tired yesterday.		conversation-glue reaction production-ready
-而且	érqiě	and also / moreover	Example: 这家店东西好吃，而且很便宜。 / This place has good food, and it’s also cheap.		connector production-ready
-另外	lìngwài	additionally / also	Example: 另外，我还想问你一件事。 / Also, I’d like to ask you something else.		connector production-ready
-还有	háiyǒu	and another thing / also	Example: 我需要买水果，还有牛奶。 / I need to buy fruit, and also milk.		connector production-ready
-不但…而且	bùdàn…érqiě	not only…but also	Example: 这个方法不但简单，而且效果很好。 / This method is not only simple, but also effective.		connector pattern production-ready
-甚至	shènzhì	even	Example: 他太忙了，甚至没时间吃饭。 / He’s so busy he doesn’t even have time to eat.		connector production-ready
-再加上	zài jiāshang	on top of that	Example: 人不够，再加上天气不好，计划取消了。 / There weren’t enough people, and on top of that the weather was bad, so the plan was cancelled.		connector production-ready
-特别是	tèbié shì	especially	Example: 我喜欢水果，特别是苹果。 / I like fruit, especially apples.		connector production-ready
-不过	bùguò	but / however	Example: 这道菜不错，不过有点咸。 / This dish is good, but a bit salty.		connector contrast production-ready
-虽然…但是	suīrán…dànshì	although…but	Example: 虽然很累，但是我觉得值得。 / Although I’m tired, I think it was worth it.		connector pattern production-ready
-反而	fǎn'ér	instead / on the contrary	Example: 我没复习，考试反而考得更好。 / I didn’t review, but actually did better on the exam.		connector contrast production-ready
-另一方面	lìngyì fāngmiàn	on the other hand	Example: 一方面我想出国，另一方面我不想离开家人。 / On one hand I want to go abroad; on the other, I don’t want to leave my family.		connector contrast production-ready
-相反	xiāngfǎn	on the contrary	Example: 我以为他会生气，相反，他很平静。 / I thought he would be angry; on the contrary, he was calm.		connector contrast production-ready
-不管怎样	bùguǎn zěnyàng	anyway / no matter what	Example: 不管怎样，我都会去。 / No matter what, I will go.		connector production-ready
-因为…所以	yīnwèi…suǒyǐ	because…so	Example: 因为他每天练习，所以进步很快。 / Because he practices every day, he improves quickly.		connector pattern production-ready
-这就是为什么	zhè jiùshì wèishénme	this is why	Example: 这就是为什么我觉得学汉字很重要。 / This is why I think learning characters is important.		connector production-ready
-反正	fǎnzheng	anyway / in any case	Example: 反正已经迟到了，别着急了。 / We’re already late anyway, so don’t stress.		conversation-glue production-ready
-既然	jìrán	since / now that	Example: 既然已经决定了，就不要后悔。 / Since you’ve already decided, don’t regret it.		connector production-ready
-结果	jiéguǒ	as a result	Example: 他没准备，结果失败了。 / He didn’t prepare, and as a result he failed.		connector production-ready
-换句话说	huànjùhuàshuō	in other words	Example: 换句话说，这个问题其实没那么复杂。 / In other words, this problem actually isn’t that complicated.		clarification production-ready
-我的意思是	wǒ de yìsi shì	what I mean is	Example: 我的意思是，还有更好的选择。 / What I mean is, there are better options.		clarification production-ready
-简单来说	jiǎndān lái shuō	simply put	Example: 简单来说，你需要多练习。 / Simply put, you need to practice more.		clarification production-ready
-所以说	suǒyǐ shuō	so what I’m saying is	Example: 所以说，我们应该早点准备。 / So what I’m saying is, we should prepare earlier.		clarification production-ready
-要不然	yàoburán	otherwise	Example: 你得快点，要不然我们会迟到。 / You need to hurry, otherwise we’ll be late.		connector production-ready
-对了	duìle	by the way / oh right	Example: 对了，我差点忘了告诉你一件事。 / Oh right, I almost forgot to tell you something.		conversation-glue transition production-ready
-说到这个	shuōdào zhège	speaking of this	Example: 说到这个，我想起来一件事。 / Speaking of this, I remembered something.		conversation-glue transition production-ready
-总之	zǒngzhī	in short / anyway	Example: 事情很复杂，总之最后解决了。 / It was complicated, but in short, it was resolved.		summary production-ready
-顺便说一下	shùnbiàn shuō yīxià	by the way	Example: 顺便说一下，明天我不在。 / By the way, I won’t be here tomorrow.		transition production-ready
-换个话题	huàn ge huàtí	change the subject	Example: 别说这个了，换个话题吧。 / Let’s not talk about this; let’s change the subject.		conversation-glue transition production-ready
-我同意	wǒ tóngyì	I agree	Example: 我同意你的看法。 / I agree with your opinion.		agreement production-ready
-没错	méicuò	exactly / that’s right	Example: 没错，问题就在这里。 / Exactly, that’s where the problem is.		agreement production-ready
-对对对	duì duì duì	right, right, right	Example: 对对对，我也是这么想的。 / Right, right, right, I also think so.		agreement production-ready
-也是	yě shì	that’s true	Example: 外面太冷了。也是，那我们就待在家吧。 / It’s too cold outside. True, then let’s stay home.		agreement production-ready
-你说得对	nǐ shuō de duì	you’re right	Example: 你说得对，我从来没想过这个角度。 / You’re right, I never thought about it from this angle.		agreement production-ready
-我不是说	wǒ bùshì shuō	I’m not saying	Example: 我不是说你做得不好，只是觉得可以更好。 / I’m not saying you did badly, I just think it could be better.		clarification production-ready
-话是这么说	huà shì zhème shuō	that may be true, but…	Example: 话是这么说，但是做起来没那么容易。 / That may be true, but it’s not that easy to do.		disagreement-softener production-ready
-也许我是错的	yěxǔ wǒ shì cuò de	I may be wrong	Example: 也许我是错的，但是我觉得我们走错方向了。 / I may be wrong, but I think we’re going the wrong way.		disagreement-softener production-ready
-不一定	bù yídìng	not necessarily	Example: 学得久不一定学得好。 / Studying for a long time doesn’t necessarily mean studying well.		disagreement-softener production-ready
-也不能这么说	yě bùnéng zhème shuō	not quite / you can’t really say that	Example: 中文太难了！也不能这么说，关键是看你怎么学。 / Chinese is too hard! Not quite — the key is how you study.		disagreement-softener production-ready
-最重要的是	zuì zhòngyào de shì	the most important thing is	Example: 最重要的是每天都练习。 / The most important thing is to practice every day.		emphasis production-ready
-关键是	guānjiàn shì	the key is	Example: 关键是你有没有用对方法。 / The key is whether you’re using the right method.		emphasis production-ready
-毕竟	bìjìng	after all	Example: 毕竟他只学了半年，已经很不错了。 / After all, he has only studied for half a year, so it’s already pretty good.		connector production-ready
-更重要的是	gèng zhòngyào de shì	more importantly	Example: 更重要的是，大家都同意。 / More importantly, everyone agrees.		emphasis production-ready
-油管	yóuguǎn	YouTube	Example: 我经常在油管上看中文视频。 / I often watch Chinese videos on YouTube.		internet-media everyday-vocab recognition-ready
-幸会	xìnghuì	pleasure to meet you	Example: 幸会幸会，很高兴认识你。 / Pleasure to meet you, nice to make your acquaintance. Slightly formal/polite.		useful-phrases greeting formal recognition-ready
-蛋白质	dànbáizhì	protein	Example: 鸡蛋和肉都有很多蛋白质。 / Eggs and meat have a lot of protein.		food health everyday-vocab
-碳水	tànshuǐ	carbs / carbohydrates	Example: 米饭和面条都是碳水。 / Rice and noodles are both carbs. Casual short form of 碳水化合物.		food health everyday-vocab
-最后	zuìhòu	finally	Example: 最后我想强调的是，方法比努力更重要。 / Finally, what I want to emphasize is that method matters more than effort.		summary production-ready
-那就这样吧	nà jiù zhèyàng ba	let’s leave it at that	Example: 好的，那就这样吧，回头再联系。 / Alright, let’s leave it at that and talk later.		closing production-ready
-先这样	xiān zhèyàng	that’s all for now	Example: 好，先这样，我们明天再聊。 / Okay, that’s all for now; let’s talk tomorrow.		closing production-ready
-回头再说	huítóu zàishuō	let’s talk later / we’ll discuss it later	Example: 这件事先不急，回头再说。 / This isn’t urgent; let’s talk about it later.		closing production-ready
-我先走了	wǒ xiān zǒu le	I’ll get going	Example: 好了，我先走了，下次再见！ / Alright, I’ll get going. See you next time!		closing production-ready
-改天再聊	gǎitiān zài liáo	let’s chat another day	Example: 今天聊得很开心，改天再聊！ / It was great chatting today; let’s talk another day!		closing production-ready
-过奖了	guòjiǎng le	you flatter me	Example: 你中文说得真好！过奖了，我还在学习。 / Your Chinese is really good! You flatter me, I’m still learning.		conversation-glue useful-phrases production-ready
-一般来说	yìbān lái shuō	generally speaking	Example: 一般来说，我晚上比较有空。 / Generally speaking, I’m more free in the evening.		conversation-glue connector production-ready
-抖音	Dǒuyīn	Douyin / Chinese TikTok	Example: 这个视频是在抖音上火起来的。 / This video became popular on Douyin.		internet-media everyday-vocab recognition-ready
-民歌	míngē	folk song	Example: 我想听一些中国民歌。 / I want to listen to some Chinese folk songs.		culture everyday-vocab
-省份	shěngfèn	province	Example: 四川是中国的一个省份。 / Sichuan is a province in China.		culture everyday-vocab
-母语	mǔyǔ	native language	Example: 你的母语是什么？ / What is your native language?		language-learning everyday-vocab
-网飞	Wǎngfēi	Netflix	Example: 你平时看网飞吗？ / Do you usually watch Netflix?		internet-media everyday-vocab
-歌词	gēcí	lyrics	Example: 这首歌的歌词很美。 / The lyrics of this song are beautiful.		media everyday-vocab
-心灵鸡汤	xīnlíng jītāng	motivational / inspirational content, often cliché or cheesy	Example: 这句话有点像心灵鸡汤。 / This sentence is kind of like motivational cliché content.		internet-media culture recognition-ready
-本科	běnkē	bachelor’s degree / undergraduate program	Example: 我现在在读本科。 / I’m currently studying for a bachelor’s degree.		education everyday-vocab
-发财	fācái	to get rich / make a fortune	Example: 祝你新年发财！ / Wishing you prosperity in the new year!		everyday-vocab
-抱负	bàofù	aspiration / ambition	Example: 他是一个很有抱负的人。 / He is a very ambitious person.		personality everyday-vocab
-圣诞节	Shèngdàn jié	Christmas	Example: 你圣诞节有什么计划？ / What plans do you have for Christmas?		holiday culture everyday-vocab
-圣诞老人	Shèngdàn lǎorén	Santa Claus	Example: 小孩子相信圣诞老人。 / Children believe in Santa Claus.		holiday culture everyday-vocab
-积累知识	jīlěi zhīshi	to accumulate knowledge	Example: 学语言需要慢慢积累知识。 / Learning a language requires slowly accumulating knowledge.		education useful-phrases
-朝代	cháodài	dynasty	Example: 唐朝是中国历史上很有名的朝代。 / The Tang was a famous dynasty in Chinese history.		culture-history everyday-vocab
-下载	xiàzài	to download	Example: 我已经下载了这个软件。 / I already downloaded this software.		technology everyday-vocab
-座右铭	zuòyòumíng	motto / life motto	Example: 你的座右铭是什么？ / What is your motto?		everyday-vocab
-目标	mùbiāo	goal / target	Example: 我的目标是每天学习中文。 / My goal is to study Chinese every day.		everyday-vocab
-有道理吗	yǒu dàolǐ ma	does that make sense?	Example: 我这样说有道理吗？ / Does what I’m saying make sense?		conversation-glue useful-phrases production-ready
-极光	jíguāng	aurora / northern lights	Example: 在芬兰有时候可以看到极光。 / In Finland, sometimes you can see the aurora.		nature everyday-vocab
-诗词	shīcí	poetry / classical poetry	Example: 我想学习一些中国诗词。 / I want to study some Chinese poetry.		culture everyday-vocab
-俚语	lǐyǔ	slang	Example: 这个词是俚语吗？ / Is this word slang?		language-learning everyday-vocab
-本地	běndì	local	Example: 这是本地人常去的餐厅。 / This is a restaurant local people often go to.		everyday-vocab
-土生土长	tǔshēng-tǔzhǎng	born and raised locally	Example: 他是土生土长的北京人。 / He was born and raised in Beijing.		culture useful-phrases
-佩服	pèifu	to admire / respect	Example: 我很佩服你的坚持。 / I really admire your persistence.		emotions-opinions everyday-vocab
-一见钟情	yījiàn zhōngqíng	love at first sight	Example: 他们说他们是一见钟情。 / They say it was love at first sight.		relationships useful-phrases
-弹舌	tán shé	to roll the tongue / rolled R sound	Example: 我不会弹舌。 / I can’t roll my tongue.		language-learning pronunciation
-八卦	bāguà	gossip / to gossip	Example: 她很喜欢八卦明星的事情。 / She really likes gossiping about celebrities.		everyday-vocab
-有道理	yǒu dàolǐ	makes sense / reasonable	Example: 你说得有道理。 / What you said makes sense.		conversation-glue agreement production-ready
-热身	rèshēn	warm up	Example: 运动前要先热身。 / You should warm up before exercising.		everyday-vocab
-间谍	jiàndié	spy	Example: 电影里的主角是一个间谍。 / The main character in the movie is a spy.		everyday-vocab
-少数民族	shǎoshù mínzú	ethnic minority	Example: 中国有很多少数民族。 / China has many ethnic minorities.		culture-society everyday-vocab
-直播	zhíbō	livestream / to livestream	Example: 他今晚要直播打游戏。 / He is going to livestream playing games tonight.		internet-media everyday-vocab
-经典	jīngdiǎn	classic	Example: 这是一首经典老歌。 / This is a classic old song.		media culture everyday-vocab
-女士优先	nǚshì yōuxiān	ladies first	Example: 女士优先，请你先进去。 / Ladies first, please go in first.		useful-phrases culture
-特别的风土人情	tèbié de fēngtǔ rénqíng	unique local customs and traditions	Example: 这个地方有特别的风土人情。 / This place has unique local customs and traditions.		culture useful-phrases
-可惜啦	kěxī la	that’s a pity	Example: 你不能来？可惜啦！ / You can’t come? That’s a pity!		conversation-glue reaction production-ready
-延迟	yánchí	delay / latency	Example: 今天网络延迟很高。 / The network latency is high today.		technology everyday-vocab
-风景	fēngjǐng	scenery	Example: 这里的风景很漂亮。 / The scenery here is beautiful.		nature everyday-vocab
-不知不觉地	bùzhībùjué de	unconsciously / without realizing it	Example: 不知不觉地，我已经学了一个小时。 / Without realizing it, I had already studied for an hour.		everyday-vocab useful-phrases
-儿化音	érhuàyīn	erhua / northern -r sound	Example: 北京话里有很多儿化音。 / Beijing speech has a lot of erhua sounds.		language-learning pronunciation culture
-那必须的！	nà bìxū de	of course! / absolutely!	Example: 你会继续学中文吗？那必须的！ / Will you keep learning Chinese? Of course!		conversation-glue reaction production-ready
-铁粉	tiěfěn	hardcore fan / big fan	Example: 我是这个乐队的铁粉。 / I’m a hardcore fan of this band.		internet-media slang
-点赞	diǎnzàn	to like / give a thumbs up online	Example: 如果你喜欢这个视频，记得点赞。 / If you like this video, remember to give it a like.		internet-media everyday-vocab
-地道	dìdao	authentic / genuine	Example: 他的中文说得很地道。 / His Chinese sounds very authentic.		everyday-vocab
-加密	jiāmì	encryption / to encrypt	Example: 这个文件需要加密。 / This file needs to be encrypted.		technology everyday-vocab
-模仿	mófǎng	to imitate	Example: 他很会模仿别人的声音。 / He is good at imitating other people’s voices.		everyday-vocab
-天才	tiāncái	genius	Example: 他真是个音乐天才。 / He really is a musical genius.		everyday-vocab
-障碍	zhàng'ài	barrier / obstacle	Example: 语言不是最大的障碍。 / Language is not the biggest barrier.		everyday-vocab
-网名	wǎngmíng	username / online name	Example: 你的网名是什么意思？ / What does your username mean?		internet-media everyday-vocab
-一模一样	yīmúyīyàng	exactly the same / identical	Example: 这两个东西一模一样。 / These two things are exactly the same.		everyday-vocab useful-phrases
-卡了	kǎ le	it froze / the connection lagged	Example: 你刚才卡了，我没听清楚。 / You lagged just now, I didn’t hear clearly.		technology useful-phrases production-ready
-零星	língxīng	scattered / here and there	Example: 我只记得一些零星的信息。 / I only remember some scattered information.		everyday-vocab
-服兵役	fú bīngyì	to serve in the military	Example: 在有些国家，年轻人必须服兵役。 / In some countries, young people must serve in the military.		society everyday-vocab
-强制的	qiángzhì de	mandatory / compulsory	Example: 这个课程是强制的吗？ / Is this course mandatory?		everyday-vocab
-这么说吧	zhème shuō ba	let’s put it this way	Example: 这么说吧，我不是不喜欢，只是不太习惯。 / Let’s put it this way: it’s not that I dislike it, I’m just not used to it.		conversation-glue production-ready
-时髦	shímáo	fashionable / trendy	Example: 这件衣服很时髦。 / This piece of clothing is very fashionable.		everyday-vocab
-贬义词	biǎnyìcí	derogatory term	Example: 这个词是贬义词，最好别乱用。 / This word is derogatory, so it’s best not to use it carelessly.		language-learning everyday-vocab
-超模	chāomó	supermodel	Example: 她以前是一个超模。 / She used to be a supermodel.		media everyday-vocab
-沉稳	chénwěn	composed / steady	Example: 他做事很沉稳。 / He handles things in a composed way.		personality everyday-vocab
-学者	xuézhě	scholar	Example: 他是一位研究中国历史的学者。 / He is a scholar who studies Chinese history.		education everyday-vocab
-顾虑	gùlǜ	concern / worry; to have concerns	Example: 我有一点顾虑。 / I have some concerns.		emotions-opinions everyday-vocab
-疲惫	píbèi	exhausted / fatigued	Example: 今天我感觉很疲惫。 / I feel very exhausted today.		emotions everyday-vocab
-基督教	Jīdūjiào	Christianity	Example: 基督教在很多国家都有信徒。 / Christianity has believers in many countries.		religion culture
-十字架	shízìjià	cross	Example: 教堂上有一个十字架。 / There is a cross on the church.		religion culture
-噩梦	èmèng	nightmare	Example: 我昨晚做了一个噩梦。 / I had a nightmare last night.		everyday-vocab
-文言文	wényánwén	Classical Chinese	Example: 文言文对我来说很难。 / Classical Chinese is very difficult for me.		culture-history language-learning
-白幼瘦	bái yòu shòu	pale, youthful, and thin beauty standard	Example: “白幼瘦”是一种有争议的审美标准。 / “Pale, young, and thin” is a controversial beauty standard.		culture-society recognition-first
-滤镜	lǜjìng	filter	Example: 这张照片用了滤镜。 / This photo used a filter.		internet-media everyday-vocab
-美颜	měiyán	beauty filter / beautifying effect	Example: 直播软件里常常有美颜功能。 / Livestreaming apps often have beauty filter features.		internet-media everyday-vocab
-精髓	jīngsuǐ	essence / core idea	Example: 这句话抓住了问题的精髓。 / This sentence captures the essence of the problem.		everyday-vocab
-复杂	fùzá	complicated / complex	Example: 这个语法点有点复杂。 / This grammar point is a bit complicated.		everyday-vocab
-看个人吧	kàn gèrén ba	depends on the person	Example: 好不好用？看个人吧。 / Is it easy to use? It depends on the person.		conversation-glue opinion production-ready
-火起来	huǒ qǐlái	to become popular / blow up online	Example: 这个梗最近火起来了。 / This meme has become popular recently.		internet-media useful-phrases
-还行吧，还行吧	hái xíng ba, hái xíng ba	it’s okay / just so-so	Example: 这家店怎么样？还行吧，还行吧。 / How is this restaurant? It’s okay, just so-so.		conversation-glue reaction production-ready
-客观地来讲	kèguān de lái jiǎng	objectively speaking	Example: 客观地来讲，这个办法更安全。 / Objectively speaking, this method is safer.		conversation-glue opinion production-ready
-掌握	zhǎngwò	to master / grasp	Example: 我还没完全掌握这个语法。 / I haven’t fully mastered this grammar yet.		education everyday-vocab
-提示	tíshì	hint / prompt / reminder	Example: 你能给我一个提示吗？ / Can you give me a hint?		technology everyday-vocab
-人工智能	réngōng zhìnéng	artificial intelligence	Example: 人工智能正在改变很多行业。 / Artificial intelligence is changing many industries.		technology everyday-vocab
-不可思议的	bùkěsīyì de	unbelievable / incredible	Example: 这是一个不可思议的故事。 / This is an unbelievable story.		everyday-vocab
-三观	sānguān	worldview / core values	Example: 我觉得我们的三观不太一样。 / I feel like our core values are not quite the same.		culture-society recognition-ready
-你懂的	nǐ dǒng de	you know what I mean	Example: 这个事情有点复杂，你懂的。 / This thing is a bit complicated, you know what I mean.		conversation-glue slang production-ready
-羡慕嫉妒恨	xiànmù jídù hèn	extremely envious / jealous	Example: 看到他去旅行，我真是羡慕嫉妒恨。 / Seeing him go traveling, I’m extremely envious.		internet-slang emotions recognition-first
+﻿#separator:tab
+#html:true
+#columns:Hanzi	Pinyin	English	Note	Tags
+#tags column:5
+那个	nèige	um / uh	Example: 那个……我刚刚要说什么来着？ / Uh… what was I about to say?	conversation-glue filler production-ready
+怎么说呢	zěnme shuō ne	how should I put it	Example: 他这个人嘛，怎么说呢，挺有意思的。 / This guy, how should I put it… he’s quite interesting.	conversation-glue filler production-ready
+就是说	jiùshì shuō	what I mean is / that is to say	Example: 就是说，你不同意这个方案？ / So what you mean is, you don’t agree with this plan?	conversation-glue clarification production-ready
+我想想	wǒ xiǎngxiang	let me think	Example: 我想想，上次见他好像是去年的事了。 / Let me think, last time I saw him was last year.	conversation-glue filler production-ready
+等一下	děng yīxià	hold on a sec	Example: 等一下，你刚才说的那个地方叫什么？ / Hold on, what was that place you mentioned?	conversation-glue production-ready
+然后	ránhòu	and then	Example: 我们先吃饭，然后去看电影。 / We’ll eat first, and then go watch a movie.	conversation-glue connector production-ready
+我觉得	wǒ juéde	I think	Example: 我觉得你说的有道理。 / I think what you said makes sense.	conversation-glue opinion production-ready
+我感觉	wǒ gǎnjué	I feel / I feel like	Example: 我感觉这样做不太合适。 / I feel like doing it this way is not very suitable.	conversation-glue opinion production-ready
+说实话	shuō shíhuà	to be honest	Example: 说实话，我一开始觉得我学不会中文。 / To be honest, at first I thought I couldn’t learn Chinese.	conversation-glue opinion production-ready
+其实	qíshí	actually	Example: 其实我以前也不喜欢吃辣的。 / Actually, I didn’t use to like spicy food.	conversation-glue connector production-ready
+坦白说	tǎnbái shuō	frankly speaking	Example: 坦白说，我对这个结果不太满意。 / Frankly speaking, I’m not very satisfied with this result.	conversation-glue opinion production-ready
+要我说	yào wǒ shuō	if you ask me	Example: 要我说，这个办法更好。 / If you ask me, this method is better.	conversation-glue opinion production-ready
+我看	wǒ kàn	I’d say / in my view	Example: 我看这件事没那么简单。 / I’d say this matter isn’t that simple.	conversation-glue opinion production-ready
+真的吗	zhēn de ma	really?	Example: 真的吗？太好了！ / Really? That’s great!	reaction production-ready
+不会吧	bù huì ba	no way / seriously?	Example: 不会吧！你真的做到了？ / No way! You actually did it?	reaction production-ready
+原来如此	yuánlái rúcǐ	I see / so that’s how it is	Example: 原来如此，我明白了。 / So that’s how it is — I understand now.	conversation-glue reaction production-ready
+没想到	méi xiǎngdào	I didn’t expect that	Example: 没想到他会来！ / I didn’t expect him to come!	reaction production-ready
+有意思	yǒuyìsi	interesting	Example: 这个想法很有意思。 / This idea is interesting.	reaction production-ready
+然后呢	ránhòu ne	and then what?	Example: 你到了那里，然后呢？ / You got there, and then what?	conversation-glue production-ready
+确实	quèshí	indeed / true	Example: 确实，这个问题比我想的更复杂。 / Indeed, this problem is more complicated than I thought.	conversation-glue agreement production-ready
+这样啊	zhèyàng a	oh, I see	Example: 这样啊，那我明白了。 / Oh, I see — I understand now.	conversation-glue reaction production-ready
+难怪	nánguài	no wonder	Example: 难怪他昨天那么累。 / No wonder he was so tired yesterday.	conversation-glue reaction production-ready
+而且	érqiě	and also / moreover	Example: 这家店东西好吃，而且很便宜。 / This place has good food, and it’s also cheap.	connector production-ready
+另外	lìngwài	additionally / also	Example: 另外，我还想问你一件事。 / Also, I’d like to ask you something else.	connector production-ready
+还有	háiyǒu	and another thing / also	Example: 我需要买水果，还有牛奶。 / I need to buy fruit, and also milk.	connector production-ready
+不但…而且	bùdàn…érqiě	not only…but also	Example: 这个方法不但简单，而且效果很好。 / This method is not only simple, but also effective.	connector pattern production-ready
+甚至	shènzhì	even	Example: 他太忙了，甚至没时间吃饭。 / He’s so busy he doesn’t even have time to eat.	connector production-ready
+再加上	zài jiāshang	on top of that	Example: 人不够，再加上天气不好，计划取消了。 / There weren’t enough people, and on top of that the weather was bad, so the plan was cancelled.	connector production-ready
+特别是	tèbié shì	especially	Example: 我喜欢水果，特别是苹果。 / I like fruit, especially apples.	connector production-ready
+不过	bùguò	but / however	Example: 这道菜不错，不过有点咸。 / This dish is good, but a bit salty.	connector contrast production-ready
+虽然…但是	suīrán…dànshì	although…but	Example: 虽然很累，但是我觉得值得。 / Although I’m tired, I think it was worth it.	connector pattern production-ready
+反而	fǎn'ér	instead / on the contrary	Example: 我没复习，考试反而考得更好。 / I didn’t review, but actually did better on the exam.	connector contrast production-ready
+另一方面	lìngyì fāngmiàn	on the other hand	Example: 一方面我想出国，另一方面我不想离开家人。 / On one hand I want to go abroad; on the other, I don’t want to leave my family.	connector contrast production-ready
+相反	xiāngfǎn	on the contrary	Example: 我以为他会生气，相反，他很平静。 / I thought he would be angry; on the contrary, he was calm.	connector contrast production-ready
+不管怎样	bùguǎn zěnyàng	anyway / no matter what	Example: 不管怎样，我都会去。 / No matter what, I will go.	connector production-ready
+因为…所以	yīnwèi…suǒyǐ	because…so	Example: 因为他每天练习，所以进步很快。 / Because he practices every day, he improves quickly.	connector pattern production-ready
+这就是为什么	zhè jiùshì wèishénme	this is why	Example: 这就是为什么我觉得学汉字很重要。 / This is why I think learning characters is important.	connector production-ready
+反正	fǎnzheng	anyway / in any case	Example: 反正已经迟到了，别着急了。 / We’re already late anyway, so don’t stress.	conversation-glue production-ready
+既然	jìrán	since / now that	Example: 既然已经决定了，就不要后悔。 / Since you’ve already decided, don’t regret it.	connector production-ready
+结果	jiéguǒ	as a result	Example: 他没准备，结果失败了。 / He didn’t prepare, and as a result he failed.	connector production-ready
+换句话说	huànjùhuàshuō	in other words	Example: 换句话说，这个问题其实没那么复杂。 / In other words, this problem actually isn’t that complicated.	clarification production-ready
+我的意思是	wǒ de yìsi shì	what I mean is	Example: 我的意思是，还有更好的选择。 / What I mean is, there are better options.	clarification production-ready
+简单来说	jiǎndān lái shuō	simply put	Example: 简单来说，你需要多练习。 / Simply put, you need to practice more.	clarification production-ready
+所以说	suǒyǐ shuō	so what I’m saying is	Example: 所以说，我们应该早点准备。 / So what I’m saying is, we should prepare earlier.	clarification production-ready
+要不然	yàoburán	otherwise	Example: 你得快点，要不然我们会迟到。 / You need to hurry, otherwise we’ll be late.	connector production-ready
+对了	duìle	by the way / oh right	Example: 对了，我差点忘了告诉你一件事。 / Oh right, I almost forgot to tell you something.	conversation-glue transition production-ready
+说到这个	shuōdào zhège	speaking of this	Example: 说到这个，我想起来一件事。 / Speaking of this, I remembered something.	conversation-glue transition production-ready
+总之	zǒngzhī	in short / anyway	Example: 事情很复杂，总之最后解决了。 / It was complicated, but in short, it was resolved.	summary production-ready
+顺便说一下	shùnbiàn shuō yīxià	by the way	Example: 顺便说一下，明天我不在。 / By the way, I won’t be here tomorrow.	transition production-ready
+换个话题	huàn ge huàtí	change the subject	Example: 别说这个了，换个话题吧。 / Let’s not talk about this; let’s change the subject.	conversation-glue transition production-ready
+我同意	wǒ tóngyì	I agree	Example: 我同意你的看法。 / I agree with your opinion.	agreement production-ready
+没错	méicuò	exactly / that’s right	Example: 没错，问题就在这里。 / Exactly, that’s where the problem is.	agreement production-ready
+对对对	duì duì duì	right, right, right	Example: 对对对，我也是这么想的。 / Right, right, right, I also think so.	agreement production-ready
+也是	yě shì	that’s true	Example: 外面太冷了。也是，那我们就待在家吧。 / It’s too cold outside. True, then let’s stay home.	agreement production-ready
+你说得对	nǐ shuō de duì	you’re right	Example: 你说得对，我从来没想过这个角度。 / You’re right, I never thought about it from this angle.	agreement production-ready
+我不是说	wǒ bùshì shuō	I’m not saying	Example: 我不是说你做得不好，只是觉得可以更好。 / I’m not saying you did badly, I just think it could be better.	clarification production-ready
+话是这么说	huà shì zhème shuō	that may be true, but…	Example: 话是这么说，但是做起来没那么容易。 / That may be true, but it’s not that easy to do.	disagreement-softener production-ready
+也许我是错的	yěxǔ wǒ shì cuò de	I may be wrong	Example: 也许我是错的，但是我觉得我们走错方向了。 / I may be wrong, but I think we’re going the wrong way.	disagreement-softener production-ready
+不一定	bù yídìng	not necessarily	Example: 学得久不一定学得好。 / Studying for a long time doesn’t necessarily mean studying well.	disagreement-softener production-ready
+也不能这么说	yě bùnéng zhème shuō	not quite / you can’t really say that	Example: 中文太难了！也不能这么说，关键是看你怎么学。 / Chinese is too hard! Not quite — the key is how you study.	disagreement-softener production-ready
+最重要的是	zuì zhòngyào de shì	the most important thing is	Example: 最重要的是每天都练习。 / The most important thing is to practice every day.	emphasis production-ready
+关键是	guānjiàn shì	the key is	Example: 关键是你有没有用对方法。 / The key is whether you’re using the right method.	emphasis production-ready
+毕竟	bìjìng	after all	Example: 毕竟他只学了半年，已经很不错了。 / After all, he has only studied for half a year, so it’s already pretty good.	connector production-ready
+更重要的是	gèng zhòngyào de shì	more importantly	Example: 更重要的是，大家都同意。 / More importantly, everyone agrees.	emphasis production-ready
+油管	yóuguǎn	YouTube	Example: 我经常在油管上看中文视频。 / I often watch Chinese videos on YouTube.	internet-media everyday-vocab recognition-ready
+幸会	xìnghuì	pleasure to meet you	Example: 幸会幸会，很高兴认识你。 / Pleasure to meet you, nice to make your acquaintance. Slightly formal/polite.	useful-phrases greeting formal recognition-ready
+蛋白质	dànbáizhì	protein	Example: 鸡蛋和肉都有很多蛋白质。 / Eggs and meat have a lot of protein.	food health everyday-vocab
+碳水	tànshuǐ	carbs / carbohydrates	Example: 米饭和面条都是碳水。 / Rice and noodles are both carbs. Casual short form of 碳水化合物.	food health everyday-vocab
+最后	zuìhòu	finally	Example: 最后我想强调的是，方法比努力更重要。 / Finally, what I want to emphasize is that method matters more than effort.	summary production-ready
+那就这样吧	nà jiù zhèyàng ba	let’s leave it at that	Example: 好的，那就这样吧，回头再联系。 / Alright, let’s leave it at that and talk later.	closing production-ready
+先这样	xiān zhèyàng	that’s all for now	Example: 好，先这样，我们明天再聊。 / Okay, that’s all for now; let’s talk tomorrow.	closing production-ready
+回头再说	huítóu zàishuō	let’s talk later / we’ll discuss it later	Example: 这件事先不急，回头再说。 / This isn’t urgent; let’s talk about it later.	closing production-ready
+我先走了	wǒ xiān zǒu le	I’ll get going	Example: 好了，我先走了，下次再见！ / Alright, I’ll get going. See you next time!	closing production-ready
+改天再聊	gǎitiān zài liáo	let’s chat another day	Example: 今天聊得很开心，改天再聊！ / It was great chatting today; let’s talk another day!	closing production-ready
+过奖了	guòjiǎng le	you flatter me	Example: 你中文说得真好！过奖了，我还在学习。 / Your Chinese is really good! You flatter me, I’m still learning.	conversation-glue useful-phrases production-ready
+一般来说	yìbān lái shuō	generally speaking	Example: 一般来说，我晚上比较有空。 / Generally speaking, I’m more free in the evening.	conversation-glue connector production-ready
+抖音	Dǒuyīn	Douyin / Chinese TikTok	Example: 这个视频是在抖音上火起来的。 / This video became popular on Douyin.	internet-media everyday-vocab recognition-ready
+民歌	míngē	folk song	Example: 我想听一些中国民歌。 / I want to listen to some Chinese folk songs.	culture everyday-vocab
+省份	shěngfèn	province	Example: 四川是中国的一个省份。 / Sichuan is a province in China.	culture everyday-vocab
+母语	mǔyǔ	native language	Example: 你的母语是什么？ / What is your native language?	language-learning everyday-vocab
+网飞	Wǎngfēi	Netflix	Example: 你平时看网飞吗？ / Do you usually watch Netflix?	internet-media everyday-vocab
+歌词	gēcí	lyrics	Example: 这首歌的歌词很美。 / The lyrics of this song are beautiful.	media everyday-vocab
+心灵鸡汤	xīnlíng jītāng	motivational / inspirational content, often cliché or cheesy	Example: 这句话有点像心灵鸡汤。 / This sentence is kind of like motivational cliché content.	internet-media culture recognition-ready
+本科	běnkē	bachelor’s degree / undergraduate program	Example: 我现在在读本科。 / I’m currently studying for a bachelor’s degree.	education everyday-vocab
+发财	fācái	to get rich / make a fortune	Example: 祝你新年发财！ / Wishing you prosperity in the new year!	everyday-vocab
+抱负	bàofù	aspiration / ambition	Example: 他是一个很有抱负的人。 / He is a very ambitious person.	personality everyday-vocab
+圣诞节	Shèngdàn jié	Christmas	Example: 你圣诞节有什么计划？ / What plans do you have for Christmas?	holiday culture everyday-vocab
+圣诞老人	Shèngdàn lǎorén	Santa Claus	Example: 小孩子相信圣诞老人。 / Children believe in Santa Claus.	holiday culture everyday-vocab
+积累知识	jīlěi zhīshi	to accumulate knowledge	Example: 学语言需要慢慢积累知识。 / Learning a language requires slowly accumulating knowledge.	education useful-phrases
+朝代	cháodài	dynasty	Example: 唐朝是中国历史上很有名的朝代。 / The Tang was a famous dynasty in Chinese history.	culture-history everyday-vocab
+下载	xiàzài	to download	Example: 我已经下载了这个软件。 / I already downloaded this software.	technology everyday-vocab
+座右铭	zuòyòumíng	motto / life motto	Example: 你的座右铭是什么？ / What is your motto?	everyday-vocab
+目标	mùbiāo	goal / target	Example: 我的目标是每天学习中文。 / My goal is to study Chinese every day.	everyday-vocab
+有道理吗	yǒu dàolǐ ma	does that make sense?	Example: 我这样说有道理吗？ / Does what I’m saying make sense?	conversation-glue useful-phrases production-ready
+极光	jíguāng	aurora / northern lights	Example: 在芬兰有时候可以看到极光。 / In Finland, sometimes you can see the aurora.	nature everyday-vocab
+诗词	shīcí	poetry / classical poetry	Example: 我想学习一些中国诗词。 / I want to study some Chinese poetry.	culture everyday-vocab
+俚语	lǐyǔ	slang	Example: 这个词是俚语吗？ / Is this word slang?	language-learning everyday-vocab
+本地	běndì	local	Example: 这是本地人常去的餐厅。 / This is a restaurant local people often go to.	everyday-vocab
+土生土长	tǔshēng-tǔzhǎng	born and raised locally	Example: 他是土生土长的北京人。 / He was born and raised in Beijing.	culture useful-phrases
+佩服	pèifu	to admire / respect	Example: 我很佩服你的坚持。 / I really admire your persistence.	emotions-opinions everyday-vocab
+一见钟情	yījiàn zhōngqíng	love at first sight	Example: 他们说他们是一见钟情。 / They say it was love at first sight.	relationships useful-phrases
+弹舌	tán shé	to roll the tongue / rolled R sound	Example: 我不会弹舌。 / I can’t roll my tongue.	language-learning pronunciation
+八卦	bāguà	gossip / to gossip	Example: 她很喜欢八卦明星的事情。 / She really likes gossiping about celebrities.	everyday-vocab
+有道理	yǒu dàolǐ	makes sense / reasonable	Example: 你说得有道理。 / What you said makes sense.	conversation-glue agreement production-ready
+热身	rèshēn	warm up	Example: 运动前要先热身。 / You should warm up before exercising.	everyday-vocab
+间谍	jiàndié	spy	Example: 电影里的主角是一个间谍。 / The main character in the movie is a spy.	everyday-vocab
+少数民族	shǎoshù mínzú	ethnic minority	Example: 中国有很多少数民族。 / China has many ethnic minorities.	culture-society everyday-vocab
+直播	zhíbō	livestream / to livestream	Example: 他今晚要直播打游戏。 / He is going to livestream playing games tonight.	internet-media everyday-vocab
+经典	jīngdiǎn	classic	Example: 这是一首经典老歌。 / This is a classic old song.	media culture everyday-vocab
+女士优先	nǚshì yōuxiān	ladies first	Example: 女士优先，请你先进去。 / Ladies first, please go in first.	useful-phrases culture
+特别的风土人情	tèbié de fēngtǔ rénqíng	unique local customs and traditions	Example: 这个地方有特别的风土人情。 / This place has unique local customs and traditions.	culture useful-phrases
+可惜啦	kěxī la	that’s a pity	Example: 你不能来？可惜啦！ / You can’t come? That’s a pity!	conversation-glue reaction production-ready
+延迟	yánchí	delay / latency	Example: 今天网络延迟很高。 / The network latency is high today.	technology everyday-vocab
+风景	fēngjǐng	scenery	Example: 这里的风景很漂亮。 / The scenery here is beautiful.	nature everyday-vocab
+不知不觉地	bùzhībùjué de	unconsciously / without realizing it	Example: 不知不觉地，我已经学了一个小时。 / Without realizing it, I had already studied for an hour.	everyday-vocab useful-phrases
+儿化音	érhuàyīn	erhua / northern -r sound	Example: 北京话里有很多儿化音。 / Beijing speech has a lot of erhua sounds.	language-learning pronunciation culture
+那必须的！	nà bìxū de	of course! / absolutely!	Example: 你会继续学中文吗？那必须的！ / Will you keep learning Chinese? Of course!	conversation-glue reaction production-ready
+铁粉	tiěfěn	hardcore fan / big fan	Example: 我是这个乐队的铁粉。 / I’m a hardcore fan of this band.	internet-media slang
+点赞	diǎnzàn	to like / give a thumbs up online	Example: 如果你喜欢这个视频，记得点赞。 / If you like this video, remember to give it a like.	internet-media everyday-vocab
+地道	dìdao	authentic / genuine	Example: 他的中文说得很地道。 / His Chinese sounds very authentic.	everyday-vocab
+加密	jiāmì	encryption / to encrypt	Example: 这个文件需要加密。 / This file needs to be encrypted.	technology everyday-vocab
+模仿	mófǎng	to imitate	Example: 他很会模仿别人的声音。 / He is good at imitating other people’s voices.	everyday-vocab
+天才	tiāncái	genius	Example: 他真是个音乐天才。 / He really is a musical genius.	everyday-vocab
+障碍	zhàng'ài	barrier / obstacle	Example: 语言不是最大的障碍。 / Language is not the biggest barrier.	everyday-vocab
+网名	wǎngmíng	username / online name	Example: 你的网名是什么意思？ / What does your username mean?	internet-media everyday-vocab
+一模一样	yīmúyīyàng	exactly the same / identical	Example: 这两个东西一模一样。 / These two things are exactly the same.	everyday-vocab useful-phrases
+卡了	kǎ le	it froze / the connection lagged	Example: 你刚才卡了，我没听清楚。 / You lagged just now, I didn’t hear clearly.	technology useful-phrases production-ready
+零星	língxīng	scattered / here and there	Example: 我只记得一些零星的信息。 / I only remember some scattered information.	everyday-vocab
+服兵役	fú bīngyì	to serve in the military	Example: 在有些国家，年轻人必须服兵役。 / In some countries, young people must serve in the military.	society everyday-vocab
+强制的	qiángzhì de	mandatory / compulsory	Example: 这个课程是强制的吗？ / Is this course mandatory?	everyday-vocab
+这么说吧	zhème shuō ba	let’s put it this way	Example: 这么说吧，我不是不喜欢，只是不太习惯。 / Let’s put it this way: it’s not that I dislike it, I’m just not used to it.	conversation-glue production-ready
+时髦	shímáo	fashionable / trendy	Example: 这件衣服很时髦。 / This piece of clothing is very fashionable.	everyday-vocab
+贬义词	biǎnyìcí	derogatory term	Example: 这个词是贬义词，最好别乱用。 / This word is derogatory, so it’s best not to use it carelessly.	language-learning everyday-vocab
+超模	chāomó	supermodel	Example: 她以前是一个超模。 / She used to be a supermodel.	media everyday-vocab
+沉稳	chénwěn	composed / steady	Example: 他做事很沉稳。 / He handles things in a composed way.	personality everyday-vocab
+学者	xuézhě	scholar	Example: 他是一位研究中国历史的学者。 / He is a scholar who studies Chinese history.	education everyday-vocab
+顾虑	gùlǜ	concern / worry; to have concerns	Example: 我有一点顾虑。 / I have some concerns.	emotions-opinions everyday-vocab
+疲惫	píbèi	exhausted / fatigued	Example: 今天我感觉很疲惫。 / I feel very exhausted today.	emotions everyday-vocab
+基督教	Jīdūjiào	Christianity	Example: 基督教在很多国家都有信徒。 / Christianity has believers in many countries.	religion culture
+十字架	shízìjià	cross	Example: 教堂上有一个十字架。 / There is a cross on the church.	religion culture
+噩梦	èmèng	nightmare	Example: 我昨晚做了一个噩梦。 / I had a nightmare last night.	everyday-vocab
+文言文	wényánwén	Classical Chinese	Example: 文言文对我来说很难。 / Classical Chinese is very difficult for me.	culture-history language-learning
+白幼瘦	bái yòu shòu	pale, youthful, and thin beauty standard	Example: “白幼瘦”是一种有争议的审美标准。 / “Pale, young, and thin” is a controversial beauty standard.	culture-society recognition-first
+滤镜	lǜjìng	filter	Example: 这张照片用了滤镜。 / This photo used a filter.	internet-media everyday-vocab
+美颜	měiyán	beauty filter / beautifying effect	Example: 直播软件里常常有美颜功能。 / Livestreaming apps often have beauty filter features.	internet-media everyday-vocab
+精髓	jīngsuǐ	essence / core idea	Example: 这句话抓住了问题的精髓。 / This sentence captures the essence of the problem.	everyday-vocab
+复杂	fùzá	complicated / complex	Example: 这个语法点有点复杂。 / This grammar point is a bit complicated.	everyday-vocab
+看个人吧	kàn gèrén ba	depends on the person	Example: 好不好用？看个人吧。 / Is it easy to use? It depends on the person.	conversation-glue opinion production-ready
+火起来	huǒ qǐlái	to become popular / blow up online	Example: 这个梗最近火起来了。 / This meme has become popular recently.	internet-media useful-phrases
+还行吧，还行吧	hái xíng ba, hái xíng ba	it’s okay / just so-so	Example: 这家店怎么样？还行吧，还行吧。 / How is this restaurant? It’s okay, just so-so.	conversation-glue reaction production-ready
+客观地来讲	kèguān de lái jiǎng	objectively speaking	Example: 客观地来讲，这个办法更安全。 / Objectively speaking, this method is safer.	conversation-glue opinion production-ready
+掌握	zhǎngwò	to master / grasp	Example: 我还没完全掌握这个语法。 / I haven’t fully mastered this grammar yet.	education everyday-vocab
+提示	tíshì	hint / prompt / reminder	Example: 你能给我一个提示吗？ / Can you give me a hint?	technology everyday-vocab
+人工智能	réngōng zhìnéng	artificial intelligence	Example: 人工智能正在改变很多行业。 / Artificial intelligence is changing many industries.	technology everyday-vocab
+不可思议的	bùkěsīyì de	unbelievable / incredible	Example: 这是一个不可思议的故事。 / This is an unbelievable story.	everyday-vocab
+三观	sānguān	worldview / core values	Example: 我觉得我们的三观不太一样。 / I feel like our core values are not quite the same.	culture-society recognition-ready
+你懂的	nǐ dǒng de	you know what I mean	Example: 这个事情有点复杂，你懂的。 / This thing is a bit complicated, you know what I mean.	conversation-glue slang production-ready
+羡慕嫉妒恨	xiànmù jídù hèn	extremely envious / jealous	Example: 看到他去旅行，我真是羡慕嫉妒恨。 / Seeing him go traveling, I’m extremely envious.	internet-slang emotions recognition-first

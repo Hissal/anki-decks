@@ -1,41 +1,44 @@
-Hanzi	Pinyin	English	Note	Audio	Tags
-面红耳赤	miànhóng ěrchì	red-faced / flushed	Often from embarrassment, anger, or argument.<br>面 (face) 红 (red) 耳 (ear) 赤 (flushed)		chengyu emotions recognition-ready
-银装素裹	yínzhuāng sùguǒ	wrapped in white / covered in snow	Poetic description of a snowy white landscape.<br>银 (silver) 装 (dress) 素 (white) 裹 (wrap)		literary nature recognition-first
-苦尽甘来	kǔ jìn gān lái	after bitterness comes sweetness	Hardship eventually leads to good results.<br>苦 (bitter) 尽 (end) 甘 (sweet) 来 (come)		chengyu life-advice recognition-ready
-别来无恙	bié lái wú yàng	have you been well since we last met?	Old-fashioned/literary greeting. Good for classical flavor, not normal daily greeting.<br>别 (part) 来 (since) 无 (no) 恙 (illness)		classical-flavor literary recognition-first
-彻头彻尾	chètóu chèwěi	through and through / complete	Means completely or downright, often before a negative noun/adjective.<br>彻 (through) 头 (head) 尾 (tail)		chengyu recognition-ready
-炉火纯青	lúhuǒ chúnqīng	brought to perfection	Describes a skill that has reached a very high level.<br>炉 (furnace) 火 (fire) 纯 (pure) 青 (blue-green)		chengyu skill recognition-ready
-礼尚往来	lǐshàng wǎnglái	courtesy should be reciprocated	Used for social reciprocity: favors, gifts, respect, politeness.<br>礼 (courtesy) 尚 (esteem) 往 (go) 来 (come)		chengyu culture recognition-ready
-天伦之乐	tiānlún zhī lè	family happiness	Literary phrase for joy from family relationships.<br>天 (heaven) 伦 (relations) 之 (of) 乐 (joy)		chengyu literary recognition-first
-绞尽脑汁	jiǎojìn nǎozhī	to rack one’s brains	Literally to squeeze out all the brain juice; used when thinking very hard.<br>绞 (wring) 尽 (exhaust) 脑 (brain) 汁 (juice)		chengyu production-ready
-截然不同	jiérán bù tóng	completely different	Useful idiom-like phrase; fairly practical.<br>截 (cut) 然 (so) 不 (not) 同 (same)		chengyu production-ready
-志同道合	zhìtóng dàohé	like-minded	Used for people who share goals, ideals, or values.<br>志 (aspiration) 同 (same) 道 (path) 合 (match)		chengyu relationships recognition-ready
-深情厚谊	shēnqíng hòuyì	deep affection and friendship	Formal/literary expression for a strong bond.<br>深 (deep) 情 (feeling) 厚 (thick) 谊 (friendship)		chengyu literary relationships recognition-first
-知音难觅	zhīyīn nán mì	a true soulmate is hard to find	Literary phrase about finding someone who truly understands you.<br>知 (know) 音 (tone) 难 (hard) 觅 (seek)		chengyu literary relationships recognition-first
-火上浇油	huǒ shàng jiāo yóu	to add fuel to the fire	Used when making an already bad situation worse.<br>火 (fire) 上 (on) 浇 (pour) 油 (oil)		chengyu production-ready
-怒火中烧	nù huǒ zhōng shāo	burning with anger / seething	Literary-sounding expression for intense anger.<br>怒 (anger) 火 (fire) 中 (within) 烧 (burn)		chengyu emotions recognition-ready
-吃一堑，长一智	chī yí qiàn, zhǎng yí zhì	learn from a setback	Proverb: one fall into a pit, one gain in wisdom.<br>吃 (eat) 一 (one) 堑 (pit) 长 (gain) 智 (wisdom)		proverb life-advice recognition-ready
-熟能生巧	shú néng shēng qiǎo	practice makes perfect	Very useful proverb/idiom.<br>熟 (familiar) 能 (can) 生 (produce) 巧 (skill)		chengyu proverb life-advice production-ready
-大器晚成	dàqì wǎnchéng	great talent matures late	Used for people who succeed later after long development.<br>大 (great) 器 (vessel) 晚 (late) 成 (achieve)		chengyu life-advice recognition-ready
-逆境出人才	nìjìng chū réncái	hardship produces talent	Proverb-like motivational saying.<br>逆 (adverse) 境 (situation) 出 (produce) 人 (person) 才 (talent)		proverb life-advice recognition-ready
-功到自然成	gōng dào zìrán chéng	constant effort brings sure success	Proverb: when the work is done, success follows naturally.<br>功 (effort) 到 (arrive) 自 (self) 然 (so) 成 (succeed)		proverb life-advice recognition-ready
-不怕慢，就怕站	bù pà màn, jiù pà zhàn	better slow progress than standing still	Proverb encouraging steady progress.<br>不 (not) 怕 (fear) 慢 (slow) 就 (only) 站 (stand still)		proverb life-advice recognition-ready
-文武双全	wén wǔ shuāng quán	skilled in both pen and sword	Classical/literary praise for someone capable in both intellectual and martial areas.<br>文 (literary) 武 (martial) 双 (both) 全 (complete)		chengyu classical-flavor recognition-first
-谦虚使人进步，骄傲使人落后	qiānxū shǐ rén jìnbù, jiāo'ào shǐ rén luòhòu	modesty helps one progress; pride makes one fall behind	Well-known saying associated with self-improvement and humility.<br>谦 (modest) 虚 (humble) 使 (cause) 人 (person) 进 (advance) 步 (step) 骄 (proud) 傲 (arrogant) 落 (fall) 后 (behind)		proverb life-advice recognition-ready
-君君臣臣父父子子	jūn jūn, chén chén, fù fù, zǐ zǐ	rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons	Classical Confucian phrase about proper social roles.<br>君 (ruler) 臣 (minister) 父 (father) 子 (son)		classical-flavor literary recognition-first
-有志者事竟成	yǒu zhì zhě shì jìng chéng	where there is a will, there is a way	Common motivational proverb.<br>有 (have) 志 (will) 者 (one who) 事 (matter) 竟 (ultimately) 成 (succeed)		proverb life-advice recognition-ready
-舍得一身剐，敢把皇帝拉下马	shěde yìshēn guǎ, gǎn bǎ huángdì lā xià mǎ	one who fears not being cut to pieces dares to unhorse the emperor	Bold proverb about daring to challenge power despite great risk.<br>舍 (give up) 得 (willing) 一 (one) 身 (body) 剐 (cut to pieces) 敢 (dare) 把 (take) 皇 (imperial) 帝 (emperor) 拉 (pull) 下 (down) 马 (horse)		proverb classical-flavor recognition-first
-摸着石头过河	mōzhe shítou guòhé	cross the river by feeling the stones	Proceed cautiously through trial and error.<br>摸 (feel) 着 (-ing) 石 (stone) 头 (suffix) 过 (cross) 河 (river)		proverb culture-history recognition-ready
-杞人忧天	qǐ rén yōu tiān	to worry unnecessarily	Literally a man of Qi worrying the sky will fall; imaginary/unnecessary anxiety.<br>杞 (Qi state) 人 (man) 忧 (worry) 天 (sky)		chengyu recognition-ready
-画蛇添足	huàshé tiānzú	draw a snake and add feet / overdo it	From a fable — adding superfluous detail ruins the work. Used when extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)		recognition-ready chengyu life-advice
-守株待兔	shǒuzhū dàitù	wait by the stump for a rabbit	Fable: farmer saw one rabbit hit a stump, then quit farming to wait. Means passive reliance on luck.<br>守 (guard) 株 (stump) 待 (wait) 兔 (rabbit)		recognition-ready chengyu life-advice
-塞翁失马	sài wēng shī mǎ	old frontier-man lost his horse / blessing in disguise	Often paired with 焉知非福 — bad luck may be good in disguise.<br>塞 (frontier) 翁 (old man) 失 (lose) 马 (horse)		recognition-ready chengyu life-advice culture-history
-一举两得	yìjǔ liǎngdé	one stroke, two gains / kill two birds	Very practical. Same idea as English "two birds, one stone".<br>一 (one) 举 (act) 两 (two) 得 (gain)		production-ready chengyu
-入乡随俗	rù xiāng suí sú	when in Rome, do as the Romans	Literally "enter village, follow customs". Daily-life usable.<br>入 (enter) 乡 (village) 随 (follow) 俗 (custom)		production-ready chengyu life-advice culture
-自相矛盾	zì xiāng máo dùn	self-contradictory	From a tale of a seller hawking an unstoppable spear and an unbreakable shield.<br>自 (self) 相 (mutually) 矛 (spear) 盾 (shield)		recognition-ready chengyu
-望梅止渴	wàng méi zhǐ kě	quench thirst by gazing at plums / false hope	Cao Cao tricked thirsty troops by promising plums ahead. Means consoling with imagination.<br>望 (gaze) 梅 (plum) 止 (stop) 渴 (thirst)		recognition-first chengyu classical-flavor
-半途而废	bàntú érfèi	give up halfway	Common warning against quitting partway through.<br>半 (half) 途 (way) 而 (and) 废 (abandon)		production-ready chengyu life-advice
-水滴石穿	shuǐdī shíchuān	dripping water pierces stone / persistence wins	Classic image for slow, steady effort beating brute force.<br>水 (water) 滴 (drip) 石 (stone) 穿 (pierce)		recognition-ready chengyu life-advice
-井底之蛙	jǐngdǐ zhī wā	frog at the bottom of a well / narrow worldview	Insult-ish: someone whose view of the world is tiny.<br>井 (well) 底 (bottom) 之 (of) 蛙 (frog)		recognition-ready chengyu life-advice
-滴水之恩，当涌泉相报	dīshuǐ zhī ēn, dāng yǒngquán xiāng bào	repay a drop of kindness with a gushing spring	Classical gratitude proverb. Strong literary tone.<br>滴 (drip) 水 (water) 之 (of) 恩 (kindness) 当 (should) 涌 (gush) 泉 (spring) 相 (mutually) 报 (repay)		recognition-first proverb life-advice classical-flavor
-知己知彼，百战不殆	zhījǐ zhībǐ, bǎizhàn búdài	know yourself and your enemy — never lose	From Sunzi Art of War. Still quoted in modern speech.<br>知 (know) 己 (self) 彼 (other) 百 (hundred) 战 (battle) 不 (not) 殆 (peril)		recognition-ready proverb life-advice culture-history
+#separator:tab
+#html:true
+#columns:Hanzi	Pinyin	English	Note	Tags
+#tags column:5
+面红耳赤	miànhóng ěrchì	red-faced / flushed	Often from embarrassment, anger, or argument.<br>面 (face) 红 (red) 耳 (ear) 赤 (flushed)	chengyu emotions recognition-ready
+银装素裹	yínzhuāng sùguǒ	wrapped in white / covered in snow	Poetic description of a snowy white landscape.<br>银 (silver) 装 (dress) 素 (white) 裹 (wrap)	literary nature recognition-first
+苦尽甘来	kǔ jìn gān lái	after bitterness comes sweetness	Hardship eventually leads to good results.<br>苦 (bitter) 尽 (end) 甘 (sweet) 来 (come)	chengyu life-advice recognition-ready
+别来无恙	bié lái wú yàng	have you been well since we last met?	Old-fashioned/literary greeting. Good for classical flavor, not normal daily greeting.<br>别 (part) 来 (since) 无 (no) 恙 (illness)	classical-flavor literary recognition-first
+彻头彻尾	chètóu chèwěi	through and through / complete	Means completely or downright, often before a negative noun/adjective.<br>彻 (through) 头 (head) 尾 (tail)	chengyu recognition-ready
+炉火纯青	lúhuǒ chúnqīng	brought to perfection	Describes a skill that has reached a very high level.<br>炉 (furnace) 火 (fire) 纯 (pure) 青 (blue-green)	chengyu skill recognition-ready
+礼尚往来	lǐshàng wǎnglái	courtesy should be reciprocated	Used for social reciprocity: favors, gifts, respect, politeness.<br>礼 (courtesy) 尚 (esteem) 往 (go) 来 (come)	chengyu culture recognition-ready
+天伦之乐	tiānlún zhī lè	family happiness	Literary phrase for joy from family relationships.<br>天 (heaven) 伦 (relations) 之 (of) 乐 (joy)	chengyu literary recognition-first
+绞尽脑汁	jiǎojìn nǎozhī	to rack one’s brains	Literally to squeeze out all the brain juice; used when thinking very hard.<br>绞 (wring) 尽 (exhaust) 脑 (brain) 汁 (juice)	chengyu production-ready
+截然不同	jiérán bù tóng	completely different	Useful idiom-like phrase; fairly practical.<br>截 (cut) 然 (so) 不 (not) 同 (same)	chengyu production-ready
+志同道合	zhìtóng dàohé	like-minded	Used for people who share goals, ideals, or values.<br>志 (aspiration) 同 (same) 道 (path) 合 (match)	chengyu relationships recognition-ready
+深情厚谊	shēnqíng hòuyì	deep affection and friendship	Formal/literary expression for a strong bond.<br>深 (deep) 情 (feeling) 厚 (thick) 谊 (friendship)	chengyu literary relationships recognition-first
+知音难觅	zhīyīn nán mì	a true soulmate is hard to find	Literary phrase about finding someone who truly understands you.<br>知 (know) 音 (tone) 难 (hard) 觅 (seek)	chengyu literary relationships recognition-first
+火上浇油	huǒ shàng jiāo yóu	to add fuel to the fire	Used when making an already bad situation worse.<br>火 (fire) 上 (on) 浇 (pour) 油 (oil)	chengyu production-ready
+怒火中烧	nù huǒ zhōng shāo	burning with anger / seething	Literary-sounding expression for intense anger.<br>怒 (anger) 火 (fire) 中 (within) 烧 (burn)	chengyu emotions recognition-ready
+吃一堑，长一智	chī yí qiàn, zhǎng yí zhì	learn from a setback	Proverb: one fall into a pit, one gain in wisdom.<br>吃 (eat) 一 (one) 堑 (pit) 长 (gain) 智 (wisdom)	proverb life-advice recognition-ready
+熟能生巧	shú néng shēng qiǎo	practice makes perfect	Very useful proverb/idiom.<br>熟 (familiar) 能 (can) 生 (produce) 巧 (skill)	chengyu proverb life-advice production-ready
+大器晚成	dàqì wǎnchéng	great talent matures late	Used for people who succeed later after long development.<br>大 (great) 器 (vessel) 晚 (late) 成 (achieve)	chengyu life-advice recognition-ready
+逆境出人才	nìjìng chū réncái	hardship produces talent	Proverb-like motivational saying.<br>逆 (adverse) 境 (situation) 出 (produce) 人 (person) 才 (talent)	proverb life-advice recognition-ready
+功到自然成	gōng dào zìrán chéng	constant effort brings sure success	Proverb: when the work is done, success follows naturally.<br>功 (effort) 到 (arrive) 自 (self) 然 (so) 成 (succeed)	proverb life-advice recognition-ready
+不怕慢，就怕站	bù pà màn, jiù pà zhàn	better slow progress than standing still	Proverb encouraging steady progress.<br>不 (not) 怕 (fear) 慢 (slow) 就 (only) 站 (stand still)	proverb life-advice recognition-ready
+文武双全	wén wǔ shuāng quán	skilled in both pen and sword	Classical/literary praise for someone capable in both intellectual and martial areas.<br>文 (literary) 武 (martial) 双 (both) 全 (complete)	chengyu classical-flavor recognition-first
+谦虚使人进步，骄傲使人落后	qiānxū shǐ rén jìnbù, jiāo'ào shǐ rén luòhòu	modesty helps one progress; pride makes one fall behind	Well-known saying associated with self-improvement and humility.<br>谦 (modest) 虚 (humble) 使 (cause) 人 (person) 进 (advance) 步 (step) 骄 (proud) 傲 (arrogant) 落 (fall) 后 (behind)	proverb life-advice recognition-ready
+君君臣臣父父子子	jūn jūn, chén chén, fù fù, zǐ zǐ	rulers should act as rulers, ministers as ministers, fathers as fathers, sons as sons	Classical Confucian phrase about proper social roles.<br>君 (ruler) 臣 (minister) 父 (father) 子 (son)	classical-flavor literary recognition-first
+有志者事竟成	yǒu zhì zhě shì jìng chéng	where there is a will, there is a way	Common motivational proverb.<br>有 (have) 志 (will) 者 (one who) 事 (matter) 竟 (ultimately) 成 (succeed)	proverb life-advice recognition-ready
+舍得一身剐，敢把皇帝拉下马	shěde yìshēn guǎ, gǎn bǎ huángdì lā xià mǎ	one who fears not being cut to pieces dares to unhorse the emperor	Bold proverb about daring to challenge power despite great risk.<br>舍 (give up) 得 (willing) 一 (one) 身 (body) 剐 (cut to pieces) 敢 (dare) 把 (take) 皇 (imperial) 帝 (emperor) 拉 (pull) 下 (down) 马 (horse)	proverb classical-flavor recognition-first
+摸着石头过河	mōzhe shítou guòhé	cross the river by feeling the stones	Proceed cautiously through trial and error.<br>摸 (feel) 着 (-ing) 石 (stone) 头 (suffix) 过 (cross) 河 (river)	proverb culture-history recognition-ready
+杞人忧天	qǐ rén yōu tiān	to worry unnecessarily	Literally a man of Qi worrying the sky will fall; imaginary/unnecessary anxiety.<br>杞 (Qi state) 人 (man) 忧 (worry) 天 (sky)	chengyu recognition-ready
+画蛇添足	huàshé tiānzú	draw a snake and add feet / overdo it	From a fable — adding superfluous detail ruins the work. Used when extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)	recognition-ready chengyu life-advice
+守株待兔	shǒuzhū dàitù	wait by the stump for a rabbit	Fable: farmer saw one rabbit hit a stump, then quit farming to wait. Means passive reliance on luck.<br>守 (guard) 株 (stump) 待 (wait) 兔 (rabbit)	recognition-ready chengyu life-advice
+塞翁失马	sài wēng shī mǎ	old frontier-man lost his horse / blessing in disguise	Often paired with 焉知非福 — bad luck may be good in disguise.<br>塞 (frontier) 翁 (old man) 失 (lose) 马 (horse)	recognition-ready chengyu life-advice culture-history
+一举两得	yìjǔ liǎngdé	one stroke, two gains / kill two birds	Very practical. Same idea as English "two birds, one stone".<br>一 (one) 举 (act) 两 (two) 得 (gain)	production-ready chengyu
+入乡随俗	rù xiāng suí sú	when in Rome, do as the Romans	Literally "enter village, follow customs". Daily-life usable.<br>入 (enter) 乡 (village) 随 (follow) 俗 (custom)	production-ready chengyu life-advice culture
+自相矛盾	zì xiāng máo dùn	self-contradictory	From a tale of a seller hawking an unstoppable spear and an unbreakable shield.<br>自 (self) 相 (mutually) 矛 (spear) 盾 (shield)	recognition-ready chengyu
+望梅止渴	wàng méi zhǐ kě	quench thirst by gazing at plums / false hope	Cao Cao tricked thirsty troops by promising plums ahead. Means consoling with imagination.<br>望 (gaze) 梅 (plum) 止 (stop) 渴 (thirst)	recognition-first chengyu classical-flavor
+半途而废	bàntú érfèi	give up halfway	Common warning against quitting partway through.<br>半 (half) 途 (way) 而 (and) 废 (abandon)	production-ready chengyu life-advice
+水滴石穿	shuǐdī shíchuān	dripping water pierces stone / persistence wins	Classic image for slow, steady effort beating brute force.<br>水 (water) 滴 (drip) 石 (stone) 穿 (pierce)	recognition-ready chengyu life-advice
+井底之蛙	jǐngdǐ zhī wā	frog at the bottom of a well / narrow worldview	Insult-ish: someone whose view of the world is tiny.<br>井 (well) 底 (bottom) 之 (of) 蛙 (frog)	recognition-ready chengyu life-advice
+滴水之恩，当涌泉相报	dīshuǐ zhī ēn, dāng yǒngquán xiāng bào	repay a drop of kindness with a gushing spring	Classical gratitude proverb. Strong literary tone.<br>滴 (drip) 水 (water) 之 (of) 恩 (kindness) 当 (should) 涌 (gush) 泉 (spring) 相 (mutually) 报 (repay)	recognition-first proverb life-advice classical-flavor
+知己知彼，百战不殆	zhījǐ zhībǐ, bǎizhàn búdài	know yourself and your enemy — never lose	From Sunzi Art of War. Still quoted in modern speech.<br>知 (know) 己 (self) 彼 (other) 百 (hundred) 战 (battle) 不 (not) 殆 (peril)	recognition-ready proverb life-advice culture-history

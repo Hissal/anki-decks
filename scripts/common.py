@@ -10,8 +10,16 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TAGS_FILE = REPO_ROOT / "TAGS.md"
 
-EXPECTED_HEADER = ["Hanzi", "Pinyin", "English", "Note", "Audio", "Tags"]
+EXPECTED_HEADER = ["Hanzi", "Pinyin", "English", "Note", "Tags"]
 COLUMN_COUNT = len(EXPECTED_HEADER)
+
+# Anki TSV directive lines, prepended to every deck file. The #columns directive
+# doubles as the header — there is no separate header row.
+EXPECTED_DIRECTIVES = {
+    "separator": "tab",
+    "html": "true",
+    "tags column": "5",
+}
 
 TIER_TAGS = {"production-ready", "recognition-ready", "recognition-first"}
 
@@ -25,12 +33,11 @@ DECKS = {
 @dataclass
 class Row:
     file: Path
-    line_no: int  # 1-indexed including header
+    line_no: int  # 1-indexed file line number
     hanzi: str
     pinyin: str
     english: str
     note: str
-    audio: str
     tags: list[str] = field(default_factory=list)
 
     @property
@@ -43,33 +50,47 @@ def deck_paths() -> list[Path]:
 
 
 def parse_tsv(path: Path) -> tuple[list[str], list[Row]]:
-    """Return (header, rows). Raises ValueError on header mismatch.
+    """Return (header, rows). Raises ValueError on header / directive mismatch.
 
-    `utf-8-sig` strips a leading BOM if present — some editors save TSVs that
-    way and we don't want the BOM to corrupt the first header field.
+    File layout: Anki TSV directives (lines starting with `#`) followed by data
+    rows. The `#columns:` directive doubles as the header — no separate header
+    row. `utf-8-sig` strips a leading BOM if present.
     """
     text = path.read_text(encoding="utf-8-sig")
-    lines = text.split("\n")
-    # Trailing newline produces empty last line — drop it.
+    # Normalize CRLF so line numbers stay accurate either way.
+    lines = text.replace("\r\n", "\n").split("\n")
     if lines and lines[-1] == "":
         lines.pop()
 
     if not lines:
         raise ValueError(f"{path.name}: file is empty")
 
-    header = lines[0].split("\t")
-    if header != EXPECTED_HEADER:
-        raise ValueError(
-            f"{path.name}: header mismatch. expected {EXPECTED_HEADER}, got {header}"
-        )
-
+    header: list[str] | None = None
+    directives: dict[str, str] = {}
     rows: list[Row] = []
-    for i, line in enumerate(lines[1:], start=2):
+
+    for i, line in enumerate(lines, start=1):
         if not line.strip():
             continue
+        if line.startswith("#"):
+            body = line[1:]
+            key, sep, val = body.partition(":")
+            if not sep:
+                raise ValueError(f"{path.name}:{i}: malformed directive {line!r}")
+            key = key.strip().lower()
+            val = val.strip()
+            if key == "columns":
+                header = val.split("\t")
+            else:
+                directives[key] = val
+            continue
+        if header is None:
+            raise ValueError(
+                f"{path.name}:{i}: data row before #columns directive"
+            )
         fields = line.split("\t")
-        # Pad missing trailing fields with empty strings so short rows still parse;
-        # the validator will report column-count problems separately.
+        # Pad missing trailing fields with empty strings; validator reports width
+        # problems separately.
         while len(fields) < COLUMN_COUNT:
             fields.append("")
         rows.append(
@@ -80,10 +101,23 @@ def parse_tsv(path: Path) -> tuple[list[str], list[Row]]:
                 pinyin=fields[1],
                 english=fields[2],
                 note=fields[3],
-                audio=fields[4],
-                tags=[t for t in fields[5].split(" ") if t],
+                tags=[t for t in fields[4].split(" ") if t],
             )
         )
+
+    if header is None:
+        raise ValueError(f"{path.name}: missing #columns directive")
+    if header != EXPECTED_HEADER:
+        raise ValueError(
+            f"{path.name}: #columns mismatch. expected {EXPECTED_HEADER}, got {header}"
+        )
+    for k, want in EXPECTED_DIRECTIVES.items():
+        got = directives.get(k)
+        if got != want:
+            raise ValueError(
+                f"{path.name}: directive '#{k}' expected {want!r}, got {got!r}"
+            )
+
     return header, rows
 
 

@@ -72,7 +72,7 @@ Lines starting with `#` are comments — skip them.
 Schema (column order, same as the TSVs):
 
 ```
-Hanzi  Pinyin  English  Note  Audio  Tags
+Hanzi  Pinyin  English  Note  Tags
 ```
 
 Rules:
@@ -106,8 +106,11 @@ Rules:
 
     This rule applies only to the Idioms deck. Core and Slang rows keep
     their existing Note conventions unchanged.
-- **Audio** — always empty (HyperTTS fills this inside Anki).
 - **Tags** — see "Pick tags" below.
+
+The TSVs no longer have an Audio column. The note type still has an `Audio`
+field, but it's filled inside Anki (HyperTTS) and not represented in the TSV
+schema, so re-import never overwrites it.
 
 ## Pick deck per entry
 
@@ -208,7 +211,7 @@ from common import append_row, REPO_ROOT, DECKS
 
 deck_key = "core"   # or "idioms" / "slang"
 path = REPO_ROOT / DECKS[deck_key]
-append_row(path, [hanzi, pinyin, english, note, "", tags_str])
+append_row(path, [hanzi, pinyin, english, note, tags_str])
 ```
 
 `tags_str` is space-separated, tier tag first by convention.

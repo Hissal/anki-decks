@@ -16,7 +16,16 @@ If something fits multiple decks, pick the one that matches the *primary vibe* �
 
 ## File format
 
-All three files share the same schema. **TSV, tab-separated, UTF-8, one header row.**
+All three files share the same schema. **TSV, tab-separated, UTF-8.** Each file starts with Anki import directives (lines prefixed with `#`) — the `#columns:` directive doubles as the header, so there is no separate header row.
+
+Required directive block at the top of every deck file:
+
+```
+#separator:tab
+#html:true
+#columns:Hanzi	Pinyin	English	Note	Tags
+#tags column:5
+```
 
 Columns (in order):
 
@@ -25,8 +34,9 @@ Columns (in order):
 3. `English` — short gloss. Multiple senses separated by `/`.
 4. `Note` — usage notes, register warnings, example sentence. Example sentences use the convention: `Example: 中文句子。 / English translation.`
    - **Idioms deck only**: every row's Note ends with a char-by-char gloss line, separated from any preceding note text by the literal string `<br>` (Anki renders this as a line break). Format: `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in the Hanzi. Dedup repeated characters. Skip punctuation (`，` `、` `。` etc.). For polysemous characters, pick the meaning that applies in this idiom's context. Gloss text is lowercase English, 1–3 words, no period. If the row has no other note, the char-gloss line is the entire Note (no leading `<br>`). Example: `From a fable — extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
-5. `Audio` — currently empty everywhere. Reserved for `[sound:file.mp3]` Anki syntax later.
-6. `Tags` — space-separated tags. See tag conventions below.
+5. `Tags` — space-separated tags. See tag conventions below.
+
+The Anki note type also has an `Audio` field (for `[sound:file.mp3]` references later), but it has no corresponding TSV column — Anki leaves it untouched on import. To add audio, do it inside Anki directly, or add an Audio column to the TSV plus map it in the import dialog.
 
 **Hanzi (column 1) is the deck's de-facto unique key.** Anki import is set to match on first field, so re-importing a row with the same Hanzi *updates* the existing note rather than creating a duplicate.
 
@@ -35,10 +45,10 @@ Columns (in order):
 The TSV files are **append-only**. Adding new vocab:
 
 1. Append rows to the appropriate TSV (no edits to existing rows unless fixing a mistake).
-2. Re-import into Anki — Anki matches by first field (Hanzi) and updates existing notes / adds new ones.
+2. Re-import into Anki — Anki matches by first field (Hanzi) and updates existing notes / adds new ones. The directive block tells Anki the separator, column-to-field mapping, and which column holds tags.
 3. Commit.
 
-Do not reorder existing rows. Do not strip the header.
+Do not reorder existing rows. Do not strip or reorder the directive block at the top of each file.
 
 ## Tag conventions
 
@@ -78,7 +88,6 @@ If unsure between Core and Slang for a casual word: if it's the **default** way 
 ## Things to NOT do
 
 - Don't reorder rows.
-- Don't edit the Audio column unless adding real `[sound:...]` references.
 - Don't add per-row novelty tags ("misc-2024-05-11") — tags should be reusable.
 - Don't duplicate the same Hanzi across decks.
 - Don't put example sentences in the `English` column — those go in `Note`.

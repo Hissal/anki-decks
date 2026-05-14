@@ -67,9 +67,12 @@ def main() -> int:
             continue
 
         # Re-read raw lines for column-count check (parse_tsv normalizes width).
-        raw_lines = path.read_text(encoding="utf-8").split("\n")
+        # Skip blank lines and Anki TSV directives (lines starting with `#`).
+        raw_lines = (
+            path.read_text(encoding="utf-8-sig").replace("\r\n", "\n").split("\n")
+        )
         for i, line in enumerate(raw_lines, start=1):
-            if i == 1 or not line.strip():
+            if not line.strip() or line.startswith("#"):
                 continue
             fields = line.split("\t")
             if len(fields) != COLUMN_COUNT:
