@@ -1,0 +1,32 @@
+<!-- Card 1 front: Audio recognition.
+     Audio autoplays. Hanzi hidden behind a hint button. On reveal, hanzi is
+     mounted as ruby with pinyin still hidden (user can hover/tap/toggle). -->
+
+<div class="card-side card-front">
+  <div class="audio-prominent">{{Audio}}</div>
+
+  <button class="hint-btn" id="reveal-hanzi-btn" type="button">Show Hanzi</button>
+
+  <div class="hanzi-block hidden"
+       id="hanzi-block"
+       data-hanzi="{{text:Hanzi}}"
+       data-pinyin="{{text:Pinyin}}"></div>
+
+  <button class="toggle-btn hidden" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
+</div>
+
+<script src="_ruby.js"></script>
+<script>
+  (function () {
+    var revealBtn = document.getElementById("reveal-hanzi-btn");
+    var hanziBlock = document.getElementById("hanzi-block");
+    var toggleBtn = document.getElementById("toggle-pinyin-btn");
+    revealBtn.addEventListener("click", function () {
+      window.ankiDecks.mountRuby("hanzi-block", { revealed: false });
+      hanziBlock.classList.remove("hidden");
+      toggleBtn.classList.remove("hidden");
+      revealBtn.classList.add("hidden");
+      window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
+    });
+  })();
+</script>

@@ -23,20 +23,22 @@ Required directive block at the top of every deck file:
 ```
 #separator:tab
 #html:true
-#columns:Hanzi	Pinyin	English	Note	Tags
-#tags column:5
+#columns:Hanzi	Pinyin	English	Breakdown	Examples	Note	Link	Tags
+#tags column:8
 ```
 
 Columns (in order):
 
-1. `Hanzi` — simplified characters only
-2. `Pinyin` — with tone marks (e.g. `nèige`, not `nei4ge`). Lowercase. Spaces between syllables for multi-syllable phrases when natural.
+1. `Hanzi` — simplified characters only.
+2. `Pinyin` — with tone marks (lowercase). **Strict one syllable per CJK character, space-separated.** E.g. `那个` → `nà ge`, `怎么说呢` → `zěn me shuō ne`. The ruby template aligns each syllable above each character, so the count must match. The validator enforces this. Tone sandhi for `一` and `不` is applied at the morpheme level (`yī` → `yí` before tone 4; `bù` → `bú` before tone 4); other sandhi (third-tone, neutral-tone variants) stays lexical.
 3. `English` — short gloss. Multiple senses separated by `/`.
-4. `Note` — usage notes, register warnings, example sentence. Example sentences use the convention: `Example: 中文句子。 / English translation.`
-   - **Idioms deck only**: every row's Note ends with a char-by-char gloss line, separated from any preceding note text by the literal string `<br>` (Anki renders this as a line break). Format: `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in the Hanzi. Dedup repeated characters. Skip punctuation (`，` `、` `。` etc.). For polysemous characters, pick the meaning that applies in this idiom's context. Gloss text is lowercase English, 1–3 words, no period. If the row has no other note, the char-gloss line is the entire Note (no leading `<br>`). Example: `From a fable — extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
-5. `Tags` — space-separated tags. See tag conventions below.
+4. `Breakdown` — per-character gloss, format `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in Hanzi. Dedup repeated characters. Skip punctuation. Gloss text lowercase English, 1–3 words, no period. Convention is to fill this for the idioms deck; optional but encouraged elsewhere. Example: `画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
+5. `Examples` — 1–3 example sentences. Multiple sentences are separated by literal `<br>` (Anki renders that as a line break with `#html:true` set). Format per chunk: `中文句子。 / English translation.` The card template splits on `<br>` for the bulleted list and on ` / ` for the Chinese/English pair. Empty if no example.
+6. `Note` — anything else worth saying: register warnings, etymology, cultural context, nuance.
+7. `Link` — optional URL pointing at external info (e.g. a chengyu reference page). Empty for most rows.
+8. `Tags` — space-separated tags. See tag conventions below.
 
-The Anki note type also has an `Audio` field (for `[sound:file.mp3]` references later), but it has no corresponding TSV column — Anki leaves it untouched on import. To add audio, do it inside Anki directly, or add an Audio column to the TSV plus map it in the import dialog.
+The Anki note type has two additional fields that **never appear in TSV**: `Audio` (for `[sound:file.mp3]` references) and `PersonalNote` (free-form user notes added inside Anki). Because they are omitted from the `#columns:` directive, Anki preserves them untouched on every re-import.
 
 **Hanzi (column 1) is the deck's de-facto unique key.** Anki import is set to match on first field, so re-importing a row with the same Hanzi *updates* the existing note rather than creating a duplicate.
 
@@ -52,7 +54,7 @@ Do not reorder existing rows. Do not strip or reorder the directive block at the
 
 ## Tag conventions
 
-Two kinds of tags coexist in column 6:
+Two kinds of tags coexist in column 8:
 
 ### Tier tags (learning priority)
 
@@ -90,5 +92,7 @@ If unsure between Core and Slang for a casual word: if it's the **default** way 
 - Don't reorder rows.
 - Don't add per-row novelty tags ("misc-2024-05-11") — tags should be reusable.
 - Don't duplicate the same Hanzi across decks.
-- Don't put example sentences in the `English` column — those go in `Note`.
+- Don't put example sentences in the `English` column — those go in `Examples`.
+- Don't cram per-char gloss into `Note` — it has its own `Breakdown` column.
+- Don't break the per-character pinyin alignment (one space-separated syllable per CJK char).
 - Don't write traditional characters. Simplified only.

@@ -1,0 +1,22 @@
+<!-- Card 2 front: Hanzi recognition.
+     Hanzi rendered as ruby with pinyin hidden. No {{Audio}} in the front HTML
+     so Anki does not autoplay. Audio is gated behind {{hint:Audio}}; clicking
+     the hint reveals the audio control and plays the sound. -->
+
+<div class="card-side card-front">
+  <div class="hanzi-block"
+       id="hanzi-block"
+       data-hanzi="{{text:Hanzi}}"
+       data-pinyin="{{text:Pinyin}}"></div>
+  <button class="toggle-btn" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
+
+  <div class="hint-row">{{hint:Audio}}</div>
+</div>
+
+<script src="_ruby.js"></script>
+<script>
+  (function () {
+    window.ankiDecks.mountRuby("hanzi-block", { revealed: false });
+    window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
+  })();
+</script>

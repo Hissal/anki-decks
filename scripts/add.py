@@ -17,6 +17,7 @@ from pathlib import Path
 
 from common import (
     DECKS,
+    HAN_RE,
     REPO_ROOT,
     TIER_TAGS,
     append_row,
@@ -94,16 +95,38 @@ def main() -> int:
             continue
         break
 
+    han_count = len(HAN_RE.findall(hanzi))
     while True:
-        pinyin = prompt("Pinyin (with tone marks)")
+        pinyin = prompt(
+            f"Pinyin (with tone marks, one syllable per CJK char, space-separated; expect {han_count} tokens)"
+        )
         if looks_like_digit_pinyin(pinyin):
             confirm = input("  looks like digit tones (ni3hao3). keep anyway? [y/N] ")
+            if confirm.strip().lower() != "y":
+                continue
+        token_count = len(pinyin.split())
+        if token_count != han_count:
+            print(
+                f"  pinyin has {token_count} space-separated token(s) but Hanzi has "
+                f"{han_count} CJK char(s). ruby alignment needs them to match."
+            )
+            confirm = input("  keep anyway? [y/N] ")
             if confirm.strip().lower() != "y":
                 continue
         break
 
     english = prompt("English (use / to separate senses)")
-    note = prompt("Note (optional; include Example: 中文 / English)", allow_empty=True)
+    breakdown = prompt(
+        "Breakdown (optional; per-char gloss like `字 (meaning) 字 (meaning)`)",
+        allow_empty=True,
+    )
+    examples_raw = prompt(
+        "Examples (optional; `中文。 / English.` — use ` || ` to separate multiple)",
+        allow_empty=True,
+    )
+    examples = "<br>".join(e.strip() for e in examples_raw.split("||") if e.strip())
+    note = prompt("Note (optional; register / etymology / nuance)", allow_empty=True)
+    link = prompt("Link (optional; URL for more info)", allow_empty=True)
 
     print("\ntiers: production-ready, recognition-ready, recognition-first")
     while True:
@@ -124,12 +147,13 @@ def main() -> int:
                 print("aborted.")
                 return 1
 
-    fields = [hanzi, pinyin, english, note, " ".join(tags)]
+    fields = [hanzi, pinyin, english, breakdown, examples, note, link, " ".join(tags)]
     print("\nrow to append:")
     for label, value in zip(
-        ["Hanzi", "Pinyin", "English", "Note", "Tags"], fields
+        ["Hanzi", "Pinyin", "English", "Breakdown", "Examples", "Note", "Link", "Tags"],
+        fields,
     ):
-        print(f"  {label:<7} {value}")
+        print(f"  {label:<9} {value}")
 
     confirm = input("\nwrite? [Y/n] ").strip().lower()
     if confirm in ("", "y", "yes"):

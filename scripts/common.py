@@ -10,7 +10,16 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 TAGS_FILE = REPO_ROOT / "TAGS.md"
 
-EXPECTED_HEADER = ["Hanzi", "Pinyin", "English", "Note", "Tags"]
+EXPECTED_HEADER = [
+    "Hanzi",
+    "Pinyin",
+    "English",
+    "Breakdown",
+    "Examples",
+    "Note",
+    "Link",
+    "Tags",
+]
 COLUMN_COUNT = len(EXPECTED_HEADER)
 
 # Anki TSV directive lines, prepended to every deck file. The #columns directive
@@ -18,7 +27,7 @@ COLUMN_COUNT = len(EXPECTED_HEADER)
 EXPECTED_DIRECTIVES = {
     "separator": "tab",
     "html": "true",
-    "tags column": "5",
+    "tags column": str(COLUMN_COUNT),
 }
 
 TIER_TAGS = {"production-ready", "recognition-ready", "recognition-first"}
@@ -37,7 +46,10 @@ class Row:
     hanzi: str
     pinyin: str
     english: str
+    breakdown: str
+    examples: str
     note: str
+    link: str
     tags: list[str] = field(default_factory=list)
 
     @property
@@ -100,8 +112,11 @@ def parse_tsv(path: Path) -> tuple[list[str], list[Row]]:
                 hanzi=fields[0],
                 pinyin=fields[1],
                 english=fields[2],
-                note=fields[3],
-                tags=[t for t in fields[4].split(" ") if t],
+                breakdown=fields[3],
+                examples=fields[4],
+                note=fields[5],
+                link=fields[6],
+                tags=[t for t in fields[7].split(" ") if t],
             )
         )
 

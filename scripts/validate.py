@@ -8,6 +8,7 @@ Hard errors (exit code 1):
   - duplicate Hanzi within a single deck
   - duplicate Hanzi across decks
   - Hanzi column has no CJK character at all
+  - Pinyin syllable count != CJK character count in Hanzi (ruby alignment invariant)
 
 Soft warnings (exit code 0 unless --strict):
   - row has no tier tag (production-ready / recognition-ready / recognition-first)
@@ -30,6 +31,7 @@ from pathlib import Path
 from common import (
     COLUMN_COUNT,
     EXPECTED_HEADER,
+    HAN_RE,
     TIER_TAGS,
     deck_paths,
     has_ascii_letter,
@@ -99,6 +101,16 @@ def main() -> int:
                     f"{loc}: Pinyin appears to use digit tones, expected diacritics: "
                     f"{r.pinyin!r}"
                 )
+            elif r.hanzi:
+                han_count = len(HAN_RE.findall(r.hanzi))
+                pinyin_count = len(r.pinyin.split())
+                if han_count != pinyin_count:
+                    errors.append(
+                        f"{loc}: Pinyin syllable count ({pinyin_count}) "
+                        f"does not match CJK char count ({han_count}) in Hanzi "
+                        f"({r.hanzi!r} / {r.pinyin!r}). Ruby alignment requires "
+                        f"one space-separated syllable per CJK character."
+                    )
 
             if not r.english:
                 errors.append(f"{loc}: empty English")
