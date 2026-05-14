@@ -35,7 +35,13 @@ Columns (in order):
 4. `Breakdown` — per-character gloss, format `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in Hanzi. Dedup repeated characters. Skip punctuation. Gloss text lowercase English, 1–3 words, no period. Convention is to fill this for the idioms deck; optional but encouraged elsewhere. Example: `画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
 5. `Examples` — 1–3 example sentences. Multiple sentences are separated by literal `<br>` (Anki renders that as a line break with `#html:true` set). Format per chunk: `中文句子。 / English translation.` The card template splits on `<br>` for the bulleted list and on ` / ` for the Chinese/English pair. Empty if no example.
 6. `Note` — anything else worth saying: register warnings, etymology, cultural context, nuance.
-7. `Link` — optional URL pointing at external info (e.g. a chengyu reference page). Empty for most rows.
+7. `Link` — URL pointing at external info. Two sources, in this priority order:
+   - **[chineseidioms.com](https://www.chineseidioms.com)** when it has the entry. URL patterns:
+     - Chengyu / proverbs: `https://www.chineseidioms.com/blog/<pinyin-hyphenated-notones>` — algorithmic from the per-character Pinyin (drop tones, lowercase, hyphenate). The idioms deck uses this for every row.
+     - Internet slang: `https://www.chineseidioms.com/slang/<slug>` — slugs are inconsistent; check the [/slang index](https://www.chineseidioms.com/slang) before guessing.
+     - Everyday phrases: `https://www.chineseidioms.com/phrases/<slug>` — mostly hyphenated pinyin but with quirks; check the [/phrases index](https://www.chineseidioms.com/phrases).
+   - **MDBG dictionary fallback** for anything not on chineseidioms.com: `https://www.mdbg.net/chinese/dictionary?wdqb=<url-encoded-hanzi>`. Universal coverage, just dictionary glosses — used as the fallback for Core / Slang rows the project couldn't match to a richer source.
+   - Use `scripts/find_site_links.py` to bulk-apply: `--apply` writes chineseidioms.com matches only; `--apply --mdbg-fallback` also fills the rest with MDBG URLs. The script never overwrites an existing Link value.
 8. `Tags` — space-separated tags. See tag conventions below.
 
 The Anki note type has two additional fields that **never appear in TSV**: `Audio` (for `[sound:file.mp3]` references) and `PersonalNote` (free-form user notes added inside Anki). Because they are omitted from the `#columns:` directive, Anki preserves them untouched on every re-import.

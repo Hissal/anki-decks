@@ -123,6 +123,7 @@ printed but do not block.
 | `scripts/common.py` | Shared helpers — not run directly. |
 | `scripts/migrate_pinyin_per_char.py` | One-shot migration: rewrite the Pinyin column to one space-separated syllable per CJK character. Requires `pip install pypinyin`. |
 | `scripts/migrate_note_split.py` | One-shot migration: split the old `Note` column into the new `Breakdown` / `Examples` / `Note` / `Link` columns. |
+| `scripts/find_site_links.py` | Bulk-populate the `Link` column. First pass matches against [chineseidioms.com](https://www.chineseidioms.com): algorithmic `/blog/<pinyin>` for the idioms deck, hanzi lookup against [/slang](https://www.chineseidioms.com/slang) / [/phrases](https://www.chineseidioms.com/phrases) for the others. With `--mdbg-fallback`, any remaining row gets an [MDBG](https://www.mdbg.net) dictionary lookup URL. Skips rows whose Link is already set. |
 
 `add.py`, `validate.py`, `index.py`, and `common.py` target Python 3.10+ with
 no external dependencies. The migration scripts additionally need `pypinyin`.

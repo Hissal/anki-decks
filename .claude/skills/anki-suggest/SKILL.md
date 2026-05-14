@@ -74,7 +74,7 @@ Per deck:
 Produce N entries, each pre-structured as a future import row:
 
 ```
-deck | hanzi | pinyin | english | tier | tags | note
+deck | hanzi | pinyin | english | tier | tags | breakdown | examples | note | link
 ```
 
 Rules:
@@ -86,18 +86,25 @@ Rules:
   existing taxonomy.
 - **Tier** picked per the same rules `anki-import` uses (see that skill's
   "Pick tier tag" section).
-- **Pinyin** always with tone marks, never digit tones.
+- **Pinyin** always with tone marks, never digit tones. **Strict one
+  space-separated syllable per CJK character** (e.g. `那个` → `nà ge`).
+  Apply `一` / `不` sandhi; leave other tones lexical.
 - **Hanzi** simplified only.
-- **Note (Idioms deck only)** — every Idioms candidate's `note` value must
-  end with a char-by-char gloss line. If the candidate has other note
-  content (usage hint, fable origin, register warning), put that first,
-  then `<br>`, then the gloss line. If there is no other content, the
-  gloss line is the entire note (no leading `<br>`). Format:
-  `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first appearance in the
-  Hanzi. Dedup repeated chars. Skip punctuation. Pick the contextual
-  meaning for polysemous chars. Gloss is lowercase English, 1–3 words,
-  no period. See `anki-import` SKILL.md "Note" section for the
-  authoritative spec.
+- **Breakdown (required for Idioms candidates, encouraged elsewhere)** —
+  per-character gloss: `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first
+  appearance, dedup repeated chars, skip punctuation, pick contextual
+  meaning for polysemous chars, lowercase 1–3 words per gloss. See
+  `anki-import` SKILL.md "Breakdown" section for the authoritative spec.
+- **Examples** — 1–3 example sentences separated by `<br>`. Format per
+  sentence: `中文。 / English.` Optional.
+- **Note** — register warnings, etymology, cultural context. Optional.
+- **Link** — see `anki-import` SKILL.md "Link" section. For Idioms, fill
+  algorithmically from Pinyin (`https://www.chineseidioms.com/blog/<pinyin-hyphenated-notones>`).
+  For Slang / Core, look up against [chineseidioms.com/slang](https://www.chineseidioms.com/slang)
+  or [chineseidioms.com/phrases](https://www.chineseidioms.com/phrases) —
+  do not derive from pinyin (slugs are inconsistent). For anything not on
+  chineseidioms.com, fall back to MDBG:
+  `https://www.mdbg.net/chinese/dictionary?wdqb=<url-encoded-hanzi>`.
 
 ## Dedupe before showing
 
@@ -125,10 +132,12 @@ user should not see them in the review table.
 Use the **same column layout** as `anki-import`'s review table:
 
 ```
-# | deck | hanzi | pinyin | english | tier | tags | note
+# | deck | hanzi | pinyin | english | tier | tags | breakdown | examples | note | link
 ```
 
-This keeps the user's mental model consistent across the two skills.
+Truncate long values (breakdown / examples / note) to keep the table
+readable. This keeps the user's mental model consistent across the two
+skills.
 
 ## Accept user selection
 

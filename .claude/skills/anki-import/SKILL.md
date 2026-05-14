@@ -72,7 +72,7 @@ Lines starting with `#` are comments — skip them.
 Schema (column order, same as the TSVs):
 
 ```
-Hanzi  Pinyin  English  Note  Tags
+Hanzi  Pinyin  English  Breakdown  Examples  Note  Link  Tags
 ```
 
 Rules:
@@ -80,37 +80,55 @@ Rules:
 - **Hanzi** — simplified characters only. Never traditional. If input is
   traditional, convert and flag in the review table so the user can confirm.
 - **Pinyin** — tone marks always. Never digit tones (`ni3hao3`). Lowercase.
-  Syllable spacing follows natural word boundaries (e.g. `bànyè`,
-  `wǒ juéde`).
+  **Strict one space-separated syllable per CJK character** (e.g. `那个` →
+  `nà ge`, `怎么说呢` → `zěn me shuō ne`). The ruby template aligns each
+  syllable above each character — the validator hard-errors on mismatched
+  counts. Apply `一` / `不` sandhi (`yī` → `yí` before tone 4; `bù` → `bú`
+  before tone 4); leave other tones lexical. Skip pinyin for punctuation.
 - **English** — concise gloss. Multiple senses separated by ` / `. No
-  example sentences here — those go in Note.
-- **Note** — leave empty unless one of:
-  - register / usage / dialect warning matters (e.g. "Sichuan dialect. Do
-    not treat as standard Mandarin.")
-  - a useful example sentence exists. Use the project convention exactly:
-    `Example: 中文。 / English.`
-  - **Idioms deck only:** every Idioms-deck row must end with a
-    char-by-char gloss line. Append it to whatever other note text exists,
-    separated by the literal string `<br>` (Anki renders as line break).
-    Format: `char₁ (gloss₁) char₂ (gloss₂) …`. Rules:
-    - Order chars by first appearance in the Hanzi.
-    - Dedup repeated characters (e.g. `君君臣臣` → `君 (ruler) 臣 (minister)`).
-    - Skip punctuation (`，` `、` `。` `；` `！` `？` etc.).
-    - For polysemous characters, pick the meaning that applies in this
-      idiom (e.g. `长` in `吃一堑，长一智` → "gain", not "long").
-    - Gloss is lowercase English, 1–3 words, no period.
-    - If the row has no other note, the gloss line is the entire Note —
-      no leading `<br>`.
-
-    Example: `From a fable — extra effort backfires.<br>画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
-
-    This rule applies only to the Idioms deck. Core and Slang rows keep
-    their existing Note conventions unchanged.
+  example sentences here — those go in `Examples`.
+- **Breakdown** — per-character gloss, format `char₁ (gloss₁) char₂ (gloss₂) …`.
+  Rules:
+  - Order chars by first appearance in the Hanzi.
+  - Dedup repeated characters (e.g. `君君臣臣` → `君 (ruler) 臣 (minister)`).
+  - Skip punctuation (`，` `、` `。` `；` `！` `？` etc.).
+  - For polysemous characters, pick the meaning that applies in this entry
+    (e.g. `长` in `吃一堑，长一智` → "gain", not "long").
+  - Gloss is lowercase English, 1–3 words, no period.
+  - **Required for the Idioms deck.** Optional but encouraged elsewhere.
+  - Example: `画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
+- **Examples** — 1–3 example sentences. Multiple sentences are separated by
+  the literal string `<br>`. Format per sentence: `中文。 / English.` Empty
+  if no example.
+- **Note** — register warnings, etymology, cultural context, nuance.
+  Anything else worth saying that doesn't fit the dedicated fields. Empty
+  unless useful.
+- **Link** — URL to external info. Two-tier policy:
+  - **Primary**: [chineseidioms.com](https://www.chineseidioms.com) when it
+    documents the entry:
+    - Chengyu / proverbs: `https://www.chineseidioms.com/blog/<pinyin>` where
+      `<pinyin>` is the Pinyin field with tones stripped, lowercased, and
+      spaces replaced by `-`. Fill this for **every Idioms-deck row** (the
+      site has 1085+ chengyu and the algorithmic URL is reliable; verified
+      end-to-end via `scripts/find_site_links.py`).
+    - Internet slang: `https://www.chineseidioms.com/slang/<slug>` — slugs
+      are inconsistent (e.g. 割韭菜 → `gao-ji`, 老六 → `lao-liu-bi`). Look up
+      against [the slang index](https://www.chineseidioms.com/slang) by hand;
+      do not derive from pinyin.
+    - Everyday phrases: `https://www.chineseidioms.com/phrases/<slug>` —
+      mostly hyphenated pinyin but with quirks (e.g. 算了 → `suan-le-phrase`).
+      Look up against [the phrases index](https://www.chineseidioms.com/phrases).
+  - **Fallback**: MDBG dictionary lookup, for any row not on
+    chineseidioms.com: `https://www.mdbg.net/chinese/dictionary?wdqb=<url-encoded-hanzi>`.
+    Universal coverage. Use this for Core / Slang rows that have no richer
+    home — every new entry should have *some* Link.
+  - Never invent a chineseidioms.com URL you haven't verified; MDBG is the
+    safe default when in doubt.
 - **Tags** — see "Pick tags" below.
 
-The TSVs no longer have an Audio column. The note type still has an `Audio`
-field, but it's filled inside Anki (HyperTTS) and not represented in the TSV
-schema, so re-import never overwrites it.
+The TSVs do not have Audio or PersonalNote columns. The note type has
+`Audio` (HyperTTS-filled) and `PersonalNote` (user-only) fields that live
+only inside Anki; the import never touches them.
 
 ## Pick deck per entry
 
@@ -180,8 +198,12 @@ Any candidate whose Hanzi is already a key goes to the **"skipped
 Single Markdown table with these columns, in this order:
 
 ```
-# | deck | hanzi | pinyin | english | tier | tags | note
+# | deck | hanzi | pinyin | english | tier | tags | breakdown | examples | note | link
 ```
+
+The `breakdown`, `examples`, `note`, and `link` cells can be empty. Truncate
+long values in the table display (e.g. show first 40 chars of an example
+with `…`) so the table stays readable.
 
 Below it:
 
@@ -211,10 +233,11 @@ from common import append_row, REPO_ROOT, DECKS
 
 deck_key = "core"   # or "idioms" / "slang"
 path = REPO_ROOT / DECKS[deck_key]
-append_row(path, [hanzi, pinyin, english, note, tags_str])
+append_row(path, [hanzi, pinyin, english, breakdown, examples, note, link, tags_str])
 ```
 
-`tags_str` is space-separated, tier tag first by convention.
+`tags_str` is space-separated, tier tag first by convention. Any field can
+be the empty string; only `Hanzi` / `Pinyin` / `English` are required.
 
 Append one TSV at a time. If new tags were approved, edit `TAGS.md` first
 (add entry under the right section), then append rows.
