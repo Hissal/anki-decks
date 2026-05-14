@@ -7,7 +7,7 @@ description: >
   fills missing fields (pinyin, English, note), categorizes per deck, picks
   tier + topical tags from TAGS.md, dedupes against all decks, shows a
   review table, appends accepted rows, then runs the validator and
-  regenerates INDEX.md.
+  regenerates INDEX.html.
 ---
 
 # anki-import
@@ -262,7 +262,7 @@ Required: validator exits 0. If errors are reported, **do not** continue
 to the report step — surface the validator output to the user and ask how
 to proceed. Warnings (e.g. missing tier tag) are non-fatal.
 
-`scripts/index.py` regenerates `INDEX.md`. No errors expected.
+`scripts/index.py` regenerates `INDEX.html`. No errors expected.
 
 ## Report back
 
@@ -273,7 +273,7 @@ After successful append + validate + index, summarize:
 - New tags added to `TAGS.md` (if any).
 - Validator summary line (e.g. "checked 3 file(s): 0 error(s), 71
   warning(s)").
-- "INDEX.md regenerated."
+- "INDEX.html regenerated."
 
 Keep it short — the user already saw the accepted table.
 

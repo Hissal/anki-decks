@@ -61,15 +61,19 @@ Use `--strict` to make warnings fail too.
 
 ## Regenerating the index
 
-`INDEX.md` is a readonly browse view grouped by deck and tag. Source TSV order
-is never touched.
+[`INDEX.html`](INDEX.html) is a single self-contained browse view of all
+three decks: ruby pinyin (hover / tap to reveal, plus a global toggle),
+live search (hanzi / pinyin / english, diacritic-insensitive), deck + tier
++ tag filters, and per-row expansion for Breakdown / Examples / Note /
+Link. Source TSV order is never touched.
 
 ```powershell
 python scripts/index.py
 ```
 
-Regenerate after appending new rows. Commit `INDEX.md` alongside the TSV
-changes if you want the index to stay current in git.
+Regenerate after appending new rows and double-click `INDEX.html` to open
+it locally (no server / build step needed). Commit it alongside the TSV
+changes to keep the rendered view current in git.
 
 ## Anki import settings
 
@@ -119,7 +123,7 @@ printed but do not block.
 |--------|---------|
 | `scripts/add.py` | Interactive row append with dedupe and tag check. |
 | `scripts/validate.py` | Validate every TSV. `--strict` makes warnings fatal. |
-| `scripts/index.py` | Regenerate `INDEX.md` grouped by deck and tag. |
+| `scripts/index.py` | Regenerate [`INDEX.html`](INDEX.html) — a self-contained HTML browse view with ruby pinyin, live search, deck/tier/tag filters, and per-row expansion. |
 | `scripts/common.py` | Shared helpers — not run directly. |
 | `scripts/migrate_pinyin_per_char.py` | One-shot migration: rewrite the Pinyin column to one space-separated syllable per CJK character. Requires `pip install pypinyin`. |
 | `scripts/migrate_note_split.py` | One-shot migration: split the old `Note` column into the new `Breakdown` / `Examples` / `Note` / `Link` columns. |

@@ -162,7 +162,7 @@ directly from this skill — route everything through `anki-import` so:
 
 - Dedup runs again right before write (in case the user mutated the repo).
 - Validator runs after.
-- `INDEX.md` is regenerated.
+- `INDEX.html` is regenerated.
 - The user gets exactly one "appended" summary, in the format they
   already know.
 
