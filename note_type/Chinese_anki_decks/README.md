@@ -15,13 +15,13 @@ production last.
 |------|---------|
 | `hanzi_recognition_front.html` | Card 1 front — ruby with pinyin hidden, custom `Play Audio` button parses `{{soundfile:Audio}}` and plays via HTML5 audio without triggering Anki's autoplay. |
 | `hanzi_recognition_back.html`  | Card 1 back — full reveal. |
-| `audio_recognition_front.html` | Card 2 front — `{{Audio}}` autoplays, `Show Hanzi` hint reveals ruby with pinyin hidden. |
+| `audio_recognition_front.html` | Card 2 front — custom HTML5 audio mount autoplays at the configured volume, `Show Hanzi` hint reveals ruby with pinyin hidden. |
 | `audio_recognition_back.html`  | Card 2 back — full reveal. |
 | `production_front.html`        | Card 3 front — English only. |
 | `production_back.html`         | Card 3 back — full reveal. |
 | `styles.css`                   | Shared styling — paste into the note type's "Styling" pane. |
-| `_ruby.js`                     | Ruby builder + toggle + examples renderer. Goes in `collection.media`. |
-| `addon/`                       | Anki add-on registering the `{{soundfile:Audio}}` template filter. Required for card 2 front's Play Audio button to work without triggering autoplay. |
+| `_ruby.js`                     | Ruby builder + toggle + examples renderer + HTML5 audio helpers. Goes in `collection.media`. |
+| `addon/`                       | Anki add-on. Registers `{{soundfile:Audio}}` / `{{nosound:Audio}}` template filters, plus a 🔊 volume button in the top toolbar that controls audio playback level across all cards. |
 
 ## One-time install
 
@@ -56,28 +56,36 @@ production last.
    Linux: `~/.local/share/Anki2/<profile>/collection.media/`). The leading
    underscore tells Anki not to clean it up as unused media.
 
-5. **Install the nosound filter add-on.** Anki's autoplay scanner
-   triggers on *any* `[sound:filename.mp3]` token in the rendered HTML —
-   even inside `hidden` divs or `data-` attributes. To keep card 1's front
-   from autoplaying while still letting cards 2 and 3 autoplay normally,
-   the `Play Audio` button reads the audio filename via a custom template
-   filter `{{soundfile:Audio}}` that returns just `foo.mp3` (no `[sound:…]`
-   wrapper). Install:
+5. **Install the add-on.** Anki's autoplay scanner triggers on *any*
+   `[sound:filename.mp3]` token in the rendered HTML — even inside `hidden`
+   divs or `data-` attributes. And we want a single volume slider that
+   controls every card's audio. The add-on solves both:
 
+   - Registers two template filters:
+     - `{{soundfile:Audio}}` — returns just `foo.mp3` (no `[sound:…]` wrapper,
+       so Anki's autoplay scanner finds nothing to play). Templates pass this
+       filename to an HTML5 `<audio>` element instead.
+     - `{{nosound:Audio}}` — returns the field text with every `[sound:…]`
+       reference stripped (kept for future use; not currently needed by the
+       templates).
+   - Adds a 🔊 button to Anki's main top toolbar. Click to open a slider
+     (0–100%). The chosen value is persisted in the add-on's config and
+     injected into every reviewer page render as
+     `window.ankiDecksConfig.volume`. `_ruby.js` reads it when constructing
+     audio elements, so changes apply from the next card render onward.
+
+   Install:
    - Locate your Anki add-ons folder:
      - Windows: `%APPDATA%\Anki2\addons21\`
      - macOS: `~/Library/Application Support/Anki2/addons21/`
      - Linux: `~/.local/share/Anki2/addons21/`
    - Copy the `addon/` directory from this repo into `addons21/` and rename
-     it to `chinese_anki_decks_nosound` (or any folder name — Anki uses the
-     folder name as the package id).
-   - Restart Anki. The filter is now available in any note type's templates.
+     it (e.g. to `chinese_anki_decks`).
+   - Restart Anki. The filters are now available in any template and the 🔊
+     button appears in the top toolbar.
 
-   The add-on is ~25 lines of Python (`addon/__init__.py`). It registers
-   two filters:
-   - `{{soundfile:Audio}}` — returns `foo.mp3`
-   - `{{nosound:Audio}}` — returns the field text with every `[sound:…]`
-     reference stripped (useful if you mix sound refs with other content).
+   Configuration lives in the add-on's `config.json` (`volume`, integer
+   0–100, default 70) and is also editable via `Tools → Add-ons → Config`.
 
 ## How the templates work
 
@@ -114,3 +122,16 @@ italic English below.
 Every optional section is wrapped in `{{#FieldName}}…{{/FieldName}}` so
 empty `Breakdown` / `Examples` / `Note` / `Link` / `PersonalNote` collapse
 cleanly with no orphan headers.
+
+### Audio playback
+
+All four sides that play audio (cards 1/2/3 backs and card 2 front) route
+through `mountAutoplayAudio` in `_ruby.js`: the template renders
+`<div class="audio-mount" data-soundfile="{{soundfile:Audio}}"></div>`, the
+script reads the filename, constructs an HTML5 `<audio>` element at the
+configured volume, autoplays it, and adds a replay button. Card 1 front's
+Play Audio button uses the same volume-aware helper.
+
+No `[sound:…]` token is ever rendered to the DOM, so Anki's native autoplay
+scanner is fully bypassed. The R key still replays the most recently
+autoplayed audio (bound by `_ruby.js`).

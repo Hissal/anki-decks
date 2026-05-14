@@ -191,6 +191,46 @@
   margin: 30px 0;
 }
 
+.audio-mount {
+  margin: 10px 0;
+}
+
+/* Replay button rendered by _ruby.js mountAutoplayAudio(). Sized large on
+ * the audio-recognition front (where it's the focal element), normal on the
+ * three backs where it's a secondary replay control. */
+.replay-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+
+.audio-prominent .replay-btn {
+  font-size: 32px;
+  padding: 16px 28px;
+}
+
+.replay-btn:hover { background: #f3f4f6; }
+.replay-btn:active { background: #e5e7eb; }
+
+.night_mode .replay-btn,
+.nightMode .replay-btn {
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+  color: #e8e8e8;
+}
+
+.night_mode .replay-btn:hover,
+.nightMode .replay-btn:hover { background: #3a3a3c; }
+
 .english-prompt {
   font-size: 30px;
   font-weight: 500;

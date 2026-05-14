@@ -1,30 +1,43 @@
 /*
- * anki-decks ruby builder.
+ * anki-decks ruby builder + audio helpers.
  *
  * Place this file inside Anki's `collection.media` folder. Card templates
  * include it via `<script src="_ruby.js">`. The leading underscore tells
  * Anki not to clean it up as unused media.
  *
+ * Volume is read from `window.ankiDecksConfig.volume` (float, 0–1). The
+ * addon under note_type/Chinese_anki_decks/addon/ injects that into every
+ * reviewer page render based on its config; if it's missing for any reason
+ * we fall back to FALLBACK_VOLUME.
+ *
  * Exposes `window.ankiDecks` with:
  *   mountRuby(containerId, { revealed })   - builds <ruby> from data-hanzi + data-pinyin
  *   attachToggle(containerId, buttonId)     - wires the toggle-pinyin button
  *   mountExamples(selector)                 - turns Examples field into <ul><li> ...
- *   attachAudioButton(buttonId, filename)   - wires a button to play `filename`
- *                                             via HTML5 <audio>, bypassing Anki
- *                                             autoplay. Pass a bare filename
- *                                             like `foo.mp3` (no `[sound:...]`
- *                                             wrapper — use the `soundfile:`
- *                                             template filter shipped in the
- *                                             addon to obtain it).
+ *   attachAudioButton(buttonId, filename)   - click-to-play HTML5 audio button
+ *   mountAutoplayAudio(selector)            - on each matching element, reads
+ *                                             data-soundfile, autoplays the
+ *                                             audio, renders a replay button.
+ *                                             Also wires the R key to replay.
  */
 (function () {
   "use strict";
+
+  var FALLBACK_VOLUME = 0.7;
 
   // Matches one CJK character. Mirrors HAN_RE in scripts/common.py.
   var HAN_RE = /[㐀-䶿一-鿿]/;
 
   function isHan(ch) {
     return HAN_RE.test(ch);
+  }
+
+  function currentVolume() {
+    var cfg = window.ankiDecksConfig;
+    if (cfg && typeof cfg.volume === "number") {
+      return Math.max(0, Math.min(1, cfg.volume));
+    }
+    return FALLBACK_VOLUME;
   }
 
   function buildRuby(hanzi, pinyinTokens) {
@@ -35,7 +48,6 @@
       hanCount += isHan(hanzi[i]) ? 1 : 0;
     }
     if (hanCount !== pinyinTokens.length) {
-      // Misalignment — bail out to plain text and log.
       console.warn(
         "ruby: pinyin/hanzi count mismatch. hanzi=" + hanzi +
         " (" + hanCount + " han chars), pinyin tokens=" + pinyinTokens.length
@@ -117,58 +129,111 @@
     }
   }
 
+  function _makeAudio(filename) {
+    filename = (filename || "").trim();
+    if (!filename) return null;
+    // Recover from a raw [sound:foo.mp3] token in case the soundfile: filter
+    // is unavailable (addon missing) — the button at least works as a
+    // fallback while the user sorts the addon install.
+    var m = filename.match(/\[sound:([^\]]+)\]/);
+    if (m) {
+      console.warn(
+        "ankiDecks audio: raw [sound:...] token reached client — install " +
+        "the chinese_anki_decks_nosound add-on to suppress autoplay."
+      );
+      filename = m[1];
+    }
+    var src = encodeURI(filename);
+    var audio = new Audio(src);
+    audio.preload = "auto";
+    audio.volume = currentVolume();
+    audio.addEventListener("error", function () {
+      console.error("ankiDecks audio: load error src=" + audio.src, audio.error);
+    });
+    return audio;
+  }
+
+  function _play(audio) {
+    if (!audio) return;
+    try {
+      audio.volume = currentVolume();
+      audio.currentTime = 0;
+      var p = audio.play();
+      if (p && typeof p.catch === "function") {
+        p.catch(function (err) {
+          console.warn("ankiDecks audio: play() rejected:", err);
+        });
+      }
+    } catch (err) {
+      console.warn("ankiDecks audio: play() threw:", err);
+    }
+  }
+
   function attachAudioButton(buttonId, filename) {
     var btn = document.getElementById(buttonId);
     if (!btn) return;
-    filename = (filename || "").trim();
-    console.log("ankiDecks audio: filename =", JSON.stringify(filename));
-    if (!filename) {
+    var audio = _makeAudio(filename);
+    if (!audio) {
       btn.disabled = true;
       btn.textContent = "No audio";
       return;
     }
-    // If the filter add-on isn't installed, {{soundfile:Audio}} may have
-    // returned the raw `[sound:foo.mp3]` token. Recover the filename so the
-    // button at least works while the user installs the add-on.
-    var m = filename.match(/\[sound:([^\]]+)\]/);
-    if (m) {
-      console.warn(
-        "ankiDecks audio: got raw [sound:...] token — install the " +
-        "chinese_anki_decks_nosound add-on to suppress autoplay."
-      );
-      filename = m[1];
-    }
-    // Encode unicode / spaces for URL resolution. Preserves path separators.
-    var src = encodeURI(filename);
-    var audio = new Audio(src);
-    audio.preload = "auto";
-    audio.addEventListener("error", function () {
-      console.error(
-        "ankiDecks audio: load error for src=" + audio.src,
-        audio.error
-      );
-    });
     btn.title = "play: " + filename;
-    btn.addEventListener("click", function () {
-      console.log("ankiDecks audio: click play src=" + audio.src);
-      try {
-        audio.currentTime = 0;
-        var p = audio.play();
-        if (p && typeof p.catch === "function") {
-          p.catch(function (err) {
-            console.warn("ankiDecks audio: play() rejected:", err);
-          });
-        }
-      } catch (err) {
-        console.warn("ankiDecks audio: play() threw:", err);
-      }
-    });
+    btn.addEventListener("click", function () { _play(audio); });
   }
+
+  // Most-recently-mounted autoplay audio. R-key replay targets this so the
+  // hotkey behavior matches what users expect from Anki's native player.
+  var lastAutoplayAudio = null;
+
+  function mountAutoplayAudio(selector) {
+    var nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      if (node.dataset.ankiMounted === "1") continue;
+      node.dataset.ankiMounted = "1";
+
+      var filename = node.getAttribute("data-soundfile") || "";
+      var audio = _makeAudio(filename);
+      if (!audio) {
+        node.textContent = "";
+        continue;
+      }
+
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "replay-btn";
+      btn.setAttribute("aria-label", "Replay audio");
+      btn.title = "Replay audio (R)";
+      btn.innerHTML = "▶";
+      (function (a, b) {
+        b.addEventListener("click", function () { _play(a); });
+      })(audio, btn);
+
+      node.textContent = "";
+      node.appendChild(btn);
+
+      lastAutoplayAudio = audio;
+      _play(audio);
+    }
+  }
+
+  // Anki's R hotkey replays audio when the native player owns it. We bind
+  // our own listener so the same hotkey works for our HTML5 audio.
+  document.addEventListener("keydown", function (e) {
+    if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (lastAutoplayAudio) {
+        e.preventDefault();
+        _play(lastAutoplayAudio);
+      }
+    }
+  });
 
   window.ankiDecks = {
     mountRuby: mountRuby,
     attachToggle: attachToggle,
     mountExamples: mountExamples,
     attachAudioButton: attachAudioButton,
+    mountAutoplayAudio: mountAutoplayAudio,
   };
 })();

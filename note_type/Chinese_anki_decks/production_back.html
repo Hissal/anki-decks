@@ -1,4 +1,5 @@
-<!-- Card 3 back: Production. Full reveal — autoplays audio. -->
+<!-- Card 3 back: Production. Full reveal — replays audio via the custom
+     mount so the addon's volume slider applies. -->
 
 <div class="card-side card-back">
   <div class="hanzi-block show-all-ruby"
@@ -7,7 +8,7 @@
        data-pinyin="{{text:Pinyin}}"></div>
   <button class="toggle-btn" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
 
-  <div class="audio-replay">{{Audio}}</div>
+  <div class="audio-mount" data-soundfile="{{soundfile:Audio}}"></div>
 
   <hr>
 
@@ -40,6 +41,7 @@
   (function () {
     window.ankiDecks.mountRuby("hanzi-block", { revealed: true });
     window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
+    window.ankiDecks.mountAutoplayAudio(".audio-mount");
 
     var raw = document.querySelector(".examples-raw");
     var target = document.querySelector(".examples");

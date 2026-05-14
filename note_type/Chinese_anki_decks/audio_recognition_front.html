@@ -1,9 +1,11 @@
 <!-- Card 2 front: Audio recognition.
-     Audio autoplays. Hanzi hidden behind a hint button. On reveal, hanzi is
-     mounted as ruby with pinyin still hidden (user can hover/tap/toggle). -->
+     Audio autoplays via the custom HTML5 mount (volume controlled by the
+     addon's toolbar slider). Hanzi hidden behind a hint button. On reveal,
+     hanzi is mounted as ruby with pinyin still hidden so the user can
+     hover/tap/toggle pinyin independently. -->
 
 <div class="card-side card-front">
-  <div class="audio-prominent">{{Audio}}</div>
+  <div class="audio-prominent audio-mount" data-soundfile="{{soundfile:Audio}}"></div>
 
   <button class="hint-btn" id="reveal-hanzi-btn" type="button">Show Hanzi</button>
 
@@ -18,6 +20,8 @@
 <script src="_ruby.js"></script>
 <script>
   (function () {
+    window.ankiDecks.mountAutoplayAudio(".audio-mount");
+
     var revealBtn = document.getElementById("reveal-hanzi-btn");
     var hanziBlock = document.getElementById("hanzi-block");
     var toggleBtn = document.getElementById("toggle-pinyin-btn");
