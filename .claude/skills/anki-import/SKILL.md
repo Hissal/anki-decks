@@ -92,14 +92,21 @@ Rules:
   - Order chars by first appearance in the Hanzi.
   - Dedup repeated characters (e.g. `君君臣臣` → `君 (ruler) 臣 (minister)`).
   - Skip punctuation (`，` `、` `。` `；` `！` `？` etc.).
-  - For polysemous characters, pick the meaning that applies in this entry
-    (e.g. `长` in `吃一堑，长一智` → "gain", not "long").
+  - **Pick the contextual meaning for polysemous characters** — many
+    common characters have several meanings. Always pick the one that
+    applies *in this specific entry*, not the first dictionary sense.
+    Examples: `长` in `吃一堑，长一智` → "gain" (not "long"); `行` in
+    `行走` → "walk" (not "row"); `地` in `客观地来讲` → "(adverbial)"
+    (not "earth"); `了` in `算了` → "(particle)" (not "finish").
   - Gloss is lowercase English, 1–3 words, no period.
   - **Required for the Idioms deck.** Optional but encouraged elsewhere.
   - Example: `画 (draw) 蛇 (snake) 添 (add) 足 (foot)`.
 - **Examples** — 1–3 example sentences. Multiple sentences are separated by
   the literal string `<br>`. Format per sentence: `中文。 / English.` Empty
-  if no example.
+  if no example. **Use the [`example-sentences`](../example-sentences/SKILL.md)
+  skill to generate or source these** — it enforces the quality bar
+  (modern, conversational, 5–15 chars, no literary fluff) and outputs
+  the exact TSV form.
 - **Note** — register warnings, etymology, cultural context, nuance.
   Anything else worth saying that doesn't fit the dedicated fields. Empty
   unless useful.

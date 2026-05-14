@@ -92,11 +92,16 @@ Rules:
 - **Hanzi** simplified only.
 - **Breakdown (required for Idioms candidates, encouraged elsewhere)** —
   per-character gloss: `char₁ (gloss₁) char₂ (gloss₂) …`. Order by first
-  appearance, dedup repeated chars, skip punctuation, pick contextual
-  meaning for polysemous chars, lowercase 1–3 words per gloss. See
-  `anki-import` SKILL.md "Breakdown" section for the authoritative spec.
+  appearance, dedup repeated chars, skip punctuation, **pick the
+  contextual meaning for polysemous characters** (many common chars have
+  multiple senses — pick the one that applies here, not the first
+  dictionary sense), lowercase 1–3 words per gloss. See `anki-import`
+  SKILL.md "Breakdown" section for the authoritative spec.
 - **Examples** — 1–3 example sentences separated by `<br>`. Format per
-  sentence: `中文。 / English.` Optional.
+  sentence: `中文。 / English.` **Use the
+  [`example-sentences`](../example-sentences/SKILL.md) skill to generate
+  them** — it enforces the quality bar (modern, conversational, 5–15
+  chars, no literary fluff).
 - **Note** — register warnings, etymology, cultural context. Optional.
 - **Link** — see `anki-import` SKILL.md "Link" section. For Idioms, fill
   algorithmically from Pinyin (`https://www.chineseidioms.com/blog/<pinyin-hyphenated-notones>`).
