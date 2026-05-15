@@ -228,14 +228,20 @@ def render_component_entry(row) -> str:
         parts: list[str] = []
         if row.member_chars:
             parts.append(
-                f'<div class="component-members">'
+                f'<div class="component-members" '
+                f'data-bucket-chars="{html.escape(row.member_chars, quote=True)}" '
+                f'data-bucket-decomp="{html.escape(row.member_decomp, quote=True)}" '
+                f'data-bucket-component="{html.escape(row.component, quote=True)}">'
                 f'<span class="component-members-label">phonetic in:</span> '
                 f'<span class="component-members-chars">{html.escape(row.member_chars)}</span>'
                 f'</div>'
             )
         if row.same_syllable_chars:
             parts.append(
-                f'<div class="component-members">'
+                f'<div class="component-members" '
+                f'data-bucket-chars="{html.escape(row.same_syllable_chars, quote=True)}" '
+                f'data-bucket-decomp="{html.escape(row.member_decomp, quote=True)}" '
+                f'data-bucket-component="{html.escape(row.component, quote=True)}">'
                 f'<span class="component-members-label">same syllable, different tone:</span> '
                 f'<span class="component-members-chars">{html.escape(row.same_syllable_chars)}</span>'
                 f'</div>'
@@ -624,6 +630,28 @@ details.component-entry > summary {
 .component-members-other { color: var(--fg-faint); }
 .bucket-hint { font-style: italic; color: var(--fg-faint); }
 
+.ix-bucket-decomp {
+  margin: 4px 0 2px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.ix-member-decomp-line {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 14px;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+.ix-member-decomp-char { font-weight: 600; color: var(--fg); }
+.ix-member-decomp-eq { color: var(--fg-faint); margin: 0 3px; font-size: 12px; }
+.ix-decomp-phonetic {
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-soft);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
 /* Tone colors — light + dark variants. */
 .t1 { color: #e11d48; }
 .t2 { color: #ea580c; }
@@ -857,6 +885,48 @@ SCRIPT = r"""
       html += '</div>';
     });
     el.innerHTML = html;
+  });
+
+  // ---- Render per-member-char decomp lines under each bucket. ----
+  function escHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function parseMemberDecomp(spec) {
+    var out = {};
+    if (!spec) return out;
+    spec.split("|").forEach(function (entry) {
+      var idx = entry.indexOf("=");
+      if (idx < 0) return;
+      out[entry.substring(0, idx)] = entry.substring(idx + 1).split("+");
+    });
+    return out;
+  }
+  document.querySelectorAll(".component-members[data-bucket-chars]").forEach(function (el) {
+    var chars = Array.from(el.dataset.bucketChars || "");
+    var decompMap = parseMemberDecomp(el.dataset.bucketDecomp || "");
+    var component = el.dataset.bucketComponent || "";
+    var lines = [];
+    chars.forEach(function (c) {
+      var parts = decompMap[c];
+      if (!parts) return;
+      var inner = parts.map(function (p) {
+        var cls = p === component ? "ix-decomp-piece ix-decomp-phonetic" : "ix-decomp-piece";
+        return '<span class="' + cls + '">' + escHtml(p) + '</span>';
+      }).join('<span class="ix-decomp-sep">+</span>');
+      lines.push(
+        '<div class="ix-member-decomp-line">' +
+          '<span class="ix-member-decomp-char">' + escHtml(c) + '</span>' +
+          '<span class="ix-member-decomp-eq">=</span>' +
+          inner +
+        '</div>'
+      );
+    });
+    if (lines.length) {
+      var slot = document.createElement("div");
+      slot.className = "ix-bucket-decomp";
+      slot.innerHTML = lines.join("");
+      el.appendChild(slot);
+    }
   });
 
   // ---- Render CrossRefs payload (`qiào / 俏峭鞘诮 · shāo / 稍梢捎艄筲`). ----

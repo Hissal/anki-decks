@@ -35,6 +35,7 @@ DEFAULT_SOURCE = Path(
 DEFAULT_ENRICH = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
 DEFAULT_CWC = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
 DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
+DEFAULT_CHAR_DECOMP = REPO_ROOT / "scripts" / "cache" / "char_decomp.json"
 HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
 
 SOURCE_COLUMN_COUNT = 10  # source TSV has 10 columns per its directive
@@ -319,6 +320,39 @@ def compute_same_syllable_bucket(
     return "".join(bucket2)
 
 
+def build_member_decomp(
+    component: str,
+    bucket1: str,
+    bucket2: str,
+    char_decomp: dict[str, dict] | None,
+    enrich: dict[str, dict] | None,
+) -> str:
+    """Pack `巩=工+凡|汞=工+水` style per-char once-level decomp. Pulls from
+    char_decomp first; falls back to enrich (for chars that are also
+    components themselves). Skips chars with no usable data."""
+    if not (char_decomp or enrich):
+        return ""
+    pieces: list[str] = []
+    seen: set[str] = set()
+    for ch in list(bucket1) + list(bucket2):
+        if ch in seen:
+            continue
+        seen.add(ch)
+        d = (char_decomp or {}).get(ch) if char_decomp else None
+        once: list[str] | None = None
+        if d and d.get("once"):
+            once = d["once"]
+        elif enrich and enrich.get(ch) and enrich[ch].get("decomposition", {}).get("once"):
+            once = enrich[ch]["decomposition"]["once"]
+        if not once:
+            continue
+        cleaned = _clean_decomp_parts(once)
+        if len(cleaned) == 1 and cleaned[0] == ch:
+            continue
+        pieces.append(f"{ch}={'+'.join(cleaned)}")
+    return "|".join(pieces)
+
+
 def transform_row(
     fields: list[str],
     line_no: int,
@@ -326,8 +360,9 @@ def transform_row(
     enrich: dict[str, dict] | None,
     cwc: dict[str, list[str]] | None,
     char_data: dict[str, dict] | None,
+    char_decomp: dict[str, dict] | None,
 ) -> list[str] | None:
-    """Map a 10-col source row → 15-col output row. Returns None to skip."""
+    """Map a 10-col source row → 16-col output row. Returns None to skip."""
     while len(fields) < SOURCE_COLUMN_COUNT:
         fields.append("")
 
@@ -421,6 +456,14 @@ def transform_row(
         char_data=char_data,
     )
 
+    member_decomp = build_member_decomp(
+        component=component,
+        bucket1=member_chars,
+        bucket2=same_syllable_chars,
+        char_decomp=char_decomp,
+        enrich=enrich,
+    )
+
     # Link: full HanziCraft dashboard URL covering component + all member chars
     # so the destination page shows them together (e.g. /dashboard/character/工巩鞏汞銾).
     link_target = component + member_chars
@@ -451,6 +494,7 @@ def transform_row(
         hc_productivity_str,
         hc_freq_rank,
         decomposition,
+        member_decomp,
         "",          # CrossRefs filled in main() after all rows are known
         note,
         link,
@@ -537,6 +581,8 @@ def main() -> int:
                     help="per-component characterswithcomponent cache (optional)")
     ap.add_argument("--char-data", type=Path, default=DEFAULT_CHAR_DATA,
                     help="per-character pinyin cache (optional)")
+    ap.add_argument("--char-decomp", type=Path, default=DEFAULT_CHAR_DECOMP,
+                    help="per-character once-level decomp cache (optional)")
     args = ap.parse_args()
 
     if not args.source.exists():
@@ -575,21 +621,32 @@ def main() -> int:
             print(f"warn: failed to load char-data file {args.char_data}: {e}",
                   file=sys.stderr)
 
+    char_decomp: dict[str, dict] | None = None
+    if args.char_decomp.exists():
+        try:
+            char_decomp = json.loads(args.char_decomp.read_text(encoding="utf-8"))
+            print(f"loaded char decomp for {len(char_decomp)} chars from {args.char_decomp}",
+                  file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-decomp file {args.char_decomp}: {e}",
+                  file=sys.stderr)
+
     log: list[str] = []
     src_rows = read_source(args.source, log)
 
     out_rows: list[list[str]] = []
     seen: dict[str, tuple[int, int]] = {}  # key_field -> (src_line, out_index)
-    # Field indices for the 15-col schema:
+    # Field indices for the 16-col schema:
     #  0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars,
     #  5=SameSyllableChars, 6=Reliability, 7=Productivity, 8=Frequency,
-    #  9=Decomposition, 10=CrossRefs, 11=Note, 12=Link, 13=Audio, 14=Tags
-    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 12, 13)  # don't merge Key/Component/Pinyin/CrossRefs/Note/Tags
-    NOTE_IDX = 11
+    #  9=Decomposition, 10=MemberDecomp, 11=CrossRefs, 12=Note,
+    #  13=Link, 14=Audio, 15=Tags
+    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 10, 13, 14)
+    NOTE_IDX = 12
 
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich, cwc, char_data)
+            row = transform_row(fields, line_no, log, enrich, cwc, char_data, char_decomp)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
@@ -625,7 +682,7 @@ def main() -> int:
 
     # Cross-refs: when a Component has multiple Keys (different readings),
     # fill CrossRefs column with the OTHER readings + their member chars.
-    # CrossRefs lives at column 10 in the 15-col schema.
+    # CrossRefs lives at column 11 in the 16-col schema.
     by_component: dict[str, list[int]] = {}
     for idx, row in enumerate(out_rows):
         by_component.setdefault(row[1], []).append(idx)
@@ -638,7 +695,7 @@ def main() -> int:
                 f"{sib[2]} / {sib[4]}" if sib[4] else sib[2]
                 for sib in siblings
             ]
-            out_rows[i][10] = " · ".join(chunks)
+            out_rows[i][11] = " · ".join(chunks)
 
     write_output(out_rows, args.out)
 

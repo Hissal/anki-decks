@@ -157,6 +157,20 @@ def main() -> int:
                 f"the expected `once:X+Y;radical:Z` format"
             )
 
+        if r.member_decomp:
+            for entry in r.member_decomp.split("|"):
+                if "=" not in entry:
+                    errors.append(
+                        f"{loc}: MemberDecomp entry {entry!r} missing `=`"
+                    )
+                    break
+                ch, rhs = entry.split("=", 1)
+                if not ch or not rhs:
+                    errors.append(
+                        f"{loc}: MemberDecomp entry {entry!r} has empty char or decomp"
+                    )
+                    break
+
     for w in warnings:
         stderr(f"warn: {w}")
     for e in errors:

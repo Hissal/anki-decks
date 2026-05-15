@@ -23,17 +23,21 @@
   <div class="bucket-block"
        data-members="{{MemberChars}}"
        data-same-syllable="{{SameSyllableChars}}"
-       data-productivity="{{Productivity}}">
+       data-productivity="{{Productivity}}"
+       data-component="{{Component}}"
+       data-member-decomp="{{MemberDecomp}}">
     {{#MemberChars}}
     <div class="bucket bucket-phonetic">
       <span class="bucket-label">Phonetic in <span class="bucket-count"></span>:</span>
       <span class="bucket-chars">{{MemberChars}}</span>
+      <div class="bucket-decomp"></div>
     </div>
     {{/MemberChars}}
     {{#SameSyllableChars}}
     <div class="bucket bucket-syllable">
       <span class="bucket-label">Same syllable, different tone <span class="bucket-count"></span>:</span>
       <span class="bucket-chars">{{SameSyllableChars}}</span>
+      <div class="bucket-decomp"></div>
     </div>
     {{/SameSyllableChars}}
     <div class="bucket bucket-other"></div>
@@ -77,10 +81,52 @@
     // member chars are all in BMP for our deck).
     return Array.from(s || "").length;
   }
+  function escHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Parse `巩=工+凡|汞=工+水` → {巩: ["工","凡"], 汞: ["工","水"]}
+  function parseMemberDecomp(spec) {
+    var out = {};
+    if (!spec) return out;
+    spec.split("|").forEach(function (entry) {
+      var idx = entry.indexOf("=");
+      if (idx < 0) return;
+      var ch = entry.substring(0, idx);
+      var parts = entry.substring(idx + 1).split("+");
+      out[ch] = parts;
+    });
+    return out;
+  }
+
+  function renderBucketDecomp(slot, charsStr, decompMap, component) {
+    var lines = [];
+    var chars = Array.from(charsStr || "");
+    for (var i = 0; i < chars.length; i++) {
+      var c = chars[i];
+      var parts = decompMap[c];
+      if (!parts) continue;
+      var inner = parts.map(function (p) {
+        var cls = p === component ? "decomp-piece decomp-phonetic" : "decomp-piece";
+        return '<span class="' + cls + '">' + escHtml(p) + '</span>';
+      }).join('<span class="decomp-sep">+</span>');
+      lines.push(
+        '<div class="member-decomp-line">' +
+          '<span class="member-decomp-char">' + escHtml(c) + '</span>' +
+          '<span class="member-decomp-eq">=</span>' +
+          inner +
+        '</div>'
+      );
+    }
+    slot.innerHTML = lines.join("");
+  }
+
   document.querySelectorAll(".bucket-block").forEach(function (root) {
     var members = root.dataset.members || "";
     var sameSyl = root.dataset.sameSyllable || "";
     var prodStr = root.dataset.productivity || "";
+    var component = root.dataset.component || "";
+    var decompMap = parseMemberDecomp(root.dataset.memberDecomp || "");
     var prod = parseInt(prodStr, 10);
     var memberCount = cjkLen(members);
     var sylCount = cjkLen(sameSyl);
@@ -88,6 +134,12 @@
     if (phon) phon.textContent = "(" + memberCount + ")";
     var syl = root.querySelector(".bucket-syllable .bucket-count");
     if (syl) syl.textContent = "(" + sylCount + ")";
+
+    var phonDecomp = root.querySelector(".bucket-phonetic .bucket-decomp");
+    if (phonDecomp) renderBucketDecomp(phonDecomp, members, decompMap, component);
+    var sylDecomp = root.querySelector(".bucket-syllable .bucket-decomp");
+    if (sylDecomp) renderBucketDecomp(sylDecomp, sameSyl, decompMap, component);
+
     var other = root.querySelector(".bucket-other");
     if (!other) return;
     if (!isNaN(prod) && prod > memberCount + sylCount) {

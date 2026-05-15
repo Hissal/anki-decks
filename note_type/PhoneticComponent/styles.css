@@ -307,6 +307,43 @@
 .night_mode .bucket-label, .nightMode .bucket-label,
 .night_mode .bucket-hint, .nightMode .bucket-hint { color: #9ca3af; }
 
+/* Per-member-char decomp lines (Card 2 back). */
+.bucket-decomp {
+  margin: 4px 0 8px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.member-decomp-line {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 17px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+.member-decomp-char {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.member-decomp-eq {
+  color: #9ca3af;
+  margin: 0 4px;
+  font-size: 14px;
+}
+.decomp-phonetic {
+  color: #6366f1;
+  font-weight: 600;
+  background: rgba(99, 102, 241, 0.08);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+.night_mode .member-decomp-char, .nightMode .member-decomp-char { color: #e8e8e8; }
+.night_mode .member-decomp-line, .nightMode .member-decomp-line { color: #b8b8b8; }
+.night_mode .member-decomp-eq, .nightMode .member-decomp-eq { color: #6b7280; }
+.night_mode .decomp-phonetic, .nightMode .decomp-phonetic {
+  color: #a5b4fc;
+  background: rgba(165, 180, 252, 0.12);
+}
+
 .link-footer {
   margin: 18px 0 4px;
   font-size: 13px;
