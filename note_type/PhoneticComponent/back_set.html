@@ -22,6 +22,7 @@
 
   <div class="bucket-block"
        data-members="{{MemberChars}}"
+       data-same-syllable="{{SameSyllableChars}}"
        data-productivity="{{Productivity}}">
     {{#MemberChars}}
     <div class="bucket bucket-phonetic">
@@ -29,6 +30,12 @@
       <span class="bucket-chars">{{MemberChars}}</span>
     </div>
     {{/MemberChars}}
+    {{#SameSyllableChars}}
+    <div class="bucket bucket-syllable">
+      <span class="bucket-label">Same syllable, different tone <span class="bucket-count"></span>:</span>
+      <span class="bucket-chars">{{SameSyllableChars}}</span>
+    </div>
+    {{/SameSyllableChars}}
     <div class="bucket bucket-other"></div>
   </div>
 
@@ -72,18 +79,22 @@
   }
   document.querySelectorAll(".bucket-block").forEach(function (root) {
     var members = root.dataset.members || "";
+    var sameSyl = root.dataset.sameSyllable || "";
     var prodStr = root.dataset.productivity || "";
     var prod = parseInt(prodStr, 10);
     var memberCount = cjkLen(members);
+    var sylCount = cjkLen(sameSyl);
     var phon = root.querySelector(".bucket-phonetic .bucket-count");
     if (phon) phon.textContent = "(" + memberCount + ")";
+    var syl = root.querySelector(".bucket-syllable .bucket-count");
+    if (syl) syl.textContent = "(" + sylCount + ")";
     var other = root.querySelector(".bucket-other");
     if (!other) return;
-    if (!isNaN(prod) && prod > memberCount) {
-      var remainder = prod - memberCount;
+    if (!isNaN(prod) && prod > memberCount + sylCount) {
+      var remainder = prod - memberCount - sylCount;
       other.innerHTML =
         '<span class="bucket-label">Also a component in ' + remainder +
-        ' more chars</span> <span class="bucket-hint">(different sound — see HanziCraft link)</span>';
+        ' more chars</span> <span class="bucket-hint">(see HanziCraft link)</span>';
     } else {
       other.remove();
     }

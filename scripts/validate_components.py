@@ -119,6 +119,17 @@ def main() -> int:
                 f"{r.component!r}; strip it"
             )
 
+        if r.same_syllable_chars:
+            if r.component and r.component in r.same_syllable_chars:
+                errors.append(
+                    f"{loc}: SameSyllableChars still contains Component {r.component!r}"
+                )
+            overlap = set(r.member_chars) & set(r.same_syllable_chars)
+            if overlap:
+                errors.append(
+                    f"{loc}: SameSyllableChars overlaps MemberChars on {sorted(overlap)!r}"
+                )
+
         if not r.meaning:
             warnings.append(f"{loc}: empty Meaning (Component {r.component!r})")
 

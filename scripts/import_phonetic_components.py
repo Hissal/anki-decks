@@ -33,6 +33,8 @@ DEFAULT_SOURCE = Path(
     r"C:\Users\hissa\OneDrive\Työpöytä\Selected Notes.txt"
 )
 DEFAULT_ENRICH = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
+DEFAULT_CWC = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
+DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
 HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
 
 SOURCE_COLUMN_COUNT = 10  # source TSV has 10 columns per its directive
@@ -272,13 +274,60 @@ def build_decomposition(component: str, hc_decomp: dict | None) -> str:
     return ";".join(parts)
 
 
+def strip_tone(pinyin: str) -> str:
+    """Drop the trailing tone digit from numeric pinyin (gong3 → gong).
+    Lowercase the result so a HanziCraft `Gong1` (proper noun marker) compares
+    equal to a row's `gong1`."""
+    return re.sub(r"\d$", "", (pinyin or "").lower())
+
+
+def compute_same_syllable_bucket(
+    component: str,
+    row_pinyin_numeric: str,
+    member_chars: str,
+    cwc: dict[str, list[str]] | None,
+    char_data: dict[str, dict] | None,
+) -> str:
+    """Walk the full characters-with-this-component list and return chars whose
+    pinyin shares this row's syllable but has a different tone (bucket 2)."""
+    if not (cwc and char_data):
+        return ""
+    full = cwc.get(component) or []
+    if not full:
+        return ""
+    target_syllable = strip_tone(row_pinyin_numeric)
+    if not target_syllable:
+        return ""
+    target_full = (row_pinyin_numeric or "").lower()
+    in_bucket1 = set(member_chars)
+    bucket2: list[str] = []
+    for ch in full:
+        if ch == component or ch in in_bucket1:
+            continue
+        data = char_data.get(ch)
+        if not data:
+            continue
+        ch_pinyin = (data.get("pinyin") or "").lower()
+        if not ch_pinyin:
+            continue
+        if ch_pinyin == target_full:
+            # Same exact sound — source forgot to curate this one. Treat as
+            # bucket-1 for purposes of the count; don't put it in bucket 2.
+            continue
+        if strip_tone(ch_pinyin) == target_syllable:
+            bucket2.append(ch)
+    return "".join(bucket2)
+
+
 def transform_row(
     fields: list[str],
     line_no: int,
     log: list[str],
     enrich: dict[str, dict] | None,
+    cwc: dict[str, list[str]] | None,
+    char_data: dict[str, dict] | None,
 ) -> list[str] | None:
-    """Map a 10-col source row → 12-col output row. Returns None to skip."""
+    """Map a 10-col source row → 15-col output row. Returns None to skip."""
     while len(fields) < SOURCE_COLUMN_COUNT:
         fields.append("")
 
@@ -364,6 +413,14 @@ def transform_row(
 
     decomposition = build_decomposition(component, hc_decomp)
 
+    same_syllable_chars = compute_same_syllable_bucket(
+        component=component,
+        row_pinyin_numeric=src_pinyin,
+        member_chars=member_chars,
+        cwc=cwc,
+        char_data=char_data,
+    )
+
     # Link: full HanziCraft dashboard URL covering component + all member chars
     # so the destination page shows them together (e.g. /dashboard/character/工巩鞏汞銾).
     link_target = component + member_chars
@@ -389,6 +446,7 @@ def transform_row(
         pinyin_marks,
         meaning_value,
         member_chars,
+        same_syllable_chars,
         reliability,
         hc_productivity_str,
         hc_freq_rank,
@@ -475,6 +533,10 @@ def main() -> int:
                     help="HanziCraft JSON cache to merge in (optional)")
     ap.add_argument("--no-enrich", action="store_true",
                     help="skip enrichment even if cache file exists")
+    ap.add_argument("--cwc", type=Path, default=DEFAULT_CWC,
+                    help="per-component characterswithcomponent cache (optional)")
+    ap.add_argument("--char-data", type=Path, default=DEFAULT_CHAR_DATA,
+                    help="per-character pinyin cache (optional)")
     args = ap.parse_args()
 
     if not args.source.exists():
@@ -494,21 +556,40 @@ def main() -> int:
         print(f"note: enrichment file {args.enrich} not found; phase-1-only output",
               file=sys.stderr)
 
+    cwc: dict[str, list[str]] | None = None
+    if args.cwc.exists():
+        try:
+            cwc = json.loads(args.cwc.read_text(encoding="utf-8"))
+            print(f"loaded cwc lists for {len(cwc)} components from {args.cwc}",
+                  file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load cwc file {args.cwc}: {e}", file=sys.stderr)
+
+    char_data: dict[str, dict] | None = None
+    if args.char_data.exists():
+        try:
+            char_data = json.loads(args.char_data.read_text(encoding="utf-8"))
+            print(f"loaded char data for {len(char_data)} chars from {args.char_data}",
+                  file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-data file {args.char_data}: {e}",
+                  file=sys.stderr)
+
     log: list[str] = []
     src_rows = read_source(args.source, log)
 
     out_rows: list[list[str]] = []
     seen: dict[str, tuple[int, int]] = {}  # key_field -> (src_line, out_index)
-    # Field indices for the 14-col schema:
-    #  0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars, 5=Reliability,
-    #  6=Productivity, 7=Frequency, 8=Decomposition, 9=CrossRefs, 10=Note,
-    #  11=Link, 12=Audio, 13=Tags
-    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 11, 12)  # M,Mem,Rel,Prod,Freq,Decomp,Link,Audio
-    NOTE_IDX = 10
+    # Field indices for the 15-col schema:
+    #  0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars,
+    #  5=SameSyllableChars, 6=Reliability, 7=Productivity, 8=Frequency,
+    #  9=Decomposition, 10=CrossRefs, 11=Note, 12=Link, 13=Audio, 14=Tags
+    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 12, 13)  # don't merge Key/Component/Pinyin/CrossRefs/Note/Tags
+    NOTE_IDX = 11
 
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich)
+            row = transform_row(fields, line_no, log, enrich, cwc, char_data)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
@@ -544,6 +625,7 @@ def main() -> int:
 
     # Cross-refs: when a Component has multiple Keys (different readings),
     # fill CrossRefs column with the OTHER readings + their member chars.
+    # CrossRefs lives at column 10 in the 15-col schema.
     by_component: dict[str, list[int]] = {}
     for idx, row in enumerate(out_rows):
         by_component.setdefault(row[1], []).append(idx)
@@ -556,7 +638,7 @@ def main() -> int:
                 f"{sib[2]} / {sib[4]}" if sib[4] else sib[2]
                 for sib in siblings
             ]
-            out_rows[i][9] = " · ".join(chunks)
+            out_rows[i][10] = " · ".join(chunks)
 
     write_output(out_rows, args.out)
 

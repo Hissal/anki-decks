@@ -219,17 +219,43 @@ def render_component_entry(row) -> str:
         strip_diacritics(row.pinyin),
         row.meaning.lower(),
         row.member_chars,
+        row.same_syllable_chars,
     ])
     search_blob = strip_diacritics(search_blob).lower()
 
     member_html = ""
-    if row.member_chars:
-        member_html = (
-            f'<div class="component-members">'
-            f'<span class="component-members-label">members:</span> '
-            f'<span class="component-members-chars">{html.escape(row.member_chars)}</span>'
-            f'</div>'
-        )
+    if row.member_chars or row.same_syllable_chars:
+        parts: list[str] = []
+        if row.member_chars:
+            parts.append(
+                f'<div class="component-members">'
+                f'<span class="component-members-label">phonetic in:</span> '
+                f'<span class="component-members-chars">{html.escape(row.member_chars)}</span>'
+                f'</div>'
+            )
+        if row.same_syllable_chars:
+            parts.append(
+                f'<div class="component-members">'
+                f'<span class="component-members-label">same syllable, different tone:</span> '
+                f'<span class="component-members-chars">{html.escape(row.same_syllable_chars)}</span>'
+                f'</div>'
+            )
+        # Bucket-3 count = Productivity − bucket1 − bucket2
+        try:
+            prod = int(row.productivity) if row.productivity else 0
+            b1 = len(row.member_chars)
+            b2 = len(row.same_syllable_chars)
+            remainder = prod - b1 - b2
+            if remainder > 0:
+                parts.append(
+                    f'<div class="component-members component-members-other">'
+                    f'<span class="component-members-label">also in {remainder} more chars</span>'
+                    f' <span class="bucket-hint">(see HanziCraft link)</span>'
+                    f'</div>'
+                )
+        except ValueError:
+            pass
+        member_html = "".join(parts)
 
     stat_pills: list[str] = []
     if row.reliability:
@@ -579,7 +605,7 @@ details.component-entry > summary {
   min-width: 4em;
 }
 .component-members {
-  margin: 6px 0;
+  margin: 4px 0;
   font-size: 13px;
 }
 .component-members-label {
@@ -593,7 +619,10 @@ details.component-entry > summary {
   font-size: 20px;
   letter-spacing: 0.04em;
   color: var(--fg);
+  margin-left: 4px;
 }
+.component-members-other { color: var(--fg-faint); }
+.bucket-hint { font-style: italic; color: var(--fg-faint); }
 
 /* Tone colors — light + dark variants. */
 .t1 { color: #e11d48; }
