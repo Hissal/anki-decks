@@ -100,27 +100,29 @@ If unsure between Core and Slang for a casual word: if it's the **default** way 
 
 ### Schema
 
-12 columns. Directive block:
+14 columns. Directive block:
 
 ```
 #separator:tab
 #html:true
-#columns:Key	Component	Pinyin	Meaning	MemberChars	Reliability	Productivity	Frequency	Note	Link	Audio	Tags
-#tags column:12
+#columns:Key	Component	Pinyin	Meaning	MemberChars	Reliability	Productivity	Frequency	Decomposition	CrossRefs	Note	Link	Audio	Tags
+#tags column:14
 ```
 
 1. `Key` — `<component>:<numeric-pinyin>` (e.g. `肖:qiao4`). Anki's first field must be unique per note, and the same component can produce multiple sounds (`肖` → xiāo / qiào / shāo), so `Component` alone is not unique. Card templates never display `Key` — it exists only to dedupe and to drive Anki's match-on-first-field import behavior.
 2. `Component` — the lone phonetic component (e.g. `工`). Single CJK character per row.
-3. `Pinyin` — the sound the component produces in derivative characters, with tone marks (e.g. `gǒng` for `工` as it appears in `巩鞏汞銾`). Note: this is the sound of the **compound**, not necessarily the component's own dictionary pronunciation.
+3. `Pinyin` — the sound the component produces in derivative characters, with tone marks (e.g. `gǒng` for `工` as it appears in `巩鞏汞銾`). Note: this is the sound of the **compound**, not necessarily the component's own dictionary pronunciation. Card templates tone-color this field automatically based on the diacritic.
 4. `Meaning` — English gloss from HanziCraft's dictionary (CC-CEDICT-derived), with senses ` / `-separated. Phase 2 enrichment overwrites the rough phase-1 mnemonics; if HanziCraft has no entry we fall back to whatever the source notes file had.
 5. `MemberChars` — the set of compound characters that share this phonetic (e.g. `巩鞏汞銾`). The component itself is stripped from the set so the front of Card 2 is a real recognition test.
 6. `Reliability` — productivity stats: `X/Y` (sound match across all chars containing the component) and/or `X/Y (ignoring tone)`. Multiple stats joined with ` · `.
 7. `Productivity` — HanziCraft's "appears as a component in N characters" count (e.g. `121` for `工`). Total number of characters that contain this component, regardless of whether they take its sound.
 8. `Frequency` — HanziCraft's frequency rank for the component as a standalone character (e.g. `118` for `工` being the 118th most frequent character in modern usage). Empty for rare components not in the frequency list.
-9. `Note` — free-form. Used for variant/traditional forms (`Traditional: 歷`), neighbour-component hints (`-童㢆重`), similarity warnings, demoted mnemonics (`Mnemonic: cleats + heart …`), and other context.
-10. `Link` — HanziCraft URL for the component, e.g. `https://hanzicraft.com/dashboard/character/%E5%B7%A5`. Rendered as a "HanziCraft →" footer on the card back.
-11. `Audio` — `[sound:…\.mp3]` ref. Files are user-supplied; cards display fine without them, audio just no-ops until mp3s are dropped into `collection.media`.
-12. `Tags` — every row has at least `phonetic-component`.
+9. `Decomposition` — TSV-packed top-level + radical breakdown of the component itself: `once:<a>+<b>` (top-level split, e.g. `once:一+丄` for `工`) and optionally `;radical:<r>` (canonical Kangxi radical, only when it differs from the component). `?` stands in for HanziCraft's "no glyph available" placeholder. Card templates parse this and render it as labeled lines on Card 1 back.
+10. `CrossRefs` — for the 33 components in the deck with multiple readings, the OTHER readings of the same component packed as `qiào / 俏峭鞘诮 · shāo / 稍梢捎艄筲`. Empty for single-reading components. Card 1 back renders this as a tone-colored "also reads" block.
+11. `Note` — free-form. Used for variant/traditional forms (`Traditional: 歷`), expanded exception hints (`Exceptions (different sound): 毕昆皆毚`), related-char hints (`Also related: 位`), similarity warnings, and other context. Phase 3 dropped HanziCraft mnemonic-style entries; meanings + decomposition + the HanziCraft link replace them.
+12. `Link` — HanziCraft URL covering the component plus all its member chars, e.g. `https://hanzicraft.com/dashboard/character/%E5%B7%A5%E5%B7%A9%E9%9E%8F%E6%B1%9E%E9%8A%BE`. Clicking opens HanziCraft's dashboard for the whole set at once. Rendered as a "HanziCraft →" footer on each card back.
+13. `Audio` — `[sound:…\.mp3]` ref. Files are user-supplied; cards display fine without them, audio just no-ops until mp3s are dropped into `collection.media`.
+14. `Tags` — every row has at least `phonetic-component`.
 
 The deck generates **two cards per note**: Card 1 (Component → Sound) shows the lone component, asks for the sound. Card 2 (Set → Sound) shows the member-char set, asks for the shared phonetic and its sound. Note type lives at `note_type/PhoneticComponent/`.
 

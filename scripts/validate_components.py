@@ -40,6 +40,7 @@ from components_common import (
 AUDIO_RE = re.compile(r"^\[sound:[^\]]+\.mp3\]$")
 LINK_RE = re.compile(r"^https?://")
 INT_RE = re.compile(r"^\d+$")
+DECOMP_RE = re.compile(r"^(once:[^;]+)?(?:;?radical:[^;]+)?$")
 
 
 def main() -> int:
@@ -137,6 +138,12 @@ def main() -> int:
         if r.link and not LINK_RE.match(r.link):
             warnings.append(
                 f"{loc}: Link {r.link!r} doesn't look like a URL"
+            )
+
+        if r.decomposition and not DECOMP_RE.match(r.decomposition):
+            errors.append(
+                f"{loc}: Decomposition {r.decomposition!r} doesn't match "
+                f"the expected `once:X+Y;radical:Z` format"
             )
 
     for w in warnings:

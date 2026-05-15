@@ -25,8 +25,10 @@ COMPONENT_HEADER = [
     "Reliability",   # "X/Y" or "X/Y (ignoring tone)" — sound-match within member chars
     "Productivity",  # HanziCraft's "appears as a component in N characters" — total count
     "Frequency",     # HanziCraft's frequency rank (e.g. "118" for the 118th most frequent character)
+    "Decomposition", # `once:<a>+<b>;radical:<r>` — component's own top-level + radical breakdown
+    "CrossRefs",     # other readings of the same component: `qiào / 俏峭鞘诮 · shāo / 稍梢捎艄筲`
     "Note",
-    "Link",          # HanziCraft URL for the component
+    "Link",          # HanziCraft URL for the component + member chars
     "Audio",
     "Tags",
 ]
@@ -51,6 +53,8 @@ class ComponentRow:
     reliability: str
     productivity: str
     frequency: str
+    decomposition: str
+    cross_refs: str
     note: str
     link: str
     audio: str
@@ -102,10 +106,12 @@ def parse_component_tsv(path: Path) -> tuple[list[str], list[ComponentRow]]:
                 reliability=fields[5],
                 productivity=fields[6],
                 frequency=fields[7],
-                note=fields[8],
-                link=fields[9],
-                audio=fields[10],
-                tags=[t for t in fields[11].split(" ") if t],
+                decomposition=fields[8],
+                cross_refs=fields[9],
+                note=fields[10],
+                link=fields[11],
+                audio=fields[12],
+                tags=[t for t in fields[13].split(" ") if t],
             )
         )
 

@@ -100,12 +100,26 @@
   font-family: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   font-size: 32px;
   font-weight: 500;
-  color: #a78bfa;
   margin: 8px 0 4px;
 }
 
-.night_mode .pinyin,
-.nightMode .pinyin { color: #c4b5fd; }
+/* Tone colors (Pleco / Skritter convention) — light + dark variants. */
+.pinyin.t1, .t1 { color: #e11d48; }   /* 1st tone — red */
+.pinyin.t2, .t2 { color: #ea580c; }   /* 2nd tone — orange */
+.pinyin.t3, .t3 { color: #65a30d; }   /* 3rd tone — green */
+.pinyin.t4, .t4 { color: #2563eb; }   /* 4th tone — blue */
+.pinyin.t5, .t5 { color: #6b7280; }   /* neutral / 5th tone — grey */
+
+.night_mode .pinyin.t1, .night_mode .t1,
+.nightMode .pinyin.t1, .nightMode .t1 { color: #fb7185; }
+.night_mode .pinyin.t2, .night_mode .t2,
+.nightMode .pinyin.t2, .nightMode .t2 { color: #fb923c; }
+.night_mode .pinyin.t3, .night_mode .t3,
+.nightMode .pinyin.t3, .nightMode .t3 { color: #a3e635; }
+.night_mode .pinyin.t4, .night_mode .t4,
+.nightMode .pinyin.t4, .nightMode .t4 { color: #60a5fa; }
+.night_mode .pinyin.t5, .night_mode .t5,
+.nightMode .pinyin.t5, .nightMode .t5 { color: #9ca3af; }
 
 .meaning {
   font-size: 22px;
@@ -138,6 +152,7 @@
 }
 
 .stat-pill {
+  position: relative;
   display: inline-block;
   font-size: 12px;
   padding: 3px 10px;
@@ -146,6 +161,7 @@
   color: #4b5563;
   background: #f3f4f6;
   font-variant-numeric: tabular-nums;
+  cursor: help;
 }
 
 .night_mode .stat-pill,
@@ -154,6 +170,142 @@
   background: #2c2c2e;
   border-color: #3a3a3c;
 }
+
+/* Pure-CSS tooltip for stat pills. */
+.stat-pill[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 320px;
+  padding: 8px 12px;
+  background: #1f2937;
+  color: #f3f4f6;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.4;
+  border-radius: 6px;
+  white-space: normal;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.stat-pill[data-tip]:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1f2937;
+  z-index: 10;
+}
+.night_mode .stat-pill[data-tip]:hover::after,
+.nightMode .stat-pill[data-tip]:hover::after {
+  background: #4b5563;
+}
+.night_mode .stat-pill[data-tip]:hover::before,
+.nightMode .stat-pill[data-tip]:hover::before {
+  border-top-color: #4b5563;
+}
+
+/* Decomposition lines under the component on Card 1 back. */
+.decomp-block { margin: 14px auto; max-width: 560px; }
+.decomp-line {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 4px 0;
+}
+.decomp-label {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-right: 6px;
+}
+.decomp-piece {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 22px;
+  margin: 0 2px;
+  color: inherit;
+}
+.decomp-sep {
+  font-size: 16px;
+  color: #9ca3af;
+  margin: 0 2px;
+}
+.night_mode .decomp-line, .nightMode .decomp-line { color: #c4c4c4; }
+.night_mode .decomp-label, .nightMode .decomp-label,
+.night_mode .decomp-sep, .nightMode .decomp-sep { color: #9ca3af; }
+
+/* Cross-refs (other readings of the same component). */
+.cross-refs-block {
+  margin: 12px auto;
+  max-width: 560px;
+}
+.cross-refs-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+.cross-ref-line {
+  font-size: 15px;
+  margin: 3px 0;
+}
+.cross-ref-line .pinyin {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 6px 0 0;
+}
+.cross-ref-chars {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+.night_mode .cross-refs-label, .nightMode .cross-refs-label { color: #9ca3af; }
+
+/* Card 2 two-bucket display. */
+.bucket-block {
+  margin: 14px auto;
+  max-width: 560px;
+  text-align: left;
+}
+.bucket {
+  margin: 6px 0;
+  font-size: 14px;
+}
+.bucket-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+.bucket-count {
+  text-transform: none;
+  letter-spacing: 0;
+  color: inherit;
+}
+.bucket-chars {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  display: inline-block;
+  margin-left: 6px;
+}
+.bucket-hint {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}
+.night_mode .bucket-chars, .nightMode .bucket-chars { color: #e8e8e8; }
+.night_mode .bucket-label, .nightMode .bucket-label,
+.night_mode .bucket-hint, .nightMode .bucket-hint { color: #9ca3af; }
 
 .link-footer {
   margin: 18px 0 4px;

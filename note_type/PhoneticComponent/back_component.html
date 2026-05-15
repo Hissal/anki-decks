@@ -1,10 +1,11 @@
-<!-- Card 1 back: reveal the sound + member chars. Audio auto-plays via Anki's
-     default {{Audio}} handling. -->
+<!-- Card 1 back: reveal the sound + member chars + decomposition + cross-refs.
+     Audio auto-plays via Anki's default {{Audio}} handling. Decomposition and
+     CrossRefs are TSV-packed; the inline script below unpacks and renders. -->
 
 <div class="card-side card-back">
   <div class="component-block">{{Component}}</div>
 
-  <div class="pinyin">{{Pinyin}}</div>
+  <div class="pinyin" data-pinyin="{{Pinyin}}">{{Pinyin}}</div>
 
   {{#Meaning}}
   <div class="meaning">{{Meaning}}</div>
@@ -12,17 +13,27 @@
 
   <div class="audio">{{Audio}}</div>
 
+  {{#Decomposition}}
+  <div class="decomp-block" data-decomp="{{Decomposition}}"></div>
+  {{/Decomposition}}
+
+  {{#CrossRefs}}
+  <div class="cross-refs-block" data-crossrefs="{{CrossRefs}}">
+    <div class="cross-refs-label">also reads:</div>
+  </div>
+  {{/CrossRefs}}
+
   <hr>
 
   {{#MemberChars}}
-  <div class="member-label">appears in:</div>
+  <div class="member-label">phonetic in:</div>
   <div class="member-chars">{{MemberChars}}</div>
   {{/MemberChars}}
 
   <div class="stats-row">
-    {{#Reliability}}<span class="stat-pill">reliability {{Reliability}}</span>{{/Reliability}}
-    {{#Productivity}}<span class="stat-pill">in {{Productivity}} chars</span>{{/Productivity}}
-    {{#Frequency}}<span class="stat-pill">freq #{{Frequency}}</span>{{/Frequency}}
+    {{#Reliability}}<span class="stat-pill" data-tip="X of Y characters that share this component take exactly this sound (including tone).">reliability {{Reliability}}</span>{{/Reliability}}
+    {{#Productivity}}<span class="stat-pill" data-tip="Total number of characters that contain this component, regardless of sound.">in {{Productivity}} chars</span>{{/Productivity}}
+    {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft's frequency rank for the component as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
   </div>
 
   {{#Note}}
@@ -37,3 +48,56 @@
   <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
   {{/Link}}
 </div>
+
+<script>
+(function () {
+  // Tone-color the Pinyin element (and any inline pinyin tokens).
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+
+  // Render decomposition: `once:一+丄;radical:工` → labeled lines.
+  document.querySelectorAll(".decomp-block").forEach(function (el) {
+    var spec = el.dataset.decomp || "";
+    var parts = spec.split(";");
+    var html = "";
+    parts.forEach(function (p) {
+      var idx = p.indexOf(":");
+      if (idx < 0) return;
+      var label = p.substring(0, idx);
+      var chars = p.substring(idx + 1).split("+");
+      var labelText = label === "once" ? "Once" : label === "radical" ? "Radical" : label;
+      html += '<div class="decomp-line"><span class="decomp-label">' + labelText + ':</span> ';
+      html += chars.map(function (c) {
+        return '<span class="decomp-piece">' + c + '</span>';
+      }).join('<span class="decomp-sep">+</span>');
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  });
+
+  // Render cross-refs: `qiào / 俏峭鞘诮 · shāo / 稍梢捎艄筲` → tone-colored lines.
+  document.querySelectorAll(".cross-refs-block").forEach(function (el) {
+    var raw = el.dataset.crossrefs || "";
+    var chunks = raw.split(" · ");
+    var html = "";
+    chunks.forEach(function (chunk) {
+      var sp = chunk.split(" / ");
+      var py = sp[0] || "";
+      var chars = sp[1] || "";
+      var cls = toneClass(py);
+      html += '<div class="cross-ref-line"><span class="pinyin ' + cls + '">' + py + '</span>';
+      if (chars) html += ' <span class="cross-ref-chars">' + chars + '</span>';
+      html += '</div>';
+    });
+    el.insertAdjacentHTML("beforeend", html);
+  });
+})();
+</script>

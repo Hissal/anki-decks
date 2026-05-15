@@ -231,16 +231,41 @@ def render_component_entry(row) -> str:
             f'</div>'
         )
 
-    stat_parts: list[str] = []
+    stat_pills: list[str] = []
     if row.reliability:
-        stat_parts.append(f"reliability {html.escape(row.reliability)}")
+        stat_pills.append(
+            f'<span class="ix-stat-pill" data-tip="X of Y characters that share '
+            f'this component take exactly this sound (including tone).">'
+            f'reliability {html.escape(row.reliability)}</span>'
+        )
     if row.productivity:
-        stat_parts.append(f"in {html.escape(row.productivity)} chars")
+        stat_pills.append(
+            f'<span class="ix-stat-pill" data-tip="Total number of characters that '
+            f'contain this component, regardless of sound.">'
+            f'in {html.escape(row.productivity)} chars</span>'
+        )
     if row.frequency:
-        stat_parts.append(f"freq #{html.escape(row.frequency)}")
+        stat_pills.append(
+            f'<span class="ix-stat-pill" data-tip="HanziCraft frequency rank for '
+            f'the component as a standalone character.">'
+            f'freq #{html.escape(row.frequency)}</span>'
+        )
     stats_html = ""
-    if stat_parts:
-        stats_html = f'<div class="component-reliability">{" · ".join(stat_parts)}</div>'
+    if stat_pills:
+        stats_html = f'<div class="ix-stats-row">{"".join(stat_pills)}</div>'
+
+    decomp_html = ""
+    if row.decomposition.strip():
+        decomp_html = (
+            f'<div class="ix-decomp" data-decomp="{html.escape(row.decomposition, quote=True)}"></div>'
+        )
+
+    cross_html = ""
+    if row.cross_refs.strip():
+        cross_html = (
+            f'<div class="ix-crossrefs" data-crossrefs="{html.escape(row.cross_refs, quote=True)}">'
+            f'<div class="ix-crossrefs-label">also reads:</div></div>'
+        )
 
     note_html = ""
     if row.note.strip():
@@ -262,7 +287,8 @@ def render_component_entry(row) -> str:
     pinyin_html = ""
     if row.pinyin:
         pinyin_html = (
-            f'<span class="component-pinyin">{html.escape(row.pinyin)}</span>'
+            f'<span class="component-pinyin" data-pinyin="{html.escape(row.pinyin, quote=True)}">'
+            f'{html.escape(row.pinyin)}</span>'
         )
 
     return (
@@ -277,6 +303,8 @@ def render_component_entry(row) -> str:
         f'<span class="english">{html.escape(row.meaning)}</span>'
         f'</summary>'
         f'<div class="details-body">'
+        f'{decomp_html}'
+        f'{cross_html}'
         f'{member_html}'
         f'{stats_html}'
         f'{note_html}'
@@ -548,7 +576,6 @@ details.component-entry > summary {
   font-family: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--ruby);
   min-width: 4em;
 }
 .component-members {
@@ -567,11 +594,83 @@ details.component-entry > summary {
   letter-spacing: 0.04em;
   color: var(--fg);
 }
-.component-reliability {
+
+/* Tone colors — light + dark variants. */
+.t1 { color: #e11d48; }
+.t2 { color: #ea580c; }
+.t3 { color: #65a30d; }
+.t4 { color: #2563eb; }
+.t5 { color: var(--fg-faint); }
+@media (prefers-color-scheme: dark) {
+  body:not(.day_mode) .t1 { color: #fb7185; }
+  body:not(.day_mode) .t2 { color: #fb923c; }
+  body:not(.day_mode) .t3 { color: #a3e635; }
+  body:not(.day_mode) .t4 { color: #60a5fa; }
+}
+
+/* Stat pills with hover tooltip. */
+.ix-stats-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.ix-stat-pill {
+  position: relative;
+  display: inline-block;
   font-size: 12px;
-  color: var(--fg-faint);
-  margin: 6px 0;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg-muted);
+  background: var(--tag-bg);
   font-variant-numeric: tabular-nums;
+  cursor: help;
+}
+.ix-stat-pill[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 320px;
+  padding: 8px 12px;
+  background: #1f2937;
+  color: #f3f4f6;
+  font-size: 12px;
+  line-height: 1.4;
+  border-radius: 6px;
+  white-space: normal;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.ix-stat-pill[data-tip]:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1f2937;
+  z-index: 100;
+}
+
+/* Decomp + cross-refs inside the entry body. */
+.ix-decomp, .ix-crossrefs { margin: 6px 0; font-size: 13px; }
+.ix-decomp-line, .ix-crossref-line { margin: 2px 0; }
+.ix-decomp-label, .ix-crossrefs-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-faint);
+  margin-right: 4px;
+}
+.ix-decomp-piece, .ix-crossref-chars {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 16px;
+  margin: 0 2px;
+}
+.ix-decomp-sep { color: var(--fg-faint); margin: 0 2px; }
+.ix-crossref-line .pinyin {
+  font-weight: 500;
+  margin-right: 6px;
 }
 """
 
@@ -698,6 +797,52 @@ SCRIPT = r"""
     ruby.classList.toggle("revealed");
     e.stopPropagation();
     e.preventDefault();
+  });
+
+  // ---- Tone-color the component pinyin spans. ----
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".component-pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+
+  // ---- Render Decomposition payload (`once:一+丄;radical:工`). ----
+  document.querySelectorAll(".ix-decomp").forEach(function (el) {
+    var spec = el.dataset.decomp || "";
+    var html = "";
+    spec.split(";").forEach(function (p) {
+      var idx = p.indexOf(":");
+      if (idx < 0) return;
+      var label = p.substring(0, idx);
+      var pieces = p.substring(idx + 1).split("+");
+      var labelText = label === "once" ? "Once" : label === "radical" ? "Radical" : label;
+      html += '<div class="ix-decomp-line"><span class="ix-decomp-label">' + labelText + '</span>';
+      html += pieces.map(function (c) {
+        return '<span class="ix-decomp-piece">' + c + '</span>';
+      }).join('<span class="ix-decomp-sep">+</span>');
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  });
+
+  // ---- Render CrossRefs payload (`qiào / 俏峭鞘诮 · shāo / 稍梢捎艄筲`). ----
+  document.querySelectorAll(".ix-crossrefs").forEach(function (el) {
+    var raw = el.dataset.crossrefs || "";
+    var out = "";
+    raw.split(" · ").forEach(function (chunk) {
+      var sp = chunk.split(" / ");
+      var py = sp[0] || "";
+      var chars = sp[1] || "";
+      out += '<div class="ix-crossref-line"><span class="pinyin ' + toneClass(py) + '">' + py + '</span>';
+      if (chars) out += '<span class="ix-crossref-chars">' + chars + '</span>';
+      out += '</div>';
+    });
+    el.insertAdjacentHTML("beforeend", out);
   });
 
   applyFilters();

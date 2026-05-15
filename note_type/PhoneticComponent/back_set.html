@@ -1,5 +1,6 @@
-<!-- Card 2 back: reveal the shared component, its sound, and supporting info.
-     Audio auto-plays via {{Audio}}. -->
+<!-- Card 2 back: reveal shared component + sound + supporting info.
+     Two-bucket member-char display: today's curated set is "phonetic in";
+     the remaining count comes from Productivity minus that set's length. -->
 
 <div class="card-side card-back">
   <div class="member-chars">{{MemberChars}}</div>
@@ -9,7 +10,7 @@
     <span class="component-block component-inline">{{Component}}</span>
   </div>
 
-  <div class="pinyin">{{Pinyin}}</div>
+  <div class="pinyin" data-pinyin="{{Pinyin}}">{{Pinyin}}</div>
 
   {{#Meaning}}
   <div class="meaning">{{Meaning}}</div>
@@ -17,10 +18,24 @@
 
   <div class="audio">{{Audio}}</div>
 
+  <hr>
+
+  <div class="bucket-block"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}">
+    {{#MemberChars}}
+    <div class="bucket bucket-phonetic">
+      <span class="bucket-label">Phonetic in <span class="bucket-count"></span>:</span>
+      <span class="bucket-chars">{{MemberChars}}</span>
+    </div>
+    {{/MemberChars}}
+    <div class="bucket bucket-other"></div>
+  </div>
+
   <div class="stats-row">
-    {{#Reliability}}<span class="stat-pill">reliability {{Reliability}}</span>{{/Reliability}}
-    {{#Productivity}}<span class="stat-pill">in {{Productivity}} chars</span>{{/Productivity}}
-    {{#Frequency}}<span class="stat-pill">freq #{{Frequency}}</span>{{/Frequency}}
+    {{#Reliability}}<span class="stat-pill" data-tip="X of Y characters that share this component take exactly this sound (including tone).">reliability {{Reliability}}</span>{{/Reliability}}
+    {{#Productivity}}<span class="stat-pill" data-tip="Total number of characters that contain this component, regardless of sound.">in {{Productivity}} chars</span>{{/Productivity}}
+    {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft's frequency rank for the component as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
   </div>
 
   {{#Note}}
@@ -35,3 +50,43 @@
   <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
   {{/Link}}
 </div>
+
+<script>
+(function () {
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+
+  // Counts for the two buckets.
+  function cjkLen(s) {
+    // Count CJK chars (ignore surrogate pair edge cases — components and
+    // member chars are all in BMP for our deck).
+    return Array.from(s || "").length;
+  }
+  document.querySelectorAll(".bucket-block").forEach(function (root) {
+    var members = root.dataset.members || "";
+    var prodStr = root.dataset.productivity || "";
+    var prod = parseInt(prodStr, 10);
+    var memberCount = cjkLen(members);
+    var phon = root.querySelector(".bucket-phonetic .bucket-count");
+    if (phon) phon.textContent = "(" + memberCount + ")";
+    var other = root.querySelector(".bucket-other");
+    if (!other) return;
+    if (!isNaN(prod) && prod > memberCount) {
+      var remainder = prod - memberCount;
+      other.innerHTML =
+        '<span class="bucket-label">Also a component in ' + remainder +
+        ' more chars</span> <span class="bucket-hint">(different sound — see HanziCraft link)</span>';
+    } else {
+      other.remove();
+    }
+  });
+})();
+</script>

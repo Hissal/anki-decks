@@ -208,6 +208,10 @@ def clean_pinyin_field(raw: str) -> tuple[str, list[str]]:
 
 
 MNEMONIC_RE = re.compile(r"[+]|\s{2,}")
+# `-<CJK chars>` → these chars CONTAIN this component but DON'T take this sound (exceptions).
+# `+<CJK chars>` → these chars are RELATED in some other way (often visual or structural).
+EXCEPTION_HINT_RE = re.compile(r"^\s*-([㐀-鿿]+)\s*$")
+RELATED_HINT_RE = re.compile(r"^\s*\+([㐀-鿿]+)\s*$")
 
 
 def looks_mnemonic(meaning: str) -> bool:
@@ -220,6 +224,52 @@ def looks_mnemonic(meaning: str) -> bool:
     if len(meaning) > 30:
         return True
     return False
+
+
+def reformat_note_hints(note: str) -> str:
+    """Walk a `<br>`-joined Note and expand cryptic `-X` / `+X` hints into
+    plain-English labels. Other tokens pass through unchanged."""
+    if not note:
+        return note
+    out: list[str] = []
+    for token in note.split("<br>"):
+        t = token.strip()
+        if not t:
+            continue
+        m = EXCEPTION_HINT_RE.match(t)
+        if m:
+            out.append(f"Exceptions (different sound): {m.group(1)}")
+            continue
+        m = RELATED_HINT_RE.match(t)
+        if m:
+            out.append(f"Also related: {m.group(1)}")
+            continue
+        out.append(t)
+    return "<br>".join(out)
+
+
+UNGLYPHABLE = "No glyph available"
+
+
+def _clean_decomp_parts(parts: list[str]) -> list[str]:
+    """Replace HanziCraft's `No glyph available` placeholder with `?`."""
+    return ["?" if p == UNGLYPHABLE else p for p in parts]
+
+
+def build_decomposition(component: str, hc_decomp: dict | None) -> str:
+    """Pack the component's own top-level decomposition into a tiny TSV-safe
+    string: `once:一+丄;radical:工`. Skips parts that are trivially equal
+    to the component itself."""
+    if not hc_decomp:
+        return ""
+    parts: list[str] = []
+    once = _clean_decomp_parts(hc_decomp.get("once") or [])
+    radical = _clean_decomp_parts(hc_decomp.get("radical") or [])
+    if once and not (len(once) == 1 and once[0] == component):
+        parts.append("once:" + "+".join(once))
+    if radical and not (len(radical) == 1 and radical[0] == component):
+        parts.append("radical:" + "+".join(radical))
+    return ";".join(parts)
 
 
 def transform_row(
@@ -292,14 +342,12 @@ def transform_row(
     hc_freq_rank = (hc or {}).get("frequency_rank") or ""
     hc_productivity = (hc or {}).get("productivity_count")
     hc_productivity_str = str(hc_productivity) if hc_productivity is not None else ""
+    hc_decomp = (hc or {}).get("decomposition")
 
     meaning_value = src_meaning
-    mnemonic_for_note = ""
     if hc_definition:
-        # HanziCraft wins on Meaning. Demote source's mnemonic to Note when
-        # detectable; quietly drop terse/duplicate source meanings.
-        if src_meaning and looks_mnemonic(src_meaning):
-            mnemonic_for_note = f"Mnemonic: {src_meaning}"
+        # HanziCraft wins on Meaning when present. Source meanings (often
+        # mnemonic-style) are dropped — phase-3A notes pass.
         meaning_value = hc_definition.replace("/", " / ")
     # else: keep src_meaning unchanged
 
@@ -310,13 +358,16 @@ def transform_row(
         extras.append(f"Variant: {src_variant}")
     if pinyin_extras:
         extras.append("See also: " + " ".join(pinyin_extras))
-    if mnemonic_for_note:
-        extras.append(mnemonic_for_note)
     if note_from_comments:
         extras.append(note_from_comments)
-    note = "<br>".join(extras)
+    note = reformat_note_hints("<br>".join(extras))
 
-    link = HANZICRAFT_URL.format(urllib.parse.quote(component))
+    decomposition = build_decomposition(component, hc_decomp)
+
+    # Link: full HanziCraft dashboard URL covering component + all member chars
+    # so the destination page shows them together (e.g. /dashboard/character/工巩鞏汞銾).
+    link_target = component + member_chars
+    link = HANZICRAFT_URL.format(urllib.parse.quote(link_target))
 
     tags = "phonetic-component"
     if src_tags:
@@ -341,6 +392,8 @@ def transform_row(
         reliability,
         hc_productivity_str,
         hc_freq_rank,
+        decomposition,
+        "",          # CrossRefs filled in main() after all rows are known
         note,
         link,
         src_audio,
@@ -446,10 +499,12 @@ def main() -> int:
 
     out_rows: list[list[str]] = []
     seen: dict[str, tuple[int, int]] = {}  # key_field -> (src_line, out_index)
-    # Field indices: 0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars,
-    # 5=Reliability, 6=Productivity, 7=Frequency, 8=Note, 9=Link, 10=Audio, 11=Tags
-    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 9, 10)  # Meaning,Members,Rel,Prod,Freq,Link,Audio
-    NOTE_IDX = 8
+    # Field indices for the 14-col schema:
+    #  0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars, 5=Reliability,
+    #  6=Productivity, 7=Frequency, 8=Decomposition, 9=CrossRefs, 10=Note,
+    #  11=Link, 12=Audio, 13=Tags
+    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 11, 12)  # M,Mem,Rel,Prod,Freq,Decomp,Link,Audio
+    NOTE_IDX = 10
 
     for line_no, fields in src_rows:
         try:
@@ -486,6 +541,22 @@ def main() -> int:
             continue
         seen[key_field] = (line_no, len(out_rows))
         out_rows.append(row)
+
+    # Cross-refs: when a Component has multiple Keys (different readings),
+    # fill CrossRefs column with the OTHER readings + their member chars.
+    by_component: dict[str, list[int]] = {}
+    for idx, row in enumerate(out_rows):
+        by_component.setdefault(row[1], []).append(idx)
+    for component, indices in by_component.items():
+        if len(indices) < 2:
+            continue
+        for i in indices:
+            siblings = [out_rows[j] for j in indices if j != i]
+            chunks = [
+                f"{sib[2]} / {sib[4]}" if sib[4] else sib[2]
+                for sib in siblings
+            ]
+            out_rows[i][9] = " · ".join(chunks)
 
     write_output(out_rows, args.out)
 
