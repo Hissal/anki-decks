@@ -38,6 +38,12 @@ DECKS = {
     "slang": "Chinese_Slang_Dialect_Flavor.tsv",
 }
 
+# Files at repo root that follow the word-deck schema defined in EXPECTED_HEADER.
+# parse_tsv() / validate.py / index.py operate on these. Other TSVs (e.g. the
+# phonetic-components deck, which has a different schema) have their own
+# tooling and are discovered separately — see components_common.py.
+WORD_DECK_FILES = set(DECKS.values())
+
 
 @dataclass
 class Row:
@@ -58,7 +64,13 @@ class Row:
 
 
 def deck_paths() -> list[Path]:
-    return sorted(REPO_ROOT.glob("*.tsv"))
+    """Return word-deck TSVs only — files whose schema matches EXPECTED_HEADER.
+
+    Non-word decks at repo root (e.g. Chinese_Phonetic_Components.tsv) have
+    a different schema and are intentionally skipped so the word-deck parser
+    never sees them. They are handled by their own tooling.
+    """
+    return sorted(p for p in REPO_ROOT.glob("*.tsv") if p.name in WORD_DECK_FILES)
 
 
 def parse_tsv(path: Path) -> tuple[list[str], list[Row]]:

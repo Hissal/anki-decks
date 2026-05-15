@@ -1,0 +1,33 @@
+<!-- Card 1 back: reveal the sound + member chars. Audio auto-plays via Anki's
+     default {{Audio}} handling. -->
+
+<div class="card-side card-back">
+  <div class="component-block">{{Component}}</div>
+
+  <div class="pinyin">{{Pinyin}}</div>
+
+  {{#Meaning}}
+  <div class="meaning">{{Meaning}}</div>
+  {{/Meaning}}
+
+  <div class="audio">{{Audio}}</div>
+
+  <hr>
+
+  {{#MemberChars}}
+  <div class="member-label">appears in:</div>
+  <div class="member-chars">{{MemberChars}}</div>
+  {{/MemberChars}}
+
+  {{#Reliability}}
+  <div class="reliability">reliability: {{Reliability}}</div>
+  {{/Reliability}}
+
+  {{#Note}}
+  <div class="note">{{Note}}</div>
+  {{/Note}}
+
+  {{#PersonalNote}}
+  <div class="personal-note">{{PersonalNote}}</div>
+  {{/PersonalNote}}
+</div>

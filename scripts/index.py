@@ -29,6 +29,10 @@ from common import (
     parse_tsv,
     stderr,
 )
+from components_common import (
+    COMPONENT_DECK_PATH,
+    parse_component_tsv,
+)
 
 INDEX_PATH = REPO_ROOT / "INDEX.html"
 
@@ -42,6 +46,9 @@ DECK_SLUGS = {
     "Chinese_Idioms_Proverbs_Classical.tsv": "idioms",
     "Chinese_Slang_Dialect_Flavor.tsv": "slang",
 }
+
+COMPONENTS_SLUG = "components"
+COMPONENTS_TITLE = "Phonetic Components"
 
 
 def strip_diacritics(s: str) -> str:
@@ -198,6 +205,72 @@ def render_entry(row, deck_slug: str) -> str:
         f'{note_html}'
         f'<div class="meta-row">{link_html}'
         f'<div class="tag-chips">{tag_chips}</div></div>'
+        f'</div></details>'
+    )
+
+
+def render_component_entry(row) -> str:
+    """Render a single phonetic-component row. Different schema from word rows
+    so renders into its own DOM shape, but uses the same `details.entry`
+    wrapper so filtering / search / deck-filter integrate cleanly."""
+    search_blob = " ".join([
+        row.component,
+        row.pinyin,
+        strip_diacritics(row.pinyin),
+        row.meaning.lower(),
+        row.member_chars,
+    ])
+    search_blob = strip_diacritics(search_blob).lower()
+
+    member_html = ""
+    if row.member_chars:
+        member_html = (
+            f'<div class="component-members">'
+            f'<span class="component-members-label">members:</span> '
+            f'<span class="component-members-chars">{html.escape(row.member_chars)}</span>'
+            f'</div>'
+        )
+
+    reliability_html = ""
+    if row.reliability:
+        reliability_html = (
+            f'<div class="component-reliability">'
+            f'reliability: {html.escape(row.reliability)}'
+            f'</div>'
+        )
+
+    note_html = ""
+    if row.note.strip():
+        note_html = f'<p class="note">{row.note}</p>'
+
+    tag_chips = "".join(
+        f'<button class="tag-chip" type="button" data-tag="{html.escape(t, quote=True)}">'
+        f"{html.escape(t)}</button>"
+        for t in row.tags
+    )
+
+    pinyin_html = ""
+    if row.pinyin:
+        pinyin_html = (
+            f'<span class="component-pinyin">{html.escape(row.pinyin)}</span>'
+        )
+
+    return (
+        f'<details class="entry component-entry" '
+        f'data-deck="{html.escape(COMPONENTS_SLUG, quote=True)}" '
+        f'data-tier="" '
+        f'data-tags="{html.escape(" ".join(row.tags), quote=True)}" '
+        f'data-search="{html.escape(search_blob, quote=True)}">'
+        f'<summary>'
+        f'<span class="component-headline">{html.escape(row.component)}</span>'
+        f'{pinyin_html}'
+        f'<span class="english">{html.escape(row.meaning)}</span>'
+        f'</summary>'
+        f'<div class="details-body">'
+        f'{member_html}'
+        f'{reliability_html}'
+        f'{note_html}'
+        f'<div class="meta-row"><div class="tag-chips">{tag_chips}</div></div>'
         f'</div></details>'
     )
 
@@ -446,6 +519,50 @@ section.tag-group:not(:has(details.entry:not([hidden]))) { display: none; }
   display: none;
 }
 .empty-state.visible { display: block; }
+
+/* ---------- Phonetic-components section ---------- */
+
+details.component-entry > summary {
+  gap: 12px;
+}
+.component-headline {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体",
+    "Noto Serif CJK SC", "Source Han Serif SC",
+    "Songti SC", "SimSun", "宋体", serif;
+  font-size: 30px;
+  line-height: 1;
+  min-width: 1.4em;
+  text-align: center;
+}
+.component-pinyin {
+  font-family: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ruby);
+  min-width: 4em;
+}
+.component-members {
+  margin: 6px 0;
+  font-size: 13px;
+}
+.component-members-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  color: var(--fg-faint);
+}
+.component-members-chars {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+}
+.component-reliability {
+  font-size: 12px;
+  color: var(--fg-faint);
+  margin: 6px 0;
+  font-variant-numeric: tabular-nums;
+}
 """
 
 
@@ -603,6 +720,23 @@ def main() -> int:
                 if t not in TIER_TAGS:
                     all_tags.add(t)
 
+    # Phonetic-components deck has a different schema and isn't returned by
+    # deck_paths(). Load it separately if present.
+    component_rows: list = []
+    if COMPONENT_DECK_PATH.exists():
+        try:
+            _, component_rows = parse_component_tsv(COMPONENT_DECK_PATH)
+        except ValueError as e:
+            stderr(f"skipping {COMPONENT_DECK_PATH.name}: {e}")
+            component_rows = []
+        else:
+            total += len(component_rows)
+            deck_counts[COMPONENTS_SLUG] = len(component_rows)
+            for r in component_rows:
+                for t in r.tags:
+                    if t not in TIER_TAGS:
+                        all_tags.add(t)
+
     # ---- Build header controls ----
 
     deck_boxes = "".join(
@@ -611,6 +745,13 @@ def main() -> int:
         for name, slug in DECK_SLUGS.items()
         if slug in deck_counts
     )
+    if COMPONENTS_SLUG in deck_counts:
+        deck_boxes += (
+            f'<label><input type="checkbox" class="deck-filter" '
+            f'value="{COMPONENTS_SLUG}" checked> '
+            f'{html.escape(COMPONENTS_TITLE)} '
+            f'<span class="count">{deck_counts[COMPONENTS_SLUG]}</span></label>'
+        )
 
     tier_boxes = "".join(
         f'<label><input type="checkbox" class="tier-filter" value="{html.escape(t)}" checked> '
@@ -624,11 +765,14 @@ def main() -> int:
         for t in sorted(all_tags)
     )
 
-    totals_text = " · ".join(
-        [f"{total} entries"]
-        + [f"{DECK_TITLES[name].split(' ', 1)[0]} {deck_counts[slug]}"
-           for name, slug in DECK_SLUGS.items() if slug in deck_counts]
-    )
+    parts = [f"{total} entries"]
+    parts += [
+        f"{DECK_TITLES[name].split(' ', 1)[0]} {deck_counts[slug]}"
+        for name, slug in DECK_SLUGS.items() if slug in deck_counts
+    ]
+    if COMPONENTS_SLUG in deck_counts:
+        parts.append(f"Components {deck_counts[COMPONENTS_SLUG]}")
+    totals_text = " · ".join(parts)
 
     # ---- Build body sections ----
 
@@ -676,6 +820,20 @@ def main() -> int:
             f'<section class="deck" data-deck="{html.escape(slug, quote=True)}">'
             f"<h2>{html.escape(title)} <span class=\"count\">{len(rows)}</span></h2>"
             f"{''.join(tag_groups_html)}</section>"
+        )
+
+    # Phonetic-components section (separate schema, simpler layout — flat list,
+    # no tag-group buckets since the deck currently uses a single tag).
+    if component_rows:
+        comp_entries = "".join(
+            render_component_entry(r)
+            for r in sorted(component_rows, key=lambda r: r.line_no)
+        )
+        body_sections.append(
+            f'<section class="deck" data-deck="{html.escape(COMPONENTS_SLUG, quote=True)}">'
+            f"<h2>{html.escape(COMPONENTS_TITLE)} "
+            f"<span class=\"count\">{len(component_rows)}</span></h2>"
+            f"{comp_entries}</section>"
         )
 
     # ---- Assemble page ----

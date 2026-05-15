@@ -1,0 +1,31 @@
+<!-- Card 2 back: reveal the shared component, its sound, and supporting info.
+     Audio auto-plays via {{Audio}}. -->
+
+<div class="card-side card-back">
+  <div class="member-chars">{{MemberChars}}</div>
+
+  <div class="component-highlight">
+    <span class="component-label">shared phonetic:</span>
+    <span class="component-block component-inline">{{Component}}</span>
+  </div>
+
+  <div class="pinyin">{{Pinyin}}</div>
+
+  {{#Meaning}}
+  <div class="meaning">{{Meaning}}</div>
+  {{/Meaning}}
+
+  <div class="audio">{{Audio}}</div>
+
+  {{#Reliability}}
+  <div class="reliability">reliability: {{Reliability}}</div>
+  {{/Reliability}}
+
+  {{#Note}}
+  <div class="note">{{Note}}</div>
+  {{/Note}}
+
+  {{#PersonalNote}}
+  <div class="personal-note">{{PersonalNote}}</div>
+  {{/PersonalNote}}
+</div>

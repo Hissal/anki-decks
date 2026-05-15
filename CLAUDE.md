@@ -4,15 +4,16 @@
 
 Personal Anki decks for Chinese language learning. **Not a course** — assumes other resources cover grammar and structured study. These decks **augment** that with vocabulary, common spoken phrases, and flavor.
 
-Three decks, three scopes:
+Four decks, four scopes:
 
 | File | Scope |
 |------|-------|
 | `Chinese_Core_Conversation.tsv` | Everyday useful vocab and phrases. Conversation glue, reactions, fillers, opinions, daily-life nouns. The "actually useful" deck. |
 | `Chinese_Idioms_Proverbs_Classical.tsv` | Chengyu, proverbs, classical/literary phrases, poetic flavor. "Ancient wisdom" feel. |
 | `Chinese_Slang_Dialect_Flavor.tsv` | Modern slang, internet slang, regional dialect, old-school slang, mildly vulgar — anything non-standard or just fun extra flavor. |
+| `Chinese_Phonetic_Components.tsv` | Phonetic components — the sound-bearing radicals that recur across many compound characters. Different schema from the other three; see the **Phonetic Components deck** section below. |
 
-If something fits multiple decks, pick the one that matches the *primary vibe* — don't duplicate.
+If something fits multiple decks, pick the one that matches the *primary vibe* — don't duplicate. The phonetic-components deck is an exception: a Hanzi character can legitimately appear there as a *component* even if it also exists as a word in one of the other decks. The components deck lives in its own ontology (components ≠ words).
 
 ## File format
 
@@ -92,6 +93,44 @@ When adding entries, ask:
 - **Which deck?** Core = practical daily. Idioms = chengyu / classical / poetic. Slang = non-standard, regional, vulgar, fun.
 
 If unsure between Core and Slang for a casual word: if it's the **default** way Mandarin speakers say something, it's Core. If it's an extra flavorful alternative, it's Slang.
+
+## Phonetic Components deck
+
+`Chinese_Phonetic_Components.tsv` is the fourth deck and has its own schema, note type, and tooling. Purpose: drill recognition of the recurring **phonetic components** that signal the sound of a compound character. ~80% of Hanzi are phono-semantic compounds, so knowing the phonetic side cuts pronunciation guessing dramatically. The deck is *recognition*-focused — it does not teach the components as standalone words.
+
+### Schema
+
+9 columns. Directive block:
+
+```
+#separator:tab
+#html:true
+#columns:Key	Component	Pinyin	Meaning	MemberChars	Reliability	Note	Audio	Tags
+#tags column:9
+```
+
+1. `Key` — `<component>:<numeric-pinyin>` (e.g. `肖:qiao4`). Anki's first field must be unique per note, and the same component can produce multiple sounds (`肖` → xiāo / qiào / shāo), so `Component` alone is not unique. Card templates never display `Key` — it exists only to dedupe and to drive Anki's match-on-first-field import behavior.
+2. `Component` — the lone phonetic component (e.g. `工`). Single CJK character per row.
+3. `Pinyin` — the sound the component produces in derivative characters, with tone marks (e.g. `gǒng` for `工` as it appears in `巩鞏汞銾`). Note: this is the sound of the **compound**, not necessarily the component's own dictionary pronunciation.
+4. `Meaning` — short English gloss. Phase 1 leaves many blank where the source omits a clean gloss; HanziCraft enrichment fills these in phase 2.
+5. `MemberChars` — the set of compound characters that share this phonetic (e.g. `巩鞏汞銾`). The component itself is stripped from the set so the front of Card 2 is a real recognition test.
+6. `Reliability` — productivity stats: `X/Y` (sound match across all chars containing the component) and/or `X/Y (ignoring tone)`. Multiple stats joined with ` · `.
+7. `Note` — free-form. Used for variant/traditional forms (`Traditional: 歷`), neighbour-component hints (`-童㢆重`), similarity warnings, and other context.
+8. `Audio` — `[sound:…\.mp3]` ref. Files are user-supplied; cards display fine without them, audio just no-ops until mp3s are dropped into `collection.media`.
+9. `Tags` — every row has at least `phonetic-component`.
+
+The deck generates **two cards per note**: Card 1 (Component → Sound) shows the lone component, asks for the sound. Card 2 (Set → Sound) shows the member-char set, asks for the shared phonetic and its sound. Note type lives at `note_type/PhoneticComponent/`.
+
+### Tooling
+
+- **`scripts/import_phonetic_components.py`** — one-shot generator. Reads the rough HanziCraft-derived source notes file and writes the deck TSV. Not idempotent; overwrites on every run. Phase-1 cleanup includes pinyin tonemark conversion, reliability parsing, multi-line row repair, HTML-entity stripping, column-misalignment fixes, and merge-on-dedup.
+- **`scripts/validate_components.py`** — sibling of `validate.py` for the new schema. Hard errors on missing required fields, non-CJK components, digit-tone pinyin, MemberChars still containing the component, and duplicate Keys.
+- **`scripts/index.py`** — extended to render a Phonetic Components section alongside the word decks in `INDEX.html`.
+- **`scripts/common.py`** — `deck_paths()` is scoped to word decks only (`WORD_DECK_FILES`), so the existing word-deck tooling never sees the components TSV. The components deck has its own parser in `scripts/components_common.py`.
+
+### Cross-deck duplication
+
+The "don't duplicate the same Hanzi across decks" rule applies only to the word decks. The components deck is exempt: a Hanzi like `工` can legitimately appear in `Core` (as the word "work") and in `Components` (as the phonetic component). They are different mental objects.
 
 ## Things to NOT do
 
