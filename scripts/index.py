@@ -231,17 +231,27 @@ def render_component_entry(row) -> str:
             f'</div>'
         )
 
-    reliability_html = ""
+    stat_parts: list[str] = []
     if row.reliability:
-        reliability_html = (
-            f'<div class="component-reliability">'
-            f'reliability: {html.escape(row.reliability)}'
-            f'</div>'
-        )
+        stat_parts.append(f"reliability {html.escape(row.reliability)}")
+    if row.productivity:
+        stat_parts.append(f"in {html.escape(row.productivity)} chars")
+    if row.frequency:
+        stat_parts.append(f"freq #{html.escape(row.frequency)}")
+    stats_html = ""
+    if stat_parts:
+        stats_html = f'<div class="component-reliability">{" · ".join(stat_parts)}</div>'
 
     note_html = ""
     if row.note.strip():
         note_html = f'<p class="note">{row.note}</p>'
+
+    link_html = ""
+    if row.link.strip():
+        link_html = (
+            f'<a class="link" href="{html.escape(row.link, quote=True)}" '
+            f'target="_blank" rel="noopener">HanziCraft →</a>'
+        )
 
     tag_chips = "".join(
         f'<button class="tag-chip" type="button" data-tag="{html.escape(t, quote=True)}">'
@@ -268,9 +278,9 @@ def render_component_entry(row) -> str:
         f'</summary>'
         f'<div class="details-body">'
         f'{member_html}'
-        f'{reliability_html}'
+        f'{stats_html}'
         f'{note_html}'
-        f'<div class="meta-row"><div class="tag-chips">{tag_chips}</div></div>'
+        f'<div class="meta-row">{link_html}<div class="tag-chips">{tag_chips}</div></div>'
         f'</div></details>'
     )
 

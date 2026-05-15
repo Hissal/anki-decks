@@ -1,480 +1,480 @@
 #separator:tab
 #html:true
-#columns:Key	Component	Pinyin	Meaning	MemberChars	Reliability	Note	Audio	Tags
-#tags column:9
-工:gong3	工	gǒng	work	巩鞏汞銾	8/31 (ignoring tone)		[sound:pronunciation_zh_工.mp3]	phonetic-component
-方:fang1	方	fāng	compass	芳坊钫鈁枋	19/38 (ignoring tone)	Note similarity to 万, which means ten<br>thousand.<br>-旁斿族敫於旋	[sound:pronunciation_zh_方.mp3]	phonetic-component
-立:li4	立	lì	guard	粒笠莅蒞	7/37	-咅亲章童产妾<br>+位	[sound:pronunciation_zh_立.mp3]	phonetic-component
-羊:yang2	羊	yáng	sheep	洋佯烊蛘徉	6/51 · 10/51 (ignoring tone)	Variant: ⺶，⺷<br>-羔差善菐美鲜義	[sound:pronunciation_zh_羊.mp3]	phonetic-component
-皮:pi2	皮	pí	skin	疲陂铍鲏鮍	6/27		[sound:pronunciation_zh_皮.mp3]	phonetic-component
-耳:er3	耳	ěr	ear	铒饵餌洱珥		-取<br>6/19 on the right	[sound:pronunciation_zh_耳.mp3]	phonetic-component
-辛:xin1	辛	xīn	bitter	莘锌鋅	4/19	-辟	[sound:pronunciation_zh_辛.mp3]	phonetic-component
-青:qing1	青	qīng	green/blue	清蜻鲭鯖	6/30 · 13/30 (ignoring tone)		[sound:pronunciation_wuu_青.mp3]	phonetic-component
-里:li3	里	lǐ	village, mile	理哩鲤鯉俚	11/26 · 16/26 (ignoring tone)	-童㢆重	[sound:pronunciation_zh_里.mp3]	phonetic-component
-户:hu4	户	hù	Door, house	护沪滬扈戽	6/26	Variant: 戶<br>Note similarity to 尸, which means<br>corpse.<br>-扁戾	[sound:pronunciation_zh_户.mp3]	phonetic-component
-衣:yi1	衣	yī	clothes	依铱銥		Variant: 衤	[sound:pronunciation_yue_衤.mp3]	phonetic-component
-阿:a1	阿	ā	hills + can	啊锕錒	4/5		[sound:a1.mp3]	phonetic-component
-愛:ai4	愛	ài	cleats + heart + foreman + crown (love)	噯曖嬡璦			[sound:ai4.mp3]	phonetic-component
-爱:ai4	爱	ài	cleats + folding stool + crown + armpit (love)	嗳暧嫒瑷	5/5		[sound:ai4.mp3]	phonetic-component
-安:an1	安	ān	dollhouse + woman	鞍氨桉			[sound:an1.mp3]	phonetic-component
-敖:ao2	敖	áo	soldier + foreman + compass	熬鳌鰲嗷遨			[sound:ao2.mp3]	phonetic-component
-巴:ba1	巴	bā	crust	吧疤芭笆粑			[sound:ba1.mp3]	phonetic-component
-犮:ba2	犮	bá	drop + folding stool + armpit	拔跋魃茇			[sound:ba2.mp3]	phonetic-component
-半:ban4	半	bàn	half	伴绊絆拌			[sound:ban4.mp3]	phonetic-component
-包:bao1	包	bāo	package	胞苞龅齙孢			[sound:bao1.mp3]	phonetic-component
-保:bao3	保	bǎo	fool + slenderman	堡葆褓			[sound:bao3.mp3]	phonetic-component
-卑:bei1	卑	bēi	mole-rat	碑鹎鵯	4/23		[sound:bei1.mp3]	phonetic-component
-比:bi3	比	bǐ	stack	吡妣秕	4/20	-毕昆皆毚	[sound:bi3.mp3]	phonetic-component
-敝:bi4	敝	bì	shredder	幣蔽斃弊	5/12		[sound:bi4.mp3]	phonetic-component
-比:bi4	比	bì	stack	毙庇毖	4/20	-毕昆皆毚	[sound:bi4.mp3]	phonetic-component
-畢:bi4	畢	bì	beanstalk + flowers + rice field	蹕嗶蓽篳			[sound:bi4.mp3]	phonetic-component
-必:bi4	必	bì	heart + slide	秘毖邲閟铋			[sound:bi4.mp3]	phonetic-component
-毕:bi4	毕	bì	cross + stack	陛跸哔荜	7/7		[sound:bi4.mp3]	phonetic-component
-卞:bian4	卞	biàn	drop + below	汴苄忭			[sound:bian4.mp3]	phonetic-component
-辡:bian4	辡	biàn	2x pepper	辩辯辨辫辮			[sound:bian4.mp3]	phonetic-component
-表:biao3	表	biǎo	beanstalk + dress	錶婊裱			[sound:biao3.mp3]	phonetic-component
-宾:bin1	宾	bīn	visitor	滨缤傧镔			[sound:bin1.mp3]	phonetic-component
-賓:bin1	賓	bīn	visitor	濱繽鑌			[sound:bin1.mp3]	phonetic-component
-丙:bing3	丙	bǐng	hood + ground + person	柄炳邴			[sound:bing3.mp3]	phonetic-component
-布:bu4	布	bù	armpit + towel	怖钸鈽	4/5		[sound:bu4.mp3]	phonetic-component
-才:cai2	才	cái	nerd	财財材	4/8		[sound:cai2.mp3]	phonetic-component
-采:cai3	采	cǎi	tree + cleats	彩踩睬綵	5/6		[sound:cai3.mp3]	phonetic-component
-仓:cang1	仓	cāng	storehouse	苍舱沧伧			[sound:cang1.mp3]	phonetic-component
-倉:cang1	倉	cāng	storehouse	蒼艙滄傖			[sound:cang1.mp3]	phonetic-component
-曹:cao2	曹	cáo	secret agent	槽嘈漕艚螬	6/10		[sound:cao2.mp3]	phonetic-component
-臿:cha1	臿	chā	mortar + thousand	插锸鍤	4/5		[sound:cha1.mp3]	phonetic-component
-查:cha2	查	chá	investigator	碴楂猹	4/7		[sound:cha2.mp3]	phonetic-component
-昌:chang1	昌	chāng	2x sun	娼猖菖阊閶			[sound:chang1.mp3]	phonetic-component
-辰:chen2	辰	chén	ornament	晨宸	4/22		[sound:chen2.mp3]	phonetic-component
-呈:cheng2	呈	chéng	petition	程裎酲			[sound:cheng2.mp3]	phonetic-component
-成:cheng2	成	chéng	battle axe + cape	城诚誠盛晟			[sound:cheng2.mp3]	phonetic-component
-垂:chui2	垂	chuí	willow	锤錘捶陲棰			[sound:chui2.mp3]	phonetic-component
-悤:cong1	悤	cōng	heart + radio + cornstalk	聰蔥骢驄璁	6/7		[sound:cong1.mp3]	phonetic-component
-从:cong1	从	cōng	conga line	枞樅苁蓯			[sound:cong1.mp3]	phonetic-component
-代:dai4	代	dài	slenderman + arrow	袋黛贷貸岱	7/7		[sound:dai4.mp3]	phonetic-component
-單:dan1	單	dān	list	鄲殫簞癉			[sound:dan1.mp3]	phonetic-component
-单:dan1	单	dān	list	郸殚箪瘅			[sound:dan1.mp3]	phonetic-component
-㝵:de2	㝵	dé	caliper + daybreak	得锝鍀	4/5		[sound:de2.mp3]	phonetic-component
-登:deng1	登	dēng	beans + bunker + fire	燈蹬簦噔			[sound:deng1.mp3]	phonetic-component
-啇:di2	啇	dí	antique	嘀嫡镝鏑			[sound:di2.mp3]	phonetic-component
-氐:di3	氐	dǐ	coat of arms + drop	底抵邸砥诋	11/17		[sound:di3.mp3]	phonetic-component
-帝:di4	帝	dì	guard + crown + towel	蒂谛諦缔締			[sound:di4.mp3]	phonetic-component
-弟:di4	弟	dì	younger brother	递娣睇			[sound:di4.mp3]	phonetic-component
-丁:ding1	丁	dīng	spike	盯钉釘叮仃			[sound:ding1.mp3]	phonetic-component
-定:ding4	定	dìng	pointer + dollhouse	锭錠碇腚啶			[sound:ding4.mp3]	phonetic-component
-冬:dong1	冬	dōng	foreman + ice	鼕咚氡			[sound:dong1.mp3]	phonetic-component
-豆:dou4	豆	dòu	beans	逗痘			[sound:dou4.mp3]	phonetic-component
-度:du4	度	dù	folding stool + bucket + shack	渡镀鍍	4/5		[sound:du4.mp3]	phonetic-component
-段:duan4	段	duàn	zipper + missile	缎緞锻鍛椴	7/7		[sound:duan4.mp3]	phonetic-component
-朵:duo3	朵	duǒ	tree + table	躲垛哚			[sound:duo3.mp3]	phonetic-component
-咢:e4	咢	è	handle + ground + boombox	愕鄂萼鳄颚			[sound:e4.mp3]	phonetic-component
-厄:e4	厄	è	paperclip + cliff	呃扼轭軛阨			[sound:e4.mp3]	phonetic-component
-而:er2	而	ér	comb	鸸鲕輀胹鴯	5/24		[sound:er2.mp3]	phonetic-component
-伐:fa2	伐	fá	slenderman + halberd	阀閥筏	4/4		[sound:fa2.mp3]	phonetic-component
-凡:fan2	凡	fán	tray	矾钒釩	4/8		[sound:fan2.mp3]	phonetic-component
-非:fei1	非	fēi	prisoner	菲啡绯緋扉			[sound:fei1.mp3]	phonetic-component
-分:fen1	分	fēn	sword + fins	纷紛芬吩氛			[sound:fen1.mp3]	phonetic-component
-风:feng1	风	fēng	wind	疯枫			[sound:feng1.mp3]	phonetic-component
-風:feng1	風	fēng	wind	瘋楓			[sound:feng1.mp3]	phonetic-component
-夫:fu1	夫	fū	groom	肤趺呋麸麩			[sound:fu1.mp3]	phonetic-component
-夫:fu2	夫	fú	groom	扶芙蚨			[sound:fu2.mp3]	phonetic-component
-孚:fu2	孚	fú	cleats + child	浮俘郛莩蜉			[sound:fu2.mp3]	phonetic-component
-畐:fu2	畐	fú	wealth	福幅蝠辐輻			[sound:fu2.mp3]	phonetic-component
-弗:fu2	弗	fú	credit card	佛彿拂砩怫			[sound:fu2.mp3]	phonetic-component
-甫:fu3	甫	fǔ	trellis	辅輔脯黼郙			[sound:fu3.mp3]	phonetic-component
-府:fu3	府	fǔ	payment + shack	腐俯腑			[sound:fu3.mp3]	phonetic-component
-付:fu4	付	fù	payment	附咐驸駙鲋			[sound:fu4.mp3]	phonetic-component
-复:fu4	复	fù	copier	腹馥蝮複鳆			[sound:fu4.mp3]	phonetic-component
-甘:gan1	甘	gān	basket	柑苷泔疳			[sound:gan1.mp3]	phonetic-component
-冈:gang1	冈	gāng	hood + x	刚钢纲			[sound:gang1.mp3]	phonetic-component
-岡:gang1	岡	gāng	hood + mountain goat	剛鋼綱			[sound:gang1.mp3]	phonetic-component
-告:gao4	告	gào	declaration	诰誥郜锆鋯			[sound:gao4.mp3]	phonetic-component
-鬲:ge2	鬲	gé	kettle	隔嗝镉鎘膈			[sound:ge2.mp3]	phonetic-component
-各:ge2	各	gé	podium	格阁骼茖閣	5/29 · 12/29 (ignoring tone)	-客	[sound:ge4.mp3]	phonetic-component
-句:gou1	句	gōu	voice recorder	鉤佝枸			[sound:gou1.mp3]	phonetic-component
-冓:gou4	冓	gòu	rack + wire mesh	構購媾觏覯			[sound:gou4.mp3]	phonetic-component
-鼓:gu3	鼓	gǔ	branch + drum	瞽臌	4/6		[sound:gu3.mp3]	phonetic-component
-固:gu4	固	gù	mouth + headstone	锢錮崮痼			[sound:gu4.mp3]	phonetic-component
-雚:guan4	雚	guàn	stork	觀灌罐鹳鸛			[sound:guan4.mp3]	phonetic-component
-光:guang1	光	guāng	ray	咣胱銧桄			[sound:guang1.mp3]	phonetic-component
-圭:gui1	圭	guī	brick	闺閨硅鲑鮭	6/28	-厓奎	[sound:gui1.mp3]	phonetic-component
-咼:guo1	咼	guō	jawbone	鍋渦堝	4/12		[sound:guo1.mp3]	phonetic-component
-呙:guo1	呙	guō	jawbone	锅涡埚	4/12		[sound:guo1.mp3]	phonetic-component
-果:guo3	果	guǒ	fruit	裹猓馃餜蜾			[sound:guo3.mp3]	phonetic-component
-亥:hai4	亥	hài	boar	骇駭氦	4/21 · 8/21 (ignoring tone)		[sound:hai4.mp3]	phonetic-component
-旱:han4	旱	hàn	sun + syringe	悍捍焊銲睅	6/9		[sound:han4.mp3]	phonetic-component
-豪:hao2	豪	háo	pig + tiara	嚎壕濠蠔		豕	[sound:hao2.mp3]	phonetic-component
-合:he2	合	hé	glove	閤盒颌頜郃			[sound:he2.mp3]	phonetic-component
-侯:hou2	侯	hóu	slenderman + curling stone + dart = marquis	喉睺猴糇餱			[sound:hou2.mp3]	phonetic-component
-胡:hu2	胡	hú	headstone + moon	鬍湖糊餬蝴			[sound:hu2.mp3]	phonetic-component
-华:hua2	华	huá	slenderman + seven + cross	哗骅铧			[sound:hua2.mp3]	phonetic-component
-華:hua2	華	huá	cross + flower + moss	嘩驊鏵			[sound:hua2.mp3]	phonetic-component
-奂:huan4	奂	huàn	ninja	换唤焕痪涣			[sound:huan4.mp3]	phonetic-component
-奐:huan4	奐	huàn	ninja	換喚煥瘓渙			[sound:huan4.mp3]	phonetic-component
-皇:huang2	皇	huáng	emperor	惶煌凰蝗徨			[sound:huang2.mp3]	phonetic-component
-黄:huang2	黄	huáng	turf + acquarium	簧磺璜潢蟥			[sound:huang2.mp3]	phonetic-component
-灰:hui1	灰	huī	armpit + fire	恢诙詼咴			[sound:hui1.mp3]	phonetic-component
-回:hui2	回	huí	whirlpool	迴蛔茴洄			[sound:hui2.mp3]	phonetic-component
-会:hui4	会	huì	umbrella + cloud	绘荟烩			[sound:hui4.mp3]	phonetic-component
-會:hui4	會	huì	sun + goggles + teepee	繪薈燴			[sound:hui4.mp3]	phonetic-component
-昏:hun1	昏	hūn	sun + coat of arms	婚阍閽			[sound:hun1.mp3]	phonetic-component
-蒦:huo4	蒦	huò	orchid	穫蠖镬鑊獲			[sound:huo4.mp3]	phonetic-component
-幾:ji1	幾	jī	cocoon man	機璣饑譏嘰			[sound:ji1.mp3]	phonetic-component
-奇:ji1	奇	jī	barrel	畸犄剞			[sound:ji1.mp3]	phonetic-component
-及:ji2	及	jí	escalator	极级級汲笈			[sound:ji2.mp3]	phonetic-component
-几:ji3	几	jǐ	table	麂虮			[sound:ji3.mp3]	phonetic-component
-皀:ji4	皀	jì	silver	既暨鲫鯽鱀	5/12		[sound:ji4.mp3]	phonetic-component
-加:jia1	加	jiā	mouth + muscular arm	茄迦伽枷袈	10/17 · 13/17 (ignoring tone)	力口	[sound:jia1.mp3]	phonetic-component
-夹:jia2	夹	jiá	sandwich	颊郏荚蛱铗	6/13 · 9/13 (ignoring tone)		[sound:jia2.mp3]	phonetic-component
-夾:jia2	夾	jiá	sandwich	頰郟莢蛺鋏			[sound:jia2.mp3]	phonetic-component
-甲:jia3	甲	jiǎ	armadillo	岬胛钾鉀			[sound:jia3.mp3]	phonetic-component
-兼:jian1	兼	jiān	leaf blower	缣縑鹣鶼蒹	5/13	-廉	[sound:jian1.mp3]	phonetic-component
-戋:jian1	戋	jiān	flail	浅笺篯			[sound:jian1.mp3]	phonetic-component
-戔:jian1	戔	jiān	flail	淺箋籛			[sound:jian1.mp3]	phonetic-component
-建:jian4	建	jiàn	stretch + brush	健键鍵腱毽			[sound:jian4.mp3]	phonetic-component
-夅:jiang4	夅	jiàng	foreman + buffalo	降绛絳洚			[sound:jiang4.mp3]	phonetic-component
-交:jiao1	交	jiāo	yarn	郊胶蛟跤姣			[sound:jiao1.mp3]	phonetic-component
-焦:jiao1	焦	jiāo	turkey + burner	礁蕉鹪鷦僬	8/15	隹	[sound:jiao1.mp3]	phonetic-component
-敫:jiao3	敫	jiǎo	foreman + compass + white	缴繳徼			[sound:jiao3.mp3]	phonetic-component
-皆:jie1	皆	jiē	stack + white	階楷喈	4/12		[sound:jie1.mp3]	phonetic-component
-疌:jie2	疌	jié	foot + pen + cross	捷睫婕			[sound:jie2.mp3]	phonetic-component
-介:jie4	介	jiè	canopy	界芥疥蚧			[sound:jie4.mp3]	phonetic-component
-堇:jin3	堇	jǐn	lookout tower	僅谨謹瑾馑			[sound:jin3.mp3]	phonetic-component
-盡:jin4	盡	jìn	brush + dish + burner	燼藎贐			[sound:jin4.mp3]	phonetic-component
-尽:jin4	尽	jìn	slide + flag + ice	烬荩赆			[sound:jin4.mp3]	phonetic-component
-京:jing1	京	jīng	capitol building	惊鲸鯨			[sound:jing1.mp3]	phonetic-component
-竟:jing4	竟	jìng	mirror	境镜鏡獍			[sound:jing4.mp3]	phonetic-component
-丩:jiu1	丩	jiū	torch	纠糾赳			[sound:jiu1.mp3]	phonetic-component
-就:jiu4	就	jiù	drop + capitol building + mutant	鹫鷲僦			[sound:jiu4.mp3]	phonetic-component
-臼:jiu4	臼	jiù	mortar	舊舅桕			[sound:jiu4.mp3]	phonetic-component
-居:ju1	居	jū	headstone + flag	锯鋸裾琚			[sound:ju1.mp3]	phonetic-component
-具:ju4	具	jù	tool	惧俱飓颶			[sound:ju4.mp3]	phonetic-component
-巨:ju4	巨	jù	mecha	距拒炬钜鉅			[sound:ju4.mp3]	phonetic-component
-厥:jue2	厥	jué	slide + bill + cliff + mountain goat	獗蹶镢蕨橛			[sound:jue2.mp3]	phonetic-component
-角:jue2	角	jué		桷觖			[sound:jue2.mp3]	phonetic-component
-岂:kai3	岂	kǎi		凯恺铠闿剀			[sound:kai3.mp3]	phonetic-component
-豈:kai3	豈	kǎi		凱愷鎧闓剴			[sound:kai3.mp3]	phonetic-component
-亢:kang4	亢	kàng	turntable	抗炕伉钪鈧			[sound:kang4.mp3]	phonetic-component
-考:kao3	考	kǎo		烤拷栲			[sound:kao3.mp3]	phonetic-component
-可:ke3	可	kě		轲軻坷岢			[sound:ke3.mp3]	phonetic-component
-空:kong1	空	kōng		崆倥箜			[sound:kong1.mp3]	phonetic-component
-會:kuai4	會	kuài		儈膾獪噲澮			[sound:kuai4.mp3]	phonetic-component
-会:kuai4	会	kuài		侩脍狯哙浍			[sound:kuai4.mp3]	phonetic-component
-匡:kuang1	匡	kuāng		筐哐诓誆			[sound:kuang1.mp3]	phonetic-component
-昆:kun1	昆	kūn		锟錕琨鲲鯤	6/13		[sound:kun1.mp3]	phonetic-component
-来:lai2	来	lái		莱涞徕崃			[sound:lai2.mp3]	phonetic-component
-來:lai2	來	lái		萊淶徠崍			[sound:lai2.mp3]	phonetic-component
-賴:lai4	賴	lài		籟癩瀨			[sound:lai4.mp3]	phonetic-component
-赖:lai4	赖	lài	dagger + bundle + shellfish	籁癞濑			[sound:lai4.mp3]	phonetic-component
-闌:lan2	闌	lán		蘭攔欄瀾斕	10/11		[sound:lan2.mp3]	phonetic-component
-阑:lan2	阑	lán	letter + saloon doors	澜斓谰	7/7		[sound:lan2.mp3]	phonetic-component
-覽:lan3	覽	lǎn		攬纜欖	4/4	監	[sound:lan3.mp3]	phonetic-component
-览:lan3	览	lǎn		揽缆榄	4/4	jailer	[sound:lan3.mp3]	phonetic-component
-郎:lang2	郎	láng		廊瑯螂榔鎯			[sound:lang2.mp3]	phonetic-component
-勞:lao2	勞	láo	muscular arm + halo	嘮嶗癆			[sound:lao2.mp3]	phonetic-component
-劳:lao2	劳	láo		唠崂痨铹	5/7 · 7/7 (ignoring tone)		[sound:lao2.mp3]	phonetic-component
-老:lao3	老	lǎo		姥佬铑銠栳		-者 -耆 6/31	[sound:lao3.mp3]	phonetic-component
-雷:lei2	雷	léi	rain + rice field	擂镭鐳檑			[sound:lei2.mp3]	phonetic-component
-累:lei2	累	léi		嫘缧縲			[sound:lei2.mp3]	phonetic-component
-离:li2	离	lí		離璃篱漓缡	10/12	-禽	[sound:li2.mp3]	phonetic-component
-丽:li2	丽	lí	married couple	麗骊鹂鲡			[sound:li2.mp3]	phonetic-component
-豊:li3	豊	lǐ	beans + stake	禮澧醴			[sound:li3.mp3]	phonetic-component
-歷:li4	歷	lì		靂瀝櫪嚦藶	5/5		[sound:li4.mp3]	phonetic-component
-历:li4	历	lì		雳沥枥呖苈	8/8	Traditional: 歷	[sound:li4.mp3]	phonetic-component
-利:li4	利	lì		莉俐痢猁	5/8 · 8/8 (ignoring tone)		[sound:li4.mp3]	phonetic-component
-厲:li4	厲	lì		勵蠣礪糲	5/5		[sound:li4.mp3]	phonetic-component
-厉:li4	厉	lì		励蛎砺粝	5/5	Traditional: 厲	[sound:li4.mp3]	phonetic-component
-廉:lian2	廉	lián	shack + leaf blower	簾镰鐮濂蠊	6/6	兼	[sound:lian2.mp3]	phonetic-component
-连:lian2	连	lián		莲涟裢鲢			[sound:lian2.mp3]	phonetic-component
-連:lian2	連	lián		蓮漣褳鰱			[sound:lian2.mp3]	phonetic-component
-列:lie4	列	liè		烈裂洌冽趔			[sound:lie4.mp3]	phonetic-component
-林:lin2	林	lín		淋琳霖啉			[sound:lin2.mp3]	phonetic-component
-令:ling2	令	líng		零玲铃鈴龄			[sound:ling2.mp3]	phonetic-component
-夌:ling2	夌	líng	foreman + mushroom	凌陵菱绫綾			[sound:ling2.mp3]	phonetic-component
-令:ling3	令	lǐng	elbow + tepee	领領岭			[sound:ling3.mp3]	phonetic-component
-㐬:liu2	㐬	liú		流琉硫	4/9		[sound:liu2.mp3]	phonetic-component
-留:liu2	留	liú		榴瘤镏鎦馏			[sound:liu2.mp3]	phonetic-component
-龍:long2	龍	lóng		籠朧嚨聾瓏			[sound:long2.mp3]	phonetic-component
-龙:long2	龙	lóng		笼胧咙聋			[sound:long2.mp3]	phonetic-component
-娄:lou2	娄	lóu		楼喽髅偻蝼			[sound:lou2.mp3]	phonetic-component
-婁:lou2	婁	lóu	empress	樓嘍髏僂螻			[sound:lou2.mp3]	phonetic-component
-盧:lu2	盧	lú	dish + tiger + rice field	爐蘆廬顱臚	7/8		[sound:lu2.mp3]	phonetic-component
-卢:lu2	卢	lú		颅胪鲈鸬舻			[sound:lu2.mp3]	phonetic-component
-路:lu4	路	lù		露璐潞鹭鷺			[sound:lu4.mp3]	phonetic-component
-彔:lu4	彔	lù		錄祿淥			[sound:lu4.mp3]	phonetic-component
-鹿:lu4	鹿	lù	deer	漉辘轆麓			[sound:lu4.mp3]	phonetic-component
-录:lu4	录	lù		禄碌渌逯箓			[sound:lu4.mp3]	phonetic-component
-吕:lv3	吕	lǚ		侣铝鋁			[sound:lv3.mp3]	phonetic-component
-仑:lun2	仑	lún		论伦轮沦纶	8/9		[sound:lun2.mp3]	phonetic-component
-侖:lun2	侖	lún	tepee + booklet	論倫輪崙淪	8/9		[sound:lun2.mp3]	phonetic-component
-羅:luo2	羅	luó	turkey + net + silk	邏蘿鑼籮欏	6/6		[sound:luo2.mp3]	phonetic-component
-罗:luo2	罗	luó	net + evening	逻萝锣箩椤			[sound:luo2.mp3]	phonetic-component
-馬:ma3	馬	mǎ		嗎瑪碼螞			[sound:ma3.mp3]	phonetic-component
-曼:man4	曼	màn		慢漫蔓幔谩			[sound:man4.mp3]	phonetic-component
-矛:mao2	矛	máo	spear	茅蟊蝥髳			[sound:mao2.mp3]	phonetic-component
-毛:mao2	毛	máo		髦牦氂旄			[sound:mao2.mp3]	phonetic-component
-卯:mao3	卯	mǎo		峁铆鉚昴			[sound:mao3.mp3]	phonetic-component
-眉:mei2	眉	méi		湄嵋楣镅鎇	8/9		[sound:mei2.mp3]	phonetic-component
-門:men2	門	mén		捫鍆		67 with 門<br>3/10 with exterior components	[sound:men2.mp3]	phonetic-component
-蒙:meng2	蒙	méng		朦檬矇艨礞	6/7 · 7/7 (ignoring tone)		[sound:meng2.mp3]	phonetic-component
-迷:mi2	迷	mí		谜謎醚蒾		米	[sound:mi2.mp3]	phonetic-component
-免:mian3	免	miǎn	hare	勉冕娩	4/11		[sound:mian3.mp3]	phonetic-component
-苗:miao2	苗	miáo		描瞄鹋鶓			[sound:miao2.mp3]	phonetic-component
-眇:miao3	眇	miǎo	eye + few	渺缈緲	4/4		[sound:miao3.mp3]	phonetic-component
-冥:ming2	冥	míng	sun + lid + crown + fins	瞑溟暝螟	7/7		[sound:ming2.mp3]	phonetic-component
-名:ming2	名	míng		铭銘茗眳			[sound:ming2.mp3]	phonetic-component
-莫:mo4	莫	mò		漠寞蓦镆鏌			[sound:mo4.mp3]	phonetic-component
-末:mo4	末	mò		抹沫茉秣			[sound:mo4.mp3]	phonetic-component
-牟:mou2	牟	móu	elbow + cow	眸蛑侔麰	5/6		[sound:mou2.mp3]	phonetic-component
-母:mu3	母	mǔ		姆拇	3/12	-每	[sound:mu3.mp3]	phonetic-component
-乃:nai3	乃	nǎi		奶氖艿			[sound:nai3.mp3]	phonetic-component
-尼:ni2	尼	ní		呢泥怩坭			[sound:ni2.mp3]	phonetic-component
-聶:nie4	聶	niè		躡囁鑷	5/8		[sound:nie4.mp3]	phonetic-component
-聂:nie4	聂	niè		蹑嗫镊颞	5/8	Traditional: 聶	[sound:nie4.mp3]	phonetic-component
-寧:ning2	寧	níng	dish + heart + spike + dollhouse	擰獰嚀檸聹	6/6		[sound:ning2.mp3]	phonetic-component
-宁:ning2	宁	níng		拧狞咛柠			[sound:ning2.mp3]	phonetic-component
-农:nong2	农	nóng		浓侬哝脓秾			[sound:nong2.mp3]	phonetic-component
-農:nong2	農	nóng	stake + ornament	濃儂噥膿穠			[sound:nong2.mp3]	phonetic-component
-奴:nu2	奴	nú		驽駑孥			[sound:nu2.mp3]	phonetic-component
-區:ou1	區	ōu		歐鷗毆漚謳			[sound:ou1.mp3]	phonetic-component
-区:ou1	区	ōu	box + x	欧鸥殴沤讴			[sound:ou1.mp3]	phonetic-component
-彭:peng2	彭	péng	hair + drum	膨澎蟛			[sound:peng2.mp3]	phonetic-component
-朋:peng2	朋	péng		鹏鵬棚堋硼	7/9	-崩	[sound:peng2.mp3]	phonetic-component
-辟:pi4	辟	pì		闢譬僻甓	5/20		[sound:pi4.mp3]	phonetic-component
-扁:pian1	扁	piān		篇偏萹翩			[sound:pian1.mp3]	phonetic-component
-票:piao4	票	piào		漂骠驃嘌			[sound:piao4.mp3]	phonetic-component
-平:ping2	平	píng		评評苹坪鲆			[sound:ping2.mp3]	phonetic-component
-普:pu3	普	pǔ	sun + conjoined twins	谱譜镨鐠			[sound:pu3.mp3]	phonetic-component
-妻:qi1	妻	qī		凄淒棲萋			[sound:qi1.mp3]	phonetic-component
-其:qi2	其	qí		棋琪祺淇麒			[sound:qi2.mp3]	phonetic-component
-齐:qi2	齐	qí		脐蛴荠			[sound:qi2.mp3]	phonetic-component
-齊:qi2	齊	qí		臍蠐薺			[sound:qi2.mp3]	phonetic-component
-奇:qi2	奇	qí	barrel	骑騎崎琦锜			[sound:qi2.mp3]	phonetic-component
-气:qi4	气	qì		氣汽			[sound:qi4.mp3]	phonetic-component
-千:qian1	千	qiān		迁仟阡芊钎			[sound:qian1.mp3]	phonetic-component
-遣:qian3	遣	qiǎn	road + dwarf + purse	谴譴缱繾	5/5		[sound:qian3.mp3]	phonetic-component
-强:qiang3	强	qiǎng		襁镪鏹			[sound:qiang3.mp3]	phonetic-component
-乔:qiao2	乔	qiáo	tower	桥侨荞			[sound:qiao2.mp3]	phonetic-component
-喬:qiao2	喬	qiáo		橋僑蕎			[sound:qiao2.mp3]	phonetic-component
-禽:qin2	禽	qín		擒噙檎	4/4		[sound:qin2.mp3]	phonetic-component
-秋:qiu1	秋	qiū		鞦鳅鰍楸			[sound:qiu1.mp3]	phonetic-component
-求:qiu2	求	qiú		球裘俅逑赇			[sound:qiu2.mp3]	phonetic-component
-区:qu1	区	qū		驱躯岖			[sound:qu1.mp3]	phonetic-component
-區:qu1	區	qū		驅軀嶇			[sound:qu1.mp3]	phonetic-component
-全:quan2	全	quán		荃痊诠詮铨			[sound:quan2.mp3]	phonetic-component
-刃:ren4	刃	rèn		韧韌纫紉仞			[sound:ren4.mp3]	phonetic-component
-容:rong2	容	róng	dollhouse + swim fins	蓉溶熔榕镕			[sound:rong2.mp3]	phonetic-component
-柔:rou2	柔	róu	tree + spear	揉蹂鞣糅			[sound:rou2.mp3]	phonetic-component
-色:se4	色	sè		铯銫			[sound:se4.mp3]	phonetic-component
-杀:sha1	杀	shā	tree + x	殺刹铩			[sound:sha1.mp3]	phonetic-component
-沙:sha1	沙	shā		莎鲨鯊裟痧			[sound:sha1.mp3]	phonetic-component
-彡:shan1	彡	shān		衫杉钐釤			[sound:shan1.mp3]	phonetic-component
-善:shan4	善	shàn	mouth + horns + sheep + ground	膳蟮缮繕鳝	7/7		[sound:shan4.mp3]	phonetic-component
-召:shao4	召	shào	summons	绍紹邵劭			[sound:shao4.mp3]	phonetic-component
-申:shen1	申	shēn		伸绅紳呻砷			[sound:shen1.mp3]	phonetic-component
-生:sheng1	生	shēng		牲甥笙鼪			[sound:sheng1.mp3]	phonetic-component
-時:shi2	時	shí		蒔塒鰣			[sound:shi2.mp3]	phonetic-component
-时:shi2	时	shí		莳埘鲥			[sound:shi2.mp3]	phonetic-component
-市:shi4	市	shì		柿铈鈰			[sound:shi4.mp3]	phonetic-component
-式:shi4	式	shì		试試轼軾拭			[sound:shi4.mp3]	phonetic-component
-术:shu4	术	shù		術述沭			[sound:shu4.mp3]	phonetic-component
-思:si1	思	sī		锶鍶缌緦			[sound:si1.mp3]	phonetic-component
-斯:si1	斯	sī		撕嘶厮廝澌	6/6		[sound:si1.mp3]	phonetic-component
-四:si4	四	sì		泗驷駟			[sound:si4.mp3]	phonetic-component
-巳:si4	巳	sì		祀汜			[sound:si4.mp3]	phonetic-component
-松:song1	松	sōng		鬆淞凇崧菘			[sound:song1.mp3]	phonetic-component
-素:su4	素	sù		愫嗉膆			[sound:su4.mp3]	phonetic-component
-遂:sui4	遂	suì		隧邃燧繸鐩	6/6	㒸	[sound:sui4.mp3]	phonetic-component
-台:tai2	台	tái		颱抬苔邰跆			[sound:tai2.mp3]	phonetic-component
-太:tai4	太	tài		态汰肽钛鈦	7/8		[sound:tai4.mp3]	phonetic-component
-唐:tang2	唐	táng		糖塘搪瑭醣			[sound:tang2.mp3]	phonetic-component
-堂:tang2	堂	táng		膛螳樘	4/7		[sound:tang2.mp3]	phonetic-component
-匋:tao2	匋	táo	container + clay pot	陶淘萄啕			[sound:tao2.mp3]	phonetic-component
-弟:ti4	弟	tì		涕剃悌			[sound:ti4.mp3]	phonetic-component
-亭:ting2	亭	tíng		停婷葶			[sound:ting2.mp3]	phonetic-component
-廷:ting2	廷	tíng		庭霆蜓莛	5/10 · 10/10 (ignoring tone)		[sound:ting2.mp3]	phonetic-component
-童:tong2	童	tóng		瞳潼僮穜	5/11	立里	[sound:tong2.mp3]	phonetic-component
-屯:tun2	屯	tún	earthworm	饨飩囤			[sound:tun2.mp3]	phonetic-component
-丸:wan2	丸	wán	pill	纨紈芄			[sound:wan2.mp3]	phonetic-component
-宛:wan3	宛	wǎn		碗婉惋畹琬			[sound:wan3.mp3]	phonetic-component
-罔:wang3	罔	wǎng	hood + horns + death	網惘魍辋輞	6/6		[sound:wang3.mp3]	phonetic-component
-囗:wei2	囗	wéi		围圍涠潿			[sound:wei2.mp3]	phonetic-component
-韦:wei2	韦	wéi		围违闱帏涠			[sound:wei2.mp3]	phonetic-component
-韋:wei2	韋	wéi		圍違闈幃潿			[sound:wei2.mp3]	phonetic-component
-委:wei3	委	wěi	grain stalk + woman	萎诿諉痿	5/10		[sound:wei3.mp3]	phonetic-component
-胃:wei4	胃	wèi		谓謂渭猬蝟			[sound:wei4.mp3]	phonetic-component
-尉:wei4	尉	wèi	caliper + altar + flag	慰蔚霨	4/5		[sound:wei4.mp3]	phonetic-component
-文:wen2	文	wén		纹紋雯蚊玟			[sound:wen2.mp3]	phonetic-component
-乌:wu1	乌	wū		呜邬钨			[sound:wu1.mp3]	phonetic-component
-烏:wu1	烏	wū		嗚鄔鎢			[sound:wu1.mp3]	phonetic-component
-无:wu2	无	wú	cauldron	芜庑	3/7	-既	[sound:wu2.mp3]	phonetic-component
-午:wu3	午	wǔ		忤迕仵			[sound:wu3.mp3]	phonetic-component
-奚:xi1	奚	xī		溪谿蹊			[sound:xi1.mp3]	phonetic-component
-希:xi1	希	xī		稀唏浠欷烯			[sound:xi1.mp3]	phonetic-component
-析:xi1	析	xī		晰皙淅蜥菥	6/6		[sound:xi1.mp3]	phonetic-component
-西:xi1	西	xī		牺茜硒粞			[sound:xi1.mp3]	phonetic-component
-闲:xian2	闲	xián		娴痫鹇			[sound:xian2.mp3]	phonetic-component
-見:xian4	見	xiàn	walking eye	現莧峴			[sound:xian4.mp3]	phonetic-component
-臽:xian4	臽	xiàn		陷馅餡			[sound:xian4.mp3]	phonetic-component
-襄:xiang1	襄	xiāng	dress + boombox + wire mesh	镶鑲骧驤	5/16		[sound:xiang1.mp3]	phonetic-component
-相:xiang1	相	xiāng		箱湘厢廂缃			[sound:xiang1.mp3]	phonetic-component
-劦:xie2	劦	xié		協脅勰			[sound:xie2.mp3]	phonetic-component
-解:xie4	解	xiè	sword + horn + cow	蟹懈邂獬廨	7/8		[sound:xie4.mp3]	phonetic-component
-星:xing1	星	xīng		腥猩惺			[sound:xing1.mp3]	phonetic-component
-休:xiu1	休	xiū		咻庥鸺髹貅			[sound:xiu1.mp3]	phonetic-component
-秀:xiu4	秀	xiù	grain stalk + stairs	绣锈銹	4/8		[sound:xiu4.mp3]	phonetic-component
-宣:xuan1	宣	xuān	ground + dollhouse + daybreak	喧諠暄煊萱			[sound:xuan1.mp3]	phonetic-component
-熏:xun1	熏	xūn	thousand + black	勳薰醺獯曛			[sound:xun1.mp3]	phonetic-component
-寻:xun2	寻	xún		荨浔鲟			[sound:xun2.mp3]	phonetic-component
-旬:xun2	旬	xún	sun + container	询詢荀洵峋			[sound:xun2.mp3]	phonetic-component
-尋:xun2	尋	xún		蕁潯鱘			[sound:xun2.mp3]	phonetic-component
-卂:xun4	卂	xùn		迅讯訊汛			[sound:xun4.mp3]	phonetic-component
-牙:ya2	牙	yá		伢芽琊蚜			[sound:ya2.mp3]	phonetic-component
-厓:ya2	厓	yá		崖涯睚	4/5	See also: 圭	[sound:ya2.mp3]	phonetic-component
-亚:ya4	亚	yà		娅垭氩	4/11 · 7/11 (ignoring tone)		[sound:ya4.mp3]	phonetic-component
-亞:ya4	亞	yà		婭埡氬			[sound:ya4.mp3]	phonetic-component
-奄:yan1	奄	yān	big + lightning	淹阉閹腌醃			[sound:yan1.mp3]	phonetic-component
-匽:yan3	匽	yǎn	sun + box + woman	偃鼴郾			[sound:yan3.mp3]	phonetic-component
-央:yang1	央	yāng	pillory	鞅秧殃鸯鴦			[sound:yang1.mp3]	phonetic-component
-昜:yang2	昜	yáng		陽楊揚煬瘍	8/12	-傷湯	[sound:yang2.mp3]	phonetic-component
-夜:ye4	夜	yè		液腋掖			[sound:ye4.mp3]	phonetic-component
-夷:yi2	夷	yí	barbarian	姨咦胰痍荑			[sound:yi2.mp3]	phonetic-component
-乂:yi4	乂	yì		义议艾刈			[sound:yi4.mp3]	phonetic-component
-益:yi4	益	yì	dish + snowflake	溢谥謚缢縊			[sound:yi4.mp3]	phonetic-component
-邑:yi4	邑	yì		悒挹			[sound:yi4.mp3]	phonetic-component
-睪:yi4	睪	yì	totem + net	譯驛繹嶧懌	6/9	幸	[sound:yi4.mp3]	phonetic-component
-意:yi4	意	yì		憶億臆薏癔			[sound:yi4.mp3]	phonetic-component
-因:yin1	因	yīn		姻茵氤洇骃			[sound:yin1.mp3]	phonetic-component
-婴:ying1	婴	yīng		樱鹦嘤缨撄			[sound:ying1.mp3]	phonetic-component
-嬰:ying1	嬰	yīng	shellfish + woman	櫻鸚嚶纓攖		賏	[sound:ying1.mp3]	phonetic-component
-庸:yong1	庸	yōng		傭慵镛鏞墉		用	[sound:yong1.mp3]	phonetic-component
-雍:yong1	雍	yōng	turkey + lid + cocoon	擁臃饔	4/6		[sound:yong1.mp3]	phonetic-component
-永:yong3	永	yǒng		泳咏詠			[sound:yong3.mp3]	phonetic-component
-甬:yong3	甬	yǒng		涌踊蛹俑		用	[sound:yong3.mp3]	phonetic-component
-斿:you2	斿	yóu		游遊蝣			[sound:you2.mp3]	phonetic-component
-尤:you2	尤	yóu	drop + mutant	犹鱿魷疣			[sound:you2.mp3]	phonetic-component
-由:you2	由	yóu		油邮铀鈾蚰			[sound:you2.mp3]	phonetic-component
-俞:yu2	俞	yú	armory	愉瑜逾榆渝			[sound:yu2.mp3]	phonetic-component
-臾:yu2	臾	yú		谀諛腴萸			[sound:yu2.mp3]	phonetic-component
-矞:yu4	矞	yù		鹬鷸遹驈	5/9		[sound:yu4.mp3]	phonetic-component
-元:yuan2	元	yuán		园沅鼋黿芫			[sound:yuan2.mp3]	phonetic-component
-袁:yuan2	袁	yuán		園猿辕轅	5/7		[sound:yuan2.mp3]	phonetic-component
-原:yuan2	原	yuán		源塬螈			[sound:yuan2.mp3]	phonetic-component
-龠:yue4	龠	yuè		鑰瀹			[sound:yue4.mp3]	phonetic-component
-戉:yue4	戉	yuè		越钺鉞			[sound:yue4.mp3]	phonetic-component
-云:yun2	云	yún		雲芸纭紜耘	5/14	-会	[sound:yun2.mp3]	phonetic-component
-責:ze2	責	zé		嘖賾幘簀			[sound:ze2.mp3]	phonetic-component
-责:ze2	责	zé		啧赜帻箦			[sound:ze2.mp3]	phonetic-component
-曾:zeng1	曾	zēng		增憎罾缯繒			[sound:zeng1.mp3]	phonetic-component
-查:zha1	查	zhā		喳渣楂揸		5/7 but rarer in words	[sound:zha1.mp3]	phonetic-component
-乍:zha4	乍	zhà	saw	炸咋诈詐蚱			[sound:zha4.mp3]	phonetic-component
-占:zhan1	占	zhān		沾粘毡霑詀	6/26 · 9/26 (ignoring tone)	-店	[sound:zhan1.mp3]	phonetic-component
-詹:zhan1	詹	zhān	legs + dagger + cliff + words	瞻谵譫	4/11	always -an	[sound:zhan1.mp3]	phonetic-component
-章:zhang1	章	zhāng	guard + sunflower	璋彰樟漳蟑	9/15 · 14/15 (ignoring tone)	立早	[sound:zhang1.mp3]	phonetic-component
-贞:zhen1	贞	zhēn		侦桢祯			[sound:zhen1.mp3]	phonetic-component
-貞:zhen1	貞	zhēn	magic stick + shellfish	偵楨禎	4/4		[sound:zhen1.mp3]	phonetic-component
-㐱:zhen3	㐱	zhěn	hair + umbrella	诊診疹畛轸			[sound:zhen3.mp3]	phonetic-component
-争:zheng1	争	zhēng		睁挣铮錚筝			[sound:zheng1.mp3]	phonetic-component
-爭:zheng1	爭	zhēng		睜掙箏猙崢			[sound:zheng1.mp3]	phonetic-component
-正:zheng1	正	zhēng	pointer	征怔症钲鉦			[sound:zheng1.mp3]	phonetic-component
-正:zheng4	正	zhèng	pointer	政证怔症			[sound:zheng4.mp3]	phonetic-component
-支:zhi1	支	zhī		枝吱肢			[sound:zhi1.mp3]	phonetic-component
-直:zhi2	直	zhí	straight	值植殖埴			[sound:zhi2.mp3]	phonetic-component
-至:zhi4	至	zhì		致窒蛭桎郅			[sound:zhi4.mp3]	phonetic-component
-中:zhong1	中	zhōng		钟忠衷盅	5/14		[sound:zhong1.mp3]	phonetic-component
-朱:zhu1	朱	zhū		硃珠株蛛诛			[sound:zhu1.mp3]	phonetic-component
-㝉:zhu4	㝉	zhù	ground + dollhouse	宁贮伫苎			[sound:zhu4.mp3]	phonetic-component
-兹:zi1	兹	zī	butterfly	滋孳嵫	5/9		[sound:zi1.mp3]	phonetic-component
-宗:zong1	宗	zōng		踪棕综綜鬃	6/10		[sound:zong1.mp3]	phonetic-component
-从:zong4	从	zòng		從纵縱			[sound:zong4.mp3]	phonetic-component
-尊:zun1	尊	zūn	bottle + caliper + horns	遵樽鳟鱒			[sound:zun1.mp3]	phonetic-component
-肖:xiao1	肖	xiāo		消销銷削宵			[sound:xiao1.mp3]	phonetic-component
-叟:sou1	叟	sōu		艘嗖飕颼馊			[sound:sou1.mp3]	phonetic-component
-高:gao3	高	gǎo		搞稿镐鎬槁			[sound:gao3.mp3]	phonetic-component
-主:zhu4	主	zhù		住注註驻駐	8/16 · 12/16 (ignoring tone)		[sound:zhu4.mp3]	phonetic-component
-可:ke1	可	kē		柯苛珂轲軻			[sound:ke1.mp3]	phonetic-component
-米:mi1	米	mī		眯瞇咪			[sound:mi1.mp3]	phonetic-component
-巠:jing4	巠	jìng	loom	勁徑痙逕脛			[sound:jing4.mp3]	phonetic-component
-古:gu1	古	gū		姑估咕辜沽			[sound:gu1.mp3]	phonetic-component
-更:geng3	更	gěng		梗哽埂鲠鯁			[sound:geng3.mp3]	phonetic-component
-只:zhi3	只	zhǐ		咫枳轵軹			[sound:zhi3.mp3]	phonetic-component
-同:tong2	同	tóng		铜銅桐峒侗			[sound:tong2.mp3]	phonetic-component
-孟:meng3	孟	měng		猛蜢锰錳艋			[sound:meng3.mp3]	phonetic-component
-己:ji4	己	jì		记纪紀忌觊			[sound:ji4.mp3]	phonetic-component
-先:xian3	先	xiǎn		铣銑跣冼筅			[sound:xian3.mp3]	phonetic-component
-辱:ru4	辱	rù		褥缛縟溽蓐			[sound:ru4.mp3]	phonetic-component
-夸:kua4	夸	kuà		跨挎胯			[sound:kua4.mp3]	phonetic-component
-司:si4	司	sì		嗣伺饲飼笥			[sound:si4.mp3]	phonetic-component
-脊:ji2	脊	jí	snowflake + moon + person	瘠嵴蹐鹡鶺			[sound:ji2.mp3]	phonetic-component
-面:mian3	面	miǎn		缅緬腼靦湎			[sound:mian3.mp3]	phonetic-component
-反:fan4	反	fàn		饭飯贩販畈			[sound:fan4.mp3]	phonetic-component
-反:ban3	反	bǎn		版板阪坂舨			[sound:ban3.mp3]	phonetic-component
-肖:qiao4	肖	qiào		俏峭鞘诮			[sound:qiao4.mp3]	phonetic-component
-肖:shao1	肖	shāo		稍梢捎艄筲			[sound:shao1.mp3]	phonetic-component
-卷:juan4	卷	juàn		圈倦锩睠錈			[sound:juan4.mp3]	phonetic-component
-卷:quan2	卷	quán		蜷鬈踡			[sound:quan2.mp3]	phonetic-component
-乞:ge1	乞	gē		疙圪纥仡紇	5/15		[sound:ge1.mp3]	phonetic-component
-酋:you2	酋	yóu		猶猷蕕輶			[sound:you2.mp3]	phonetic-component
-重:zhong3	重	zhǒng		踵種腫	3/7	里	[sound:zhong3.mp3]	phonetic-component
-㢆:chan2	㢆	chán		缠廛躔纏		里	[sound:chan2.mp3]	phonetic-component
-隆:long2	隆	lóng		窿癃		生	[sound:long2.mp3]	phonetic-component
-需:ru2	需	rú		儒蠕孺嚅濡		雨而 10/12	[sound:ru2.mp3]	phonetic-component
-耆:qi2	耆	qí		鳍鰭鬐	4/7	老	[sound:qi2.mp3]	phonetic-component
-次:zi1	次	zī		资姿咨粢資			[sound:zi1.mp3]	phonetic-component
-旁:bang4	旁	bàng		膀镑傍磅谤	7/13		[sound:bang4.mp3]	phonetic-component
-良:lang2	良	láng		狼琅阆锒郞	7/15	always ang	[sound:lang2.mp3]	phonetic-component
-辟:bi4	辟	bì		避壁臂璧薜	9/20		[sound:bi4.mp3]	phonetic-component
-南:nan2	南	nán		喃楠	3/6 · 5/6 (ignoring tone)		[sound:nan2.mp3]	phonetic-component
-于:yu2	于	yú		余餘予馀盂	9/27 · 14/27 (ignoring tone)	include 余<br>u2 - another 8/27<br>予 yields 13 and is a bit messier	[sound:yu2.mp3]	phonetic-component
-爰:yuan2	爰	yuán		援媛	3/8	allways *uan*	[sound:yuan2.mp3]	phonetic-component
-丑:niu3	丑	niǔ		纽扭钮忸狃	7/11		[sound:niu3.mp3]	phonetic-component
-工:gong1	工	gōng		功攻	8/31 (ignoring tone)		[sound:gong1.mp3]	phonetic-component
-青:jing1	青	jīng		精睛菁腈鼱	5/30		[sound:jing1.mp3]	phonetic-component
-青:jing4	青	jìng		静靖靓婧靜	5/30		[sound:jing4.mp3]	phonetic-component
-尞:liao2	尞	liáo		僚撩缭燎寮	10/15		[sound:liao2.mp3]	phonetic-component
-柬:lian4	柬	liàn		煉練楝鍊			[sound:lian4.mp3]	phonetic-component
-奥:ao4	奥	ào		澳懊	3/7		[sound:ao4.mp3]	phonetic-component
-畺:jiang1	畺	jiāng		疆僵缰薑礓	5/5		[sound:jiang1.mp3]	phonetic-component
-玄:xian2	玄	xián	caterpillar	弦舷絃蚿	4/14		[sound:xian2.mp3]	phonetic-component
-玄:xuan4	玄	xuàn	caterpillar	眩炫铉泫衒	5/14		[sound:xuan4.mp3]	phonetic-component
-豖:zhuo2	豖	zhuó		琢啄诼諑	4/7	㒸	[sound:zhuo2.mp3]	phonetic-component
-豦:ju4	豦	jù		遽醵鐻	3/6	豕	[sound:ju4.mp3]	phonetic-component
-难:tan1	难	tān		滩摊瘫	3/5	隹	[sound:tan1.mp3]	phonetic-component
-吾:wu4	吾	wù		悟晤焐痦	4/17	16/17 wu + yu	[sound:wu4.mp3]	phonetic-component
-吾:yu3	吾	yǔ		语龉圄語	4/17	16/17 wu + yu	[sound:yu3.mp3]	phonetic-component
-取:zou1	取	zōu		诹鲰陬菆諏	6/11	耳	[sound:zou1.mp3]	phonetic-component
-咅:pei2	咅	péi		培陪赔锫	4/16	立	[sound:pei2.mp3]	phonetic-component
-瓜:gu1	瓜	gū		孤呱菰觚箛	5/15		[sound:gu1.mp3]	phonetic-component
-夹:xia2	夹	xiá		侠峡狭硖	4/13		[sound:xia2.mp3]	phonetic-component
-乞:qi4	乞	qì		迄讫汔	3/15		[sound:qi4.mp3]	phonetic-component
-卑:bi4	卑	bì		婢裨睥髀萆	6/23		[sound:bi4.mp3]	phonetic-component
-卑:pi2	卑	pí		脾啤裨鼙蜱	8/23		[sound:pi2.mp3]	phonetic-component
-亥:gai1	亥	gāi		该該赅賅垓	7/21		[sound:gai1.mp3]	phonetic-component
-兹:ci2	兹	cí	butterfly	慈磁鹚糍	4/9		[sound:ci2.mp3]	phonetic-component
-尃:bo2	尃	bó	caliper + trellis	博搏膊髆镈	5/11		[sound:bo2.mp3]	phonetic-component
-尃:fu4	尃	fù	caliper + trellis	傅缚赙縛	4/11		[sound:fu4.mp3]	phonetic-component
-各:luo4	各	luò	podium	洛络咯骆珞	7/29	-客	[sound:luo4.mp3]	phonetic-component
-奎:kui2	奎	kuí		喹蝰	3/3		[sound:kui2.mp3]	phonetic-component
-圭:gua4	圭	guà	brick	挂卦褂诖罣	7/28	-厓奎	[sound:gua4.mp3]	phonetic-component
-占:dian4	占	diàn		店玷阽坫惦	5/30 · 9/30 (ignoring tone)		[sound:dian4.mp3]	phonetic-component
-喿:zao4	喿	zào	tree + goods	躁燥噪譟趮	5/14		[sound:zao4.mp3]	phonetic-component
-延:yan2	延	yán		蜒筵埏綖	6/10	正<br>dan4	[sound:yan2.mp3]	phonetic-component
-監:jian4	監	jiàn	jailer	艦鑑檻	4/9	-覽	[sound:jian4.mp3]	phonetic-component
-监:lan2	监	lán	jailer	蓝篮褴	3/7		[sound:lan2.mp3]	phonetic-component
-䜌:luan2	䜌	luán	tapestry	攣鸞巒鑾孿	9/13		[sound:luan2.mp3]	phonetic-component
-亦:luan2	亦	luán	drop + fins + pedestal	挛鸾峦銮孪	9/14		[sound:luan2.mp3]	phonetic-component
-襄:rang3	襄	rǎng	dress + boombox + wire mesh	嚷壤攘	3/16 · 7/16 (ignoring tone)		[sound:rang3.mp3]	phonetic-component
-兰:lan2	兰	lán		拦栏	3/4 · 4/4 (ignoring tone)		[sound:lan2.mp3]	phonetic-component
-崔:cui1	崔	cuī	turkey + mountain	催摧磪	4/6		[sound:cui1.mp3]	phonetic-component
-臺:tai2	臺	tái		薹檯擡	4/4		[sound:tai2.mp3]	phonetic-component
-皆:xie2	皆	xié	stack + white	谐偕龤諧	4/12		[sound:xie2.mp3]	phonetic-component
-长:zhang4	长	zhàng		帐涨胀账	4/10		[sound:zhang4.mp3]	phonetic-component
-册:shan1	册	shān		珊删姗跚	4/6		[sound:shan1.mp3]	phonetic-component
-崩:beng1	崩	bēng		嘣繃	3/6 · 6/6 (ignoring tone)		[sound:beng1.mp3]	phonetic-component
-粦:lin2	粦	lín	rice + coyote	鄰麟鳞磷粼	13/14		[sound:lin2.mp3]	phonetic-component
-昷:wen1	昷	wēn		温瘟鳁辒	4/10		[sound:wen1.mp3]	phonetic-component
-敝:bie1	敝	biē		憋鳖鱉鼈	4/12		[sound:bie1.mp3]	phonetic-component
-虚:xu1	虚	xū		墟嘘魖	5/7		[sound:xu1.mp3]	phonetic-component
-虎:hu3	虎	hǔ		唬琥	3/6		[sound:hu3.mp3]	phonetic-component
-難:tan1	難	tān	turkey + lookout tower	攤灘癱	3/4		[sound:tan1.mp3]	phonetic-component
-井:jing3	井	jǐng		阱肼	3/6		[sound:jing3.mp3]	phonetic-component
+#columns:Key	Component	Pinyin	Meaning	MemberChars	Reliability	Productivity	Frequency	Note	Link	Audio	Tags
+#tags column:12
+工:gong3	工	gǒng	work / worker / skill / profession / trade / craft / labor	巩鞏汞銾	8/31 (ignoring tone)	121	118		https://hanzicraft.com/dashboard/character/%E5%B7%A5	[sound:pronunciation_zh_工.mp3]	phonetic-component
+方:fang1	方	fāng	square / power or involution (mathematics) / upright / honest / fair and square / direction / side / party (to a contract, dispute etc) / place / method / prescription (medicine) / just when / only or just / classifier for square things / abbr. for square or cubic meter	芳坊钫鈁枋	19/38 (ignoring tone)	86	60	Note similarity to 万, which means ten<br>thousand.<br>-旁斿族敫於旋	https://hanzicraft.com/dashboard/character/%E6%96%B9	[sound:pronunciation_zh_方.mp3]	phonetic-component
+立:li4	立	lì	to stand / to set up / to establish / to lay down / to draw up / at once / immediately	粒笠莅蒞	7/37	114	197	-咅亲章童产妾<br>+位	https://hanzicraft.com/dashboard/character/%E7%AB%8B	[sound:pronunciation_zh_立.mp3]	phonetic-component
+羊:yang2	羊	yáng	sheep / CL:頭|头[tou2],隻|只[zhi1]	洋佯烊蛘徉	6/51 · 10/51 (ignoring tone)	102	1335	Variant: ⺶，⺷<br>-羔差善菐美鲜義	https://hanzicraft.com/dashboard/character/%E7%BE%8A	[sound:pronunciation_zh_羊.mp3]	phonetic-component
+皮:pi2	皮	pí	leather / skin / fur / CL:張|张[zhang1] / pico- (one trillionth) / naughty	疲陂铍鲏鮍	6/27	31	740		https://hanzicraft.com/dashboard/character/%E7%9A%AE	[sound:pronunciation_zh_皮.mp3]	phonetic-component
+耳:er3	耳	ěr	ear / handle (archaeology) / and that is all (classical Chinese)	铒饵餌洱珥		110	885	-取<br>6/19 on the right	https://hanzicraft.com/dashboard/character/%E8%80%B3	[sound:pronunciation_zh_耳.mp3]	phonetic-component
+辛:xin1	辛	xīn	(of taste) hot or pungent / hard / laborious / suffering / eighth of the ten heavenly stems 十天干 / eighth in order / octa	莘锌鋅	4/19	49	1461	-辟	https://hanzicraft.com/dashboard/character/%E8%BE%9B	[sound:pronunciation_zh_辛.mp3]	phonetic-component
+青:qing1	青	qīng	nature's color / green or blue / greenish black / youth / young (of people) / abbr. for Qinghai province 青海	清蜻鲭鯖	6/30 · 13/30 (ignoring tone)	31	497		https://hanzicraft.com/dashboard/character/%E9%9D%92	[sound:pronunciation_wuu_青.mp3]	phonetic-component
+里:li3	里	lǐ	li (Chinese mile) / 500 meters (modern) / home / hometown / village / neighborhood / administrative unit	理哩鲤鯉俚	11/26 · 16/26 (ignoring tone)	52	50	-童㢆重	https://hanzicraft.com/dashboard/character/%E9%87%8C	[sound:pronunciation_zh_里.mp3]	phonetic-component
+户:hu4	户	hù	a household / door / family	护沪滬扈戽	6/26	54	799	Variant: 戶<br>Note similarity to 尸, which means<br>corpse.<br>-扁戾	https://hanzicraft.com/dashboard/character/%E6%88%B7	[sound:pronunciation_zh_户.mp3]	phonetic-component
+衣:yi1	衣	yī	to dress / to wear / to put on (clothes)	依铱銥		185	724	Variant: 衤	https://hanzicraft.com/dashboard/character/%E8%A1%A3	[sound:pronunciation_yue_衤.mp3]	phonetic-component
+阿:a1	阿	ā	prefix used before monosyllabic names, kinship terms etc to indicate familiarity / used in transliteration / also pr. [a4]	啊锕錒	4/5	4	471	Mnemonic: hills + can	https://hanzicraft.com/dashboard/character/%E9%98%BF	[sound:a1.mp3]	phonetic-component
+愛:ai4	愛	ài	to love / affection / to be fond of / to like	噯曖嬡璦		3	394	Mnemonic: cleats + heart + foreman + crown (love)	https://hanzicraft.com/dashboard/character/%E6%84%9B	[sound:ai4.mp3]	phonetic-component
+爱:ai4	爱	ài	to love / affection / to be fond of / to like	嗳暧嫒瑷	5/5	4	394	Mnemonic: cleats + folding stool + crown + armpit (love)	https://hanzicraft.com/dashboard/character/%E7%88%B1	[sound:ai4.mp3]	phonetic-component
+安:an1	安	ān	content / calm / still / quiet / safe / secure / in good health / to find a place for / to install / to fix / to fit / to bring (a charge against sb) / to pacify / security / safety / peace / ampere	鞍氨桉		11	232	Mnemonic: dollhouse + woman	https://hanzicraft.com/dashboard/character/%E5%AE%89	[sound:an1.mp3]	phonetic-component
+敖:ao2	敖	áo	to ramble / to rove / old variant of 熬[ao2]	熬鳌鰲嗷遨		17	3566	Mnemonic: soldier + foreman + compass	https://hanzicraft.com/dashboard/character/%E6%95%96	[sound:ao2.mp3]	phonetic-component
+巴:ba1	巴	bā	to long for / to wish / to cling to / to stick to / sth that sticks / close to / next to / spread open / informal abbr. for bus 巴士 / bar (unit of pressure) / nominalizing suffix on certain nouns, such as 尾巴, tail	吧疤芭笆粑		19	546		https://hanzicraft.com/dashboard/character/%E5%B7%B4	[sound:ba1.mp3]	phonetic-component
+犮:ba2	犮	bá	old variant of 犬[quan3]	拔跋魃茇		18		Mnemonic: drop + folding stool + armpit	https://hanzicraft.com/dashboard/character/%E7%8A%AE	[sound:ba2.mp3]	phonetic-component
+半:ban4	半	bàn	half / semi- / incomplete / (after a number) and a half	伴绊絆拌		13	513		https://hanzicraft.com/dashboard/character/%E5%8D%8A	[sound:ban4.mp3]	phonetic-component
+包:bao1	包	bāo	to cover / to wrap / to hold / to include / to take charge of / to contract (to or for) / package / wrapper / container / bag / to hold or embrace / bundle / packet / CL:個|个[ge4],隻|只[zhi1]	胞苞龅齙孢		26	454		https://hanzicraft.com/dashboard/character/%E5%8C%85	[sound:bao1.mp3]	phonetic-component
+保:bao3	保	bǎo	to defend / to protect / to insure or guarantee / to maintain / hold or keep / to guard	堡葆褓		6	266	Mnemonic: fool + slenderman	https://hanzicraft.com/dashboard/character/%E4%BF%9D	[sound:bao3.mp3]	phonetic-component
+卑:bei1	卑	bēi	low / base / vulgar / inferior / humble	碑鹎鵯	4/23	25	2055		https://hanzicraft.com/dashboard/character/%E5%8D%91	[sound:bei1.mp3]	phonetic-component
+比:bi3	比	bǐ	(particle used for comparison and "-er than") / to compare / to contrast / to gesture (with hands) / ratio	吡妣秕	4/20	62	199	-毕昆皆毚	https://hanzicraft.com/dashboard/character/%E6%AF%94	[sound:bi3.mp3]	phonetic-component
+敝:bi4	敝	bì	my (polite) / poor / ruined / shabby / worn out / defeated	幣蔽斃弊	5/12	10	3253		https://hanzicraft.com/dashboard/character/%E6%95%9D	[sound:bi4.mp3]	phonetic-component
+比:bi4	比	bì	(particle used for comparison and "-er than") / to compare / to contrast / to gesture (with hands) / ratio	毙庇毖	4/20	62	199	-毕昆皆毚	https://hanzicraft.com/dashboard/character/%E6%AF%94	[sound:bi4.mp3]	phonetic-component
+畢:bi4	畢	bì	the whole of / to finish / to complete / complete / full / finished	蹕嗶蓽篳		5	1091	Mnemonic: beanstalk + flowers + rice field	https://hanzicraft.com/dashboard/character/%E7%95%A2	[sound:bi4.mp3]	phonetic-component
+必:bi4	必	bì	certainly / must / will / necessarily	秘毖邲閟铋		16	248	Mnemonic: heart + slide	https://hanzicraft.com/dashboard/character/%E5%BF%85	[sound:bi4.mp3]	phonetic-component
+毕:bi4	毕	bì	the whole of / to finish / to complete / complete / full / finished	陛跸哔荜	7/7	4	1091	Mnemonic: cross + stack	https://hanzicraft.com/dashboard/character/%E6%AF%95	[sound:bi4.mp3]	phonetic-component
+卞:bian4	卞	biàn	hurried	汴苄忭		5	4516	Mnemonic: drop + below	https://hanzicraft.com/dashboard/character/%E5%8D%9E	[sound:bian4.mp3]	phonetic-component
+辡:bian4	辡	biàn	2x pepper	辩辯辨辫辮		6			https://hanzicraft.com/dashboard/character/%E8%BE%A1	[sound:bian4.mp3]	phonetic-component
+表:biao3	表	biǎo	exterior surface / family relationship via females / to show (one's opinion) / a model / a table (listing information) / a form / a meter (measuring sth)	錶婊裱		4	177	Mnemonic: beanstalk + dress	https://hanzicraft.com/dashboard/character/%E8%A1%A8	[sound:biao3.mp3]	phonetic-component
+宾:bin1	宾	bīn	visitor / guest / object (in grammar)	滨缤傧镔		11	1532		https://hanzicraft.com/dashboard/character/%E5%AE%BE	[sound:bin1.mp3]	phonetic-component
+賓:bin1	賓	bīn	visitor / guest / object (in grammar)	濱繽鑌		4	1532		https://hanzicraft.com/dashboard/character/%E8%B3%93	[sound:bin1.mp3]	phonetic-component
+丙:bing3	丙	bǐng	third of 10 heavenly stems 十天干 / third in order / letter "C" or roman "III" in list "A, B, C", or "I, II, III" etc / propyl	柄炳邴		5	2639	Mnemonic: hood + ground + person	https://hanzicraft.com/dashboard/character/%E4%B8%99	[sound:bing3.mp3]	phonetic-component
+布:bu4	布	bù	cloth / to declare / to announce / to spread / to make known	怖钸鈽	4/5	4	380	Mnemonic: armpit + towel	https://hanzicraft.com/dashboard/character/%E5%B8%83	[sound:bu4.mp3]	phonetic-component
+才:cai2	才	cái	a moment ago / just now / (preceded by a clause of condition or reason) not until / (followed by a numerical clause) only	财財材	4/8	7	235		https://hanzicraft.com/dashboard/character/%E6%89%8D	[sound:cai2.mp3]	phonetic-component
+采:cai3	采	cǎi	to pick / to pluck / to collect / to select / to choose / to gather	彩踩睬綵	5/6	5	585	Mnemonic: tree + cleats	https://hanzicraft.com/dashboard/character/%E9%87%87	[sound:cai3.mp3]	phonetic-component
+仓:cang1	仓	cāng	barn / granary / storehouse / cabin / hold (in ship)	苍舱沧伧		14	1879		https://hanzicraft.com/dashboard/character/%E4%BB%93	[sound:cang1.mp3]	phonetic-component
+倉:cang1	倉	cāng	barn / granary / storehouse / cabin / hold (in ship)	蒼艙滄傖		6	1879		https://hanzicraft.com/dashboard/character/%E5%80%89	[sound:cang1.mp3]	phonetic-component
+曹:cao2	曹	cáo	class or grade / generation / plaintiff and defendant (old) / government department (old)	槽嘈漕艚螬	6/10	10	1568		https://hanzicraft.com/dashboard/character/%E6%9B%B9	[sound:cao2.mp3]	phonetic-component
+臿:cha1	臿	chā	to separate the grain from the husk	插锸鍤	4/5	4	7887	Mnemonic: mortar + thousand	https://hanzicraft.com/dashboard/character/%E8%87%BF	[sound:cha1.mp3]	phonetic-component
+查:cha2	查	chá	to research / to check / to investigate / to examine / to refer to / to search	碴楂猹	4/7	9	459		https://hanzicraft.com/dashboard/character/%E6%9F%A5	[sound:cha2.mp3]	phonetic-component
+昌:chang1	昌	chāng	prosperous / flourishing	娼猖菖阊閶		9	1604		https://hanzicraft.com/dashboard/character/%E6%98%8C	[sound:chang1.mp3]	phonetic-component
+辰:chen2	辰	chén	5th earthly branch: 7-9 a.m., 3rd solar month (5th April-4th May), year of the Dragon	晨宸	4/22	25	2312		https://hanzicraft.com/dashboard/character/%E8%BE%B0	[sound:chen2.mp3]	phonetic-component
+呈:cheng2	呈	chéng	to present to a superior / memorial / petition / to present (a certain appearance) / to assume (a shape) / to be (a certain color)	程裎酲		9	1561		https://hanzicraft.com/dashboard/character/%E5%91%88	[sound:cheng2.mp3]	phonetic-component
+成:cheng2	成	chéng	to succeed / to finish / to complete / to accomplish / to become / to turn into / to be all right / OK! / one tenth	城诚誠盛晟		8	59	Mnemonic: battle axe + cape	https://hanzicraft.com/dashboard/character/%E6%88%90	[sound:cheng2.mp3]	phonetic-component
+垂:chui2	垂	chuí	to hang (down) / droop / dangle / bend down / hand down / bequeath / nearly / almost / to approach	锤錘捶陲棰		12	1590		https://hanzicraft.com/dashboard/character/%E5%9E%82	[sound:chui2.mp3]	phonetic-component
+悤:cong1	悤	cōng	variant of 匆[cong1]	聰蔥骢驄璁	6/7	7		Mnemonic: heart + radio + cornstalk	https://hanzicraft.com/dashboard/character/%E6%82%A4	[sound:cong1.mp3]	phonetic-component
+从:cong1	从	cōng	from / via / passing through / through (a gap) / past / ever (followed by negative, meaning never) / (formerly pr. [zong4] and related to 縱|纵) to follow / to comply with / to obey / to join / to engage in / adopting some mode of action or attitude / follower / retainer / accessory / accomplice / related by common paternal grandfather or earlier ancestor	枞樅苁蓯		88	98		https://hanzicraft.com/dashboard/character/%E4%BB%8E	[sound:cong1.mp3]	phonetic-component
+代:dai4	代	dài	to substitute / to act on behalf of others / to replace / generation / dynasty / age / period / (historical) era / (geological) eon	袋黛贷貸岱	7/7	7	174	Mnemonic: slenderman + arrow	https://hanzicraft.com/dashboard/character/%E4%BB%A3	[sound:dai4.mp3]	phonetic-component
+單:dan1	單	dān	bill / list / form / single / only / sole / odd number / CL:個|个[ge4]	鄲殫簞癉		9	389		https://hanzicraft.com/dashboard/character/%E5%96%AE	[sound:dan1.mp3]	phonetic-component
+单:dan1	单	dān	bill / list / form / single / only / sole / odd number / CL:個|个[ge4]	郸殚箪瘅		13	389		https://hanzicraft.com/dashboard/character/%E5%8D%95	[sound:dan1.mp3]	phonetic-component
+㝵:de2	㝵	dé	to obtain / archaic variant of 得[de2]	得锝鍀	4/5	3		Mnemonic: caliper + daybreak	https://hanzicraft.com/dashboard/character/%E3%9D%B5	[sound:de2.mp3]	phonetic-component
+登:deng1	登	dēng	to scale (a height) / to ascend / to mount / to publish or record / to enter (e.g. in a register) / to press down with the foot / to step or tread on / to put on (shoes or trousers)(dialect) / to be gathered and taken to the threshing ground (old)	燈蹬簦噔		14	815	Mnemonic: beans + bunker + fire	https://hanzicraft.com/dashboard/character/%E7%99%BB	[sound:deng1.mp3]	phonetic-component
+啇:di2	啇	dí	antique	嘀嫡镝鏑		7			https://hanzicraft.com/dashboard/character/%E5%95%87	[sound:di2.mp3]	phonetic-component
+氐:di3	氐	dǐ	name of an ancient tribe	底抵邸砥诋	11/17	17	4340	Mnemonic: coat of arms + drop	https://hanzicraft.com/dashboard/character/%E6%B0%90	[sound:di3.mp3]	phonetic-component
+帝:di4	帝	dì	emperor	蒂谛諦缔締		12	612	Mnemonic: guard + crown + towel	https://hanzicraft.com/dashboard/character/%E5%B8%9D	[sound:di4.mp3]	phonetic-component
+弟:di4	弟	dì	younger brother / junior male / I (modest word in letter)	递娣睇		13	814		https://hanzicraft.com/dashboard/character/%E5%BC%9F	[sound:di4.mp3]	phonetic-component
+丁:ding1	丁	dīng	fourth of 10 heavenly stems 十天干 / fourth in order / letter "D" or roman "IV" in list "A, B, C", or "I, II, III" etc / butyl / cubes (of food)	盯钉釘叮仃		24	1166		https://hanzicraft.com/dashboard/character/%E4%B8%81	[sound:ding1.mp3]	phonetic-component
+定:ding4	定	dìng	to set / to fix / to determine / to decide / to order	锭錠碇腚啶		8	77	Mnemonic: pointer + dollhouse	https://hanzicraft.com/dashboard/character/%E5%AE%9A	[sound:ding4.mp3]	phonetic-component
+冬:dong1	冬	dōng	sound of beating a drum / onomatopoeia for rat-a-tat etc	鼕咚氡		9	1382	Mnemonic: foreman + ice	https://hanzicraft.com/dashboard/character/%E5%86%AC	[sound:dong1.mp3]	phonetic-component
+豆:dou4	豆	dòu	bean / pea / CL:棵[ke1],粒[li4] / sacrificial vessel	逗痘		63	1791		https://hanzicraft.com/dashboard/character/%E8%B1%86	[sound:dou4.mp3]	phonetic-component
+度:du4	度	dù	to pass / to spend (time) / measure / limit / extent / degree of intensity / degree (angles, temperature etc) / kilowatt-hour / classifier for events and occurrences	渡镀鍍	4/5	4	184	Mnemonic: folding stool + bucket + shack	https://hanzicraft.com/dashboard/character/%E5%BA%A6	[sound:du4.mp3]	phonetic-component
+段:duan4	段	duàn	paragraph / section / segment / stage (of a process) / classifier for stories, periods of time, lengths of thread etc	缎緞锻鍛椴	7/7	7	567	Mnemonic: zipper + missile	https://hanzicraft.com/dashboard/character/%E6%AE%B5	[sound:duan4.mp3]	phonetic-component
+朵:duo3	朵	duǒ	flower / earlobe / fig. item on both sides / classifier for flowers, clouds etc	躲垛哚		5	1569	Mnemonic: tree + table	https://hanzicraft.com/dashboard/character/%E6%9C%B5	[sound:duo3.mp3]	phonetic-component
+咢:e4	咢	è	beat a drum / startle	愕鄂萼鳄颚		12		Mnemonic: handle + ground + boombox	https://hanzicraft.com/dashboard/character/%E5%92%A2	[sound:e4.mp3]	phonetic-component
+厄:e4	厄	è	distressed	呃扼轭軛阨		10	2402	Mnemonic: paperclip + cliff	https://hanzicraft.com/dashboard/character/%E5%8E%84	[sound:e4.mp3]	phonetic-component
+而:er2	而	ér	and / as well as / and so / but (not) / yet (not) / (indicates causal relation) / (indicates change of state) / (indicates contrast)	鸸鲕輀胹鴯	5/24	41	36		https://hanzicraft.com/dashboard/character/%E8%80%8C	[sound:er2.mp3]	phonetic-component
+伐:fa2	伐	fá	to cut down / to fell / to dispatch an expedition against / to attack / to boast	阀閥筏	4/4	4	1808	Mnemonic: slenderman + halberd	https://hanzicraft.com/dashboard/character/%E4%BC%90	[sound:fa2.mp3]	phonetic-component
+凡:fan2	凡	fán	ordinary / commonplace / mundane / temporal / of the material world (as opposed to supernatural or immortal levels) / every / all / whatever / altogether / gist / outline / note of Chinese musical scale	矾钒釩	4/8	8	1011		https://hanzicraft.com/dashboard/character/%E5%87%A1	[sound:fan2.mp3]	phonetic-component
+非:fei1	非	fēi	to not be / not / wrong / incorrect / non- / un- / in- / to reproach or blame / (colloquial) to insist on / simply must	菲啡绯緋扉		34	283		https://hanzicraft.com/dashboard/character/%E9%9D%9E	[sound:fei1.mp3]	phonetic-component
+分:fen1	分	fēn	to divide / to separate / to allocate / to distinguish (good and bad) / part or subdivision / fraction / one tenth (of certain units) / unit of length equivalent to 0.33 cm / minute / a point (in sports or games) / 0.01 yuan (unit of money)	纷紛芬吩氛		31	79	Mnemonic: sword + fins	https://hanzicraft.com/dashboard/character/%E5%88%86	[sound:fen1.mp3]	phonetic-component
+风:feng1	风	fēng	wind / news / style / custom / manner / CL:陣|阵[zhen4],絲|丝[si1]	疯枫		29	348		https://hanzicraft.com/dashboard/character/%E9%A3%8E	[sound:feng1.mp3]	phonetic-component
+風:feng1	風	fēng	wind / news / style / custom / manner / CL:陣|阵[zhen4],絲|丝[si1]	瘋楓		29	348		https://hanzicraft.com/dashboard/character/%E9%A2%A8	[sound:feng1.mp3]	phonetic-component
+夫:fu1	夫	fū	(classical) this, that / he, she, they / (exclamatory final particle) / (initial particle, introduces an opinion)	肤趺呋麸麩		13	377		https://hanzicraft.com/dashboard/character/%E5%A4%AB	[sound:fu1.mp3]	phonetic-component
+夫:fu2	夫	fú	(classical) this, that / he, she, they / (exclamatory final particle) / (initial particle, introduces an opinion)	扶芙蚨		13	377		https://hanzicraft.com/dashboard/character/%E5%A4%AB	[sound:fu2.mp3]	phonetic-component
+孚:fu2	孚	fú	to trust / to believe in	浮俘郛莩蜉		12	3467	Mnemonic: cleats + child	https://hanzicraft.com/dashboard/character/%E5%AD%9A	[sound:fu2.mp3]	phonetic-component
+畐:fu2	畐	fú	wealth	福幅蝠辐輻		13			https://hanzicraft.com/dashboard/character/%E7%95%90	[sound:fu2.mp3]	phonetic-component
+弗:fu2	弗	fú	not	佛彿拂砩怫		15	1255		https://hanzicraft.com/dashboard/character/%E5%BC%97	[sound:fu2.mp3]	phonetic-component
+甫:fu3	甫	fǔ	(classical) barely just / just now	辅輔脯黼郙		24	2147		https://hanzicraft.com/dashboard/character/%E7%94%AB	[sound:fu3.mp3]	phonetic-component
+府:fu3	府	fǔ	seat of government / government repository (archive) / official residence / mansion / presidential palace / (honorific) Your home / prefecture (from Tang to Qing times)	腐俯腑		3	417	Mnemonic: payment + shack	https://hanzicraft.com/dashboard/character/%E5%BA%9C	[sound:fu3.mp3]	phonetic-component
+付:fu4	付	fù	to pay / to hand over to	附咐驸駙鲋		11	818		https://hanzicraft.com/dashboard/character/%E4%BB%98	[sound:fu4.mp3]	phonetic-component
+复:fu4	复	fù	to go and return / to return / to resume / to return to a normal or original state / to repeat / again / to recover / to restore / to turn over / to reply / to answer / to reply to a letter / to retaliate / to carry out	腹馥蝮複鳆		7	426		https://hanzicraft.com/dashboard/character/%E5%A4%8D	[sound:fu4.mp3]	phonetic-component
+甘:gan1	甘	gān	sweet / willing	柑苷泔疳		67	1406		https://hanzicraft.com/dashboard/character/%E7%94%98	[sound:gan1.mp3]	phonetic-component
+冈:gang1	冈	gāng	ridge / mound	刚钢纲		4	2043	Mnemonic: hood + x	https://hanzicraft.com/dashboard/character/%E5%86%88	[sound:gang1.mp3]	phonetic-component
+岡:gang1	岡	gāng	ridge / mound	剛鋼綱		3	2043	Mnemonic: hood + mountain goat	https://hanzicraft.com/dashboard/character/%E5%B2%A1	[sound:gang1.mp3]	phonetic-component
+告:gao4	告	gào	to tell / to inform / to say	诰誥郜锆鋯		16	310		https://hanzicraft.com/dashboard/character/%E5%91%8A	[sound:gao4.mp3]	phonetic-component
+鬲:ge2	鬲	gé	ancient ceramic three-legged vessel used for cooking with cord markings on the outside and hollow legs	隔嗝镉鎘膈		15	6598		https://hanzicraft.com/dashboard/character/%E9%AC%B2	[sound:ge2.mp3]	phonetic-component
+各:ge2	各	gé	each / every	格阁骼茖閣	5/29 · 12/29 (ignoring tone)	30	209	-客	https://hanzicraft.com/dashboard/character/%E5%90%84	[sound:ge4.mp3]	phonetic-component
+句:gou1	句	gōu	sentence / clause / phrase / classifier for phrases or lines of verse	鉤佝枸		26	706		https://hanzicraft.com/dashboard/character/%E5%8F%A5	[sound:gou1.mp3]	phonetic-component
+冓:gou4	冓	gòu	inner rooms of palace / ten billions	構購媾觏覯		10		Mnemonic: rack + wire mesh	https://hanzicraft.com/dashboard/character/%E5%86%93	[sound:gou4.mp3]	phonetic-component
+鼓:gu3	鼓	gǔ	drum / CL:通[tong4],面[mian4] / to drum / to strike / to rouse / to bulge / to swell	瞽臌	4/6	9	1121	Mnemonic: branch + drum	https://hanzicraft.com/dashboard/character/%E9%BC%93	[sound:gu3.mp3]	phonetic-component
+固:gu4	固	gù	hard / strong / solid / sure / assuredly / undoubtedly / of course / indeed / admittedly	锢錮崮痼		8	891	Mnemonic: mouth + headstone	https://hanzicraft.com/dashboard/character/%E5%9B%BA	[sound:gu4.mp3]	phonetic-component
+雚:guan4	雚	guàn	(archaic) stork / heron	觀灌罐鹳鸛		12	7283		https://hanzicraft.com/dashboard/character/%E9%9B%9A	[sound:guan4.mp3]	phonetic-component
+光:guang1	光	guāng	light / ray / CL:道[dao4] / bright / only / merely / to use up	咣胱銧桄		12	290		https://hanzicraft.com/dashboard/character/%E5%85%89	[sound:guang1.mp3]	phonetic-component
+圭:gui1	圭	guī	jade tablet	闺閨硅鲑鮭	6/28	37	3530	-厓奎	https://hanzicraft.com/dashboard/character/%E5%9C%AD	[sound:gui1.mp3]	phonetic-component
+咼:guo1	咼	guō	surname Guo	鍋渦堝	4/12	8			https://hanzicraft.com/dashboard/character/%E5%92%BC	[sound:guo1.mp3]	phonetic-component
+呙:guo1	呙	guō	jawbone	锅涡埚	4/12	10	6181		https://hanzicraft.com/dashboard/character/%E5%91%99	[sound:guo1.mp3]	phonetic-component
+果:guo3	果	guǒ	fruit / result / resolute / indeed / if really	裹猓馃餜蜾		26	165		https://hanzicraft.com/dashboard/character/%E6%9E%9C	[sound:guo3.mp3]	phonetic-component
+亥:hai4	亥	hài	12th earthly branch: 9-11 p.m., 10th solar month (7th November-6th December), year of the Boar	骇駭氦	4/21 · 8/21 (ignoring tone)	19	3173		https://hanzicraft.com/dashboard/character/%E4%BA%A5	[sound:hai4.mp3]	phonetic-component
+旱:han4	旱	hàn	drought	悍捍焊銲睅	6/9	9	2518	Mnemonic: sun + syringe	https://hanzicraft.com/dashboard/character/%E6%97%B1	[sound:han4.mp3]	phonetic-component
+豪:hao2	豪	háo	grand / heroic	嚎壕濠蠔		5	1511	Mnemonic: pig + tiara<br>豕	https://hanzicraft.com/dashboard/character/%E8%B1%AA	[sound:hao2.mp3]	phonetic-component
+合:he2	合	hé	to close / to join / to fit / to be equal to / whole / together / round (in battle) / conjunction (astronomy) / 1st note of pentatonic scale / old variant of 盒[he2]	閤盒颌頜郃		26	171		https://hanzicraft.com/dashboard/character/%E5%90%88	[sound:he2.mp3]	phonetic-component
+侯:hou2	侯	hóu	marquis, second of the five orders of ancient Chinese nobility 五等爵位[wu3 deng3 jue2 wei4] / nobleman or high official	喉睺猴糇餱		12	1754	Mnemonic: slenderman + curling stone + dart = marquis	https://hanzicraft.com/dashboard/character/%E4%BE%AF	[sound:hou2.mp3]	phonetic-component
+胡:hu2	胡	hú	non-Han people, esp. from central Asia / reckless / outrageous / what? / why? / to complete a winning hand at mahjong (also written 和[hu2])	鬍湖糊餬蝴		11	804	Mnemonic: headstone + moon	https://hanzicraft.com/dashboard/character/%E8%83%A1	[sound:hu2.mp3]	phonetic-component
+华:hua2	华	huá	magnificent / splendid / flowery	哗骅铧		6	412	Mnemonic: slenderman + seven + cross	https://hanzicraft.com/dashboard/character/%E5%8D%8E	[sound:hua2.mp3]	phonetic-component
+華:hua2	華	huá	magnificent / splendid / flowery	嘩驊鏵		2	412	Mnemonic: cross + flower + moss	https://hanzicraft.com/dashboard/character/%E8%8F%AF	[sound:hua2.mp3]	phonetic-component
+奂:huan4	奂	huàn	excellent	换唤焕痪涣		5	3765		https://hanzicraft.com/dashboard/character/%E5%A5%82	[sound:huan4.mp3]	phonetic-component
+奐:huan4	奐	huàn	excellent	換喚煥瘓渙		11	3765		https://hanzicraft.com/dashboard/character/%E5%A5%90	[sound:huan4.mp3]	phonetic-component
+皇:huang2	皇	huáng	emperor / surname Huang	惶煌凰蝗徨		14	758		https://hanzicraft.com/dashboard/character/%E7%9A%87	[sound:huang2.mp3]	phonetic-component
+黄:huang2	黄	huáng	yellow / pornographic / to fall through	簧磺璜潢蟥		12	561	Mnemonic: turf + acquarium	https://hanzicraft.com/dashboard/character/%E9%BB%84	[sound:huang2.mp3]	phonetic-component
+灰:hui1	灰	huī	ash / dust / lime / gray / discouraged / dejected	恢诙詼咴		6	1309	Mnemonic: armpit + fire	https://hanzicraft.com/dashboard/character/%E7%81%B0	[sound:hui1.mp3]	phonetic-component
+回:hui2	回	huí	to circle / to go back / to turn around / to answer / to return / to revolve / Hui ethnic group (Chinese Muslims) / time / classifier for acts of a play / section or chapter (of a classic book)	迴蛔茴洄		40	172		https://hanzicraft.com/dashboard/character/%E5%9B%9E	[sound:hui2.mp3]	phonetic-component
+会:hui4	会	huì	can / be possible / be able to / will / be likely to / be sure to / to assemble / to meet / to gather / to see / union / group / association / CL:個|个[ge4] / a moment (Taiwan pr. for this sense is [hui3])	绘荟烩		12	29	Mnemonic: umbrella + cloud	https://hanzicraft.com/dashboard/character/%E4%BC%9A	[sound:hui4.mp3]	phonetic-component
+會:hui4	會	huì	can / be possible / be able to / will / be likely to / be sure to / to assemble / to meet / to gather / to see / union / group / association / CL:個|个[ge4] / a moment (Taiwan pr. for this sense is [hui3])	繪薈燴		3	29	Mnemonic: sun + goggles + teepee	https://hanzicraft.com/dashboard/character/%E6%9C%83	[sound:hui4.mp3]	phonetic-component
+昏:hun1	昏	hūn	muddle-headed / twilight / to faint / to lose consciousness	婚阍閽		5	1559	Mnemonic: sun + coat of arms	https://hanzicraft.com/dashboard/character/%E6%98%8F	[sound:hun1.mp3]	phonetic-component
+蒦:huo4	蒦	huò	phonetic component in certain characters with sound huò, such as 護, 獲, 穫 and 擭	穫蠖镬鑊獲		13			https://hanzicraft.com/dashboard/character/%E8%92%A6	[sound:huo4.mp3]	phonetic-component
+幾:ji1	幾	jī	how much / how many / several / a few	機璣饑譏嘰		5	211		https://hanzicraft.com/dashboard/character/%E5%B9%BE	[sound:ji1.mp3]	phonetic-component
+奇:ji1	奇	jī	strange / odd / weird / wonderful / surprisingly / unusually	畸犄剞		19	563		https://hanzicraft.com/dashboard/character/%E5%A5%87	[sound:ji1.mp3]	phonetic-component
+及:ji2	及	jí	and / to reach / up to / in time for	极级級汲笈		12	198		https://hanzicraft.com/dashboard/character/%E5%8F%8A	[sound:ji2.mp3]	phonetic-component
+几:ji3	几	jǐ	how much / how many / several / a few	麂虮		114	211		https://hanzicraft.com/dashboard/character/%E5%87%A0	[sound:ji3.mp3]	phonetic-component
+皀:ji4	皀	jì	one grain	既暨鲫鯽鱀	5/12	11			https://hanzicraft.com/dashboard/character/%E7%9A%80	[sound:ji4.mp3]	phonetic-component
+加:jia1	加	jiā	to add / plus	茄迦伽枷袈	10/17 · 13/17 (ignoring tone)	17	166	Mnemonic: mouth + muscular arm<br>力口	https://hanzicraft.com/dashboard/character/%E5%8A%A0	[sound:jia1.mp3]	phonetic-component
+夹:jia2	夹	jiá	to press from either side / to place in between / to sandwich / to carry sth under armpit / wedged between / between / to intersperse / to mix / to mingle / clip / folder	颊郏荚蛱铗	6/13 · 9/13 (ignoring tone)	12	1756		https://hanzicraft.com/dashboard/character/%E5%A4%B9	[sound:jia2.mp3]	phonetic-component
+夾:jia2	夾	jiá	to press from either side / to place in between / to sandwich / to carry sth under armpit / wedged between / between / to intersperse / to mix / to mingle / clip / folder	頰郟莢蛺鋏		7	1756		https://hanzicraft.com/dashboard/character/%E5%A4%BE	[sound:jia2.mp3]	phonetic-component
+甲:jia3	甲	jiǎ	first of the ten heavenly stems 十天干[shi2 tian1 gan1] / (used for an unspecified person or thing) / first (in a list, as a party to a contract etc) / armor plating / shell or carapace / (of the fingers or toes) nail / bladed leather or metal armor (old) / ranking system used in the Imperial examinations (old) / civil administration unit (old)	岬胛钾鉀		15	1104		https://hanzicraft.com/dashboard/character/%E7%94%B2	[sound:jia3.mp3]	phonetic-component
+兼:jian1	兼	jiān	double / twice / simultaneous / holding two or more (official) posts at the same time	缣縑鹣鶼蒹	5/13	16	1513	-廉	https://hanzicraft.com/dashboard/character/%E5%85%BC	[sound:jian1.mp3]	phonetic-component
+戋:jian1	戋	jiān	narrow / small	浅笺篯		13	6437		https://hanzicraft.com/dashboard/character/%E6%88%8B	[sound:jian1.mp3]	phonetic-component
+戔:jian1	戔	jiān	narrow / small	淺箋籛		7	6437		https://hanzicraft.com/dashboard/character/%E6%88%94	[sound:jian1.mp3]	phonetic-component
+建:jian4	建	jiàn	to establish / to found / to set up / to build / to construct	健键鍵腱毽		9	244	Mnemonic: stretch + brush	https://hanzicraft.com/dashboard/character/%E5%BB%BA	[sound:jian4.mp3]	phonetic-component
+夅:jiang4	夅	jiàng	old variant of 降[jiang4]	降绛絳洚		5		Mnemonic: foreman + buffalo	https://hanzicraft.com/dashboard/character/%E5%A4%85	[sound:jiang4.mp3]	phonetic-component
+交:jiao1	交	jiāo	to hand over / to deliver / to pay (money) / to turn over / to make friends / to intersect (lines)	郊胶蛟跤姣		26	320		https://hanzicraft.com/dashboard/character/%E4%BA%A4	[sound:jiao1.mp3]	phonetic-component
+焦:jiao1	焦	jiāo	burnt / scorched / charred / worried / anxious / coke	礁蕉鹪鷦僬	8/15	16	1552	Mnemonic: turkey + burner<br>隹	https://hanzicraft.com/dashboard/character/%E7%84%A6	[sound:jiao1.mp3]	phonetic-component
+敫:jiao3	敫	jiǎo	foreman + compass + white	缴繳徼		10	5853		https://hanzicraft.com/dashboard/character/%E6%95%AB	[sound:jiao3.mp3]	phonetic-component
+皆:jie1	皆	jiē	all / each and every / in all cases	階楷喈	4/12	11	1417	Mnemonic: stack + white	https://hanzicraft.com/dashboard/character/%E7%9A%86	[sound:jie1.mp3]	phonetic-component
+疌:jie2	疌	jié	foot + pen + cross	捷睫婕		5			https://hanzicraft.com/dashboard/character/%E7%96%8C	[sound:jie2.mp3]	phonetic-component
+介:jie4	介	jiè	to introduce / to lie between / between	界芥疥蚧		9	829		https://hanzicraft.com/dashboard/character/%E4%BB%8B	[sound:jie4.mp3]	phonetic-component
+堇:jin3	堇	jǐn	clay / old variant of 僅|仅[jin3] / violet (plant)	僅谨謹瑾馑		9	5686		https://hanzicraft.com/dashboard/character/%E5%A0%87	[sound:jin3.mp3]	phonetic-component
+盡:jin4	盡	jìn	to the greatest extent / (when used before a noun of location) furthest or extreme / to be within the limits of / to give priority to	燼藎贐		11	488	Mnemonic: brush + dish + burner	https://hanzicraft.com/dashboard/character/%E7%9B%A1	[sound:jin4.mp3]	phonetic-component
+尽:jin4	尽	jìn	to the greatest extent / (when used before a noun of location) furthest or extreme / to be within the limits of / to give priority to	烬荩赆		3	488	Mnemonic: slide + flag + ice	https://hanzicraft.com/dashboard/character/%E5%B0%BD	[sound:jin4.mp3]	phonetic-component
+京:jing1	京	jīng	capital city of a country / big / algebraic term for a large number (old) / artificial mound (old)	惊鲸鯨		16	566		https://hanzicraft.com/dashboard/character/%E4%BA%AC	[sound:jing1.mp3]	phonetic-component
+竟:jing4	竟	jìng	unexpectedly / actually / to go so far as to / indeed	境镜鏡獍		5	705		https://hanzicraft.com/dashboard/character/%E7%AB%9F	[sound:jing4.mp3]	phonetic-component
+丩:jiu1	丩	jiū	archaic variant of 糾|纠[jiu1]	纠糾赳		7			https://hanzicraft.com/dashboard/character/%E4%B8%A9	[sound:jiu1.mp3]	phonetic-component
+就:jiu4	就	jiù	at once / right away / only / just (emphasis) / as early as / already / as soon as / then / in that case / as many as / even if / to approach / to move towards / to undertake / to engage in / to suffer / subjected to / to accomplish / to take advantage of / to go with (of foods) / with regard to / concerning	鹫鷲僦		4	27	Mnemonic: drop + capitol building + mutant	https://hanzicraft.com/dashboard/character/%E5%B0%B1	[sound:jiu4.mp3]	phonetic-component
+臼:jiu4	臼	jiù	mortar	舊舅桕		95	4056		https://hanzicraft.com/dashboard/character/%E8%87%BC	[sound:jiu4.mp3]	phonetic-component
+居:ju1	居	jū	to reside / to be (in a certain position) / to store up / to be at a standstill / residence / house / restaurant / classifier for bedrooms	锯鋸裾琚		10	677	Mnemonic: headstone + flag	https://hanzicraft.com/dashboard/character/%E5%B1%85	[sound:ju1.mp3]	phonetic-component
+具:ju4	具	jù	tool / device / utensil / equipment / instrument / talent / ability / to possess / to have / to provide / to furnish / to state / classifier for devices, coffins, dead bodies	惧俱飓颶		5	391		https://hanzicraft.com/dashboard/character/%E5%85%B7	[sound:ju4.mp3]	phonetic-component
+巨:ju4	巨	jù	very large / huge / tremendous / gigantic	距拒炬钜鉅		11	911		https://hanzicraft.com/dashboard/character/%E5%B7%A8	[sound:ju4.mp3]	phonetic-component
+厥:jue2	厥	jué	to faint / to lose consciousness / his / her / its / their	獗蹶镢蕨橛		12	2749	Mnemonic: slide + bill + cliff + mountain goat	https://hanzicraft.com/dashboard/character/%E5%8E%A5	[sound:jue2.mp3]	phonetic-component
+角:jue2	角	jué	role (theater) / to compete / ancient three legged wine vessel / third note of pentatonic scale	桷觖		32	735		https://hanzicraft.com/dashboard/character/%E8%A7%92	[sound:jue2.mp3]	phonetic-component
+岂:kai3	岂	kǎi	old variant of 愷|恺[kai3] / old variant of 凱|凯[kai3]	凯恺铠闿剀		10	1724		https://hanzicraft.com/dashboard/character/%E5%B2%82	[sound:kai3.mp3]	phonetic-component
+豈:kai3	豈	kǎi	old variant of 愷|恺[kai3] / old variant of 凱|凯[kai3]	凱愷鎧闓剴		3	1724		https://hanzicraft.com/dashboard/character/%E8%B1%88	[sound:kai3.mp3]	phonetic-component
+亢:kang4	亢	kàng	high / overbearing / excessive	抗炕伉钪鈧		18	3262		https://hanzicraft.com/dashboard/character/%E4%BA%A2	[sound:kang4.mp3]	phonetic-component
+考:kao3	考	kǎo	to check / to verify / to test / to examine / to take an exam / to take an entrance exam for / deceased father	烤拷栲		5	495		https://hanzicraft.com/dashboard/character/%E8%80%83	[sound:kao3.mp3]	phonetic-component
+可:ke3	可	kě	can / may / able to / to approve / to permit / to suit / (particle used for emphasis) certainly / very	轲軻坷岢		25	30		https://hanzicraft.com/dashboard/character/%E5%8F%AF	[sound:ke3.mp3]	phonetic-component
+空:kong1	空	kōng	to empty / vacant / unoccupied / space / leisure / free time	崆倥箜		9	272		https://hanzicraft.com/dashboard/character/%E7%A9%BA	[sound:kong1.mp3]	phonetic-component
+會:kuai4	會	kuài	can / be possible / be able to / will / be likely to / be sure to / to assemble / to meet / to gather / to see / union / group / association / CL:個|个[ge4] / a moment (Taiwan pr. for this sense is [hui3])	儈膾獪噲澮		3	29		https://hanzicraft.com/dashboard/character/%E6%9C%83	[sound:kuai4.mp3]	phonetic-component
+会:kuai4	会	kuài	can / be possible / be able to / will / be likely to / be sure to / to assemble / to meet / to gather / to see / union / group / association / CL:個|个[ge4] / a moment (Taiwan pr. for this sense is [hui3])	侩脍狯哙浍		12	29		https://hanzicraft.com/dashboard/character/%E4%BC%9A	[sound:kuai4.mp3]	phonetic-component
+匡:kuang1	匡	kuāng	to rectify	筐哐诓誆		6	3254		https://hanzicraft.com/dashboard/character/%E5%8C%A1	[sound:kuang1.mp3]	phonetic-component
+昆:kun1	昆	kūn	used in place names, notably Kunlun Mountains 崑崙|昆仑[Kun1 lun2] / (also used for transliteration)	锟錕琨鲲鯤	6/13	15	1757		https://hanzicraft.com/dashboard/character/%E6%98%86	[sound:kun1.mp3]	phonetic-component
+来:lai2	来	lái	to come / to arrive / to come round / ever since / next	莱涞徕崃		7	15		https://hanzicraft.com/dashboard/character/%E6%9D%A5	[sound:lai2.mp3]	phonetic-component
+來:lai2	來	lái	to come / to arrive / to come round / ever since / next	萊淶徠崍		5	15		https://hanzicraft.com/dashboard/character/%E4%BE%86	[sound:lai2.mp3]	phonetic-component
+賴:lai4	賴	lài	to depend on / to hang on in a place / bad / to renege (on promise) / to disclaim / to rat (on debts) / rascally / to blame / to put the blame on	籟癩瀨		11	1363		https://hanzicraft.com/dashboard/character/%E8%B3%B4	[sound:lai4.mp3]	phonetic-component
+赖:lai4	赖	lài	to depend on / to hang on in a place / bad / to renege (on promise) / to disclaim / to rat (on debts) / rascally / to blame / to put the blame on	籁癞濑		5	1363	Mnemonic: dagger + bundle + shellfish	https://hanzicraft.com/dashboard/character/%E8%B5%96	[sound:lai4.mp3]	phonetic-component
+闌:lan2	闌	lán	railing / balustrade / door-screen / exhausted / late	蘭攔欄瀾斕	10/11	3	3708		https://hanzicraft.com/dashboard/character/%E9%97%8C	[sound:lan2.mp3]	phonetic-component
+阑:lan2	阑	lán	railing / balustrade / door-screen / exhausted / late	澜斓谰	7/7	5	3708	Mnemonic: letter + saloon doors	https://hanzicraft.com/dashboard/character/%E9%98%91	[sound:lan2.mp3]	phonetic-component
+覽:lan3	覽	lǎn	to look at / to view / to read	攬纜欖	4/4	11	1883	監	https://hanzicraft.com/dashboard/character/%E8%A6%BD	[sound:lan3.mp3]	phonetic-component
+览:lan3	览	lǎn	to look at / to view / to read	揽缆榄	4/4	3	1883	jailer	https://hanzicraft.com/dashboard/character/%E8%A7%88	[sound:lan3.mp3]	phonetic-component
+郎:lang2	郎	láng	(arch.) minister / official / noun prefix denoting function or status / a youth	廊瑯螂榔鎯		6	1455		https://hanzicraft.com/dashboard/character/%E9%83%8E	[sound:lang2.mp3]	phonetic-component
+勞:lao2	勞	láo	to console	嘮嶗癆		2	678	Mnemonic: muscular arm + halo	https://hanzicraft.com/dashboard/character/%E5%8B%9E	[sound:lao2.mp3]	phonetic-component
+劳:lao2	劳	láo	to console	唠崂痨铹	5/7 · 7/7 (ignoring tone)	7	678		https://hanzicraft.com/dashboard/character/%E5%8A%B3	[sound:lao2.mp3]	phonetic-component
+老:lao3	老	lǎo	prefix used before the surname of a person or a numeral indicating the order of birth of the children in a family or to indicate affection or familiarity / old (of people) / venerable (person) / experienced / of long standing / always / all the time / of the past / very / outdated / (of meat etc) tough	姥佬铑銠栳		71	179	-者 -耆 6/31	https://hanzicraft.com/dashboard/character/%E8%80%81	[sound:lao3.mp3]	phonetic-component
+雷:lei2	雷	léi	thunder / (internet slang) terrifying / terrific	擂镭鐳檑		6	685	Mnemonic: rain + rice field	https://hanzicraft.com/dashboard/character/%E9%9B%B7	[sound:lei2.mp3]	phonetic-component
+累:lei2	累	léi	to accumulate / to involve or implicate / continuous / repeated	嫘缧縲		12	1321		https://hanzicraft.com/dashboard/character/%E7%B4%AF	[sound:lei2.mp3]	phonetic-component
+离:li2	离	lí	to leave / to part from / to be away from / (in giving distances) from / without (sth) / independent of / one of the Eight Trigrams 八卦[ba1 gua4], symbolizing fire / ☲	離璃篱漓缡	10/12	12	418	-禽	https://hanzicraft.com/dashboard/character/%E7%A6%BB	[sound:li2.mp3]	phonetic-component
+丽:li2	丽	lí	beautiful	麗骊鹂鲡		8	832		https://hanzicraft.com/dashboard/character/%E4%B8%BD	[sound:li2.mp3]	phonetic-component
+豊:li3	豊	lǐ	ceremonial vessel / variant of 禮|礼[li3]	禮澧醴		9	8803	Mnemonic: beans + stake	https://hanzicraft.com/dashboard/character/%E8%B1%8A	[sound:li3.mp3]	phonetic-component
+歷:li4	歷	lì	to experience / to undergo / to pass through / all / each / every / history	靂瀝櫪嚦藶	5/5	2	480		https://hanzicraft.com/dashboard/character/%E6%AD%B7	[sound:li4.mp3]	phonetic-component
+历:li4	历	lì	to experience / to undergo / to pass through / all / each / every / history	雳沥枥呖苈	8/8	7	480	Traditional: 歷	https://hanzicraft.com/dashboard/character/%E5%8E%86	[sound:li4.mp3]	phonetic-component
+利:li4	利	lì	sharp / favorable / advantage / benefit / profit / interest / to do good to / to benefit	莉俐痢猁	5/8 · 8/8 (ignoring tone)	9	155		https://hanzicraft.com/dashboard/character/%E5%88%A9	[sound:li4.mp3]	phonetic-component
+厲:li4	厲	lì	strict / severe	勵蠣礪糲	5/5	1	1337		https://hanzicraft.com/dashboard/character/%E5%8E%B2	[sound:li4.mp3]	phonetic-component
+厉:li4	厉	lì	strict / severe	励蛎砺粝	5/5	4	1337	Traditional: 厲	https://hanzicraft.com/dashboard/character/%E5%8E%89	[sound:li4.mp3]	phonetic-component
+廉:lian2	廉	lián	incorruptible / honest / inexpensive / to investigate (old) / side wall of a traditional Chinese house (old)	簾镰鐮濂蠊	6/6	6	1816	Mnemonic: shack + leaf blower<br>兼	https://hanzicraft.com/dashboard/character/%E5%BB%89	[sound:lian2.mp3]	phonetic-component
+连:lian2	连	lián	to link / to join / to connect / continuously / in succession / including / (used with 也, 都 etc) even / company (military)	莲涟裢鲢		6	399		https://hanzicraft.com/dashboard/character/%E8%BF%9E	[sound:lian2.mp3]	phonetic-component
+連:lian2	連	lián	to link / to join / to connect / continuously / in succession / including / (used with 也, 都 etc) even / company (military)	蓮漣褳鰱		3	399		https://hanzicraft.com/dashboard/character/%E9%80%A3	[sound:lian2.mp3]	phonetic-component
+列:lie4	列	liè	to arrange / to line up / row / file / series / column	烈裂洌冽趔		9	500		https://hanzicraft.com/dashboard/character/%E5%88%97	[sound:lie4.mp3]	phonetic-component
+林:lin2	林	lín	woods / forest / CL:片[pian4] / circle(s) (i.e. specific group of people) / a collection (of similar things)	淋琳霖啉		33	364		https://hanzicraft.com/dashboard/character/%E6%9E%97	[sound:lin2.mp3]	phonetic-component
+令:ling2	令	líng	to order / to command / an order / warrant / writ / to cause / to make sth happen / virtuous / honorific title / season / government position (old)	零玲铃鈴龄		35	378		https://hanzicraft.com/dashboard/character/%E4%BB%A4	[sound:ling2.mp3]	phonetic-component
+夌:ling2	夌	líng	to dawdle / the name of the father of the Emperor Yao	凌陵菱绫綾		10		Mnemonic: foreman + mushroom	https://hanzicraft.com/dashboard/character/%E5%A4%8C	[sound:ling2.mp3]	phonetic-component
+令:ling3	令	lǐng	to order / to command / an order / warrant / writ / to cause / to make sth happen / virtuous / honorific title / season / government position (old)	领領岭		35	378	Mnemonic: elbow + tepee	https://hanzicraft.com/dashboard/character/%E4%BB%A4	[sound:ling3.mp3]	phonetic-component
+㐬:liu2	㐬	liú		流琉硫	4/9	10			https://hanzicraft.com/dashboard/character/%E3%90%AC	[sound:liu2.mp3]	phonetic-component
+留:liu2	留	liú	to leave (a message etc) / to retain / to stay / to remain / to keep / to preserve	榴瘤镏鎦馏		16	554		https://hanzicraft.com/dashboard/character/%E7%95%99	[sound:liu2.mp3]	phonetic-component
+龍:long2	龍	lóng	dragon / CL:條|条[tiao2] / imperial	籠朧嚨聾瓏		36	695		https://hanzicraft.com/dashboard/character/%E9%BE%8D	[sound:long2.mp3]	phonetic-component
+龙:long2	龙	lóng	dragon / CL:條|条[tiao2] / imperial	笼胧咙聋		36	695		https://hanzicraft.com/dashboard/character/%E9%BE%99	[sound:long2.mp3]	phonetic-component
+娄:lou2	娄	lóu	surname Lou / one of the 28 lunar mansions in Chinese astronomy	楼喽髅偻蝼		17	4043		https://hanzicraft.com/dashboard/character/%E5%A8%84	[sound:lou2.mp3]	phonetic-component
+婁:lou2	婁	lóu	surname Lou / one of the 28 lunar mansions in Chinese astronomy	樓嘍髏僂螻		10	4043		https://hanzicraft.com/dashboard/character/%E5%A9%81	[sound:lou2.mp3]	phonetic-component
+盧:lu2	盧	lú	(old) rice vessel / black / (Taiwan slang) troublesome / fussy	爐蘆廬顱臚	7/8	7	1709	Mnemonic: dish + tiger + rice field	https://hanzicraft.com/dashboard/character/%E7%9B%A7	[sound:lu2.mp3]	phonetic-component
+卢:lu2	卢	lú	(old) rice vessel / black / (Taiwan slang) troublesome / fussy	颅胪鲈鸬舻		9	1709		https://hanzicraft.com/dashboard/character/%E5%8D%A2	[sound:lu2.mp3]	phonetic-component
+路:lu4	路	lù	road / CL:條|条[tiao2] / journey / route / line (bus etc) / sort / kind	露璐潞鹭鷺		7	305		https://hanzicraft.com/dashboard/character/%E8%B7%AF	[sound:lu4.mp3]	phonetic-component
+彔:lu4	彔	lù	to carve wood	錄祿淥		3			https://hanzicraft.com/dashboard/character/%E5%BD%94	[sound:lu4.mp3]	phonetic-component
+鹿:lu4	鹿	lù	deer	漉辘轆麓		42	2052		https://hanzicraft.com/dashboard/character/%E9%B9%BF	[sound:lu4.mp3]	phonetic-component
+录:lu4	录	lù	diary / record / to hit / to copy	禄碌渌逯箓		15	917		https://hanzicraft.com/dashboard/character/%E5%BD%95	[sound:lu4.mp3]	phonetic-component
+吕:lv3	吕	lǚ	pitchpipe, pitch standard, one of the twelve semitones in the traditional tone system	侣铝鋁		14	1714		https://hanzicraft.com/dashboard/character/%E5%90%95	[sound:lv3.mp3]	phonetic-component
+仑:lun2	仑	lún	Kunlun (Karakorum) mountain range in Xinjiang	论伦轮沦纶	8/9	8	2134		https://hanzicraft.com/dashboard/character/%E4%BB%91	[sound:lun2.mp3]	phonetic-component
+侖:lun2	侖	lún	Kunlun (Karakorum) mountain range in Xinjiang	論倫輪崙淪	8/9	5	2134	Mnemonic: tepee + booklet	https://hanzicraft.com/dashboard/character/%E4%BE%96	[sound:lun2.mp3]	phonetic-component
+羅:luo2	羅	luó	gauze / to collect / to gather / to catch / to sift	邏蘿鑼籮欏	6/6	2	392	Mnemonic: turkey + net + silk	https://hanzicraft.com/dashboard/character/%E7%BE%85	[sound:luo2.mp3]	phonetic-component
+罗:luo2	罗	luó	gauze / to collect / to gather / to catch / to sift	逻萝锣箩椤		6	392	Mnemonic: net + evening	https://hanzicraft.com/dashboard/character/%E7%BD%97	[sound:luo2.mp3]	phonetic-component
+馬:ma3	馬	mǎ	horse / CL:匹[pi] / horse or cavalry piece in Chinese chess / knight in Western chess	嗎瑪碼螞		155	276		https://hanzicraft.com/dashboard/character/%E9%A6%AC	[sound:ma3.mp3]	phonetic-component
+曼:man4	曼	màn	handsome / large / long	慢漫蔓幔谩		15	1222		https://hanzicraft.com/dashboard/character/%E6%9B%BC	[sound:man4.mp3]	phonetic-component
+矛:mao2	矛	máo	spear / lance / pike	茅蟊蝥髳		201	1439		https://hanzicraft.com/dashboard/character/%E7%9F%9B	[sound:mao2.mp3]	phonetic-component
+毛:mao2	毛	máo	hair / feather / down / wool / mildew / mold / coarse or semifinished / young / raw / careless / unthinking / nervous / scared / (of currency) to devalue or depreciate / classifier for Chinese fractional monetary unit ( = 角[jiao3] , = 1 / 10 yuan or 10 fen 分[fen1])	髦牦氂旄		28	623		https://hanzicraft.com/dashboard/character/%E6%AF%9B	[sound:mao2.mp3]	phonetic-component
+卯:mao3	卯	mǎo	mortise (slot cut into wood to receive a tenon) / 4th earthly branch: 5-7 a.m., 2nd solar month (6th March-4th April), year of the Rabbit	峁铆鉚昴		32	3917		https://hanzicraft.com/dashboard/character/%E5%8D%AF	[sound:mao3.mp3]	phonetic-component
+眉:mei2	眉	méi	eyebrow / upper margin	湄嵋楣镅鎇	8/9	10	1458		https://hanzicraft.com/dashboard/character/%E7%9C%89	[sound:mei2.mp3]	phonetic-component
+門:men2	門	mén	gate / door / CL:扇[shan4] / gateway / doorway / CL:個|个[ge4] / opening / valve / switch / way to do something / knack / family / house / (religious) sect / school (of thought) / class / category / phylum or division (taxonomy) / classifier for large guns / classifier for lessons, subjects, branches of technology	捫鍆		144	185	67 with 門<br>3/10 with exterior components	https://hanzicraft.com/dashboard/character/%E9%96%80	[sound:men2.mp3]	phonetic-component
+蒙:meng2	蒙	méng	to cover / ignorant / to suffer (misfortune) / to receive (a favor) / to cheat	朦檬矇艨礞	6/7 · 7/7 (ignoring tone)	6	1037		https://hanzicraft.com/dashboard/character/%E8%92%99	[sound:meng2.mp3]	phonetic-component
+迷:mi2	迷	mí	to bewilder / crazy about / fan / enthusiast / lost / confused	谜謎醚蒾		4	1151	米	https://hanzicraft.com/dashboard/character/%E8%BF%B7	[sound:mi2.mp3]	phonetic-component
+免:mian3	免	miǎn	to excuse sb / to exempt / to remove or dismiss from office / to avoid / to avert / to escape / to be prohibited	勉冕娩	4/11	10	754		https://hanzicraft.com/dashboard/character/%E5%85%8D	[sound:mian3.mp3]	phonetic-component
+苗:miao2	苗	miáo	sprout	描瞄鹋鶓		9	1917		https://hanzicraft.com/dashboard/character/%E8%8B%97	[sound:miao2.mp3]	phonetic-component
+眇:miao3	眇	miǎo	blind in one eye / blind / tiny / humble / to stare	渺缈緲	4/4	3	5905	Mnemonic: eye + few	https://hanzicraft.com/dashboard/character/%E7%9C%87	[sound:miao3.mp3]	phonetic-component
+冥:ming2	冥	míng	dark / deep / stupid / the underworld	瞑溟暝螟	7/7	6	2733	Mnemonic: sun + lid + crown + fins	https://hanzicraft.com/dashboard/character/%E5%86%A5	[sound:ming2.mp3]	phonetic-component
+名:ming2	名	míng	name / noun (part of speech) / place (e.g. among winners) / famous / classifier for people	铭銘茗眳		6	203		https://hanzicraft.com/dashboard/character/%E5%90%8D	[sound:ming2.mp3]	phonetic-component
+莫:mo4	莫	mò	do not / there is none who	漠寞蓦镆鏌		20	953		https://hanzicraft.com/dashboard/character/%E8%8E%AB	[sound:mo4.mp3]	phonetic-component
+末:mo4	末	mò	tip / end / final stage / latter part / inessential detail / powder / dust / opera role of old man	抹沫茉秣		8	1162		https://hanzicraft.com/dashboard/character/%E6%9C%AB	[sound:mo4.mp3]	phonetic-component
+牟:mou2	牟	móu	barley / to moo / to seek or obtain / old variant of 侔[mou2] / old variant of 眸[mou2]	眸蛑侔麰	5/6	6	2848	Mnemonic: elbow + cow	https://hanzicraft.com/dashboard/character/%E7%89%9F	[sound:mou2.mp3]	phonetic-component
+母:mu3	母	mǔ	female / mother	姆拇	3/12	28	565	-每	https://hanzicraft.com/dashboard/character/%E6%AF%8D	[sound:mu3.mp3]	phonetic-component
+乃:nai3	乃	nǎi	to be / thus / so / therefore / then / only / thereupon	奶氖艿		13	1163		https://hanzicraft.com/dashboard/character/%E4%B9%83	[sound:nai3.mp3]	phonetic-component
+尼:ni2	尼	ní	Buddhist nun / (often used in phonetic spellings)	呢泥怩坭		8	653		https://hanzicraft.com/dashboard/character/%E5%B0%BC	[sound:ni2.mp3]	phonetic-component
+聶:nie4	聶	niè	to whisper	躡囁鑷	5/8	3	2791		https://hanzicraft.com/dashboard/character/%E8%81%B6	[sound:nie4.mp3]	phonetic-component
+聂:nie4	聂	niè	to whisper	蹑嗫镊颞	5/8	7	2791	Traditional: 聶	https://hanzicraft.com/dashboard/character/%E8%81%82	[sound:nie4.mp3]	phonetic-component
+寧:ning2	寧	níng	rather / to prefer	擰獰嚀檸聹	6/6	2	1017	Mnemonic: dish + heart + spike + dollhouse	https://hanzicraft.com/dashboard/character/%E5%AF%A7	[sound:ning2.mp3]	phonetic-component
+宁:ning2	宁	níng	rather / to prefer	拧狞咛柠		12	1017		https://hanzicraft.com/dashboard/character/%E5%AE%81	[sound:ning2.mp3]	phonetic-component
+农:nong2	农	nóng	peasant / to farm / agriculture / diligent (old) / government field official (old)	浓侬哝脓秾		5	465		https://hanzicraft.com/dashboard/character/%E5%86%9C	[sound:nong2.mp3]	phonetic-component
+農:nong2	農	nóng	peasant / to farm / agriculture / diligent (old) / government field official (old)	濃儂噥膿穠		3	465	Mnemonic: stake + ornament	https://hanzicraft.com/dashboard/character/%E8%BE%B2	[sound:nong2.mp3]	phonetic-component
+奴:nu2	奴	nú	slave	驽駑孥		9	1400		https://hanzicraft.com/dashboard/character/%E5%A5%B4	[sound:nu2.mp3]	phonetic-component
+區:ou1	區	ōu	area / region / district / small / distinguish / CL:個|个[ge4]	歐鷗毆漚謳		5	265		https://hanzicraft.com/dashboard/character/%E5%8D%80	[sound:ou1.mp3]	phonetic-component
+区:ou1	区	ōu	area / region / district / small / distinguish / CL:個|个[ge4]	欧鸥殴沤讴		17	265	Mnemonic: box + x	https://hanzicraft.com/dashboard/character/%E5%8C%BA	[sound:ou1.mp3]	phonetic-component
+彭:peng2	彭	péng	surname Peng	膨澎蟛		5	1499	Mnemonic: hair + drum	https://hanzicraft.com/dashboard/character/%E5%BD%AD	[sound:peng2.mp3]	phonetic-component
+朋:peng2	朋	péng	friend	鹏鵬棚堋硼	7/9	17	880	-崩	https://hanzicraft.com/dashboard/character/%E6%9C%8B	[sound:peng2.mp3]	phonetic-component
+辟:pi4	辟	pì	to dispel / to refute / to repudiate / to open up (for development)	闢譬僻甓	5/20	25	2135		https://hanzicraft.com/dashboard/character/%E8%BE%9F	[sound:pi4.mp3]	phonetic-component
+扁:pian1	扁	piān	flat / (old form of character 匾, horizontal tablet with inscription)	篇偏萹翩		18	1735		https://hanzicraft.com/dashboard/character/%E6%89%81	[sound:pian1.mp3]	phonetic-component
+票:piao4	票	piào	ticket / ballot / bank note / CL:張|张[zhang1] / person held for ransom / amateur performance of Chinese opera / classifier for shipments and business transactions (topolect)	漂骠驃嘌		18	908		https://hanzicraft.com/dashboard/character/%E7%A5%A8	[sound:piao4.mp3]	phonetic-component
+平:ping2	平	píng	flat / level / equal / to tie (make the same score) / to draw (score) / calm / peaceful / see also 平聲|平声[ping2 sheng1]	评評苹坪鲆		11	215		https://hanzicraft.com/dashboard/character/%E5%B9%B3	[sound:ping2.mp3]	phonetic-component
+普:pu3	普	pǔ	general / popular / everywhere / universal	谱譜镨鐠		4	629	Mnemonic: sun + conjoined twins	https://hanzicraft.com/dashboard/character/%E6%99%AE	[sound:pu3.mp3]	phonetic-component
+妻:qi1	妻	qī	to marry off (a daughter)	凄淒棲萋		4	1074		https://hanzicraft.com/dashboard/character/%E5%A6%BB	[sound:qi1.mp3]	phonetic-component
+其:qi2	其	qí	his / her / its / theirs / that / such / it (refers to sth preceding it)	棋琪祺淇麒		20	85		https://hanzicraft.com/dashboard/character/%E5%85%B6	[sound:qi2.mp3]	phonetic-component
+齐:qi2	齐	qí	neat / even / level with / identical / simultaneous / all together / to even sth out	脐蛴荠		19	1061		https://hanzicraft.com/dashboard/character/%E9%BD%90	[sound:qi2.mp3]	phonetic-component
+齊:qi2	齊	qí	neat / even / level with / identical / simultaneous / all together / to even sth out	臍蠐薺		19	1061		https://hanzicraft.com/dashboard/character/%E9%BD%8A	[sound:qi2.mp3]	phonetic-component
+奇:qi2	奇	qí	strange / odd / weird / wonderful / surprisingly / unusually	骑騎崎琦锜		19	563		https://hanzicraft.com/dashboard/character/%E5%A5%87	[sound:qi2.mp3]	phonetic-component
+气:qi4	气	qì	gas / air / smell / weather / to make angry / to annoy / to get angry / vital energy / qi	氣汽		24	217		https://hanzicraft.com/dashboard/character/%E6%B0%94	[sound:qi4.mp3]	phonetic-component
+千:qian1	千	qiān	thousand	迁仟阡芊钎		13	599		https://hanzicraft.com/dashboard/character/%E5%8D%83	[sound:qian1.mp3]	phonetic-component
+遣:qian3	遣	qiǎn	dispatch	谴譴缱繾	5/5	2	1778	Mnemonic: road + dwarf + purse	https://hanzicraft.com/dashboard/character/%E9%81%A3	[sound:qian3.mp3]	phonetic-component
+强:qiang3	强	qiǎng	strong / powerful / better / slightly more than / vigorous / violent / best in their category, e.g. see 百強|百强[bai3 qiang2]	襁镪鏹		5	292		https://hanzicraft.com/dashboard/character/%E5%BC%BA	[sound:qiang3.mp3]	phonetic-component
+乔:qiao2	乔	qiáo	tall	桥侨荞		11	1486		https://hanzicraft.com/dashboard/character/%E4%B9%94	[sound:qiao2.mp3]	phonetic-component
+喬:qiao2	喬	qiáo	tall	橋僑蕎		8	1486		https://hanzicraft.com/dashboard/character/%E5%96%AC	[sound:qiao2.mp3]	phonetic-component
+禽:qin2	禽	qín	generic term for birds and animals / birds / to capture (old)	擒噙檎	4/4	4	2557		https://hanzicraft.com/dashboard/character/%E7%A6%BD	[sound:qin2.mp3]	phonetic-component
+秋:qiu1	秋	qiū	autumn / fall / harvest time / a swing	鞦鳅鰍楸		14	1149		https://hanzicraft.com/dashboard/character/%E7%A7%8B	[sound:qiu1.mp3]	phonetic-component
+求:qiu2	求	qiú	to seek / to look for / to request / to demand / to beseech	球裘俅逑赇		10	312		https://hanzicraft.com/dashboard/character/%E6%B1%82	[sound:qiu2.mp3]	phonetic-component
+区:qu1	区	qū	area / region / district / small / distinguish / CL:個|个[ge4]	驱躯岖		17	265		https://hanzicraft.com/dashboard/character/%E5%8C%BA	[sound:qu1.mp3]	phonetic-component
+區:qu1	區	qū	area / region / district / small / distinguish / CL:個|个[ge4]	驅軀嶇		5	265		https://hanzicraft.com/dashboard/character/%E5%8D%80	[sound:qu1.mp3]	phonetic-component
+全:quan2	全	quán	all / whole / entire / every / complete	荃痊诠詮铨		13	124		https://hanzicraft.com/dashboard/character/%E5%85%A8	[sound:quan2.mp3]	phonetic-component
+刃:ren4	刃	rèn	edge of blade	韧韌纫紉仞		11	2694		https://hanzicraft.com/dashboard/character/%E5%88%83	[sound:ren4.mp3]	phonetic-component
+容:rong2	容	róng	to hold / to contain / to allow / to tolerate / appearance / look / countenance	蓉溶熔榕镕		9	442	Mnemonic: dollhouse + swim fins	https://hanzicraft.com/dashboard/character/%E5%AE%B9	[sound:rong2.mp3]	phonetic-component
+柔:rou2	柔	róu	soft / flexible / supple / yielding / rho (Greek letter Ρρ)	揉蹂鞣糅		7	1571	Mnemonic: tree + spear	https://hanzicraft.com/dashboard/character/%E6%9F%94	[sound:rou2.mp3]	phonetic-component
+色:se4	色	sè	color / CL:種|种[zhong3] / look / appearance / sex	铯銫		11	304		https://hanzicraft.com/dashboard/character/%E8%89%B2	[sound:se4.mp3]	phonetic-component
+杀:sha1	杀	shā	to kill / to murder / to fight / to weaken or reduce / to smart (topolect) / to counteract / (used after a verb) extremely	殺刹铩		5	587	Mnemonic: tree + x	https://hanzicraft.com/dashboard/character/%E6%9D%80	[sound:sha1.mp3]	phonetic-component
+沙:sha1	沙	shā	granule / hoarse / raspy / sand / powder / CL:粒[li4] / abbr. for Tsar or Tsarist Russia	莎鲨鯊裟痧		12	846		https://hanzicraft.com/dashboard/character/%E6%B2%99	[sound:sha1.mp3]	phonetic-component
+彡:shan1	彡	shān		衫杉钐釤		90	7039		https://hanzicraft.com/dashboard/character/%E5%BD%A1	[sound:shan1.mp3]	phonetic-component
+善:shan4	善	shàn	good (virtuous) / benevolent / well-disposed / good at sth / to improve or perfect	膳蟮缮繕鳝	7/7	6	748	Mnemonic: mouth + horns + sheep + ground	https://hanzicraft.com/dashboard/character/%E5%96%84	[sound:shan4.mp3]	phonetic-component
+召:shao4	召	shào	to call together / to summon / to convene / temple or monastery (used in place names in Inner Mongolia)	绍紹邵劭		20	1212		https://hanzicraft.com/dashboard/character/%E5%8F%AC	[sound:shao4.mp3]	phonetic-component
+申:shen1	申	shēn	to extend / to state / to explain / 9th earthly branch: 3-5 p.m., 7th solar month (7th August-7th September), year of the Monkey	伸绅紳呻砷		12	1108		https://hanzicraft.com/dashboard/character/%E7%94%B3	[sound:shen1.mp3]	phonetic-component
+生:sheng1	生	shēng	to be born / to give birth / life / to grow / raw, uncooked	牲甥笙鼪		25	34		https://hanzicraft.com/dashboard/character/%E7%94%9F	[sound:sheng1.mp3]	phonetic-component
+時:shi2	時	shí	o'clock / time / when / hour / season / period	蒔塒鰣		11	25		https://hanzicraft.com/dashboard/character/%E6%99%82	[sound:shi2.mp3]	phonetic-component
+时:shi2	时	shí	o'clock / time / when / hour / season / period	莳埘鲥		3	25		https://hanzicraft.com/dashboard/character/%E6%97%B6	[sound:shi2.mp3]	phonetic-component
+市:shi4	市	shì	market / city / CL:個|个[ge4]	柿铈鈰		5	254		https://hanzicraft.com/dashboard/character/%E5%B8%82	[sound:shi4.mp3]	phonetic-component
+式:shi4	式	shì	type / form / pattern / style	试試轼軾拭		6	303		https://hanzicraft.com/dashboard/character/%E5%BC%8F	[sound:shi4.mp3]	phonetic-component
+术:shu4	术	shù	various genera of flowers of Asteracea family (daisies and chrysanthemums), including Atractylis lancea	術述沭		6	328		https://hanzicraft.com/dashboard/character/%E6%9C%AF	[sound:shu4.mp3]	phonetic-component
+思:si1	思	sī	to think / to consider	锶鍶缌緦		11	298		https://hanzicraft.com/dashboard/character/%E6%80%9D	[sound:si1.mp3]	phonetic-component
+斯:si1	斯	sī	(phonetic) / this	撕嘶厮廝澌	6/6	4	168		https://hanzicraft.com/dashboard/character/%E6%96%AF	[sound:si1.mp3]	phonetic-component
+四:si4	四	sì	four / 4	泗驷駟		2	226		https://hanzicraft.com/dashboard/character/%E5%9B%9B	[sound:si4.mp3]	phonetic-component
+巳:si4	巳	sì	6th earthly branch: 9-11 a.m., 4th solar month (5th May-5th June), year of the Snake	祀汜		85	3375		https://hanzicraft.com/dashboard/character/%E5%B7%B3	[sound:si4.mp3]	phonetic-component
+松:song1	松	sōng	loose / to loosen / to relax	鬆淞凇崧菘		5	893		https://hanzicraft.com/dashboard/character/%E6%9D%BE	[sound:song1.mp3]	phonetic-component
+素:su4	素	sù	raw silk / white / plain, unadorned / vegetarian (food) / essence / nature / element / constituent / usually / always / ever	愫嗉膆		4	660		https://hanzicraft.com/dashboard/character/%E7%B4%A0	[sound:su4.mp3]	phonetic-component
+遂:sui4	遂	suì	to satisfy / to succeed / then / thereupon / finally / unexpectedly / to proceed / to reach	隧邃燧繸鐩	6/6	9	2014	㒸	https://hanzicraft.com/dashboard/character/%E9%81%82	[sound:sui4.mp3]	phonetic-component
+台:tai2	台	tái	platform / stage / terrace / stand / support / desk / station / broadcasting station / classifier for vehicles or machines	颱抬苔邰跆		26	388		https://hanzicraft.com/dashboard/character/%E5%8F%B0	[sound:tai2.mp3]	phonetic-component
+太:tai4	太	tài	highest / greatest / too (much) / very / extremely	态汰肽钛鈦	7/8	11	240		https://hanzicraft.com/dashboard/character/%E5%A4%AA	[sound:tai4.mp3]	phonetic-component
+唐:tang2	唐	táng	to exaggerate / empty / in vain / old variant of 螗	糖塘搪瑭醣		8	971		https://hanzicraft.com/dashboard/character/%E5%94%90	[sound:tang2.mp3]	phonetic-component
+堂:tang2	堂	táng	(main) hall / large room for a specific purpose / relationship between cousins etc on the paternal side of a family / of the same clan / classifier for sets (or suites) of furniture, classes etc / CL:間|间[jian1]	膛螳樘	4/7	9	978		https://hanzicraft.com/dashboard/character/%E5%A0%82	[sound:tang2.mp3]	phonetic-component
+匋:tao2	匋	táo	pottery	陶淘萄啕		11		Mnemonic: container + clay pot	https://hanzicraft.com/dashboard/character/%E5%8C%8B	[sound:tao2.mp3]	phonetic-component
+弟:ti4	弟	tì	younger brother / junior male / I (modest word in letter)	涕剃悌		13	814		https://hanzicraft.com/dashboard/character/%E5%BC%9F	[sound:ti4.mp3]	phonetic-component
+亭:ting2	亭	tíng	pavilion / booth / kiosk / erect	停婷葶		4	1999		https://hanzicraft.com/dashboard/character/%E4%BA%AD	[sound:ting2.mp3]	phonetic-component
+廷:ting2	廷	tíng	palace courtyard	庭霆蜓莛	5/10 · 10/10 (ignoring tone)	12	1624		https://hanzicraft.com/dashboard/character/%E5%BB%B7	[sound:ting2.mp3]	phonetic-component
+童:tong2	童	tóng	boy / child / children	瞳潼僮穜	5/11	11	1227	立里	https://hanzicraft.com/dashboard/character/%E7%AB%A5	[sound:tong2.mp3]	phonetic-component
+屯:tun2	屯	tún	to station (soldiers) / to store up / village	饨飩囤		20	2858		https://hanzicraft.com/dashboard/character/%E5%B1%AF	[sound:tun2.mp3]	phonetic-component
+丸:wan2	丸	wán	pill	纨紈芄		6	2457		https://hanzicraft.com/dashboard/character/%E4%B8%B8	[sound:wan2.mp3]	phonetic-component
+宛:wan3	宛	wǎn	winding / as if	碗婉惋畹琬		14	2523		https://hanzicraft.com/dashboard/character/%E5%AE%9B	[sound:wan3.mp3]	phonetic-component
+罔:wang3	罔	wǎng	to deceive / there is none	網惘魍辋輞	6/6	6	4187	Mnemonic: hood + horns + death	https://hanzicraft.com/dashboard/character/%E7%BD%94	[sound:wang3.mp3]	phonetic-component
+囗:wei2	囗	wéi	enclosure	围圍涠潿		126			https://hanzicraft.com/dashboard/character/%E5%9B%97	[sound:wei2.mp3]	phonetic-component
+韦:wei2	韦	wéi	soft leather	围违闱帏涠		32	1665		https://hanzicraft.com/dashboard/character/%E9%9F%A6	[sound:wei2.mp3]	phonetic-component
+韋:wei2	韋	wéi	soft leather	圍違闈幃潿		32	1665		https://hanzicraft.com/dashboard/character/%E9%9F%8B	[sound:wei2.mp3]	phonetic-component
+委:wei3	委	wěi	to entrust / to cast aside / to shift (blame etc) / to accumulate / roundabout / winding / dejected / listless / committee member / council / end / actually / certainly	萎诿諉痿	5/10	11	457	Mnemonic: grain stalk + woman	https://hanzicraft.com/dashboard/character/%E5%A7%94	[sound:wei3.mp3]	phonetic-component
+胃:wei4	胃	wèi	stomach / CL:個|个[ge4]	谓謂渭猬蝟		7	1954		https://hanzicraft.com/dashboard/character/%E8%83%83	[sound:wei4.mp3]	phonetic-component
+尉:wei4	尉	wèi	military officer	慰蔚霨	4/5	5	2122	Mnemonic: caliper + altar + flag	https://hanzicraft.com/dashboard/character/%E5%B0%89	[sound:wei4.mp3]	phonetic-component
+文:wen2	文	wén	language / culture / writing / formal / literary / gentle / (old) classifier for coins / Kangxi radical 118	纹紋雯蚊玟		38	148		https://hanzicraft.com/dashboard/character/%E6%96%87	[sound:wen2.mp3]	phonetic-component
+乌:wu1	乌	wū	crow / black	呜邬钨		4	1242		https://hanzicraft.com/dashboard/character/%E4%B9%8C	[sound:wu1.mp3]	phonetic-component
+烏:wu1	烏	wū	crow / black	嗚鄔鎢		2	1242		https://hanzicraft.com/dashboard/character/%E7%83%8F	[sound:wu1.mp3]	phonetic-component
+无:wu2	无	wú	-less / not to have / no / none / not / to lack / un-	芜庑	3/7	15	105	-既	https://hanzicraft.com/dashboard/character/%E6%97%A0	[sound:wu2.mp3]	phonetic-component
+午:wu3	午	wǔ	7th earthly branch: 11 a.m.-1 p.m., noon, 5th solar month (6th June-6th July), year of the Horse	忤迕仵		7	1002		https://hanzicraft.com/dashboard/character/%E5%8D%88	[sound:wu3.mp3]	phonetic-component
+奚:xi1	奚	xī	(literary) what? / where? / why?	溪谿蹊		6	3389		https://hanzicraft.com/dashboard/character/%E5%A5%9A	[sound:xi1.mp3]	phonetic-component
+希:xi1	希	xī	to hope / to admire / variant of 稀[xi1]	稀唏浠欷烯		9	508		https://hanzicraft.com/dashboard/character/%E5%B8%8C	[sound:xi1.mp3]	phonetic-component
+析:xi1	析	xī	to separate / to divide / to analyze	晰皙淅蜥菥	6/6	5	1071		https://hanzicraft.com/dashboard/character/%E6%9E%90	[sound:xi1.mp3]	phonetic-component
+西:xi1	西	xī	west	牺茜硒粞		75	167		https://hanzicraft.com/dashboard/character/%E8%A5%BF	[sound:xi1.mp3]	phonetic-component
+闲:xian2	闲	xián	to stay idle / to be unoccupied / not busy / leisure / enclosure	娴痫鹇		3	1527		https://hanzicraft.com/dashboard/character/%E9%97%B2	[sound:xian2.mp3]	phonetic-component
+見:xian4	見	xiàn	to see / to meet / to appear (to be sth) / to interview	現莧峴		60	153		https://hanzicraft.com/dashboard/character/%E8%A6%8B	[sound:xian4.mp3]	phonetic-component
+臽:xian4	臽	xiàn	pitfall / trap (archaic)	陷馅餡		10			https://hanzicraft.com/dashboard/character/%E8%87%BD	[sound:xian4.mp3]	phonetic-component
+襄:xiang1	襄	xiāng	to help / to assist / mutual assistance / to rush into or up / to raise or hold up / high / tall / old variant of 欀 / chariot horse (old) / change (old)	镶鑲骧驤	5/16	15	2974	Mnemonic: dress + boombox + wire mesh	https://hanzicraft.com/dashboard/character/%E8%A5%84	[sound:xiang1.mp3]	phonetic-component
+相:xiang1	相	xiāng	each other / one another / mutually	箱湘厢廂缃		8	152		https://hanzicraft.com/dashboard/character/%E7%9B%B8	[sound:xiang1.mp3]	phonetic-component
+劦:xie2	劦	xié	variant of 協|协[xie2] / to cooperate / combined labor	協脅勰		3			https://hanzicraft.com/dashboard/character/%E5%8A%A6	[sound:xie2.mp3]	phonetic-component
+解:xie4	解	xiè	to divide / to break up / to split / to separate / to dissolve / to solve / to melt / to remove / to untie / to loosen / to open / to emancipate / to explain / to understand / to know / a solution / a dissection	蟹懈邂獬廨	7/8	7	201	Mnemonic: sword + horn + cow	https://hanzicraft.com/dashboard/character/%E8%A7%A3	[sound:xie4.mp3]	phonetic-component
+星:xing1	星	xīng	star / satellite / small amount	腥猩惺		7	537		https://hanzicraft.com/dashboard/character/%E6%98%9F	[sound:xing1.mp3]	phonetic-component
+休:xiu1	休	xiū	to rest / to stop doing sth for a period of time / to cease / (imperative) don't	咻庥鸺髹貅		6	1080		https://hanzicraft.com/dashboard/character/%E4%BC%91	[sound:xiu1.mp3]	phonetic-component
+秀:xiu4	秀	xiù	handsome / refined / elegant / graceful / performance / ear of grain / show (loanword) / CL:場|场[chang2]	绣锈銹	4/8	8	1134	Mnemonic: grain stalk + stairs	https://hanzicraft.com/dashboard/character/%E7%A7%80	[sound:xiu4.mp3]	phonetic-component
+宣:xuan1	宣	xuān	to declare (publicly) / to announce	喧諠暄煊萱		10	769	Mnemonic: ground + dollhouse + daybreak	https://hanzicraft.com/dashboard/character/%E5%AE%A3	[sound:xuan1.mp3]	phonetic-component
+熏:xun1	熏	xūn	fragrance / warm / to educate / variant of 熏[xun1] / to smoke / to fumigate	勳薰醺獯曛		7	2991	Mnemonic: thousand + black	https://hanzicraft.com/dashboard/character/%E7%86%8F	[sound:xun1.mp3]	phonetic-component
+寻:xun2	寻	xún	to search / to look for / to seek	荨浔鲟		3	960		https://hanzicraft.com/dashboard/character/%E5%AF%BB	[sound:xun2.mp3]	phonetic-component
+旬:xun2	旬	xún	ten days / ten years / full period	询詢荀洵峋		12	2327	Mnemonic: sun + container	https://hanzicraft.com/dashboard/character/%E6%97%AC	[sound:xun2.mp3]	phonetic-component
+尋:xun2	尋	xún	to search / to look for / to seek	蕁潯鱘		2	960		https://hanzicraft.com/dashboard/character/%E5%B0%8B	[sound:xun2.mp3]	phonetic-component
+卂:xun4	卂	xùn	(archaic) to fly rapidly	迅讯訊汛		6			https://hanzicraft.com/dashboard/character/%E5%8D%82	[sound:xun4.mp3]	phonetic-component
+牙:ya2	牙	yá	tooth / ivory / CL:顆|颗[ke1]	伢芽琊蚜		16	995		https://hanzicraft.com/dashboard/character/%E7%89%99	[sound:ya2.mp3]	phonetic-component
+厓:ya2	厓	yá	old form of 崖 (cliff) and 涯 (bank)	崖涯睚	4/5	4		See also: 圭	https://hanzicraft.com/dashboard/character/%E5%8E%93	[sound:ya2.mp3]	phonetic-component
+亚:ya4	亚	yà	Asia / Asian / second / next to / inferior / sub- / Taiwan pr. [ya3]	娅垭氩	4/11 · 7/11 (ignoring tone)	11	420		https://hanzicraft.com/dashboard/character/%E4%BA%9A	[sound:ya4.mp3]	phonetic-component
+亞:ya4	亞	yà	Asia / Asian / second / next to / inferior / sub- / Taiwan pr. [ya3]	婭埡氬		1	420		https://hanzicraft.com/dashboard/character/%E4%BA%9E	[sound:ya4.mp3]	phonetic-component
+奄:yan1	奄	yān	variant of 閹|阉[yan1] / to castrate / variant of 淹[yan1] / to delay	淹阉閹腌醃		16	3456	Mnemonic: big + lightning	https://hanzicraft.com/dashboard/character/%E5%A5%84	[sound:yan1.mp3]	phonetic-component
+匽:yan3	匽	yǎn	to hide, to secrete, to repress / to bend	偃鼴郾		6		Mnemonic: sun + box + woman	https://hanzicraft.com/dashboard/character/%E5%8C%BD	[sound:yan3.mp3]	phonetic-component
+央:yang1	央	yāng	beg / center	鞅秧殃鸯鴦		15	798		https://hanzicraft.com/dashboard/character/%E5%A4%AE	[sound:yang1.mp3]	phonetic-component
+昜:yang2	昜	yáng	to open out, to expand / bright, glorious	陽楊揚煬瘍	8/12	8		-傷湯	https://hanzicraft.com/dashboard/character/%E6%98%9C	[sound:yang2.mp3]	phonetic-component
+夜:ye4	夜	yè	night	液腋掖		3	664		https://hanzicraft.com/dashboard/character/%E5%A4%9C	[sound:ye4.mp3]	phonetic-component
+夷:yi2	夷	yí	non-Han people, esp. to the East of China / barbarians / to wipe out / to exterminate / to tear down / to raze	姨咦胰痍荑		7	2332		https://hanzicraft.com/dashboard/character/%E5%A4%B7	[sound:yi2.mp3]	phonetic-component
+乂:yi4	乂	yì	to regulate / to govern / to control / to mow	义议艾刈		168			https://hanzicraft.com/dashboard/character/%E4%B9%82	[sound:yi4.mp3]	phonetic-component
+益:yi4	益	yì	benefit / profit / advantage / beneficial / to increase / to add / all the more	溢谥謚缢縊		13	648	Mnemonic: dish + snowflake	https://hanzicraft.com/dashboard/character/%E7%9B%8A	[sound:yi4.mp3]	phonetic-component
+邑:yi4	邑	yì	city / village	悒挹		257	3126		https://hanzicraft.com/dashboard/character/%E9%82%91	[sound:yi4.mp3]	phonetic-component
+睪:yi4	睪	yì	to spy out	譯驛繹嶧懌	6/9	5	7061	Mnemonic: totem + net<br>幸<br>Mnemonic: folding stool + cornstalk / spy on	https://hanzicraft.com/dashboard/character/%E7%9D%AA	[sound:yi4.mp3]	phonetic-component
+意:yi4	意	yì	idea / meaning / thought / to think / wish / desire / intention / to expect / to anticipate	憶億臆薏癔		6	104		https://hanzicraft.com/dashboard/character/%E6%84%8F	[sound:yi4.mp3]	phonetic-component
+因:yin1	因	yīn	cause / reason / because	姻茵氤洇骃		15	96		https://hanzicraft.com/dashboard/character/%E5%9B%A0	[sound:yin1.mp3]	phonetic-component
+婴:ying1	婴	yīng	infant / baby	樱鹦嘤缨撄		7	2111		https://hanzicraft.com/dashboard/character/%E5%A9%B4	[sound:ying1.mp3]	phonetic-component
+嬰:ying1	嬰	yīng	infant / baby	櫻鸚嚶纓攖		11	2111	Mnemonic: shellfish + woman<br>賏	https://hanzicraft.com/dashboard/character/%E5%AC%B0	[sound:ying1.mp3]	phonetic-component
+庸:yong1	庸	yōng	ordinary / to use	傭慵镛鏞墉		5	2143	用	https://hanzicraft.com/dashboard/character/%E5%BA%B8	[sound:yong1.mp3]	phonetic-component
+雍:yong1	雍	yōng	harmony	擁臃饔	4/6	4	3321	Mnemonic: turkey + lid + cocoon	https://hanzicraft.com/dashboard/character/%E9%9B%8D	[sound:yong1.mp3]	phonetic-component
+永:yong3	永	yǒng	forever / always / perpetual	泳咏詠		6	840		https://hanzicraft.com/dashboard/character/%E6%B0%B8	[sound:yong3.mp3]	phonetic-component
+甬:yong3	甬	yǒng	variant of 桶 bucket / (classifier) cubic dry measure (5 pecks 五斗, approx half-liter)	涌踊蛹俑		12	4029	用	https://hanzicraft.com/dashboard/character/%E7%94%AC	[sound:yong3.mp3]	phonetic-component
+斿:you2	斿	yóu	scallops along lower edge of flag	游遊蝣		3			https://hanzicraft.com/dashboard/character/%E6%96%BF	[sound:you2.mp3]	phonetic-component
+尤:you2	尤	yóu	outstanding / particularly, especially / a fault / to express discontentment against	犹鱿魷疣		8	1097	Mnemonic: drop + mutant	https://hanzicraft.com/dashboard/character/%E5%B0%A4	[sound:you2.mp3]	phonetic-component
+由:you2	由	yóu	to follow / from / it is for...to / reason / cause / because of / due to / to / to leave it (to sb) / by (introduces passive verb)	油邮铀鈾蚰		24	136		https://hanzicraft.com/dashboard/character/%E7%94%B1	[sound:you2.mp3]	phonetic-component
+俞:yu2	俞	yú	yes (used by Emperor or ruler) / OK / to accede / to assent	愉瑜逾榆渝		24	3245		https://hanzicraft.com/dashboard/character/%E4%BF%9E	[sound:yu2.mp3]	phonetic-component
+臾:yu2	臾	yú	a moment / little while	谀諛腴萸		6	4563		https://hanzicraft.com/dashboard/character/%E8%87%BE	[sound:yu2.mp3]	phonetic-component
+矞:yu4	矞	yù	grand / elegant / propitious	鹬鷸遹驈	5/9	6	6883		https://hanzicraft.com/dashboard/character/%E7%9F%9E	[sound:yu4.mp3]	phonetic-component
+元:yuan2	元	yuán	Chinese monetary unit / dollar / primary / first	园沅鼋黿芫		16	370		https://hanzicraft.com/dashboard/character/%E5%85%83	[sound:yuan2.mp3]	phonetic-component
+袁:yuan2	袁	yuán	long robe (old)	園猿辕轅	5/7	4	1753		https://hanzicraft.com/dashboard/character/%E8%A2%81	[sound:yuan2.mp3]	phonetic-component
+原:yuan2	原	yuán	former / original / primary / raw / level / cause / source	源塬螈		5	193		https://hanzicraft.com/dashboard/character/%E5%8E%9F	[sound:yuan2.mp3]	phonetic-component
+龠:yue4	龠	yuè	ancient unit of volume (half a 合[ge3], equivalent to 50ml) / ancient flute	鑰瀹		7	6628		https://hanzicraft.com/dashboard/character/%E9%BE%A0	[sound:yue4.mp3]	phonetic-component
+戉:yue4	戉	yuè	variant of 鉞|钺 battle-ax	越钺鉞		3			https://hanzicraft.com/dashboard/character/%E6%88%89	[sound:yue4.mp3]	phonetic-component
+云:yun2	云	yún	(classical) to say	雲芸纭紜耘	5/14	15	691	-会	https://hanzicraft.com/dashboard/character/%E4%BA%91	[sound:yun2.mp3]	phonetic-component
+責:ze2	責	zé	duty / responsibility / to reproach / to blame	嘖賾幘簀		4	535		https://hanzicraft.com/dashboard/character/%E8%B2%AC	[sound:ze2.mp3]	phonetic-component
+责:ze2	责	zé	duty / responsibility / to reproach / to blame	啧赜帻箦		8	535		https://hanzicraft.com/dashboard/character/%E8%B4%A3	[sound:ze2.mp3]	phonetic-component
+曾:zeng1	曾	zēng	once / already / ever (in the past) / former / previously / (past tense marker used before verb or clause)	增憎罾缯繒		16	463		https://hanzicraft.com/dashboard/character/%E6%9B%BE	[sound:zeng1.mp3]	phonetic-component
+查:zha1	查	zhā	to research / to check / to investigate / to examine / to refer to / to search	喳渣楂揸		9	459	5/7 but rarer in words	https://hanzicraft.com/dashboard/character/%E6%9F%A5	[sound:zha1.mp3]	phonetic-component
+乍:zha4	乍	zhà	at first / suddenly / abruptly / to spread / (of hair) to stand on end / bristling	炸咋诈詐蚱		22	2908		https://hanzicraft.com/dashboard/character/%E4%B9%8D	[sound:zha4.mp3]	phonetic-component
+占:zhan1	占	zhān	to take possession of / to occupy / to take up	沾粘毡霑詀	6/26 · 9/26 (ignoring tone)	27	736	-店	https://hanzicraft.com/dashboard/character/%E5%8D%A0	[sound:zhan1.mp3]	phonetic-component
+詹:zhan1	詹	zhān	excellent / verbose	瞻谵譫	4/11	13	2528	Mnemonic: legs + dagger + cliff + words<br>always -an	https://hanzicraft.com/dashboard/character/%E8%A9%B9	[sound:zhan1.mp3]	phonetic-component
+章:zhang1	章	zhāng	chapter / section / clause / movement (of symphony) / seal / badge / regulation / order	璋彰樟漳蟑	9/15 · 14/15 (ignoring tone)	19	539	Mnemonic: guard + sunflower<br>立早	https://hanzicraft.com/dashboard/character/%E7%AB%A0	[sound:zhang1.mp3]	phonetic-component
+贞:zhen1	贞	zhēn	chaste	侦桢祯		5	2361		https://hanzicraft.com/dashboard/character/%E8%B4%9E	[sound:zhen1.mp3]	phonetic-component
+貞:zhen1	貞	zhēn	chaste	偵楨禎	4/4	2	2361	Mnemonic: magic stick + shellfish	https://hanzicraft.com/dashboard/character/%E8%B2%9E	[sound:zhen1.mp3]	phonetic-component
+㐱:zhen3	㐱	zhěn	hair + umbrella	诊診疹畛轸		14			https://hanzicraft.com/dashboard/character/%E3%90%B1	[sound:zhen3.mp3]	phonetic-component
+争:zheng1	争	zhēng	to strive for / to vie for / to argue or debate / deficient or lacking (topolect) / how or what (literary)	睁挣铮錚筝		10	344		https://hanzicraft.com/dashboard/character/%E4%BA%89	[sound:zheng1.mp3]	phonetic-component
+爭:zheng1	爭	zhēng	to strive for / to vie for / to argue or debate / deficient or lacking (topolect) / how or what (literary)	睜掙箏猙崢		2	344		https://hanzicraft.com/dashboard/character/%E7%88%AD	[sound:zheng1.mp3]	phonetic-component
+正:zheng1	正	zhēng	just (right) / main / upright / straight / correct / positive / greater than zero / principle	征怔症钲鉦		11	129		https://hanzicraft.com/dashboard/character/%E6%AD%A3	[sound:zheng1.mp3]	phonetic-component
+正:zheng4	正	zhèng	just (right) / main / upright / straight / correct / positive / greater than zero / principle	政证怔症		11	129		https://hanzicraft.com/dashboard/character/%E6%AD%A3	[sound:zheng4.mp3]	phonetic-component
+支:zhi1	支	zhī	to support / to sustain / to erect / to raise / branch / division / to draw money / classifier for rods such as pens and guns, for army divisions and for songs or compositions	枝吱肢		21	437		https://hanzicraft.com/dashboard/character/%E6%94%AF	[sound:zhi1.mp3]	phonetic-component
+直:zhi2	直	zhí	straight / to straighten / fair and reasonable / frank / straightforward / (indicates continuing motion or action) / vertical / vertical downward stroke in Chinese characters	值植殖埴		8	255		https://hanzicraft.com/dashboard/character/%E7%9B%B4	[sound:zhi2.mp3]	phonetic-component
+至:zhi4	至	zhì	to arrive / most / to / until	致窒蛭桎郅		29	267		https://hanzicraft.com/dashboard/character/%E8%87%B3	[sound:zhi4.mp3]	phonetic-component
+中:zhong1	中	zhōng	to hit (the mark) / to be hit by / to suffer / to win (a prize, a lottery)	钟忠衷盅	5/14	15	14		https://hanzicraft.com/dashboard/character/%E4%B8%AD	[sound:zhong1.mp3]	phonetic-component
+朱:zhu1	朱	zhū	cinnabar / see 硃砂|朱砂[zhu1 sha1]	硃珠株蛛诛		15	1118		https://hanzicraft.com/dashboard/character/%E6%9C%B1	[sound:zhu1.mp3]	phonetic-component
+㝉:zhu4	㝉	zhù	to store / to stand / space between the door and the entrance screen	宁贮伫苎		4		Mnemonic: ground + dollhouse	https://hanzicraft.com/dashboard/character/%E3%9D%89	[sound:zhu4.mp3]	phonetic-component
+兹:zi1	兹	zī	now / here / this / time / year	滋孳嵫	5/9	9	1779		https://hanzicraft.com/dashboard/character/%E5%85%B9	[sound:zi1.mp3]	phonetic-component
+宗:zong1	宗	zōng	school / sect / purpose / model / ancestor / clan / to take as one's model (in academic or artistic work) / classifier for batches, items, cases (medical or legal), reservoirs	踪棕综綜鬃	6/10	15	726		https://hanzicraft.com/dashboard/character/%E5%AE%97	[sound:zong1.mp3]	phonetic-component
+从:zong4	从	zòng	from / via / passing through / through (a gap) / past / ever (followed by negative, meaning never) / (formerly pr. [zong4] and related to 縱|纵) to follow / to comply with / to obey / to join / to engage in / adopting some mode of action or attitude / follower / retainer / accessory / accomplice / related by common paternal grandfather or earlier ancestor	從纵縱		88	98		https://hanzicraft.com/dashboard/character/%E4%BB%8E	[sound:zong4.mp3]	phonetic-component
+尊:zun1	尊	zūn	senior / of a senior generation / to honor / to respect / honorific / classifier for cannons and statues / ancient wine vessel	遵樽鳟鱒		9	1132	Mnemonic: bottle + caliper + horns	https://hanzicraft.com/dashboard/character/%E5%B0%8A	[sound:zun1.mp3]	phonetic-component
+肖:xiao1	肖	xiāo	similar / resembling / to resemble / to be like	消销銷削宵		29	2016		https://hanzicraft.com/dashboard/character/%E8%82%96	[sound:xiao1.mp3]	phonetic-component
+叟:sou1	叟	sōu	old gentleman / old man	艘嗖飕颼馊		16	3795		https://hanzicraft.com/dashboard/character/%E5%8F%9F	[sound:sou1.mp3]	phonetic-component
+高:gao3	高	gǎo	high / tall / above average / loud / your (honorific)	搞稿镐鎬槁		21	134		https://hanzicraft.com/dashboard/character/%E9%AB%98	[sound:gao3.mp3]	phonetic-component
+主:zhu4	主	zhù	owner / master / host / individual or party concerned / God / Lord / main / to indicate or signify / trump card (in card games)	住注註驻駐	8/16 · 12/16 (ignoring tone)	15	87		https://hanzicraft.com/dashboard/character/%E4%B8%BB	[sound:zhu4.mp3]	phonetic-component
+可:ke1	可	kē	can / may / able to / to approve / to permit / to suit / (particle used for emphasis) certainly / very	柯苛珂轲軻		25	30		https://hanzicraft.com/dashboard/character/%E5%8F%AF	[sound:ke1.mp3]	phonetic-component
+米:mi1	米	mī	rice / CL:粒[li4] / meter (classifier)	眯瞇咪		158	575		https://hanzicraft.com/dashboard/character/%E7%B1%B3	[sound:mi1.mp3]	phonetic-component
+巠:jing4	巠	jìng	underground watercourse / archaic variant of 經|经[jing1]	勁徑痙逕脛		6			https://hanzicraft.com/dashboard/character/%E5%B7%A0	[sound:jing4.mp3]	phonetic-component
+古:gu1	古	gū	ancient / old / paleo-	姑估咕辜沽		28	509		https://hanzicraft.com/dashboard/character/%E5%8F%A4	[sound:gu1.mp3]	phonetic-component
+更:geng3	更	gěng	to change or replace / to experience / one of the five two hour periods into which the night was formerly divided / watch (e.g. of a sentry or guard)	梗哽埂鲠鯁		11	221		https://hanzicraft.com/dashboard/character/%E6%9B%B4	[sound:geng3.mp3]	phonetic-component
+只:zhi3	只	zhǐ	classifier for birds and certain animals, one of a pair, some utensils, vessels etc	咫枳轵軹		10	97		https://hanzicraft.com/dashboard/character/%E5%8F%AA	[sound:zhi3.mp3]	phonetic-component
+同:tong2	同	tóng	like / same / similar / together / alike / with	铜銅桐峒侗		20	69		https://hanzicraft.com/dashboard/character/%E5%90%8C	[sound:tong2.mp3]	phonetic-component
+孟:meng3	孟	měng	first month of a season / eldest amongst brothers	猛蜢锰錳艋		5	1573		https://hanzicraft.com/dashboard/character/%E5%AD%9F	[sound:meng3.mp3]	phonetic-component
+己:ji4	己	jì	self / oneself / sixth of 10 heavenly stems 十天干 / sixth in order / letter "F" or roman "VI" in list "A, B, C", or "I, II, III" etc / hexa	记纪紀忌觊		85	162		https://hanzicraft.com/dashboard/character/%E5%B7%B1	[sound:ji4.mp3]	phonetic-component
+先:xian3	先	xiǎn	early / prior / former / in advance / first	铣銑跣冼筅		11	188		https://hanzicraft.com/dashboard/character/%E5%85%88	[sound:xian3.mp3]	phonetic-component
+辱:ru4	辱	rù	disgrace / dishonor / to insult / to bring disgrace or humiliation to / to be indebted to / self-deprecating / Taiwan pr. [ru4]	褥缛縟溽蓐		5	1904		https://hanzicraft.com/dashboard/character/%E8%BE%B1	[sound:ru4.mp3]	phonetic-component
+夸:kua4	夸	kuà	to boast / to exaggerate / to praise	跨挎胯		16	1952		https://hanzicraft.com/dashboard/character/%E5%A4%B8	[sound:kua4.mp3]	phonetic-component
+司:si4	司	sì	to take charge of / to manage / department (under a ministry)	嗣伺饲飼笥		9	278		https://hanzicraft.com/dashboard/character/%E5%8F%B8	[sound:si4.mp3]	phonetic-component
+脊:ji2	脊	jí	spine / back / ridge / Taiwan pr. [ji2] or [ji3]	瘠嵴蹐鹡鶺		5	2223	Mnemonic: snowflake + moon + person	https://hanzicraft.com/dashboard/character/%E8%84%8A	[sound:ji2.mp3]	phonetic-component
+面:mian3	面	miǎn	face / side / surface / aspect / top / classifier for flat surfaces such as drums, mirrors, flags etc	缅緬腼靦湎		8	74		https://hanzicraft.com/dashboard/character/%E9%9D%A2	[sound:mian3.mp3]	phonetic-component
+反:fan4	反	fàn	contrary / in reverse / inside-out or upside-down / to reverse / to return / to oppose / opposite / against / anti- / to rebel / to use analogy / instead / abbr. for 反切 phonetic system	饭飯贩販畈		16	237		https://hanzicraft.com/dashboard/character/%E5%8F%8D	[sound:fan4.mp3]	phonetic-component
+反:ban3	反	bǎn	contrary / in reverse / inside-out or upside-down / to reverse / to return / to oppose / opposite / against / anti- / to rebel / to use analogy / instead / abbr. for 反切 phonetic system	版板阪坂舨		16	237		https://hanzicraft.com/dashboard/character/%E5%8F%8D	[sound:ban3.mp3]	phonetic-component
+肖:qiao4	肖	qiào	similar / resembling / to resemble / to be like	俏峭鞘诮		29	2016		https://hanzicraft.com/dashboard/character/%E8%82%96	[sound:qiao4.mp3]	phonetic-component
+肖:shao1	肖	shāo	similar / resembling / to resemble / to be like	稍梢捎艄筲		29	2016		https://hanzicraft.com/dashboard/character/%E8%82%96	[sound:shao1.mp3]	phonetic-component
+卷:juan4	卷	juàn	scroll / book / volume / chapter / examination paper / classifier for books, paintings: volume, scroll	圈倦锩睠錈		11	1014		https://hanzicraft.com/dashboard/character/%E5%8D%B7	[sound:juan4.mp3]	phonetic-component
+卷:quan2	卷	quán	scroll / book / volume / chapter / examination paper / classifier for books, paintings: volume, scroll	蜷鬈踡		11	1014		https://hanzicraft.com/dashboard/character/%E5%8D%B7	[sound:quan2.mp3]	phonetic-component
+乞:ge1	乞	gē	to beg	疙圪纥仡紇	5/15	16	2424		https://hanzicraft.com/dashboard/character/%E4%B9%9E	[sound:ge1.mp3]	phonetic-component
+酋:you2	酋	yóu	tribal chief	猶猷蕕輶		9	3397		https://hanzicraft.com/dashboard/character/%E9%85%8B	[sound:you2.mp3]	phonetic-component
+重:zhong3	重	zhǒng	to repeat / repetition / again / re- / classifier: layer	踵種腫	3/7	8	140	里	https://hanzicraft.com/dashboard/character/%E9%87%8D	[sound:zhong3.mp3]	phonetic-component
+㢆:chan2	㢆	chán		缠廛躔纏		2		里	https://hanzicraft.com/dashboard/character/%E3%A2%86	[sound:chan2.mp3]	phonetic-component
+隆:long2	隆	lóng	grand / intense / prosperous / to swell / to bulge	窿癃		3	1398	生	https://hanzicraft.com/dashboard/character/%E9%9A%86	[sound:long2.mp3]	phonetic-component
+需:ru2	需	rú	to require / to need / to want / necessity / need	儒蠕孺嚅濡		14	408	雨而 10/12	https://hanzicraft.com/dashboard/character/%E9%9C%80	[sound:ru2.mp3]	phonetic-component
+耆:qi2	耆	qí	man of sixty or seventy	鳍鰭鬐	4/7	5	3770	老	https://hanzicraft.com/dashboard/character/%E8%80%86	[sound:qi2.mp3]	phonetic-component
+次:zi1	次	zī	next in sequence / second / the second (day, time etc) / secondary / vice- / sub- / infra- / inferior quality / substandard / order / sequence / hypo- (chemistry) / classifier for enumerated events: time	资姿咨粢資		13	183		https://hanzicraft.com/dashboard/character/%E6%AC%A1	[sound:zi1.mp3]	phonetic-component
+旁:bang4	旁	bàng	beside / one side / other / side / self / the right-hand side of split Chinese character, often the phonetic	膀镑傍磅谤	7/13	13	979		https://hanzicraft.com/dashboard/character/%E6%97%81	[sound:bang4.mp3]	phonetic-component
+良:lang2	良	láng	good / very / very much	狼琅阆锒郞	7/15	15	833	always ang	https://hanzicraft.com/dashboard/character/%E8%89%AF	[sound:lang2.mp3]	phonetic-component
+辟:bi4	辟	bì	to dispel / to refute / to repudiate / to open up (for development)	避壁臂璧薜	9/20	25	2135		https://hanzicraft.com/dashboard/character/%E8%BE%9F	[sound:bi4.mp3]	phonetic-component
+南:nan2	南	nán	south	喃楠	3/6 · 5/6 (ignoring tone)	6	307		https://hanzicraft.com/dashboard/character/%E5%8D%97	[sound:nan2.mp3]	phonetic-component
+于:yu2	于	yú	to go / to take / sentence-final interrogative particle / variant of 於|于[yu2]	余餘予馀盂	9/27 · 14/27 (ignoring tone)	14	40	include 余<br>u2 - another 8/27<br>予 yields 13 and is a bit messier	https://hanzicraft.com/dashboard/character/%E4%BA%8E	[sound:yu2.mp3]	phonetic-component
+爰:yuan2	爰	yuán	therefore / consequently / thus / hence / thereupon / it follows that / where? / to change (into) / ancient unit of weight and money	援媛	3/8	7	4870	allways *uan*	https://hanzicraft.com/dashboard/character/%E7%88%B0	[sound:yuan2.mp3]	phonetic-component
+丑:niu3	丑	niǔ	clown / 2nd earthly branch: 1-3 a.m., 12th solar month (6th January to 3rd February), year of the Ox	纽扭钮忸狃	7/11	11	1898		https://hanzicraft.com/dashboard/character/%E4%B8%91	[sound:niu3.mp3]	phonetic-component
+工:gong1	工	gōng	work / worker / skill / profession / trade / craft / labor	功攻	8/31 (ignoring tone)	121	118		https://hanzicraft.com/dashboard/character/%E5%B7%A5	[sound:gong1.mp3]	phonetic-component
+青:jing1	青	jīng	nature's color / green or blue / greenish black / youth / young (of people) / abbr. for Qinghai province 青海	精睛菁腈鼱	5/30	31	497		https://hanzicraft.com/dashboard/character/%E9%9D%92	[sound:jing1.mp3]	phonetic-component
+青:jing4	青	jìng	nature's color / green or blue / greenish black / youth / young (of people) / abbr. for Qinghai province 青海	静靖靓婧靜	5/30	31	497		https://hanzicraft.com/dashboard/character/%E9%9D%92	[sound:jing4.mp3]	phonetic-component
+尞:liao2	尞	liáo		僚撩缭燎寮	10/15	16			https://hanzicraft.com/dashboard/character/%E5%B0%9E	[sound:liao2.mp3]	phonetic-component
+柬:lian4	柬	liàn	card / note / letter / abbr. for 柬埔寨[Jian3 pu3 zhai4], Cambodia	煉練楝鍊		7	3041		https://hanzicraft.com/dashboard/character/%E6%9F%AC	[sound:lian4.mp3]	phonetic-component
+奥:ao4	奥	ào	obscure / mysterious	澳懊	3/7	7	970		https://hanzicraft.com/dashboard/character/%E5%A5%A5	[sound:ao4.mp3]	phonetic-component
+畺:jiang1	畺	jiāng		疆僵缰薑礓	5/5	5			https://hanzicraft.com/dashboard/character/%E7%95%BA	[sound:jiang1.mp3]	phonetic-component
+玄:xian2	玄	xián	black / mysterious	弦舷絃蚿	4/14	17	1715		https://hanzicraft.com/dashboard/character/%E7%8E%84	[sound:xian2.mp3]	phonetic-component
+玄:xuan4	玄	xuàn	black / mysterious	眩炫铉泫衒	5/14	17	1715		https://hanzicraft.com/dashboard/character/%E7%8E%84	[sound:xuan4.mp3]	phonetic-component
+豖:zhuo2	豖	zhuó	a shackled pig	琢啄诼諑	4/7	6		㒸	https://hanzicraft.com/dashboard/character/%E8%B1%96	[sound:zhuo2.mp3]	phonetic-component
+豦:ju4	豦	jù	a wild boar / to fight	遽醵鐻	3/6	6		豕	https://hanzicraft.com/dashboard/character/%E8%B1%A6	[sound:ju4.mp3]	phonetic-component
+难:tan1	难	tān	difficult (to...) / problem / difficulty / difficult / not good	滩摊瘫	3/5	4	295	隹	https://hanzicraft.com/dashboard/character/%E9%9A%BE	[sound:tan1.mp3]	phonetic-component
+吾:wu4	吾	wù	I / my (old)	悟晤焐痦	4/17	16	1647	16/17 wu + yu	https://hanzicraft.com/dashboard/character/%E5%90%BE	[sound:wu4.mp3]	phonetic-component
+吾:yu3	吾	yǔ	I / my (old)	语龉圄語	4/17	16	1647	16/17 wu + yu	https://hanzicraft.com/dashboard/character/%E5%90%BE	[sound:yu3.mp3]	phonetic-component
+取:zou1	取	zōu	to take / to get / to choose / to fetch	诹鲰陬菆諏	6/11	11	323	耳	https://hanzicraft.com/dashboard/character/%E5%8F%96	[sound:zou1.mp3]	phonetic-component
+咅:pei2	咅	péi		培陪赔锫	4/16	17		立	https://hanzicraft.com/dashboard/character/%E5%92%85	[sound:pei2.mp3]	phonetic-component
+瓜:gu1	瓜	gū	melon / gourd / squash	孤呱菰觚箛	5/15	17	1824		https://hanzicraft.com/dashboard/character/%E7%93%9C	[sound:gu1.mp3]	phonetic-component
+夹:xia2	夹	xiá	to press from either side / to place in between / to sandwich / to carry sth under armpit / wedged between / between / to intersperse / to mix / to mingle / clip / folder	侠峡狭硖	4/13	12	1756		https://hanzicraft.com/dashboard/character/%E5%A4%B9	[sound:xia2.mp3]	phonetic-component
+乞:qi4	乞	qì	to beg	迄讫汔	3/15	16	2424		https://hanzicraft.com/dashboard/character/%E4%B9%9E	[sound:qi4.mp3]	phonetic-component
+卑:bi4	卑	bì	low / base / vulgar / inferior / humble	婢裨睥髀萆	6/23	25	2055		https://hanzicraft.com/dashboard/character/%E5%8D%91	[sound:bi4.mp3]	phonetic-component
+卑:pi2	卑	pí	low / base / vulgar / inferior / humble	脾啤裨鼙蜱	8/23	25	2055		https://hanzicraft.com/dashboard/character/%E5%8D%91	[sound:pi2.mp3]	phonetic-component
+亥:gai1	亥	gāi	12th earthly branch: 9-11 p.m., 10th solar month (7th November-6th December), year of the Boar	该該赅賅垓	7/21	19	3173		https://hanzicraft.com/dashboard/character/%E4%BA%A5	[sound:gai1.mp3]	phonetic-component
+兹:ci2	兹	cí	now / here / this / time / year	慈磁鹚糍	4/9	9	1779		https://hanzicraft.com/dashboard/character/%E5%85%B9	[sound:ci2.mp3]	phonetic-component
+尃:bo2	尃	bó	to state to, to announce	博搏膊髆镈	5/11	12		Mnemonic: caliper + trellis	https://hanzicraft.com/dashboard/character/%E5%B0%83	[sound:bo2.mp3]	phonetic-component
+尃:fu4	尃	fù	to state to, to announce	傅缚赙縛	4/11	12		Mnemonic: caliper + trellis	https://hanzicraft.com/dashboard/character/%E5%B0%83	[sound:fu4.mp3]	phonetic-component
+各:luo4	各	luò	each / every	洛络咯骆珞	7/29	30	209	-客	https://hanzicraft.com/dashboard/character/%E5%90%84	[sound:luo4.mp3]	phonetic-component
+奎:kui2	奎	kuí	crotch / 15th of the 28th constellations of Chinese astronomy	喹蝰	3/3	2	2603		https://hanzicraft.com/dashboard/character/%E5%A5%8E	[sound:kui2.mp3]	phonetic-component
+圭:gua4	圭	guà	jade tablet	挂卦褂诖罣	7/28	37	3530	-厓奎	https://hanzicraft.com/dashboard/character/%E5%9C%AD	[sound:gua4.mp3]	phonetic-component
+占:dian4	占	diàn	to take possession of / to occupy / to take up	店玷阽坫惦	5/30 · 9/30 (ignoring tone)	27	736		https://hanzicraft.com/dashboard/character/%E5%8D%A0	[sound:dian4.mp3]	phonetic-component
+喿:zao4	喿	zào	chirping of birds	躁燥噪譟趮	5/14	12		Mnemonic: tree + goods	https://hanzicraft.com/dashboard/character/%E5%96%BF	[sound:zao4.mp3]	phonetic-component
+延:yan2	延	yán	to prolong / to extend / to delay	蜒筵埏綖	6/10	13	1101	正<br>dan4	https://hanzicraft.com/dashboard/character/%E5%BB%B6	[sound:yan2.mp3]	phonetic-component
+監:jian4	監	jiàn	hard / strong / solid / firm / to supervise / to inspect / jail / prison	艦鑑檻	4/9	5	836	-覽	https://hanzicraft.com/dashboard/character/%E7%9B%A3	[sound:jian4.mp3]	phonetic-component
+监:lan2	监	lán	hard / strong / solid / firm / to supervise / to inspect / jail / prison	蓝篮褴	3/7	6	836		https://hanzicraft.com/dashboard/character/%E7%9B%91	[sound:lan2.mp3]	phonetic-component
+䜌:luan2	䜌	luán	tapestry	攣鸞巒鑾孿	9/13	4			https://hanzicraft.com/dashboard/character/%E4%9C%8C	[sound:luan2.mp3]	phonetic-component
+亦:luan2	亦	luán	also	挛鸾峦銮孪	9/14	16	884	Mnemonic: drop + fins + pedestal	https://hanzicraft.com/dashboard/character/%E4%BA%A6	[sound:luan2.mp3]	phonetic-component
+襄:rang3	襄	rǎng	to help / to assist / mutual assistance / to rush into or up / to raise or hold up / high / tall / old variant of 欀 / chariot horse (old) / change (old)	嚷壤攘	3/16 · 7/16 (ignoring tone)	15	2974	Mnemonic: dress + boombox + wire mesh	https://hanzicraft.com/dashboard/character/%E8%A5%84	[sound:rang3.mp3]	phonetic-component
+兰:lan2	兰	lán	orchid (蘭花|兰花 Cymbidium goeringii) / fragrant thoroughwort (蘭草|兰草 Eupatorium fortunei) / lily magnolia (木蘭|木兰)	拦栏	3/4 · 4/4 (ignoring tone)	3	641		https://hanzicraft.com/dashboard/character/%E5%85%B0	[sound:lan2.mp3]	phonetic-component
+崔:cui1	崔	cuī	high mountain / precipitous	催摧磪	4/6	6	2547	Mnemonic: turkey + mountain	https://hanzicraft.com/dashboard/character/%E5%B4%94	[sound:cui1.mp3]	phonetic-component
+臺:tai2	臺	tái	platform / stage / terrace / stand / support / desk / station / broadcasting station / classifier for vehicles or machines	薹檯擡	4/4	1	388		https://hanzicraft.com/dashboard/character/%E8%87%BA	[sound:tai2.mp3]	phonetic-component
+皆:xie2	皆	xié	all / each and every / in all cases	谐偕龤諧	4/12	11	1417	Mnemonic: stack + white	https://hanzicraft.com/dashboard/character/%E7%9A%86	[sound:xie2.mp3]	phonetic-component
+长:zhang4	长	zhàng	chief / head / elder / to grow / to develop / to increase / to enhance	帐涨胀账	4/10	23	109		https://hanzicraft.com/dashboard/character/%E9%95%BF	[sound:zhang4.mp3]	phonetic-component
+册:shan1	册	shān	book / booklet / classifier for books	珊删姗跚	4/6	8	1523		https://hanzicraft.com/dashboard/character/%E5%86%8C	[sound:shan1.mp3]	phonetic-component
+崩:beng1	崩	bēng	to collapse / to fall into ruins / death of king or emperor / demise	嘣繃	3/6 · 6/6 (ignoring tone)	6	2173		https://hanzicraft.com/dashboard/character/%E5%B4%A9	[sound:beng1.mp3]	phonetic-component
+粦:lin2	粦	lín	rice + coyote	鄰麟鳞磷粼	13/14	14	7428		https://hanzicraft.com/dashboard/character/%E7%B2%A6	[sound:lin2.mp3]	phonetic-component
+昷:wen1	昷	wēn		温瘟鳁辒	4/10	14			https://hanzicraft.com/dashboard/character/%E6%98%B7	[sound:wen1.mp3]	phonetic-component
+敝:bie1	敝	biē	my (polite) / poor / ruined / shabby / worn out / defeated	憋鳖鱉鼈	4/12	10	3253		https://hanzicraft.com/dashboard/character/%E6%95%9D	[sound:bie1.mp3]	phonetic-component
+虚:xu1	虚	xū	emptiness / void / abstract theory or guiding principles / empty or unoccupied / diffident or timid / false / humble or modest / (of health) weak / virtual / in vain	墟嘘魖	5/7	6	1069		https://hanzicraft.com/dashboard/character/%E8%99%9A	[sound:xu1.mp3]	phonetic-component
+虎:hu3	虎	hǔ	tiger / CL:隻|只[zhi1]	唬琥	3/6	7	1081		https://hanzicraft.com/dashboard/character/%E8%99%8E	[sound:hu3.mp3]	phonetic-component
+難:tan1	難	tān	difficult (to...) / problem / difficulty / difficult / not good	攤灘癱	3/4	11	295	Mnemonic: turkey + lookout tower	https://hanzicraft.com/dashboard/character/%E9%9B%A3	[sound:tan1.mp3]	phonetic-component
+井:jing3	井	jǐng	a well / CL:口[kou3] / neat / orderly	阱肼	3/6	7	1429		https://hanzicraft.com/dashboard/character/%E4%BA%95	[sound:jing3.mp3]	phonetic-component

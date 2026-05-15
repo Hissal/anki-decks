@@ -38,6 +38,8 @@ from components_common import (
 )
 
 AUDIO_RE = re.compile(r"^\[sound:[^\]]+\.mp3\]$")
+LINK_RE = re.compile(r"^https?://")
+INT_RE = re.compile(r"^\d+$")
 
 
 def main() -> int:
@@ -122,6 +124,19 @@ def main() -> int:
         if r.audio and not AUDIO_RE.match(r.audio):
             warnings.append(
                 f"{loc}: Audio {r.audio!r} doesn't look like a [sound:…\\.mp3] ref"
+            )
+
+        if r.productivity and not INT_RE.match(r.productivity):
+            errors.append(
+                f"{loc}: Productivity {r.productivity!r} is not an integer"
+            )
+        if r.frequency and not INT_RE.match(r.frequency):
+            errors.append(
+                f"{loc}: Frequency {r.frequency!r} is not an integer"
+            )
+        if r.link and not LINK_RE.match(r.link):
+            warnings.append(
+                f"{loc}: Link {r.link!r} doesn't look like a URL"
             )
 
     for w in warnings:

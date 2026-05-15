@@ -17,13 +17,16 @@ COMPONENT_DECK_FILE = "Chinese_Phonetic_Components.tsv"
 COMPONENT_DECK_PATH = REPO_ROOT / COMPONENT_DECK_FILE
 
 COMPONENT_HEADER = [
-    "Key",          # `<component>:<numeric-pinyin>` — Anki note's unique first field
-    "Component",    # the lone phonetic, shown on card fronts/backs
-    "Pinyin",       # tone-marked
+    "Key",           # `<component>:<numeric-pinyin>` — Anki note's unique first field
+    "Component",     # the lone phonetic, shown on card fronts/backs
+    "Pinyin",        # tone-marked
     "Meaning",
     "MemberChars",
-    "Reliability",
+    "Reliability",   # "X/Y" or "X/Y (ignoring tone)" — sound-match within member chars
+    "Productivity",  # HanziCraft's "appears as a component in N characters" — total count
+    "Frequency",     # HanziCraft's frequency rank (e.g. "118" for the 118th most frequent character)
     "Note",
+    "Link",          # HanziCraft URL for the component
     "Audio",
     "Tags",
 ]
@@ -46,7 +49,10 @@ class ComponentRow:
     meaning: str
     member_chars: str
     reliability: str
+    productivity: str
+    frequency: str
     note: str
+    link: str
     audio: str
     tags: list[str] = field(default_factory=list)
 
@@ -94,9 +100,12 @@ def parse_component_tsv(path: Path) -> tuple[list[str], list[ComponentRow]]:
                 meaning=fields[3],
                 member_chars=fields[4],
                 reliability=fields[5],
-                note=fields[6],
-                audio=fields[7],
-                tags=[t for t in fields[8].split(" ") if t],
+                productivity=fields[6],
+                frequency=fields[7],
+                note=fields[8],
+                link=fields[9],
+                audio=fields[10],
+                tags=[t for t in fields[11].split(" ") if t],
             )
         )
 

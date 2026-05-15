@@ -129,15 +129,47 @@
 .night_mode .card-hint,
 .nightMode .card-hint { color: #6b7280; }
 
-.reliability {
-  font-size: 13px;
-  color: #6b7280;
-  margin: 12px 0;
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.stat-pill {
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  color: #4b5563;
+  background: #f3f4f6;
   font-variant-numeric: tabular-nums;
 }
 
-.night_mode .reliability,
-.nightMode .reliability { color: #9ca3af; }
+.night_mode .stat-pill,
+.nightMode .stat-pill {
+  color: #c4c4c4;
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+}
+
+.link-footer {
+  margin: 18px 0 4px;
+  font-size: 13px;
+}
+
+.link-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.link-footer a:hover { opacity: 0.7; }
+
+.night_mode .link-footer a,
+.nightMode .link-footer a { color: #a5b4fc; }
 
 .note {
   font-size: 14px;

@@ -17,9 +17,11 @@
 
   <div class="audio">{{Audio}}</div>
 
-  {{#Reliability}}
-  <div class="reliability">reliability: {{Reliability}}</div>
-  {{/Reliability}}
+  <div class="stats-row">
+    {{#Reliability}}<span class="stat-pill">reliability {{Reliability}}</span>{{/Reliability}}
+    {{#Productivity}}<span class="stat-pill">in {{Productivity}} chars</span>{{/Productivity}}
+    {{#Frequency}}<span class="stat-pill">freq #{{Frequency}}</span>{{/Frequency}}
+  </div>
 
   {{#Note}}
   <div class="note">{{Note}}</div>
@@ -28,4 +30,8 @@
   {{#PersonalNote}}
   <div class="personal-note">{{PersonalNote}}</div>
   {{/PersonalNote}}
+
+  {{#Link}}
+  <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
+  {{/Link}}
 </div>

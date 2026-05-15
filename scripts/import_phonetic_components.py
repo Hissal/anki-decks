@@ -17,11 +17,13 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
-from common import HAN_RE
+from common import HAN_RE, REPO_ROOT
 from components_common import (
     COMPONENT_DECK_PATH,
     COMPONENT_HEADER,
@@ -30,6 +32,8 @@ from components_common import (
 DEFAULT_SOURCE = Path(
     r"C:\Users\hissa\OneDrive\Työpöytä\Selected Notes.txt"
 )
+DEFAULT_ENRICH = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
+HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
 
 SOURCE_COLUMN_COUNT = 10  # source TSV has 10 columns per its directive
 
@@ -203,8 +207,28 @@ def clean_pinyin_field(raw: str) -> tuple[str, list[str]]:
     return candidate or "", extras
 
 
-def transform_row(fields: list[str], line_no: int, log: list[str]) -> list[str] | None:
-    """Map a 10-col source row → 8-col output row. Returns None to skip."""
+MNEMONIC_RE = re.compile(r"[+]|\s{2,}")
+
+
+def looks_mnemonic(meaning: str) -> bool:
+    """Heuristic: source 'meanings' that are HanziCraft mnemonics (e.g.
+    'cleats + heart + foreman + crown') vs real glosses ('work', 'skin')."""
+    if not meaning:
+        return False
+    if "+" in meaning:
+        return True
+    if len(meaning) > 30:
+        return True
+    return False
+
+
+def transform_row(
+    fields: list[str],
+    line_no: int,
+    log: list[str],
+    enrich: dict[str, dict] | None,
+) -> list[str] | None:
+    """Map a 10-col source row → 12-col output row. Returns None to skip."""
     while len(fields) < SOURCE_COLUMN_COUNT:
         fields.append("")
 
@@ -262,6 +286,23 @@ def transform_row(fields: list[str], line_no: int, log: list[str]) -> list[str] 
 
     reliability, note_from_comments = parse_comments(src_comments)
 
+    # HanziCraft enrichment overlay (additive — never touches Pinyin).
+    hc = enrich.get(component) if enrich else None
+    hc_definition = (hc or {}).get("definition") or ""
+    hc_freq_rank = (hc or {}).get("frequency_rank") or ""
+    hc_productivity = (hc or {}).get("productivity_count")
+    hc_productivity_str = str(hc_productivity) if hc_productivity is not None else ""
+
+    meaning_value = src_meaning
+    mnemonic_for_note = ""
+    if hc_definition:
+        # HanziCraft wins on Meaning. Demote source's mnemonic to Note when
+        # detectable; quietly drop terse/duplicate source meanings.
+        if src_meaning and looks_mnemonic(src_meaning):
+            mnemonic_for_note = f"Mnemonic: {src_meaning}"
+        meaning_value = hc_definition.replace("/", " / ")
+    # else: keep src_meaning unchanged
+
     extras: list[str] = []
     if src_traditional and src_traditional != component:
         extras.append(f"Traditional: {src_traditional}")
@@ -269,9 +310,13 @@ def transform_row(fields: list[str], line_no: int, log: list[str]) -> list[str] 
         extras.append(f"Variant: {src_variant}")
     if pinyin_extras:
         extras.append("See also: " + " ".join(pinyin_extras))
+    if mnemonic_for_note:
+        extras.append(mnemonic_for_note)
     if note_from_comments:
         extras.append(note_from_comments)
     note = "<br>".join(extras)
+
+    link = HANZICRAFT_URL.format(urllib.parse.quote(component))
 
     tags = "phonetic-component"
     if src_tags:
@@ -291,10 +336,13 @@ def transform_row(fields: list[str], line_no: int, log: list[str]) -> list[str] 
         key,
         component,
         pinyin_marks,
-        src_meaning,
+        meaning_value,
         member_chars,
         reliability,
+        hc_productivity_str,
+        hc_freq_rank,
         note,
+        link,
         src_audio,
         tags,
     ]
@@ -370,11 +418,28 @@ def main() -> int:
                     help="path to the source notes TSV")
     ap.add_argument("--out", type=Path, default=COMPONENT_DECK_PATH,
                     help="output TSV path")
+    ap.add_argument("--enrich", type=Path, default=DEFAULT_ENRICH,
+                    help="HanziCraft JSON cache to merge in (optional)")
+    ap.add_argument("--no-enrich", action="store_true",
+                    help="skip enrichment even if cache file exists")
     args = ap.parse_args()
 
     if not args.source.exists():
         print(f"source not found: {args.source}", file=sys.stderr)
         return 1
+
+    enrich: dict[str, dict] | None = None
+    if not args.no_enrich and args.enrich.exists():
+        try:
+            enrich = json.loads(args.enrich.read_text(encoding="utf-8"))
+            print(f"loaded enrichment for {len(enrich)} components from "
+                  f"{args.enrich}", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load enrich file {args.enrich}: {e}", file=sys.stderr)
+            enrich = None
+    elif not args.no_enrich:
+        print(f"note: enrichment file {args.enrich} not found; phase-1-only output",
+              file=sys.stderr)
 
     log: list[str] = []
     src_rows = read_source(args.source, log)
@@ -382,13 +447,13 @@ def main() -> int:
     out_rows: list[list[str]] = []
     seen: dict[str, tuple[int, int]] = {}  # key_field -> (src_line, out_index)
     # Field indices: 0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars,
-    # 5=Reliability, 6=Note, 7=Audio, 8=Tags.
-    MERGE_COPY_IF_EMPTY = (3, 4, 5, 7)  # Meaning, MemberChars, Reliability, Audio
-    NOTE_IDX = 6
+    # 5=Reliability, 6=Productivity, 7=Frequency, 8=Note, 9=Link, 10=Audio, 11=Tags
+    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 9, 10)  # Meaning,Members,Rel,Prod,Freq,Link,Audio
+    NOTE_IDX = 8
 
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log)
+            row = transform_row(fields, line_no, log, enrich)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
