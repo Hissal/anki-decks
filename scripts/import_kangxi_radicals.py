@@ -453,42 +453,89 @@ def _validate_member_picks(
         )
 
 
+MEMBER_TARGET = 6  # aim for at least this many MemberChars before augmenting from cwc
+
+
+def _decomp_contains(
+    ch: str,
+    radical: str,
+    char_decomp: dict[str, dict] | None,
+    aliases: set[str],
+) -> bool:
+    """True when ch's once-level decomp contains the radical or one of its
+    positional variants. Loose cwc membership isn't enough — HC's cwc lists
+    many chars where the radical only appears as a deep sub-stroke (e.g.
+    cwc[矛] includes 我 / 之 / 成 which don't visually contain 矛)."""
+    if char_decomp is None:
+        return True  # no decomp data → can't filter; accept
+    entry = char_decomp.get(ch)
+    if not entry:
+        return False
+    once = entry.get("once") or []
+    needle = {radical} | aliases
+    return any(p in needle for p in once)
+
+
 def pick_member_chars(
     canonical: str,
     source_chars: str,
     cwc: dict[str, list[str]] | None = None,
+    char_data: dict[str, dict] | None = None,
+    char_decomp: dict[str, dict] | None = None,
+    variant_aliases: set[str] | None = None,
 ) -> str:
-    """Apply MEMBER_OVERRIDES if defined; else filter the source set to chars
-    that HanziCraft actually lists under this radical (when cwc data exists),
-    then truncate to MEMBER_CAP.
-
-    The source seed uses Kangxi-style radical assignment (e.g. 不 is filed
-    under 一). HanziCraft uses structural component decomposition (不 doesn't
-    contain a separable 一). For a recognition-focused deck the structural
-    view is what the learner actually sees, so we drop source picks that fail
-    the cwc check rather than render them as ghost members."""
+    """Apply MEMBER_OVERRIDES if defined; else filter the source set against
+    HanziCraft's cwc list; then augment from cwc with a strict decomp filter
+    (radical must appear in once-level decomp) until MEMBER_TARGET is met.
+    Falls back to loose cwc if strict pass yields too few."""
     override = MEMBER_OVERRIDES.get(canonical)
     if override:
         return override
 
-    valid: set[str] | None = None
+    aliases = set(variant_aliases or [])
+
+    valid: list[str] = []
+    valid_set: set[str] = set()
     if cwc is not None:
-        valid = set(cwc.get(canonical, []))
-        alias = MEMBER_OVERRIDE_CWC_ALIAS.get(canonical)
-        if alias:
-            valid |= set(cwc.get(alias, []))
+        valid = list(cwc.get(canonical, []))
+        cwc_alias = MEMBER_OVERRIDE_CWC_ALIAS.get(canonical)
+        if cwc_alias:
+            valid = valid + [c for c in cwc.get(cwc_alias, []) if c not in valid]
+        valid_set = set(valid)
 
     seen: set[str] = set()
     out: list[str] = []
+
+    # Step 1: source picks filtered through cwc membership only.
     for ch in source_chars:
         if ch in seen:
             continue
-        if valid is not None and valid and ch not in valid:
-            continue  # HC doesn't list this char under the radical — skip
+        if valid_set and ch not in valid_set:
+            continue
         seen.add(ch)
         out.append(ch)
         if len(out) >= MEMBER_CAP:
-            break
+            return "".join(out)
+
+    # Step 2: augment with STRICT decomp-level matches first.
+    if len(out) < MEMBER_TARGET and valid:
+        for ch in valid:
+            if ch in seen or ch == canonical:
+                continue
+            if char_data is not None and not (
+                ch in char_data and char_data[ch].get("pinyin")
+            ):
+                continue
+            if not _decomp_contains(ch, canonical, char_decomp, aliases):
+                continue
+            seen.add(ch)
+            out.append(ch)
+            if len(out) >= MEMBER_CAP:
+                break
+
+    # No step 3 fallback — better to show 4 strictly-correct chars than 8
+    # with HC-loose noise like 矛 → 我 / 或 / 找 (which structurally don't
+    # contain 矛 despite appearing in cwc[矛]).
     return "".join(out)
 
 
@@ -499,6 +546,7 @@ def transform_row(
     enrich: dict[str, dict] | None = None,
     char_decomp: dict[str, dict] | None = None,
     cwc: dict[str, list[str]] | None = None,
+    char_data: dict[str, dict] | None = None,
 ) -> list[str] | None:
     """Map a 6-col source row → 15-col output row. Returns None to skip."""
     while len(fields) < 6:
@@ -576,7 +624,18 @@ def transform_row(
     decomposition = build_decomposition(canonical, hc.get("decomposition"))
 
     source_chars = normalize_member_chars(examples)
-    member_chars = pick_member_chars(canonical, source_chars, cwc)
+    # Pass variant glyphs as aliases so the decomp filter accepts chars whose
+    # once-decomp uses the variant form (e.g. 唱's once is [口, 昌] — passes
+    # for the 口 radical naturally; but 情's once is [忄, 青] — 忄 should
+    # count as a 心-decomp match when 忄 is in variant_aliases).
+    variant_aliases: set[str] = set()
+    if variant1:
+        variant_aliases.add(variant1)
+    if variant2:
+        variant_aliases.add(variant2)
+    member_chars = pick_member_chars(
+        canonical, source_chars, cwc, char_data, char_decomp, variant_aliases
+    )
     _validate_member_picks(canonical, member_chars, cwc, log)
     member_decomp = build_member_decomp(member_chars, char_decomp, enrich)
 
@@ -734,6 +793,14 @@ def main() -> int:
         except Exception as e:
             print(f"warn: failed to load cwc {args.cwc}: {e}", file=sys.stderr)
 
+    char_data: dict[str, dict] | None = None
+    if DEFAULT_CHAR_DATA.exists():
+        try:
+            char_data = _json.loads(DEFAULT_CHAR_DATA.read_text(encoding="utf-8"))
+            print(f"loaded char data: {len(char_data)} entries", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-data {DEFAULT_CHAR_DATA}: {e}", file=sys.stderr)
+
     log: list[str] = []
     src_rows = read_source(args.source, log)
 
@@ -741,7 +808,7 @@ def main() -> int:
     seen: dict[str, int] = {}
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich, char_decomp, cwc)
+            row = transform_row(fields, line_no, log, enrich, char_decomp, cwc, char_data)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
