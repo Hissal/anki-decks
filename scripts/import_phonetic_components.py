@@ -812,6 +812,26 @@ def main() -> int:
             ]
             out_rows[i][10] = " · ".join(chunks)
 
+    # Sort rows for learning-order: phonetic leverage descending.
+    # Score = A * 100 + B * 10 + Productivity, with A = len(MemberChars) and
+    # B = A + len(SameSyllableChars). High exact-phonetic-match components rank
+    # first; pure semantic radicals (high productivity but low A) drop down.
+    # Frequency rank ascends as a tiebreak (more common chars first).
+    INF = 10**9
+    def _sort_key(row: list[str]) -> tuple:
+        a = len(row[4])
+        b = a + len(row[5])
+        try:
+            prod = int(row[6]) if row[6] else 0
+        except ValueError:
+            prod = 0
+        try:
+            freq = int(row[7]) if row[7] else INF
+        except ValueError:
+            freq = INF
+        return (-(a * 100 + b * 10 + prod), freq, row[1], row[2])
+    out_rows.sort(key=_sort_key)
+
     write_output(out_rows, args.out)
 
     for line in log:
