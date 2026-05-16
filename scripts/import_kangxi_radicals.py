@@ -275,7 +275,98 @@ MEMBER_OVERRIDES: dict[str, str] = {
 # Curated notes overrides (R3 will populate this — for now keep empty)
 # ---------------------------------------------------------------------------
 
-NOTE_OVERRIDES: dict[str, str] = {}
+NOTE_OVERRIDES: dict[str, str] = {
+    # --- Visual look-alikes (most-confused clusters in modern reading) ---
+    "日": "Visually similar to 曰 (yuē, 'say'). 日 is taller and narrower; 曰 is squatter and wider. Both have a horizontal stroke inside.",
+    "曰": "Visually similar to 日 (rì, 'sun'). 曰 is wider/shorter than 日 — the inner stroke doesn't fully cross.",
+    "月": "Visually identical to 肉 (⺼, 'meat/flesh') when used as a left-side radical. Same printed shape in modern fonts; etymologically distinct. Body parts (脸, 腿, 胸, 肝) use the 肉 form; time/light words (期, 朝, 明) use the 月 form.",
+    "肉": "When at the left or bottom of a char, 肉 takes the form ⺼ which looks IDENTICAL to 月 (moon). Body-part chars (脸, 腿, 胸, 肝, 脏, 肺) all use this. Distinguish by meaning, not glyph.",
+    "刀": "Positional variant: 刂 on the right side of a char. Same radical, same meaning.",
+    "刂": "Right-side form of 刀 (knife). Look for it in 分, 刻, 利, 别, 到.",
+    "心": "Three forms by position: 心 (standalone/bottom), 忄 (left side — fast tilted form), ⺗ (bottom — the 'compressed' form in 慕, 慰). All three mean the same thing.",
+    "忄": "Left-side variant of 心 (heart). Used in emotion/feeling chars: 情, 怕, 忙, 快, 慢.",
+    "⺗": "Bottom-position variant of 心 (heart). Used in 慕, 慰, 恭. Different glyph from ⺗-as-radical sometimes called the 'four dots heart'.",
+    "水": "Three positional forms: 水 (standalone), 氵 (left — 'three dots water'), 氺 (bottom — rare). 氵 is by far the most common in modern usage.",
+    "氵": "Left-side form of 水 (water). Aka 'three dots water'. Used in 河, 海, 湖, 洋, 洗 — all water-related.",
+    "火": "Bottom-position variant: 灬 ('four dots fire'). Used in 热, 点, 煮, 蒸, 照, 然.",
+    "灬": "Bottom-position variant of 火 (fire). Despite the four dots, it's still 'fire'. Used in 热, 点, 煮, 蒸, 然 — heat/cooking themes.",
+    "手": "Left-side variant: 扌. Used in nearly every action verb: 打, 拉, 推, 握, 抓.",
+    "扌": "Left-side form of 手 (hand). Catch-all for action verbs.",
+    "言": "Simplified left form: 讠. Used in speech-related chars: 说, 话, 语, 词, 读. Traditional uses the full 言.",
+    "讠": "Simplified left-side form of 言 (speech). Always speech-related.",
+    "金": "Simplified left form: 钅. Used in metal/tool chars: 银, 铜, 铁, 钱, 钟. Traditional uses 釒.",
+    "钅": "Simplified left form of 金 (metal). All metals + metallic objects.",
+    "食": "Simplified left form: 饣. Used in eating/food chars: 饭, 饮, 饿, 馆. Traditional uses 飠.",
+    "饣": "Simplified left form of 食 (eat/food). Always food/eating-related.",
+    "糸": "Simplified left form: 纟 ('silk-thread'). Used for textile/thread-related chars: 红, 给, 经, 细, 络. Traditional uses 糹.",
+    "纟": "Simplified left form of 糸 (silk/thread). Threads, colors of cloth, binding.",
+    "肉": "Note: when used as left-side radical, identical glyph to 月. Body parts.",  # duplicate — second appearance OK; overrides apply to canonical key
+    "邑": "Right-side form: 阝 (city/state). When 阝 is on the RIGHT of a char, it's 邑 (city) — used in place names: 那, 邻, 邦, 都, 郊.",
+    "阜": "Left-side form: 阝 (mound/hill). Same glyph as 邑's variant but on the LEFT side — completely different meaning. Used in 阳, 阴, 院, 阶, 阻, 陈 (terrain/elevation themes).",
+    "阝": "Two completely different radicals share this glyph: 邑 (city) when on the RIGHT (都, 邻, 邦); 阜 (mound) when on the LEFT (阳, 阴, 院). Side determines meaning.",
+    "示": "Left-side form: 礻. Used for spirit/ritual chars: 礼, 神, 福, 祝, 祖.",
+    "礻": "Left-side form of 示 (spirit/altar). Don't confuse with 衤 (clothes) — 礻 has ONE dot at top, 衤 has TWO.",
+    "衣": "Left-side form: 衤. Don't confuse with 礻 — 衤 (clothes) has TWO dots at top, 礻 (spirit) has ONE. Used in 初, 被, 装, 裙.",
+    "衤": "Left-side form of 衣 (clothes). Note the 2-dot top distinguishing it from 礻 (spirit, 1-dot).",
+    "牛": "Left-side variant: 牜. Used in animal/livestock chars: 物, 特, 牲, 牧.",
+    "犬": "Left-side variant: 犭 ('three strokes dog'). Used in animal chars: 狗, 猫, 狼, 猪, 狐.",
+    "犭": "Left-side form of 犬 (dog). Used for most quadruped animals (not just dogs).",
+    "玉": "Used as a left-side radical, the glyph reduces to 王 — looks identical to the 'king' character. Found in jade/jewelry chars: 玩, 理, 球, 现, 珠, 玻.",
+    "王": "As a radical, this glyph IS the left-side form of 玉 (jade), NOT the standalone 王 ('king'). Chars: 玩, 理, 球. The standalone 王 has its own radical role only in very few chars.",
+    "网": "Top-position variant: 罒 (four-cornered 'net' at top of char). Used in 罗, 罚, 罢, 罪, 置.",
+    "罒": "Top-position variant of 网 (net). Used in chars about catching/snaring/imprisoning: 罗, 罪, 罚, 置.",
+    "辵": "Modern form: 辶 ('walking-go radical'). Used in motion verbs: 走 (no, 走 has its own radical), 进, 退, 通, 道, 这, 那.",
+    "辶": "Modern form of 辵 (walk). The 'walking radical' at the bottom-left. Always motion/path-related.",
+    "艸": "Modern form: 艹 ('grass top'). Used in plants/herbs/grasses: 花, 草, 茶, 药, 苹.",
+    "艹": "Modern form of 艸 (grass). The 'grass top' — plants, herbs, vegetables.",
+    "竹": "Bottom variant when used as top radical: ⺮ ('bamboo top'). Used in 笔, 笑, 第, 答, 篮.",
+    "⺮": "Top-position form of 竹 (bamboo). Used in chars made of bamboo or that involved bamboo strips (笔 'brush', 第 'order from bamboo slips').",
+    "老": "Top variant: 耂. Used in 考, 孝, 者 (where the radical shrinks at the top).",
+    "耂": "Top variant of 老 (old). Used in 考, 孝, 者 — age-related themes.",
+
+    # --- Visual look-alikes among standalone radicals ---
+    "己": "Three nearly-identical chars: 己 (jǐ, self), 已 (yǐ, already), 巳 (sì, sixth earthly branch). 己 is open on top-right; 已 is half-closed; 巳 is fully closed.",
+    "巳": "Confusable with 己 (jǐ, self) and 已 (yǐ, already). 巳 is fully closed at the top.",
+    "戈": "Confusable family: 戊 (wù) / 戌 (xū) / 戍 (shù) / 戎 (róng) — all have 戈 with different inner strokes. Plus 我 (wǒ, I/me) and 成 (chéng, become).",
+    "千": "Visually similar to 干 (gān, dry) and 壬 (rén). 千 has a 丿 stroke on top; 干 is a horizontal line; 壬 has 丿 with offset.",
+    "干": "Visually similar to 千 (qiān, thousand). 干 starts with a horizontal stroke; 千 starts with a slanted 丿.",
+    "末": "Visually similar to 未 (wèi, not yet). 末 has the LONGER stroke at the very top (top horizontal is widest). 未 has the longer stroke in the MIDDLE.",
+    "未": "Visually similar to 末 (mò, end). 未 has the longer stroke in the MIDDLE; 末 has it at the TOP.",
+    "大": "Look-alike cluster: 大 (dà, big), 太 (tài, very), 犬 (quǎn, dog), 夫 (fū, man). 大 has nothing extra; 太 adds a dot below; 犬 adds a dot above-right; 夫 has an extra horizontal stroke.",
+    "夫": "Visually similar to 天 (tiān, sky) and 失 (shī, lose). 夫 has the TOP horizontal sticking out left.",
+    "户": "Visually similar to 尸 (shī, corpse) and 戶/戸 (trad/var of 户). 户 has an extra dot/stroke at the top that 尸 lacks.",
+    "尸": "Visually similar to 户 (hù, door). 户 has an extra dot; 尸 is bare. Used in body-position chars: 居, 屋, 屑, 屁.",
+    "入": "Visually similar to 人 (rén, person) and 八 (bā, eight). 入 ('enter') has the right stroke crossing INSIDE; 人 has strokes meeting at a point; 八 has strokes going down/out.",
+    "人": "Look-alike: 入 (rù, enter) and 八 (bā, eight). 人 has clean diagonals meeting at the top; 入 crosses; 八 splits outward.",
+    "卩": "Visually similar to 阝 (left or right). 卩 is shorter — used standalone or in 印, 卯, 危.",
+    "刃": "刃 = 刀 + a dot marking the blade's edge. Distinguish from 力 (lì, strength) — 力 has a hook curving differently.",
+    "厂": "Visually similar to 广 (guǎng, 'dotted cliff'). 广 has a dot on top of the 厂 shape.",
+    "广": "Visually similar to 厂 (hàn, cliff). 广 has an extra dot/stroke on top.",
+    "卯": "Visually similar to 卬 / 印. 卯 has both halves vertical with equal opening.",
+    "犬": "Look-alike: 大 + a dot. 犬 has a top-right dot that 大 doesn't.",
+    "玉": "Look-alike: 王 + a dot. 玉 has a bottom-right dot that 王 doesn't.",  # canonical 玉 — already documented above for radical role
+    "土": "Visually similar to 士 (shì, scholar). 土 has the LOWER horizontal LONGER; 士 has the UPPER horizontal longer.",
+    "士": "Visually similar to 土 (tǔ, earth). 士 has the UPPER horizontal longer; 土 has the LOWER one longer.",
+    "甘": "Visually similar to 日 / 曰 but has TWO inner horizontals instead of one.",
+
+    # --- Role flags: when a radical doubles as a phonetic component ---
+    "工": "Also a phonetic component (gōng) — see the phonetic-components deck for 工:gōng / gǒng with member sets 功攻 / 巩鞏汞銾.",
+    "白": "Also a phonetic component (bái / bǎi) — appears phonetically in 百, 帛, 拍.",
+    "比": "Also a phonetic component — see the phonetic-components deck for 比:bǐ and 比:bì.",
+    "皮": "Also a phonetic component (pí) — appears in 披, 彼, 波, 破.",
+    "几": "Also a phonetic component (jī / jǐ) — appears in 机, 飢, 肌.",
+
+    # --- Function flags: semantic-only radicals (rarely phonetic) ---
+    "心": "Almost always semantic (heart / emotion), not phonetic. When 忄 appears on the left, the meaning is always emotion-related.",
+    "贝": "Semantic radical for money / wealth / trade. Rarely phonetic. Used in 财, 货, 购, 资, 贵.",
+    "贝": "Semantic for money/trade. The original form 貝 represented cowrie shells, used as currency in ancient times.",  # duplicate fine
+    "金": "Semantic for metals / tools / wealth (extended). The simplified 钅 is overwhelmingly semantic, never phonetic in modern chars.",
+    "口": "Semantic for mouth / speech / opening — rarely the phonetic. Compounds describe sounds, eating, or shapes with openings.",
+    "穴": "Semantic for hole / cave / opening. Used in 空, 究, 穿, 窗, 穷.",
+    "宀": "'Roof' radical — used in chars about buildings, dwellings, containment: 家, 室, 安, 完, 守.",
+    "广": "'Dotted cliff' / 'shed' radical — semantically 'building under a roof'. Used in 床, 店, 府, 度, 庭.",
+    "厂": "'Cliff' radical — used in chars about cliffs, factories, weight: 厂, 厚, 原, 厌.",
+}
 
 
 # ---------------------------------------------------------------------------
