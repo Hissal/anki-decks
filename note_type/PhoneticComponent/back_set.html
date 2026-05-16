@@ -43,9 +43,11 @@
     <div class="bucket bucket-other"></div>
   </div>
 
-  <div class="stats-row">
-    {{#Reliability}}<span class="stat-pill" data-tip="X of Y characters that share this component take exactly this sound (including tone).">reliability {{Reliability}}</span>{{/Reliability}}
-    {{#Productivity}}<span class="stat-pill" data-tip="Total number of characters that contain this component, regardless of sound.">in {{Productivity}} chars</span>{{/Productivity}}
+  <div class="stats-row"
+       data-members="{{MemberChars}}"
+       data-same-syllable="{{SameSyllableChars}}"
+       data-productivity="{{Productivity}}">
+    <span class="stat-pill stat-triple" data-tip="A / B / C — A: chars taking this exact sound · B: chars sharing the syllable (any tone) · C: chars containing the component in any role."></span>
     {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft's frequency rank for the component as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
   </div>
 
@@ -120,6 +122,17 @@
     }
     slot.innerHTML = lines.join("");
   }
+
+  // Render the A / B / C triple from member/same-syllable/productivity counts.
+  document.querySelectorAll(".stats-row").forEach(function (row) {
+    var pill = row.querySelector(".stat-triple");
+    if (!pill) return;
+    var a = cjkLen(row.dataset.members);
+    var b = a + cjkLen(row.dataset.sameSyllable);
+    var c = parseInt(row.dataset.productivity, 10);
+    if (isNaN(c)) c = b;
+    pill.textContent = a + " / " + b + " / " + c;
+  });
 
   document.querySelectorAll(".bucket-block").forEach(function (root) {
     var members = root.dataset.members || "";

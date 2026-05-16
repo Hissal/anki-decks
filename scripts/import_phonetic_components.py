@@ -32,6 +32,62 @@ from components_common import (
 DEFAULT_SOURCE = Path(
     r"C:\Users\hissa\OneDrive\Työpöytä\Selected Notes.txt"
 )
+
+# Components HanziCraft has no dictionary entry for — manual glosses keyed by
+# the simplified component character. Applied only when the row's Meaning is
+# otherwise blank.
+MEANING_OVERRIDES: dict[str, str] = {
+    "㐬": "to flow (archaic form, phonetic in 流 / 琉 / 硫)",
+    "彡": "hair / decorative strokes (radical)",
+    "㢆": "(phonetic component, rare standalone)",
+    "尞": "torch / ancient sacrificial fire",
+    "畺": "boundary (old form of 疆)",
+    "咅": "to spit out (rare; phonetic in 培 / 陪 / 赔)",
+    "昷": "warm (old form of 温)",
+}
+
+# Curated extra notes keyed by simplified component character. Appended to the
+# row's Note (after mechanical cleanup) with a `<br>` separator. Same component
+# can appear in multiple rows (different readings) — every row of that component
+# gets the note. Empty string = no curated note for this component.
+NOTE_OVERRIDES: dict[str, str] = {
+    # --- Visual look-alikes ---
+    "己": "Visually similar to 已 (yǐ, already) and 巳 (sì, sixth earthly branch). 己 closed on the left, 已 partially closed, 巳 fully closed.",
+    "巳": "Visually similar to 己 (jǐ, self) and 已 (yǐ, already). 巳 is fully closed at the top.",
+    "甲": "Visually similar to 由 (yóu) and 申 (shēn). 甲 has the vertical stroke going down only; 由 going up only; 申 going through both.",
+    "由": "Visually similar to 甲 (jiǎ) and 申 (shēn). 由 has the vertical going up out of the box only.",
+    "申": "Visually similar to 甲 (jiǎ) and 由 (yóu). 申 has the vertical going through both top and bottom.",
+    "末": "Visually similar to 未 (wèi, not yet). 末 has the LONGER stroke on top (end), 未 has the longer stroke in the middle.",
+    "朱": "Visually similar to 末 (mò) and 未 (wèi). 朱 has the extra 丿 stroke through the top.",
+    "千": "Visually similar to 干 (gān, dry) and 壬 (rén). 千 has the 丿 stroke on top; 干 is a horizontal line.",
+    "卯": "Visually similar to 卬 and 印. 卯 has both halves symmetric.",
+    "刃": "刃 = 刀 + a dot marking the blade's edge. Don't confuse with 力 (lì, strength).",
+    "夫": "Visually similar to 天 (tiān, sky) and 失 (shī, lose). 夫 has the top horizontal sticking out left.",
+    "户": "Visually similar to 尸 (shī, corpse). 户 has an extra dot on top.",
+    "厂": "Not in this deck, but ⼚ (cliff radical) looks similar to 广 (yǎn, dotted-cliff).",
+    "戊": "Not directly here as a row, but the 戊/戌/戍/戎 family is a notorious confusion cluster.",
+
+    # --- Multi-reading components: which reading is most productive ---
+    "肖": "Three readings (xiāo / qiào / shāo) split fairly evenly across compounds — no single dominant set.",
+    "青": "Three readings (qīng / jīng / jìng). The jīng/jìng compounds often carry 'essence' or 'still' meanings (精, 静).",
+    "工": "Two readings (gōng / gǒng). The gǒng compounds (巩 etc.) are rarer — most 工-compounds take gōng.",
+    "比": "Two readings (bǐ / bì). The bǐ set is small (吡妣秕); bì is the more productive direction.",
+
+    # --- Phonetic-set quirks worth flagging ---
+    "羊": "Used as a radical (sheep/livestock theme) in many chars where it's NOT the phonetic — e.g. 美, 善, 群. Watch for both roles.",
+    "衣": "As a radical the form is 衤 (left) or 衣 split (top/bottom). The phonetic role is much rarer than the semantic one.",
+    "心": "Almost always a semantic radical (heart/emotion), not a phonetic. When you see 忄 on the left it's semantic.",
+    "口": "Overwhelmingly semantic (speech / opening) rather than phonetic.",
+    "贝": "Semantic radical (shells / money / trade) far more often than phonetic.",
+    "金": "Semantic (metal) when on the left as 钅. Rare as phonetic.",
+    "夂": "Top-down stroke component (winter, complete). Look-alike of 攵 (rap-radical) — distinguish by stroke count.",
+    "门": "Frames many chars semantically (gates, doors) but is the phonetic in only a handful (e.g. 们).",
+
+    # --- Etymology hooks that help memory ---
+    "禾": "Grain stalk — semantic in 秋, 秒, 秤 etc. (all grain/season/scale themes).",
+    "雨": "Weather radical at the top — semantic in 雪, 雷, 霜.",
+    "火": "Fire radical; takes the form 灬 at the bottom. Semantic far more than phonetic.",
+}
 DEFAULT_ENRICH = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
 DEFAULT_CWC = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
 DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
@@ -215,6 +271,10 @@ MNEMONIC_RE = re.compile(r"[+]|\s{2,}")
 # `+<CJK chars>` → these chars are RELATED in some other way (often visual or structural).
 EXCEPTION_HINT_RE = re.compile(r"^\s*-([㐀-鿿]+)\s*$")
 RELATED_HINT_RE = re.compile(r"^\s*\+([㐀-鿿]+)\s*$")
+# Junk to drop: bare CJK chars, X/Y stats with or without qualifiers, ASCII strays.
+CJK_ONLY_RE = re.compile(r"^[㐀-鿿]+$")
+STAT_FRAG_RE = re.compile(r"^\s*\d+\s*/\s*\d+(\s+.*)?$")
+ALWAYS_PATTERN_RE = re.compile(r"^\s*al+ways\s+(.+?)\s*$", re.IGNORECASE)
 
 
 def looks_mnemonic(meaning: str) -> bool:
@@ -229,9 +289,20 @@ def looks_mnemonic(meaning: str) -> bool:
     return False
 
 
+_LABEL_PREFIXES = (
+    "Traditional:",
+    "Variant:",
+    "See also:",
+    "Note similarity",
+    "thousand.",  # multiline continuation of `Note similarity to 万…`
+    "corpse.",    # continuation of 户's similarity blurb
+)
+
+
 def reformat_note_hints(note: str) -> str:
-    """Walk a `<br>`-joined Note and expand cryptic `-X` / `+X` hints into
-    plain-English labels. Other tokens pass through unchanged."""
+    """Walk a `<br>`-joined Note. Keep labeled hints + reformat `-X` / `+X` /
+    `always …` patterns. Drop everything else (bare CJK chars, X/Y stats,
+    ASCII strays) — that data lives in Decomposition / the A/B/C triple."""
     if not note:
         return note
     out: list[str] = []
@@ -247,7 +318,21 @@ def reformat_note_hints(note: str) -> str:
         if m:
             out.append(f"Also related: {m.group(1)}")
             continue
-        out.append(t)
+        m = ALWAYS_PATTERN_RE.match(t)
+        if m:
+            out.append(f"Sound pattern: always {m.group(1)}")
+            continue
+        if t.startswith(_LABEL_PREFIXES):
+            out.append(t)
+            continue
+        # Drop: bare CJK chars (info in Decomposition), X/Y stats (info in
+        # A/B/C triple), and any remaining ASCII scratch tokens.
+        if CJK_ONLY_RE.match(t):
+            continue
+        if STAT_FRAG_RE.match(t):
+            continue
+        # Catch-all: drop. Was reached for `dan4`, `jailer`, `u2 - another 8/27` etc.
+        # Anything we want to keep should match one of the rules above.
     return "<br>".join(out)
 
 
@@ -259,19 +344,42 @@ def _clean_decomp_parts(parts: list[str]) -> list[str]:
     return ["?" if p == UNGLYPHABLE else p for p in parts]
 
 
+def _emit_decomp_segment(kind: str, parts: list[str], component: str) -> str | None:
+    """Format one segment (`once:…` or `radical:…`). Returns None when the
+    segment should be skipped (atomic / unusable / equal to the component)."""
+    if not parts:
+        return None
+    # All-? placeholder → no real data
+    if all(p == "?" for p in parts):
+        return None
+    # Single piece equal to the component → trivially redundant
+    if len(parts) == 1 and parts[0] == component:
+        return None
+    # Single distinct piece — HanziCraft's stub for doubled/tripled forms
+    # (e.g. 比 = 匕+匕 stored as just ["匕"]). Render as "X × 2" so the card
+    # doesn't look incomplete.
+    if len(parts) == 1:
+        return f"{kind}:{parts[0]}×2"
+    return f"{kind}:" + "+".join(parts)
+
+
 def build_decomposition(component: str, hc_decomp: dict | None) -> str:
     """Pack the component's own top-level decomposition into a tiny TSV-safe
     string: `once:一+丄;radical:工`. Skips parts that are trivially equal
-    to the component itself."""
+    to the component itself, or are all-`?` placeholders."""
     if not hc_decomp:
         return ""
     parts: list[str] = []
-    once = _clean_decomp_parts(hc_decomp.get("once") or [])
-    radical = _clean_decomp_parts(hc_decomp.get("radical") or [])
-    if once and not (len(once) == 1 and once[0] == component):
-        parts.append("once:" + "+".join(once))
-    if radical and not (len(radical) == 1 and radical[0] == component):
-        parts.append("radical:" + "+".join(radical))
+    once_seg = _emit_decomp_segment(
+        "once", _clean_decomp_parts(hc_decomp.get("once") or []), component
+    )
+    if once_seg:
+        parts.append(once_seg)
+    rad_seg = _emit_decomp_segment(
+        "radical", _clean_decomp_parts(hc_decomp.get("radical") or []), component
+    )
+    if rad_seg:
+        parts.append(rad_seg)
     return ";".join(parts)
 
 
@@ -433,6 +541,10 @@ def transform_row(
         # HanziCraft wins on Meaning when present. Source meanings (often
         # mnemonic-style) are dropped — phase-3A notes pass.
         meaning_value = hc_definition.replace("/", " / ")
+    elif component in MEANING_OVERRIDES:
+        # Fall back to a manual gloss for obscure components HanziCraft has no
+        # dictionary entry for (phase 3D-4).
+        meaning_value = MEANING_OVERRIDES[component]
     # else: keep src_meaning unchanged
 
     extras: list[str] = []
@@ -445,6 +557,10 @@ def transform_row(
     if note_from_comments:
         extras.append(note_from_comments)
     note = reformat_note_hints("<br>".join(extras))
+    # Phase 3D-2 Part B: append curated note when one exists for this component.
+    curated = NOTE_OVERRIDES.get(component, "").strip()
+    if curated:
+        note = (note + "<br>" + curated) if note else curated
 
     decomposition = build_decomposition(component, hc_decomp)
 
@@ -490,7 +606,6 @@ def transform_row(
         meaning_value,
         member_chars,
         same_syllable_chars,
-        reliability,
         hc_productivity_str,
         hc_freq_rank,
         decomposition,
@@ -636,13 +751,13 @@ def main() -> int:
 
     out_rows: list[list[str]] = []
     seen: dict[str, tuple[int, int]] = {}  # key_field -> (src_line, out_index)
-    # Field indices for the 16-col schema:
+    # Field indices for the 15-col schema (Reliability dropped in 3D-1):
     #  0=Key, 1=Component, 2=Pinyin, 3=Meaning, 4=MemberChars,
-    #  5=SameSyllableChars, 6=Reliability, 7=Productivity, 8=Frequency,
-    #  9=Decomposition, 10=MemberDecomp, 11=CrossRefs, 12=Note,
-    #  13=Link, 14=Audio, 15=Tags
-    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 10, 13, 14)
-    NOTE_IDX = 12
+    #  5=SameSyllableChars, 6=Productivity, 7=Frequency,
+    #  8=Decomposition, 9=MemberDecomp, 10=CrossRefs, 11=Note,
+    #  12=Link, 13=Audio, 14=Tags
+    MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 12, 13)
+    NOTE_IDX = 11
 
     for line_no, fields in src_rows:
         try:
@@ -682,7 +797,7 @@ def main() -> int:
 
     # Cross-refs: when a Component has multiple Keys (different readings),
     # fill CrossRefs column with the OTHER readings + their member chars.
-    # CrossRefs lives at column 11 in the 16-col schema.
+    # CrossRefs lives at column 10 in the 15-col schema.
     by_component: dict[str, list[int]] = {}
     for idx, row in enumerate(out_rows):
         by_component.setdefault(row[1], []).append(idx)
@@ -695,7 +810,7 @@ def main() -> int:
                 f"{sib[2]} / {sib[4]}" if sib[4] else sib[2]
                 for sib in siblings
             ]
-            out_rows[i][11] = " · ".join(chunks)
+            out_rows[i][10] = " · ".join(chunks)
 
     write_output(out_rows, args.out)
 

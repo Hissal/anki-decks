@@ -23,7 +23,6 @@ COMPONENT_HEADER = [
     "Meaning",
     "MemberChars",        # bucket 1 — chars that take exactly this sound (curated)
     "SameSyllableChars",  # bucket 2 — chars that contain this component AND share its syllable but DIFFER in tone
-    "Reliability",        # "X/Y" or "X/Y (ignoring tone)" — sound-match within member chars
     "Productivity",       # HanziCraft's "appears as a component in N characters" — total count
     "Frequency",          # HanziCraft's frequency rank (e.g. "118" for the 118th most frequent character)
     "Decomposition",      # `once:<a>+<b>;radical:<r>` — component's own top-level + radical breakdown
@@ -53,7 +52,6 @@ class ComponentRow:
     meaning: str
     member_chars: str
     same_syllable_chars: str
-    reliability: str
     productivity: str
     frequency: str
     decomposition: str
@@ -108,16 +106,15 @@ def parse_component_tsv(path: Path) -> tuple[list[str], list[ComponentRow]]:
                 meaning=fields[3],
                 member_chars=fields[4],
                 same_syllable_chars=fields[5],
-                reliability=fields[6],
-                productivity=fields[7],
-                frequency=fields[8],
-                decomposition=fields[9],
-                member_decomp=fields[10],
-                cross_refs=fields[11],
-                note=fields[12],
-                link=fields[13],
-                audio=fields[14],
-                tags=[t for t in fields[15].split(" ") if t],
+                productivity=fields[6],
+                frequency=fields[7],
+                decomposition=fields[8],
+                member_decomp=fields[9],
+                cross_refs=fields[10],
+                note=fields[11],
+                link=fields[12],
+                audio=fields[13],
+                tags=[t for t in fields[14].split(" ") if t],
             )
         )
 

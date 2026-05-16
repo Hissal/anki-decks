@@ -263,28 +263,25 @@ def render_component_entry(row) -> str:
             pass
         member_html = "".join(parts)
 
-    stat_pills: list[str] = []
-    if row.reliability:
-        stat_pills.append(
-            f'<span class="ix-stat-pill" data-tip="X of Y characters that share '
-            f'this component take exactly this sound (including tone).">'
-            f'reliability {html.escape(row.reliability)}</span>'
-        )
-    if row.productivity:
-        stat_pills.append(
-            f'<span class="ix-stat-pill" data-tip="Total number of characters that '
-            f'contain this component, regardless of sound.">'
-            f'in {html.escape(row.productivity)} chars</span>'
-        )
+    # A / B / C triple, derived from existing fields.
+    a = len(row.member_chars)
+    b = a + len(row.same_syllable_chars)
+    try:
+        c = int(row.productivity) if row.productivity else b
+    except ValueError:
+        c = b
+    stat_pills = [
+        f'<span class="ix-stat-pill" data-tip="A / B / C — A: chars taking this '
+        f'exact sound · B: chars sharing the syllable (any tone) · '
+        f'C: chars containing the component in any role.">{a} / {b} / {c}</span>'
+    ]
     if row.frequency:
         stat_pills.append(
             f'<span class="ix-stat-pill" data-tip="HanziCraft frequency rank for '
             f'the component as a standalone character.">'
             f'freq #{html.escape(row.frequency)}</span>'
         )
-    stats_html = ""
-    if stat_pills:
-        stats_html = f'<div class="ix-stats-row">{"".join(stat_pills)}</div>'
+    stats_html = f'<div class="ix-stats-row">{"".join(stat_pills)}</div>'
 
     decomp_html = ""
     if row.decomposition.strip():
