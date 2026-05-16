@@ -175,14 +175,18 @@ MEANING_OVERRIDES: dict[str, str] = {
 # count derived from Productivity.
 MEMBER_OVERRIDES: dict[str, str] = {
     # --- Core semantic radicals (high productivity, everyday vocab) ---
-    "口": "吃喝叫喊哭笑唱嘴",
+    # All picks validated against scripts/cache/component_cwc.json — must
+    # appear in HanziCraft's `characterswithcomponent` list for the keyed
+    # radical (or for its canonical when the radical is a variant glyph
+    # HanziCraft doesn't index separately, e.g. 阜).
+    "口": "吃喝叫喊唱嘴和可",
     "水": "河海湖洋洗淋汁汗",
     "氵": "河海湖洋洗淋汁汗",
     "火": "灯烧烤炒煤热点炎",
     "灬": "热点煮蒸照然黑熟",
     "心": "情感想念忘怕思忙",
     "忄": "情怕忙快慢怪忧懂",
-    "⺗": "恭慕慰忝忞",
+    "⺗": "慰想意感思念忘悲",
     "木": "林森本朱树枝根桃",
     "钅": "银铜铁钱钟针钉钢",
     "金": "银铜铁钱钟针钉钢",
@@ -194,70 +198,73 @@ MEMBER_OVERRIDES: dict[str, str] = {
     "大": "太天奇头央夸奥奋",
     "山": "岛峰岭岗崖崎岔屿",
     "日": "明早春时晚晴是星",
-    "月": "有期朋服望脸腿胸",  # most chars here use 月 visually (often 肉 historically)
+    "月": "有期朋服望脸腿胸",
     "讠": "说话语词读请谢谈",
-    "言": "说誉誓警譬警誊讨",
+    "言": "誉誓警譬誊讨誡讚",
     "贝": "财货赔购账贵贫资",
-    "貝": "財貨賠購賬貴貧資",
+    "貝": "財貨購貴貧資積貢",
     "车": "轮转辆较输辅辈轨",
-    "馬": "驾駕驴骆骑驶骄驰",
+    "馬": "駕驚騎驅駝馳駛驗",
     "马": "驾驴骆骑驶骄驰驯",
     "鸟": "鸡鸭鹅鸽鹰鹊鹏鸣",
-    "鳥": "雞鴨鵝鴿鷹鵲鵬鳴",
+    "鳥": "鴨鵝鴿鵲鵬鳴鳳鴉",
     "鱼": "鲨鲸鲤鲈鲍鳗鲜鳄",
-    "魚": "鯊鯨鯉鱸鮑鰻鮮鱷",
-    "门": "开关闭闹闯闻问间",
-    "門": "開閉闘問間閑閣關",
+    "魚": "鯊鯖鰻鮮鰲鱉鱗鯡",
+    "门": "闭闹闯闻问间閃閣",
+    "門": "開閉間閑閣關簡閱",
     "页": "顶顺须顾领颗顿额",
     "頁": "頂順須顧領顆頓額",
     "饣": "饭饺饮饿馆饱馒饼",
-    "飠": "飯飲餓館飽餐饅",
-    "食": "餐養飲飯飼飪",
-    "玉": "王玩理球琴现",
-    "王": "玩理球琴现珠琢瑰",
+    "飠": "飯飲餓館飽饅餬",
+    "食": "餐饭馆饮饱饿饺饼",
+    "玉": "王玩理球现",
+    "王": "玩理球现珠琢瑰国",
     "衣": "初被装裙裤补袜袖",
     "衤": "初被装裙裤补袜袖",
     "雨": "雪雷霜雾露霸震霞",
     "革": "鞋鞭靴鞍鞠鞘",
-    "弓": "引张弦弧弹弛弱弩",
-    "又": "友及取受双叙叔变",
+    "弓": "引张弦弧弹弛弩第",
+    "又": "友取受双叙叔变最",
     "力": "加办助劝努动励勇",
     "刀": "分切初利刻别到割",
     "刂": "分切初利刻别到割",
-    "工": "左巧巨差功攻贡",
+    "工": "左巧差功攻贡经",
     "米": "粉粒粥糖糕糊精料",
-    "竹": "笔笑等第答策篇箱",
-    "⺮": "笔笑等第答策篇箱",
+    "竹": "笔等第答策篇箱筋",
+    "⺮": "笔等第答策篇箱筋",
     "艹": "草花苹菜茶药茄苦",
     "辶": "这道送过运近远进",
     "邑": "那邻邦郎部都郊郡",
+    # Most simp 阝-left chars (阳, 院 etc.) are filed under cwc[阝] in HC, not
+    # cwc[阜]. Picks here are semantically the standard 阜 left-radical set;
+    # validator skips this entry because HC doesn't store them under 阜.
     "阜": "阳阴院阶阻陈陪陷",
-    "广": "床店府度座庭厅麻",
-    "宀": "家室宁宝完空学定",
+    "广": "床店府度座庭麻底",
+    "宀": "家室宁宝完定院案",
     "疒": "病疼痛瘦痒疯疲疾",
     "目": "看眼睡睛瞎瞄瞌瞪",
-    "耳": "听联职聪闻聊耻聋",
+    "耳": "联职聪闻聊耻聋摄",
     "足": "跑跳跟跨踢路跌踪",
     "⻊": "跑跳跟跨踢路跌踪",
     "手": "打把拉指接抓挂推",
     "扌": "打把拉指接抓挂推",
     "攵": "收改放教数政故敢",
     "礻": "礼神福祝祖祭祸祈",
-    "示": "禁奈祭祟",
+    "示": "禁奈祟",
     "牛": "物特犁牢牲牧牡",
     "牜": "物特犁牢牲牧牡",
     "犬": "猛突默器",
     "犭": "狗猫狼猪狐狮猜独",
-    "走": "起越赶超趋趴趟趁",
+    "走": "起越赶超趋趟趁趣",
     "白": "百的皇皆皎皓",
     "石": "矿研破础磁碎砖碰",
-    "立": "站章端竞竭竖意亲",
+    "立": "站章端竞竭竖亲部",
     "色": "艳",
     "禾": "和私秋种秒科秘程",
-    "穴": "空突窗窝穷究窟窃",
+    "穴": "空究突穿窗穷窝窃",
     "舟": "船航舱艘舰舵艇舶",
-    "见": "观规视览觉觅",
-    "見": "觀規視覽覺",
+    "见": "观规视觉觅览",
+    "見": "觀規視覺靦親",
     "酉": "酒醉酸醒醋酱配酬",
     "鬼": "魂魄魅魇魔魁魏",
     "黑": "默墨黛黯",
@@ -414,18 +421,70 @@ def build_member_decomp(
     return "|".join(pieces)
 
 
-def pick_member_chars(canonical: str, source_chars: str) -> str:
-    """Apply MEMBER_OVERRIDES if defined for this radical, else truncate the
-    source's curated set to MEMBER_CAP characters."""
+# When a radical is a variant glyph HanziCraft doesn't index separately, its
+# member chars live under the canonical's cwc entry. Used by the in-script
+# validator to look up the right cwc list.
+MEMBER_OVERRIDE_CWC_ALIAS: dict[str, str] = {
+    "阜": "阝",
+}
+
+
+def _validate_member_picks(
+    canonical: str,
+    picks: str,
+    cwc: dict[str, list[str]] | None,
+    log: list[str],
+) -> None:
+    """If we have HanziCraft's full cwc list, hard-fail when any pick isn't in
+    it — caught the 笑 → 口 mistake in R2 post-mortem."""
+    if not cwc or not picks:
+        return
+    valid = set(cwc.get(canonical, []))
+    alias = MEMBER_OVERRIDE_CWC_ALIAS.get(canonical)
+    if alias:
+        valid |= set(cwc.get(alias, []))
+    if not valid:
+        return  # no cwc data → can't validate
+    bad = [c for c in picks if c not in valid]
+    if bad:
+        log.append(
+            f"MEMBER_OVERRIDES for {canonical!r} contains chars HanziCraft "
+            f"doesn't list under this radical: {bad!r}"
+        )
+
+
+def pick_member_chars(
+    canonical: str,
+    source_chars: str,
+    cwc: dict[str, list[str]] | None = None,
+) -> str:
+    """Apply MEMBER_OVERRIDES if defined; else filter the source set to chars
+    that HanziCraft actually lists under this radical (when cwc data exists),
+    then truncate to MEMBER_CAP.
+
+    The source seed uses Kangxi-style radical assignment (e.g. 不 is filed
+    under 一). HanziCraft uses structural component decomposition (不 doesn't
+    contain a separable 一). For a recognition-focused deck the structural
+    view is what the learner actually sees, so we drop source picks that fail
+    the cwc check rather than render them as ghost members."""
     override = MEMBER_OVERRIDES.get(canonical)
     if override:
         return override
-    # Dedupe while preserving order, then truncate.
+
+    valid: set[str] | None = None
+    if cwc is not None:
+        valid = set(cwc.get(canonical, []))
+        alias = MEMBER_OVERRIDE_CWC_ALIAS.get(canonical)
+        if alias:
+            valid |= set(cwc.get(alias, []))
+
     seen: set[str] = set()
     out: list[str] = []
     for ch in source_chars:
         if ch in seen:
             continue
+        if valid is not None and valid and ch not in valid:
+            continue  # HC doesn't list this char under the radical — skip
         seen.add(ch)
         out.append(ch)
         if len(out) >= MEMBER_CAP:
@@ -439,6 +498,7 @@ def transform_row(
     log: list[str],
     enrich: dict[str, dict] | None = None,
     char_decomp: dict[str, dict] | None = None,
+    cwc: dict[str, list[str]] | None = None,
 ) -> list[str] | None:
     """Map a 6-col source row → 15-col output row. Returns None to skip."""
     while len(fields) < 6:
@@ -516,7 +576,8 @@ def transform_row(
     decomposition = build_decomposition(canonical, hc.get("decomposition"))
 
     source_chars = normalize_member_chars(examples)
-    member_chars = pick_member_chars(canonical, source_chars)
+    member_chars = pick_member_chars(canonical, source_chars, cwc)
+    _validate_member_picks(canonical, member_chars, cwc, log)
     member_decomp = build_member_decomp(member_chars, char_decomp, enrich)
 
     # Note assembly.
@@ -638,6 +699,9 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=RADICALS_DECK_PATH)
     ap.add_argument("--enrich", type=Path, default=DEFAULT_HC_CACHE)
     ap.add_argument("--char-decomp", type=Path, default=DEFAULT_CHAR_DECOMP)
+    ap.add_argument("--cwc", type=Path, default=DEFAULT_CWC_CACHE,
+                    help="HanziCraft characterswithcomponent cache — used to "
+                    "validate MEMBER_OVERRIDES picks at import time")
     args = ap.parse_args()
 
     if not args.source.exists():
@@ -662,6 +726,14 @@ def main() -> int:
         except Exception as e:
             print(f"warn: failed to load char-decomp {args.char_decomp}: {e}", file=sys.stderr)
 
+    cwc: dict[str, list[str]] | None = None
+    if args.cwc.exists():
+        try:
+            cwc = _json.loads(args.cwc.read_text(encoding="utf-8"))
+            print(f"loaded cwc: {len(cwc)} entries", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load cwc {args.cwc}: {e}", file=sys.stderr)
+
     log: list[str] = []
     src_rows = read_source(args.source, log)
 
@@ -669,7 +741,7 @@ def main() -> int:
     seen: dict[str, int] = {}
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich, char_decomp)
+            row = transform_row(fields, line_no, log, enrich, char_decomp, cwc)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
