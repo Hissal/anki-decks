@@ -4,16 +4,17 @@
 
 Personal Anki decks for Chinese language learning. **Not a course** — assumes other resources cover grammar and structured study. These decks **augment** that with vocabulary, common spoken phrases, and flavor.
 
-Four decks, four scopes:
+Five decks, five scopes:
 
 | File | Scope |
 |------|-------|
 | `Chinese_Core_Conversation.tsv` | Everyday useful vocab and phrases. Conversation glue, reactions, fillers, opinions, daily-life nouns. The "actually useful" deck. |
 | `Chinese_Idioms_Proverbs_Classical.tsv` | Chengyu, proverbs, classical/literary phrases, poetic flavor. "Ancient wisdom" feel. |
 | `Chinese_Slang_Dialect_Flavor.tsv` | Modern slang, internet slang, regional dialect, old-school slang, mildly vulgar — anything non-standard or just fun extra flavor. |
-| `Chinese_Phonetic_Components.tsv` | Phonetic components — the sound-bearing radicals that recur across many compound characters. Different schema from the other three; see the **Phonetic Components deck** section below. |
+| `Chinese_Phonetic_Components.tsv` | Phonetic components — the sound-bearing pieces that recur across many compound characters. Different schema from the word decks; see the **Phonetic Components deck** section below. |
+| `Chinese_Kangxi_Radicals.tsv` | Kangxi semantic radicals — the meaning-bearing pieces (氵 → water, 心 → emotion, 钅 → metal). Complements the phonetic-components deck. Own schema; see the **Kangxi Radicals deck** section below. |
 
-If something fits multiple decks, pick the one that matches the *primary vibe* — don't duplicate. The phonetic-components deck is an exception: a Hanzi character can legitimately appear there as a *component* even if it also exists as a word in one of the other decks. The components deck lives in its own ontology (components ≠ words).
+If something fits multiple decks, pick the one that matches the *primary vibe* — don't duplicate. The components / radicals decks are exceptions: a Hanzi character can legitimately appear in those decks as a *component* (semantic OR phonetic) even when it also exists as a word in one of the others. Components, radicals, and words are different mental objects.
 
 ## File format
 
@@ -148,6 +149,58 @@ The deck generates **two cards per note**: Card 1 (Component → Sound) shows th
 ### Cross-deck duplication
 
 The "don't duplicate the same Hanzi across decks" rule applies only to the word decks. The components deck is exempt: a Hanzi like `工` can legitimately appear in `Core` (as the word "work") and in `Components` (as the phonetic component). They are different mental objects.
+
+## Kangxi Radicals deck
+
+`Chinese_Kangxi_Radicals.tsv` is the fifth deck. Purpose: drill recognition of the 214 traditional Kangxi semantic radicals — the meaning-bearing pieces of a Hanzi (氵 → water-themed, 心 → emotion, 钅 → metal). Pairs with the phonetic-components deck: phonetic teaches *sound*, radical teaches *meaning category*. Together they cover the phono-semantic compound model that explains ~80% of Hanzi.
+
+### Schema
+
+15 columns. Directive block:
+
+```
+#separator:tab
+#html:true
+#columns:Key	Radical	Variant1	Variant2	ReferenceVariants	Pinyin	Meaning	MemberChars	Productivity	Frequency	Decomposition	MemberDecomp	Note	Link	Tags
+#tags column:15
+```
+
+1. `Key` — `<radical>:<numeric-pinyin>`. Unique first field for Anki.
+2. `Radical` — canonical simplified form (single CJK char, may live in the Kangxi Radicals / Radicals Supplement Unicode blocks).
+3. `Variant1` — primary positional variant. Generates its own card. E.g. for `心`: `忄` (left-side form). Empty when the radical has no major variant.
+4. `Variant2` — secondary positional variant. Generates its own card. E.g. for `心`: `⺗` (bottom form). Empty when only one variant exists.
+5. `ReferenceVariants` — comma-separated archaic / rare variants shown on the canonical card's back for context but with NO dedicated card. Keeps the deck card-count manageable for radicals like `网` (4 variants total — only `罒` gets its own card; rest go here).
+6. `Pinyin` — tone-marked. When a radical has multiple readings (rare: `用` yòng / shuǎi), pick the primary and put the alternate in Note.
+7. `Meaning` — short English gloss (`water`, `heart`, `metal`).
+8. `MemberChars` — curated example characters where this radical is the *semantic head* (4-12 per row). From the seed file.
+9. `Productivity` — HanziCraft's "appears as a component in N chars" count. Empty until R2 enrichment fills it.
+10. `Frequency` — HanziCraft frequency rank for the radical as a standalone character. Often empty (many radicals aren't common standalone chars).
+11. `Decomposition` — `once:<a>+<b>;radical:<r>` — the radical's own breakdown (same pack format as phonetic components). Filled by R2.
+12. `MemberDecomp` — `海=氵+每|河=氵+可` per-member-char once-level decomp. Card 4 back highlights the radical (and its variants) in green. Filled by R2.
+13. `Note` — free-form. Traditional-form mentions, alternate readings, curated context from `NOTE_OVERRIDES`.
+14. `Link` — HanziCraft URL covering the radical + its member chars.
+15. `Tags` — `kangxi-radical` + one tier: `radical-core` (~34 high-leverage), `radical-common` (~143 moderate), `radical-structural` (~23 simple strokes, rarely meaning-bearing), `radical-rare` (~14 archaic).
+
+### Four card templates
+
+Cards generated per note depend on which variant fields are populated.
+
+- **Card 1 — Radical → Meaning** — always. Front: lone canonical radical. Back: full reveal incl. variants listing.
+- **Card 2 — Variant1 → Radical+Meaning** — only when Variant1 set. Front: lone variant glyph. Back: "this is a form of X" with full meaning context.
+- **Card 3 — Variant2 → Radical+Meaning** — only when Variant2 set.
+- **Card 4 — Set → Radical+Meaning** — only when MemberChars set. Front: the curated semantic-head set. Back: highlight shared radical + per-member decomp lines with the radical accent-highlighted (green).
+
+The multi-card design exists because a learner needs to recognize `忄` *separately* from `心` — seeing them together on one card lets you pass without truly knowing each form.
+
+### Tooling
+
+- **`scripts/import_kangxi_radicals.py`** — one-shot generator. Reads the seed `Radicals.txt`, parses the mixed-convention col-1 (sometimes simp-variant, sometimes `(pr.X)` note), hoists parens-packed variants into Variant1/2/ReferenceVariants slots, applies `VARIANT_OVERRIDES` for radicals whose source order is wrong (水: 氵 belongs before 氺), normalizes the example chars, and emits the TSV. Sort key prioritizes tier-core, then example-char count.
+- **`scripts/validate_radicals.py`** — sibling of `validate_components.py`. Hard errors on empty required fields, non-CJK Radical / Variants, duplicate Keys.
+- **`scripts/radicals_common.py`** — schema + `RadicalRow` dataclass + parser. Mirrors `components_common.py`.
+- **`scripts/index.py`** — renders the Kangxi Radicals section, grouped by tier (core → common → structural → rare).
+- **Manual override dicts** in the import script: `MEANING_OVERRIDES` (terse seed-file glosses), `NOTE_OVERRIDES` (curated context like position-specific variant notes, look-alike warnings).
+
+The HanziCraft enrichment cache (`scripts/cache/hanzicraft.json` + `char_data.json` + `char_decomp.json`) is shared with the phonetic-components deck. R2 will fetch any radicals not yet in the cache.
 
 ## Things to NOT do
 

@@ -1,0 +1,115 @@
+<!-- Card 4 back: reveal the shared radical + meaning + per-char decomp. -->
+
+{{#MemberChars}}
+<div class="card-side card-back">
+  <div class="member-chars">{{MemberChars}}</div>
+
+  <div class="radical-highlight">
+    <span class="radical-label">shared radical:</span>
+    <span class="radical-block radical-inline">{{Radical}}</span>
+  </div>
+
+  <div class="pinyin" data-pinyin="{{Pinyin}}">{{Pinyin}}</div>
+
+  {{#Meaning}}
+  <div class="meaning">{{Meaning}}</div>
+  {{/Meaning}}
+
+  {{#Variant1}}
+  <div class="variants-block">
+    <span class="variants-label">also written:</span>
+    <span class="variant-glyph">{{Variant1}}</span>
+    {{#Variant2}}<span class="variant-glyph">{{Variant2}}</span>{{/Variant2}}
+  </div>
+  {{/Variant1}}
+
+  <hr>
+
+  {{#MemberDecomp}}
+  <div class="member-decomp-block"
+       data-radical="{{Radical}}"
+       data-variant1="{{Variant1}}"
+       data-variant2="{{Variant2}}"
+       data-member-decomp="{{MemberDecomp}}"></div>
+  {{/MemberDecomp}}
+
+  <div class="stats-row"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}">
+    <span class="stat-pill stat-pair" data-tip="A / C — A: curated example chars where this radical is the semantic head · C: total chars containing the radical in any role."></span>
+    {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft frequency rank for the radical as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
+  </div>
+
+  {{#Note}}
+  <div class="note">{{Note}}</div>
+  {{/Note}}
+
+  {{#PersonalNote}}
+  <div class="personal-note">{{PersonalNote}}</div>
+  {{/PersonalNote}}
+
+  {{#Link}}
+  <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
+  {{/Link}}
+</div>
+
+<script>
+(function () {
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+  function cjkLen(s) { return Array.from(s || "").length; }
+  document.querySelectorAll(".stats-row").forEach(function (row) {
+    var pill = row.querySelector(".stat-pair");
+    if (!pill) return;
+    var a = cjkLen(row.dataset.members);
+    var c = parseInt(row.dataset.productivity, 10);
+    pill.textContent = isNaN(c) ? (a + " curated") : (a + " / " + c);
+  });
+
+  function escHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function parseMemberDecomp(spec) {
+    var out = {};
+    if (!spec) return out;
+    spec.split("|").forEach(function (entry) {
+      var idx = entry.indexOf("=");
+      if (idx < 0) return;
+      out[entry.substring(0, idx)] = entry.substring(idx + 1).split("+");
+    });
+    return out;
+  }
+  document.querySelectorAll(".member-decomp-block").forEach(function (root) {
+    var radical = root.dataset.radical || "";
+    var v1 = root.dataset.variant1 || "";
+    var v2 = root.dataset.variant2 || "";
+    var highlight = new Set([radical, v1, v2].filter(Boolean));
+    var decompMap = parseMemberDecomp(root.dataset.memberDecomp || "");
+    var lines = [];
+    Object.keys(decompMap).forEach(function (ch) {
+      var parts = decompMap[ch];
+      var inner = parts.map(function (p) {
+        var cls = highlight.has(p) ? "decomp-piece decomp-semantic" : "decomp-piece";
+        return '<span class="' + cls + '">' + escHtml(p) + '</span>';
+      }).join('<span class="decomp-sep">+</span>');
+      lines.push(
+        '<div class="member-decomp-line">' +
+          '<span class="member-decomp-char">' + escHtml(ch) + '</span>' +
+          '<span class="member-decomp-eq">=</span>' +
+          inner +
+        '</div>'
+      );
+    });
+    root.innerHTML = lines.join("");
+  });
+})();
+</script>
+{{/MemberChars}}

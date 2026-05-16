@@ -33,6 +33,10 @@ from components_common import (
     COMPONENT_DECK_PATH,
     parse_component_tsv,
 )
+from radicals_common import (
+    RADICALS_DECK_PATH,
+    parse_radicals_tsv,
+)
 
 INDEX_PATH = REPO_ROOT / "INDEX.html"
 
@@ -49,6 +53,16 @@ DECK_SLUGS = {
 
 COMPONENTS_SLUG = "components"
 COMPONENTS_TITLE = "Phonetic Components"
+
+RADICALS_SLUG = "radicals"
+RADICALS_TITLE = "Kangxi Radicals"
+
+RADICAL_TIER_RANK = {
+    "radical-core": 0,
+    "radical-common": 1,
+    "radical-structural": 2,
+    "radical-rare": 3,
+}
 
 
 def strip_diacritics(s: str) -> str:
@@ -342,6 +356,133 @@ def render_component_entry(row) -> str:
     )
 
 
+def render_radical_entry(row) -> str:
+    """Render a single Kangxi-radical row. Different shape from word/component
+    entries; uses the same `details.entry` wrapper for filtering/search."""
+    search_blob = " ".join([
+        row.radical,
+        row.variant1,
+        row.variant2,
+        row.pinyin,
+        strip_diacritics(row.pinyin),
+        row.meaning.lower(),
+        row.member_chars,
+    ])
+    search_blob = strip_diacritics(search_blob).lower()
+
+    variants_html = ""
+    variant_glyphs: list[str] = []
+    for v in (row.variant1, row.variant2):
+        if v:
+            variant_glyphs.append(
+                f'<span class="ix-variant-glyph">{html.escape(v)}</span>'
+            )
+    if row.reference_variants:
+        for v in row.reference_variants.split(","):
+            v = v.strip()
+            if v:
+                variant_glyphs.append(
+                    f'<span class="ix-variant-glyph ix-variant-archaic">{html.escape(v)}</span>'
+                )
+    if variant_glyphs:
+        variants_html = (
+            f'<div class="ix-radical-variants">'
+            f'<span class="ix-variants-label">also written:</span>'
+            f'{"".join(variant_glyphs)}</div>'
+        )
+
+    member_html = ""
+    if row.member_chars:
+        member_html = (
+            f'<div class="component-members" '
+            f'data-bucket-chars="{html.escape(row.member_chars, quote=True)}" '
+            f'data-bucket-decomp="{html.escape(row.member_decomp, quote=True)}" '
+            f'data-bucket-radical="{html.escape(row.radical, quote=True)}" '
+            f'data-bucket-variants="{html.escape(",".join([v for v in (row.variant1, row.variant2) if v]), quote=True)}">'
+            f'<span class="component-members-label">semantic head in:</span> '
+            f'<span class="component-members-chars">{html.escape(row.member_chars)}</span>'
+            f'</div>'
+        )
+
+    a = len(row.member_chars)
+    try:
+        c = int(row.productivity) if row.productivity else None
+    except ValueError:
+        c = None
+    if c is None:
+        triple = f"{a} curated"
+        triple_tip = "Curated semantic-head example characters from the source list."
+    else:
+        triple = f"{a} / {c}"
+        triple_tip = ("A / C — A: curated example chars where this radical is the "
+                      "semantic head · C: total chars containing the radical in any role.")
+    stat_pills = [
+        f'<span class="ix-stat-pill" data-tip="{html.escape(triple_tip, quote=True)}">{triple}</span>'
+    ]
+    if row.frequency:
+        stat_pills.append(
+            f'<span class="ix-stat-pill" data-tip="HanziCraft frequency rank for '
+            f'the radical as a standalone character.">freq #{html.escape(row.frequency)}</span>'
+        )
+    # Tier pill
+    tier = next((t for t in row.tags if t in RADICAL_TIER_RANK), "")
+    if tier:
+        stat_pills.append(
+            f'<span class="ix-stat-pill ix-tier-pill" data-tip="Tier — core: high-leverage; '
+            f'common: moderate; structural: rare/stroke-like; rare: archaic.">{html.escape(tier)}</span>'
+        )
+    stats_html = f'<div class="ix-stats-row">{"".join(stat_pills)}</div>'
+
+    decomp_html = ""
+    if row.decomposition.strip():
+        decomp_html = (
+            f'<div class="ix-decomp" data-decomp="{html.escape(row.decomposition, quote=True)}"></div>'
+        )
+
+    note_html = ""
+    if row.note.strip():
+        note_html = f'<p class="note">{row.note}</p>'
+
+    link_html = ""
+    if row.link.strip():
+        link_html = (
+            f'<a class="link" href="{html.escape(row.link, quote=True)}" '
+            f'target="_blank" rel="noopener">HanziCraft →</a>'
+        )
+
+    tag_chips = "".join(
+        f'<button class="tag-chip" type="button" data-tag="{html.escape(t, quote=True)}">'
+        f"{html.escape(t)}</button>"
+        for t in row.tags
+    )
+
+    pinyin_html = (
+        f'<span class="component-pinyin" data-pinyin="{html.escape(row.pinyin, quote=True)}">'
+        f'{html.escape(row.pinyin)}</span>'
+    ) if row.pinyin else ""
+
+    return (
+        f'<details class="entry component-entry radical-entry" '
+        f'data-deck="{html.escape(RADICALS_SLUG, quote=True)}" '
+        f'data-tier="{html.escape(tier, quote=True)}" '
+        f'data-tags="{html.escape(" ".join(row.tags), quote=True)}" '
+        f'data-search="{html.escape(search_blob, quote=True)}">'
+        f'<summary>'
+        f'<span class="component-headline">{html.escape(row.radical)}</span>'
+        f'{pinyin_html}'
+        f'<span class="english">{html.escape(row.meaning)}</span>'
+        f'</summary>'
+        f'<div class="details-body">'
+        f'{variants_html}'
+        f'{decomp_html}'
+        f'{member_html}'
+        f'{stats_html}'
+        f'{note_html}'
+        f'<div class="meta-row">{link_html}<div class="tag-chips">{tag_chips}</div></div>'
+        f'</div></details>'
+    )
+
+
 STYLE = """
 :root {
   --bg: #fafafa;
@@ -626,6 +767,29 @@ details.component-entry > summary {
 }
 .component-members-other { color: var(--fg-faint); }
 .bucket-hint { font-style: italic; color: var(--fg-faint); }
+
+.ix-radical-variants {
+  margin: 4px 0;
+  font-size: 13px;
+}
+.ix-variants-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--fg-faint);
+  margin-right: 6px;
+}
+.ix-variant-glyph {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 22px;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+.ix-variant-archaic { opacity: 0.55; font-size: 18px; }
+.ix-tier-pill {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
 
 .ix-bucket-decomp {
   margin: 4px 0 2px 16px;
@@ -988,6 +1152,22 @@ def main() -> int:
                     if t not in TIER_TAGS:
                         all_tags.add(t)
 
+    # Kangxi-radicals deck — same separate-load pattern.
+    radical_rows: list = []
+    if RADICALS_DECK_PATH.exists():
+        try:
+            _, radical_rows = parse_radicals_tsv(RADICALS_DECK_PATH)
+        except ValueError as e:
+            stderr(f"skipping {RADICALS_DECK_PATH.name}: {e}")
+            radical_rows = []
+        else:
+            total += len(radical_rows)
+            deck_counts[RADICALS_SLUG] = len(radical_rows)
+            for r in radical_rows:
+                for t in r.tags:
+                    if t not in TIER_TAGS:
+                        all_tags.add(t)
+
     # ---- Build header controls ----
 
     deck_boxes = "".join(
@@ -1002,6 +1182,13 @@ def main() -> int:
             f'value="{COMPONENTS_SLUG}" checked> '
             f'{html.escape(COMPONENTS_TITLE)} '
             f'<span class="count">{deck_counts[COMPONENTS_SLUG]}</span></label>'
+        )
+    if RADICALS_SLUG in deck_counts:
+        deck_boxes += (
+            f'<label><input type="checkbox" class="deck-filter" '
+            f'value="{RADICALS_SLUG}" checked> '
+            f'{html.escape(RADICALS_TITLE)} '
+            f'<span class="count">{deck_counts[RADICALS_SLUG]}</span></label>'
         )
 
     tier_boxes = "".join(
@@ -1023,6 +1210,8 @@ def main() -> int:
     ]
     if COMPONENTS_SLUG in deck_counts:
         parts.append(f"Components {deck_counts[COMPONENTS_SLUG]}")
+    if RADICALS_SLUG in deck_counts:
+        parts.append(f"Radicals {deck_counts[RADICALS_SLUG]}")
     totals_text = " · ".join(parts)
 
     # ---- Build body sections ----
@@ -1085,6 +1274,33 @@ def main() -> int:
             f"<h2>{html.escape(COMPONENTS_TITLE)} "
             f"<span class=\"count\">{len(component_rows)}</span></h2>"
             f"{comp_entries}</section>"
+        )
+
+    # Kangxi-radicals section — grouped by tier so the user can scan core first.
+    if radical_rows:
+        from collections import defaultdict as _dd
+        by_tier: dict[str, list] = _dd(list)
+        for r in radical_rows:
+            tier = next((t for t in r.tags if t in RADICAL_TIER_RANK), "radical-common")
+            by_tier[tier].append(r)
+        tier_html: list[str] = []
+        for tier in sorted(by_tier, key=lambda t: RADICAL_TIER_RANK.get(t, 99)):
+            tier_label = tier.replace("radical-", "").capitalize()
+            entries_html = "".join(
+                render_radical_entry(r)
+                for r in sorted(by_tier[tier], key=lambda r: r.line_no)
+            )
+            tier_html.append(
+                f'<section class="tag-group" data-tag="{html.escape(tier, quote=True)}">'
+                f"<h3>{html.escape(tier_label)} "
+                f"<span class=\"count\">{len(by_tier[tier])}</span></h3>"
+                f"{entries_html}</section>"
+            )
+        body_sections.append(
+            f'<section class="deck" data-deck="{html.escape(RADICALS_SLUG, quote=True)}">'
+            f"<h2>{html.escape(RADICALS_TITLE)} "
+            f"<span class=\"count\">{len(radical_rows)}</span></h2>"
+            f"{''.join(tier_html)}</section>"
         )
 
     # ---- Assemble page ----

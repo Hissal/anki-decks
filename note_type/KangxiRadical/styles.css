@@ -1,0 +1,351 @@
+/* Kangxi-radicals note type styling. Mirrors phonetic-components conventions
+ * (tone colors, stat pills, link footer) with radical-specific additions. */
+
+.card {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  text-align: center;
+  color: #1a1a1a;
+  background-color: #fafafa;
+  padding: 24px 14px 28px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.night_mode .card,
+.nightMode .card {
+  color: #e8e8e8;
+  background-color: #1c1c1e;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.day_mode) .card {
+    color: #e8e8e8;
+    background-color: #1c1c1e;
+  }
+}
+
+/* ---------- The radical glyph ---------- */
+
+.radical-block {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体",
+    "Noto Serif CJK SC", "Source Han Serif SC",
+    "Songti SC", "SimSun", "宋体", serif;
+  font-size: 120px;
+  line-height: 1.1;
+  margin: 18px 0 10px;
+  letter-spacing: 0.02em;
+}
+.radical-inline {
+  display: inline-block;
+  font-size: 38px;
+  margin: 0 0 0 8px;
+  line-height: 1;
+  vertical-align: middle;
+}
+@media (max-width: 480px) {
+  .radical-block { font-size: 88px; }
+}
+
+/* ---------- Variants ---------- */
+
+.variants-block {
+  margin: 8px 0 12px;
+  font-size: 13px;
+}
+.variants-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-right: 6px;
+}
+.variant-glyph {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 32px;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+.variant-glyph-archaic { opacity: 0.55; font-size: 24px; }
+.variant-archaic { display: block; margin-top: 4px; }
+.variant-archaic-label {
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 4px;
+}
+
+.variant-prompt {
+  margin: 8px 0;
+  font-size: 14px;
+}
+.variant-prompt-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  color: #6b7280;
+}
+.variant-reveals-arrow {
+  font-size: 13px;
+  color: #9ca3af;
+  margin: 10px 0 6px;
+}
+
+.night_mode .variants-label, .nightMode .variants-label,
+.night_mode .variant-prompt-label, .nightMode .variant-prompt-label,
+.night_mode .variant-reveals-arrow, .nightMode .variant-reveals-arrow,
+.night_mode .variant-archaic-label, .nightMode .variant-archaic-label {
+  color: #9ca3af;
+}
+
+/* ---------- Member chars (curated semantic-head set) ---------- */
+
+.member-chars-prompt {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 56px;
+  line-height: 1.3;
+  margin: 28px 0 16px;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 480px) {
+  .member-chars-prompt { font-size: 42px; }
+}
+
+.member-chars {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 34px;
+  line-height: 1.4;
+  margin: 8px 0 4px;
+  letter-spacing: 0.04em;
+}
+
+.member-label,
+.radical-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-top: 8px;
+}
+.night_mode .member-label, .nightMode .member-label,
+.night_mode .radical-label, .nightMode .radical-label { color: #9ca3af; }
+
+.radical-highlight { margin: 16px 0; }
+
+/* ---------- Pinyin + meaning ---------- */
+
+.pinyin {
+  font-family: "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 8px 0 4px;
+}
+.pinyin.t1, .t1 { color: #e11d48; }
+.pinyin.t2, .t2 { color: #ea580c; }
+.pinyin.t3, .t3 { color: #65a30d; }
+.pinyin.t4, .t4 { color: #2563eb; }
+.pinyin.t5, .t5 { color: #6b7280; }
+.night_mode .pinyin.t1, .nightMode .pinyin.t1 { color: #fb7185; }
+.night_mode .pinyin.t2, .nightMode .pinyin.t2 { color: #fb923c; }
+.night_mode .pinyin.t3, .nightMode .pinyin.t3 { color: #a3e635; }
+.night_mode .pinyin.t4, .nightMode .pinyin.t4 { color: #60a5fa; }
+.night_mode .pinyin.t5, .nightMode .pinyin.t5 { color: #9ca3af; }
+
+.meaning {
+  font-size: 22px;
+  font-style: italic;
+  color: #4b5563;
+  margin: 6px 0 14px;
+}
+.night_mode .meaning, .nightMode .meaning { color: #b8b8b8; }
+
+/* ---------- Hint / stat pills ---------- */
+
+.card-hint {
+  font-size: 13px;
+  color: #9ca3af;
+  font-style: italic;
+  margin-top: 36px;
+}
+.night_mode .card-hint, .nightMode .card-hint { color: #6b7280; }
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0;
+}
+.stat-pill {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  color: #4b5563;
+  background: #f3f4f6;
+  font-variant-numeric: tabular-nums;
+  cursor: help;
+}
+.night_mode .stat-pill, .nightMode .stat-pill {
+  color: #c4c4c4;
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+}
+.stat-pill[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  max-width: 320px;
+  padding: 8px 12px;
+  background: #1f2937;
+  color: #f3f4f6;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.4;
+  border-radius: 6px;
+  white-space: normal;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.stat-pill[data-tip]:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1f2937;
+  z-index: 10;
+}
+.night_mode .stat-pill[data-tip]:hover::after,
+.nightMode .stat-pill[data-tip]:hover::after { background: #4b5563; }
+.night_mode .stat-pill[data-tip]:hover::before,
+.nightMode .stat-pill[data-tip]:hover::before { border-top-color: #4b5563; }
+
+/* ---------- Decomposition lines (Card 1 back) ---------- */
+
+.decomp-block { margin: 14px auto; max-width: 560px; }
+.decomp-line {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 4px 0;
+}
+.decomp-label {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-right: 6px;
+}
+.decomp-piece {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 22px;
+  margin: 0 2px;
+  color: inherit;
+}
+.decomp-sep {
+  font-size: 16px;
+  color: #9ca3af;
+  margin: 0 2px;
+}
+.night_mode .decomp-line, .nightMode .decomp-line { color: #c4c4c4; }
+.night_mode .decomp-label, .nightMode .decomp-label,
+.night_mode .decomp-sep, .nightMode .decomp-sep { color: #9ca3af; }
+
+/* ---------- Member decomposition lines (Card 4 back) ---------- */
+
+.member-decomp-block {
+  margin: 4px auto 10px;
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+}
+.member-decomp-line {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
+  font-size: 17px;
+  color: #4b5563;
+  white-space: nowrap;
+}
+.member-decomp-char {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.member-decomp-eq {
+  color: #9ca3af;
+  margin: 0 4px;
+  font-size: 14px;
+}
+.decomp-semantic {
+  color: #16a34a;
+  font-weight: 600;
+  background: rgba(22, 163, 74, 0.10);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+.night_mode .member-decomp-char, .nightMode .member-decomp-char { color: #e8e8e8; }
+.night_mode .member-decomp-line, .nightMode .member-decomp-line { color: #b8b8b8; }
+.night_mode .member-decomp-eq, .nightMode .member-decomp-eq { color: #6b7280; }
+.night_mode .decomp-semantic, .nightMode .decomp-semantic {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.14);
+}
+
+/* ---------- Note / link footer ---------- */
+
+.note {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 14px auto;
+  max-width: 560px;
+  text-align: left;
+  line-height: 1.6;
+}
+.night_mode .note, .nightMode .note { color: #b8b8b8; }
+
+.personal-note {
+  font-size: 14px;
+  color: #1f2937;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  margin: 14px auto;
+  max-width: 560px;
+  padding: 10px 14px;
+  text-align: left;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.6;
+}
+.night_mode .personal-note, .nightMode .personal-note {
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.12);
+  border-left-color: #d97706;
+}
+
+.link-footer {
+  margin: 18px 0 4px;
+  font-size: 13px;
+}
+.link-footer a {
+  color: #6366f1;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.link-footer a:hover { opacity: 0.7; }
+.night_mode .link-footer a, .nightMode .link-footer a { color: #a5b4fc; }
+
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 18px auto;
+  max-width: 560px;
+}
+.night_mode hr, .nightMode hr { border-top-color: #3a3a3c; }

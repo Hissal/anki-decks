@@ -1,0 +1,110 @@
+<!-- Card 1 back: reveal meaning + variants + curated examples + decomp + stats. -->
+
+<div class="card-side card-back">
+  <div class="radical-block">{{Radical}}</div>
+
+  <div class="pinyin" data-pinyin="{{Pinyin}}">{{Pinyin}}</div>
+
+  {{#Meaning}}
+  <div class="meaning">{{Meaning}}</div>
+  {{/Meaning}}
+
+  {{#Variant1}}
+  <div class="variants-block">
+    <span class="variants-label">also written:</span>
+    <span class="variant-glyph">{{Variant1}}</span>
+    {{#Variant2}}<span class="variant-glyph">{{Variant2}}</span>{{/Variant2}}
+    {{#ReferenceVariants}}<span class="variant-archaic" data-archaic="{{ReferenceVariants}}"></span>{{/ReferenceVariants}}
+  </div>
+  {{/Variant1}}
+
+  {{#Decomposition}}
+  <div class="decomp-block" data-decomp="{{Decomposition}}"></div>
+  {{/Decomposition}}
+
+  <hr>
+
+  {{#MemberChars}}
+  <div class="member-label">semantic head in:</div>
+  <div class="member-chars">{{MemberChars}}</div>
+  {{/MemberChars}}
+
+  <div class="stats-row"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}">
+    <span class="stat-pill stat-pair" data-tip="A / C — A: curated example chars where this radical is the semantic head · C: total chars containing the radical in any role."></span>
+    {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft frequency rank for the radical as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
+  </div>
+
+  {{#Note}}
+  <div class="note">{{Note}}</div>
+  {{/Note}}
+
+  {{#PersonalNote}}
+  <div class="personal-note">{{PersonalNote}}</div>
+  {{/PersonalNote}}
+
+  {{#Link}}
+  <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
+  {{/Link}}
+</div>
+
+<script>
+(function () {
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+
+  function cjkLen(s) { return Array.from(s || "").length; }
+  document.querySelectorAll(".stats-row").forEach(function (row) {
+    var pill = row.querySelector(".stat-pair");
+    if (!pill) return;
+    var a = cjkLen(row.dataset.members);
+    var c = parseInt(row.dataset.productivity, 10);
+    if (isNaN(c)) {
+      pill.textContent = a + " curated";
+    } else {
+      pill.textContent = a + " / " + c;
+    }
+  });
+
+  // Render archaic-variants list: `罓,⺳` → comma-separated faded glyphs.
+  document.querySelectorAll(".variant-archaic").forEach(function (el) {
+    var raw = el.dataset.archaic || "";
+    if (!raw.trim()) return;
+    var chunks = raw.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+    if (!chunks.length) return;
+    el.innerHTML = '<span class="variant-archaic-label">archaic:</span> ' +
+      chunks.map(function (c) {
+        return '<span class="variant-glyph variant-glyph-archaic">' + c + '</span>';
+      }).join("");
+  });
+
+  // Render decomposition: `once:一+丄;radical:工` → labeled lines.
+  document.querySelectorAll(".decomp-block").forEach(function (el) {
+    var spec = el.dataset.decomp || "";
+    var parts = spec.split(";");
+    var html = "";
+    parts.forEach(function (p) {
+      var idx = p.indexOf(":");
+      if (idx < 0) return;
+      var label = p.substring(0, idx);
+      var chars = p.substring(idx + 1).split("+");
+      var labelText = label === "once" ? "Once" : label === "radical" ? "Radical" : label;
+      html += '<div class="decomp-line"><span class="decomp-label">' + labelText + ':</span> ';
+      html += chars.map(function (c) {
+        return '<span class="decomp-piece">' + c + '</span>';
+      }).join('<span class="decomp-sep">+</span>');
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  });
+})();
+</script>

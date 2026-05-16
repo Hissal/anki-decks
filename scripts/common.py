@@ -156,7 +156,13 @@ def load_allowed_tags() -> set[str]:
     return set(re.findall(r"`([a-z][a-z0-9-]*)`", text))
 
 
-HAN_RE = re.compile(r"[㐀-䶿一-鿿]")
+# Covers CJK Unified Ideographs (U+4E00–U+9FFF), Extension A (U+3400–U+4DBF),
+# Extension B (U+20000–U+2A6DF), CJK Radicals Supplement (U+2E80–U+2EFF), and
+# Kangxi Radicals (U+2F00–U+2FDF). The supplement / Kangxi / Extension B blocks
+# include positional radical variants like ⺗, ⺌, ⺻, 𠆢, 𠘨 that show up
+# legitimately inside Chinese characters and our decks treat as first-class
+# component data.
+HAN_RE = re.compile(r"[⺀-⻿⼀-⿟㐀-䶿一-鿿\U00020000-\U0002A6DF]")
 ASCII_LETTER_RE = re.compile(r"[A-Za-z]")
 DIGIT_TONE_RE = re.compile(r"[a-zü][1-5]")
 

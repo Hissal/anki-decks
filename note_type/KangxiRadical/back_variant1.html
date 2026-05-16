@@ -1,0 +1,69 @@
+<!-- Card 2 back: variant form revealed as variant of the canonical radical. -->
+
+{{#Variant1}}
+<div class="card-side card-back">
+  <div class="variant-prompt">
+    <span class="variant-prompt-label">variant form:</span>
+    <span class="radical-block radical-inline">{{Variant1}}</span>
+  </div>
+
+  <div class="variant-reveals-arrow">↓ canonical form:</div>
+
+  <div class="radical-block">{{Radical}}</div>
+
+  <div class="pinyin" data-pinyin="{{Pinyin}}">{{Pinyin}}</div>
+
+  {{#Meaning}}
+  <div class="meaning">{{Meaning}}</div>
+  {{/Meaning}}
+
+  <hr>
+
+  {{#MemberChars}}
+  <div class="member-label">semantic head in:</div>
+  <div class="member-chars">{{MemberChars}}</div>
+  {{/MemberChars}}
+
+  <div class="stats-row"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}">
+    <span class="stat-pill stat-pair" data-tip="A / C — A: curated example chars where this radical is the semantic head · C: total chars containing the radical in any role."></span>
+    {{#Frequency}}<span class="stat-pill" data-tip="HanziCraft frequency rank for the radical as a standalone character.">freq #{{Frequency}}</span>{{/Frequency}}
+  </div>
+
+  {{#Note}}
+  <div class="note">{{Note}}</div>
+  {{/Note}}
+
+  {{#PersonalNote}}
+  <div class="personal-note">{{PersonalNote}}</div>
+  {{/PersonalNote}}
+
+  {{#Link}}
+  <div class="link-footer"><a href="{{Link}}" target="_blank" rel="noopener">HanziCraft →</a></div>
+  {{/Link}}
+</div>
+
+<script>
+(function () {
+  function toneClass(s) {
+    if (/[āēīōūǖ]/.test(s)) return "t1";
+    if (/[áéíóúǘ]/.test(s)) return "t2";
+    if (/[ǎěǐǒǔǚ]/.test(s)) return "t3";
+    if (/[àèìòùǜ]/.test(s)) return "t4";
+    return "t5";
+  }
+  document.querySelectorAll(".pinyin").forEach(function (el) {
+    el.classList.add(toneClass(el.dataset.pinyin || el.textContent));
+  });
+  function cjkLen(s) { return Array.from(s || "").length; }
+  document.querySelectorAll(".stats-row").forEach(function (row) {
+    var pill = row.querySelector(".stat-pair");
+    if (!pill) return;
+    var a = cjkLen(row.dataset.members);
+    var c = parseInt(row.dataset.productivity, 10);
+    pill.textContent = isNaN(c) ? (a + " curated") : (a + " / " + c);
+  });
+})();
+</script>
+{{/Variant1}}
