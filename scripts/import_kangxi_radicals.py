@@ -38,7 +38,16 @@ from radicals_common import (
 DEFAULT_SOURCE = Path(
     r"C:\Users\hissa\OneDrive\Työpöytä\Radicals.txt"
 )
+DEFAULT_HC_CACHE = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
+DEFAULT_CWC_CACHE = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
+DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
+DEFAULT_CHAR_DECOMP = REPO_ROOT / "scripts" / "cache" / "char_decomp.json"
 HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
+
+# How many curated MemberChars to keep per radical (truncates source set when
+# no MEMBER_OVERRIDES entry exists). Card-back stays compact; "+ X more"
+# indicator covers the gap to total Productivity.
+MEMBER_CAP = 8
 
 # ---------------------------------------------------------------------------
 # Pinyin tonemark → numeric conversion (reverse of the table used in
@@ -159,6 +168,101 @@ MEANING_OVERRIDES: dict[str, str] = {
     # Filled lazily after spot-check
 }
 
+# Hand-picked MemberChars for high-leverage radicals where the source set is
+# weak (heavy on traditional / obscure chars). Keep to common modern simplified
+# characters where the radical visibly appears in its canonical position.
+# Maximum 8 chars per entry — anything beyond becomes part of the "+ X more"
+# count derived from Productivity.
+MEMBER_OVERRIDES: dict[str, str] = {
+    # --- Core semantic radicals (high productivity, everyday vocab) ---
+    "口": "吃喝叫喊哭笑唱嘴",
+    "水": "河海湖洋洗淋汁汗",
+    "氵": "河海湖洋洗淋汁汗",
+    "火": "灯烧烤炒煤热点炎",
+    "灬": "热点煮蒸照然黑熟",
+    "心": "情感想念忘怕思忙",
+    "忄": "情怕忙快慢怪忧懂",
+    "⺗": "恭慕慰忝忞",
+    "木": "林森本朱树枝根桃",
+    "钅": "银铜铁钱钟针钉钢",
+    "金": "银铜铁钱钟针钉钢",
+    "土": "地坐场城堂塔块境",
+    "女": "好妈姐妹娘奶妻姑",
+    "人": "你他们仁住信件位",
+    "亻": "你他们仁住信件位",
+    "子": "孩学孙孔孤孵存季",
+    "大": "太天奇头央夸奥奋",
+    "山": "岛峰岭岗崖崎岔屿",
+    "日": "明早春时晚晴是星",
+    "月": "有期朋服望脸腿胸",  # most chars here use 月 visually (often 肉 historically)
+    "讠": "说话语词读请谢谈",
+    "言": "说誉誓警譬警誊讨",
+    "贝": "财货赔购账贵贫资",
+    "貝": "財貨賠購賬貴貧資",
+    "车": "轮转辆较输辅辈轨",
+    "馬": "驾駕驴骆骑驶骄驰",
+    "马": "驾驴骆骑驶骄驰驯",
+    "鸟": "鸡鸭鹅鸽鹰鹊鹏鸣",
+    "鳥": "雞鴨鵝鴿鷹鵲鵬鳴",
+    "鱼": "鲨鲸鲤鲈鲍鳗鲜鳄",
+    "魚": "鯊鯨鯉鱸鮑鰻鮮鱷",
+    "门": "开关闭闹闯闻问间",
+    "門": "開閉闘問間閑閣關",
+    "页": "顶顺须顾领颗顿额",
+    "頁": "頂順須顧領顆頓額",
+    "饣": "饭饺饮饿馆饱馒饼",
+    "飠": "飯飲餓館飽餐饅",
+    "食": "餐養飲飯飼飪",
+    "玉": "王玩理球琴现",
+    "王": "玩理球琴现珠琢瑰",
+    "衣": "初被装裙裤补袜袖",
+    "衤": "初被装裙裤补袜袖",
+    "雨": "雪雷霜雾露霸震霞",
+    "革": "鞋鞭靴鞍鞠鞘",
+    "弓": "引张弦弧弹弛弱弩",
+    "又": "友及取受双叙叔变",
+    "力": "加办助劝努动励勇",
+    "刀": "分切初利刻别到割",
+    "刂": "分切初利刻别到割",
+    "工": "左巧巨差功攻贡",
+    "米": "粉粒粥糖糕糊精料",
+    "竹": "笔笑等第答策篇箱",
+    "⺮": "笔笑等第答策篇箱",
+    "艹": "草花苹菜茶药茄苦",
+    "辶": "这道送过运近远进",
+    "邑": "那邻邦郎部都郊郡",
+    "阜": "阳阴院阶阻陈陪陷",
+    "广": "床店府度座庭厅麻",
+    "宀": "家室宁宝完空学定",
+    "疒": "病疼痛瘦痒疯疲疾",
+    "目": "看眼睡睛瞎瞄瞌瞪",
+    "耳": "听联职聪闻聊耻聋",
+    "足": "跑跳跟跨踢路跌踪",
+    "⻊": "跑跳跟跨踢路跌踪",
+    "手": "打把拉指接抓挂推",
+    "扌": "打把拉指接抓挂推",
+    "攵": "收改放教数政故敢",
+    "礻": "礼神福祝祖祭祸祈",
+    "示": "禁奈祭祟",
+    "牛": "物特犁牢牲牧牡",
+    "牜": "物特犁牢牲牧牡",
+    "犬": "猛突默器",
+    "犭": "狗猫狼猪狐狮猜独",
+    "走": "起越赶超趋趴趟趁",
+    "白": "百的皇皆皎皓",
+    "石": "矿研破础磁碎砖碰",
+    "立": "站章端竞竭竖意亲",
+    "色": "艳",
+    "禾": "和私秋种秒科秘程",
+    "穴": "空突窗窝穷究窟窃",
+    "舟": "船航舱艘舰舵艇舶",
+    "见": "观规视览觉觅",
+    "見": "觀規視覽覺",
+    "酉": "酒醉酸醒醋酱配酬",
+    "鬼": "魂魄魅魇魔魁魏",
+    "黑": "默墨黛黯",
+}
+
 
 # ---------------------------------------------------------------------------
 # Curated notes overrides (R3 will populate this — for now keep empty)
@@ -244,10 +348,97 @@ def normalize_member_chars(value: str) -> str:
     return "".join(out)
 
 
+UNGLYPHABLE = "No glyph available"
+
+
+def _clean_decomp_parts(parts: list[str]) -> list[str]:
+    return ["?" if p == UNGLYPHABLE else p for p in parts]
+
+
+def _emit_decomp_segment(kind: str, parts: list[str], component: str) -> str | None:
+    if not parts:
+        return None
+    # Any unknown-glyph piece makes the decomp misleading — skip entirely.
+    if any(p == "?" for p in parts):
+        return None
+    if len(parts) == 1 and parts[0] == component:
+        return None
+    if len(parts) == 1:
+        return f"{kind}:{parts[0]}×2"
+    return f"{kind}:" + "+".join(parts)
+
+
+def build_decomposition(component: str, hc_decomp: dict | None) -> str:
+    if not hc_decomp:
+        return ""
+    parts: list[str] = []
+    once_seg = _emit_decomp_segment(
+        "once", _clean_decomp_parts(hc_decomp.get("once") or []), component
+    )
+    if once_seg:
+        parts.append(once_seg)
+    rad_seg = _emit_decomp_segment(
+        "radical", _clean_decomp_parts(hc_decomp.get("radical") or []), component
+    )
+    if rad_seg:
+        parts.append(rad_seg)
+    return ";".join(parts)
+
+
+def build_member_decomp(
+    chars: str,
+    char_decomp: dict[str, dict] | None,
+    enrich: dict[str, dict] | None,
+) -> str:
+    """`巩=工+凡|汞=工+水` style per-char once-level decomp packing."""
+    if not (char_decomp or enrich):
+        return ""
+    pieces: list[str] = []
+    seen: set[str] = set()
+    for ch in chars:
+        if ch in seen:
+            continue
+        seen.add(ch)
+        d = (char_decomp or {}).get(ch) if char_decomp else None
+        once: list[str] | None = None
+        if d and d.get("once"):
+            once = d["once"]
+        elif enrich and enrich.get(ch) and enrich[ch].get("decomposition", {}).get("once"):
+            once = enrich[ch]["decomposition"]["once"]
+        if not once:
+            continue
+        cleaned = _clean_decomp_parts(once)
+        if len(cleaned) == 1 and cleaned[0] == ch:
+            continue
+        pieces.append(f"{ch}={'+'.join(cleaned)}")
+    return "|".join(pieces)
+
+
+def pick_member_chars(canonical: str, source_chars: str) -> str:
+    """Apply MEMBER_OVERRIDES if defined for this radical, else truncate the
+    source's curated set to MEMBER_CAP characters."""
+    override = MEMBER_OVERRIDES.get(canonical)
+    if override:
+        return override
+    # Dedupe while preserving order, then truncate.
+    seen: set[str] = set()
+    out: list[str] = []
+    for ch in source_chars:
+        if ch in seen:
+            continue
+        seen.add(ch)
+        out.append(ch)
+        if len(out) >= MEMBER_CAP:
+            break
+    return "".join(out)
+
+
 def transform_row(
     fields: list[str],
     line_no: int,
     log: list[str],
+    enrich: dict[str, dict] | None = None,
+    char_decomp: dict[str, dict] | None = None,
 ) -> list[str] | None:
     """Map a 6-col source row → 15-col output row. Returns None to skip."""
     while len(fields) < 6:
@@ -316,7 +507,17 @@ def transform_row(
     if canonical in MEANING_OVERRIDES:
         meaning = MEANING_OVERRIDES[canonical]
 
-    member_chars = normalize_member_chars(examples)
+    # HanziCraft enrichment for the radical itself.
+    hc = (enrich or {}).get(canonical) or {}
+    if hc.get("definition") and (not meaning or len(meaning) < 4):
+        meaning = hc["definition"].replace("/", " / ")
+    productivity = str(hc.get("productivity_count") or "")
+    frequency = hc.get("frequency_rank") or ""
+    decomposition = build_decomposition(canonical, hc.get("decomposition"))
+
+    source_chars = normalize_member_chars(examples)
+    member_chars = pick_member_chars(canonical, source_chars)
+    member_decomp = build_member_decomp(member_chars, char_decomp, enrich)
 
     # Note assembly.
     note_extras: list[str] = []
@@ -354,10 +555,10 @@ def transform_row(
         primary_pinyin,
         meaning,
         member_chars,
-        "",            # Productivity — filled by R2 enrichment
-        "",            # Frequency — filled by R2 enrichment
-        "",            # Decomposition — filled by R2
-        "",            # MemberDecomp — filled by R2
+        productivity,
+        frequency,
+        decomposition,
+        member_decomp,
         note,
         link,
         tags,
@@ -435,11 +636,31 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", type=Path, default=DEFAULT_SOURCE)
     ap.add_argument("--out", type=Path, default=RADICALS_DECK_PATH)
+    ap.add_argument("--enrich", type=Path, default=DEFAULT_HC_CACHE)
+    ap.add_argument("--char-decomp", type=Path, default=DEFAULT_CHAR_DECOMP)
     args = ap.parse_args()
 
     if not args.source.exists():
         print(f"source not found: {args.source}", file=sys.stderr)
         return 1
+
+    import json as _json
+
+    enrich: dict[str, dict] | None = None
+    if args.enrich.exists():
+        try:
+            enrich = _json.loads(args.enrich.read_text(encoding="utf-8"))
+            print(f"loaded HanziCraft enrichment: {len(enrich)} entries", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load enrich {args.enrich}: {e}", file=sys.stderr)
+
+    char_decomp: dict[str, dict] | None = None
+    if args.char_decomp.exists():
+        try:
+            char_decomp = _json.loads(args.char_decomp.read_text(encoding="utf-8"))
+            print(f"loaded char decomp: {len(char_decomp)} entries", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-decomp {args.char_decomp}: {e}", file=sys.stderr)
 
     log: list[str] = []
     src_rows = read_source(args.source, log)
@@ -448,7 +669,7 @@ def main() -> int:
     seen: dict[str, int] = {}
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log)
+            row = transform_row(fields, line_no, log, enrich, char_decomp)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue

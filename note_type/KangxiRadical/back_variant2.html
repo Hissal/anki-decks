@@ -22,6 +22,9 @@
   {{#MemberChars}}
   <div class="member-label">semantic head in:</div>
   <div class="member-chars">{{MemberChars}}</div>
+  <div class="member-more"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}"></div>
   {{/MemberChars}}
 
   <div class="stats-row"
@@ -63,6 +66,13 @@
     var a = cjkLen(row.dataset.members);
     var c = parseInt(row.dataset.productivity, 10);
     pill.textContent = isNaN(c) ? (a + " curated") : (a + " / " + c);
+  });
+  document.querySelectorAll(".member-more").forEach(function (el) {
+    var a = cjkLen(el.dataset.members);
+    var c = parseInt(el.dataset.productivity, 10);
+    if (isNaN(c) || c <= a) return;
+    el.innerHTML = '<span class="member-more-text">+ ' + (c - a) +
+      ' more (open HanziCraft link for the rest)</span>';
   });
 })();
 </script>

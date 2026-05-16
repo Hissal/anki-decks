@@ -462,9 +462,13 @@ def render_radical_entry(row) -> str:
     ) if row.pinyin else ""
 
     return (
+        # data-tier is left empty: the JS tier filter is shaped for the
+        # word-deck tiers (production-ready / recognition-ready / -first) and
+        # would filter every radical out by default. Radical tier lives in
+        # data-tags + the in-section header instead.
         f'<details class="entry component-entry radical-entry" '
         f'data-deck="{html.escape(RADICALS_SLUG, quote=True)}" '
-        f'data-tier="{html.escape(tier, quote=True)}" '
+        f'data-tier="" '
         f'data-tags="{html.escape(" ".join(row.tags), quote=True)}" '
         f'data-search="{html.escape(search_blob, quote=True)}">'
         f'<summary>'

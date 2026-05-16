@@ -27,6 +27,9 @@
   {{#MemberChars}}
   <div class="member-label">semantic head in:</div>
   <div class="member-chars">{{MemberChars}}</div>
+  <div class="member-more"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}"></div>
   {{/MemberChars}}
 
   <div class="stats-row"
@@ -73,6 +76,15 @@
     } else {
       pill.textContent = a + " / " + c;
     }
+  });
+
+  // Render "+ X more" indicator for the member-chars section.
+  document.querySelectorAll(".member-more").forEach(function (el) {
+    var a = cjkLen(el.dataset.members);
+    var c = parseInt(el.dataset.productivity, 10);
+    if (isNaN(c) || c <= a) return;
+    el.innerHTML = '<span class="member-more-text">+ ' + (c - a) +
+      ' more (open HanziCraft link for the rest)</span>';
   });
 
   // Render archaic-variants list: `罓,⺳` → comma-separated faded glyphs.

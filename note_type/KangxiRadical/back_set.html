@@ -33,6 +33,10 @@
        data-member-decomp="{{MemberDecomp}}"></div>
   {{/MemberDecomp}}
 
+  <div class="member-more"
+       data-members="{{MemberChars}}"
+       data-productivity="{{Productivity}}"></div>
+
   <div class="stats-row"
        data-members="{{MemberChars}}"
        data-productivity="{{Productivity}}">
@@ -87,6 +91,14 @@
     });
     return out;
   }
+  document.querySelectorAll(".member-more").forEach(function (el) {
+    var a = cjkLen(el.dataset.members);
+    var c = parseInt(el.dataset.productivity, 10);
+    if (isNaN(c) || c <= a) return;
+    el.innerHTML = '<span class="member-more-text">+ ' + (c - a) +
+      ' more (open HanziCraft link for the rest)</span>';
+  });
+
   document.querySelectorAll(".member-decomp-block").forEach(function (root) {
     var radical = root.dataset.radical || "";
     var v1 = root.dataset.variant1 || "";

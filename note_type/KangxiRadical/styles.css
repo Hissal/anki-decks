@@ -120,6 +120,16 @@
   letter-spacing: 0.04em;
 }
 
+.member-more {
+  margin: 4px 0 8px;
+}
+.member-more-text {
+  font-size: 12px;
+  font-style: italic;
+  color: #9ca3af;
+}
+.night_mode .member-more-text, .nightMode .member-more-text { color: #6b7280; }
+
 .member-label,
 .radical-label {
   font-size: 12px;
