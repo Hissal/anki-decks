@@ -15,6 +15,12 @@
        data-pinyin="{{text:Pinyin}}"></div>
 
   <button class="toggle-btn hidden" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
+
+  {{#Hint}}
+  <div class="hint-mount"
+       data-hint="{{text:Hint}}"
+       data-card-type="audio"></div>
+  {{/Hint}}
 </div>
 
 <script src="_ruby.js"></script>
@@ -32,5 +38,7 @@
       revealBtn.classList.add("hidden");
       window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
     });
+
+    window.ankiDecks.mountHint(".hint-mount");
   })();
 </script>
