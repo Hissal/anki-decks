@@ -24,9 +24,22 @@
   <div class="examples"></div>
   {{/Examples}}
 
+  {{#Context}}
+  <div class="context-back">
+    <span class="context-label">Context:</span>{{Context}}
+  </div>
+  {{/Context}}
+
   {{#Note}}
   <div class="note">{{Note}}</div>
   {{/Note}}
+
+  {{#Hint}}
+  <div class="hint-mount"
+       data-hint="{{text:Hint}}"
+       data-card-type="hanzi"
+       data-revealed="true"></div>
+  {{/Hint}}
 
   {{#PersonalNote}}
   <div class="personal-note">{{PersonalNote}}</div>
@@ -51,5 +64,7 @@
       raw.remove();
       window.ankiDecks.mountExamples(".examples");
     }
+
+    window.ankiDecks.mountHint(".hint-mount");
   })();
 </script>
