@@ -156,6 +156,47 @@
     return kept.join("<br>");
   }
 
+  function mountHint(selector) {
+    var nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.dataset.ankiHintMounted === "1") continue;
+      el.dataset.ankiHintMounted = "1";
+
+      var cardType = (el.dataset.cardType || "").toLowerCase();
+      var rawHint = el.dataset.hint || "";
+      var parsed = parseHint(rawHint, cardType);
+      if (!parsed) {
+        // Empty after filtering → no UI. Conditional templates already collapse
+        // when Hint is empty, but per-card filtering can also yield empty.
+        el.style.display = "none";
+        continue;
+      }
+
+      var revealed = el.dataset.revealed === "true";
+      if (revealed) {
+        el.classList.add("hint-revealed");
+        el.innerHTML =
+          '<span class="hint-label">Hint:</span> ' +
+          '<span class="hint-text">' + parsed + '</span>';
+      } else {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "hint-btn";
+        btn.textContent = "Show hint";
+        (function (e, p) {
+          btn.addEventListener("click", function () {
+            e.classList.add("hint-revealed");
+            e.innerHTML =
+              '<span class="hint-label">Hint:</span> ' +
+              '<span class="hint-text">' + p + '</span>';
+          });
+        })(el, parsed);
+        el.appendChild(btn);
+      }
+    }
+  }
+
   function _makeAudio(filename) {
     filename = (filename || "").trim();
     if (!filename) return null;
@@ -263,5 +304,6 @@
     attachAudioButton: attachAudioButton,
     mountAutoplayAudio: mountAutoplayAudio,
     parseHint: parseHint,
+    mountHint: mountHint,
   };
 })();
