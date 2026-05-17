@@ -553,18 +553,23 @@ def _decomp_contains(
     char_decomp: dict[str, dict] | None,
     aliases: set[str],
 ) -> bool:
-    """True when ch's once-level decomp contains the radical or one of its
-    positional variants. Loose cwc membership isn't enough — HC's cwc lists
-    many chars where the radical only appears as a deep sub-stroke (e.g.
-    cwc[矛] includes 我 / 之 / 成 which don't visually contain 矛)."""
+    """True when ch's decomp (once-level OR radical-level) contains the radical
+    or one of its positional variants. Once-level only catches direct top
+    splits (`湖 once = 氵 + 胡`); radical-level catches nested radicals (`学
+    once = ?+子, radical = ⺍+冖+子` — 冖 is nested but real). HanziCraft's
+    radical-level decomp is the canonical Kangxi-radical assignment for the
+    char, so it matches our deck's purpose."""
     if char_decomp is None:
         return True  # no decomp data → can't filter; accept
     entry = char_decomp.get(ch)
     if not entry:
         return False
-    once = entry.get("once") or []
     needle = {radical} | aliases
-    return any(p in needle for p in once)
+    once = entry.get("once") or []
+    if any(p in needle for p in once):
+        return True
+    radical_decomp = entry.get("radical") or []
+    return any(p in needle for p in radical_decomp)
 
 
 def pick_member_chars(
@@ -575,14 +580,14 @@ def pick_member_chars(
     char_decomp: dict[str, dict] | None = None,
     variant_aliases: set[str] | None = None,
 ) -> str:
-    """Apply MEMBER_OVERRIDES if defined; else filter the source set against
-    HanziCraft's cwc list; then augment from cwc with a strict decomp filter
-    (radical must appear in once-level decomp) until MEMBER_TARGET is met.
-    Falls back to loose cwc if strict pass yields too few."""
-    override = MEMBER_OVERRIDES.get(canonical)
-    if override:
-        return override
-
+    """Three-step pick:
+    1. If MEMBER_OVERRIDES has a hand-curated entry, USE IT but treat as a
+       seed — not a stop. Augment via steps 2/3 if it's under MEMBER_TARGET.
+    2. Otherwise, source picks filtered through cwc membership.
+    3. Augment from cwc with strict decomp-level matching until MEMBER_TARGET
+       is met (capped at MEMBER_CAP).
+    No loose fallback — better short-correct than long-noisy (e.g. cwc[矛]
+    includes 我 / 或 / 找 which don't structurally contain 矛)."""
     aliases = set(variant_aliases or [])
 
     valid: list[str] = []
@@ -597,18 +602,30 @@ def pick_member_chars(
     seen: set[str] = set()
     out: list[str] = []
 
-    # Step 1: source picks filtered through cwc membership only.
-    for ch in source_chars:
-        if ch in seen:
-            continue
-        if valid_set and ch not in valid_set:
-            continue
-        seen.add(ch)
-        out.append(ch)
-        if len(out) >= MEMBER_CAP:
-            return "".join(out)
+    # Step 1: hand-curated override OR cwc-filtered source picks.
+    override = MEMBER_OVERRIDES.get(canonical)
+    if override:
+        # Hand-picked chars are trusted — bypass cwc validity (some legitimate
+        # variant-positional chars don't appear in HC's cwc for the canonical).
+        for ch in override:
+            if ch in seen:
+                continue
+            seen.add(ch)
+            out.append(ch)
+            if len(out) >= MEMBER_CAP:
+                return "".join(out)
+    else:
+        for ch in source_chars:
+            if ch in seen:
+                continue
+            if valid_set and ch not in valid_set:
+                continue
+            seen.add(ch)
+            out.append(ch)
+            if len(out) >= MEMBER_CAP:
+                return "".join(out)
 
-    # Step 2: augment with STRICT decomp-level matches first.
+    # Step 2: augment with STRICT decomp-level matches from cwc until target.
     if len(out) < MEMBER_TARGET and valid:
         for ch in valid:
             if ch in seen or ch == canonical:
@@ -624,9 +641,6 @@ def pick_member_chars(
             if len(out) >= MEMBER_CAP:
                 break
 
-    # No step 3 fallback — better to show 4 strictly-correct chars than 8
-    # with HC-loose noise like 矛 → 我 / 或 / 找 (which structurally don't
-    # contain 矛 despite appearing in cwc[矛]).
     return "".join(out)
 
 
