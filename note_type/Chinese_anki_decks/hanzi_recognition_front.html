@@ -15,6 +15,12 @@
 
   <div class="audio-filename" id="audio-filename" hidden>{{soundfile:Audio}}</div>
   <button class="hint-btn" id="play-audio-btn" type="button">▶ Play Audio</button>
+
+  {{#Hint}}
+  <div class="hint-mount"
+       data-hint="{{text:Hint}}"
+       data-card-type="hanzi"></div>
+  {{/Hint}}
 </div>
 
 <script src="_ruby.js"></script>
@@ -26,5 +32,7 @@
     var nameEl = document.getElementById("audio-filename");
     var filename = nameEl ? nameEl.textContent.trim() : "";
     window.ankiDecks.attachAudioButton("play-audio-btn", filename);
+
+    window.ankiDecks.mountHint(".hint-mount");
   })();
 </script>

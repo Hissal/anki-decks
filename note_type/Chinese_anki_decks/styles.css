@@ -307,3 +307,68 @@ a.hint:hover { background: #f3f4f6; }
 hr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }
 .night_mode hr,
 .nightMode hr { border-top-color: #3a3a3c; }
+
+/* ---------- Context + Hint (Task: Context+Hint fields) ---------- */
+
+.context-prompt {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.02em;
+}
+
+.night_mode .context-prompt,
+.nightMode .context-prompt { color: #9ca3af; }
+
+/* On backs, Context renders inline above .note with a small label. */
+.context-back {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 14px auto 6px;
+  max-width: 560px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.context-back .context-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-right: 6px;
+}
+
+.night_mode .context-back,
+.nightMode .context-back { color: #b8b8b8; }
+.night_mode .context-back .context-label,
+.nightMode .context-back .context-label { color: #9ca3af; }
+
+/* Hint mount: button on fronts, labeled line on backs. */
+.hint-mount {
+  display: block;
+  margin: 16px auto 0;
+  text-align: center;
+}
+
+.hint-revealed {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 12px auto;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.hint-revealed .hint-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-right: 6px;
+}
+
+.night_mode .hint-revealed,
+.nightMode .hint-revealed { color: #b8b8b8; }
+.night_mode .hint-revealed .hint-label,
+.nightMode .hint-revealed .hint-label { color: #9ca3af; }

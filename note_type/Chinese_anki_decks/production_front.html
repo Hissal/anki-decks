@@ -1,5 +1,22 @@
-<!-- Card 3 front: Production (English → Hanzi). English only, no hint. -->
+<!-- Card 3 front: Production (English → Hanzi). Context (when set) above
+     the English prompt; Hint (when non-empty after parseHint) as a
+     click-to-reveal button below. -->
 
 <div class="card-side card-front">
+  {{#Context}}
+  <div class="context-prompt">{{Context}}</div>
+  {{/Context}}
+
   <div class="english-prompt">{{English}}</div>
+
+  {{#Hint}}
+  <div class="hint-mount"
+       data-hint="{{text:Hint}}"
+       data-card-type="production"></div>
+  {{/Hint}}
 </div>
+
+<script src="_ruby.js"></script>
+<script>
+  (function () { window.ankiDecks.mountHint(".hint-mount"); })();
+</script>

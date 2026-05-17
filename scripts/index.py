@@ -186,6 +186,13 @@ def render_entry(row, deck_slug: str) -> str:
     breakdown_html = render_breakdown(row.breakdown)
     examples_html = render_examples(row.examples)
 
+    context_html = ""
+    if row.context.strip():
+        context_html = (
+            f'<p class="context"><span class="context-label">Context:</span> '
+            f'{html.escape(row.context)}</p>'
+        )
+
     note_html = ""
     if row.note.strip():
         note_html = f'<p class="note">{html.escape(row.note)}</p>'
@@ -216,6 +223,7 @@ def render_entry(row, deck_slug: str) -> str:
         f'<div class="details-body">'
         f'{breakdown_html}'
         f'{examples_html}'
+        f'{context_html}'
         f'{note_html}'
         f'<div class="meta-row">{link_html}'
         f'<div class="tag-chips">{tag_chips}</div></div>'
@@ -708,6 +716,14 @@ details.entry[open] > summary::before { transform: rotate(90deg); }
   margin-top: 2px;
 }
 .note { margin: 8px 0; font-size: 13px; }
+.context { margin: 8px 0; font-size: 13px; color: #6b7280; }
+.context-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-right: 6px;
+}
 .meta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 10px; }
 .link {
   color: var(--accent);
