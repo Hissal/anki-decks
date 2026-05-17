@@ -129,6 +129,33 @@
     }
   }
 
+  // Hint format spec: each <br>-separated line may begin with "<card-type>:"
+  // (case-insensitive, optional whitespace around the colon) to scope it to
+  // one card. Recognized card types are hanzi / audio / production.
+  // Mirrors HINT_CARD_TYPES + HINT_PREFIX_RE in scripts/common.py.
+  var HINT_CARD_TYPES = { hanzi: 1, audio: 1, production: 1 };
+  var HINT_PREFIX_RE = /^([A-Za-z][A-Za-z_]*)\s*:\s*(.+)$/;
+
+  function parseHint(text, cardType) {
+    if (!text) return "";
+    var lines = String(text).split(/<br\s*\/?>/i);
+    var kept = [];
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i].trim();
+      if (!line) continue;
+      var m = HINT_PREFIX_RE.exec(line);
+      if (m && HINT_CARD_TYPES.hasOwnProperty(m[1].toLowerCase())) {
+        if (m[1].toLowerCase() === cardType) {
+          kept.push(m[2].trim());
+        }
+        // else: line is scoped to a different card; drop it.
+      } else {
+        kept.push(line);
+      }
+    }
+    return kept.join("<br>");
+  }
+
   function _makeAudio(filename) {
     filename = (filename || "").trim();
     if (!filename) return null;
@@ -235,5 +262,6 @@
     mountExamples: mountExamples,
     attachAudioButton: attachAudioButton,
     mountAutoplayAudio: mountAutoplayAudio,
+    parseHint: parseHint,
   };
 })();
