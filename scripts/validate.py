@@ -32,6 +32,8 @@ from common import (
     COLUMN_COUNT,
     EXPECTED_HEADER,
     HAN_RE,
+    HINT_CARD_TYPES,
+    HINT_PREFIX_RE,
     TIER_TAGS,
     deck_paths,
     has_ascii_letter,
@@ -133,6 +135,30 @@ def main() -> int:
                         )
                 else:
                     seen_hanzi_global[r.hanzi] = (path, r.line_no)
+
+            # Context / Hint length warnings (terse fields).
+            if r.context and len(r.context) > 120:
+                warnings.append(
+                    f"{loc}: Context is {len(r.context)} chars; consider keeping it terse (≤120)"
+                )
+            if r.hint and len(r.hint) > 120:
+                warnings.append(
+                    f"{loc}: Hint is {len(r.hint)} chars; consider keeping it terse per line (≤120)"
+                )
+
+            # Hint prefix sanity: warn on prefixes that look like card-type tags
+            # but aren't in {hanzi, audio, production}. Catches typos like
+            # "prod:" or "production_card:".
+            if r.hint:
+                for raw_line in r.hint.split("<br>"):
+                    line = raw_line.strip()
+                    m = HINT_PREFIX_RE.match(line)
+                    if m and m.group(1).lower() not in HINT_CARD_TYPES:
+                        warnings.append(
+                            f"{loc}: Hint line starts with unrecognized prefix "
+                            f"{m.group(1)!r}: (expected one of {sorted(HINT_CARD_TYPES)}); "
+                            f"will render as universal"
+                        )
 
             # Tag checks.
             if r.tags:

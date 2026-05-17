@@ -17,6 +17,8 @@ EXPECTED_HEADER = [
     "Breakdown",
     "Examples",
     "Note",
+    "Context",
+    "Hint",
     "Link",
     "Tags",
 ]
@@ -55,6 +57,8 @@ class Row:
     breakdown: str
     examples: str
     note: str
+    context: str
+    hint: str
     link: str
     tags: list[str] = field(default_factory=list)
 
@@ -127,8 +131,10 @@ def parse_tsv(path: Path) -> tuple[list[str], list[Row]]:
                 breakdown=fields[3],
                 examples=fields[4],
                 note=fields[5],
-                link=fields[6],
-                tags=[t for t in fields[7].split(" ") if t],
+                context=fields[6],
+                hint=fields[7],
+                link=fields[8],
+                tags=[t for t in fields[9].split(" ") if t],
             )
         )
 
@@ -165,6 +171,11 @@ def load_allowed_tags() -> set[str]:
 HAN_RE = re.compile(r"[⺀-⻿⼀-⿟㐀-䶿一-鿿\U00020000-\U0002A6DF]")
 ASCII_LETTER_RE = re.compile(r"[A-Za-z]")
 DIGIT_TONE_RE = re.compile(r"[a-zü][1-5]")
+
+# Hint format: each <br>-separated line may start with "<card-type>:" to scope
+# it to one card. parseHint() in _ruby.js mirrors these constants.
+HINT_CARD_TYPES = {"hanzi", "audio", "production"}
+HINT_PREFIX_RE = re.compile(r"^([A-Za-z][A-Za-z_]*)\s*:\s*(.+)$")
 
 
 def has_han(s: str) -> bool:
