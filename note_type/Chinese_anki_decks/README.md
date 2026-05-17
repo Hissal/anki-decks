@@ -35,6 +35,8 @@ production last.
    Breakdown
    Examples
    Note
+   Context
+   Hint
    Link
    PersonalNote
    Audio
@@ -135,3 +137,33 @@ Play Audio button uses the same volume-aware helper.
 No `[sound:…]` token is ever rendered to the DOM, so Anki's native autoplay
 scanner is fully bypassed. The R key still replays the most recently
 autoplayed audio (bound by `_ruby.js`).
+
+### Context and Hint fields
+
+`Context` is a terse disambiguator that always shows on the production
+front above the English prompt and on all 3 backs above the Note line.
+Use it when the English alone is ambiguous (e.g. for slang like 杠杠的
+`awesome`, the Context `northeastern slang` rules out other ways to
+say `awesome`). Keep it short — register / region / scenario tags work
+best.
+
+`Hint` is an optional click-to-reveal clue that appears on all 3
+fronts (button) and auto-revealed on all 3 backs (labeled line). It
+supports per-card-type formatting via line-leading prefixes:
+
+| Hint field value | hanzi-recog front | audio-recog front | production front |
+|---|---|---|---|
+| `doubled syllable + 的` | same | same | same |
+| `hanzi: starts with 杠<br>audio: doubled syllable<br>production: northeastern flavor` | `starts with 杠` | `doubled syllable` | `northeastern flavor` |
+| `northeastern slang<br>audio: doubled syllable` | `northeastern slang` | `northeastern slang<br>doubled syllable` | `northeastern slang` |
+
+Format rules:
+
+- Split lines with literal `<br>` (the deck is `#html:true`).
+- A line starting with `hanzi:`, `audio:`, or `production:`
+  (case-insensitive, optional whitespace around the colon) scopes that
+  line to the matching card type only.
+- A line without a recognized prefix is universal — it shows on every
+  card. Lines with an unrecognized prefix (e.g. `note:`) are also
+  treated as universal; the validator warns when this happens because
+  it's usually a typo.
