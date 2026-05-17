@@ -156,6 +156,29 @@
     return kept.join("<br>");
   }
 
+  // Build the labeled hint DOM tree as a DocumentFragment. Uses textContent
+  // for field data and a real <br> element for line breaks, so user-supplied
+  // Hint values can never inject script/markup even though the deck is
+  // #html:true. Mirrors the textContent-only treatment used by mountExamples
+  // and buildRuby for other field content.
+  function buildHintBody(parsed) {
+    var frag = document.createDocumentFragment();
+    var label = document.createElement("span");
+    label.className = "hint-label";
+    label.textContent = "Hint:";
+    frag.appendChild(label);
+    frag.appendChild(document.createTextNode(" "));
+    var text = document.createElement("span");
+    text.className = "hint-text";
+    var parts = String(parsed).split(/<br\s*\/?>/i);
+    for (var i = 0; i < parts.length; i++) {
+      if (i > 0) text.appendChild(document.createElement("br"));
+      text.appendChild(document.createTextNode(parts[i]));
+    }
+    frag.appendChild(text);
+    return frag;
+  }
+
   function mountHint(selector) {
     var nodes = document.querySelectorAll(selector);
     for (var i = 0; i < nodes.length; i++) {
@@ -167,8 +190,8 @@
       var rawHint = el.dataset.hint || "";
       var parsed = parseHint(rawHint, cardType);
       if (!parsed) {
-        // Empty after filtering → no UI. Conditional templates already collapse
-        // when Hint is empty, but per-card filtering can also yield empty.
+        // Empty after filtering → no UI. Hide rather than leave empty so
+        // the .hint-mount class's margin/padding doesn't leave a visible gap.
         el.style.display = "none";
         continue;
       }
@@ -176,9 +199,8 @@
       var revealed = el.dataset.revealed === "true";
       if (revealed) {
         el.classList.add("hint-revealed");
-        el.innerHTML =
-          '<span class="hint-label">Hint:</span> ' +
-          '<span class="hint-text">' + parsed + '</span>';
+        el.textContent = "";
+        el.appendChild(buildHintBody(parsed));
       } else {
         var btn = document.createElement("button");
         btn.type = "button";
@@ -187,9 +209,8 @@
         (function (e, p) {
           btn.addEventListener("click", function () {
             e.classList.add("hint-revealed");
-            e.innerHTML =
-              '<span class="hint-label">Hint:</span> ' +
-              '<span class="hint-text">' + p + '</span>';
+            e.textContent = "";
+            e.appendChild(buildHintBody(p));
           });
         })(el, parsed);
         el.appendChild(btn);
