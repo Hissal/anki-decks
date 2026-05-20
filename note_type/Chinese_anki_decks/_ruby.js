@@ -131,9 +131,11 @@
 
   // Hint format spec: each <br>-separated line may begin with "<card-type>:"
   // (case-insensitive, optional whitespace around the colon) to scope it to
-  // one card. Recognized card types are hanzi / audio / production.
+  // one card. Recognized card types are intro / hanzi / audio / production.
+  // ("audio" is retained for the archived audio-recognition template; the
+  // active deck no longer emits an audio-only card by default.)
   // Mirrors HINT_CARD_TYPES + HINT_PREFIX_RE in scripts/common.py.
-  var HINT_CARD_TYPES = { hanzi: 1, audio: 1, production: 1 };
+  var HINT_CARD_TYPES = { intro: 1, hanzi: 1, audio: 1, production: 1 };
   var HINT_PREFIX_RE = /^([A-Za-z][A-Za-z_]*)\s*:\s*(.+)$/;
 
   function parseHint(text, cardType) {

@@ -2,23 +2,30 @@
 
 Custom Anki note type for the three TSV decks in this repo. Ruby pinyin above
 each hanzi (hidden by default, hover/tap/toggle to reveal), three card modes
-covering hanzi recognition, audio recognition, and production, and a
-`PersonalNote` field that survives TSV re-imports.
+covering a scaffolded audio + written intro, silent hanzi recognition, and
+production, and a `PersonalNote` field that survives TSV re-imports.
 
 Card order matches the order in which Anki introduces new cards from a note:
-hanzi recognition first (most beginner-friendly), audio recognition second,
+audio + written intro first (gentlest exposure — hanzi visible, audio
+autoplays, only the meaning is hidden), hanzi recognition second (same hanzi
+prompt but audio is silent unless you replay it — a true reading drill),
 production last.
+
+The standalone audio-recognition card (audio-only prompt, hanzi hidden) was
+retired — its templates live under `archive/` for reference. See `TODO.md`
+in the repo root for the tag-gated audio-only card type that may replace it.
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `hanzi_recognition_front.html` | Card 1 front — ruby with pinyin hidden, custom `Play Audio` button parses `{{soundfile:Audio}}` and plays via HTML5 audio without triggering Anki's autoplay. |
-| `hanzi_recognition_back.html`  | Card 1 back — full reveal. |
-| `audio_recognition_front.html` | Card 2 front — custom HTML5 audio mount autoplays at the configured volume, `Show Hanzi` hint reveals ruby with pinyin hidden. |
-| `audio_recognition_back.html`  | Card 2 back — full reveal. |
+| `intro_front.html`             | Card 1 front — ruby with pinyin hidden, HTML5 audio mount autoplays at the configured volume. Same hanzi prompt as the read-only card, with automatic auditory scaffolding. |
+| `intro_back.html`              | Card 1 back — full reveal. |
+| `hanzi_recognition_front.html` | Card 2 front — ruby with pinyin hidden, custom `Play Audio` button parses `{{soundfile:Audio}}` and plays via HTML5 audio without triggering Anki's autoplay. Silent by default — true reading drill. |
+| `hanzi_recognition_back.html`  | Card 2 back — full reveal. |
 | `production_front.html`        | Card 3 front — English only. |
 | `production_back.html`         | Card 3 back — full reveal. |
+| `archive/`                     | Retired templates kept for reference. Currently holds the old `audio_recognition_*` pair (audio-only prompt, hanzi hidden) — see `archive/README.md`. |
 | `styles.css`                   | Shared styling — paste into the note type's "Styling" pane. |
 | `_ruby.js`                     | Ruby builder + toggle + examples renderer + HTML5 audio helpers. Goes in `collection.media`. |
 | `addon/`                       | Anki add-on. Registers `{{soundfile:Audio}}` / `{{nosound:Audio}}` template filters, plus a 🔊 volume button in the top toolbar that controls audio playback level across all cards. |
@@ -44,11 +51,28 @@ production last.
    Set `Hanzi` as the sort field.
 
 2. **Add the three card templates.** `Manage Note Types → Cards`. Rename the
-   default card to `1 Hanzi recognition`, then `Add Card Type` twice for
-   `2 Audio recognition` and `3 Production`. Paste the corresponding
-   `*_front.html` and `*_back.html` files into the front/back templates.
-   The order matters — Anki introduces new cards in template order, and the
-   hanzi-recognition card is the most beginner-friendly entry point.
+   default card to `1 Audio + Written`, then `Add Card Type` twice for
+   `2 Hanzi recognition` and `3 Production`. Paste the corresponding
+   `*_front.html` and `*_back.html` files into the front/back templates
+   (the intro card uses `intro_front.html` / `intro_back.html`). The order
+   matters — Anki introduces new cards in template order, and the intro card
+   is the gentlest entry point.
+
+   **Migrating from an older 3-card layout** (with the retired
+   `Audio recognition` card): deleting that template removes review history
+   for every existing card of that type. Recommended path:
+
+   1. Optional safety: `File → Export` your collection (or just the affected
+      deck) as a backup before touching templates.
+   2. Add the new `1 Audio + Written` template and paste in
+      `intro_front.html` / `intro_back.html`.
+   3. Reorder so the new template is first, `Hanzi recognition` second,
+      `Production` third.
+   4. Delete the old `Audio recognition` template. Anki will warn about
+      affected cards — accept to drop them.
+
+   No TSV / field-format changes are required; existing notes work
+   unmodified against the new template set.
 
 3. **Paste styling.** Paste `styles.css` into the shared "Styling" pane.
 
@@ -127,12 +151,13 @@ cleanly with no orphan headers.
 
 ### Audio playback
 
-All four sides that play audio (cards 1/2/3 backs and card 2 front) route
-through `mountAutoplayAudio` in `_ruby.js`: the template renders
+All four sides that autoplay audio (cards 1/2/3 backs and card 1 front)
+route through `mountAutoplayAudio` in `_ruby.js`: the template renders
 `<div class="audio-mount" data-soundfile="{{soundfile:Audio}}"></div>`, the
 script reads the filename, constructs an HTML5 `<audio>` element at the
-configured volume, autoplays it, and adds a replay button. Card 1 front's
-Play Audio button uses the same volume-aware helper.
+configured volume, autoplays it, and adds a replay button. Card 2 front
+(hanzi recognition) uses the same volume-aware helper for its manual
+Play Audio button — silent by default, click to play.
 
 No `[sound:…]` token is ever rendered to the DOM, so Anki's native autoplay
 scanner is fully bypassed. The R key still replays the most recently
@@ -151,18 +176,21 @@ best.
 fronts (button) and auto-revealed on all 3 backs (labeled line). It
 supports per-card-type formatting via line-leading prefixes:
 
-| Hint field value | hanzi-recog front | audio-recog front | production front |
+| Hint field value | intro front | hanzi-recog front | production front |
 |---|---|---|---|
 | `doubled syllable + 的` | same | same | same |
-| `hanzi: starts with 杠<br>audio: doubled syllable<br>production: northeastern flavor` | `starts with 杠` | `doubled syllable` | `northeastern flavor` |
-| `northeastern slang<br>audio: doubled syllable` | `northeastern slang` | `northeastern slang<br>doubled syllable` | `northeastern slang` |
+| `intro: doubled syllable<br>hanzi: starts with 杠<br>production: northeastern flavor` | `doubled syllable` | `starts with 杠` | `northeastern flavor` |
+| `northeastern slang<br>intro: listen for repeated syllable` | `northeastern slang<br>listen for repeated syllable` | `northeastern slang` | `northeastern slang` |
 
 Format rules:
 
 - Split lines with literal `<br>` (the deck is `#html:true`).
-- A line starting with `hanzi:`, `audio:`, or `production:`
+- A line starting with `intro:`, `hanzi:`, `audio:`, or `production:`
   (case-insensitive, optional whitespace around the colon) scopes that
-  line to the matching card type only.
+  line to the matching card type only. `audio:` is retained for the
+  archived audio-recognition template; the active deck has no audio-only
+  card, so lines scoped to `audio:` will never render on a default
+  install.
 - A line without a recognized prefix is universal — it shows on every
   card. Lines with an unrecognized prefix (e.g. `note:`) are also
   treated as universal; the validator warns when this happens because

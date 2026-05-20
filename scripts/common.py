@@ -174,7 +174,7 @@ DIGIT_TONE_RE = re.compile(r"[a-zü][1-5]")
 
 # Hint format: each <br>-separated line may start with "<card-type>:" to scope
 # it to one card. parseHint() in _ruby.js mirrors these constants.
-HINT_CARD_TYPES = {"hanzi", "audio", "production"}
+HINT_CARD_TYPES = {"intro", "hanzi", "audio", "production"}
 HINT_PREFIX_RE = re.compile(r"^([A-Za-z][A-Za-z_]*)\s*:\s*(.+)$")
 
 

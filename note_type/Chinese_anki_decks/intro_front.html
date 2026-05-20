@@ -1,0 +1,33 @@
+<!-- Card 1 front: Audio + Written intro.
+     Scaffolded entry point for a new word. Hanzi rendered as ruby with
+     pinyin hidden (hover/tap/toggle to reveal). Audio autoplays via the
+     custom HTML5 mount (volume controlled by the addon's toolbar slider).
+     The only difference from `hanzi_recognition_front.html` is autoplay
+     vs. a manual Play Audio button — automatic auditory scaffolding for
+     the gentlest new-word exposure. -->
+
+<div class="card-side card-front">
+  <div class="hanzi-block"
+       id="hanzi-block"
+       data-hanzi="{{text:Hanzi}}"
+       data-pinyin="{{text:Pinyin}}"></div>
+  <button class="toggle-btn" id="toggle-pinyin-btn" type="button">Toggle Pinyin</button>
+
+  <div class="audio-mount" data-soundfile="{{soundfile:Audio}}"></div>
+
+  {{#Hint}}
+  <div class="hint-mount"
+       data-hint="{{text:Hint}}"
+       data-card-type="intro"></div>
+  {{/Hint}}
+</div>
+
+<script src="_ruby.js"></script>
+<script>
+  (function () {
+    window.ankiDecks.mountRuby("hanzi-block", { revealed: false });
+    window.ankiDecks.attachToggle("hanzi-block", "toggle-pinyin-btn");
+    window.ankiDecks.mountAutoplayAudio(".audio-mount");
+    window.ankiDecks.mountHint(".hint-mount");
+  })();
+</script>
