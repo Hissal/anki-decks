@@ -3,3 +3,4 @@ __pycache__/
 .claude/settings.local.json
 .tmp/
 .worktrees/
+.claude/scheduled_tasks.lock
