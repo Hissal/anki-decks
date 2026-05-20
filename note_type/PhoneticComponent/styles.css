@@ -26,6 +26,19 @@
   }
 }
 
+/* ---------- Deck-name header ---------- */
+
+.card-header {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  margin: 0 0 14px;
+}
+.night_mode .card-header,
+.nightMode .card-header { color: #9ca3af; }
+
 /* ---------- The component itself ---------- */
 
 .component-block {
@@ -134,14 +147,14 @@
 /* ---------- Hint / reliability / note ---------- */
 
 .card-hint {
-  font-size: 13px;
-  color: #9ca3af;
+  font-size: 15px;
+  color: #6b7280;
   font-style: italic;
   margin-top: 36px;
 }
 
 .night_mode .card-hint,
-.nightMode .card-hint { color: #6b7280; }
+.nightMode .card-hint { color: #b8b8b8; }
 
 .stats-row {
   display: flex;
