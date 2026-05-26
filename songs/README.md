@@ -10,6 +10,12 @@ Personal Anki decks built from Chinese songs. One deck per song. Pipeline turns 
 songs/
 ├── .gitignore
 ├── README.md                         (this file)
+├── _note_types/                      Anki note-type setup guides (one-time)
+│   ├── README.md                     overview + setup order
+│   ├── styling.css                   shared CSS for all 3 note types
+│   ├── SongLineBasic.md              Reading + Recall-line templates
+│   ├── SongLineCloze.md              word-level cloze template
+│   └── SongBlock.md                  whole-line block cloze template
 ├── _pipeline/                        shared scripts
 │   ├── cache/
 │   │   └── cedict_ts.u8              CC-CEDICT (gitignored — regenerable)
@@ -37,8 +43,9 @@ songs/
     │   ├── <song_slug>_NNN.mp3            per-line clips (14 for yi_jian_mei)
     │   ├── <song_slug>_block_<BB>_c<K>.mp3 block-cloze combos (1 per blanked slot)
     │   └── _silence/                  silence file cache (gitignored)
-    ├── Chinese_Song_<X>_Lines.tsv     SongLine notes — Cloze note type
-    └── Chinese_Song_<X>_Blocks.tsv    SongBlock notes — Cloze note type
+    ├── Chinese_Song_<X>_Lines_Basic.tsv   → SongLineBasic note type
+    ├── Chinese_Song_<X>_Lines_Cloze.tsv   → SongLineCloze note type
+    └── Chinese_Song_<X>_Blocks.tsv        → SongBlock note type
 ```
 
 ## Tooling required
@@ -118,16 +125,18 @@ python songs/_pipeline/combo_audio.py \
   --prefix    $SLUG \
   --ffmpeg ffmpeg --ffprobe ffprobe
 
-# 12. Emit SongLine TSV (one note per line, cloze + reading + recall cards).
+# 12. Emit SongLine TSVs (splits into Basic + Cloze because Anki's
+#     Cloze note type can't host non-cloze card templates).
 python songs/_pipeline/build_tsv.py \
   --aligned     $DIR/aligned.json \
   --english     $DIR/english.txt \
   --breakdown   $DIR/breakdown.txt \
   --cloze-plan  $DIR/cloze_plan.yaml \
-  --out         $DIR/Chinese_Song_<Title>_Lines.tsv \
+  --out-stem    $DIR/Chinese_Song_<Title>_Lines \
   --prefix      $SLUG \
   --song-slug   $SLUG \
   --tag song --tag song-$SLUG --tag artist-<slug>
+# → emits  ..._Lines_Basic.tsv  AND  ..._Lines_Cloze.tsv
 
 # 13. Emit SongBlock TSV (one note per block, whole-line cloze cards).
 python songs/_pipeline/build_blocks_tsv.py \
@@ -140,9 +149,12 @@ python songs/_pipeline/build_blocks_tsv.py \
   --song-slug   $SLUG \
   --tag song --tag song-$SLUG --tag artist-<slug>
 
-# 14. Copy $DIR/media/*.mp3 into Anki's collection.media/, then import BOTH
-#     TSVs (Lines first — its lower note positions ensure Anki shows
-#     line-level cards before block-cloze cards).
+# 14. Copy $DIR/media/*.mp3 into Anki's collection.media/, then import the
+#     three TSVs in order:
+#       ..._Lines_Basic.tsv  →  SongLineBasic  (Reading + Recall-line)
+#       ..._Lines_Cloze.tsv  →  SongLineCloze  (word-level cloze)
+#       ..._Blocks.tsv       →  SongBlock      (whole-line block cloze)
+#     See songs/_note_types/README.md for one-time note-type setup.
 ```
 
 ## Anki import notes

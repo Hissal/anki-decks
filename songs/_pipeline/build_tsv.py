@@ -1,17 +1,11 @@
-"""Build the SongLine TSV (one note per lyric line).
+"""Build SongLine TSVs — emits TWO files because Anki's Cloze note type
+can't host non-cloze card templates, so we use two note types:
 
-Schema (matches the SongLine note-type design):
+  <Out>_Basic.tsv  → SongLineBasic note type   (Reading + Recall-line cards)
+  <Out>_Cloze.tsv  → SongLineCloze note type   (word-level cloze cards)
 
-  Key  SongSlug  LineNo  Hanzi  Pinyin  English  Breakdown  Audio
-  PrevHanzi  PrevAudio  Tags
-
-- `Hanzi` has `{{cN::word}}` markers wrapping each `selected_clozes` word
-  from cloze_plan.yaml, numbered in order of appearance in the list.
-- `PrevHanzi` / `PrevAudio` point at the line immediately before this one
-  in the song (the position-based predecessor), regardless of whether that
-  line was deduped away as a duplicate.
-- Re-importing this TSV updates by `Key` (first column) — same Anki rule
-  as the word decks.
+Both files share the per-line `Key` (`<slug>_<NNN>`) — they describe the
+same lyric line from two angles. Re-importing either updates by Key.
 """
 from __future__ import annotations
 import argparse, json, sys
@@ -26,15 +20,21 @@ except Exception:
     pass
 
 
-def _columns() -> list[str]:
+def _basic_columns() -> list[str]:
     return [
-        "Key", "SongSlug", "LineNo", "Hanzi", "Pinyin", "English",
+        "Key", "SongSlug", "LineNo", "HanziPlain", "Pinyin", "English",
         "Breakdown", "Audio", "PrevHanzi", "PrevAudio", "Tags",
     ]
 
 
-def header() -> list[str]:
-    cols = _columns()
+def _cloze_columns() -> list[str]:
+    return [
+        "Key", "SongSlug", "LineNo", "Hanzi", "Pinyin", "English",
+        "Breakdown", "Audio", "Tags",
+    ]
+
+
+def _header(cols: list[str]) -> list[str]:
     return [
         "#separator:tab",
         "#html:true",
@@ -50,10 +50,7 @@ def line_pinyin(hanzi: str) -> str:
 
 def inject_clozes(hanzi: str, clozes: list[str]) -> str:
     """Wrap each cloze word with `{{cN::word}}` markers, numbered by list order.
-
-    First occurrence wins (substring replace). If a word isn't found in the
-    line, prints a warning and skips it.
-    """
+    First occurrence wins. Warn if a word isn't found in the line."""
     out = hanzi
     for i, word in enumerate(clozes, 1):
         if word not in out:
@@ -63,7 +60,7 @@ def inject_clozes(hanzi: str, clozes: list[str]) -> str:
     return out
 
 
-def build_rows(
+def build(
     aligned: list[dict],
     english: list[str],
     breakdown: list[str],
@@ -71,10 +68,12 @@ def build_rows(
     prefix: str,
     song_slug: str,
     tags_base: list[str],
-) -> list[list[str]]:
+) -> tuple[list[list[str]], list[list[str]]]:
+    """Return (basic_rows, cloze_rows)."""
     assert len(english) == len(aligned) == len(breakdown)
     by_line_no = {entry["line_no"]: entry for entry in cloze_plan["lines"]}
-    rows: list[list[str]] = []
+    basic_rows: list[list[str]] = []
+    cloze_rows: list[list[str]] = []
     seen: set[str] = set()
     skipped: list[int] = []
     for i, (row, en, bd) in enumerate(zip(aligned, english, breakdown), 1):
@@ -83,8 +82,6 @@ def build_rows(
             skipped.append(i)
             continue
         seen.add(hanzi)
-        clozes = by_line_no.get(i, {}).get("selected_clozes", [])
-        hanzi_with_cloze = inject_clozes(hanzi, clozes)
         py = line_pinyin(hanzi)
         audio = f"[sound:{prefix}_{i:03d}.mp3]"
         prev_hanzi = aligned[i - 2]["line"] if i >= 2 else ""
@@ -92,13 +89,30 @@ def build_rows(
         key = f"{song_slug}_{i:03d}"
         line_no = str(i)
         tags = " ".join(tags_base + [f"line-{i:03d}"])
-        rows.append([
-            key, song_slug, line_no, hanzi_with_cloze, py, en, bd, audio,
+
+        basic_rows.append([
+            key, song_slug, line_no, hanzi, py, en, bd, audio,
             prev_hanzi, prev_audio, tags,
+        ])
+
+        clozes = by_line_no.get(i, {}).get("selected_clozes", [])
+        hanzi_with_cloze = inject_clozes(hanzi, clozes) if clozes else hanzi
+        if not clozes:
+            print(f"  warn: line {i:03d} has no selected_clozes — Cloze card won't generate")
+        cloze_rows.append([
+            key, song_slug, line_no, hanzi_with_cloze, py, en, bd, audio, tags,
         ])
     if skipped:
         print(f"  dedup skipped {len(skipped)} duplicate line(s): {skipped}")
-    return rows
+    return basic_rows, cloze_rows
+
+
+def write_tsv(path: Path, cols: list[str], rows: list[list[str]]):
+    with path.open("w", encoding="utf-8", newline="\n") as f:
+        for line in _header(cols):
+            f.write(line + "\n")
+        for row in rows:
+            f.write("\t".join(row) + "\n")
 
 
 def main():
@@ -107,7 +121,8 @@ def main():
     ap.add_argument("--english", required=True, type=Path)
     ap.add_argument("--breakdown", required=True, type=Path)
     ap.add_argument("--cloze-plan", required=True, type=Path)
-    ap.add_argument("--out", required=True, type=Path)
+    ap.add_argument("--out-stem", required=True, type=Path,
+                    help="e.g. .../Chinese_Song_Yi_Jian_Mei_Lines — _Basic.tsv and _Cloze.tsv get appended")
     ap.add_argument("--prefix", required=True)
     ap.add_argument("--song-slug", required=True)
     ap.add_argument("--tag", action="append", default=[])
@@ -117,14 +132,18 @@ def main():
     english = [ln.rstrip("\n") for ln in args.english.read_text(encoding="utf-8").splitlines() if ln.strip()]
     breakdown = [ln.rstrip("\n") for ln in args.breakdown.read_text(encoding="utf-8").splitlines() if ln.strip()]
     cloze_plan = yaml.safe_load(args.cloze_plan.read_text(encoding="utf-8"))
-    rows = build_rows(aligned, english, breakdown, cloze_plan, args.prefix, args.song_slug, args.tag)
 
-    with args.out.open("w", encoding="utf-8", newline="\n") as f:
-        for line in header():
-            f.write(line + "\n")
-        for row in rows:
-            f.write("\t".join(row) + "\n")
-    print(f"wrote {len(rows)} SongLine rows -> {args.out}")
+    basic_rows, cloze_rows = build(
+        aligned, english, breakdown, cloze_plan,
+        args.prefix, args.song_slug, args.tag,
+    )
+
+    basic_path = args.out_stem.with_name(args.out_stem.name + "_Basic.tsv")
+    cloze_path = args.out_stem.with_name(args.out_stem.name + "_Cloze.tsv")
+    write_tsv(basic_path, _basic_columns(), basic_rows)
+    write_tsv(cloze_path, _cloze_columns(), cloze_rows)
+    print(f"wrote {len(basic_rows)} basic rows -> {basic_path}")
+    print(f"wrote {len(cloze_rows)} cloze rows -> {cloze_path}")
 
 
 if __name__ == "__main__":
