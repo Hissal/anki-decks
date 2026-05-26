@@ -166,6 +166,31 @@ def classify_tier(radical: str) -> str:
 
 MEANING_OVERRIDES: dict[str, str] = {
     # Filled lazily after spot-check
+    "巾": "cloth / towel",
+    # Format: "<modern> · orig. <etymology>" — middle dot separates etymology
+    # from modern senses (vs " / " which separates polysemous modern senses).
+    "幺": "tiny / youngest · orig. short thread",
+    "儿": "son / diminutive suffix · orig. \"walking man\" (legs)",
+    "广": "wide / spacious · orig. lean-to / dotted cliff",
+    "贝": "shell / treasure · orig. cowrie (archaic currency)",
+    "车": "car / vehicle · orig. war chariot",
+    "戈": "dagger-axe / halberd",
+    "文": "writing / language / culture · orig. tattooed pattern",
+    "气": "air / gas / qi · orig. rising vapor / steam",
+    "玄": "black / mysterious · orig. dyed silk (profound)",
+    "示": "to show / reveal · orig. altar (spirit)",
+    "牙": "tooth / ivory · orig. fang / molar",
+    "禸": "trample · orig. animal track",
+    "聿": "archaic particle · orig. hand holding writing brush",
+    "舛": "contradictory / erroneous · orig. opposing feet",
+    "艮": "mountain (8th trigram) · orig. fixed gaze / stopping",
+    "角": "horn / angle / role",
+    "谷": "valley / grain (simplified merges 穀)",
+    "辛": "pungent / hard / 8th heavenly stem · orig. tattoo knife",
+    "辰": "morning / 5th earthly branch · orig. clamshell tool",
+    "长": "long / chief / to grow",
+    "隶": "subordinate / attached to · orig. seize / slave",
+    "几": "small table / how many (simplified merges 幾)",
 }
 
 # Hand-picked MemberChars for high-leverage radicals where the source set is
@@ -276,6 +301,8 @@ MEMBER_OVERRIDES: dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 NOTE_OVERRIDES: dict[str, str] = {
+    # --- Etymology preserved when modern gloss differs from seed ---
+    "幺": "Etymology: pictograph of a small twist of silk thread — hence the original sense \"short thread / tiny.\" Modern dictionaries gloss it as \"tiny / youngest / most junior\" (also the unambiguous spoken form of \"one\" when reading out digits, e.g. phone numbers / military).",
     # --- Visual look-alikes (most-confused clusters in modern reading) ---
     "日": "Visually similar to 曰 (yuē, 'say'). 日 is taller and narrower; 曰 is squatter and wider. Both have a horizontal stroke inside.",
     "曰": "Visually similar to 日 (rì, 'sun'). 曰 is wider/shorter than 日 — the inner stroke doesn't fully cross.",
