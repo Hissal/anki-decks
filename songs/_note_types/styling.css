@@ -190,6 +190,17 @@
 .night_mode .cloze,
 .nightMode .cloze { color: #ff8080; }
 
+/* When the back-side ruby builder runs, the .cloze wrapper still surrounds
+ * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and
+ * its pinyin) stay accent-red even though the <rt> normally has its own
+ * lavender color rule. */
+.hanzi-block .cloze ruby,
+.hanzi-block .cloze ruby rt,
+.lines-block .cloze ruby,
+.lines-block .cloze ruby rt {
+  color: inherit;
+}
+
 /* ---------- Toggle button + audio replay ---------- */
 
 .toggle-btn {
