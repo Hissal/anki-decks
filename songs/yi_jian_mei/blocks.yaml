@@ -1,0 +1,75 @@
+song_slug: yi_jian_mei
+block_size: 4
+blocks:
+- block_no: 1
+  line_nos:
+  - 1
+  - 2
+  - 3
+  - 4
+  hanzi_lines:
+  - 真情像草原广阔
+  - 层层风雨不能阻隔
+  - 总有云开日出时候
+  - 万丈阳光照耀你我
+  aligned_spans:
+  - start: 35.64
+    end: 41.3
+  - start: 42.9
+    end: 48.42
+  - start: 50.28
+    end: 56.32
+  - start: 57.44
+    end: 61.54
+- block_no: 2
+  line_nos:
+  - 5
+  - 6
+  - 7
+  - 8
+  hanzi_lines:
+  - 真情像梅花开过
+  - 冷冷冰雪不能掩没
+  - 就在最冷枝头绽放
+  - 看见春天走向你我
+  aligned_spans:
+  - start: 63.42
+    end: 68.34
+  - start: 69.78
+    end: 75.98
+  - start: 76.98
+    end: 83.52
+  - start: 84.7
+    end: 88.72
+- block_no: 3
+  line_nos:
+  - 9
+  - 10
+  - 11
+  - 12
+  hanzi_lines:
+  - 雪花飘飘北风啸啸
+  - 天地一片苍茫
+  - 一剪寒梅傲立雪中
+  - 只为伊人飘香
+  aligned_spans:
+  - start: 91.3
+    end: 97.06
+  - start: 97.96
+    end: 102.54
+  - start: 104.2
+    end: 110.52
+  - start: 111.76
+    end: 116.12
+- block_no: 4
+  line_nos:
+  - 13
+  - 14
+  hanzi_lines:
+  - 爱我所爱无怨无悔
+  - 此情长留心间
+  aligned_spans:
+  - start: 118.54
+    end: 124.04
+  - start: 125.36
+    end: 136.0

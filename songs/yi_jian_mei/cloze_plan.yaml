@@ -1,0 +1,169 @@
+song_slug: yi_jian_mei
+block_size: 4
+lines:
+- line_no: 1
+  hanzi: 真情像草原广阔
+  suggested_clozes:
+  - 真情
+  - 草原
+  selected_clozes:
+  - 真情
+  - 草原
+  _debug:
+  - 真情 (n, s=4.0)
+  - 草原 (n, s=4.0)
+- line_no: 2
+  hanzi: 层层风雨不能阻隔
+  suggested_clozes:
+  - 层层
+  - 风雨
+  selected_clozes:
+  - 层层
+  - 风雨
+  - 阻隔
+  _debug:
+  - 层层 (n, s=4.0)
+  - 风雨 (n, s=4.0)
+  _llm_note: added 阻隔 (block) as 3rd — the line's verb is the load-bearing word.
+- line_no: 3
+  hanzi: 总有云开日出时候
+  suggested_clozes:
+  - 云开日出
+  - 时候
+  selected_clozes:
+  - 云开日出
+  _debug:
+  - 云开日出 (l, s=5.0)
+  - 时候 (n, s=4.0)
+  _llm_note: dropped 时候 (too common). 云开日出 carries the line alone.
+- line_no: 4
+  hanzi: 万丈阳光照耀你我
+  suggested_clozes:
+  - 照耀
+  - 阳光
+  selected_clozes:
+  - 万丈
+  - 阳光
+  _debug:
+  - 照耀 (v, s=4.0)
+  - 阳光 (nr, s=2.0)
+  _llm_note: swapped 照耀 → 万丈. Poetic flavor lives on 万丈 (10000-zhang); 照耀 (shine) is plainer.
+- line_no: 5
+  hanzi: 真情像梅花开过
+  suggested_clozes:
+  - 真情
+  - 梅花
+  selected_clozes:
+  - 梅花
+  - 开过
+  _debug:
+  - 真情 (n, s=4.0)
+  - 梅花 (nr, s=2.0)
+  _llm_note: 真情 already clozed on line 1 — dropped here for variety. Added 开过 (bloomed) as the line's verb.
+- line_no: 6
+  hanzi: 冷冷冰雪不能掩没
+  suggested_clozes:
+  - 冷冷
+  - 冰雪
+  selected_clozes:
+  - 冷冷
+  - 冰雪
+  - 掩没
+  _debug:
+  - 冷冷 (a, s=4.0)
+  - 冰雪 (n, s=4.0)
+  _llm_note: added 掩没 (bury / cover) as 3rd — the line's verb.
+- line_no: 7
+  hanzi: 就在最冷枝头绽放
+  suggested_clozes:
+  - 最冷
+  - 枝头
+  selected_clozes:
+  - 绽放
+  - 枝头
+  _debug:
+  - 最冷 (a, s=4.0)
+  - 枝头 (n, s=4.0)
+  _llm_note: replaced 最冷 with 绽放 (burst into bloom) — the load-bearing verb of the line.
+- line_no: 8
+  hanzi: 看见春天走向你我
+  suggested_clozes:
+  - 看见
+  - 走向
+  selected_clozes:
+  - 春天
+  - 走向
+  _debug:
+  - 看见 (v, s=4.0)
+  - 走向 (v, s=4.0)
+  _llm_note: replaced 看见 (basic) with 春天 (spring) — more pedagogically valuable + song-thematic.
+- line_no: 9
+  hanzi: 雪花飘飘北风啸啸
+  suggested_clozes:
+  - 雪花
+  - 飘飘
+  selected_clozes:
+  - 雪花
+  - 北风
+  _debug:
+  - 雪花 (n, s=4.0)
+  - 飘飘 (z, s=4.0)
+  _llm_note: replaced 飘飘 with 北风. Line has 4 paired words (雪花/飘飘/北风/啸啸); clozing both nouns reads tighter than noun + reduplicated adj.
+- line_no: 10
+  hanzi: 天地一片苍茫
+  suggested_clozes:
+  - 天地
+  - 苍茫
+  selected_clozes:
+  - 天地
+  - 苍茫
+  _debug:
+  - 天地 (n, s=4.0)
+  - 苍茫 (z, s=4.0)
+- line_no: 11
+  hanzi: 一剪寒梅傲立雪中
+  suggested_clozes:
+  - 傲立
+  - 寒梅
+  selected_clozes:
+  - 一剪
+  - 寒梅
+  - 傲立
+  _debug:
+  - 傲立 (v, s=4.0)
+  - 寒梅 (nr, s=2.0)
+  _llm_note: added 一剪 — the title-defining word of the song. Made this line a 3-cloze.
+- line_no: 12
+  hanzi: 只为伊人飘香
+  suggested_clozes:
+  - 飘香
+  - 伊人
+  selected_clozes:
+  - 飘香
+  - 伊人
+  _debug:
+  - 飘香 (v, s=4.0)
+  - 伊人 (nrt, s=2.0)
+- line_no: 13
+  hanzi: 爱我所爱无怨无悔
+  suggested_clozes:
+  - 爱我所爱
+  - 无怨无悔
+  selected_clozes:
+  - 爱我所爱
+  - 无怨无悔
+  _debug:
+  - 爱我所爱 (i, s=5.0)
+  - 无怨无悔 (i, s=5.0)
+- line_no: 14
+  hanzi: 此情长留心间
+  suggested_clozes:
+  - 留心
+  - 长
+  selected_clozes:
+  - 长留
+  - 心间
+  _debug:
+  - 留心 (v, s=4.0)
+  - 长 (a, s=1.5)
+  _llm_note: jieba mis-segmented; real phrasing is 此情 / 长留 / 心间. Clozed 长留 (lasts long) + 心间 (in the heart) — song's emotional core.

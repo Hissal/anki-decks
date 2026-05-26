@@ -1,0 +1,18 @@
+# CC-CEDICT — large (~9MB), regenerable via curl from mdbg.net.
+_pipeline/cache/cedict_ts.u8
+_pipeline/cache/*.zip
+
+# Full-song audio — regenerable from source.yaml's `url` field via yt-dlp.
+# (Per-line slices under media/ stay tracked — those ARE the deck content.)
+*/audio.webm
+*/audio.mp3
+
+# Whisper / stable-ts model cache (if it ever ends up in-tree).
+_pipeline/cache/whisper-*/
+
+# Per-song silence file cache used to build block-cloze combo audio.
+# Regenerable from blocks.yaml + line clips.
+*/media/_silence/
+
+# Python bytecode
+_pipeline/__pycache__/
