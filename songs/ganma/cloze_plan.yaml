@@ -1,0 +1,354 @@
+song_slug: ganma
+block_size: 4
+lines:
+- line_no: 1
+  hanzi: 八点半吃早餐就下楼
+  suggested_clozes:
+  - 早餐
+  - 下楼
+  selected_clozes:
+  - 早餐
+  - 下楼
+  _debug:
+  - 早餐 (n, s=4.0)
+  - 下楼 (v, s=4.0)
+- line_no: 2
+  hanzi: 九点半就上班无厘头
+  suggested_clozes:
+  - 上班
+  selected_clozes:
+  - 上班
+  - 无厘头
+  _debug:
+  - 上班 (v, s=4.0)
+  _llm_note: added 无厘头 (nonsense) — slangy chorus flavor
+- line_no: 3
+  hanzi: 然后瘫桌子上明天还要上班
+  suggested_clozes:
+  - 桌子
+  - 上班
+  selected_clozes:
+  - 瘫
+  - 桌子
+  - 上班
+  _debug:
+  - 桌子 (n, s=4.0)
+  - 上班 (v, s=4.0)
+  _llm_note: added 瘫 (slump) — line's verb, fun
+- line_no: 4
+  hanzi: 八点半才下班没理由
+  suggested_clozes:
+  - 没理由
+  - 下班
+  selected_clozes:
+  - 没理由
+  - 下班
+  _debug:
+  - 没理由 (l, s=5.0)
+  - 下班 (v, s=4.0)
+- line_no: 5
+  hanzi: 九点半吃晚餐再洗头
+  suggested_clozes:
+  - 晚餐
+  - 洗头
+  selected_clozes:
+  - 晚餐
+  - 洗头
+  _debug:
+  - 晚餐 (n, s=4.0)
+  - 洗头 (v, s=4.0)
+- line_no: 6
+  hanzi: 然后瘫沙发上明天还要上班
+  suggested_clozes:
+  - 沙发
+  - 上班
+  selected_clozes:
+  - 沙发
+  - 上班
+  _debug:
+  - 沙发 (nz, s=4.0)
+  - 上班 (v, s=4.0)
+- line_no: 7
+  hanzi: 干嘛?不睡?周一的夜干嘛喝醉
+  suggested_clozes:
+  - 干嘛
+  - 喝醉
+  selected_clozes:
+  - 干嘛
+  - 喝醉
+  - 周一
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 喝醉 (v, s=4.0)
+  _llm_note: added 周一 (Monday) — song theme
+- line_no: 8
+  hanzi: 可我睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+  _llm_note: dropped jieba mis-merge 睡睡; the reduplicated 睡睡睡睡睡 is emphasis, not a clozeable token
+- line_no: 9
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 受不了
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)
+  _llm_note: replaced 闭上眼睛 with 受不了 (can't stand) — iconic verb-phrase
+- line_no: 10
+  hanzi: 干嘛?装睡?周一的夜一样要派对
+  suggested_clozes:
+  - 干嘛
+  - 装睡
+  selected_clozes:
+  - 干嘛
+  - 装睡
+  - 派对
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 装睡 (v, s=4.0)
+  _llm_note: added 派对 (party) — chorus payoff
+- line_no: 11
+  hanzi: 因为睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+  _llm_note: dropped jieba mis-merge 睡睡
+- line_no: 12
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)
+- line_no: 13
+  hanzi: 让我们开始今天的睡前冥想
+  suggested_clozes:
+  - 开始
+  - 睡前
+  selected_clozes:
+  - 冥想
+  - 睡前
+  _debug:
+  - 开始 (v, s=4.0)
+  - 睡前 (v, s=4.0)
+  _llm_note: 冥想 (meditation) + 睡前 (bedtime) carry this short opener of the meditation interlude
+- line_no: 14
+  hanzi: 首先,轻柔地闭上眼睛,将注意力放在缓慢的呼吸上。吸气
+  suggested_clozes:
+  - 闭上眼睛
+  - 注意力
+  selected_clozes:
+  - 呼吸
+  - 注意力
+  - 闭上眼睛
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 注意力 (n, s=5.0)
+  _llm_note: three core meditation concepts; 缓慢/吸气 left untouched
+- line_no: 15
+  hanzi: 干嘛?不睡?周一的夜干嘛喝醉
+  suggested_clozes:
+  - 干嘛
+  - 喝醉
+  selected_clozes:
+  - 干嘛
+  - 喝醉
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 喝醉 (v, s=4.0)
+- line_no: 16
+  hanzi: 可我睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  - 睡睡
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+- line_no: 17
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)
+- line_no: 18
+  hanzi: 干嘛?装睡?周一的夜一样要派对
+  suggested_clozes:
+  - 干嘛
+  - 装睡
+  selected_clozes:
+  - 干嘛
+  - 装睡
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 装睡 (v, s=4.0)
+- line_no: 19
+  hanzi: 因为睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  - 睡睡
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+- line_no: 20
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)
+- line_no: 21
+  hanzi: 随便几点睡
+  suggested_clozes:
+  - 睡
+  selected_clozes:
+  - 随便
+  _debug:
+  - 睡 (v, s=1.5)
+  _llm_note: 随便 (whatever) is the attitude word; 睡 too generic
+- line_no: 22
+  hanzi: 管他呢无所谓
+  suggested_clozes:
+  - 无所谓
+  - 管
+  selected_clozes:
+  - 管他呢
+  - 无所谓
+  _debug:
+  - 无所谓 (l, s=5.0)
+  - 管 (v, s=1.5)
+  _llm_note: manual cloze on 管他呢 (who cares) — colloquial whole-phrase
+- line_no: 23
+  hanzi: 随便几点睡
+  suggested_clozes:
+  - 睡
+  selected_clozes:
+  - 睡
+  _debug:
+  - 睡 (v, s=1.5)
+- line_no: 24
+  hanzi: 明天再说后悔
+  suggested_clozes:
+  - 后悔
+  - 明天
+  selected_clozes:
+  - 后悔
+  - 明天
+  _debug:
+  - 后悔 (v, s=4.0)
+  - 明天 (t, s=2.0)
+- line_no: 25
+  hanzi: 头疼
+  suggested_clozes:
+  - 头疼
+  selected_clozes:
+  - 头疼
+  _debug:
+  - 头疼 (a, s=4.0)
+- line_no: 26
+  hanzi: 不疼
+  suggested_clozes:
+  - 疼
+  selected_clozes:
+  - 疼
+  _debug:
+  - 疼 (v, s=1.5)
+- line_no: 27
+  hanzi: 干嘛?不睡?周一的夜干嘛喝醉
+  suggested_clozes:
+  - 干嘛
+  - 喝醉
+  selected_clozes:
+  - 干嘛
+  - 喝醉
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 喝醉 (v, s=4.0)
+- line_no: 28
+  hanzi: 可我睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  - 睡睡
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+- line_no: 29
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)
+- line_no: 30
+  hanzi: 干嘛?装睡?周一的夜一样要派对
+  suggested_clozes:
+  - 干嘛
+  - 装睡
+  selected_clozes:
+  - 干嘛
+  - 装睡
+  _debug:
+  - 干嘛 (n, s=4.0)
+  - 装睡 (v, s=4.0)
+- line_no: 31
+  hanzi: 因为睡睡睡睡睡不着
+  suggested_clozes:
+  - 睡不着
+  - 睡睡
+  selected_clozes:
+  - 睡不着
+  - 睡睡
+  _debug:
+  - 睡不着 (v, s=5.0)
+  - 睡睡 (v, s=4.0)
+- line_no: 32
+  hanzi: 闭上眼睛连一秒钟都受不了
+  suggested_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  selected_clozes:
+  - 闭上眼睛
+  - 一秒钟
+  _debug:
+  - 闭上眼睛 (i, s=5.0)
+  - 一秒钟 (i, s=5.0)

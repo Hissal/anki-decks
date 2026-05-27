@@ -1,0 +1,10 @@
+title_zh: 干嘛
+title_pinyin: gàn má
+title_en: GANMA
+artist_zh: 刘柏辛
+artist_en: Lexie Liu
+url: https://youtu.be/z4tyThWCYU0
+notes: |
+  Lyrics already in simplified (mainland release). Heavy repetition —
+  dedup rule in build_tsv.py collapses the chorus + outro repeats. One
+  spoken-word interlude (the meditation prose) is a long single line.
