@@ -24,10 +24,11 @@ songs/
 │   ├── slice.py                      ffmpeg per-line clip cutter
 │   ├── gloss.py                      CC-CEDICT-based Breakdown generator
 │   ├── cloze_pick.py                 jieba-based cloze candidate picker
-│   ├── block_plan.py                 chunks lines into N-line blocks
+│   ├── block_plan.py                 chunks lines into N-line blocks (dedups repeats)
 │   ├── combo_audio.py                bakes block-cloze combo mp3s
 │   ├── build_tsv.py                  SongLine TSV emitter
-│   └── build_blocks_tsv.py           SongBlock TSV emitter
+│   ├── build_blocks_tsv.py           SongBlock TSV emitter
+│   └── cleanup_media.py              prunes audio clips not referenced by any TSV
 └── <song_slug>/                      one dir per song
     ├── source.yaml                   title, artist, url, raw lyrics
     ├── audio.webm                    yt-dlp original (gitignored)
@@ -149,13 +150,25 @@ python songs/_pipeline/build_blocks_tsv.py \
   --song-slug   $SLUG \
   --tag song --tag song-$SLUG --tag artist-<slug>
 
-# 14. Copy $DIR/media/*.mp3 into Anki's collection.media/, then import the
-#     three TSVs in order:
-#       ..._Lines_Basic.tsv  →  SongLineBasic  (Reading + Recall-line)
-#       ..._Lines_Cloze.tsv  →  SongLineCloze  (word-level cloze)
+# 14. Prune audio clips not referenced by any TSV (chorus-repeat lines,
+#     orphan combos from deduped blocks).
+python songs/_pipeline/cleanup_media.py \
+  --media-dir $DIR/media \
+  --prefix    $SLUG \
+  --blocks    $DIR/blocks.yaml \
+  --line-tsv  $DIR/Chinese_Song_<Title>_Lines_Cloze.tsv
+
+# 15. Copy $DIR/media/*.mp3 into Anki's collection.media/, then import the
+#     TSVs in order (lowest position = first introduced to new-card queue):
+#       ..._Lines_Cloze.tsv  →  SongLineCloze  (word-level cloze; first)
 #       ..._Blocks.tsv       →  SongBlock      (whole-line block cloze)
+#       ..._Lines_Basic.tsv  →  SongLineBasic  (Recall-line + Reading; last)
 #     See songs/_note_types/README.md for one-time note-type setup.
 ```
+
+The whole flow is also wrapped in a Claude Code skill — invoke
+`/song-deck-add` to walk a song through end-to-end with the two
+interactive review checkpoints (cloze plan + English glosses).
 
 ## Anki import notes
 

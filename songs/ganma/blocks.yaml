@@ -83,26 +83,6 @@ blocks:
     end: 85.32
 - block_no: 5
   line_nos:
-  - 17
-  - 18
-  - 19
-  - 20
-  hanzi_lines:
-  - 闭上眼睛连一秒钟都受不了
-  - 干嘛?装睡?周一的夜一样要派对
-  - 因为睡睡睡睡睡不着
-  - 闭上眼睛连一秒钟都受不了
-  aligned_spans:
-  - start: 85.6
-    end: 87.76
-  - start: 88.08
-    end: 92.26
-  - start: 92.92
-    end: 95.12
-  - start: 95.4
-    end: 97.6
-- block_no: 6
-  line_nos:
   - 21
   - 22
   - 23
@@ -121,7 +101,7 @@ blocks:
     end: 109.4
   - start: 109.84
     end: 112.04
-- block_no: 7
+- block_no: 6
   line_nos:
   - 25
   - 26
@@ -141,23 +121,3 @@ blocks:
     end: 121.76
   - start: 122.34
     end: 124.5
-- block_no: 8
-  line_nos:
-  - 29
-  - 30
-  - 31
-  - 32
-  hanzi_lines:
-  - 闭上眼睛连一秒钟都受不了
-  - 干嘛?装睡?周一的夜一样要派对
-  - 因为睡睡睡睡睡不着
-  - 闭上眼睛连一秒钟都受不了
-  aligned_spans:
-  - start: 124.82
-    end: 126.98
-  - start: 127.26
-    end: 131.48
-  - start: 132.18
-    end: 134.34
-  - start: 134.62
-    end: 137.04
