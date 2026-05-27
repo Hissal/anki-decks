@@ -38,28 +38,25 @@ If you've never set up the word decks, copy `_ruby.js` from this repo into `coll
 - Deck options → **New card order: "Order added"** so cards play out top-to-bottom in line order.
 - Deck options → **Bury related new + review** so siblings of the same note don't repeat in one session.
 
-## Card ordering options
+## Card ordering — recommended import order
 
-Within a single import session, Anki's "Order added" assigns lower note positions to whatever file is imported first. New cards are drawn by note position. With the three TSVs as-is, importing them in this order:
+Anki picks new cards by `(note position, then card-template index)`. Note position = order added at import time. So the file you import first gets the lowest positions and its cards appear first in the new-card queue.
 
-```
-Lines_Basic.tsv   → SongLineBasic notes  (positions 1..N)
-Lines_Cloze.tsv   → SongLineCloze notes  (positions N+1..2N)
-Blocks.tsv        → SongBlock notes      (positions 2N+1..)
-```
-
-…produces this overall flow when you study the deck:
+For pedagogical flow (musical familiarity → sequential recall → meaning), import in this order:
 
 ```
-all Reading + Recall (sibling-buried, so 1 per line per day)
-  → all Cloze cards (sibling-buried among each line's clozes)
-    → all Block cards (sibling-buried among each block's slots)
+1. Lines_Cloze.tsv   → SongLineCloze   (word-level cloze cards introduced first)
+2. Blocks.tsv        → SongBlock       (whole-line block cloze cards next)
+3. Lines_Basic.tsv   → SongLineBasic   (Recall-line as Card 1, Reading as Card 2)
 ```
 
-**If you want strict Reading → Cloze → Recall ordering**, two paths:
+Result in the deck's new-card queue:
 
-- **Manual reposition** (chosen for now): after import, use Anki's Browse → Cards → Reposition to set explicit new-card positions per card type. Tedious per song but full control.
-- **Split `SongLineBasic` into `SongLineReading` + `SongLineRecall`** (not implemented): each as a single-template Basic note type, imported in order. The `build_tsv.py` builder would need to emit four TSVs per song instead of three. Easy to add later if manual repositioning becomes painful.
+```
+cloze cards → block cards → recall cards → reading cards
+```
+
+Inside SongLineBasic the two templates are ordered Recall (Card 1) → Reading (Card 2) so within each note the Recall card surfaces before the Reading card.
 
 ## Sibling burying caveat
 

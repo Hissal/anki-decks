@@ -1,11 +1,17 @@
 """Build SongLine TSVs — emits TWO files because Anki's Cloze note type
 can't host non-cloze card templates, so we use two note types:
 
-  <Out>_Basic.tsv  → SongLineBasic note type   (Reading + Recall-line cards)
+  <Out>_Basic.tsv  → SongLineBasic note type   (Recall-line + Reading cards)
   <Out>_Cloze.tsv  → SongLineCloze note type   (word-level cloze cards)
 
-Both files share the per-line `Key` (`<slug>_<NNN>`) — they describe the
-same lyric line from two angles. Re-importing either updates by Key.
+Both files share the per-line `Key` (`<slug>_<NNN>`). Re-importing either
+updates by Key.
+
+Inside SongLineBasic the templates are ordered Recall (Card 1) → Reading
+(Card 2). Combined with import order — Cloze.tsv first, then Block.tsv,
+then Basic.tsv last — that produces the deck-wide intro order:
+
+  Cloze cards → Block cards → Recall cards → Reading cards
 """
 from __future__ import annotations
 import argparse, json, sys
@@ -49,8 +55,7 @@ def line_pinyin(hanzi: str) -> str:
 
 
 def inject_clozes(hanzi: str, clozes: list[str]) -> str:
-    """Wrap each cloze word with `{{cN::word}}` markers, numbered by list order.
-    First occurrence wins. Warn if a word isn't found in the line."""
+    """Wrap each cloze word with `{{cN::word}}` markers, numbered by list order."""
     out = hanzi
     for i, word in enumerate(clozes, 1):
         if word not in out:
@@ -96,12 +101,13 @@ def build(
         ])
 
         clozes = by_line_no.get(i, {}).get("selected_clozes", [])
-        hanzi_with_cloze = inject_clozes(hanzi, clozes) if clozes else hanzi
-        if not clozes:
-            print(f"  warn: line {i:03d} has no selected_clozes — Cloze card won't generate")
-        cloze_rows.append([
-            key, song_slug, line_no, hanzi_with_cloze, py, en, bd, audio, tags,
-        ])
+        if clozes:
+            hanzi_with_cloze = inject_clozes(hanzi, clozes)
+            cloze_rows.append([
+                key, song_slug, line_no, hanzi_with_cloze, py, en, bd, audio, tags,
+            ])
+        else:
+            print(f"  info: line {i:03d} has no clozes — skipping Cloze TSV row")
     if skipped:
         print(f"  dedup skipped {len(skipped)} duplicate line(s): {skipped}")
     return basic_rows, cloze_rows
