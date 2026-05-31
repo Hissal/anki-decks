@@ -109,6 +109,14 @@ def main():
             total_combos += 1
             print(f"  block {b_no:02d} slot {k} (line {blank_pos:03d}, silence {blank_dur:.2f}s) -> {combo_name}")
 
+        # Full-block version (no silenced slot) for the card BACK, where the
+        # answer line should be audible. Played natively via [sound:] so it
+        # routes through Anki's player (and any volume-control addon).
+        full_name = f"{args.prefix}_block_{b_no:02d}_full.mp3"
+        concat(args.ffmpeg, line_clips, args.media_dir / full_name)
+        total_combos += 1
+        print(f"  block {b_no:02d} full (no silence) -> {full_name}")
+
     print(f"wrote {total_combos} combo files to {args.media_dir}/")
 
 

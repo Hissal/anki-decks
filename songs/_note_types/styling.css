@@ -203,6 +203,20 @@
 
 /* ---------- Toggle button + audio replay ---------- */
 
+/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,
+ * {controls:true}) — full play/pause + seek timeline, since block clips run
+ * 10–15s. Routes through the same volume-aware helper as the word decks. */
+.audio-mount {
+  margin: 10px 0;
+}
+
+.media-audio {
+  width: 100%;
+  max-width: 420px;
+  height: 36px;
+  vertical-align: middle;
+}
+
 .toggle-btn {
   appearance: none;
   -webkit-appearance: none;

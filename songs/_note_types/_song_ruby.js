@@ -150,8 +150,58 @@
     }
   }
 
+  /**
+   * FRONT-side only. Play the block-cloze combo audio for the BLANKED line.
+   *
+   * Anki cloze rendering blanks the active cloze and reveals every sibling,
+   * so we can't drive per-card audio with a `[sound:]` cloze field (it would
+   * play the siblings and mute the one we want). Instead we read the rendered
+   * lines, find which slot is the active cloze, and play that slot's pre-baked
+   * combo `<slug>_block_<NN>_c<K>.mp3` (the version with line K silenced).
+   *
+   * The active cloze is the `<span class="cloze">[...]</span>` on the front;
+   * siblings are plain text or `cloze-inactive`, so `span.cloze` matches only
+   * the active one. Falls back to the "[...]" placeholder shape.
+   *
+   * Playback is delegated to `_ruby.js::mountAutoplayAudio` with
+   * `{controls:true}`: we set the detected filename as `data-soundfile` on the
+   * host and the shared helper autoplays it at the configured volume
+   * (`window.ankiDecksConfig`, the 🔊 addon knob), renders native audio
+   * controls (pause + seek timeline, since block clips are long), and stops
+   * any clip already playing so it never bleeds into the next card. Never uses
+   * native `[sound:]`, which would bypass the volume knob.
+   *
+   * (The BACK is a plain `{{soundfile:BlockAudio}}` mount — full block, same
+   * helper — so it does NOT call this.)
+   *
+   * Call this BEFORE mountLines (which rewrites the container's innerHTML).
+   */
+  function playBlockAudio(linesId, audioId, slug, blockNo) {
+    var lines = document.getElementById(linesId);
+    var host = document.getElementById(audioId);
+    if (!lines || !host || !slug) return;
+    var chunks = lines.innerHTML.split(/<br\s*\/?>/i);
+    var k = -1;
+    for (var i = 0; i < chunks.length; i++) {
+      var temp = document.createElement("div");
+      temp.innerHTML = chunks[i];
+      if (temp.querySelector("span.cloze") || looksBlanked(temp.textContent)) {
+        k = i + 1; // 1-based slot, matches combo numbering (line order)
+        break;
+      }
+    }
+    if (k < 0) return;
+    var bb = ("0" + String(blockNo)).slice(-2);
+    host.setAttribute("data-soundfile", slug + "_block_" + bb + "_c" + k + ".mp3");
+    if (window.ankiDecks && window.ankiDecks.mountAutoplayAudio) {
+      // controls:true → native pause + seek timeline (block clips are long).
+      window.ankiDecks.mountAutoplayAudio("#" + audioId, { controls: true });
+    }
+  }
+
   window.songsRuby = {
     mountElement: mountElement,
     mountLines: mountLines,
+    playBlockAudio: playBlockAudio,
   };
 })();

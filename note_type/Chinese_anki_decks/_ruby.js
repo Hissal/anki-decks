@@ -15,10 +15,17 @@
  *   attachToggle(containerId, buttonId)     - wires the toggle-pinyin button
  *   mountExamples(selector)                 - turns Examples field into <ul><li> ...
  *   attachAudioButton(buttonId, filename)   - click-to-play HTML5 audio button
- *   mountAutoplayAudio(selector)            - on each matching element, reads
- *                                             data-soundfile, autoplays the
- *                                             audio, renders a replay button.
- *                                             Also wires the R key to replay.
+ *   mountAutoplayAudio(selector, opts)      - on each matching element, reads
+ *                                             data-soundfile, stops any clip
+ *                                             already playing, then autoplays
+ *                                             this one. Renders a ▶ replay
+ *                                             button, or a native <audio
+ *                                             controls> (pause + seek) when
+ *                                             opts.controls is true. Wires R.
+ *   stopAudio()                             - stop the clip currently playing
+ *
+ * Only one clip plays at a time: starting any clip (and page-hide) stops the
+ * previous one, so long audio never bleeds across card sides / next card.
  */
 (function () {
   "use strict";
@@ -220,6 +227,30 @@
     }
   }
 
+  // The single audio clip the reviewer currently owns. Anki reuses one webview
+  // and swaps card HTML without a real page reload, so a previous side's /
+  // card's HTML5 audio keeps playing unless we stop it (native [sound:] is
+  // deliberately not used, so Anki won't stop it for us).
+  //
+  // Tracked on `window`, NOT a closure var: Anki re-evaluates these scripts on
+  // every card side, so a closure var would be a fresh `null` each run and
+  // couldn't reach the previous run's clip. `window` persists across runs.
+  function _current() {
+    return (typeof window !== "undefined") ? window.__ankiDecksCurrentAudio : null;
+  }
+  function _setCurrent(audio) {
+    if (typeof window !== "undefined") window.__ankiDecksCurrentAudio = audio;
+  }
+
+  function stopAudio() {
+    var a = _current();
+    if (!a) return;
+    try {
+      a.pause();
+      a.currentTime = 0;
+    } catch (e) { /* detached element — ignore */ }
+  }
+
   function _makeAudio(filename) {
     filename = (filename || "").trim();
     if (!filename) return null;
@@ -246,6 +277,8 @@
 
   function _play(audio) {
     if (!audio) return;
+    stopAudio();          // kill the previous side/card's clip — no bleed-over
+    _setCurrent(audio);
     try {
       audio.volume = currentVolume();
       audio.currentTime = 0;
@@ -273,52 +306,78 @@
     btn.addEventListener("click", function () { _play(audio); });
   }
 
-  // Most-recently-mounted autoplay audio. R-key replay targets this so the
-  // hotkey behavior matches what users expect from Anki's native player.
-  var lastAutoplayAudio = null;
-
-  function mountAutoplayAudio(selector) {
+  /**
+   * For each element matching `selector`: read `data-soundfile`, stop any
+   * clip already playing, then autoplay this one at the configured volume.
+   *
+   * opts.controls === true appends a native <audio controls> element
+   * (play/pause + seek timeline + elapsed/total + volume) instead of the
+   * compact ▶ replay button — for long clips like song blocks. Default
+   * (no opts) keeps the small replay button the word decks use.
+   */
+  function mountAutoplayAudio(selector, opts) {
+    opts = opts || {};
     var nodes = document.querySelectorAll(selector);
     for (var i = 0; i < nodes.length; i++) {
       var node = nodes[i];
       if (node.dataset.ankiMounted === "1") continue;
       node.dataset.ankiMounted = "1";
 
-      var filename = node.getAttribute("data-soundfile") || "";
-      var audio = _makeAudio(filename);
+      var audio = _makeAudio(node.getAttribute("data-soundfile") || "");
       if (!audio) {
         node.textContent = "";
         continue;
       }
-
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "replay-btn";
-      btn.setAttribute("aria-label", "Replay audio");
-      btn.title = "Replay audio (R)";
-      btn.innerHTML = "▶";
-      (function (a, b) {
-        b.addEventListener("click", function () { _play(a); });
-      })(audio, btn);
-
       node.textContent = "";
-      node.appendChild(btn);
 
-      lastAutoplayAudio = audio;
+      if (opts.controls) {
+        // new Audio() is an HTMLAudioElement — give it native controls and
+        // drop it in the DOM so the user gets pause + a scrub timeline.
+        audio.controls = true;
+        audio.className = "media-audio";
+        node.appendChild(audio);
+      } else {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "replay-btn";
+        btn.setAttribute("aria-label", "Replay audio");
+        btn.title = "Replay audio (R)";
+        btn.innerHTML = "▶";
+        (function (a, b) {
+          b.addEventListener("click", function () { _play(a); });
+        })(audio, btn);
+        node.appendChild(btn);
+      }
+
       _play(audio);
     }
   }
 
-  // Anki's R hotkey replays audio when the native player owns it. We bind
-  // our own listener so the same hotkey works for our HTML5 audio.
-  document.addEventListener("keydown", function (e) {
-    if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey && !e.altKey) {
-      if (lastAutoplayAudio) {
-        e.preventDefault();
-        _play(lastAutoplayAudio);
-      }
+  // One-time global audio wiring. Anki re-runs <script> tags on every card
+  // side, so guard with a window flag to bind these listeners only once per
+  // webview lifetime. Eval-safe: window/document may be bare in test sandboxes.
+  if (typeof window !== "undefined" && !window.__ankiDecksAudioBound) {
+    window.__ankiDecksAudioBound = true;
+    if (typeof document !== "undefined" && document.addEventListener) {
+      // R hotkey replays the current clip (matches Anki's native R behavior).
+      document.addEventListener("keydown", function (e) {
+        if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey && !e.altKey) {
+          var a = _current();
+          if (a) {
+            e.preventDefault();
+            _play(a);
+          }
+        }
+      });
+      // Hidden tab / closing the reviewer → stop any clip still playing.
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) stopAudio();
+      });
     }
-  });
+    if (window.addEventListener) {
+      window.addEventListener("pagehide", stopAudio);
+    }
+  }
 
   window.ankiDecks = {
     mountRuby: mountRuby,
@@ -326,6 +385,7 @@
     mountExamples: mountExamples,
     attachAudioButton: attachAudioButton,
     mountAutoplayAudio: mountAutoplayAudio,
+    stopAudio: stopAudio,
     parseHint: parseHint,
     mountHint: mountHint,
   };

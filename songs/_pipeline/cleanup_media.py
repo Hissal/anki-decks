@@ -60,6 +60,8 @@ def referenced_files(
             keep.add(f"{prefix}_{int(n):03d}.mp3")
         for k_idx in range(len(line_nos)):
             keep.add(f"{prefix}_block_{b_no:02d}_c{k_idx + 1}.mp3")
+        # Full-block (no silence) version played on the card back.
+        keep.add(f"{prefix}_block_{b_no:02d}_full.mp3")
 
     return keep
 

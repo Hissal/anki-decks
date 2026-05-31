@@ -4,10 +4,20 @@ Each block becomes a single Anki Cloze note. Every line in the block is
 wrapped in its own `{{cN::}}` marker, so the note generates one card per
 line — each card hides ONE whole line while showing the others.
 
-`BlockAudio` exploits the cloze grouping: each `{{cN::}}` wraps a single
-pre-baked combo mp3 ref. Anki shows only the matching card's contents,
-so each card plays exactly its combo file (the version with silence in
-the blanked slot).
+Audio differs front vs back:
+
+  * FRONT: the silenced-slot combo `<slug>_block_<NN>_c<K>.mp3`, picked
+    per-card by the template (`_song_ruby.js::playBlockAudio`). It can't be
+    a cloze `[sound:]` field — Anki blanks the active cloze and reveals its
+    siblings, so a per-cloze field would play the three combos you DON'T
+    want and suppress the one you do.
+  * BACK: the FULL block `<slug>_block_<NN>_full.mp3` (no silence) so the
+    answer line is audible. Same file for all 4 cards of the block, so no
+    per-card selection is needed — it's stored in `BlockAudio` as a
+    `[sound:…]` ref and the back template consumes it via
+    `{{soundfile:BlockAudio}}` -> `mountAutoplayAudio`, the same volume-aware
+    HTML5-audio helper the word decks (and the front) use. (Native `[sound:]`
+    autoplay is deliberately avoided — it bypasses the volume-knob addon.)
 
 Schema:
   Key  SongSlug  BlockNo  Lines  Pinyin  English  Breakdown
@@ -91,21 +101,19 @@ def build_rows(
         line_nos = block["line_nos"]
         # Build cloze-wrapped Lines field.
         cloze_lines = []
-        audio_pieces = []
         pinyin_lines = []
         english_lines = []
         breakdown_lines = []
         for k, n in enumerate(line_nos, 1):
             hanzi = aligned_lines[n - 1]["line"]
             cloze_lines.append(f"{{{{c{k}::{hanzi}}}}}")
-            audio_pieces.append(
-                f"{{{{c{k}::[sound:{prefix}_block_{b_no:02d}_c{k}.mp3]}}}}"
-            )
             pinyin_lines.append(line_pinyin(hanzi))
             english_lines.append(english[n - 1])
             breakdown_lines.append(breakdown[n - 1])
         lines_field = "<br>".join(cloze_lines)
-        audio_field = "".join(audio_pieces)
+        # Native full-block ref for the card BACK (front audio is picked by
+        # the template per-card; see module docstring).
+        audio_field = f"[sound:{prefix}_block_{b_no:02d}_full.mp3]"
         pinyin_field = "<br>".join(pinyin_lines)
         english_field = "<br>".join(english_lines)
         breakdown_field = merge_breakdown(breakdown_lines)

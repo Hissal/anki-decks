@@ -103,5 +103,5 @@ Lines
 Pinyin
 English
 Breakdown
-BlockAudio
+BlockAudio    ([sound:…_full.mp3] full block for the back, via {{soundfile:BlockAudio}}; front audio is JS-picked per-card)
 ```
