@@ -191,6 +191,7 @@ MEANING_OVERRIDES: dict[str, str] = {
     "长": "long / chief / to grow",
     "隶": "subordinate / attached to · orig. seize / slave",
     "几": "small table / how many (simplified merges 幾)",
+    "欠": "to owe / lack · orig. open mouth (yawn / exhale)",
 }
 
 # Hand-picked MemberChars for high-leverage radicals where the source set is
