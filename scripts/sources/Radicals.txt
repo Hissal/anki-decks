@@ -1,0 +1,217 @@
+#separator:tab
+#html:true
+#tags column:6
+一		yī	one	七三丈不丘世	
+丨		gǔn	line	中	
+丶		zhǔ	dot	丸, 主	
+丿		piě	slash	久,之,乎	
+乙 (⺄, 乚)		yǐ	second	九,也	
+亅		jué	hook	了,事	
+二		èr	two	五,井,些,亞	
+亠		tóu	lid	亡,交,京	
+人 (亻,𠆢)		rén	man	仁,休,位,今	
+儿		ér	son, legs	兄,元	
+入		rù	enter	入,全,兩	
+八		bā	eight	公,六,共,兵	
+冂		jiōng	(down box)	内,再	
+冖		mì	cover	冗,冠	
+冫		bīng	ice	冬,冶,冷,凍	
+几		jī	table	凡	
+凵		qū	(open box)	凶,出,函	
+刀 (刂)		dāo	knife	刀,分,切,初,利,刻,則,前	
+力		lì	power	力,加,助,勉	
+勹		bāo	wrap	勾,包	
+匕		bǐ	spoon	化,北	
+匚		fāng	(right open box)	匣	
+匸		xǐ/xì	hiding enclosure	匹,區	
+十		shí	ten	十,千,午,半,博	
+卜		bǔ	divination	占,卦	
+卩 (㔾)		jié	seal (device)	印,危,卵	
+厂	(pr.chǎng)	hàn	cliff	厚,原	
+厶		sī	private	去,參	
+又		yòu	again	友,反,取,受	
+口		kǒu	mouth	口,古,可,名,君,否,呉,告,周,味,命,和,哲,唐,善,器	
+囗		wéi	enclosure	四,回,國,圖	
+土		tǔ	earth	土,在,地,型,城,場,壁,壓	
+士		shì	scholar	士,壹	
+夂		zhǐ	go	夆	
+夊		suī	go slowly	夏	
+夕		xī	evening	夕,外,多,夜	
+大		dà	big	大,天,奈,奧	
+女		nǚ	woman	女,好,妄,妻,姉,始,姓,姫	
+子		zǐ	child	子,孔,字,學	
+宀		mián	roof	守,家,寒,實	
+寸		cùn	inch	寸,寺,尊,將	
+小 (⺌, ⺍)		xiǎo	small	小,少	
+尢 (尣)		wāng	lame	尤,就	
+尸		shī	corpse	尺,局	
+屮		chè	sprout	屯	
+山		shān	mountain	山,岡,岩,島	
+巛 (川, 巜)		chuān	river	川,州,巡	
+工		gōng	work	工,左,巫,差	
+己		jǐ	oneself	己,巳	
+巾		jīn	turban	市,布,帝,常	
+干		gān	dry	平,年	
+幺		yāo	short thread	幻,幼	
+广		guǎng	(dotted cliff)	序,店,府,度,座,庭,廣,廳	
+廴		yǐn	long stride	延	
+廾		gǒng	(two hands)	弁	
+弋		yì	shoot	式,弑	
+弓		gōng	bow	弓,引,弟,弱,彌	
+彐 (彑)		jì	snout	当,彖	
+彡		shān	bristle	形,彦	
+彳		chì	step	役,彼,後,得,徳,徼	
+心 (忄,⺗)		xīn	heart	必,忙,忌,性,悪,情,想	
+戈		gē	halberd	成,式,弐,戦	
+戶 (户,戸)		hù	door	戸,戻,所	
+手 (扌,龵)		shǒu	hand	手,才,持,掛,挙,拜,拳,掌,掣,擧 (打,批,技,抱,押)	
+支		zhī	branch	攱,攲	
+攴 (攵)		pū	rap, tap	收,敍,數,斅	
+文		wén	script	文,斊,斈,斌,斐,斑,斕	
+斗		dǒu	dipper	料,斡	
+斤		jīn	axe	斦,斧,新,斥,斬,斷	
+方		fāng	square	方,放,旅,族	
+无 (旡)		wú	not	无,旡,既,旣	
+日		rì	sun	日,白,百,明,的,映,時,晩	
+曰		yuē	say	書,最,晉,曷,曹,曾	
+月		yuè	moon	有,服,青,朝	
+木		mù	tree	木,杢,板,相,根,森,楽,機,末,本,杉,林	
+欠		qiàn	lack	欣,欽,欧,欲,歌	
+止		zhǐ	stop	正,歩,此,步,武,歪,歲	
+歹 (歺)		dǎi	death	死,列,殕	
+殳		shū	weapon	役,投,殴,殷	
+毋 (母, ⺟)		wú	do not	毋,母,毎,姆,梅	
+比		bǐ	compare	皆,批,毕,毖,毘,毚	
+毛		máo	fur	毟,毡,毦,毫,毳,耗	
+氏		shì	clan	氏,民,紙,婚,氓	
+气		qì	steam	気,汽,氧	
+水 (氺,氵)		shuǐ	water	水,永,泳,決,治,海,演,漢,瀬	
+火 (灬)		huǒ	fire	火,灯,毯,爆 (烈,烹,焦,然,煮)	
+爪 (爫)		zhǎo	claw	爬,爯,爭,爰,爲	
+父		fù	father	斧,釜	
+爻		yáo	(double x)	爼,爽,爾	
+爿 (丬)		qiáng	(half tree trunk)	牀,奘,牃	
+片		piàn	slice	版,牌,牒	
+牙		yá	fang	芽,呀,牚	
+牛 (牜, ⺧)		niú	cow	告,牟,牧,物,特,解	
+犬 (犭)		quǎn	dog	犬,犯,狂,狙,狗,献,獣	
+玄		xuán	profound	弦,玆	
+玉 (玊, 王, ⺩)		yù	jade	王,玉,主,弄,皇,理,差,聖	
+瓜		guā	melon	呱,瓞	
+瓦		wǎ	tile	瓧,瓮,甄	
+甘		gān	sweet	柑,甜,酣	
+生		shēng	life	牲,笙,甥	
+用		yòng (shuǎi)	use	佣,甬,甯	
+田		tián	field	田,町,思,留,略,番	
+疋 (⺪)		pǐ	bolt of cloth	疏,楚,胥,延	
+疒		nè	sickness	病,症,痛,癌,癖	
+癶		bō	dotted tent, legs	発,登	
+白		bái	white	皃,的,皆,皇	
+皮		pí	skin	披,彼,波	
+皿		mǐn	dish	盂,盉,盍,監,蘯	
+目		mù	eye	目,見,具,省,眠,眼,観,覧	
+矛		máo	spear	茅,矜	
+矢		shǐ	arrow	医,族,矩	
+石		shí	stone	石,岩,砂,破,碑,碧	
+示 (礻)		shì	spirit	示,礼,社,奈,神,祭,視,禁,福	
+禸		róu	track	禹,禺,禽	
+禾		hé	grain	利,私,季,和,科,香,秦,穀	
+穴		xué	cave	空,突,窅,窘,窩,窶,竇	
+立		lì	stand	立,音,産,翌,意,新,端,親,競	
+竹 (⺮)		zhú	bamboo	竺,笑,第,等,簡	
+米		mǐ	rice	料,断,奥,糊,麟	
+糸 (糹)	纟	mì	silk	系,級,紙,素,細,組,終,絵,紫	
+缶		fǒu	jar	缶,缸,窑,陶	
+网 (罒,⺲,罓,⺳)		wǎng	net	買,罪,置,羅	
+羊 (⺶,⺷)		yáng	sheep	着,羚,翔,着	
+羽		yǔ	feather	習,翀,翁,翔	
+老 (耂)		lǎo	old	耆,孝,耋	
+而		ér	and	耎,耐,耑	
+耒		lěi	plow	耔,耝,耨,耰	
+耳		ěr	ear	取,聞,職,叢	
+聿 (⺻)		yù	brush	律,書,建	
+肉 (⺼)		ròu	meat	肉,肖,股,胃,腅,脤	
+臣		chén	minister	臥,宦,蔵	
+自		zì	self	自,臫,臬,臲	
+至		zhì	arrive	致,臸,臺	
+臼		jiù	mortar	桕,舅,舂,鼠,插	
+舌		shé	tongue	乱,适,話,舍	
+舛		chuǎn	oppose	舛,舜,舞	
+舟		zhōu	boat	航,船,艦	
+艮		gēn	stopping	良,飲,很	
+色		sè	color	色,艴,艷	
+艸 (艹)		cǎo	grass	共,花,英,苦,草,茶,落,幕,靴,鞄,薬	
+虍		hū	tiger	虎,虐,彪,虒	
+虫	(pr.chóng)	huǐ	insect	蚯,蚓,強,触,蟻,蟹	
+血		xuè	blood	洫,衁,衅,衆	
+行		xíng	walk enclosure	行,衍,術,衝	
+衣 (衤)		yī	clothes	衣,初,被,装,裁,複	
+襾 (西,覀)		xī	west	西,要,覊	
+見	见	jiàn	see	規,親,覺,觀	
+角		jiǎo	horn	觚,解,觕,觥,觸	
+言 (訁)	讠	yán	speech	誁,詋,詔,評,詗,詥,試,詧	
+谷		gǔ	valley	谿,豀,谸	
+豆		dòu	bean	豈,豐,豎	
+豕		shǐ	pig	豖,豚,象	
+豸		zhì	badger	豹,貌,貓,貈,貉	
+貝	贝	bèi	shell	財,賊,賜,贛,貧,貨,貫,貿	
+赤		chì	red	赫,赭	
+走 (赱)		zǒu	run	赴,起,超	
+足 (⻊)		zú	foot	跑,跨,跟,跪,路	
+身		shēn	body	躬,躲,軀	
+車	车	chē	cart	軌,軟,較,軍,載	
+辛		xīn	bitter	辜,辟,辣,辦,辨	
+辰		chén	morning	辱,農	
+辵 (辶,⻌,⻍)		chuò / zouzhi	walk	巡,迎,通,追,逃,辶,迎,進	
+邑 (阝,⻏,⻖)		yì	city	那,邦,郎,部,郭,都,鄉	
+酉		yǒu	wine	醉,酱,油,醒,酸	
+釆		biàn	distinguish	釉,釋	
+里		lǐ	village	野,野	
+金 (釒)	钅	jīn	gold	銀,銅,釘,銳,鋞,鋙,鉒,鉍,鉗,鈡,鈠	
+長 (镸)	长	cháng	long	镸,镽	
+門	门	mén	gate	間,閑,關,闘,閉,開,閏,間,關	
+阜 (阝)		fù	mound	阪,防,阻,陆,陘,院,险,陳	
+隶		lì	slave	隸,隺	
+隹		zhuī	short-tailed bird	雀,集,雁,难,雀,雅	
+雨		yǔ	rain	雾,霜,雪,霸,雲,霧	
+青 (靑)		qīng	blue	靕,靖,靜	
+非		fēi	wrong	靠,靠,靟	
+面 (靣)		miàn	face	靦,靨	
+革		gé	leather	靴,鞍,鞅,鞍,鞭	
+韋	韦	wéi	tanned leather	韋,韓,韜	
+韭		jiǔ	leek	韱,韲	
+音		yīn	sound	韶,韻,韾	
+頁	页	yè	leaf	頃,項,順,須,領,頭,頩,頂	
+風 (𠘨)	风	fēng	wind	颱,飄,颿,颩,颪	
+飛	飞	fēi	fly	飜,飝	
+食 (飠)	饣	shí	eat	飯,飲,餓,餘,餐,養	
+首		shǒu	head	馗,馘	
+香		xiāng	fragrant	馨,馫	
+馬	马	mǎ	horse	馮,馴,馳,駐,驚	
+骨		gǔ	bone	骼,髒,髀,骿,骾	
+高 (髙)		gāo	tall	髚,髛	
+髟		biāo	hair	髮,鬚,鬆,鬍,髦	
+鬥		dòu	fight	鬧,鬪	
+鬯		chàng	sacrificial wine	鬰,鬱	
+鬲		lì	cauldron	鬶,鬷,鬸	
+鬼		guǐ	ghost	魂,魁,鬽,魄	
+魚	鱼	yú	fish	鯉,鮑,魛,魜,魝,魞,魟,魠	
+鳥	鸟	niǎo	bird	鳫,鳮,鳱,鳳,鳴,鳿,雞,鳴,鴻,鴛	
+鹵	卤	lǔ	salt	鹹,鹼,鹽	
+鹿		lù	deer	塵,麃,麋,麉,麟	
+麥	麦	mài	wheat	麴,麵,麱,麨,麺	
+麻		má	hemp	麼,魔	
+黃		huáng	yellow	黊,黌	
+黍		shǔ	millet	黏,黎	
+黑		hēi	black	點,黛,黱,黨	
+黹		zhǐ	embroidery	黼,黻	
+黽	黾	mǐn	frog	鼈,黿,鼆	
+鼎		dǐng	tripod	鼏,鼒	
+鼓		gǔ	drum	鼗,鼘	
+鼠		shǔ	rat	鼢,鼣,鼤	
+鼻		bí	nose	鼼,鼽,鼿	
+齊	齐	qí	even	齋,齏,齏	
+齒	齿	chǐ	tooth	齡,齠,齗	
+龍	龙	lóng	dragon	龖,龘	
+龜	龟	guī	turtle	龝	
+龠		yuè	flute	龣,龤	

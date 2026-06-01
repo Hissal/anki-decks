@@ -29,9 +29,9 @@ from components_common import (
     COMPONENT_HEADER,
 )
 
-DEFAULT_SOURCE = Path(
-    r"C:\Users\hissa\OneDrive\Työpöytä\Selected Notes.txt"
-)
+# In-repo copy of the source notes (the original lived on the Desktop and kept
+# getting deleted). Committed so the full importer stays runnable.
+DEFAULT_SOURCE = REPO_ROOT / "scripts" / "sources" / "Selected Notes.txt"
 
 # Components HanziCraft has no dictionary entry for — manual glosses keyed by
 # the simplified component character. Applied only when the row's Meaning is
@@ -428,6 +428,18 @@ def compute_same_syllable_bucket(
     return "".join(bucket2)
 
 
+def _decomp_usable(parts: list[str] | None, ch: str) -> bool:
+    """A decomp is usable when it has parts, none unglyphable, and isn't just
+    the char repeating itself."""
+    if not parts:
+        return False
+    if any(p == "?" for p in parts):
+        return False
+    if len(parts) == 1 and parts[0] == ch:
+        return False
+    return True
+
+
 def build_member_decomp(
     component: str,
     bucket1: str,
@@ -435,29 +447,53 @@ def build_member_decomp(
     char_decomp: dict[str, dict] | None,
     enrich: dict[str, dict] | None,
 ) -> str:
-    """Pack `巩=工+凡|汞=工+水` style per-char once-level decomp. Pulls from
-    char_decomp first; falls back to enrich (for chars that are also
-    components themselves). Skips chars with no usable data."""
+    """Pack `巩=工+凡|汞=工+水`-style per-char decomp for Card 2 back.
+
+    Prefers HanziCraft's top-level `once` split — the clean phonetic+rest
+    breakdown (河 → 氵 + 可). But `once` sometimes hides the component one
+    level down (the same nesting problem the radicals deck has). When `once`
+    fails to surface the component, fall back to the full `radical`
+    decomposition, which atomizes to base components and does contain it — the
+    point of Card 2 is to highlight the shared phonetic in every member."""
     if not (char_decomp or enrich):
         return ""
+    needle = {component}
     pieces: list[str] = []
     seen: set[str] = set()
+
+    def _surfaces(parts: list[str]) -> bool:
+        return any(p in needle for p in parts)
+
     for ch in list(bucket1) + list(bucket2):
         if ch in seen:
             continue
         seen.add(ch)
+
         d = (char_decomp or {}).get(ch) if char_decomp else None
-        once: list[str] | None = None
-        if d and d.get("once"):
-            once = d["once"]
-        elif enrich and enrich.get(ch) and enrich[ch].get("decomposition", {}).get("once"):
-            once = enrich[ch]["decomposition"]["once"]
-        if not once:
+        once = (d.get("once") if d else None) or None
+        rad = (d.get("radical") if d else None) or None
+        if (once is None or rad is None) and enrich and enrich.get(ch):
+            edec = enrich[ch].get("decomposition") or {}
+            once = once or (edec.get("once") or None)
+            rad = rad or (edec.get("radical") or None)
+
+        once_c = _clean_decomp_parts(once) if once else None
+        rad_c = _clean_decomp_parts(rad) if rad else None
+
+        # Priority: clean `once` that surfaces the component → full `radical`
+        # decomp that surfaces it → any usable `once` → any usable `radical`.
+        if _decomp_usable(once_c, ch) and _surfaces(once_c):
+            chosen = once_c
+        elif _decomp_usable(rad_c, ch) and _surfaces(rad_c):
+            chosen = rad_c
+        elif _decomp_usable(once_c, ch):
+            chosen = once_c
+        elif _decomp_usable(rad_c, ch):
+            chosen = rad_c
+        else:
             continue
-        cleaned = _clean_decomp_parts(once)
-        if len(cleaned) == 1 and cleaned[0] == ch:
-            continue
-        pieces.append(f"{ch}={'+'.join(cleaned)}")
+
+        pieces.append(f"{ch}={'+'.join(chosen)}")
     return "|".join(pieces)
 
 

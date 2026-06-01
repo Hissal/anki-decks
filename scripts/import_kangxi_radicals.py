@@ -35,9 +35,9 @@ from radicals_common import (
     RADICALS_HEADER,
 )
 
-DEFAULT_SOURCE = Path(
-    r"C:\Users\hissa\OneDrive\Työpöytä\Radicals.txt"
-)
+# In-repo copy of the hand-curated seed (the original lived on the Desktop and
+# kept getting deleted). Committed so the full importer stays runnable.
+DEFAULT_SOURCE = REPO_ROOT / "scripts" / "sources" / "Radicals.txt"
 DEFAULT_HC_CACHE = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
 DEFAULT_CWC_CACHE = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
 DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
@@ -511,32 +511,75 @@ def build_decomposition(component: str, hc_decomp: dict | None) -> str:
     return ";".join(parts)
 
 
+def _decomp_usable(parts: list[str] | None, ch: str) -> bool:
+    """A decomp is usable when it has parts, none unglyphable, and isn't just
+    the char repeating itself."""
+    if not parts:
+        return False
+    if any(p == "?" for p in parts):
+        return False
+    if len(parts) == 1 and parts[0] == ch:
+        return False
+    return True
+
+
 def build_member_decomp(
     chars: str,
     char_decomp: dict[str, dict] | None,
     enrich: dict[str, dict] | None,
+    radical_glyphs: set[str] | None = None,
 ) -> str:
-    """`巩=工+凡|汞=工+水` style per-char once-level decomp packing."""
+    """`巩=工+凡|汞=工+水`-style per-char decomp packing for Card 4 back.
+
+    Prefers HanziCraft's top-level `once` split — the clean radical+phonetic
+    breakdown (河 → 氵 + 可). But `once` sometimes hides the shared radical one
+    level down (奘 → 壯 + 大 buries 爿 inside 壯). When `once` fails to surface
+    the radical, fall back to the full `radical` decomposition (奘 → 爿 + 士 +
+    大), which atomizes to base components and DOES contain it — the whole
+    point of Card 4 is to highlight the shared radical across every member.
+
+    `radical_glyphs` is the {radical + variants} set the card highlights green.
+    When empty the function just uses `once` (legacy behavior, no fallback)."""
     if not (char_decomp or enrich):
         return ""
+    needle = set(radical_glyphs or [])
     pieces: list[str] = []
     seen: set[str] = set()
+
+    def _surfaces(parts: list[str]) -> bool:
+        return bool(needle) and any(p in needle for p in parts)
+
     for ch in chars:
         if ch in seen:
             continue
         seen.add(ch)
+
         d = (char_decomp or {}).get(ch) if char_decomp else None
-        once: list[str] | None = None
-        if d and d.get("once"):
-            once = d["once"]
-        elif enrich and enrich.get(ch) and enrich[ch].get("decomposition", {}).get("once"):
-            once = enrich[ch]["decomposition"]["once"]
-        if not once:
+        once = (d.get("once") if d else None) or None
+        rad = (d.get("radical") if d else None) or None
+        if (once is None or rad is None) and enrich and enrich.get(ch):
+            edec = enrich[ch].get("decomposition") or {}
+            once = once or (edec.get("once") or None)
+            rad = rad or (edec.get("radical") or None)
+
+        once_c = _clean_decomp_parts(once) if once else None
+        rad_c = _clean_decomp_parts(rad) if rad else None
+
+        # Priority: clean `once` that surfaces the radical (or no radical given)
+        # → full `radical` decomp that surfaces it → any usable `once` → any
+        # usable `radical`.
+        if _decomp_usable(once_c, ch) and (_surfaces(once_c) or not needle):
+            chosen = once_c
+        elif _decomp_usable(rad_c, ch) and _surfaces(rad_c):
+            chosen = rad_c
+        elif _decomp_usable(once_c, ch):
+            chosen = once_c
+        elif _decomp_usable(rad_c, ch):
+            chosen = rad_c
+        else:
             continue
-        cleaned = _clean_decomp_parts(once)
-        if len(cleaned) == 1 and cleaned[0] == ch:
-            continue
-        pieces.append(f"{ch}={'+'.join(cleaned)}")
+
+        pieces.append(f"{ch}={'+'.join(chosen)}")
     return "|".join(pieces)
 
 
@@ -770,7 +813,9 @@ def transform_row(
         canonical, source_chars, cwc, char_data, char_decomp, variant_aliases
     )
     _validate_member_picks(canonical, member_chars, cwc, log)
-    member_decomp = build_member_decomp(member_chars, char_decomp, enrich)
+    member_decomp = build_member_decomp(
+        member_chars, char_decomp, enrich, {canonical} | variant_aliases
+    )
 
     # Note assembly.
     note_extras: list[str] = []

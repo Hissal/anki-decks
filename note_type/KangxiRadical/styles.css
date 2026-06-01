@@ -286,18 +286,30 @@
 /* ---------- Member decomposition lines (Card 4 back) ---------- */
 
 .member-decomp-block {
-  margin: 4px auto 10px;
+  margin: 6px auto 10px;
   max-width: 600px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
   justify-content: center;
-  gap: 8px 14px;
+  justify-items: start;
+  align-items: baseline;
+  gap: 6px 30px;
+  text-align: left;
 }
+@media (max-width: 420px) {
+  .member-decomp-block { grid-template-columns: minmax(0, max-content); }
+}
+/* Each line is its own 2-col subgrid: a fixed char column keeps the `=` (and
+   therefore every breakdown) aligned down each column. */
 .member-decomp-line {
+  display: grid;
+  grid-template-columns: 1.5em 1fr;
+  align-items: baseline;
+  column-gap: 2px;
   font-family: "Kaiti SC", "STKaiti", "KaiTi", "楷体", serif;
   font-size: 17px;
+  line-height: 1.5;
   color: #4b5563;
-  white-space: nowrap;
 }
 .member-decomp-char {
   font-weight: 600;
@@ -305,7 +317,7 @@
 }
 .member-decomp-eq {
   color: #9ca3af;
-  margin: 0 4px;
+  margin: 0 4px 0 0;
   font-size: 14px;
 }
 .decomp-semantic {

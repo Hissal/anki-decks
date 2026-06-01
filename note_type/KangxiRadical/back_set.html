@@ -116,8 +116,9 @@
       lines.push(
         '<div class="member-decomp-line">' +
           '<span class="member-decomp-char">' + escHtml(ch) + '</span>' +
-          '<span class="member-decomp-eq">=</span>' +
-          inner +
+          '<span class="member-decomp-rest">' +
+            '<span class="member-decomp-eq">=</span>' + inner +
+          '</span>' +
         '</div>'
       );
     });
