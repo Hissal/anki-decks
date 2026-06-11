@@ -143,6 +143,133 @@ def numeric_pinyin_to_marks(raw: str) -> str | None:
 
 
 # ---------------------------------------------------------------------------
+# Authoritative member-set helpers — added in the correctness/simplify pass.
+#   * pypinyin heteronyms  -> multi-reading sound (fixes single-reading char_data
+#     that mis-bucketed polyphonic chars: 蔓 has màn, 轲 has kě, 盛 has chéng…)
+#   * opencc t2s           -> simplified-only deck (drops traditional duplicates)
+#   * cwc + decomposition  -> containment truth (a member must actually CONTAIN
+#     the component; this is what 于's bogus 余餘予馀 violated)
+# ---------------------------------------------------------------------------
+
+from pypinyin import pinyin as _pinyin, Style as _Style  # noqa: E402
+from opencc import OpenCC as _OpenCC  # noqa: E402
+
+_T2S = _OpenCC("t2s")
+
+
+def to_simplified(ch: str) -> str:
+    """opencc traditional→simplified for a single char (no-op if already simp)."""
+    return _T2S.convert(ch)
+
+
+def _norm_syllable(s: str) -> str:
+    return s.strip().lower().replace("ü", "v").replace("u:", "v")
+
+
+def char_readings(ch: str) -> list[tuple[str, int]]:
+    """All (syllable, tone) readings for a char via pypinyin heteronyms.
+    Tone 5 = neutral. Returns [] when pypinyin has no Han reading."""
+    try:
+        raw = _pinyin(ch, style=_Style.TONE3, heteronym=True)
+    except Exception:
+        return []
+    out: list[tuple[str, int]] = []
+    for r in (raw[0] if raw else []):
+        if not r:
+            continue
+        tone = int(r[-1]) if r[-1].isdigit() else 5
+        syl = _norm_syllable(r[:-1] if r[-1].isdigit() else r)
+        if syl:
+            out.append((syl, tone))
+    return out
+
+
+def component_contains(component: str, ch: str,
+                       cwc: dict | None,
+                       char_decomp: dict | None) -> tuple[bool, bool]:
+    """Does `ch` contain `component`? Returns (contained, have_evidence).
+
+    Truth order: ch == component, then cwc[component] membership (HanziCraft),
+    then the component appearing anywhere in ch's decomposition tree
+    (char_decomp once+radical, recursed). have_evidence=False only when there is
+    no decomp data at all -> caller treats containment as UNKNOWN, not False."""
+    if ch == component:
+        return True, True
+    if cwc and ch in set(cwc.get(component, [])):
+        return True, True
+    if not char_decomp:
+        return False, False
+    seen: set[str] = set()
+
+    def rec(c: str, depth: int) -> bool:
+        if depth < 0 or c in seen:
+            return False
+        seen.add(c)
+        d = char_decomp.get(c)
+        if not d:
+            return False
+        for key in ("once", "radical"):
+            for p in (d.get(key) or []):
+                if not p or p == UNGLYPHABLE:
+                    continue
+                if p == component or rec(p, depth - 1):
+                    return True
+        return False
+
+    return rec(ch, 5), (ch in char_decomp)
+
+
+def clean_member_bucket(component: str, raw_members: str, row_pinyin_numeric: str,
+                        cwc: dict | None, char_decomp: dict | None,
+                        log: list[str], line_no: int):
+    """Simplify + containment-filter + tone-classify a curated MemberChars set.
+
+    Returns (bucket1_exact_tone, moved_same_syllable, dropped). Members that do
+    not contain the component, or whose sound shares neither syllable nor tone,
+    are dropped. Same-syllable / different-tone members are split off to bucket 2.
+    """
+    exp_syl = _norm_syllable(strip_tone(row_pinyin_numeric))
+    exp_tone = (int(row_pinyin_numeric[-1])
+                if row_pinyin_numeric and row_pinyin_numeric[-1].isdigit() else 5)
+    exp = (exp_syl, exp_tone)
+    seen: set[str] = set()
+    bucket1: list[str] = []
+    moved: list[str] = []
+    dropped: list[str] = []
+    for ch in raw_members:
+        s = to_simplified(ch)
+        if not s or s == component or s in seen:
+            continue
+        seen.add(s)
+        contained, have = component_contains(component, s, cwc, char_decomp)
+        if not contained:
+            # STRICT: a member must positively contain the component GLYPH (cwc
+            # raw membership or decomposition). This drops chars where
+            # simplification replaced the component (杨 has 𠃓 not 昜; 卫 not 韦)
+            # and unverifiable rares — exactly the "teaches a glyph you'll never
+            # see" mistakes we must not ship.
+            dropped.append(f"{ch}->{s}(no-contain,have={have})")
+            continue
+        rds = char_readings(s)
+        if not rds:
+            bucket1.append(s)  # contained; pypinyin just lacks a reading (rare)
+            continue
+        syls = {sy for sy, _ in rds}
+        if exp in rds:
+            bucket1.append(s)
+        elif exp_syl in syls:
+            moved.append(s)
+        else:
+            dropped.append(f"{ch}->{s}(diff-syllable,{rds})")
+    if dropped or moved:
+        log.append(
+            f"line {line_no}: {component} MemberChars cleaned — "
+            f"kept={''.join(bucket1)} moved→bucket2={''.join(moved)} dropped={dropped}"
+        )
+    return bucket1, moved, dropped
+
+
+# ---------------------------------------------------------------------------
 # Comments parsing — split into reliability + note
 # ---------------------------------------------------------------------------
 
@@ -394,38 +521,50 @@ def compute_same_syllable_bucket(
     component: str,
     row_pinyin_numeric: str,
     member_chars: str,
+    moved: list[str],
     cwc: dict[str, list[str]] | None,
-    char_data: dict[str, dict] | None,
+    char_decomp: dict[str, dict] | None,
 ) -> str:
-    """Walk the full characters-with-this-component list and return chars whose
-    pinyin shares this row's syllable but has a different tone (bucket 2)."""
-    if not (cwc and char_data):
-        return ""
-    full = cwc.get(component) or []
-    if not full:
-        return ""
-    target_syllable = strip_tone(row_pinyin_numeric)
+    """Bucket 2 = chars that CONTAIN the component and share this row's syllable
+    but differ in tone. Built from: (a) members moved out of bucket 1 for tone,
+    then (b) a walk of cwc[component], simplified (opencc) and read via pypinyin
+    heteronyms. A char with an exact-tone reading is excluded (it qualifies for
+    bucket 1, not 2). Output is simplified + de-duplicated."""
+    target_syllable = _norm_syllable(strip_tone(row_pinyin_numeric))
+    target_tone = (int(row_pinyin_numeric[-1])
+                   if row_pinyin_numeric and row_pinyin_numeric[-1].isdigit() else 5)
     if not target_syllable:
         return ""
-    target_full = (row_pinyin_numeric or "").lower()
     in_bucket1 = set(member_chars)
-    bucket2: list[str] = []
-    for ch in full:
-        if ch == component or ch in in_bucket1:
+    result: list[str] = []
+    seen: set[str] = set()
+
+    def _add(s: str) -> None:
+        if s and s != component and s not in in_bucket1 and s not in seen:
+            seen.add(s)
+            result.append(s)
+
+    # (a) chars demoted from bucket 1 (already simplified + contained + same-syllable)
+    for ch in moved:
+        _add(ch)
+
+    # (b) the full characters-with-this-component list
+    for ch in (cwc.get(component) if cwc else None) or []:
+        s = to_simplified(ch)
+        if s == component or s in in_bucket1 or s in seen:
             continue
-        data = char_data.get(ch)
-        if not data:
+        # Glyph-level containment: the simplified form must still contain the
+        # component (drops 衛→卫 under 韦, where simplification removed it).
+        contained, _ = component_contains(component, s, cwc, char_decomp)
+        if not contained:
             continue
-        ch_pinyin = (data.get("pinyin") or "").lower()
-        if not ch_pinyin:
+        rds = char_readings(s)
+        if not rds:
             continue
-        if ch_pinyin == target_full:
-            # Same exact sound — source forgot to curate this one. Treat as
-            # bucket-1 for purposes of the count; don't put it in bucket 2.
-            continue
-        if strip_tone(ch_pinyin) == target_syllable:
-            bucket2.append(ch)
-    return "".join(bucket2)
+        syls = {sy for sy, _ in rds}
+        if target_syllable in syls and (target_syllable, target_tone) not in rds:
+            _add(s)
+    return "".join(result)
 
 
 def _decomp_usable(parts: list[str] | None, ch: str) -> bool:
@@ -505,6 +644,7 @@ def transform_row(
     cwc: dict[str, list[str]] | None,
     char_data: dict[str, dict] | None,
     char_decomp: dict[str, dict] | None,
+    present_components: set[str] | None = None,
 ) -> list[str] | None:
     """Map a 10-col source row → 16-col output row. Returns None to skip."""
     while len(fields) < SOURCE_COLUMN_COUNT:
@@ -545,6 +685,23 @@ def transform_row(
     # keep verbatim — phase 1 doesn't try to be clever.
     component = src_simplified
 
+    # Full-simplify pass: the deck is simplified-only. If this row's component is
+    # a traditional character, either drop it (a simplified twin row exists -> the
+    # whole series is redundant) or relabel it to simplified (no twin row, e.g.
+    # 馬/見/門 -> 马/见/门, so the series survives in simplified form).
+    if to_simplified(component) != component:
+        simp = to_simplified(component)
+        if present_components and simp in present_components:
+            log.append(
+                f"line {line_no}: dropped redundant traditional component "
+                f"{component!r} (simplified twin {simp!r} already a row)"
+            )
+            return None
+        log.append(
+            f"line {line_no}: relabeled trad-only component {component!r} -> {simp!r}"
+        )
+        component = simp
+
     pinyin_marks: str
     if not src_pinyin:
         pinyin_marks = ""
@@ -560,7 +717,24 @@ def transform_row(
         else:
             pinyin_marks = converted
 
-    member_chars = strip_component_from_set(component, src_set)
+    raw_members = strip_component_from_set(component, src_set)
+    member_chars_list, moved_to_bucket2, _dropped = clean_member_bucket(
+        component, raw_members, src_pinyin, cwc, char_decomp, log, line_no
+    )
+    member_chars = "".join(member_chars_list)
+
+    # No valid exact-tone member survived containment+tone filtering. The
+    # component is either bogus (皀: HanziCraft lists no real series) or an
+    # archaic phonetic shape that simplification replaced (昜→𠃓, 巠, 睪…), so it
+    # can't be taught as a simplified glyph. Drop the row (logged — these are the
+    # candidates for the later "same-syllable-only" phase).
+    if not member_chars:
+        log.append(
+            f"line {line_no}: DROPPED row {component!r}:{src_pinyin} — no valid "
+            f"exact-tone member after containment+tone filtering "
+            f"(raw members were {raw_members!r})"
+        )
+        return None
 
     reliability, note_from_comments = parse_comments(src_comments)
 
@@ -604,8 +778,9 @@ def transform_row(
         component=component,
         row_pinyin_numeric=src_pinyin,
         member_chars=member_chars,
+        moved=moved_to_bucket2,
         cwc=cwc,
-        char_data=char_data,
+        char_decomp=char_decomp,
     )
 
     member_decomp = build_member_decomp(
@@ -795,9 +970,20 @@ def main() -> int:
     MERGE_COPY_IF_EMPTY = (3, 4, 5, 6, 7, 8, 9, 12, 13)
     NOTE_IDX = 11
 
+    # Components that already exist as their own (simplified) row. Used to decide
+    # whether a traditional-component row is a redundant duplicate (drop) or the
+    # only carrier of its series (relabel to simplified).
+    present_components: set[str] = set()
+    for _ln, _f in src_rows:
+        if len(_f) > 1:
+            c = strip_html_noise(_f[1])
+            if c and has_cjk(c) and to_simplified(c) == c:
+                present_components.add(c)
+
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich, cwc, char_data, char_decomp)
+            row = transform_row(fields, line_no, log, enrich, cwc, char_data,
+                                char_decomp, present_components)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue

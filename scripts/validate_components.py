@@ -43,9 +43,66 @@ INT_RE = re.compile(r"^\d+$")
 DECOMP_RE = re.compile(r"^(once:[^;]+)?(?:;?radical:[^;]+)?$")
 
 
+def deep_checks(rows, path) -> tuple[list[str], list[str]]:
+    """Semantic invariants the structural pass can't catch:
+      - simplified-only: no traditional Component / member char (opencc)   [ERROR]
+      - containment: every member/SS char actually contains the Component
+        (cwc raw membership or decomposition)                             [ERROR]
+      - tone buckets: MemberChars = exact syllable+tone; SameSyllableChars
+        = same syllable, different tone (pypinyin heteronyms)             [WARN]
+
+    Tone is a warning, not an error: pypinyin can miss a rare reading, and we
+    don't want a false negative to fail CI. Containment/simplified are reliable.
+    Auto-skips (with one warning) if the cwc cache or pypinyin/opencc are absent.
+    """
+    try:
+        import json
+        from import_phonetic_components import (
+            component_contains, char_readings, to_simplified,
+            strip_tone, _norm_syllable, DEFAULT_CWC, DEFAULT_CHAR_DECOMP,
+        )
+        cwc = json.loads(DEFAULT_CWC.read_text(encoding="utf-8")) if DEFAULT_CWC.exists() else None
+        char_decomp = (json.loads(DEFAULT_CHAR_DECOMP.read_text(encoding="utf-8"))
+                       if DEFAULT_CHAR_DECOMP.exists() else None)
+    except Exception as e:  # pragma: no cover - environment-dependent
+        return [], [f"deep checks skipped (pypinyin/opencc/cwc unavailable): {e}"]
+    if cwc is None:
+        return [], ["deep checks skipped: component_cwc.json cache missing"]
+
+    errors: list[str] = []
+    warnings: list[str] = []
+    for r in rows:
+        loc = f"{path.name}:{r.line_no}"
+        comp = r.component
+        keypin = r.key.split(":", 1)[1] if ":" in r.key else ""
+        exp = (_norm_syllable(strip_tone(keypin)),
+               int(keypin[-1]) if keypin and keypin[-1].isdigit() else 5)
+        if comp and to_simplified(comp) != comp:
+            errors.append(f"{loc}: Component {comp!r} is traditional; deck is simplified-only")
+        for ch in HAN_RE.findall(r.member_chars):
+            if to_simplified(ch) != ch:
+                errors.append(f"{loc}: MemberChars has traditional char {ch!r}")
+            if comp and not component_contains(comp, ch, cwc, char_decomp)[0]:
+                errors.append(f"{loc}: MemberChars {ch!r} does not contain Component {comp!r}")
+            rds = char_readings(ch)
+            if rds and exp not in rds:
+                warnings.append(f"{loc}: MemberChars {ch!r} lacks exact tone {keypin!r} (readings {rds})")
+        for ch in HAN_RE.findall(r.same_syllable_chars):
+            if to_simplified(ch) != ch:
+                errors.append(f"{loc}: SameSyllableChars has traditional char {ch!r}")
+            if comp and not component_contains(comp, ch, cwc, char_decomp)[0]:
+                errors.append(f"{loc}: SameSyllableChars {ch!r} does not contain Component {comp!r}")
+            rds = char_readings(ch)
+            if rds and exp in rds:
+                warnings.append(f"{loc}: SameSyllableChars {ch!r} has exact tone {keypin!r}; belongs in MemberChars")
+    return errors, warnings
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true", help="warnings also fail")
+    ap.add_argument("--no-deep", action="store_true",
+                    help="skip containment/tone/simplified semantic checks")
     args = ap.parse_args()
 
     path = COMPONENT_DECK_PATH
@@ -170,6 +227,11 @@ def main() -> int:
                         f"{loc}: MemberDecomp entry {entry!r} has empty char or decomp"
                     )
                     break
+
+    if not args.no_deep:
+        de, dw = deep_checks(rows, path)
+        errors.extend(de)
+        warnings.extend(dw)
 
     for w in warnings:
         stderr(f"warn: {w}")
