@@ -92,7 +92,13 @@ DEFAULT_ENRICH = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
 DEFAULT_CWC = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
 DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
 DEFAULT_CHAR_DECOMP = REPO_ROOT / "scripts" / "cache" / "char_decomp.json"
+DEFAULT_CHAR_FREQ = REPO_ROOT / "scripts" / "cache" / "char_freq.json"
 HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
+
+# Learning-order sort weights (see _sort_key in main). The MemberChars
+# frequency sum is weight 1.0; these scale the other two terms. Tunable.
+SORT_WEIGHT_SAME_SYLLABLE = 0.3   # bucket-2 chars count, but less than members
+SORT_WEIGHT_COMPONENT = 0.6       # the component's own commonness
 
 SOURCE_COLUMN_COUNT = 10  # source TSV has 10 columns per its directive
 
@@ -983,6 +989,22 @@ def main() -> int:
             print(f"warn: failed to load char-decomp file {args.char_decomp}: {e}",
                   file=sys.stderr)
 
+    # Per-char corpus frequency (zipf) for the learning-order sort. Build/refresh
+    # with `python scripts/build_char_freq.py`. Missing file -> all-zero -> sort
+    # falls back to component Frequency rank only.
+    char_freq: dict[str, float] = {}
+    if DEFAULT_CHAR_FREQ.exists():
+        try:
+            char_freq = json.loads(DEFAULT_CHAR_FREQ.read_text(encoding="utf-8"))
+            print(f"loaded char freq for {len(char_freq)} chars from {DEFAULT_CHAR_FREQ}",
+                  file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-freq file {DEFAULT_CHAR_FREQ}: {e}",
+                  file=sys.stderr)
+    else:
+        print(f"note: char-freq file {DEFAULT_CHAR_FREQ} not found; "
+              f"sort falls back to component Frequency only", file=sys.stderr)
+
     log: list[str] = []
     src_rows = read_source(args.source, log)
 
@@ -1060,24 +1082,26 @@ def main() -> int:
             ]
             out_rows[i][10] = " · ".join(chunks)
 
-    # Sort rows for learning-order: phonetic leverage descending.
-    # Score = A * 100 + B * 10 + Productivity, with A = len(MemberChars) and
-    # B = A + len(SameSyllableChars). High exact-phonetic-match components rank
-    # first; pure semantic radicals (high productivity but low A) drop down.
-    # Frequency rank ascends as a tiebreak (more common chars first).
+    # Sort rows for learning-order: frequency-weighted usefulness descending, so
+    # components whose derived characters you'll ACTUALLY encounter come first —
+    # rather than whichever happens to have the most (often archaic) members,
+    # which the old `len(MemberChars)*100` score rewarded.
+    #   score = Σ zipf(member) + 0.3·Σ zipf(sameSyllable) + 0.6·zipf(component)
+    # zipf is the corpus log-frequency from char_freq.json; archaic / absent
+    # chars contribute ~0, so a long tail of rare members no longer inflates a
+    # row. Component Frequency rank ascends as the tiebreak.
     INF = 10**9
+    def _zsum(field: str) -> float:
+        return sum(char_freq.get(c, 0.0) for c in HAN_RE.findall(field))
     def _sort_key(row: list[str]) -> tuple:
-        a = len(row[4])
-        b = a + len(row[5])
-        try:
-            prod = int(row[6]) if row[6] else 0
-        except ValueError:
-            prod = 0
+        score = (_zsum(row[4])
+                 + SORT_WEIGHT_SAME_SYLLABLE * _zsum(row[5])
+                 + SORT_WEIGHT_COMPONENT * char_freq.get(row[1], 0.0))
         try:
             freq = int(row[7]) if row[7] else INF
         except ValueError:
             freq = INF
-        return (-(a * 100 + b * 10 + prod), freq, row[1], row[2])
+        return (-score, freq, row[1], row[2])
     out_rows.sort(key=_sort_key)
 
     write_output(out_rows, args.out)
