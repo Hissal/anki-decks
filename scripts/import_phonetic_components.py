@@ -184,6 +184,25 @@ def char_readings(ch: str) -> list[tuple[str, int]]:
     return out
 
 
+def primary_reading(ch: str) -> tuple[str, int] | None:
+    """The char's MAIN reading (pypinyin, no heteronym) as (syllable, tone), or
+    None when pypinyin has no Han reading. This is how HanziCraft assigns a
+    regularity degree, so bucket classification keys off it — with a heteronym
+    fallback in clean_member_bucket so a curated member is never lost just
+    because pypinyin's primary differs from its series reading."""
+    try:
+        r = _pinyin(ch, style=_Style.TONE3, heteronym=False)[0][0]
+    except Exception:
+        return None
+    if not r:
+        return None
+    base = r[:-1] if r[-1].isdigit() else r
+    if not base.isascii() or not base.isalpha():
+        return None
+    tone = int(r[-1]) if r[-1].isdigit() else 5
+    return (_norm_syllable(base), tone)
+
+
 def component_contains(component: str, ch: str,
                        cwc: dict | None,
                        char_decomp: dict | None) -> tuple[bool, bool]:
@@ -250,17 +269,23 @@ def clean_member_bucket(component: str, raw_members: str, row_pinyin_numeric: st
             # see" mistakes we must not ship.
             dropped.append(f"{ch}->{s}(no-contain,have={have})")
             continue
+        # Classify by PRIMARY reading (matches HanziCraft's regularity degree),
+        # with a heteronym fallback so a curated member whose pypinyin primary
+        # happens to differ from its series reading is never lost.
+        p = primary_reading(s)
         rds = char_readings(s)
-        if not rds:
-            bucket1.append(s)  # contained; pypinyin just lacks a reading (rare)
-            continue
-        syls = {sy for sy, _ in rds}
-        if exp in rds:
-            bucket1.append(s)
-        elif exp_syl in syls:
-            moved.append(s)
+        if p == exp:
+            bucket1.append(s)                       # primary = exact sound -> degree 1
+        elif p is not None and p[0] == exp_syl:
+            moved.append(s)                         # primary = same syllable, diff tone -> degree 2
+        elif exp in rds:
+            bucket1.append(s)                       # fallback: a real reading hits the exact sound
+        elif any(sy == exp_syl for sy, _ in rds):
+            moved.append(s)                         # fallback: same syllable via a secondary reading
+        elif not rds:
+            bucket1.append(s)                       # contained, no reading data at all
         else:
-            dropped.append(f"{ch}->{s}(diff-syllable,{rds})")
+            dropped.append(f"{ch}->{s}(diff-syllable,p={p})")
     if dropped or moved:
         log.append(
             f"line {line_no}: {component} MemberChars cleaned — "
@@ -558,11 +583,12 @@ def compute_same_syllable_bucket(
         contained, _ = component_contains(component, s, cwc, char_decomp)
         if not contained:
             continue
-        rds = char_readings(s)
-        if not rds:
-            continue
-        syls = {sy for sy, _ in rds}
-        if target_syllable in syls and (target_syllable, target_tone) not in rds:
+        # HanziCraft degree 2: classify by PRIMARY reading. A char like 们
+        # (primary men neutral, secondary men2) belongs here even though a
+        # secondary reading hits the exact tone — the old "any reading" rule
+        # wrongly dropped it.
+        p = primary_reading(s)
+        if p and p[0] == target_syllable and p != (target_syllable, target_tone):
             _add(s)
     return "".join(result)
 

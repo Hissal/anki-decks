@@ -58,7 +58,7 @@ def deep_checks(rows, path) -> tuple[list[str], list[str]]:
     try:
         import json
         from import_phonetic_components import (
-            component_contains, char_readings, to_simplified,
+            component_contains, char_readings, primary_reading, to_simplified,
             strip_tone, _norm_syllable, DEFAULT_CWC, DEFAULT_CHAR_DECOMP,
         )
         cwc = json.loads(DEFAULT_CWC.read_text(encoding="utf-8")) if DEFAULT_CWC.exists() else None
@@ -92,9 +92,8 @@ def deep_checks(rows, path) -> tuple[list[str], list[str]]:
                 errors.append(f"{loc}: SameSyllableChars has traditional char {ch!r}")
             if comp and not component_contains(comp, ch, cwc, char_decomp)[0]:
                 errors.append(f"{loc}: SameSyllableChars {ch!r} does not contain Component {comp!r}")
-            rds = char_readings(ch)
-            if rds and exp in rds:
-                warnings.append(f"{loc}: SameSyllableChars {ch!r} has exact tone {keypin!r}; belongs in MemberChars")
+            if primary_reading(ch) == exp:
+                warnings.append(f"{loc}: SameSyllableChars {ch!r} primary reading is exact tone {keypin!r}; belongs in MemberChars")
     return errors, warnings
 
 
