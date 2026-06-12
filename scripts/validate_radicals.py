@@ -35,9 +35,53 @@ INT_RE = re.compile(r"^\d+$")
 TIER_TAGS = {"radical-core", "radical-common", "radical-structural", "radical-rare"}
 
 
+def deep_checks(rows, path) -> tuple[list[str], list[str]]:
+    """Simplified-only + structural invariants from the R3 cleanup:
+      - no traditional member char / variant (opencc)            [ERROR]
+      - the Radical itself must not be in its own MemberChars     [ERROR]
+      - each positional variant is represented in the set        [WARN]
+    Auto-skips if opencc / cwc cache is unavailable."""
+    try:
+        import json
+        from opencc import OpenCC
+        from import_kangxi_radicals import VARIANT_EXAMPLE_OVERRIDES, DEFAULT_CWC_CACHE
+        t2s = OpenCC("t2s")
+        cwc = (json.loads(DEFAULT_CWC_CACHE.read_text(encoding="utf-8"))
+               if DEFAULT_CWC_CACHE.exists() else {})
+    except Exception as e:  # pragma: no cover
+        return [], [f"deep checks skipped (opencc/cwc unavailable): {e}"]
+
+    def is_trad(c): return len(c) == 1 and t2s.convert(c) != c
+    def simp_cwc(k): return {t2s.convert(c) for c in cwc.get(k, [])}
+
+    errors: list[str] = []
+    warnings: list[str] = []
+    for r in rows:
+        loc = f"{path.name}:{r.line_no}"
+        members = HAN_RE.findall(r.member_chars)
+        for c in members:
+            if is_trad(c):
+                errors.append(f"{loc}: MemberChars has traditional char {c!r}")
+            if c == r.radical:
+                errors.append(f"{loc}: MemberChars contains the Radical itself {c!r}")
+        for slot, v in (("Variant1", r.variant1), ("Variant2", r.variant2)):
+            if v and is_trad(v):
+                errors.append(f"{loc}: {slot} {v!r} is traditional — belongs in the Note")
+        mset = set(members)
+        for v in (r.variant1, r.variant2):
+            if not v:
+                continue
+            rep = bool(mset & simp_cwc(v)) or VARIANT_EXAMPLE_OVERRIDES.get(v) in mset
+            if not rep:
+                warnings.append(f"{loc}: Variant {v!r} has no char representing it in MemberChars")
+    return errors, warnings
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true", help="warnings also fail")
+    ap.add_argument("--no-deep", action="store_true",
+                    help="skip simplified-only / representation semantic checks")
     args = ap.parse_args()
 
     path = RADICALS_DECK_PATH
@@ -118,6 +162,11 @@ def main() -> int:
             warnings.append(
                 f"{loc}: Radical {r.radical!r} has no tier tag (one of {sorted(TIER_TAGS)})"
             )
+
+    if not args.no_deep:
+        de, dw = deep_checks(rows, path)
+        errors.extend(de)
+        warnings.extend(dw)
 
     for w in warnings:
         stderr(f"warn: {w}")

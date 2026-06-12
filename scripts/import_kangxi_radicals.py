@@ -34,6 +34,20 @@ from radicals_common import (
     RADICALS_DECK_PATH,
     RADICALS_HEADER,
 )
+from opencc import OpenCC as _OpenCC
+
+_T2S = _OpenCC("t2s")
+
+
+def to_simplified(ch: str) -> str:
+    """opencc traditional→simplified for a single char (no-op if already simp)."""
+    return _T2S.convert(ch)
+
+
+def is_traditional(ch: str) -> bool:
+    """True when ch has a distinct simplified form (so it won't appear in
+    simplified text). Used to keep the deck simplified-only."""
+    return len(ch) == 1 and _T2S.convert(ch) != ch
 
 # In-repo copy of the hand-curated seed (the original lived on the Desktop and
 # kept getting deleted). Committed so the full importer stays runnable.
@@ -42,7 +56,12 @@ DEFAULT_HC_CACHE = REPO_ROOT / "scripts" / "cache" / "hanzicraft.json"
 DEFAULT_CWC_CACHE = REPO_ROOT / "scripts" / "cache" / "component_cwc.json"
 DEFAULT_CHAR_DATA = REPO_ROOT / "scripts" / "cache" / "char_data.json"
 DEFAULT_CHAR_DECOMP = REPO_ROOT / "scripts" / "cache" / "char_decomp.json"
+DEFAULT_CHAR_FREQ = REPO_ROOT / "scripts" / "cache" / "char_freq.json"
 HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
+
+# A radical whose commonest form (standalone or in any containing char) is rarer
+# than this zipf is demoted to radical-rare so it sorts to the very bottom.
+RARE_VISIBILITY_ZIPF = 3.0
 
 # How many curated MemberChars to keep per radical (truncates source set when
 # no MEMBER_OVERRIDES entry exists). Card-back stays compact; "+ X more"
@@ -135,6 +154,26 @@ VARIANT_OVERRIDES: dict[str, list[str]] = {
 # variant, parse the X out into the pinyin/note instead of treating it as a
 # variant. Pattern detected: `(pr.<something>)`.
 PR_NOTE_RE = re.compile(r"^\s*\(pr\.([^)]+)\)\s*$")
+
+
+# Alternate encodings of the SAME positional form, used only to de-duplicate the
+# variant slots (网 shouldn't get both a 罒 card and a ⺲ card). When the mapped
+# form equals the canonical radical, it's a mere glyph-variant of the radical
+# itself (靑 for 青) and becomes reference-only. Genuinely distinct shapes
+# (⺗ vs 忄, ⺼ vs 月) are NOT listed here — they stay as separate cards.
+_VARIANT_CANON: dict[str, str] = {
+    "⺲": "罒", "⺳": "罒", "罓": "罒",
+    "⻌": "辶", "⻍": "辶",
+    "⻏": "阝", "⻖": "阝",
+    "⺩": "王", "⺪": "王",
+    "戸": "户", "镸": "长", "覀": "西", "龵": "手",
+    # glyph-variants of the radical itself → reference-only
+    "靑": "青", "髙": "高", "靣": "面", "赱": "走", "尣": "尢",
+}
+
+
+def _canon_variant(v: str) -> str:
+    return _VARIANT_CANON.get(v, v)
 
 
 # ---------------------------------------------------------------------------
@@ -294,6 +333,19 @@ MEMBER_OVERRIDES: dict[str, str] = {
     "酉": "酒醉酸醒醋酱配酬",
     "鬼": "魂魄魅魇魔魁魏",
     "黑": "默墨黛黯",
+}
+
+
+# Hand-picked representative char for positional variant glyphs that
+# decomposition can't pin down — usually because the variant is glyph-identical
+# to another form (⺼ vs 月, ⺗ vs 心) or a top-form no index covers (𠆢). The
+# char is forced into the member set so the variant's card has a real example.
+# Each is verified to contain that exact form.
+VARIANT_EXAMPLE_OVERRIDES: dict[str, str] = {
+    "⺗": "慕",   # bottom heart: 慕, 慰, 恭
+    "⺼": "脸",   # meat-moon (printed identical to 月): 脸, 腿, 胸, 肝
+    "𠆢": "今",   # top 'gather/roof': 今, 会, 全, 伞
+    "氺": "泰",   # bottom water: 泰, 黎
 }
 
 
@@ -715,6 +767,160 @@ def pick_member_chars(
     return "".join(out)
 
 
+def _simp_cwc(key: str, cwc: dict[str, list[str]] | None) -> set[str]:
+    if not (cwc and key):
+        return set()
+    return {to_simplified(c) for c in cwc.get(key, [])}
+
+
+def _decomp_form_parts(ch: str, char_decomp: dict[str, dict] | None) -> set[str] | None:
+    """The glyphs in ch's decomposition (once + radical levels), or None when we
+    have no decomp data for ch. Lets us tell which POSITIONAL form a char uses
+    (情 has 忄, 慕 has ⺗) — cwc alone can't, since cwc[忄] and cwc[⺗] coincide."""
+    e = char_decomp.get(ch) if char_decomp else None
+    if not e:
+        return None
+    parts: set[str] = set()
+    for k in ("once", "radical"):
+        for p in (e.get(k) or []):
+            if p and p != UNGLYPHABLE:
+                parts.add(p)
+    return parts
+
+
+def radical_visibility(canonical: str, variants: list[str],
+                       cwc: dict[str, list[str]] | None,
+                       char_freq: dict[str, float]) -> float:
+    """Commonest the radical ever gets: max of its own zipf and the zipf of the
+    most frequent char containing it (any form). Drives rare-tier + sort."""
+    def zf(c): return char_freq.get(c, 0.0)
+    best = zf(canonical)
+    chars = _simp_cwc(canonical, cwc) | _simp_cwc(MEMBER_OVERRIDE_CWC_ALIAS.get(canonical, ""), cwc)
+    for v in variants:
+        chars |= _simp_cwc(v, cwc)
+    for c in chars:
+        z = zf(c)
+        if z > best:
+            best = z
+    return best
+
+
+def finalize_members(
+    canonical: str,
+    variants: list[str],
+    seed: str,
+    trusted: bool,
+    cwc: dict[str, list[str]] | None,
+    char_freq: dict[str, float],
+    char_decomp: dict[str, dict] | None,
+    log: list[str],
+    line_no: int,
+) -> tuple[str, list[str]]:
+    """Build the final simplified-only member set for Card 4.
+
+    - simplify every char (opencc), drop the radical/variants themselves and any
+      remaining traditional char
+    - keep curated/seed chars; non-trusted seed must still contain the radical
+    - GUARANTEE each positional variant is represented by >=1 member (form-exact
+      via decomposition); backfill the commonest such char when missing
+    - backfill from the radical's full char list (by frequency) up to the cap
+    Returns (member_string, unrepresented_variants).
+    """
+    def zf(c): return char_freq.get(c, 0.0)
+    exclude = {x for x in [canonical, *variants] if x}
+    needle = {canonical, *variants}
+    cwc_can = _simp_cwc(canonical, cwc) | _simp_cwc(MEMBER_OVERRIDE_CWC_ALIAS.get(canonical, ""), cwc)
+    cwc_v = {v: _simp_cwc(v, cwc) for v in variants}
+    valid = set(cwc_can)
+    for s in cwc_v.values():
+        valid |= s
+
+    def contains_radical(ch: str) -> bool:
+        """ch's decomposition surfaces the radical or one of its variants. When
+        we have no decomp for ch, trust the cwc membership that got it here.
+        Catches HanziCraft cwc quirks like 出 wrongly listed under 齿."""
+        parts = _decomp_form_parts(ch, char_decomp)
+        if parts is None:
+            return True
+        return bool(needle & parts)
+
+    seen: set[str] = set()
+    members: list[str] = []
+
+    def add(c: str, check: bool = True) -> bool:
+        if not c or c in seen or c in exclude or is_traditional(c):
+            return False
+        if check and not contains_radical(c):
+            return False
+        seen.add(c)
+        members.append(c)
+        return True
+
+    for ch in seed:
+        s = to_simplified(ch)
+        if not s or s in seen or s in exclude or is_traditional(s):
+            continue
+        if not trusted and valid and s not in valid:
+            continue  # seed char that doesn't actually contain the radical
+        add(s, check=not trusted)  # hand-curated overrides bypass the decomp check
+
+    # Guarantee each variant form is shown by >=1 member. Glyph-identical /
+    # stacked forms (⺗ vs 忄, ⺼ vs 月) use a hand-picked example because their
+    # cwc list coincides with the dominant form's; every other variant glyph is
+    # its own cwc key, so plain membership works. Reps must survive the cap.
+    unrepresented: list[str] = []
+    reps: set[str] = set()
+    for v in variants:
+        ex = VARIANT_EXAMPLE_OVERRIDES.get(v)
+        if ex:
+            if ex not in exclude and not is_traditional(ex):
+                if ex not in seen:
+                    seen.add(ex)
+                    members.append(ex)
+                reps.add(ex)
+            continue
+        present = [m for m in members if m in cwc_v[v]]
+        if present:
+            reps.add(present[0])
+            continue
+        cands = sorted(
+            (c for c in cwc_v[v]
+             if c not in seen and c not in exclude and not is_traditional(c) and zf(c) > 0),
+            key=lambda c: (-zf(c), c),  # deterministic: freq desc, then codepoint
+        )
+        if cands:
+            seen.add(cands[0])
+            members.append(cands[0])
+            reps.add(cands[0])
+        else:
+            unrepresented.append(v)
+
+    # Backfill toward the target from the radical's own chars, most common first.
+    if len(members) < MEMBER_TARGET:
+        pool = sorted(
+            (c for c in cwc_can
+             if c not in seen and c not in exclude and not is_traditional(c) and zf(c) > 0),
+            key=lambda c: (-zf(c), c),  # deterministic: freq desc, then codepoint
+        )
+        for c in pool:
+            if len(members) >= MEMBER_CAP:
+                break
+            add(c)
+
+    # Cap to MEMBER_CAP, but never drop a variant representative.
+    if len(members) > MEMBER_CAP:
+        room = MEMBER_CAP - len(reps)
+        capped: list[str] = []
+        for m in members:
+            if m in reps:
+                capped.append(m)
+            elif room > 0:
+                capped.append(m)
+                room -= 1
+        members = capped
+    return "".join(members[:MEMBER_CAP]), unrepresented
+
+
 def transform_row(
     fields: list[str],
     line_no: int,
@@ -723,6 +929,8 @@ def transform_row(
     char_decomp: dict[str, dict] | None = None,
     cwc: dict[str, list[str]] | None = None,
     char_data: dict[str, dict] | None = None,
+    char_freq: dict[str, float] | None = None,
+    flags: list[tuple[str, list[str]]] | None = None,
 ) -> list[str] | None:
     """Map a 6-col source row → 15-col output row. Returns None to skip."""
     while len(fields) < 6:
@@ -777,10 +985,33 @@ def transform_row(
         remainder = [v for v in extra_variants if v not in ordered]
         extra_variants = primary + remainder
 
+    # Simplified-only: a traditional variant form never appears in simplified
+    # text, so it gets no dedicated card — pull it out of the slots here and
+    # surface it in the Note instead.
+    traditional_variants = [v for v in extra_variants if is_traditional(v)]
+    extra_variants = [v for v in extra_variants if not is_traditional(v)]
+
+    # Collapse alternate encodings of the same form (⺲≡罒) and pull out
+    # glyph-variants of the radical itself (靑 for 青) — those become
+    # reference-only (shown on the back, no dedicated card).
+    glyph_variants: list[str] = []
+    deduped: list[str] = []
+    seen_canon: set[str] = set()
+    for v in extra_variants:
+        cv = _canon_variant(v)
+        if cv == canonical:
+            glyph_variants.append(v)
+            continue
+        if cv in seen_canon:
+            continue
+        seen_canon.add(cv)
+        deduped.append(v)
+    extra_variants = deduped
+
     # Split into slots.
     variant1 = extra_variants[0] if len(extra_variants) >= 1 else ""
     variant2 = extra_variants[1] if len(extra_variants) >= 2 else ""
-    reference_variants = ",".join(extra_variants[2:]) if len(extra_variants) > 2 else ""
+    reference_variants = ",".join(extra_variants[2:] + glyph_variants)
 
     # Pinyin.
     primary_pinyin, alt_pinyin = parse_pinyin_field(pinyin_field)
@@ -800,28 +1031,50 @@ def transform_row(
     decomposition = build_decomposition(canonical, hc.get("decomposition"))
 
     source_chars = normalize_member_chars(examples)
-    # Pass variant glyphs as aliases so the decomp filter accepts chars whose
-    # once-decomp uses the variant form (e.g. 唱's once is [口, 昌] — passes
-    # for the 口 radical naturally; but 情's once is [忄, 青] — 忄 should
-    # count as a 心-decomp match when 忄 is in variant_aliases).
-    variant_aliases: set[str] = set()
-    if variant1:
-        variant_aliases.add(variant1)
-    if variant2:
-        variant_aliases.add(variant2)
-    member_chars = pick_member_chars(
-        canonical, source_chars, cwc, char_data, char_decomp, variant_aliases
+    kept_variants = [v for v in (variant1, variant2) if v]
+    # Seed = hand-curated override when present, else the seed file's examples.
+    # finalize_members then simplifies, drops the radical/variants themselves,
+    # guarantees each kept variant is represented, and backfills by frequency.
+    # Some hand-curated overrides are keyed by the dominant variant glyph (攵, 忄)
+    # rather than the canonical radical (攴, 心) — fall back to those.
+    override = MEMBER_OVERRIDES.get(canonical)
+    if not override:
+        for v in kept_variants:
+            override = MEMBER_OVERRIDES.get(v)
+            if override:
+                break
+    member_chars, unrep = finalize_members(
+        canonical, kept_variants, override if override else source_chars,
+        bool(override), cwc, char_freq or {}, char_decomp, log, line_no,
     )
-    _validate_member_picks(canonical, member_chars, cwc, log)
+    # A positional variant we couldn't represent with any simplified char gets
+    # demoted to ReferenceVariants (shown on the back, no dedicated card) and
+    # flagged for review — per the rule "no unrepresented variant cards".
+    if unrep:
+        unrep_set = set(unrep)
+        kept_variants = [v for v in kept_variants if v not in unrep_set]
+        variant1 = kept_variants[0] if len(kept_variants) >= 1 else ""
+        variant2 = kept_variants[1] if len(kept_variants) >= 2 else ""
+        ref_parts = [p for p in reference_variants.split(",") if p] + list(unrep)
+        reference_variants = ",".join(dict.fromkeys(ref_parts))
+        if flags is not None:
+            flags.append((canonical, list(unrep)))
     member_decomp = build_member_decomp(
-        member_chars, char_decomp, enrich, {canonical} | variant_aliases
+        member_chars, char_decomp, enrich, {canonical, *kept_variants}
     )
 
     # Note assembly.
     note_extras: list[str] = []
-    # Distinguish trad form when canonical differs.
-    if canonical != canonical_trad:
-        note_extras.append(f"Traditional: {canonical_trad}")
+    # Traditional forms (the original Kangxi radical and any traditional variant)
+    # get a Note mention for recognition, but no dedicated card.
+    trad_forms: list[str] = []
+    if canonical != canonical_trad and is_traditional(canonical_trad):
+        trad_forms.append(canonical_trad)
+    for v in traditional_variants:
+        if v not in trad_forms:
+            trad_forms.append(v)
+    if trad_forms:
+        note_extras.append("Traditional: " + " ".join(trad_forms))
     if alt_pinyin:
         note_extras.append(f"Also reads: {alt_pinyin}")
     if canonical in NOTE_OVERRIDES:
@@ -840,8 +1093,14 @@ def transform_row(
     key_pinyin = pinyin_marks_to_numeric(primary_pinyin) or f"row{line_no}"
     key = f"{canonical}:{key_pinyin}"
 
-    # Tier tag.
+    # Tier tag. Demote genuinely archaic radicals (commonest form still rare) to
+    # radical-rare so they sort to the bottom — catches ones the static lists
+    # miss (黹, 龠, 夊). Core radicals are never demoted.
     tier = classify_tier(canonical)
+    if tier != "radical-core":
+        vis = radical_visibility(canonical, kept_variants, cwc, char_freq or {})
+        if vis < RARE_VISIBILITY_ZIPF:
+            tier = "radical-rare"
     tags = f"kangxi-radical {tier}"
 
     return [
@@ -979,14 +1238,27 @@ def main() -> int:
         except Exception as e:
             print(f"warn: failed to load char-data {DEFAULT_CHAR_DATA}: {e}", file=sys.stderr)
 
+    char_freq: dict[str, float] = {}
+    if DEFAULT_CHAR_FREQ.exists():
+        try:
+            char_freq = _json.loads(DEFAULT_CHAR_FREQ.read_text(encoding="utf-8"))
+            print(f"loaded char freq: {len(char_freq)} entries", file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load char-freq {DEFAULT_CHAR_FREQ}: {e}", file=sys.stderr)
+    else:
+        print(f"note: char-freq {DEFAULT_CHAR_FREQ} not found; member backfill + "
+              f"rare-tier demotion degraded", file=sys.stderr)
+
     log: list[str] = []
+    flags: list[tuple[str, list[str]]] = []  # (radical, unrepresented variants)
     src_rows = read_source(args.source, log)
 
     out_rows: list[list[str]] = []
     seen: dict[str, int] = {}
     for line_no, fields in src_rows:
         try:
-            row = transform_row(fields, line_no, log, enrich, char_decomp, cwc, char_data)
+            row = transform_row(fields, line_no, log, enrich, char_decomp, cwc,
+                                char_data, char_freq, flags)
         except Exception as e:
             log.append(f"line {line_no}: transform error: {e!r}; skipping")
             continue
@@ -1001,15 +1273,33 @@ def main() -> int:
         seen[key] = line_no
         out_rows.append(row)
 
-    out_rows.sort(key=sort_key)
+    # Sort: tier first (core → common → structural → rare, so rare lands at the
+    # bottom), then by visibility descending within the tier (commonest first),
+    # then canonical/pinyin for stability.
+    def _final_sort_key(row: list[str]) -> tuple:
+        tier = "radical-common"
+        for t in row[14].split():
+            if t in _TIER_RANK:
+                tier = t
+                break
+        variants = [v for v in (row[2], row[3]) if v]
+        vis = radical_visibility(row[1], variants, cwc, char_freq)
+        return (_TIER_RANK.get(tier, 1), -vis, row[1], row[5])
+    out_rows.sort(key=_final_sort_key)
 
     write_output(out_rows, args.out)
 
     for line in log:
         print(line, file=sys.stderr)
+    if flags:
+        print("\n=== UNREPRESENTED VARIANTS (no simplified char found) ===",
+              file=sys.stderr)
+        for radical, unrep in flags:
+            print(f"  {radical}: {' '.join(unrep)}", file=sys.stderr)
     print(
         f"\nwrote {args.out.name}: {len(out_rows)} rows "
-        f"(from {len(src_rows)} source rows, {len(log)} log entries)",
+        f"(from {len(src_rows)} source rows, {len(log)} log entries, "
+        f"{len(flags)} rows with unrepresented variants)",
         file=sys.stderr,
     )
     return 0

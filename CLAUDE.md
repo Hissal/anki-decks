@@ -196,14 +196,14 @@ The "don't duplicate the same Hanzi across decks" rule applies only to the word 
 5. `ReferenceVariants` — comma-separated archaic / rare variants shown on the canonical card's back for context but with NO dedicated card. Keeps the deck card-count manageable for radicals like `网` (4 variants total — only `罒` gets its own card; rest go here).
 6. `Pinyin` — tone-marked. When a radical has multiple readings (rare: `用` yòng / shuǎi), pick the primary and put the alternate in Note.
 7. `Meaning` — short English gloss (`water`, `heart`, `metal`).
-8. `MemberChars` — curated example characters where this radical is the *semantic head* (4-12 per row). From the seed file.
+8. `MemberChars` — example characters where this radical is the *semantic head*. Seeded from the curated set / seed file, then at import time **simplified-cleaned** (`finalize_members`): every char is simplified (opencc), the radical itself and its variant glyphs are stripped out (the set is examples, not the radical), each kept positional variant is guaranteed ≥1 representative char, and the set is backfilled from `cwc[radical]` by frequency to a decent size (≤8). A few archaic radicals (黹, 飞, 黍…) head no common simplified char and end up with an empty set — they keep only their recognition card.
 9. `Productivity` — HanziCraft's "appears as a component in N chars" count. Empty until R2 enrichment fills it.
 10. `Frequency` — HanziCraft frequency rank for the radical as a standalone character. Often empty (many radicals aren't common standalone chars).
 11. `Decomposition` — `once:<a>+<b>;radical:<r>` — the radical's own breakdown (same pack format as phonetic components). Filled by R2.
 12. `MemberDecomp` — `海=氵+每|河=氵+可` per-member-char once-level decomp. Card 4 back highlights the radical (and its variants) in green. Filled by R2.
 13. `Note` — free-form. Traditional-form mentions, alternate readings, curated context from `NOTE_OVERRIDES`.
 14. `Link` — HanziCraft URL covering the radical + its member chars.
-15. `Tags` — `kangxi-radical` + one tier: `radical-core` (~34 high-leverage), `radical-common` (~143 moderate), `radical-structural` (~23 simple strokes, rarely meaning-bearing), `radical-rare` (~14 archaic).
+15. `Tags` — `kangxi-radical` + one tier: `radical-core` (~34 high-leverage), `radical-common` (~141 moderate), `radical-structural` (~23 simple strokes, rarely meaning-bearing), `radical-rare` (~16 archaic — includes import-time demotions like 黹/龠/夊). Rare radicals sort to the bottom.
 
 ### Four card templates
 
@@ -216,10 +216,19 @@ Cards generated per note depend on which variant fields are populated.
 
 The multi-card design exists because a learner needs to recognize `忄` *separately* from `心` — seeing them together on one card lets you pass without truly knowing each form.
 
+### Simplified-only (R3 cleanup)
+
+Like the other decks, the radicals deck is simplified-only:
+
+- **Traditional variants** (貝, 馬, 齒, 龍, … — the original Kangxi forms of simplified radicals) get **no dedicated card**: they're pulled out of the variant slots and surfaced in the `Note` as `Traditional: 貝`. 23 such forms moved to notes.
+- **Member sets** are simplified + re-curated (see column 8): 0 traditional member chars remain; the radical itself is never in its own set.
+- **Variant representation**: every positional-variant card is guaranteed an example in the set. Glyph-identical / stacked forms whose cwc list coincides with the dominant form (⺗ vs 忄, ⺼ vs 月, 氺 vs 氵, 𠆢 vs 亻) use `VARIANT_EXAMPLE_OVERRIDES` (慕/脸/泰/今); everything else verifies via `cwc[variant]` membership. A variant with no representable simplified char is demoted to `ReferenceVariants` (no card) and flagged at import (`风`'s `𠘨`). Alternate encodings of the same form (`⺲`≡`罒`) are de-duplicated via `_VARIANT_CANON`.
+- **Rare radicals stay** (full 214 set) but are demoted to `radical-rare` by a visibility check (`max` zipf of the radical and any char containing it `< 3`) and sort to the very bottom.
+
 ### Tooling
 
-- **`scripts/import_kangxi_radicals.py`** — one-shot generator. Reads the seed `Radicals.txt`, parses the mixed-convention col-1 (sometimes simp-variant, sometimes `(pr.X)` note), hoists parens-packed variants into Variant1/2/ReferenceVariants slots, applies `VARIANT_OVERRIDES` for radicals whose source order is wrong (水: 氵 belongs before 氺), normalizes the example chars, and emits the TSV. Sort key prioritizes tier-core, then example-char count.
-- **`scripts/validate_radicals.py`** — sibling of `validate_components.py`. Hard errors on empty required fields, non-CJK Radical / Variants, duplicate Keys.
+- **`scripts/import_kangxi_radicals.py`** — one-shot generator. Reads the seed `Radicals.txt`, parses the mixed-convention col-1, hoists parens-packed variants into Variant1/2/ReferenceVariants slots, applies `VARIANT_OVERRIDES` for radicals whose source order is wrong (水: 氵 belongs before 氺), and emits the TSV. The **R3 simplified pass** then: drops traditional variants to the Note, de-dups alternate encodings (`_VARIANT_CANON`), runs `finalize_members` (simplify + strip radical + guarantee variant representation + frequency backfill), demotes archaic radicals to `radical-rare`, and **sorts by tier then visibility** (frequency-weighted via `char_freq.json`) so common radicals come first and rare ones land at the bottom. Needs `pypinyin`-free but `opencc` + `char_freq.json`; build-time `wordfreq` only via `build_char_freq.py`.
+- **`scripts/validate_radicals.py`** — sibling of `validate_components.py`. Hard errors on empty required fields, non-CJK Radical / Variants, duplicate Keys. Plus **deep checks** (`--no-deep` to skip): no traditional member char or variant (opencc), the radical is never in its own MemberChars (errors); each positional variant is represented in the set (warning).
 - **`scripts/radicals_common.py`** — schema + `RadicalRow` dataclass + parser. Mirrors `components_common.py`.
 - **`scripts/index.py`** — renders the Kangxi Radicals section, grouped by tier (core → common → structural → rare).
 - **Manual override dicts** in the import script: `MEANING_OVERRIDES` (terse seed-file glosses), `NOTE_OVERRIDES` (curated context like position-specific variant notes, look-alike warnings).

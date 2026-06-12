@@ -22,6 +22,7 @@ from pathlib import Path
 from wordfreq import zipf_frequency
 
 from components_common import parse_component_tsv, COMPONENT_DECK_PATH, HAN_RE
+from radicals_common import parse_radicals_tsv, RADICALS_DECK_PATH
 
 CACHE = Path(__file__).resolve().parent / "cache"
 OUT = CACHE / "char_freq.json"
@@ -30,7 +31,7 @@ OUT = CACHE / "char_freq.json"
 def main() -> int:
     chars: set[str] = set()
     # Superset: every char in char_data (union of all cwc lists) so the cache is
-    # stable across deck regenerations, plus the current deck's own chars.
+    # stable across deck regenerations, plus both decks' own chars.
     char_data = json.loads((CACHE / "char_data.json").read_text(encoding="utf-8"))
     chars.update(char_data.keys())
     _, rows = parse_component_tsv(COMPONENT_DECK_PATH)
@@ -38,6 +39,12 @@ def main() -> int:
         chars.add(r.component)
         chars.update(HAN_RE.findall(r.member_chars))
         chars.update(HAN_RE.findall(r.same_syllable_chars))
+    # Radicals deck too — radicals/variants (飞 龟 …) aren't always in char_data,
+    # and the radicals importer uses char_freq for backfill ranking + rare-tier.
+    _, rrows = parse_radicals_tsv(RADICALS_DECK_PATH)
+    for r in rrows:
+        chars.update(HAN_RE.findall(r.radical + r.variant1 + r.variant2
+                                    + r.reference_variants + r.member_chars))
 
     freq: dict[str, float] = {}
     for ch in sorted(chars):
