@@ -1,0 +1,1233 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "532e1390-6647-11f1-8ede-f20577c6b173",
+    "deck_config_uuid": "532e1709-6647-11f1-81b9-f20577c6b173",
+    "deck_configurations": [
+        {
+            "__type__": "DeckConfig",
+            "answerAction": 0,
+            "autoplay": true,
+            "buryInterdayLearning": true,
+            "crowdanki_uuid": "532e1709-6647-11f1-81b9-f20577c6b173",
+            "desiredRetention": 0.9,
+            "dyn": false,
+            "easyDaysPercentages": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "fsrsParams5": [],
+            "fsrsParams6": [
+                0.212,
+                1.2931,
+                2.3065,
+                8.2956,
+                6.4133,
+                0.8334,
+                3.0194,
+                0.001,
+                1.8722,
+                0.1666,
+                0.796,
+                1.4835,
+                0.0614,
+                0.2629,
+                1.6483,
+                0.6014,
+                1.8729,
+                0.5425,
+                0.0912,
+                0.0658,
+                0.1542
+            ],
+            "fsrsWeights": [],
+            "ignoreRevlogsBeforeDate": "1970-01-01",
+            "interdayLearningMix": 2,
+            "lapse": {
+                "delays": [
+                    10.0
+                ],
+                "leechAction": 1,
+                "leechFails": 8,
+                "minInt": 1,
+                "mult": 0.0
+            },
+            "maxTaken": 60,
+            "name": "geography-china",
+            "new": {
+                "bury": true,
+                "delays": [
+                    10.0
+                ],
+                "initialFactor": 2500,
+                "ints": [
+                    1,
+                    4,
+                    0
+                ],
+                "order": 1,
+                "perDay": 10
+            },
+            "newGatherPriority": 0,
+            "newMix": 1,
+            "newPerDayMinimum": 0,
+            "newSortOrder": 0,
+            "questionAction": 0,
+            "replayq": true,
+            "rev": {
+                "bury": true,
+                "ease4": 1.3,
+                "hardFactor": 1.2,
+                "ivlFct": 1.0,
+                "maxIvl": 36500,
+                "perDay": 9999
+            },
+            "reviewOrder": 11,
+            "secondsToShowAnswer": 0.0,
+            "secondsToShowQuestion": 0.0,
+            "sm2Retention": 0.9,
+            "stopTimerOnAnswer": false,
+            "timer": 0,
+            "waitForAudio": true,
+            "weightSearch": ""
+        }
+    ],
+    "desc": "Please see the <a href='https://ankiweb.net/shared/info/'>shared deck page</a> for more info.",
+    "desiredRetention": null,
+    "dyn": 0,
+    "extendNew": 0,
+    "extendRev": 0,
+    "media_files": [
+        "Anhui.png",
+        "Beijing.png",
+        "Chongqing.png",
+        "Fujian.png",
+        "Gansu.png",
+        "Guangdong.png",
+        "Guangxi.png",
+        "Guizhou.png",
+        "Hainan.png",
+        "Hebei.png",
+        "Heilongjiang.png",
+        "Henan.png",
+        "Hong_Kong.png",
+        "Hubei.png",
+        "Hunan.png",
+        "Inner_Mongolia.png",
+        "Jiangsu.png",
+        "Jiangxi.png",
+        "Jilin.png",
+        "Liaoning.png",
+        "Macau.png",
+        "Ning2xia4.ogg",
+        "Ningxia.png",
+        "Qinghai.png",
+        "Shaanxi.png",
+        "Shandong.png",
+        "Shanghai.png",
+        "Shanxi.png",
+        "Sichuan.png",
+        "Tianjin.png",
+        "Tibet.png",
+        "Xinjiang.png",
+        "Yunnan.png",
+        "Zh-Anhui.ogg",
+        "Zh-Beijing.ogg",
+        "Zh-Chongqing.ogg",
+        "Zh-Fujian.ogg",
+        "Zh-Gansu.ogg",
+        "Zh-Guangdong.ogg",
+        "Zh-Guizhou.ogg",
+        "Zh-Hainan.ogg",
+        "Zh-Hebei.ogg",
+        "Zh-Heilongjiang.ogg",
+        "Zh-Henan.ogg",
+        "Zh-Hubei.ogg",
+        "Zh-Hunan.ogg",
+        "Zh-Jiangsu.ogg",
+        "Zh-Jiangxi.ogg",
+        "Zh-Jilin.ogg",
+        "Zh-Liaoning.ogg",
+        "Zh-Qinghai.ogg",
+        "Zh-Shaanxi.ogg",
+        "Zh-Shandong.ogg",
+        "Zh-Shanghai.ogg",
+        "Zh-Shanxi.ogg",
+        "Zh-Sichuan.ogg",
+        "Zh-Tianjin.ogg",
+        "Zh-Yunnan.ogg",
+        "Zh-Zhejiang.ogg",
+        "Zhejiang.png",
+        "_China_base.png",
+        "xianggang.ogg"
+    ],
+    "name": "知识::Geography::Chinese provinces and more",
+    "newLimit": null,
+    "newLimitToday": null,
+    "note_models": [
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "css": ".card {\n  font-family: \"Segoe UI\", \"Microsoft YaHei\", \"PingFang SC\", -apple-system, Arial, sans-serif;\n  font-size: 20px;\n  text-align: center;\n  color: #1c1c1e;\n  background: #fbfbfb;\n  padding: 20px 14px;\n  line-height: 1.4;\n}\nimg { max-width: 90%; max-height: 340px; border-radius: 10px; }\n#answer { border: 0; border-top: 2px solid #e3e3e3; margin: 18px auto; width: 80%; }\n\n.prompt    { color: #6b7280; font-size: 17px; margin: 6px 0; }\n.label     { color: #9aa0a6; font-size: 12px; letter-spacing: .08em;\n             text-transform: uppercase; margin-top: 4px; }\n.label.cap { color: #1a9e6e; }\n\n.english   { font-size: 27px; font-weight: 700; margin: 4px 0; }\n.hanzi     { font-size: 44px; font-weight: 600; margin: 6px 0; }\n.hanzi-lg  { font-size: 64px; }\n.hanzi.sm  { font-size: 30px; }\n.pinyin    { font-size: 22px; margin: 3px 0; }\n.pinyin-lg { font-size: 30px; }\n.rom       { color: #9aa0a6; font-size: 16px; margin-top: 2px; }\n.audio     { margin: 6px 0; }\n\n.idblock   { margin-top: 10px; }\n.idline    { margin: 2px 0; }\n.trad      { color: #b07d2b; font-size: 16px; }\n.tlabel    { opacity: .6; font-size: 11px; text-transform: uppercase; }\n\n.capblock  { margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e0e0e0; }\n.sep       { height: 8px; }\n\n.etymology { font-size: 18px; text-align: left; display: inline-block;\n             max-width: 92%; line-height: 1.6; }\n.etymology div { margin: 1px 0; }\n[hidden]   { display: none; }\n\n/* tone colours: 1 high, 2 rising, 3 low-dip, 4 falling, 5 neutral */\n.t1 { color: #c0392b; }\n.t2 { color: #d98014; }\n.t3 { color: #1a9e3e; }\n.t4 { color: #2a6fd6; }\n.t5 { color: #8a8f98; }\n\n/* night mode */\n.nightMode.card  { background: #1e1f22; color: #e8e8ea; }\n.nightMode #answer { border-top-color: #3a3b3e; }\n.nightMode .prompt { color: #9aa0a6; }\n.nightMode .rom    { color: #80858c; }\n.nightMode .trad   { color: #d8a24a; }\n.nightMode .t1 { color: #ff6b5e; }\n.nightMode .t2 { color: #ffb454; }\n.nightMode .t3 { color: #5fd07a; }\n.nightMode .t4 { color: #6aa8ff; }\n.nightMode .t5 { color: #9aa0a6; }\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Map",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 12,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in simplified Chinese",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 36,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in traditional Chinese",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 26,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in pinyin",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Pronunciation",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 18,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Capital",
+                    "ord": 6,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Capital in simplified Chinese",
+                    "ord": 7,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 32,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Capital in pinyin",
+                    "ord": 8,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Capital audio",
+                    "ord": 9,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 18,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Etymology",
+                    "ord": 10,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 18,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "ChinaProvinces",
+            "originalId": 1358974128703,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ],
+                [
+                    1,
+                    "any",
+                    [
+                        1
+                    ]
+                ],
+                [
+                    2,
+                    "all",
+                    [
+                        7
+                    ]
+                ],
+                [
+                    3,
+                    "all",
+                    [
+                        7
+                    ]
+                ],
+                [
+                    4,
+                    "any",
+                    [
+                        2
+                    ]
+                ],
+                [
+                    5,
+                    "all",
+                    [
+                        7
+                    ]
+                ],
+                [
+                    6,
+                    "any",
+                    [
+                        10
+                    ]
+                ]
+            ],
+            "sortf": 1,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"english\">{{Name}}</div><div class=\"idblock\"><div class=\"idline\"><span class=\"hanzi simp-han\">{{Name in simplified Chinese}}</span><span class=\"trad\"> <span class=\"tlabel\">trad</span> <span class=\"trad-han\">{{Name in traditional Chinese}}</span></span></div><div class=\"pinyin\">{{Name in pinyin}}</div><div class=\"audio\">{{Pronunciation}}</div></div>{{#Capital in simplified Chinese}}<div class=\"capblock\"><div class=\"label cap\">capital</div><div class=\"hanzi sm\">{{Capital in simplified Chinese}}</div><div class=\"pinyin\">{{Capital in pinyin}}</div><div class=\"rom\">{{Capital}}</div></div>{{/Capital in simplified Chinese}}\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "maps",
+                    "ord": 0,
+                    "qfmt": "{{Map}}"
+                },
+                {
+                    "afmt": "<div class=\"english\">{{Name}}</div><div class=\"hanzi sm\">{{Name in simplified Chinese}}</div><div class=\"pinyin\">{{Name in pinyin}}</div><hr id=answer>{{Map}}\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "locate",
+                    "ord": 1,
+                    "qfmt": "<div class=\"prompt\">Where is</div><div class=\"english\">{{Name}}</div><div class=\"hanzi sm\">{{Name in simplified Chinese}}</div><div class=\"pinyin\">{{Name in pinyin}}</div><img src=\"_China_base.png\">\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"label cap\">capital</div><div class=\"hanzi\">{{Capital in simplified Chinese}}</div><div class=\"pinyin\">{{Capital in pinyin}}</div><div class=\"rom\">{{Capital}}</div><div class=\"audio\">{{Capital audio}}</div>\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "capitals",
+                    "ord": 2,
+                    "qfmt": "{{#Capital in simplified Chinese}}<div class=\"prompt\">Capital of</div><div class=\"english\">{{Name}}</div><div class=\"hanzi sm\">{{Name in simplified Chinese}}</div><div class=\"pinyin\">{{Name in pinyin}}</div>{{/Capital in simplified Chinese}}\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"english\">{{Name}}</div><div class=\"idblock\"><div class=\"idline\"><span class=\"hanzi simp-han\">{{Name in simplified Chinese}}</span><span class=\"trad\"> <span class=\"tlabel\">trad</span> <span class=\"trad-han\">{{Name in traditional Chinese}}</span></span></div><div class=\"pinyin\">{{Name in pinyin}}</div><div class=\"audio\">{{Pronunciation}}</div></div>\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "capital -> province",
+                    "ord": 3,
+                    "qfmt": "{{#Capital in simplified Chinese}}<div class=\"hanzi hanzi-lg\">{{Capital in simplified Chinese}}</div><div class=\"pinyin\">{{Capital in pinyin}}</div><div class=\"rom\">{{Capital}}</div><div class=\"audio\">{{Capital audio}}</div><div class=\"prompt\">&hellip; is the capital of which province?</div>{{/Capital in simplified Chinese}}\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"english\">{{Name}}</div><div class=\"idblock\"><div class=\"pinyin\">{{Name in pinyin}}</div><div class=\"audio\">{{Pronunciation}}</div><div class=\"idline\"><span class=\"simp-han\" hidden>{{Name in simplified Chinese}}</span><span class=\"trad\"><span class=\"tlabel\">trad</span> <span class=\"trad-han\">{{Name in traditional Chinese}}</span></span></div></div>{{#Capital in simplified Chinese}}<div class=\"capblock\"><div class=\"label cap\">capital</div><div class=\"hanzi sm\">{{Capital in simplified Chinese}}</div><div class=\"pinyin\">{{Capital in pinyin}}</div><div class=\"rom\">{{Capital}}</div></div>{{/Capital in simplified Chinese}}\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "reading",
+                    "ord": 4,
+                    "qfmt": "<div class=\"prompt\">Which province / municipality?</div><div class=\"hanzi hanzi-lg\">{{Name in simplified Chinese}}</div>"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"pinyin pinyin-lg\">{{Capital in pinyin}}</div><div class=\"rom\">{{Capital}}</div><div class=\"audio\">{{Capital audio}}</div><div class=\"sep\"></div><div class=\"label cap\">capital of</div><div class=\"english\">{{Name}}</div><div class=\"hanzi sm\">{{Name in simplified Chinese}}</div>\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "capital reading",
+                    "ord": 5,
+                    "qfmt": "{{#Capital in simplified Chinese}}<div class=\"prompt\">Read this capital</div><div class=\"hanzi hanzi-lg\">{{Capital in simplified Chinese}}</div>{{/Capital in simplified Chinese}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n<div class=\"etymology\">{{Etymology}}</div>\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "etymology",
+                    "ord": 6,
+                    "qfmt": "<div class=\"prompt\">Etymology of</div><div class=\"english\">{{Name}}</div><div class=\"hanzi sm\">{{Name in simplified Chinese}}</div><div class=\"pinyin\">{{Name in pinyin}}</div>\n<script>\n(function(){\n  var T={'ā':1,'ē':1,'ī':1,'ō':1,'ū':1,'ǖ':1,\n         'á':2,'é':2,'í':2,'ó':2,'ú':2,'ǘ':2,\n         'ǎ':3,'ě':3,'ǐ':3,'ǒ':3,'ǔ':3,'ǚ':3,\n         'à':4,'è':4,'ì':4,'ò':4,'ù':4,'ǜ':4};\n  function tone(s){s=s.toLowerCase();for(var i=0;i<s.length;i++){if(T[s[i]]!=null)return T[s[i]];}return 5;}\n  document.querySelectorAll('.pinyin').forEach(function(el){\n    if(el.dataset.toned) return; el.dataset.toned='1';\n    var txt=el.textContent.trim(); if(!txt) return;\n    el.innerHTML=txt.split(/\\s+/).map(function(s){\n      return '<span class=\"t'+tone(s)+'\">'+s+'</span>';\n    }).join(' ');\n  });\n  document.querySelectorAll('.idline').forEach(function(l){\n    var s=l.querySelector('.simp-han'), tr=l.querySelector('.trad'), th=l.querySelector('.trad-han');\n    if(s&&tr&&th&&s.textContent.trim()===th.textContent.trim()) tr.style.display='none';\n  });\n})();\n</script>"
+                }
+            ],
+            "type": 0,
+            "vers": []
+        }
+    ],
+    "notes": [
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Anhui.png\">",
+                "Anhui",
+                "安徽",
+                "安徽",
+                "Ān huī",
+                "[sound:Zh-Anhui.ogg]",
+                "Hefei",
+                "合肥",
+                "Hé féi",
+                "",
+                "<div>安 ān - Anqing</div><div>徽 huī - Huizhou (now Huangshan city)</div>"
+            ],
+            "guid": "r>W6]XX~BS",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Chongqing.png\" />",
+                "Chongqing",
+                "重庆",
+                "重慶",
+                "Chóng qìng",
+                "[sound:Zh-Chongqing.ogg]",
+                "",
+                "",
+                "",
+                "",
+                "double celebration or celebrate again"
+            ],
+            "guid": "g?0QZk@q3:",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "municipality"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Fujian.png\" />",
+                "Fujian",
+                "福建",
+                "福建",
+                "Fú jiàn",
+                "[sound:Zh-Fujian.ogg]",
+                "Fuzhou",
+                "福州",
+                "Fú zhōu",
+                "",
+                "<div>福 fú – Fuzhou</div><div>建 jiàn – Jianzhou (today's Jian'ou)</div>"
+            ],
+            "guid": "mHZ*q?+l{6",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Gansu.png\" />",
+                "Gansu",
+                "甘肃",
+                "甘肅",
+                "Gān sù",
+                "[sound:Zh-Gansu.ogg]",
+                "Lanzhou",
+                "兰州",
+                "Lán zhōu",
+                "",
+                "<div>甘 gān - Ganzhou District, Zhangye</div><div>肃 sù - Suzhou District, Jiuquan</div>"
+            ],
+            "guid": ";]Jq#5ECE",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guangdong.png\" />",
+                "Guangdong",
+                "广东",
+                "廣東",
+                "Guǎng dōng",
+                "[sound:Zh-Guangdong.ogg]",
+                "Guangzhou",
+                "广州",
+                "Guǎng zhōu",
+                "",
+                "<div>广 guǎng - \"Wide\"</div><div>东 dōng- \"East\"</div><div>Lit. \"The Eastern Expanse\"</div><div>(Guangxi being West)</div>"
+            ],
+            "guid": "Q#BqF{;Q{O",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guangxi.png\" />",
+                "Guangxi",
+                "广西",
+                "廣西",
+                "Guǎng xī",
+                "",
+                "Nanning",
+                "南宁",
+                "Nán níng",
+                "",
+                "<div>Abbreviated from \"Guangnan Xi Lu\" (A \"lu\" was equal to a province or a state in the Song Dynasty)</div><div>广 = wide</div><div>西 = west</div><div>literally, \"The Western Expanse\" (Guangdong being East)</div>"
+            ],
+            "guid": "QNX0`(S!]a",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "autonomous-region"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guizhou.png\" />",
+                "Guizhou",
+                "贵州",
+                "貴州",
+                "Guì zhōu",
+                "[sound:Zh-Guizhou.ogg]",
+                "Guiyang",
+                "贵阳",
+                "Guì yáng",
+                "",
+                "<div>贵 guì - Gui Mountains</div><div>州 zhōu - zhou (prefecture)</div>"
+            ],
+            "guid": "q0F~*W?3Oz",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hainan.png\" />",
+                "Hainan",
+                "海南",
+                "海南",
+                "Hǎi nán",
+                "[sound:Zh-Hainan.ogg]",
+                "Haikou",
+                "海口",
+                "Hǎi kǒu",
+                "",
+                "<div>海 hǎi – sea</div><div>南 nán – south</div><div>\"South of the Sea [Qiongzhou Strait]\"</div>"
+            ],
+            "guid": "Ctc&>wPxfk",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hebei.png\" />",
+                "Hebei",
+                "河北",
+                "河北",
+                "Hé běi",
+                "[sound:Zh-Hebei.ogg]",
+                "Shijiazhuang",
+                "石家庄",
+                "Shí jiā zhuāng",
+                "",
+                "<div>河 hé—\"(Yellow) River\"</div><div>北 běi—\"north\"</div><div>\"north of the Yellow River\"</div>"
+            ],
+            "guid": "h5Xdxg*Y@*",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Heilongjiang.png\" />",
+                "Heilongjiang",
+                "黑龙江",
+                "黑龍江",
+                "Hēi lóng jiāng",
+                "[sound:Zh-Heilongjiang.ogg]",
+                "Harbin",
+                "哈尔滨",
+                "Hā ěr bīn",
+                "",
+                "<div>黑 hēi—black</div><div>龙 lóng—dragon</div><div>江 jiāng—river</div><div>\"Amur River\"</div><div>Official form: 黑龙江省 (-shěng, &ldquo;province&rdquo;).</div>"
+            ],
+            "guid": "H)>J6S}mQ^",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Henan.png\" />",
+                "Henan",
+                "河南",
+                "河南",
+                "Hé nán",
+                "[sound:Zh-Henan.ogg]",
+                "Zhengzhou",
+                "郑州",
+                "Zhèng zhōu",
+                "",
+                "<div>河 hé - (Yellow) River</div><div>南 nán - south</div><div>\"south of the Yellow River\"</div>"
+            ],
+            "guid": "fYnGu9[];D",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hong_Kong.png\" />",
+                "Hong Kong",
+                "香港",
+                "香港",
+                "Xiāng gǎng",
+                "[sound:xianggang.ogg]",
+                "",
+                "",
+                "",
+                "",
+                "fragrant harbour"
+            ],
+            "guid": "rUaybtCU<x",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "sar"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hubei.png\" />",
+                "Hubei",
+                "湖北",
+                "湖北",
+                "Hú běi",
+                "[sound:Zh-Hubei.ogg]",
+                "Wuhan",
+                "武汉",
+                "Wǔ hàn",
+                "",
+                "<div>湖 hú - lake</div><div>北 běi - north</div><div>\"north of Lake Dongting\"</div>"
+            ],
+            "guid": "pLtg?/%U@M",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hunan.png\" />",
+                "Hunan",
+                "湖南",
+                "湖南",
+                "Hú nán",
+                "[sound:Zh-Hunan.ogg]",
+                "Changsha",
+                "长沙",
+                "Cháng shā",
+                "",
+                "<div>湖 hú - lake</div><div>南 nán - south</div><div>\"south of the lake \"</div>"
+            ],
+            "guid": "AaM:8`XW}_",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Inner_Mongolia.png\" />",
+                "Inner Mongolia",
+                "内蒙古",
+                "内蒙古",
+                "Nèi měng gǔ",
+                "",
+                "Hohhot",
+                "呼和浩特",
+                "Hū hé hào tè",
+                "",
+                "From the Mongolian öbür monggol, where öbür means the front, sunny side of natural barrier (a mountain, mountain range, lake or desert)"
+            ],
+            "guid": "GJFQQ=A@T2",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "autonomous-region"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jiangsu.png\" />",
+                "Jiangsu",
+                "江苏",
+                "江蘇",
+                "Jiāng sū",
+                "[sound:Zh-Jiangsu.ogg]",
+                "Nanjing",
+                "南京",
+                "Nán jīng",
+                "",
+                "<div>江 jiāng - Jiangning (now Nanjing)</div><div>苏 sū - Suzhou</div>"
+            ],
+            "guid": "hH9Fnk9g-^",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jiangxi.png\" />",
+                "Jiangxi",
+                "江西",
+                "江西",
+                "Jiāng xī",
+                "[sound:Zh-Jiangxi.ogg]",
+                "Nanchang",
+                "南昌",
+                "Nán chāng",
+                "",
+                "<div>Contraction of:</div><div>江南西; Jiāngnán Xī</div><div>\"The western Jiangnan\"</div>"
+            ],
+            "guid": "uPHtEa^vC!",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jilin.png\" />",
+                "Jilin",
+                "吉林",
+                "吉林",
+                "Jí lín",
+                "[sound:Zh-Jilin.ogg]",
+                "Changchun",
+                "长春",
+                "Cháng chūn",
+                "",
+                "from girin ula, a Manchu phrase meaning \"along the river\""
+            ],
+            "guid": "IWQ@IB7X!v",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Liaoning.png\" />",
+                "Liaoning",
+                "辽宁",
+                "遼寧",
+                "Liáo níng",
+                "[sound:Zh-Liaoning.ogg]",
+                "Shenyang",
+                "沈阳",
+                "Shěn yáng",
+                "",
+                "Peace forever for the Liao River watershed"
+            ],
+            "guid": "MNDPmsHd6Q",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Macau.png\" />",
+                "Macau",
+                "澳门",
+                "澳門",
+                "Ào mén",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Perhaps from the A-Ma Temple (Chinese: 媽閣廟; Mandarin Pinyin: Māgé Miào), a temple built in 1448 dedicated to Matsu – the goddess of seafarers and fishermen.<div>The present Chinese name (Chinese: 澳門; Mandarin Pinyin: Àomén) means \"Inlet Gates\".</div>"
+            ],
+            "guid": "n.o^1(IjK7",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "sar"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Ningxia.png\" />",
+                "Ningxia",
+                "宁夏",
+                "寧夏",
+                "Níng xià",
+                "[sound:Ning2xia4.ogg]",
+                "Yinchuan",
+                "银川",
+                "Yín chuān",
+                "",
+                "<div>宁 níng—tranquil</div><div>夏 xià—Western Xia</div><div>\"Tranquil Xia\"</div>"
+            ],
+            "guid": "Hg|gsC(mMV",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "autonomous-region"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Qinghai.png\" />",
+                "Qinghai",
+                "青海",
+                "青海",
+                "Qīng hǎi",
+                "[sound:Zh-Qinghai.ogg]",
+                "Xining",
+                "西宁",
+                "Xī níng",
+                "",
+                "<div>From Khoshut Oirat Köknuur:</div><div>Köke - blue</div><div>Nuur - Lake</div><div>\"blue lake\" (Qinghai Lake)</div><div>In Chinese:</div><div>青 qīng - cyan</div><div>海 hǎi - sea</div><div>\"qing (blue/green/black) sea\"</div>"
+            ],
+            "guid": "hDS|VHoF#Y",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shaanxi.png\" />",
+                "Shaanxi",
+                "陕西",
+                "陝西",
+                "Shǎn xī",
+                "[sound:Zh-Shaanxi.ogg]",
+                "Xi'an",
+                "西安",
+                "Xī ān",
+                "",
+                "<div>陕 shǎn - Shanzhou (now Shan County, Henan)</div><div>西 xī - west</div><div>\"west of Shanzhou\"</div>"
+            ],
+            "guid": "KK%.J3fi<m",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shandong.png\" />",
+                "Shandong",
+                "山东",
+                "山東",
+                "Shān dōng",
+                "[sound:Zh-Shandong.ogg]",
+                "Jinan",
+                "济南",
+                "Jǐ nán",
+                "",
+                "<div>山 shān – mountain</div><div>东 dōng &nbsp;– east</div><div>\"east of the Taihang Mountains\"</div>"
+            ],
+            "guid": "kfKz]{D>.1",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shanghai.png\" />",
+                "Shanghai",
+                "上海",
+                "上海",
+                "Shàng hǎi",
+                "[sound:Zh-Shanghai.ogg]",
+                "",
+                "",
+                "",
+                "",
+                "上&nbsp;<span style=\" font-style: normal; font-weight: normal;\">– above</span><div>海 – sea</div><div>\"upon the sea\"</div>"
+            ],
+            "guid": "v70![,heR?",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "municipality"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shanxi.png\" />",
+                "Shanxi",
+                "山西",
+                "山西",
+                "Shān xī",
+                "[sound:Zh-Shanxi.ogg]",
+                "Taiyuan",
+                "太原",
+                "Tài yuán",
+                "",
+                "<div>山 shān - mountain</div><div>西 xī - west</div><div>\"west of the Taihang Mountains\"</div>"
+            ],
+            "guid": "wiW+6_)kNm",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Sichuan.png\" />",
+                "Sichuan",
+                "四川",
+                "四川",
+                "Sì chuān",
+                "[sound:Zh-Sichuan.ogg]",
+                "Chengdu",
+                "成都",
+                "Chéng dū",
+                "",
+                "<div>Short for 川峡四路 chuānxiá sìlù</div><div>literally \"The Four Circuits</div><div>of the Rivers and Gorges\",</div><div>referring to the four circuits during the Song Dynasty</div>"
+            ],
+            "guid": "D)+=.f+AOi",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Tianjin.png\" />",
+                "Tianjin",
+                "天津",
+                "天津",
+                "Tiān jīn",
+                "[sound:Zh-Tianjin.ogg]",
+                "",
+                "",
+                "",
+                "",
+                "<span style=\" font-style: normal; font-weight: normal;\">天&nbsp;</span><span style=\" font-style: normal; font-weight: normal;\">–&nbsp;</span>sky<div></div><div>津&nbsp;– ferry</div>"
+            ],
+            "guid": "QU6s9SP$;>",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "municipality"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Tibet.png\" />",
+                "Tibet",
+                "西藏",
+                "西藏",
+                "Xī zàng",
+                "",
+                "Lhasa",
+                "拉萨",
+                "Lā sà",
+                "",
+                "Disputed (Tibet names in European languages are loanwords from Arabic Tibat or Tobatt and Persian Tubbat)<div>Official form: 西藏自治区 Xīzàng Zìzhìqū (&ldquo;autonomous region&rdquo;).</div>"
+            ],
+            "guid": "O;Y`&BOXAD",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "autonomous-region"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Xinjiang.png\" />",
+                "Xinjiang",
+                "新疆",
+                "新疆",
+                "Xīn jiāng",
+                "",
+                "Ürümqi",
+                "乌鲁木齐",
+                "Wū lǔ mù qí",
+                "",
+                "<div>新 xīn – new</div><div>疆 jiāng – frontier</div><div>\"new frontier\"</div>"
+            ],
+            "guid": "fRC~*nSZ}_",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "autonomous-region"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Yunnan.png\" />",
+                "Yunnan",
+                "云南",
+                "雲南",
+                "Yún nán",
+                "[sound:Zh-Yunnan.ogg]",
+                "Kunming",
+                "昆明",
+                "Kūn míng",
+                "",
+                "<div>云 yún – Yunling Mountains</div><div>南 nán – south</div><div>\"South of the Yunling Mountains\"</div>"
+            ],
+            "guid": "A_Ndckhk1$",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Zhejiang.png\" />",
+                "Zhejiang",
+                "浙江",
+                "浙江",
+                "Zhè jiāng",
+                "[sound:Zh-Zhejiang.ogg]",
+                "Hangzhou",
+                "杭州",
+                "Háng zhōu",
+                "",
+                "<div>折江 - \"crooked river\"</div><div>Now the river's name is&nbsp;Qiantang River,&nbsp;in honour of the kings of Wuyue</div>"
+            ],
+            "guid": "ziTm<96-GG",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "province"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Beijing.png\" />",
+                "Beijing",
+                "北京",
+                "北京",
+                "Běi jīng",
+                "[sound:Zh-Beijing.ogg]",
+                "",
+                "",
+                "",
+                "",
+                "北 - north<div>京 - capital</div><div>\"Northern Capital\"</div>"
+            ],
+            "guid": "P$Bz4HPi]H",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": [
+                "china-geography",
+                "municipality"
+            ]
+        }
+    ],
+    "reviewLimit": null,
+    "reviewLimitToday": null
+}

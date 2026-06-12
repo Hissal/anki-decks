@@ -1,0 +1,57 @@
+.card {
+  font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", -apple-system, Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: #1c1c1e;
+  background: #fbfbfb;
+  padding: 20px 14px;
+  line-height: 1.4;
+}
+img { max-width: 90%; max-height: 340px; border-radius: 10px; }
+#answer { border: 0; border-top: 2px solid #e3e3e3; margin: 18px auto; width: 80%; }
+
+.prompt    { color: #6b7280; font-size: 17px; margin: 6px 0; }
+.label     { color: #9aa0a6; font-size: 12px; letter-spacing: .08em;
+             text-transform: uppercase; margin-top: 4px; }
+.label.cap { color: #1a9e6e; }
+
+.english   { font-size: 27px; font-weight: 700; margin: 4px 0; }
+.hanzi     { font-size: 44px; font-weight: 600; margin: 6px 0; }
+.hanzi-lg  { font-size: 64px; }
+.hanzi.sm  { font-size: 30px; }
+.pinyin    { font-size: 22px; margin: 3px 0; }
+.pinyin-lg { font-size: 30px; }
+.rom       { color: #9aa0a6; font-size: 16px; margin-top: 2px; }
+.audio     { margin: 6px 0; }
+
+.idblock   { margin-top: 10px; }
+.idline    { margin: 2px 0; }
+.trad      { color: #b07d2b; font-size: 16px; }
+.tlabel    { opacity: .6; font-size: 11px; text-transform: uppercase; }
+
+.capblock  { margin-top: 14px; padding-top: 10px; border-top: 1px dashed #e0e0e0; }
+.sep       { height: 8px; }
+
+.etymology { font-size: 18px; text-align: left; display: inline-block;
+             max-width: 92%; line-height: 1.6; }
+.etymology div { margin: 1px 0; }
+[hidden]   { display: none; }
+
+/* tone colours: 1 high, 2 rising, 3 low-dip, 4 falling, 5 neutral */
+.t1 { color: #c0392b; }
+.t2 { color: #d98014; }
+.t3 { color: #1a9e3e; }
+.t4 { color: #2a6fd6; }
+.t5 { color: #8a8f98; }
+
+/* night mode */
+.nightMode.card  { background: #1e1f22; color: #e8e8ea; }
+.nightMode #answer { border-top-color: #3a3b3e; }
+.nightMode .prompt { color: #9aa0a6; }
+.nightMode .rom    { color: #80858c; }
+.nightMode .trad   { color: #d8a24a; }
+.nightMode .t1 { color: #ff6b5e; }
+.nightMode .t2 { color: #ffb454; }
+.nightMode .t3 { color: #5fd07a; }
+.nightMode .t4 { color: #6aa8ff; }
+.nightMode .t5 { color: #9aa0a6; }

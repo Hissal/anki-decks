@@ -1,0 +1,969 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "532e1390-6647-11f1-8ede-f20577c6b173",
+    "deck_config_uuid": "532e1709-6647-11f1-81b9-f20577c6b173",
+    "deck_configurations": [
+        {
+            "__type__": "DeckConfig",
+            "answerAction": 0,
+            "autoplay": true,
+            "buryInterdayLearning": true,
+            "crowdanki_uuid": "532e1709-6647-11f1-81b9-f20577c6b173",
+            "desiredRetention": 0.9,
+            "dyn": false,
+            "easyDaysPercentages": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "fsrsParams5": [],
+            "fsrsParams6": [
+                0.212,
+                1.2931,
+                2.3065,
+                8.2956,
+                6.4133,
+                0.8334,
+                3.0194,
+                0.001,
+                1.8722,
+                0.1666,
+                0.796,
+                1.4835,
+                0.0614,
+                0.2629,
+                1.6483,
+                0.6014,
+                1.8729,
+                0.5425,
+                0.0912,
+                0.0658,
+                0.1542
+            ],
+            "fsrsWeights": [],
+            "ignoreRevlogsBeforeDate": "1970-01-01",
+            "interdayLearningMix": 2,
+            "lapse": {
+                "delays": [
+                    10.0
+                ],
+                "leechAction": 1,
+                "leechFails": 8,
+                "minInt": 1,
+                "mult": 0.0
+            },
+            "maxTaken": 60,
+            "name": "geography-china",
+            "new": {
+                "bury": true,
+                "delays": [
+                    10.0
+                ],
+                "initialFactor": 2500,
+                "ints": [
+                    1,
+                    4,
+                    0
+                ],
+                "order": 1,
+                "perDay": 10
+            },
+            "newGatherPriority": 0,
+            "newMix": 1,
+            "newPerDayMinimum": 0,
+            "newSortOrder": 0,
+            "questionAction": 0,
+            "replayq": true,
+            "rev": {
+                "bury": true,
+                "ease4": 1.3,
+                "hardFactor": 1.2,
+                "ivlFct": 1.0,
+                "maxIvl": 36500,
+                "perDay": 9999
+            },
+            "reviewOrder": 11,
+            "secondsToShowAnswer": 0.0,
+            "secondsToShowQuestion": 0.0,
+            "sm2Retention": 0.9,
+            "stopTimerOnAnswer": false,
+            "timer": 0,
+            "waitForAudio": true,
+            "weightSearch": ""
+        }
+    ],
+    "desc": "Please see the <a href='https://ankiweb.net/shared/info/'>shared deck page</a> for more info.",
+    "desiredRetention": null,
+    "dyn": 0,
+    "extendNew": 0,
+    "extendRev": 0,
+    "media_files": [
+        "Anhui.png",
+        "Beijing.png",
+        "Chongqing.png",
+        "Fujian.png",
+        "Gansu.png",
+        "Guangdong.png",
+        "Guangxi.png",
+        "Guizhou.png",
+        "Hainan.png",
+        "Hebei.png",
+        "Heilongjiang.png",
+        "Henan.png",
+        "Hong_Kong.png",
+        "Hubei.png",
+        "Hunan.png",
+        "Inner_Mongolia.png",
+        "Jiangsu.png",
+        "Jiangxi.png",
+        "Jilin.png",
+        "Liaoning.png",
+        "Macau.png",
+        "Ning2xia4.ogg",
+        "Ningxia.png",
+        "Qinghai.png",
+        "Shaanxi.png",
+        "Shandong.png",
+        "Shanghai.png",
+        "Shanxi.png",
+        "Sichuan.png",
+        "Tianjin.png",
+        "Tibet.png",
+        "Xinjiang.png",
+        "Yunnan.png",
+        "Zh-Anhui.ogg",
+        "Zh-Beijing.ogg",
+        "Zh-Chongqing.ogg",
+        "Zh-Fujian.ogg",
+        "Zh-Gansu.ogg",
+        "Zh-Guangdong.ogg",
+        "Zh-Guizhou.ogg",
+        "Zh-Hainan.ogg",
+        "Zh-Hebei.ogg",
+        "Zh-Heilongjiang.ogg",
+        "Zh-Henan.ogg",
+        "Zh-Hubei.ogg",
+        "Zh-Hunan.ogg",
+        "Zh-Jiangsu.ogg",
+        "Zh-Jiangxi.ogg",
+        "Zh-Jilin.ogg",
+        "Zh-Liaoning.ogg",
+        "Zh-Qinghai.ogg",
+        "Zh-Shaanxi.ogg",
+        "Zh-Shandong.ogg",
+        "Zh-Shanghai.ogg",
+        "Zh-Shanxi.ogg",
+        "Zh-Sichuan.ogg",
+        "Zh-Tianjin.ogg",
+        "Zh-Yunnan.ogg",
+        "Zh-Zhejiang.ogg",
+        "Zhejiang.png",
+        "xianggang.ogg"
+    ],
+    "name": "知识::Geography::Chinese provinces and more",
+    "newLimit": null,
+    "newLimitToday": null,
+    "note_models": [
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n\n.card1 { background-color: #FFFFFF; }",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Map",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 12,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 12,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in simplified Chinese",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 36,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in traditional Chinese",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 36,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Name in pinyin",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Pronunciation",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Capital",
+                    "ord": 6,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Etymology",
+                    "ord": 7,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "ChinaProvinces",
+            "originalId": 1358974128703,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ],
+                [
+                    1,
+                    "any",
+                    [
+                        1
+                    ]
+                ],
+                [
+                    2,
+                    "any",
+                    [
+                        1
+                    ]
+                ],
+                [
+                    3,
+                    "any",
+                    [
+                        1
+                    ]
+                ],
+                [
+                    4,
+                    "any",
+                    [
+                        2
+                    ]
+                ],
+                [
+                    5,
+                    "any",
+                    [
+                        1,
+                        2,
+                        4
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Name}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "maps",
+                    "ord": 0,
+                    "qfmt": "{{Map}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Capital}}",
+                    "bafmt": "",
+                    "bfont": "Arial",
+                    "bqfmt": "",
+                    "bsize": 12,
+                    "did": null,
+                    "id": null,
+                    "name": "capitals",
+                    "ord": 1,
+                    "qfmt": "Capital of<br>\n{{Name}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Name in simplified Chinese}}",
+                    "bafmt": "",
+                    "bfont": "Arial",
+                    "bqfmt": "",
+                    "bsize": 12,
+                    "did": null,
+                    "id": null,
+                    "name": "written Chinese name",
+                    "ord": 2,
+                    "qfmt": "simplified written Chinese for<br>\n{{Name}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\nPinyin: {{Name in pinyin}} {{Pronunciation}}",
+                    "bafmt": "",
+                    "bfont": "Arial",
+                    "bqfmt": "",
+                    "bsize": 12,
+                    "did": null,
+                    "id": null,
+                    "name": "pinyin",
+                    "ord": 3,
+                    "qfmt": "Spoken Chinese for<br>\n{{Name}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Name}}<br>\nPinyin: {{Name in pinyin}} {{Pronunciation}}",
+                    "bafmt": "",
+                    "bfont": "Arial",
+                    "bqfmt": "",
+                    "bsize": 12,
+                    "did": null,
+                    "id": null,
+                    "name": "reading in Chinese",
+                    "ord": 4,
+                    "qfmt": "Which province/municipality is<br>\n{{Name in simplified Chinese}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Etymology}}",
+                    "bafmt": "",
+                    "bfont": "Arial",
+                    "bqfmt": "",
+                    "bsize": 12,
+                    "did": null,
+                    "id": null,
+                    "name": "etymology",
+                    "ord": 5,
+                    "qfmt": "Etymology for:<br>\n{{Name}}<br>\n(simplified: {{Name in simplified Chinese}}, pinyin: {{Name in pinyin}})"
+                }
+            ],
+            "type": 0,
+            "vers": []
+        }
+    ],
+    "notes": [
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Anhui.png\">",
+                "Anhui",
+                "安徽",
+                "<span style=\" font-style: normal; font-weight: normal;\">安徽</span>",
+                "Ānhuī",
+                "[sound:Zh-Anhui.ogg]",
+                "Hefei",
+                "<div>安 ān - Anqing</div><div>徽 huī - Huizhou (now Huangshan city)</div>"
+            ],
+            "guid": "r>W6]XX~BS",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Chongqing.png\" />",
+                "Chongqing",
+                "重庆",
+                "<span style=\" font-style: normal; font-weight: normal;\">重慶</span>",
+                "Chóngqìng",
+                "[sound:Zh-Chongqing.ogg]",
+                "",
+                "double celebration or celebrate again"
+            ],
+            "guid": "g?0QZk@q3:",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Fujian.png\" />",
+                "Fujian",
+                "<span style=\" font-style: normal; font-weight: normal;\">福建</span>",
+                "<span style=\" font-style: normal; font-weight: normal;\">福建</span>",
+                "Fújiàn",
+                "[sound:Zh-Fujian.ogg]",
+                "Fuzhou",
+                "<div>福 fú – Fuzhou</div><div>建 jiàn – Jianzhou (today's Jian'ou)</div>"
+            ],
+            "guid": "mHZ*q?+l{6",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Gansu.png\" />",
+                "Gansu",
+                "甘肃",
+                "<span style=\" font-style: normal; font-weight: normal;\">甘肅</span>",
+                "Gānsù",
+                "[sound:Zh-Gansu.ogg]",
+                "Lanzhou",
+                "<div>甘 gān - Ganzhou District, Zhangye</div><div>肃 sù - Suzhou District, Jiuquan</div>"
+            ],
+            "guid": ";]Jq#5ECE",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guangdong.png\" />",
+                "Guangdong",
+                "广东",
+                "廣東",
+                "Guǎngdōng",
+                "[sound:Zh-Guangdong.ogg]",
+                "Guangzhou",
+                "<div>广 guǎng - \"Wide\"</div><div>东 dōng- \"East\"</div><div>Lit. \"The Eastern Expanse\"</div><div>(Guangxi being West)</div>"
+            ],
+            "guid": "Q#BqF{;Q{O",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guangxi.png\" />",
+                "Guangxi",
+                "广西",
+                "廣西",
+                "Guăngxī",
+                "",
+                "Nanning",
+                "<div>Abbreviated from \"Guangnan Xi Lu\" (A \"lu\" was equal to a province or a state in the Song Dynasty)</div><div>广 = wide</div><div>西 = west</div><div>literally, \"The Western Expanse\" (Guangdong being East)</div>"
+            ],
+            "guid": "QNX0`(S!]a",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Guizhou.png\" />",
+                "Guizhou",
+                "贵州",
+                "貴州",
+                "Guìzhōu",
+                "[sound:Zh-Guizhou.ogg]",
+                "Guiyang",
+                "<div>贵 guì - Gui Mountains</div><div>州 zhōu - zhou (prefecture)</div>"
+            ],
+            "guid": "q0F~*W?3Oz",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hainan.png\" />",
+                "Hainan",
+                "海南",
+                "海南",
+                "Hǎinán",
+                "[sound:Zh-Hainan.ogg]",
+                "Haikou",
+                "<div>海 hǎi – sea</div><div>南 nán – south</div><div>\"South of the Sea [Qiongzhou Strait]\"</div>"
+            ],
+            "guid": "Ctc&>wPxfk",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hebei.png\" />",
+                "Hebei",
+                "河北",
+                "河北",
+                "Héběi",
+                "[sound:Zh-Hebei.ogg]",
+                "Shijiazhuang",
+                "<div>河 hé—\"(Yellow) River\"</div><div>北 běi—\"north\"</div><div>\"north of the Yellow River\"</div>"
+            ],
+            "guid": "h5Xdxg*Y@*",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Heilongjiang.png\" />",
+                "Heilongjiang",
+                "黑龙江省",
+                "黑龍江省",
+                "Hēilóngjiāng",
+                "[sound:Zh-Heilongjiang.ogg]",
+                "Harbin",
+                "<div>黑 hēi—black</div><div>龙 lóng—dragon</div><div>江 jiāng—river</div><div>\"Amur River\"</div>"
+            ],
+            "guid": "H)>J6S}mQ^",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Henan.png\" />",
+                "Henan",
+                "河南",
+                "河南",
+                "Hénán",
+                "[sound:Zh-Henan.ogg]",
+                "Zhengzhou",
+                "<div>河 hé - (Yellow) River</div><div>南 nán - south</div><div>\"south of the Yellow River\"</div>"
+            ],
+            "guid": "fYnGu9[];D",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hong_Kong.png\" />",
+                "Hong Kong",
+                "香港",
+                "香港",
+                "Xiānggǎng",
+                "[sound:xianggang.ogg]",
+                "",
+                "fragrant harbour"
+            ],
+            "guid": "rUaybtCU<x",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hubei.png\" />",
+                "Hubei",
+                "湖北",
+                "湖北",
+                "Húběi",
+                "[sound:Zh-Hubei.ogg]",
+                "Wuhan",
+                "<div>湖 hú - lake</div><div>北 běi - north</div><div>\"north of Lake Dongting\"</div>"
+            ],
+            "guid": "pLtg?/%U@M",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Hunan.png\" />",
+                "Hunan",
+                "湖南",
+                "湖南",
+                "Húnán",
+                "[sound:Zh-Hunan.ogg]",
+                "Changsha",
+                "<div>湖 hú - lake</div><div>南 nán - south</div><div>\"south of the lake \"</div>"
+            ],
+            "guid": "AaM:8`XW}_",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Inner_Mongolia.png\" />",
+                "Inner Mongolia",
+                "内蒙古",
+                "内蒙古",
+                "Nèi Měnggǔ",
+                "",
+                "Hohhot",
+                "From the Mongolian öbür monggol, where öbür means the front, sunny side of natural barrier (a mountain, mountain range, lake or desert)"
+            ],
+            "guid": "GJFQQ=A@T2",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jiangsu.png\" />",
+                "Jiangsu",
+                "江苏",
+                "江蘇",
+                "Jiāngsū",
+                "[sound:Zh-Jiangsu.ogg]",
+                "Nanjing",
+                "<div>江 jiāng - Jiangning (now Nanjing)</div><div>苏 sū - Suzhou</div>"
+            ],
+            "guid": "hH9Fnk9g-^",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jiangxi.png\" />",
+                "Jiangxi",
+                "江西",
+                "<span style=\" font-style: normal; font-weight: normal;\">江西</span>",
+                "Jiāngxī",
+                "[sound:Zh-Jiangxi.ogg]",
+                "Nanchang",
+                "<div>Contraction of:</div><div>江南西; Jiāngnán Xī</div><div>\"The western Jiangnan\"</div>"
+            ],
+            "guid": "uPHtEa^vC!",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Jilin.png\" />",
+                "Jilin",
+                "吉林",
+                "吉林",
+                "Jílín",
+                "[sound:Zh-Jilin.ogg]",
+                "Changchun",
+                "from girin ula, a Manchu phrase meaning \"along the river\""
+            ],
+            "guid": "IWQ@IB7X!v",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Liaoning.png\" />",
+                "Liaoning",
+                "辽宁",
+                "遼寧",
+                "Liáoníng",
+                "[sound:Zh-Liaoning.ogg]",
+                "Shenyang",
+                "Peace forever for the Liao River watershed"
+            ],
+            "guid": "MNDPmsHd6Q",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Macau.png\" />",
+                "Macau",
+                "澳門",
+                "澳門",
+                "Àomén",
+                "",
+                "",
+                "Perhaps from the A-Ma Temple (Chinese: 媽閣廟; Mandarin Pinyin: Māgé Miào), a temple built in 1448 dedicated to Matsu – the goddess of seafarers and fishermen.<div>The present Chinese name (Chinese: 澳門; Mandarin Pinyin: Àomén) means \"Inlet Gates\".</div>"
+            ],
+            "guid": "n.o^1(IjK7",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Ningxia.png\" />",
+                "Ningxia",
+                "宁夏",
+                "寧夏",
+                "Níngxià",
+                "[sound:Ning2xia4.ogg]",
+                "Yinchuan",
+                "<div>宁 níng—tranquil</div><div>夏 xià—Western Xia</div><div>\"Tranquil Xia\"</div>"
+            ],
+            "guid": "Hg|gsC(mMV",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Qinghai.png\" />",
+                "Qinghai",
+                "青海",
+                "<span style=\" font-style: normal; font-weight: normal;\">青海</span>",
+                "Qīnghǎi",
+                "[sound:Zh-Qinghai.ogg]",
+                "Xining",
+                "<div>From Khoshut Oirat Köknuur:</div><div>Köke - blue</div><div>Nuur - Lake</div><div>\"blue lake\" (Qinghai Lake)</div><div>In Chinese:</div><div>青 qīng - cyan</div><div>海 hǎi - sea</div><div>\"qing (blue/green/black) sea\"</div>"
+            ],
+            "guid": "hDS|VHoF#Y",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shaanxi.png\" />",
+                "Shaanxi",
+                "陕西",
+                "陝西",
+                "Shǎnxī",
+                "[sound:Zh-Shaanxi.ogg]",
+                "Xi'an",
+                "<div>陕 shǎn - Shanzhou (now Shan County, Henan)</div><div>西 xī - west</div><div>\"west of Shanzhou\"</div>"
+            ],
+            "guid": "KK%.J3fi<m",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shandong.png\" />",
+                "Shandong",
+                "山东",
+                "山東",
+                "Shāndōng",
+                "[sound:Zh-Shandong.ogg]",
+                "Jinan",
+                "<div>山 shān – mountain</div><div>东 dōng &nbsp;– east</div><div>\"east of the Taihang Mountains\"</div>"
+            ],
+            "guid": "kfKz]{D>.1",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shanghai.png\" />",
+                "Shanghai",
+                "上海",
+                "上海",
+                "Shànghǎi",
+                "[sound:Zh-Shanghai.ogg]",
+                "",
+                "上&nbsp;<span style=\" font-style: normal; font-weight: normal;\">– above</span><div>海 – sea</div><div>\"upon the sea\"</div>"
+            ],
+            "guid": "v70![,heR?",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Shanxi.png\" />",
+                "Shanxi",
+                "山西",
+                "山西",
+                "Shānxī",
+                "[sound:Zh-Shanxi.ogg]",
+                "Taiyuan",
+                "<div>山 shān - mountain</div><div>西 xī - west</div><div>\"west of the Taihang Mountains\"</div>"
+            ],
+            "guid": "wiW+6_)kNm",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Sichuan.png\" />",
+                "Sichuan",
+                "四川",
+                "四川",
+                "Sìchuān",
+                "[sound:Zh-Sichuan.ogg]",
+                "Chengdu",
+                "<div>Short for 川峡四路 chuānxiá sìlù</div><div>literally \"The Four Circuits</div><div>of the Rivers and Gorges\",</div><div>referring to the four circuits during the Song Dynasty</div>"
+            ],
+            "guid": "D)+=.f+AOi",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Tianjin.png\" />",
+                "Tianjin",
+                "天津",
+                "天津",
+                "Tiānjīn",
+                "[sound:Zh-Tianjin.ogg]",
+                "",
+                "<span style=\" font-style: normal; font-weight: normal;\">天&nbsp;</span><span style=\" font-style: normal; font-weight: normal;\">–&nbsp;</span>sky<div></div><div>津&nbsp;– ferry</div>"
+            ],
+            "guid": "QU6s9SP$;>",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Tibet.png\" />",
+                "Tibet",
+                "西藏自治区",
+                "西藏自治區",
+                "Xīzàng Zìzhìqū",
+                "",
+                "Lhasa",
+                "Disputed (Tibet names in European languages are loanwords from Arabic Tibat or Tobatt and Persian Tubbat)"
+            ],
+            "guid": "O;Y`&BOXAD",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Xinjiang.png\" />",
+                "Xinjiang",
+                "新疆",
+                "新疆",
+                "Xīnjiāng",
+                "",
+                "Ürümqi",
+                "<div>新 xīn – new</div><div>疆 jiāng – frontier</div><div>\"new frontier\"</div>"
+            ],
+            "guid": "fRC~*nSZ}_",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Yunnan.png\" />",
+                "Yunnan",
+                "云南",
+                "雲南",
+                "Yúnnán",
+                "[sound:Zh-Yunnan.ogg]",
+                "Kunming",
+                "<div>云 yún – Yunling Mountains</div><div>南 nán – south</div><div>\"South of the Yunling Mountains\"</div>"
+            ],
+            "guid": "A_Ndckhk1$",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Zhejiang.png\" />",
+                "Zhejiang",
+                "浙江",
+                "浙江",
+                "Zhèjiāng",
+                "[sound:Zh-Zhejiang.ogg]",
+                "Hangzhou",
+                "<div>折江 - \"crooked river\"</div><div>Now the river's name is&nbsp;Qiantang River,&nbsp;in honour of the kings of Wuyue</div>"
+            ],
+            "guid": "ziTm<96-GG",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<img src=\"Beijing.png\" />",
+                "Beijing",
+                "北京",
+                "北京",
+                "Běijīng",
+                "[sound:Zh-Beijing.ogg]",
+                "",
+                "北 - north<div>京 - capital</div><div>\"Northern Capital\"</div>"
+            ],
+            "guid": "P$Bz4HPi]H",
+            "note_model_uuid": "532e89e4-6647-11f1-94b5-f20577c6b173",
+            "tags": []
+        }
+    ],
+    "reviewLimit": null,
+    "reviewLimitToday": null
+}
