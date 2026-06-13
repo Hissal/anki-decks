@@ -63,6 +63,46 @@ HANZICRAFT_URL = "https://hanzicraft.com/dashboard/character/{}"
 # than this zipf is demoted to radical-rare so it sorts to the very bottom.
 RARE_VISIBILITY_ZIPF = 3.0
 
+DEFAULT_CHAR_DECOMP_HANZIPY = REPO_ROOT / "scripts" / "cache" / "char_decomp_hanzipy.json"
+
+# Glyph families: every encoding of one radical's positional forms. A member's
+# decomposition may spell the radical as 巛 / ⺙ / 月; this lets us match it
+# against the deck's radical/variant glyph (川 / 攵 / ⺼) for both the
+# containment filter and the Card-4 highlight. One family per line.
+_FORM_GROUPS = [
+    "水氵氺", "心忄⺗㣺", "人亻𠆢", "手扌龵", "刀刂", "言讠訁", "金钅釒",
+    "食饣飠", "糸纟糹", "犬犭", "阜阝⻖", "邑阝⻏", "衣衤", "示礻",
+    "网罒⺲⺳罓", "辵辶⻌⻍", "艸艹", "竹⺮", "火灬", "攴攵⺙", "牛牜",
+    "肉⺼月", "川巛巜", "老耂", "玉王⺩玊", "足⻊", "母⺟毋", "黑黒", "襾覀",
+]
+_GLYPH2FORMS: dict[str, set[str]] = {}
+for _grp in _FORM_GROUPS:
+    for _ch in _grp:
+        _GLYPH2FORMS.setdefault(_ch, set()).update(_grp)
+
+
+def _forms_of(glyph: str) -> set[str]:
+    return _GLYPH2FORMS.get(glyph, {glyph})
+
+
+def acceptable_forms(radical: str, variants: list[str]) -> set[str]:
+    """All glyphs that count as 'this radical' in a decomposition — the radical,
+    its variants, and every alternate encoding of those forms."""
+    acc: set[str] = set()
+    for g in [radical, *variants]:
+        if g:
+            acc |= _forms_of(g)
+    return acc
+
+
+def _canon_glyph(p: str, deck_forms: list[str]) -> str:
+    """Map a decomposition glyph to the deck's radical/variant glyph when they're
+    the same form (⺙ -> 攵), so the Card-4 highlight matches. Else unchanged."""
+    for g in deck_forms:
+        if g and p in _forms_of(g):
+            return g
+    return p
+
 # How many curated MemberChars to keep per radical (truncates source set when
 # no MEMBER_OVERRIDES entry exists). Card-back stays compact; "+ X more"
 # indicator covers the gap to total Productivity.
@@ -564,11 +604,13 @@ def build_decomposition(component: str, hc_decomp: dict | None) -> str:
 
 
 def _decomp_usable(parts: list[str] | None, ch: str) -> bool:
-    """A decomp is usable when it has parts, none unglyphable, and isn't just
-    the char repeating itself."""
-    if not parts:
+    """Usable when it has >=2 parts, at least one real (glyphable) component, and
+    isn't just the char repeating itself. Partial decomps — one component hanzipy
+    can't render, shown as `?` — are allowed so structural-radical members like
+    书 still get a breakdown that surfaces the radical."""
+    if not parts or len(parts) < 2:
         return False
-    if any(p == "?" for p in parts):
+    if all(p == "?" for p in parts):
         return False
     if len(parts) == 1 and parts[0] == ch:
         return False
@@ -579,7 +621,7 @@ def build_member_decomp(
     chars: str,
     char_decomp: dict[str, dict] | None,
     enrich: dict[str, dict] | None,
-    radical_glyphs: set[str] | None = None,
+    deck_forms: list[str] | None = None,
 ) -> str:
     """`巩=工+凡|汞=工+水`-style per-char decomp packing for Card 4 back.
 
@@ -594,7 +636,8 @@ def build_member_decomp(
     When empty the function just uses `once` (legacy behavior, no fallback)."""
     if not (char_decomp or enrich):
         return ""
-    needle = set(radical_glyphs or [])
+    deck_forms = deck_forms or []
+    needle = acceptable_forms(deck_forms[0], deck_forms[1:]) if deck_forms else set()
     pieces: list[str] = []
     seen: set[str] = set()
 
@@ -631,6 +674,8 @@ def build_member_decomp(
         else:
             continue
 
+        if deck_forms:
+            chosen = [_canon_glyph(p, deck_forms) for p in chosen]
         pieces.append(f"{ch}={'+'.join(chosen)}")
     return "|".join(pieces)
 
@@ -828,7 +873,7 @@ def finalize_members(
     """
     def zf(c): return char_freq.get(c, 0.0)
     exclude = {x for x in [canonical, *variants] if x}
-    needle = {canonical, *variants}
+    acceptable = acceptable_forms(canonical, variants)
     cwc_can = _simp_cwc(canonical, cwc) | _simp_cwc(MEMBER_OVERRIDE_CWC_ALIAS.get(canonical, ""), cwc)
     cwc_v = {v: _simp_cwc(v, cwc) for v in variants}
     valid = set(cwc_can)
@@ -836,13 +881,14 @@ def finalize_members(
         valid |= s
 
     def contains_radical(ch: str) -> bool:
-        """ch's decomposition surfaces the radical or one of its variants. When
-        we have no decomp for ch, trust the cwc membership that got it here.
-        Catches HanziCraft cwc quirks like 出 wrongly listed under 齿."""
+        """ch's (hanzipy) decomposition actually contains the radical or one of
+        its forms. No decomp data -> exclude: hanzipy covers ~all common chars,
+        so an absent char is obscure or, more often, a cwc shape-pollution
+        artifact (颈 listed under 川, 戴 under 矛) that must not slip through."""
         parts = _decomp_form_parts(ch, char_decomp)
-        if parts is None:
-            return True
-        return bool(needle & parts)
+        if not parts:
+            return False
+        return bool(acceptable & parts)
 
     seen: set[str] = set()
     members: list[str] = []
@@ -1060,7 +1106,7 @@ def transform_row(
         if flags is not None:
             flags.append((canonical, list(unrep)))
     member_decomp = build_member_decomp(
-        member_chars, char_decomp, enrich, {canonical, *kept_variants}
+        member_chars, char_decomp, enrich, [canonical, *kept_variants]
     )
 
     # Note assembly.
@@ -1221,6 +1267,21 @@ def main() -> int:
             print(f"loaded char decomp: {len(char_decomp)} entries", file=sys.stderr)
         except Exception as e:
             print(f"warn: failed to load char-decomp {args.char_decomp}: {e}", file=sys.stderr)
+
+    # hanzipy decomposition (comprehensive + accurate) is the primary source for
+    # member containment + Card-4 breakdown; HanziCraft char_decomp is fallback.
+    if DEFAULT_CHAR_DECOMP_HANZIPY.exists():
+        try:
+            hz = _json.loads(DEFAULT_CHAR_DECOMP_HANZIPY.read_text(encoding="utf-8"))
+            char_decomp = {**(char_decomp or {}), **hz}  # hanzipy wins on conflict
+            print(f"merged hanzipy decomp: {len(hz)} entries (total {len(char_decomp)})",
+                  file=sys.stderr)
+        except Exception as e:
+            print(f"warn: failed to load hanzipy decomp: {e}", file=sys.stderr)
+    else:
+        print(f"note: {DEFAULT_CHAR_DECOMP_HANZIPY.name} not found; run "
+              f"build_char_decomp_hanzipy.py — member containment degraded",
+              file=sys.stderr)
 
     cwc: dict[str, list[str]] | None = None
     if args.cwc.exists():
