@@ -200,10 +200,16 @@ RECITE_JS = """
   var items = document.querySelectorAll('#reciteList .r');
   var i = 0;
   function reveal(){ if (i < items.length){ items[i].style.visibility = 'visible'; i++; } }
-  document.addEventListener('click', reveal);
-  document.addEventListener('keydown', function(e){
+  // Anki re-uses one webview, so drop any handler left by a previous showing
+  // before binding fresh ones (prevents tap from double-stepping).
+  if (window.__reciteClick) document.removeEventListener('click', window.__reciteClick);
+  if (window.__reciteKey) document.removeEventListener('keydown', window.__reciteKey);
+  window.__reciteClick = reveal;
+  window.__reciteKey = function(e){
     if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); reveal(); }
-  });
+  };
+  document.addEventListener('click', window.__reciteClick);
+  document.addEventListener('keydown', window.__reciteKey);
 })();</script>"""
 
 
