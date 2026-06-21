@@ -20,6 +20,11 @@ import shutil
 from pathlib import Path
 
 from build_ultimate_geography_fi import EN_DIR, FI_PLACE, FI_CAPITAL, _BASE91
+from make_ug_world_base import (
+    build_world_base,
+    patch_country_map_front,
+    reorder_templates,
+)
 
 OUT_DIR = Path(__file__).resolve().parent / "Ultimate Geography [EN-FI] [Extended]"
 
@@ -80,6 +85,10 @@ def main() -> None:
     deck["notes"] = notes
     # desc stays the original English description (English-first deck)
 
+    # blank world map on the Country - Map front (see make_ug_world_base.py)
+    front_patched = patch_country_map_front(deck["note_models"])
+    reorder_templates(deck["note_models"])
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "deck.json").write_text(
         json.dumps(deck, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
@@ -92,8 +101,12 @@ def main() -> None:
         shutil.rmtree(dst_media)
     shutil.copytree(src_media, dst_media)
 
+    # derive the blank world locator map into this deck's media
+    build_world_base(dst_media)
+
     print(f"Wrote {OUT_DIR / 'deck.json'}")
-    print(f"Notes: {len(notes)} | media files copied: {len(list(dst_media.iterdir()))}")
+    print(f"Notes: {len(notes)} | media files copied: {len(list(dst_media.iterdir()))} "
+          f"| Country-Map front patched: {front_patched}")
 
 
 if __name__ == "__main__":

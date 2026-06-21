@@ -32,6 +32,12 @@ import json
 import shutil
 from pathlib import Path
 
+from make_ug_world_base import (
+    build_world_base,
+    patch_country_map_front,
+    reorder_templates,
+)
+
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
@@ -910,6 +916,10 @@ def main() -> None:
     fi_deck["desc"] = FI_DESC
     fi_deck["notes"] = fi_notes
 
+    # ---- blank world map on the Country - Map front (see make_ug_world_base.py) ----
+    front_patched = patch_country_map_front(fi_deck["note_models"])
+    reorder_templates(fi_deck["note_models"])
+
     # ---- write output ----
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "deck.json").write_text(
@@ -924,8 +934,12 @@ def main() -> None:
         shutil.rmtree(dst_media)
     shutil.copytree(src_media, dst_media)
 
+    # ---- derive the blank world locator map into this deck's media ----
+    build_world_base(dst_media)
+
     print(f"Wrote {OUT_DIR / 'deck.json'}")
-    print(f"Notes: {len(fi_notes)} | media files copied: {len(list(dst_media.iterdir()))}")
+    print(f"Notes: {len(fi_notes)} | media files copied: {len(list(dst_media.iterdir()))} "
+          f"| Country-Map front patched: {front_patched}")
 
 
 if __name__ == "__main__":

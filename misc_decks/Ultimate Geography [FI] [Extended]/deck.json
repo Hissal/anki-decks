@@ -690,54 +690,6 @@
       "tags": [],
       "tmpls": [
         {
-          "afmt": "<div class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr id=answer>\n\n<div class=\"type\">Capital</div>\n<div class=\"value\">{{Capital}}</div>\n{{#Capital info}}<div class=\"info\">{{Capital info}}</div>{{/Capital info}}\n",
-          "bafmt": "",
-          "bfont": "",
-          "bqfmt": "",
-          "bsize": 0,
-          "did": null,
-          "name": "Country - Capital",
-          "ord": 0,
-          "qfmt": "{{#Capital}}\n  <div class=\"value value--top\">{{Country}}</div>\n  {{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n  <hr>\n\n  <div class=\"type\">Capital</div>\n  <div class=\"value\">?</div>\n{{/Capital}}",
-          "scratchPad": 0
-        },
-        {
-          "afmt": "<div id=answer class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr>\n\n<div class=\"type\">Capital</div>\n<div class=\"value\">{{Capital}}</div>\n{{#Capital hint}}<div class=\"info\">Hint: {{Capital hint}}</div>{{/Capital hint}}\n{{#Capital info}}<div class=\"info\">{{Capital info}}</div>{{/Capital info}}\n",
-          "bafmt": "",
-          "bfont": "",
-          "bqfmt": "",
-          "bsize": 0,
-          "did": null,
-          "name": "Capital - Country",
-          "ord": 1,
-          "qfmt": "{{#Capital}}\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Capital</div>\n  <div class=\"value\">{{Capital}}</div>\n  {{#Capital hint}}<div class=\"info\">Hint: {{Capital hint}}</div>{{/Capital hint}}\n{{/Capital}}",
-          "scratchPad": 0
-        },
-        {
-          "afmt": "<div class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr id=answer>\n\n<div class=\"type\">Flag</div>\n<div class=\"value value--image value--back\">{{Flag}}</div>\n{{#Flag similarity}}<div class=\"info\">Flag similar to {{Flag similarity}}.</div>{{/Flag similarity}}\n",
-          "bafmt": "",
-          "bfont": "",
-          "bqfmt": "",
-          "bsize": 0,
-          "did": null,
-          "name": "Country - Flag",
-          "ord": 2,
-          "qfmt": "{{#Flag}}\n  <div class=\"value value--top\">{{Country}}</div>\n  {{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n  <hr>\n\n  <div class=\"type\">Flag</div>\n  <div class=\"value value--image\">\n    <svg\n      class=\"placeholder\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"417\"\n      height=\"250\"\n      viewBox=\"0 0 417 250\"\n    >\n      <path d=\"m2 26s45-24 129-24c86 0 146 25 210 25 64 0 74-10 74-10v218s-25 13-83 13-146-25-206-25c-60 0-123 19-123 19z\" />\n    </svg>\n  </div>\n{{/Flag}}",
-          "scratchPad": 0
-        },
-        {
-          "afmt": "<div id=answer class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr>\n\n<div class=\"type\">Flag</div>\n<div class=\"value value--image value--back\">{{Flag}}</div>\n{{#Flag similarity}}<div class=\"info\">Flag similar to {{Flag similarity}}.</div>{{/Flag similarity}}\n",
-          "bafmt": "",
-          "bfont": "",
-          "bqfmt": "",
-          "bsize": 0,
-          "did": null,
-          "name": "Flag - Country",
-          "ord": 3,
-          "qfmt": "{{#Flag}}\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Flag</div>\n  <div class=\"value value--image value--front\">{{Flag}}</div>\n{{/Flag}}",
-          "scratchPad": 0
-        },
-        {
           "afmt": "<div class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr id=answer>\n\n<div class=\"type\">Location</div>\n<div class=\"value value--image\">{{Map}}</div>\n",
           "bafmt": "",
           "bfont": "",
@@ -745,8 +697,8 @@
           "bsize": 0,
           "did": null,
           "name": "Country - Map",
-          "ord": 4,
-          "qfmt": "{{#Map}}\n  <div class=\"value value--top\">{{Country}}</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\">\n    <svg\n      class=\"placeholder\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"500\"\n      height=\"308\"\n      viewBox=\"0 0 500 308\"\n    >\n      <path d=\"m154 2s-151 44-152 152c-1 108 152 152 152 152h193s151-44 151-152c1-107-151-152-151-152z\" />\n    </svg>\n  </div>\n{{/Map}}",
+          "ord": 0,
+          "qfmt": "{{#Map}}\n  <div class=\"value value--top\">{{Country}}</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\">\n    <img src=\"_ug-world-blank.png\" />\n  </div>\n{{/Map}}",
           "scratchPad": 0
         },
         {
@@ -757,8 +709,56 @@
           "bsize": 0,
           "did": null,
           "name": "Map - Country",
-          "ord": 5,
+          "ord": 1,
           "qfmt": "{{#Map}}\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Location</div>\n  <div class=\"value value--image\">{{Map}}</div>\n{{/Map}}",
+          "scratchPad": 0
+        },
+        {
+          "afmt": "<div id=answer class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr>\n\n<div class=\"type\">Flag</div>\n<div class=\"value value--image value--back\">{{Flag}}</div>\n{{#Flag similarity}}<div class=\"info\">Flag similar to {{Flag similarity}}.</div>{{/Flag similarity}}\n",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "name": "Flag - Country",
+          "ord": 2,
+          "qfmt": "{{#Flag}}\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Flag</div>\n  <div class=\"value value--image value--front\">{{Flag}}</div>\n{{/Flag}}",
+          "scratchPad": 0
+        },
+        {
+          "afmt": "<div id=answer class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr>\n\n<div class=\"type\">Capital</div>\n<div class=\"value\">{{Capital}}</div>\n{{#Capital hint}}<div class=\"info\">Hint: {{Capital hint}}</div>{{/Capital hint}}\n{{#Capital info}}<div class=\"info\">{{Capital info}}</div>{{/Capital info}}\n",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "name": "Capital - Country",
+          "ord": 3,
+          "qfmt": "{{#Capital}}\n  <div class=\"value value--top\">?</div>\n\n  <hr>\n\n  <div class=\"type\">Capital</div>\n  <div class=\"value\">{{Capital}}</div>\n  {{#Capital hint}}<div class=\"info\">Hint: {{Capital hint}}</div>{{/Capital hint}}\n{{/Capital}}",
+          "scratchPad": 0
+        },
+        {
+          "afmt": "<div class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr id=answer>\n\n<div class=\"type\">Capital</div>\n<div class=\"value\">{{Capital}}</div>\n{{#Capital info}}<div class=\"info\">{{Capital info}}</div>{{/Capital info}}\n",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "name": "Country - Capital",
+          "ord": 4,
+          "qfmt": "{{#Capital}}\n  <div class=\"value value--top\">{{Country}}</div>\n  {{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n  <hr>\n\n  <div class=\"type\">Capital</div>\n  <div class=\"value\">?</div>\n{{/Capital}}",
+          "scratchPad": 0
+        },
+        {
+          "afmt": "<div class=\"value value--top\">{{Country}}</div>\n{{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n<hr id=answer>\n\n<div class=\"type\">Flag</div>\n<div class=\"value value--image value--back\">{{Flag}}</div>\n{{#Flag similarity}}<div class=\"info\">Flag similar to {{Flag similarity}}.</div>{{/Flag similarity}}\n",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "name": "Country - Flag",
+          "ord": 5,
+          "qfmt": "{{#Flag}}\n  <div class=\"value value--top\">{{Country}}</div>\n  {{#Country info}}<div class=\"info\">{{Country info}}</div>{{/Country info}}\n\n  <hr>\n\n  <div class=\"type\">Flag</div>\n  <div class=\"value value--image\">\n    <svg\n      class=\"placeholder\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      width=\"417\"\n      height=\"250\"\n      viewBox=\"0 0 417 250\"\n    >\n      <path d=\"m2 26s45-24 129-24c86 0 146 25 210 25 64 0 74-10 74-10v218s-25 13-83 13-146-25-206-25c-60 0-123 19-123 19z\" />\n    </svg>\n  </div>\n{{/Flag}}",
           "scratchPad": 0
         }
       ],
