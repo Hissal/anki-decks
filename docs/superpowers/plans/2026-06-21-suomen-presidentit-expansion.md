@@ -10,6 +10,13 @@
 
 **Testing note (repo-adapted):** This repo uses plain runnable scripts + `validate_*.py`, not a pytest suite. Per the user's simplicity preference, we apply test-first (pytest) only to the pure parsing helpers (Tasks 3–6) where regressions are easy and silent; model/aggregate/orchestration is verified by the integration build + `validate_suomen_presidentit.py` (Tasks 7–10). Run tests with `python -m pytest`.
 
+> **Addendum (2026-06-21, post-approval):** Add a per-president `Link` field
+> (fi.wikipedia article URL) — an appended enrichment field. Rendered as a "Lue
+> lisää Wikipediasta →" footer on every per-president back. Reflected in: T2
+> `ENRICH` (each entry gains `"Link"`), T6 `NEW_FIELDS` + `PROFILE_BACK` + model
+> test set + `.src` CSS, T8 `main()` field extend, T9 validator (Link non-empty +
+> starts with `http`). Aggregate cards have no link (they span multiple presidents).
+
 **Paths (all absolute under the repo root `misc_decks/`):**
 - Create: `misc_decks/build_suomen_presidentit.py`
 - Create: `misc_decks/suomen_presidentit_data.py` (enrichment + trivia data tables)
