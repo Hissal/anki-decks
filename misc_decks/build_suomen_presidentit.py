@@ -103,12 +103,8 @@ CARDS = [
     ("Name → Life",        '{{Name}}<div class="ask">Elinvuodet?</div>', "all", "Life"),
 ]
 
-# Shared profile back for every per-president card.
-PROFILE_BACK = """{{FrontSide}}
-<hr id=answer>
-<div class="name">{{Name}}</div>
-{{#Image}}<div class="pic">{{Image}}</div>{{/Image}}
-<table class="profile">
+# Context table shown on every per-president back.
+PROFILE_TABLE = """<table class="profile">
 <tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>
 <tr><th>Toimikausi</th><td>{{Years}}</td></tr>
 <tr><th>Puolue</th><td>{{Party}}</td></tr>
@@ -119,25 +115,58 @@ PROFILE_BACK = """{{FrontSide}}
 {{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}
 {{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}
 {{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}
-</table>
-{{#Info}}<div class="info">{{Info}}</div>{{/Info}}
-{{#Link}}<div class="src"><a href="{{Link}}">Lue lisää Wikipediasta →</a></div>{{/Link}}"""
+</table>"""
+
+
+def build_back(answer_field: str) -> str:
+    """Per-card back: the tested answer big + highlighted at the top, profile below.
+
+    Reverse cards (answer == Name) highlight the name itself; forward cards show
+    the name small as context above the highlighted answer, so the thing you were
+    actually tested on is immediately visible without hunting the table.
+    """
+    who = "" if answer_field == "Name" else '<div class="who">{{Name}}</div>\n'
+    return (
+        "{{FrontSide}}\n<hr id=answer>\n"
+        + who
+        + '<div class="answer">{{%s}}</div>\n' % answer_field
+        + '{{#Image}}<div class="pic">{{Image}}</div>{{/Image}}\n'
+        + PROFILE_TABLE + "\n"
+        + '{{#Info}}<div class="info">{{Info}}</div>{{/Info}}\n'
+        + '{{#Link}}<div class="src"><a href="{{Link}}">Lue lisää Wikipediasta →</a></div>{{/Link}}'
+    )
 
 PRES_CSS = """.card { font-family: arial; font-size: 20px; line-height: 1.5;
   text-align: center; color: black; background-color: white; }
 .ask { color: #555; font-size: 16px; margin-top: .6em; }
 .clue { font-size: 24px; }
-.name { font-size: 26px; font-weight: bold; margin-bottom: .3em; }
+.who { font-size: 17px; color: #666; }
+.answer { display: inline-block; font-size: 25px; font-weight: bold;
+  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;
+  margin: .2em 0 .45em; }
 .pic img { max-height: 200px; }
-table.profile { margin: .6em auto; border-collapse: collapse; text-align: left; }
+table.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }
 table.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;
   vertical-align: top; white-space: nowrap; }
 table.profile td { padding: 2px 0; }
-.info { font-size: 15px; color: #444; margin: .6em auto 0; max-width: 36em;
+.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;
   text-align: left; }
-.hint { color: #888; font-size: 14px; }
+.hint { color: #777; font-size: 14px; }
 .src { margin-top: .7em; }
-.src a { color: #06c; font-size: 14px; text-decoration: none; }"""
+.src a { color: #06c; font-size: 14px; text-decoration: none; }
+#reciteList { display: inline-block; text-align: left; margin: .5em auto; }
+#reciteList li { margin: 5px 0; font-size: 19px; }
+#reciteList summary { cursor: pointer; color: #06c; }
+#reciteList details[open] summary { display: none; }
+#reciteList details[open] { font-weight: bold; }
+/* Night mode: lift muted greys + accents so they stay readable on dark. */
+.nightMode .ask { color: #b8b8b8; }
+.nightMode .who { color: #bbb; }
+.nightMode .answer { background: #4a4326; color: #ffe9a8; }
+.nightMode table.profile th { color: #aaa; }
+.nightMode .info { color: #cfcfcf; }
+.nightMode .hint { color: #b0b0b0; }
+.nightMode .src a, .nightMode #reciteList summary { color: #6af; }"""
 
 
 def build_president_model(src_model: dict) -> dict:
@@ -164,7 +193,7 @@ def build_president_model(src_model: dict) -> dict:
         t["ord"] = ordn
         t["id"] = 900000000 + ordn
         t["qfmt"] = front
-        t["afmt"] = PROFILE_BACK
+        t["afmt"] = build_back(field if name.startswith("Name →") else "Name")
         t["bqfmt"] = ""
         t["bafmt"] = ""
         tmpls.append(t)
@@ -195,22 +224,6 @@ PARTY_QUESTION = {
 }
 
 RECITE_FRONT = '<div class="ask">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>'
-RECITE_JS = """
-<script>(function(){
-  var items = document.querySelectorAll('#reciteList .r');
-  var i = 0;
-  function reveal(){ if (i < items.length){ items[i].style.visibility = 'visible'; i++; } }
-  // Anki re-uses one webview, so drop any handler left by a previous showing
-  // before binding fresh ones (prevents tap from double-stepping).
-  if (window.__reciteClick) document.removeEventListener('click', window.__reciteClick);
-  if (window.__reciteKey) document.removeEventListener('keydown', window.__reciteKey);
-  window.__reciteClick = reveal;
-  window.__reciteKey = function(e){
-    if (e.code === 'Space' || e.key === ' ') { e.preventDefault(); reveal(); }
-  };
-  document.addEventListener('click', window.__reciteClick);
-  document.addEventListener('keydown', window.__reciteKey);
-})();</script>"""
 
 
 def guid_for(text: str) -> str:
@@ -233,11 +246,12 @@ def build_party_rosters(rows):
 
 
 def build_recite_note(rows):
-    """Returns (front, back). Back lists all names hidden until tapped (JS reveal)."""
-    lis = "\n".join(f'<li><span class="r">{name}</span></li>'
+    """Returns (front, back). Each president is a native <details> revealed on tap
+    — no JS, so it works the same across Anki desktop / AnkiDroid / AnkiMobile."""
+    lis = "\n".join(f'<li><details><summary>näytä</summary>{name}</details></li>'
                     for _, name, _ in sorted(rows))
-    back = ('<div class="hint">Napauta / välilyönti paljastaa seuraavan.</div>\n'
-            f'<ol id="reciteList">\n{lis}\n</ol>\n' + RECITE_JS)
+    back = ('<div class="hint">Napauta jokainen rivi vuorollaan.</div>\n'
+            f'<ol id="reciteList">\n{lis}\n</ol>')
     return RECITE_FRONT, back
 
 

@@ -113,7 +113,7 @@ def test_recite_note_lists_all_13():
     assert "järjestyksessä" in front
     for _o, name, _p in notes:
         assert name in back
-    assert "<script>" in back
+    assert "<details>" in back
 
 
 def test_trivia_count_matches_data():
