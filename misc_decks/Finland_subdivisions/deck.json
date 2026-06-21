@@ -419,7 +419,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "Lapland",
+        "Lapland (Lappi)",
         "",
         "Rovaniemi",
         "",
@@ -435,7 +435,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "North Ostrobothnia",
+        "North Ostrobothnia (Pohjois-Pohjanmaa)",
         "",
         "Oulu",
         "",
@@ -467,7 +467,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "North Karelia",
+        "North Karelia (Pohjois-Karjala)",
         "",
         "Joensuu",
         "",
@@ -483,7 +483,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "North Savo",
+        "North Savo (Pohjois-Savo)",
         "",
         "Kuopio",
         "",
@@ -499,7 +499,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "South Savo",
+        "South Savo (Etelä-Savo)",
         "",
         "Mikkeli",
         "",
@@ -515,7 +515,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "South Karelia",
+        "South Karelia (Etelä-Karjala)",
         "",
         "Lappeenranta",
         "",
@@ -531,7 +531,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "Central Finland",
+        "Central Finland (Keski-Suomi)",
         "",
         "Jyväskylä",
         "",
@@ -547,7 +547,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "South Ostrobothnia",
+        "South Ostrobothnia (Etelä-Pohjanmaa)",
         "",
         "Seinäjoki",
         "",
@@ -563,7 +563,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "Ostrobothnia",
+        "Ostrobothnia (Pohjanmaa)",
         "",
         "Vaasa",
         "",
@@ -579,7 +579,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "Central Ostrobothnia",
+        "Central Ostrobothnia (Keski-Pohjanmaa)",
         "",
         "Kokkola",
         "",
@@ -691,7 +691,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "Southwest Finland",
+        "Southwest Finland (Varsinais-Suomi)",
         "",
         "Turku",
         "",
@@ -707,9 +707,9 @@
     {
       "__type__": "Note",
       "fields": [
-        "Åland",
+        "Åland (Ahvenanmaa)",
         "",
-        "Mariehamn",
+        "Mariehamn (Maarianhamina)",
         "",
         "",
         "<img src=\"Flag_of_Åland.svg\">",

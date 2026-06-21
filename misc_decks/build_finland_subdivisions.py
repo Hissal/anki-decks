@@ -52,6 +52,38 @@ REQ = {
     "Country - Flag":    ("all", [5]),
 }
 
+# English-first with the Finnish name added in parens, like the EN-FI UG deck.
+# Finnish region names (the deck's English "Country" field -> Finnish). Identical
+# entries (Kainuu, Pirkanmaa, ...) are listed so the completeness check is total;
+# enrich() only appends "(FI)" when the Finnish form actually differs.
+FI_REGION = {
+    "Lapland": "Lappi",
+    "North Ostrobothnia": "Pohjois-Pohjanmaa",
+    "Kainuu": "Kainuu",
+    "North Karelia": "Pohjois-Karjala",
+    "North Savo": "Pohjois-Savo",
+    "South Savo": "Etelä-Savo",
+    "South Karelia": "Etelä-Karjala",
+    "Central Finland": "Keski-Suomi",
+    "South Ostrobothnia": "Etelä-Pohjanmaa",
+    "Ostrobothnia": "Pohjanmaa",
+    "Central Ostrobothnia": "Keski-Pohjanmaa",
+    "Pirkanmaa": "Pirkanmaa",
+    "Satakunta": "Satakunta",
+    "Päijät-Häme": "Päijät-Häme",
+    "Kanta-Häme": "Kanta-Häme",
+    "Kymenlaakso": "Kymenlaakso",
+    "Uusimaa": "Uusimaa",
+    "Southwest Finland": "Varsinais-Suomi",
+    "Åland": "Ahvenanmaa",
+}
+
+# Finnish capital names — only the ones that differ from the English/Swedish form
+# the deck ships (every other regional seat is spelled the same in Finnish).
+FI_CAPITAL = {
+    "Mariehamn": "Maarianhamina",
+}
+
 # Stock Ultimate Geography flag-shaped placeholder (no "blank flag" concept).
 FLAG_OVAL = (
     '    <svg\n'
@@ -85,6 +117,12 @@ def build_base() -> tuple:
     return size, len(grp), len(files), left
 
 
+def enrich(value: str, mapping: dict) -> str:
+    """English-first: append " (Finnish)" only when the Finnish form differs."""
+    fi = mapping.get(value)
+    return f"{value} ({fi})" if fi and fi != value else value
+
+
 def _tmpl(proto: dict, name: str, qfmt: str, afmt: str) -> dict:
     t = copy.deepcopy(proto)
     t["name"], t["qfmt"], t["afmt"] = name, qfmt, afmt
@@ -96,6 +134,20 @@ def main() -> None:
     print(f"base: {n}/{total} maps @ {size[0]}x{size[1]}, red left={left} -> {BASE_NAME}")
 
     deck = json.loads(SRC.read_text(encoding="utf-8"))
+
+    # English-first + Finnish name on the Country / Capital answer fields.
+    missing = sorted({n["fields"][0] for n in deck["notes"]
+                      if n["fields"][0] and n["fields"][0] not in FI_REGION})
+    if missing:
+        raise SystemExit("FI_REGION has no mapping for: " + ", ".join(missing))
+    region_fi = cap_fi = 0
+    for note in deck["notes"]:
+        f = note["fields"]
+        f[0], before0 = enrich(f[0], FI_REGION), f[0]
+        f[2], before2 = enrich(f[2], FI_CAPITAL), f[2]
+        region_fi += f[0] != before0
+        cap_fi += f[2] != before2
+
     nm = deck["note_models"][0]
     tmpls = {t["name"]: t for t in nm["tmpls"]}
     proto = tmpls["Country - Capital"]
@@ -149,7 +201,7 @@ def main() -> None:
         encoding="utf-8",
     )
     print("templates:", [f"{t['ord']}:{t['name']}" for t in ordered])
-    print(f"notes: {len(deck['notes'])} -> {OUT.name}")
+    print(f"notes: {len(deck['notes'])} | FI added: {region_fi} regions, {cap_fi} capitals -> {OUT.name}")
 
 
 if __name__ == "__main__":
