@@ -1,0 +1,1222 @@
+{
+  "__type__": "Deck",
+  "children": [],
+  "crowdanki_uuid": "e6acc53d-6d80-11f1-8fb4-f20577c6b173",
+  "deck_config_uuid": "e6acc90a-6d80-11f1-9f3f-f20577c6b173",
+  "deck_configurations": [
+    {
+      "__type__": "DeckConfig",
+      "answerAction": 0,
+      "autoplay": true,
+      "buryInterdayLearning": true,
+      "crowdanki_uuid": "e6acc90a-6d80-11f1-9f3f-f20577c6b173",
+      "desiredRetention": 0.9,
+      "dyn": false,
+      "easyDaysPercentages": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fsrsParams5": [],
+      "fsrsParams6": [
+        0.212,
+        1.2931,
+        2.3065,
+        8.2956,
+        6.4133,
+        0.8334,
+        3.0194,
+        0.001,
+        1.8722,
+        0.1666,
+        0.796,
+        1.4835,
+        0.0614,
+        0.2629,
+        1.6483,
+        0.6014,
+        1.8729,
+        0.5425,
+        0.0912,
+        0.0658,
+        0.1542
+      ],
+      "fsrsWeights": [],
+      "ignoreRevlogsBeforeDate": "1970-01-01",
+      "interdayLearningMix": 2,
+      "lapse": {
+        "delays": [
+          10.0
+        ],
+        "leechAction": 1,
+        "leechFails": 8,
+        "minInt": 1,
+        "mult": 0.0
+      },
+      "maxTaken": 60,
+      "name": "finnish-presidents",
+      "new": {
+        "bury": true,
+        "delays": [
+          10.0
+        ],
+        "initialFactor": 2500,
+        "ints": [
+          1,
+          4,
+          0
+        ],
+        "order": 1,
+        "perDay": 0
+      },
+      "newGatherPriority": 0,
+      "newMix": 1,
+      "newPerDayMinimum": 0,
+      "newSortOrder": 3,
+      "questionAction": 0,
+      "replayq": true,
+      "rev": {
+        "bury": true,
+        "ease4": 1.3,
+        "hardFactor": 1.2,
+        "ivlFct": 1.0,
+        "maxIvl": 36500,
+        "perDay": 9999
+      },
+      "reviewOrder": 11,
+      "secondsToShowAnswer": 0.0,
+      "secondsToShowQuestion": 0.0,
+      "sm2Retention": 0.9,
+      "stopTimerOnAnswer": false,
+      "timer": 0,
+      "waitForAudio": true,
+      "weightSearch": ""
+    }
+  ],
+  "desc": "",
+  "desiredRetention": null,
+  "dyn": 0,
+  "extendNew": 0,
+  "extendRev": 0,
+  "media_files": [
+    "120px-Alexander_Stubb_in_2024_(cropped).jpg",
+    "120px-Carl_Gustaf_Emil_Mannerheim_1940.jpg",
+    "120px-Juho_Kusti_Paasikivi.jpg",
+    "120px-Kaarlo_Juho_Ståhlberg_1919.jpg",
+    "120px-Kyösti_Kallio.png",
+    "120px-Lauri_Kristian_Relander.jpg",
+    "120px-Martti_Ahtisaari_Mäntyniemessä_(cropped).jpg",
+    "120px-President_Ronald_Reagan_with_President_Mauno_Koivisto_of_Finland_in_the_Rose_Garden_(cropped).jpg",
+    "120px-President_of_Finland_Pehr_Evind_Svinhufvud.jpg",
+    "120px-Presidentti_Risto_Ryti_(cropped).jpg",
+    "120px-Tarja_Halonen_2010-08-26.jpg",
+    "120px-Urho-Kekkonen-1975_(cropped).jpg",
+    "120px-Саули_Ниинистё_(52074997569).jpg"
+  ],
+  "name": "Suomen Presidentit",
+  "newLimit": null,
+  "newLimitToday": null,
+  "note_models": [
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
+      "flds": [
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": -4285781162364084250,
+          "name": "Ordinal",
+          "ord": 0,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 6148231135421362692,
+          "name": "Name",
+          "ord": 1,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 6510297956475918928,
+          "name": "Years",
+          "ord": 2,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": -3389658050750219611,
+          "name": "Image",
+          "ord": 3,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": -7399703969748809495,
+          "name": "Party",
+          "ord": 4,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 3302636209734583714,
+          "name": "Info",
+          "ord": 5,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000000,
+          "name": "Life",
+          "ord": 6,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000001,
+          "name": "Profession",
+          "ord": 7,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000002,
+          "name": "Birthplace",
+          "ord": 8,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000003,
+          "name": "KnownFor",
+          "ord": 9,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000004,
+          "name": "Nickname",
+          "ord": 10,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000005,
+          "name": "Link",
+          "ord": 11,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000006,
+          "name": "Predecessor",
+          "ord": 12,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 800000007,
+          "name": "Successor",
+          "ord": 13,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        }
+      ],
+      "latexPost": "\\end{document}",
+      "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+      "latexsvg": false,
+      "name": "Suomen Presidentit",
+      "originalId": 1759740896602,
+      "originalStockKind": 1,
+      "req": [
+        [
+          0,
+          "any",
+          [
+            3
+          ]
+        ],
+        [
+          1,
+          "any",
+          [
+            9
+          ]
+        ],
+        [
+          2,
+          "any",
+          [
+            10
+          ]
+        ],
+        [
+          3,
+          "any",
+          [
+            2
+          ]
+        ],
+        [
+          4,
+          "any",
+          [
+            0
+          ]
+        ],
+        [
+          5,
+          "all",
+          [
+            0
+          ]
+        ],
+        [
+          6,
+          "all",
+          [
+            4
+          ]
+        ],
+        [
+          7,
+          "all",
+          [
+            9
+          ]
+        ],
+        [
+          8,
+          "all",
+          [
+            7
+          ]
+        ],
+        [
+          9,
+          "all",
+          [
+            8
+          ]
+        ],
+        [
+          10,
+          "all",
+          [
+            12
+          ]
+        ],
+        [
+          11,
+          "all",
+          [
+            13
+          ]
+        ],
+        [
+          12,
+          "all",
+          [
+            2
+          ]
+        ],
+        [
+          13,
+          "all",
+          [
+            6
+          ]
+        ]
+      ],
+      "sortf": 1,
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"answer\">{{Name}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000000,
+          "name": "Image → Name",
+          "ord": 0,
+          "qfmt": "{{Image}}<div class=\"ask\">Kuka?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"answer\">{{Name}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000001,
+          "name": "KnownFor → Name",
+          "ord": 1,
+          "qfmt": "<div class=\"clue\">{{KnownFor}}</div><div class=\"ask\">Kuka presidentti?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"answer\">{{Name}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000002,
+          "name": "Nickname → Name",
+          "ord": 2,
+          "qfmt": "<div class=\"clue\">”{{Nickname}}”</div><div class=\"ask\">Kuka presidentti?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"answer\">{{Name}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000003,
+          "name": "Years → Name",
+          "ord": 3,
+          "qfmt": "<div class=\"clue\">{{Years}}</div><div class=\"ask\">Kuka oli presidentti?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"answer\">{{Name}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000004,
+          "name": "Ordinal → Name",
+          "ord": 4,
+          "qfmt": "<div class=\"clue\">{{Ordinal}} presidentti</div><div class=\"ask\">Kuka?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Ordinal}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000005,
+          "name": "Name → Ordinal",
+          "ord": 5,
+          "qfmt": "{{Name}}<div class=\"ask\">Mones presidentti?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Party}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000006,
+          "name": "Name → Party",
+          "ord": 6,
+          "qfmt": "{{Name}}<div class=\"ask\">Mikä puolue?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{KnownFor}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000007,
+          "name": "Name → KnownFor",
+          "ord": 7,
+          "qfmt": "{{Name}}<div class=\"ask\">Mistä tunnettu?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Profession}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000008,
+          "name": "Name → Profession",
+          "ord": 8,
+          "qfmt": "{{Name}}<div class=\"ask\">Ammatti ennen presidenttiyttä?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Birthplace}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000009,
+          "name": "Name → Birthplace",
+          "ord": 9,
+          "qfmt": "{{Name}}<div class=\"ask\">Syntymäpaikka?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Predecessor}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000010,
+          "name": "Name → Predecessor",
+          "ord": 10,
+          "qfmt": "{{Name}}<div class=\"ask\">Edeltäjä?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Successor}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000011,
+          "name": "Name → Successor",
+          "ord": 11,
+          "qfmt": "{{Name}}<div class=\"ask\">Seuraaja?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Years}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000012,
+          "name": "Name → Years",
+          "ord": 12,
+          "qfmt": "{{Name}}<div class=\"ask\">Toimikausi?</div>"
+        },
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n<div class=\"who\">{{Name}}</div>\n<div class=\"answer\">{{Life}}</div>\n{{#Image}}<div class=\"pic\">{{Image}}</div>{{/Image}}\n<table class=\"profile\">\n<tr><th>Järjestys</th><td>{{Ordinal}}</td></tr>\n<tr><th>Toimikausi</th><td>{{Years}}</td></tr>\n<tr><th>Puolue</th><td>{{Party}}</td></tr>\n{{#Life}}<tr><th>Elinvuodet</th><td>{{Life}}</td></tr>{{/Life}}\n{{#Profession}}<tr><th>Ammatti</th><td>{{Profession}}</td></tr>{{/Profession}}\n{{#Birthplace}}<tr><th>Syntymäpaikka</th><td>{{Birthplace}}</td></tr>{{/Birthplace}}\n{{#Nickname}}<tr><th>Lempinimi</th><td>{{Nickname}}</td></tr>{{/Nickname}}\n{{#KnownFor}}<tr><th>Tunnettu</th><td>{{KnownFor}}</td></tr>{{/KnownFor}}\n{{#Predecessor}}<tr><th>Edeltäjä</th><td>{{Predecessor}}</td></tr>{{/Predecessor}}\n{{#Successor}}<tr><th>Seuraaja</th><td>{{Successor}}</td></tr>{{/Successor}}\n</table>\n{{#Info}}<div class=\"info\">{{Info}}</div>{{/Info}}\n{{#Link}}<div class=\"src\"><a href=\"{{Link}}\">Lue lisää Wikipediasta →</a></div>{{/Link}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 900000013,
+          "name": "Name → Life",
+          "ord": 13,
+          "qfmt": "{{Name}}<div class=\"ask\">Elinvuodet?</div>"
+        }
+      ],
+      "type": 0
+    },
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
+      "flds": [
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 700000001,
+          "name": "Front",
+          "ord": 0,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        },
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 700000002,
+          "name": "Back",
+          "ord": 1,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        }
+      ],
+      "latexPost": "",
+      "latexPre": "",
+      "latexsvg": false,
+      "name": "Presidentit – Koonti",
+      "originalId": 700000000,
+      "originalStockKind": 1,
+      "req": [
+        [
+          0,
+          "all",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tmpls": [
+        {
+          "afmt": "{{FrontSide}}\n<hr id=answer>\n{{Back}}",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 700000003,
+          "name": "Presidentit – Koonti",
+          "ord": 0,
+          "qfmt": "{{Front}}"
+        }
+      ],
+      "type": 0
+    },
+    {
+      "__type__": "NoteModel",
+      "crowdanki_uuid": "b4e7d1a6-8c33-4f02-a9d5-3e2c7b91f64a",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
+      "flds": [
+        {
+          "collapsed": false,
+          "description": "",
+          "excludeFromSearch": false,
+          "font": "Arial",
+          "id": 710000001,
+          "name": "Items",
+          "ord": 0,
+          "plainText": false,
+          "preventDeletion": false,
+          "rtl": false,
+          "size": 20,
+          "sticky": false,
+          "tag": null
+        }
+      ],
+      "latexPost": "",
+      "latexPre": "",
+      "latexsvg": false,
+      "name": "Presidentit – Listaus",
+      "originalId": 710000000,
+      "originalStockKind": 1,
+      "req": [
+        [
+          0,
+          "all",
+          [
+            0
+          ]
+        ]
+      ],
+      "sortf": 0,
+      "tmpls": [
+        {
+          "afmt": "<div class=\"ask\">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>\n<ol class=\"reciteList\">{{Items}}</ol>",
+          "bafmt": "",
+          "bfont": "",
+          "bqfmt": "",
+          "bsize": 0,
+          "did": null,
+          "id": 710000003,
+          "name": "Presidentit järjestyksessä",
+          "ord": 0,
+          "qfmt": "<div class=\"ask\">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>\n<ol id=\"seq\" class=\"reciteList\">{{Items}}</ol>\n<div class=\"hint\">Välilyönti tai napautus paljastaa seuraavan.</div>\n<script>\n(function(){\n  if (window.__seqKey) document.removeEventListener(\"keydown\", window.__seqKey, true);\n  window.__seqKey = function(e){\n    if (e.code !== \"Space\" && e.key !== \" \") return;\n    var live = document.getElementById(\"seq\");\n    if (!live || !live.classList.contains(\"seqhide\")) return;\n    var hidden = live.querySelector(\".p:not(.show)\");\n    if (hidden){ hidden.classList.add(\"show\"); e.preventDefault(); e.stopPropagation(); }\n  };\n  document.addEventListener(\"keydown\", window.__seqKey, true);\n  var ol = document.getElementById(\"seq\");\n  if (ol){\n    ol.classList.add(\"seqhide\");\n    ol.addEventListener(\"click\", function(){\n      var h = ol.querySelector(\".p:not(.show)\"); if (h) h.classList.add(\"show\");\n    });\n  }\n})();\n</script>"
+        }
+      ],
+      "type": 0
+    }
+  ],
+  "notes": [
+    {
+      "__type__": "Note",
+      "fields": [
+        "1.",
+        "K. J. Ståhlberg",
+        "1919–1925",
+        "<img src=\"120px-Kaarlo_Juho_Ståhlberg_1919.jpg\">",
+        "Edistyspuolue",
+        "Ståhlbergin ainoan toimikauden alkuajankohta oli hallitusmuodon voimaantulosta johtuen säädettyä myöhemmin. Ei ollut ehdolla seuraavalle kaudelle, mutta myöhemmin kolmesti tulematta valituksi.",
+        "1865–1952",
+        "lakimies, professori",
+        "Suomussalmi",
+        "Suomen ensimmäinen presidentti; tasavallan hallitusmuodon keskeinen laatija.",
+        "",
+        "https://fi.wikipedia.org/wiki/Kaarlo_Juho_Ståhlberg",
+        "",
+        "Lauri Kristian Relander (2.)"
+      ],
+      "guid": "OP2ExP}aQf",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "2.",
+        "Lauri Kristian Relander",
+        "1925–1931",
+        "<img alt=\"Presidentti\" src=\"120px-Lauri_Kristian_Relander.jpg\">",
+        "Maalaisliitto",
+        "Relanderilla oli yksi toimikausi, ei ollut ehdolla toiselle kaudelle.",
+        "1883–1942",
+        "agronomi, maaherra",
+        "Kurkijoki",
+        "Tunnettu lukuisista valtiovierailuistaan.",
+        "Reissu-Lasse",
+        "https://fi.wikipedia.org/wiki/Lauri_Kristian_Relander",
+        "K. J. Ståhlberg (1.)",
+        "P.E. Svinhufvud (3.)"
+      ],
+      "guid": "G{c$-1@;Jt",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "3.",
+        "P.E. Svinhufvud",
+        "1931–1937",
+        "<img src=\"120px-President_of_Finland_Pehr_Evind_Svinhufvud.jpg\">",
+        "Kokoomus",
+        "Svinhufvudilla oli yksi toimikausi, ei valittu toiselle kaudelle.",
+        "1861–1944",
+        "lakimies, tuomari",
+        "Sääksmäki",
+        "Itsenäisyyssenaatin johtaja 1917–1918; kolmas presidentti.",
+        "Ukko-Pekka",
+        "https://fi.wikipedia.org/wiki/Pehr_Evind_Svinhufvud",
+        "Lauri Kristian Relander (2.)",
+        "Kyösti Kallio (4.)"
+      ],
+      "guid": "M>0[?1t>#&",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "4.",
+        "Kyösti Kallio",
+        "1937–1940 †",
+        "<img src=\"120px-Kyösti_Kallio.png\">",
+        "Maalaisliitto",
+        "Kallio jätti eroanomuksensa ainoan toimikautensa aikana, mutta kuoli ennen kauden virallista päättymistä samana päivänä, jolloin hänen seuraajansa oli valittu.",
+        "1873–1940",
+        "maanviljelijä, poliitikko",
+        "Ylivieska",
+        "Talonpoikaispresidentti; kuoli virassa joulukuussa 1940.",
+        "",
+        "https://fi.wikipedia.org/wiki/Kyösti_Kallio",
+        "P.E. Svinhufvud (3.)",
+        "Risto Ryti (5.)"
+      ],
+      "guid": "MKtd+!WjQ0",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "5.",
+        "Risto Ryti",
+        "1940–1944",
+        "<img src=\"120px-Presidentti_Risto_Ryti_(cropped).jpg\">",
+        "Edistyspuolue",
+        "Rytillä oli kaksi toimikautta. Ensimmäinen oli Kallion aloittaman kauden loppuosa, johon hänet valittiin vuonna 1937 valittujen valitsijamiesten suorittamalla vaalilla; presidenttiyden oli virallisesti tarkoitus alkaa vasta toimeenastumistilaisuudessa, mutta se alkoikin jo Kallion kuollessa. Toiselle toimikaudelle hänet valittiin samojen valitsijamiesten suorittamalla vaalilla normaalia lyhyemmäksi, kahden vuoden toimikaudeksi, mutta erosi kesken kauden.",
+        "1889–1956",
+        "lakimies, Suomen Pankin pääjohtaja",
+        "Huittinen",
+        "Sota-ajan presidentti; tuomittiin sotasyyllisyysoikeudenkäynnissä.",
+        "",
+        "https://fi.wikipedia.org/wiki/Risto_Ryti",
+        "Kyösti Kallio (4.)",
+        "Carl Gustaf Emil Mannerheim (6.)"
+      ],
+      "guid": "HA}9?ZFSRn",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "6.",
+        "Carl Gustaf Emil Mannerheim",
+        "1944–1946",
+        "<img src=\"120px-Carl_Gustaf_Emil_Mannerheim_1940.jpg\">",
+        "Sitoutumaton",
+        "Mannerheimilla oli yksi toimikausi, johon hänet määrättiin eduskunnan säätämällä poikkeuslailla. Erosi kesken kauden.",
+        "1867–1951",
+        "sotilas, sotamarsalkka",
+        "Askainen (Louhisaari)",
+        "Ylipäällikkö toisessa maailmansodassa; valittiin presidentiksi poikkeuslailla 1944.",
+        "Marski",
+        "https://fi.wikipedia.org/wiki/Carl_Gustaf_Emil_Mannerheim",
+        "Risto Ryti (5.)",
+        "J.K. Paasikivi (7.)"
+      ],
+      "guid": "u@#>@I&`*J",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "7.",
+        "J.K. Paasikivi",
+        "1946–1956",
+        "<img src=\"120px-Juho_Kusti_Paasikivi.jpg\">",
+        "Kokoomus",
+        "Paasikivellä oli kaksi toimikautta; ensimmäinen oli Mannerheimin aloittaman kauden loppuosa, toinen normaali toimikausi. Ei ollut ehdokkaana kolmannelle kaudelle, mutta lupautui valitsijamiesten ehdokkaaksi toiselle äänestyskierrokselle tulematta valituksi.",
+        "1870–1956",
+        "lakimies, pankinjohtaja",
+        "Koski Hl (nyk. Hämeenkoski)",
+        "Sodanjälkeisen idänpolitiikan (Paasikiven linja) muotoilija.",
+        "",
+        "https://fi.wikipedia.org/wiki/Juho_Kusti_Paasikivi",
+        "Carl Gustaf Emil Mannerheim (6.)",
+        "Urho Kekkonen (8.)"
+      ],
+      "guid": "f)J#*Mq~:*",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "8.",
+        "Urho Kekkonen",
+        "1956–1982",
+        "<img src=\"120px-Urho-Kekkonen-1975_(cropped).jpg\">",
+        "Maalaisliitto",
+        "Kekkosella oli neljä toimikautta. Kolmatta kautta jatkettiin eduskunnan säätämällä poikkeuslailla neljällä vuodella. Erosi kesken viimeisen kauden.",
+        "1900–1986",
+        "lakimies, poliitikko",
+        "Pielavesi",
+        "Pisin presidenttikausi (1956–1982); Etyk-kokous 1975.",
+        "UKK",
+        "https://fi.wikipedia.org/wiki/Urho_Kekkonen",
+        "J.K. Paasikivi (7.)",
+        "Mauno Koivisto (9.)"
+      ],
+      "guid": "Gc|uf07%=(",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "9.",
+        "Mauno Koivisto",
+        "1982–1994",
+        "<img src=\"120px-President_Ronald_Reagan_with_President_Mauno_Koivisto_of_Finland_in_the_Rose_Garden_(cropped).jpg\">",
+        "Sosiaalidemokraatit (SDP)",
+        "Koivistolla oli kaksi toimikautta, joista ensimmäisen alkuajankohta oli Kekkosen erosta johtuen normaalia aiemmin. Koiviston aloitteesta presidentin valtaoikeuksia alettiin vähentää ja Koiviston toisella kaudella presidentin toimikaudet rajattiin kahteen peräkkäiseen. Tämä päätös ei olisi kuitenkaan koskenut vielä Koivistoa itseään, mutta hän ei asettunut enää ehdolle kolmannelle kaudelle",
+        "1923–2017",
+        "Suomen Pankin pääjohtaja, valtiot. tri",
+        "Turku",
+        "Vähensi presidentin valtaoikeuksia; suosittu kansanpresidentti.",
+        "Manu",
+        "https://fi.wikipedia.org/wiki/Mauno_Koivisto",
+        "Urho Kekkonen (8.)",
+        "Martti Ahtisaari (10.)"
+      ],
+      "guid": "t_3?^FYE%(",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "10.",
+        "Martti Ahtisaari",
+        "1994–2000",
+        "<img src=\"120px-Martti_Ahtisaari_Mäntyniemessä_(cropped).jpg\">",
+        "Sosiaalidemokraatit (SDP)",
+        "Ahtisaarella oli yksi toimikausi, ei ollut ehdolla toiselle kaudelle.",
+        "1937–2023",
+        "diplomaatti, YK-virkamies",
+        "Viipuri",
+        "Kansainvälinen rauhanvälittäjä; Nobelin rauhanpalkinto 2008.",
+        "",
+        "https://fi.wikipedia.org/wiki/Martti_Ahtisaari",
+        "Mauno Koivisto (9.)",
+        "Tarja Halonen (11.)"
+      ],
+      "guid": "tV7/CL=F=(",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "11.",
+        "Tarja Halonen",
+        "2000–2012",
+        "<img src=\"120px-Tarja_Halonen_2010-08-26.jpg\">",
+        "Sosiaalidemokraatit (SDP)",
+        "Halosella oli kaksi toimikautta.",
+        "1943–",
+        "lakimies, ministeri",
+        "Helsinki",
+        "Suomen ensimmäinen naispresidentti.",
+        "Muumimamma",
+        "https://fi.wikipedia.org/wiki/Tarja_Halonen",
+        "Martti Ahtisaari (10.)",
+        "Sauli Niinistö (12.)"
+      ],
+      "guid": "O:`E5}s3WY",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "12.",
+        "Sauli Niinistö",
+        "2012–2024",
+        "<img src=\"120px-Саули_Ниинистё_(52074997569).jpg\">",
+        "Kokoomus",
+        "Niinistöllä oli kaksi toimikautta. Jälkimmäisen toimikauden alkuajankohta oli jo 1. helmikuuta, koska hänet valittiin toiselle kaudelle presidentinvaalin ensimmäisellä äänestyskierroksella",
+        "1948–",
+        "lakimies, valtiovarainministeri",
+        "Salo",
+        "Presidentti Suomen Nato-jäsenyyden aikaan (2023).",
+        "",
+        "https://fi.wikipedia.org/wiki/Sauli_Niinistö",
+        "Tarja Halonen (11.)",
+        "Alexander Stubb (13.)"
+      ],
+      "guid": "jZvX3xz$W)",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "13.",
+        "Alexander Stubb",
+        "2024–",
+        "<img src=\"120px-Alexander_Stubb_in_2024_(cropped).jpg\">",
+        "Kokoomus",
+        "Stubbin toimikausi on käynnissä.",
+        "1968–",
+        "valtiot. tohtori, poliitikko",
+        "Helsinki",
+        "Suomen nykyinen presidentti (2024–).",
+        "",
+        "https://fi.wikipedia.org/wiki/Alexander_Stubb",
+        "Sauli Niinistö (12.)",
+        ""
+      ],
+      "guid": "M?NLmYPn8+",
+      "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+      "tags": []
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Luettele kaikki Kokoomuksen presidentit.",
+        "P.E. Svinhufvud (3.), J.K. Paasikivi (7.), Sauli Niinistö (12.), Alexander Stubb (13.)"
+      ],
+      "guid": "BhvrhVFS-VM",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Luettele kaikki SDP:n presidentit.",
+        "Mauno Koivisto (9.), Martti Ahtisaari (10.), Tarja Halonen (11.)"
+      ],
+      "guid": "IvH2f-REZhg",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Luettele kaikki Maalaisliiton presidentit.",
+        "Lauri Kristian Relander (2.), Kyösti Kallio (4.), Urho Kekkonen (8.)"
+      ],
+      "guid": "nArJ9PwApAo",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Luettele kaikki Edistyspuolueen presidentit.",
+        "K. J. Ståhlberg (1.), Risto Ryti (5.)"
+      ],
+      "guid": "sAZ6CdW3Vug",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Luettele kaikki sitoutumattomat presidentit.",
+        "Carl Gustaf Emil Mannerheim (6.)"
+      ],
+      "guid": "YIlXVY0dJ10",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "<li><span class=\"p\">K. J. Ståhlberg</span></li><li><span class=\"p\">Lauri Kristian Relander</span></li><li><span class=\"p\">P.E. Svinhufvud</span></li><li><span class=\"p\">Kyösti Kallio</span></li><li><span class=\"p\">Risto Ryti</span></li><li><span class=\"p\">Carl Gustaf Emil Mannerheim</span></li><li><span class=\"p\">J.K. Paasikivi</span></li><li><span class=\"p\">Urho Kekkonen</span></li><li><span class=\"p\">Mauno Koivisto</span></li><li><span class=\"p\">Martti Ahtisaari</span></li><li><span class=\"p\">Tarja Halonen</span></li><li><span class=\"p\">Sauli Niinistö</span></li><li><span class=\"p\">Alexander Stubb</span></li>"
+      ],
+      "guid": "GyKV6lCncrk",
+      "note_model_uuid": "b4e7d1a6-8c33-4f02-a9d5-3e2c7b91f64a",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka oli Suomen ensimmäinen presidentti?",
+        "K. J. Ståhlberg (1.)"
+      ],
+      "guid": "JFuEZ1RmAGA",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka oli Suomen ensimmäinen naispresidentti?",
+        "Tarja Halonen (11.)"
+      ],
+      "guid": "PkZTRteyI1A",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka istui presidenttinä pisimpään?",
+        "Urho Kekkonen (8.), n. 26 vuotta"
+      ],
+      "guid": "mha_qoxK42Y",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka on Suomen nykyinen presidentti?",
+        "Alexander Stubb (13.)"
+      ],
+      "guid": "7yIXmfgC8dc",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka presidentti kuoli virassa?",
+        "Kyösti Kallio (4.)"
+      ],
+      "guid": "fv6jI9kaIjM",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Ketkä presidentit erosivat kesken kauden?",
+        "Ryti (5.), Mannerheim (6.), Kekkonen (8.)"
+      ],
+      "guid": "bhvWJp2n7uY",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Ketkä valittiin tai joiden kautta jatkettiin poikkeuslailla?",
+        "Mannerheim (6.) ja Kekkonen (8.)"
+      ],
+      "guid": "HtbgKmfykKQ",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Ketkä olivat presidentteinä toisen maailmansodan aikana?",
+        "Kallio (4.), Ryti (5.), Mannerheim (6.)"
+      ],
+      "guid": "pXrH3YriIas",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka oli presidentti, kun Suomi liittyi EU:hun (1995)?",
+        "Martti Ahtisaari (10.)"
+      ],
+      "guid": "coCDOU7mDvE",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    },
+    {
+      "__type__": "Note",
+      "fields": [
+        "Kuka oli presidentti, kun Suomi liittyi Natoon (2023)?",
+        "Sauli Niinistö (12.)"
+      ],
+      "guid": "OmVc7NAR62k",
+      "note_model_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
+      "tags": [
+        "koonti"
+      ]
+    }
+  ],
+  "reviewLimit": null,
+  "reviewLimitToday": null
+}
