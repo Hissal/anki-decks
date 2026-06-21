@@ -124,7 +124,7 @@
     {
       "__type__": "NoteModel",
       "crowdanki_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
-      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n#reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n#reciteList li { margin: 5px 0; font-size: 19px; }\n#reciteList summary { cursor: pointer; color: #06c; }\n#reciteList details[open] summary { display: none; }\n#reciteList details[open] { font-weight: bold; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a, .nightMode #reciteList summary { color: #6af; }",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
       "flds": [
         {
           "collapsed": false,
@@ -619,7 +619,7 @@
     {
       "__type__": "NoteModel",
       "crowdanki_uuid": "7f3a9c20-5e11-4b88-9c2a-1d6e0f4a2b10",
-      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n#reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n#reciteList li { margin: 5px 0; font-size: 19px; }\n#reciteList summary { cursor: pointer; color: #06c; }\n#reciteList details[open] summary { display: none; }\n#reciteList details[open] { font-weight: bold; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a, .nightMode #reciteList summary { color: #6af; }",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
       "flds": [
         {
           "collapsed": false,
@@ -687,7 +687,7 @@
     {
       "__type__": "NoteModel",
       "crowdanki_uuid": "b4e7d1a6-8c33-4f02-a9d5-3e2c7b91f64a",
-      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n#reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n#reciteList li { margin: 5px 0; font-size: 19px; }\n#reciteList summary { cursor: pointer; color: #06c; }\n#reciteList details[open] summary { display: none; }\n#reciteList details[open] { font-weight: bold; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a, .nightMode #reciteList summary { color: #6af; }",
+      "css": ".card { font-family: arial; font-size: 20px; line-height: 1.5;\n  text-align: center; color: black; background-color: white; }\n.ask { color: #555; font-size: 16px; margin-top: .6em; }\n.clue { font-size: 24px; }\n.who { font-size: 17px; color: #666; }\n.answer { display: inline-block; font-size: 25px; font-weight: bold;\n  padding: 2px 12px; border-radius: 6px; background: #fff3c4; color: #222;\n  margin: .2em 0 .45em; }\n.pic img { max-height: 200px; }\ntable.profile { margin: .5em auto; border-collapse: collapse; text-align: left; }\ntable.profile th { color: #777; font-weight: normal; padding: 2px 10px 2px 0;\n  vertical-align: top; white-space: nowrap; }\ntable.profile td { padding: 2px 0; }\n.info { font-size: 15px; color: #555; margin: .6em auto 0; max-width: 36em;\n  text-align: left; }\n.hint { color: #777; font-size: 14px; }\n.src { margin-top: .7em; }\n.src a { color: #06c; font-size: 14px; text-decoration: none; }\n.reciteList { display: inline-block; text-align: left; margin: .5em auto; }\n.reciteList li { margin: 5px 0; font-size: 19px; }\n#seq.seqhide .p { visibility: hidden; }\n#seq.seqhide .p.show { visibility: visible; }\n/* Night mode: lift muted greys + accents so they stay readable on dark. */\n.nightMode .ask { color: #b8b8b8; }\n.nightMode .who { color: #bbb; }\n.nightMode .answer { background: #4a4326; color: #ffe9a8; }\n.nightMode table.profile th { color: #aaa; }\n.nightMode .info { color: #cfcfcf; }\n.nightMode .hint { color: #b0b0b0; }\n.nightMode .src a { color: #6af; }",
       "flds": [
         {
           "collapsed": false,
@@ -695,23 +695,8 @@
           "excludeFromSearch": false,
           "font": "Arial",
           "id": 710000001,
-          "name": "Front",
+          "name": "Items",
           "ord": 0,
-          "plainText": false,
-          "preventDeletion": false,
-          "rtl": false,
-          "size": 20,
-          "sticky": false,
-          "tag": null
-        },
-        {
-          "collapsed": false,
-          "description": "",
-          "excludeFromSearch": false,
-          "font": "Arial",
-          "id": 710000002,
-          "name": "Back",
-          "ord": 1,
           "plainText": false,
           "preventDeletion": false,
           "rtl": false,
@@ -738,16 +723,16 @@
       "sortf": 0,
       "tmpls": [
         {
-          "afmt": "{{FrontSide}}\n<hr id=answer>\n{{Back}}",
+          "afmt": "<div class=\"ask\">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>\n<ol class=\"reciteList\">{{Items}}</ol>",
           "bafmt": "",
           "bfont": "",
           "bqfmt": "",
           "bsize": 0,
           "did": null,
           "id": 710000003,
-          "name": "Presidentit – Listaus",
+          "name": "Presidentit järjestyksessä",
           "ord": 0,
-          "qfmt": "{{Front}}"
+          "qfmt": "<div class=\"ask\">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>\n<ol id=\"seq\" class=\"reciteList\">{{Items}}</ol>\n<div class=\"hint\">Välilyönti tai napautus paljastaa seuraavan.</div>\n<script>\n(function(){\n  if (window.__seqKey) document.removeEventListener(\"keydown\", window.__seqKey, true);\n  window.__seqKey = function(e){\n    if (e.code !== \"Space\" && e.key !== \" \") return;\n    var live = document.getElementById(\"seq\");\n    if (!live || !live.classList.contains(\"seqhide\")) return;\n    var hidden = live.querySelector(\".p:not(.show)\");\n    if (hidden){ hidden.classList.add(\"show\"); e.preventDefault(); e.stopPropagation(); }\n  };\n  document.addEventListener(\"keydown\", window.__seqKey, true);\n  var ol = document.getElementById(\"seq\");\n  if (ol){\n    ol.classList.add(\"seqhide\");\n    ol.addEventListener(\"click\", function(){\n      var h = ol.querySelector(\".p:not(.show)\"); if (h) h.classList.add(\"show\");\n    });\n  }\n})();\n</script>"
         }
       ],
       "type": 0
@@ -1103,8 +1088,7 @@
     {
       "__type__": "Note",
       "fields": [
-        "<div class=\"ask\">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>",
-        "<div class=\"hint\">Napauta jokainen rivi vuorollaan.</div>\n<ol id=\"reciteList\">\n<li><details><summary>näytä</summary>K. J. Ståhlberg</details></li>\n<li><details><summary>näytä</summary>Lauri Kristian Relander</details></li>\n<li><details><summary>näytä</summary>P.E. Svinhufvud</details></li>\n<li><details><summary>näytä</summary>Kyösti Kallio</details></li>\n<li><details><summary>näytä</summary>Risto Ryti</details></li>\n<li><details><summary>näytä</summary>Carl Gustaf Emil Mannerheim</details></li>\n<li><details><summary>näytä</summary>J.K. Paasikivi</details></li>\n<li><details><summary>näytä</summary>Urho Kekkonen</details></li>\n<li><details><summary>näytä</summary>Mauno Koivisto</details></li>\n<li><details><summary>näytä</summary>Martti Ahtisaari</details></li>\n<li><details><summary>näytä</summary>Tarja Halonen</details></li>\n<li><details><summary>näytä</summary>Sauli Niinistö</details></li>\n<li><details><summary>näytä</summary>Alexander Stubb</details></li>\n</ol>"
+        "<li><span class=\"p\">K. J. Ståhlberg</span></li><li><span class=\"p\">Lauri Kristian Relander</span></li><li><span class=\"p\">P.E. Svinhufvud</span></li><li><span class=\"p\">Kyösti Kallio</span></li><li><span class=\"p\">Risto Ryti</span></li><li><span class=\"p\">Carl Gustaf Emil Mannerheim</span></li><li><span class=\"p\">J.K. Paasikivi</span></li><li><span class=\"p\">Urho Kekkonen</span></li><li><span class=\"p\">Mauno Koivisto</span></li><li><span class=\"p\">Martti Ahtisaari</span></li><li><span class=\"p\">Tarja Halonen</span></li><li><span class=\"p\">Sauli Niinistö</span></li><li><span class=\"p\">Alexander Stubb</span></li>"
       ],
       "guid": "GyKV6lCncrk",
       "note_model_uuid": "b4e7d1a6-8c33-4f02-a9d5-3e2c7b91f64a",

@@ -107,13 +107,12 @@ def test_party_rosters_partition_all_13():
     assert sum(ans.count("(") for _f, ans in rosters) == 13
 
 
-def test_recite_note_lists_all_13():
+def test_recite_items_lists_all_13():
     notes = b._president_rows_for_test()
-    front, back = b.build_recite_note(notes)
-    assert "järjestyksessä" in front
+    items = b.build_recite_items(notes)
+    assert items.count("<li>") == 13
     for _o, name, _p in notes:
-        assert name in back
-    assert "<details>" in back
+        assert name in items
 
 
 def test_trivia_count_matches_data():

@@ -154,11 +154,10 @@ table.profile td { padding: 2px 0; }
 .hint { color: #777; font-size: 14px; }
 .src { margin-top: .7em; }
 .src a { color: #06c; font-size: 14px; text-decoration: none; }
-#reciteList { display: inline-block; text-align: left; margin: .5em auto; }
-#reciteList li { margin: 5px 0; font-size: 19px; }
-#reciteList summary { cursor: pointer; color: #06c; }
-#reciteList details[open] summary { display: none; }
-#reciteList details[open] { font-weight: bold; }
+.reciteList { display: inline-block; text-align: left; margin: .5em auto; }
+.reciteList li { margin: 5px 0; font-size: 19px; }
+#seq.seqhide .p { visibility: hidden; }
+#seq.seqhide .p.show { visibility: visible; }
 /* Night mode: lift muted greys + accents so they stay readable on dark. */
 .nightMode .ask { color: #b8b8b8; }
 .nightMode .who { color: #bbb; }
@@ -166,7 +165,7 @@ table.profile td { padding: 2px 0; }
 .nightMode table.profile th { color: #aaa; }
 .nightMode .info { color: #cfcfcf; }
 .nightMode .hint { color: #b0b0b0; }
-.nightMode .src a, .nightMode #reciteList summary { color: #6af; }"""
+.nightMode .src a { color: #6af; }"""
 
 
 def build_president_model(src_model: dict) -> dict:
@@ -223,7 +222,37 @@ PARTY_QUESTION = {
     "Sitoutumaton": "Luettele kaikki sitoutumattomat presidentit.",
 }
 
-RECITE_FRONT = '<div class="ask">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>'
+# Listaus card: a sequential Space/tap reveal. The <ol> starts fully visible so
+# that with JS off it degrades to a plain list; the script hides it (adds
+# .seqhide) and reveals one name per Space press or tap. The key handler re-reads
+# the live DOM each press, so once flipped to the answer (no #seq there) Space
+# falls through to Anki's normal rating.
+LISTAUS_QFMT = """<div class="ask">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>
+<ol id="seq" class="reciteList">{{Items}}</ol>
+<div class="hint">Välilyönti tai napautus paljastaa seuraavan.</div>
+<script>
+(function(){
+  if (window.__seqKey) document.removeEventListener("keydown", window.__seqKey, true);
+  window.__seqKey = function(e){
+    if (e.code !== "Space" && e.key !== " ") return;
+    var live = document.getElementById("seq");
+    if (!live || !live.classList.contains("seqhide")) return;
+    var hidden = live.querySelector(".p:not(.show)");
+    if (hidden){ hidden.classList.add("show"); e.preventDefault(); e.stopPropagation(); }
+  };
+  document.addEventListener("keydown", window.__seqKey, true);
+  var ol = document.getElementById("seq");
+  if (ol){
+    ol.classList.add("seqhide");
+    ol.addEventListener("click", function(){
+      var h = ol.querySelector(".p:not(.show)"); if (h) h.classList.add("show");
+    });
+  }
+})();
+</script>"""
+
+LISTAUS_AFMT = """<div class="ask">Luettele Suomen presidentit järjestyksessä (1.–13.).</div>
+<ol class="reciteList">{{Items}}</ol>"""
 
 
 def guid_for(text: str) -> str:
@@ -245,14 +274,33 @@ def build_party_rosters(rows):
     return out
 
 
-def build_recite_note(rows):
-    """Returns (front, back). Each president is a native <details> revealed on tap
-    — no JS, so it works the same across Anki desktop / AnkiDroid / AnkiMobile."""
-    lis = "\n".join(f'<li><details><summary>näytä</summary>{name}</details></li>'
-                    for _, name, _ in sorted(rows))
-    back = ('<div class="hint">Napauta jokainen rivi vuorollaan.</div>\n'
-            f'<ol id="reciteList">\n{lis}\n</ol>')
-    return RECITE_FRONT, back
+def build_recite_items(rows):
+    """The <li> list (names wrapped in .p spans) for the sequential-reveal note."""
+    return "".join(f'<li><span class="p">{name}</span></li>'
+                   for _, name, _ in sorted(rows))
+
+
+def _listaus_model() -> dict:
+    """Dedicated single-field note type for the Space/tap sequential recite card."""
+    fld = {"name": "Items", "ord": 0, "id": 710000001, "font": "Arial", "size": 20,
+           "rtl": False, "sticky": False, "collapsed": False, "description": "",
+           "excludeFromSearch": False, "plainText": False,
+           "preventDeletion": False, "tag": None}
+    return {
+        "__type__": "NoteModel",
+        "crowdanki_uuid": LISTAUS_UUID,
+        "css": PRES_CSS,
+        "flds": [fld],
+        "tmpls": [{
+            "name": "Presidentit järjestyksessä", "ord": 0, "id": 710000003,
+            "qfmt": LISTAUS_QFMT, "afmt": LISTAUS_AFMT,
+            "bqfmt": "", "bafmt": "", "bfont": "", "bsize": 0, "did": None,
+        }],
+        "req": [[0, "all", [0]]],
+        "sortf": 0, "type": 0,
+        "latexPre": "", "latexPost": "", "latexsvg": False,
+        "name": "Presidentit – Listaus", "originalId": 710000000, "originalStockKind": 1,
+    }
 
 
 def build_trivia_notes():
@@ -340,12 +388,12 @@ def main() -> None:
     # Aggregate models + notes (A rosters -> B recite -> C trivia), all tagged koonti.
     deck["note_models"].extend([
         _basic_model(KOONTI_UUID, "Presidentit – Koonti", 700000000),
-        _basic_model(LISTAUS_UUID, "Presidentit – Listaus", 710000000),
+        _listaus_model(),
     ])
     for front, back in build_party_rosters(party_rows):
         deck["notes"].append(_note(KOONTI_UUID, [front, back], "roster:" + front))
-    rfront, rback = build_recite_note(party_rows)
-    deck["notes"].append(_note(LISTAUS_UUID, [rfront, rback], "recite:presidentit"))
+    deck["notes"].append(
+        _note(LISTAUS_UUID, [build_recite_items(party_rows)], "recite:presidentit"))
     for front, back in build_trivia_notes():
         deck["notes"].append(_note(KOONTI_UUID, [front, back], "trivia:" + front))
 
