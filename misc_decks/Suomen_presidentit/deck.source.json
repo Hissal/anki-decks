@@ -1,0 +1,458 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "e6acc53d-6d80-11f1-8fb4-f20577c6b173",
+    "deck_config_uuid": "e6acc90a-6d80-11f1-9f3f-f20577c6b173",
+    "deck_configurations": [
+        {
+            "__type__": "DeckConfig",
+            "answerAction": 0,
+            "autoplay": true,
+            "buryInterdayLearning": true,
+            "crowdanki_uuid": "e6acc90a-6d80-11f1-9f3f-f20577c6b173",
+            "desiredRetention": 0.9,
+            "dyn": false,
+            "easyDaysPercentages": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "fsrsParams5": [],
+            "fsrsParams6": [
+                0.212,
+                1.2931,
+                2.3065,
+                8.2956,
+                6.4133,
+                0.8334,
+                3.0194,
+                0.001,
+                1.8722,
+                0.1666,
+                0.796,
+                1.4835,
+                0.0614,
+                0.2629,
+                1.6483,
+                0.6014,
+                1.8729,
+                0.5425,
+                0.0912,
+                0.0658,
+                0.1542
+            ],
+            "fsrsWeights": [],
+            "ignoreRevlogsBeforeDate": "1970-01-01",
+            "interdayLearningMix": 2,
+            "lapse": {
+                "delays": [
+                    10.0
+                ],
+                "leechAction": 1,
+                "leechFails": 8,
+                "minInt": 1,
+                "mult": 0.0
+            },
+            "maxTaken": 60,
+            "name": "finnish-presidents",
+            "new": {
+                "bury": true,
+                "delays": [
+                    10.0
+                ],
+                "initialFactor": 2500,
+                "ints": [
+                    1,
+                    4,
+                    0
+                ],
+                "order": 1,
+                "perDay": 0
+            },
+            "newGatherPriority": 0,
+            "newMix": 1,
+            "newPerDayMinimum": 0,
+            "newSortOrder": 3,
+            "questionAction": 0,
+            "replayq": true,
+            "rev": {
+                "bury": true,
+                "ease4": 1.3,
+                "hardFactor": 1.2,
+                "ivlFct": 1.0,
+                "maxIvl": 36500,
+                "perDay": 9999
+            },
+            "reviewOrder": 11,
+            "secondsToShowAnswer": 0.0,
+            "secondsToShowQuestion": 0.0,
+            "sm2Retention": 0.9,
+            "stopTimerOnAnswer": false,
+            "timer": 0,
+            "waitForAudio": true,
+            "weightSearch": ""
+        }
+    ],
+    "desc": "",
+    "desiredRetention": null,
+    "dyn": 0,
+    "extendNew": 0,
+    "extendRev": 0,
+    "media_files": [
+        "120px-Alexander_Stubb_in_2024_(cropped).jpg",
+        "120px-Carl_Gustaf_Emil_Mannerheim_1940.jpg",
+        "120px-Juho_Kusti_Paasikivi.jpg",
+        "120px-Kaarlo_Juho_Ståhlberg_1919.jpg",
+        "120px-Kyösti_Kallio.png",
+        "120px-Lauri_Kristian_Relander.jpg",
+        "120px-Martti_Ahtisaari_Mäntyniemessä_(cropped).jpg",
+        "120px-President_Ronald_Reagan_with_President_Mauno_Koivisto_of_Finland_in_the_Rose_Garden_(cropped).jpg",
+        "120px-President_of_Finland_Pehr_Evind_Svinhufvud.jpg",
+        "120px-Presidentti_Risto_Ryti_(cropped).jpg",
+        "120px-Tarja_Halonen_2010-08-26.jpg",
+        "120px-Urho-Kekkonen-1975_(cropped).jpg",
+        "120px-Саули_Ниинистё_(52074997569).jpg"
+    ],
+    "name": "Suomen Presidentit",
+    "newLimit": null,
+    "newLimitToday": null,
+    "note_models": [
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    line-height: 1.5;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -4285781162364084250,
+                    "name": "Ordinal",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 6148231135421362692,
+                    "name": "Name",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 6510297956475918928,
+                    "name": "Years",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -3389658050750219611,
+                    "name": "Image",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -7399703969748809495,
+                    "name": "Party",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 3302636209734583714,
+                    "name": "Info",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Suomen Presidentit",
+            "originalId": 1759740896602,
+            "originalStockKind": 1,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        3
+                    ]
+                ],
+                [
+                    1,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n\n{{Name}}<br>{{Years}}<br>{{Ordinal}}\n<br>\n{{Party}}\n<br>\n{{Info}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "{{Ordinal}}",
+                    "bsize": 0,
+                    "did": null,
+                    "id": 4041719504446299576,
+                    "name": "Picture/Name",
+                    "ord": 0,
+                    "qfmt": "\n<br>\n{{Image}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n\n{{Name}}\n<br>\n{{Image}}\n<br>\n{{Years}}\n<br>{{Ordinal}}\n<br>\n{{Party}}\n<br>\n{{Info}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "{{Ordinal}}",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -9115669949766885615,
+                    "name": "Ordinal number",
+                    "ord": 1,
+                    "qfmt": "\n<br>\n{{Ordinal}}"
+                }
+            ],
+            "type": 0
+        }
+    ],
+    "notes": [
+        {
+            "__type__": "Note",
+            "fields": [
+                "1.",
+                "K. J. Ståhlberg",
+                "25.7. 1919 - 2.3.1 1925",
+                "<img src=\"120px-Kaarlo_Juho_Ståhlberg_1919.jpg\">",
+                "Edistyspuolue",
+                "<table><tbody><tr><td><br>Ståhlbergin ainoan toimikauden alkuajankohta oli hallitusmuodon voimaantulosta johtuen säädettyä myöhemmin. Ei ollut ehdolla seuraavalle kaudelle, mutta myöhemmin kolmesti tulematta valituksi.</td></tr></tbody></table>"
+            ],
+            "guid": "OP2ExP}aQf",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "2.",
+                "Lauri Kristian Relander",
+                "<a href=\"https://fi.wikipedia.org/wiki/2._maaliskuuta\">2.3.</a><a href=\"https://fi.wikipedia.org/wiki/1925\">1925</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/2._maaliskuuta\">2.3.</a><a href=\"https://fi.wikipedia.org/wiki/1931\">1931</a>",
+                "<img alt=\"Presidentti\" src=\"120px-Lauri_Kristian_Relander.jpg\">",
+                "Maalaisliitto",
+                "Relanderilla oli yksi toimikausi, ei ollut ehdolla toiselle kaudelle."
+            ],
+            "guid": "G{c$-1@;Jt",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "3.",
+                "P.E. Svinhufvud",
+                "<a href=\"https://fi.wikipedia.org/wiki/2._maaliskuuta\">2.3.</a><a href=\"https://fi.wikipedia.org/wiki/1931\">1931</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1937\">1937</a>",
+                "<img src=\"120px-President_of_Finland_Pehr_Evind_Svinhufvud.jpg\">",
+                "Kokoomuspuolue",
+                "Svinhufvudilla oli yksi toimikausi, ei valittu toiselle kaudelle."
+            ],
+            "guid": "M>0[?1t>#&",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "4.",
+                "Kyösti Kallio",
+                "<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1937\">1937</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/19._joulukuuta\">19.12.</a><a href=\"https://fi.wikipedia.org/wiki/1940\">1940</a>†",
+                "<img src=\"120px-Kyösti_Kallio.png\">",
+                "Maalaisliitto",
+                "Kallio jätti eroanomuksensa ainoan toimikautensa aikana, mutta kuoli ennen kauden virallista päättymistä samana päivänä, jolloin hänen seuraajansa oli valittu."
+            ],
+            "guid": "MKtd+!WjQ0",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "5.",
+                "Risto Ryti",
+                "<a href=\"https://fi.wikipedia.org/wiki/19._joulukuuta\">19.12.</a><a href=\"https://fi.wikipedia.org/wiki/1940\">1940</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._elokuuta\">1.8.</a><a href=\"https://fi.wikipedia.org/wiki/1944\">1944</a><br>(erosi toimesta)",
+                "<img src=\"120px-Presidentti_Risto_Ryti_(cropped).jpg\">",
+                "Edistyspuolue",
+                "Rytillä oli kaksi toimikautta. Ensimmäinen oli Kallion aloittaman kauden loppuosa, johon hänet valittiin vuonna 1937 valittujen valitsijamiesten suorittamalla vaalilla; presidenttiyden oli virallisesti tarkoitus alkaa vasta toimeenastumistilaisuudessa, mutta se alkoikin jo Kallion kuollessa.<sup><a href=\"https://fi.wikipedia.org/wiki/Suomen_tasavallan_presidentti#cite_note-38\">[38]</a></sup>&nbsp;Toiselle toimikaudelle hänet valittiin samojen valitsijamiesten suorittamalla vaalilla normaalia lyhyemmäksi, kahden vuoden toimikaudeksi, mutta erosi kesken kauden."
+            ],
+            "guid": "HA}9?ZFSRn",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "6.",
+                "<a href=\"https://fi.wikipedia.org/wiki/Carl_Gustaf_Emil_Mannerheim\">Carl Gustaf Emil Mannerheim</a>",
+                "<a href=\"https://fi.wikipedia.org/wiki/4._elokuuta\">4.8.</a><a href=\"https://fi.wikipedia.org/wiki/1944\">1944</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/4._maaliskuuta\">4.3.</a><a href=\"https://fi.wikipedia.org/wiki/1946\">1946</a>(erosi toimesta)",
+                "<img src=\"120px-Carl_Gustaf_Emil_Mannerheim_1940.jpg\">",
+                "Sitoutumaton",
+                "<table><tbody><tr><td><br>Mannerheimilla oli yksi toimikausi, johon hänet määrättiin eduskunnan säätämällä poikkeuslailla. Erosi kesken kauden.</td></tr></tbody></table>"
+            ],
+            "guid": "u@#>@I&`*J",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "7.",
+                "J.K. Paasikivi",
+                "<a href=\"https://fi.wikipedia.org/wiki/11._maaliskuuta\">11.3.</a><a href=\"https://fi.wikipedia.org/wiki/1946\">1946</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1956\">1956</a>",
+                "<img src=\"120px-Juho_Kusti_Paasikivi.jpg\">",
+                "Kokoomuspuolue",
+                "Paasikivellä oli kaksi toimikautta; ensimmäinen oli Mannerheimin aloittaman kauden loppuosa, toinen normaali toimikausi. Ei ollut ehdokkaana kolmannelle kaudelle, mutta lupautui valitsijamiesten ehdokkaaksi toiselle äänestyskierrokselle tulematta valituksi."
+            ],
+            "guid": "f)J#*Mq~:*",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "8.",
+                "Urho Kekkonen",
+                "<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1956\">1956</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/27._tammikuuta\">27.1.</a><a href=\"https://fi.wikipedia.org/wiki/1982\">1982</a><br>(erosi toimesta)",
+                "<img src=\"120px-Urho-Kekkonen-1975_(cropped).jpg\">",
+                "Maalaisliitto",
+                "Kekkosella oli neljä toimikautta. Kolmatta kautta jatkettiin eduskunnan säätämällä poikkeuslailla neljällä vuodella. Erosi kesken viimeisen kauden."
+            ],
+            "guid": "Gc|uf07%=(",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "9.",
+                "Mauno Koivisto",
+                "<a href=\"https://fi.wikipedia.org/wiki/27._tammikuuta\">27.1.</a><a href=\"https://fi.wikipedia.org/wiki/1982\">1982</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1994\">1994</a>",
+                "<img src=\"120px-President_Ronald_Reagan_with_President_Mauno_Koivisto_of_Finland_in_the_Rose_Garden_(cropped).jpg\">",
+                "Sosiaalidemokraatti",
+                "Koivistolla oli kaksi toimikautta, joista ensimmäisen alkuajankohta oli Kekkosen erosta johtuen normaalia aiemmin. Koiviston aloitteesta presidentin valtaoikeuksia alettiin vähentää ja Koiviston toisella kaudella presidentin toimikaudet rajattiin kahteen peräkkäiseen.<sup><a href=\"https://fi.wikipedia.org/wiki/Suomen_tasavallan_presidentti#cite_note-mtvuutiset-4\">[4]</a></sup>&nbsp;Tämä päätös ei olisi kuitenkaan koskenut vielä Koivistoa itseään, mutta hän ei asettunut enää ehdolle kolmannelle kaudelle"
+            ],
+            "guid": "t_3?^FYE%(",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "10.",
+                "Martti Ahtisaari",
+                "<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/1994\">1994</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/2000\">2000</a>",
+                "<img src=\"120px-Martti_Ahtisaari_Mäntyniemessä_(cropped).jpg\">",
+                "Sosiaalidemokraatti",
+                "Ahtisaarella oli yksi toimikausi, ei ollut ehdolla toiselle kaudelle."
+            ],
+            "guid": "tV7/CL=F=(",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "11.",
+                "Tarja Halonen",
+                "<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/2000\">2000</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/2012\">2012</a>",
+                "<img src=\"120px-Tarja_Halonen_2010-08-26.jpg\">",
+                "Sosiaalidemokraatti",
+                "Halosella oli kaksi toimikautta."
+            ],
+            "guid": "O:`E5}s3WY",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "12.",
+                "Sauli Niinistö",
+                "<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/2012\">2012</a>&nbsp;–&nbsp;<a href=\"https://fi.wikipedia.org/wiki/1._maaliskuuta\">1.3.</a><a href=\"https://fi.wikipedia.org/wiki/2024\">2024</a>",
+                "<img src=\"120px-Саули_Ниинистё_(52074997569).jpg\">",
+                "Kokoomus",
+                "Niinistöllä oli kaksi toimikautta. Jälkimmäisen toimikauden alkuajankohta oli jo 1. helmikuuta, koska hänet valittiin toiselle kaudelle presidentinvaalin ensimmäisellä äänestyskierroksella"
+            ],
+            "guid": "jZvX3xz$W)",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "13.",
+                "Alexander Stubb",
+                "1.3.2024 -&gt;",
+                "<img src=\"120px-Alexander_Stubb_in_2024_(cropped).jpg\">",
+                "Kokoomus",
+                "Stubbin toimikausi on käynnissä."
+            ],
+            "guid": "M?NLmYPn8+",
+            "note_model_uuid": "e6ad34a2-6d80-11f1-885d-f20577c6b173",
+            "tags": []
+        }
+    ],
+    "reviewLimit": null,
+    "reviewLimitToday": null
+}
