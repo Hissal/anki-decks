@@ -50,7 +50,9 @@ The skill needs four things from the user:
 2. **Artist** (Chinese + English).
 3. **Audio URL** (YouTube, Bilibili — anything `yt-dlp` understands).
 4. **Lyrics** — raw text, one line per lyric line, blank lines and
-   English translations OK in the paste; the skill strips them out.
+   English *translation* lines OK in the paste; the skill strips those
+   out. **Lexical English that is itself sung** (a "HELLO", an English
+   rap hook) is **kept inline** — see "Embedded English" below.
 
 If any is missing, ask once. If lyrics look traditional, note that and
 flag for `convert.py`.
@@ -73,10 +75,15 @@ checkpoints** marked below.
                                      artist_zh, artist_en, url, notes)
    write songs/<slug>/lyrics_simplified.txt
      - one line per lyric line
-     - strip English translations, blank lines, ad-libs
+     - strip English *translation* lines, blank lines, and non-lexical
+       ad-libs (la-la / na-na / the "MAI-A-HEE" hook type)
+     - KEEP lexical English sung as part of a line (see "Embedded
+       English" below); leave one space between an English token and
+       adjacent Hanzi for readability
      - if input was traditional: write lyrics_traditional.txt first,
        then run convert.py to produce lyrics_simplified.txt
-     - normalize whitespace inside lines (collapse internal spaces)
+     - normalize whitespace inside lines (collapse internal spaces; a
+       single space around a kept English token is fine)
 
 1. Audio
    python -m yt_dlp -x --audio-format mp3 --audio-quality 0 \
@@ -219,6 +226,35 @@ End the run with a summary aimed at the user actually opening Anki:
 3. The three note types are set up once per Anki profile; see
    `songs/_note_types/README.md` for the field lists + template HTML.
 
+## Embedded English (code-switched lyrics)
+
+Some tracks sing English *as part of a line* — a stray "HELLO", or whole
+English hooks in Mandarin rap. That **lexical** English (it's sung) is
+distinct from **translation** English (a gloss the lyric site added).
+Strip translations and non-lexical ad-libs; **keep lexical English
+inline.**
+
+Safe to keep inline — verified against the templates:
+
+- `build_tsv.line_pinyin` uses pypinyin `errors="ignore"` → exactly one
+  syllable **per Han char**; English contributes no token.
+- `_ruby.js` (`buildRuby`) and `_song_ruby.js` (`countHan`) compare the
+  pinyin-token count to the **Han-char count only**, render `<rt>` pinyin
+  over Han chars, and pass non-Han through as plain inline text. So
+  interspersed English never desyncs the ruby — it just sits inline with
+  no pinyin above it.
+
+What the helpers *don't* do for English (degraded, not broken):
+
+- `gloss.py` skips non-Han, so English words get **no Breakdown entry** —
+  hand-edit `breakdown.txt` if a hook word deserves a gloss.
+- `cloze_pick.py` (jieba) tags English `x` and never suggests it, but
+  `inject_clozes` is a raw substring replace, so you can hand-add a
+  load-bearing English word to `selected_clozes` and `{{cN::word}}` works.
+
+If a heavily code-switched track aligns poorly under the forced
+`language="zh"`, retry `align.py` with `--model medium`.
+
 ## What to escalate vs handle silently
 
 | Situation | Action |
@@ -229,7 +265,8 @@ End the run with a summary aimed at the user actually opening Anki:
 | Spoken-word interlude is one long line | Suggest splitting; do it via lyrics_simplified.txt edit + re-align. |
 | Block all-chorus | Already auto-handled by block_plan.py dedup. |
 | Audio file fails ffmpeg extraction | Fall back to manual `ffmpeg -i webm mp3`. Mention to user. |
-| Lyrics paste has explanatory English interspersed | Strip silently; show what was stripped only if it's >5 lines. |
+| Lyrics paste has explanatory English / translation lines interspersed | Strip silently; show what was stripped only if it's >5 lines. |
+| Lexical English sung *inside* a line (HELLO, rap hooks) | Keep inline — don't strip. Render handles it (pinyin only over Han). See "Embedded English". |
 | User asks "is this gloss right?" mid-pipeline | Treat as a normal question — don't break flow unless they want to abort. |
 
 ## Things to NOT do
@@ -239,6 +276,9 @@ End the run with a summary aimed at the user actually opening Anki:
   scope guardrails). See `songs/README.md`.
 - Don't auto-translate English glosses with a non-Claude path. The
   user has been treating these as a personal-flavor field.
+- Don't strip lexical (sung) English from a line — a "HELLO", an English
+  rap hook — keep it inline. Only translation/ad-lib English is stripped.
+  See "Embedded English".
 - Don't skip cleanup_media.py. The duplicate clips waste ~30-40% of
   the song dir's storage on chorus-heavy tracks.
 - Don't generate per-song note types. There are three shared note

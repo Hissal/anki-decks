@@ -10,8 +10,15 @@ song's context the user is expected to hand-edit the output before
 import.
 """
 from __future__ import annotations
-import argparse, re
+import argparse, re, sys
 from pathlib import Path
+
+# Re-encode stdout to UTF-8 on Windows so CJK chars in warning prints
+# (e.g. "no usable gloss for [蟑, 螂]") don't crash the run under cp1252.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 
 CEDICT_PATH = Path(__file__).parent / "cache" / "cedict_ts.u8"
@@ -161,6 +168,11 @@ CHAR_OVERRIDES = {
     "连": "even",
     "秒": "second",
     "受": "endure",
+    # Song-common particles / polysemes where CEDICT's first sense misleads.
+    "么": "suffix",      # 什么 / 那么 / 怎么 — not the "exclamatory particle" sense
+    "啦": "particle",    # sentence-final 啦; CEDICT offers "sound of singing"
+    "比": "compare",     # 比 / 比较; CEDICT's first sense is a crude 屄 variant note
+    "更": "more",        # 更 (gèng) "more"; CEDICT leads with the gēng "watch" sense
 }
 
 

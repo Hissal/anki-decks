@@ -183,6 +183,7 @@ interactive review checkpoints (cloze plan + English glosses).
 - **`slice.py` tail padding** defaults to 1.5s but auto-caps at `next_line.start − 0.05` to avoid overlap. The final line of the song gets the full free pad.
 - **Dedup rule**: same Hanzi line never produces two notes. Important when alignment covers a repeated chorus pass.
 - **`gloss.py` is a baseline, not final**. `CHAR_OVERRIDES` table holds curated per-char picks where CC-CEDICT's first sense is pedagogically weak. Add to it as you spot bad glosses. For polysemous chars in unusual senses, hand-edit `breakdown.txt` before running `build_tsv.py`.
+- **Embedded (code-switched) English is kept inline, not stripped.** `build_tsv.line_pinyin` runs pypinyin with `errors="ignore"` (one syllable *per Han char*), and the ruby builders (`_ruby.js` `buildRuby`, `_song_ruby.js` `countHan`) match token-count to **Han-char count only** and emit non-Han as plain inline text — so a sung `HELLO` or an English rap hook renders inline with no pinyin and never desyncs the line. The helpers that *do* ignore English: `gloss.py` (no Breakdown entry for English) and `cloze_pick.py` (jieba tags it `x`, never suggested) — but `inject_clozes` is a raw substring replace, so you can hand-add a load-bearing English word to `selected_clozes`. Only English *translation* lines (lyric-site glosses) get stripped; lexical sung English stays.
 
 ## Scope reminder
 

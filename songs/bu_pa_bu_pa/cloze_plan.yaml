@@ -1,0 +1,276 @@
+song_slug: bu_pa_bu_pa
+block_size: 4
+lines:
+- line_no: 1
+  hanzi: HELLO 看我你在害怕什么
+  suggested_clozes:
+  - 害怕
+  - 看
+  selected_clozes:
+  - 害怕
+  _debug:
+  - 害怕 (v, s=4.0)
+  - 看 (v, s=1.5)
+  _llm_note: dropped 看 (bare common char); 害怕 is the line's content verb + sets up the 不怕 theme.
+- line_no: 2
+  hanzi: 是我错没能够啊把自己变得成熟
+  suggested_clozes:
+  - 能够
+  - 变得
+  selected_clozes:
+  - 变得
+  - 成熟
+  _debug:
+  - 能够 (v, s=4.0)
+  - 变得 (v, s=4.0)
+  _llm_note: swapped 能够→成熟; cloze the 变得成熟 chunk (become + mature) — 成熟 is the payoff.
+- line_no: 3
+  hanzi: 伤口那么多已经不怕再痛
+  suggested_clozes:
+  - 伤口
+  - 痛
+  selected_clozes:
+  - 伤口
+  - 不怕
+  - 痛
+  _debug:
+  - 伤口 (n, s=4.0)
+  - 痛 (a, s=1.5)
+  _llm_note: added 不怕 — the song's signature word, and this is its one clean (non-reduplicated) occurrence.
+- line_no: 4
+  hanzi: 没什么转身以后我会练成护体神功
+  suggested_clozes:
+  - 没什么
+  - 转身
+  selected_clozes:
+  - 转身
+  - 护体神功
+  _debug:
+  - 没什么 (l, s=5.0)
+  - 转身 (v, s=4.0)
+  _llm_note: swapped 没什么 (filler) → 护体神功, the line's playful 'iron-body kung fu' payoff (substring cloze).
+- line_no: 5
+  hanzi: 看见蟑螂我不怕不怕啦
+  suggested_clozes:
+  - 看见
+  - 蟑螂
+  selected_clozes:
+  - 蟑螂
+  - 看见
+  _debug:
+  - 看见 (v, s=4.0)
+  - 蟑螂 (n, s=4.0)
+  _llm_note: reordered so 蟑螂 (cockroach) — the vivid image — is c1.
+- line_no: 6
+  hanzi: 我神经比较大不怕不怕不怕啦
+  suggested_clozes:
+  - 神经
+  - 大
+  selected_clozes:
+  - 神经
+  - 比较
+  _debug:
+  - 神经 (n, s=4.0)
+  - 大 (a, s=1.5)
+  _llm_note: swapped bare 大→比较; 神经比较大 = colloquial 'thick-skinned', and 比较 is a high-value HSK word.
+- line_no: 7
+  hanzi: 胆怯只会让自己更憔悴
+  suggested_clozes:
+  - 胆怯
+  - 憔悴
+  selected_clozes:
+  - 胆怯
+  - 憔悴
+  _debug:
+  - 胆怯 (a, s=4.0)
+  - 憔悴 (a, s=4.0)
+- line_no: 8
+  hanzi: 麻痹也是勇敢表现
+  suggested_clozes:
+  - 麻痹
+  - 勇敢
+  selected_clozes:
+  - 麻痹
+  - 勇敢
+  _debug:
+  - 麻痹 (v, s=4.0)
+  - 勇敢 (a, s=4.0)
+- line_no: 9
+  hanzi: 一个人睡也不怕不怕啦
+  suggested_clozes:
+  - 人
+  - 睡
+  selected_clozes:
+  - 一个人
+  - 睡
+  _debug:
+  - 人 (n, s=1.5)
+  - 睡 (v, s=1.5)
+  _llm_note: upgraded bare 人→一个人 (alone) — the meaningful chunk of 一个人睡 (substring cloze).
+- line_no: 10
+  hanzi: 勇气当棉被不怕不怕不怕啦
+  suggested_clozes:
+  - 勇气
+  - 棉被
+  selected_clozes:
+  - 勇气
+  - 棉被
+  _debug:
+  - 勇气 (n, s=4.0)
+  - 棉被 (n, s=4.0)
+- line_no: 11
+  hanzi: 夜晚再黑我就当看不见
+  suggested_clozes:
+  - 看不见
+  - 夜晚
+  selected_clozes:
+  - 夜晚
+  - 看不见
+  _debug:
+  - 看不见 (v, s=5.0)
+  - 夜晚 (t, s=2.0)
+  _llm_note: reordered to first-appearance order.
+- line_no: 12
+  hanzi: 太阳一定就快出现
+  suggested_clozes:
+  - 太阳
+  - 出现
+  selected_clozes:
+  - 太阳
+  - 出现
+  _debug:
+  - 太阳 (ns, s=4.0)
+  - 出现 (v, s=4.0)
+- line_no: 13
+  hanzi: HELLO 看我你在害怕什么
+  suggested_clozes:
+  - 害怕
+  - 看
+  selected_clozes:
+  - 害怕
+  - 看
+  _debug:
+  - 害怕 (v, s=4.0)
+  - 看 (v, s=1.5)
+- line_no: 14
+  hanzi: 是我错没能够啊把自己变得成熟
+  suggested_clozes:
+  - 能够
+  - 变得
+  selected_clozes:
+  - 能够
+  - 变得
+  _debug:
+  - 能够 (v, s=4.0)
+  - 变得 (v, s=4.0)
+- line_no: 15
+  hanzi: 伤口那么多没地方可以再受伤了
+  suggested_clozes:
+  - 伤口
+  - 地方
+  selected_clozes:
+  - 伤口
+  - 受伤
+  _debug:
+  - 伤口 (n, s=4.0)
+  - 地方 (n, s=4.0)
+  _llm_note: swapped generic 地方→受伤 (get injured) — the thematic verb of the line (substring cloze).
+- line_no: 16
+  hanzi: 没什么转身以后我会练成护体神功
+  suggested_clozes:
+  - 没什么
+  - 转身
+  selected_clozes:
+  - 没什么
+  - 转身
+  _debug:
+  - 没什么 (l, s=5.0)
+  - 转身 (v, s=4.0)
+- line_no: 17
+  hanzi: 看见蟑螂我不怕不怕啦
+  suggested_clozes:
+  - 看见
+  - 蟑螂
+  selected_clozes:
+  - 看见
+  - 蟑螂
+  _debug:
+  - 看见 (v, s=4.0)
+  - 蟑螂 (n, s=4.0)
+- line_no: 18
+  hanzi: 我神经比较大不怕不怕不怕啦
+  suggested_clozes:
+  - 神经
+  - 大
+  selected_clozes:
+  - 神经
+  - 大
+  _debug:
+  - 神经 (n, s=4.0)
+  - 大 (a, s=1.5)
+- line_no: 19
+  hanzi: 胆怯只会让自己更憔悴
+  suggested_clozes:
+  - 胆怯
+  - 憔悴
+  selected_clozes:
+  - 胆怯
+  - 憔悴
+  _debug:
+  - 胆怯 (a, s=4.0)
+  - 憔悴 (a, s=4.0)
+- line_no: 20
+  hanzi: 麻痹也是勇敢表现
+  suggested_clozes:
+  - 麻痹
+  - 勇敢
+  selected_clozes:
+  - 麻痹
+  - 勇敢
+  _debug:
+  - 麻痹 (v, s=4.0)
+  - 勇敢 (a, s=4.0)
+- line_no: 21
+  hanzi: 一个人睡也不怕不怕啦
+  suggested_clozes:
+  - 人
+  - 睡
+  selected_clozes:
+  - 人
+  - 睡
+  _debug:
+  - 人 (n, s=1.5)
+  - 睡 (v, s=1.5)
+- line_no: 22
+  hanzi: 勇气当棉被不怕不怕不怕啦
+  suggested_clozes:
+  - 勇气
+  - 棉被
+  selected_clozes:
+  - 勇气
+  - 棉被
+  _debug:
+  - 勇气 (n, s=4.0)
+  - 棉被 (n, s=4.0)
+- line_no: 23
+  hanzi: 夜晚再黑我就当看不见
+  suggested_clozes:
+  - 看不见
+  - 夜晚
+  selected_clozes:
+  - 看不见
+  - 夜晚
+  _debug:
+  - 看不见 (v, s=5.0)
+  - 夜晚 (t, s=2.0)
+- line_no: 24
+  hanzi: 太阳一定就快出现
+  suggested_clozes:
+  - 太阳
+  - 出现
+  selected_clozes:
+  - 太阳
+  - 出现
+  _debug:
+  - 太阳 (ns, s=4.0)
+  - 出现 (v, s=4.0)

@@ -1,0 +1,83 @@
+song_slug: bu_pa_bu_pa
+block_size: 4
+blocks:
+- block_no: 1
+  line_nos:
+  - 1
+  - 2
+  - 3
+  - 4
+  hanzi_lines:
+  - HELLO 看我你在害怕什么
+  - 是我错没能够啊把自己变得成熟
+  - 伤口那么多已经不怕再痛
+  - 没什么转身以后我会练成护体神功
+  aligned_spans:
+  - start: 29.24
+    end: 38.98
+  - start: 39.38
+    end: 46.58
+  - start: 47.4
+    end: 53.94
+  - start: 55.0
+    end: 61.74
+- block_no: 2
+  line_nos:
+  - 5
+  - 6
+  - 7
+  - 8
+  hanzi_lines:
+  - 看见蟑螂我不怕不怕啦
+  - 我神经比较大不怕不怕不怕啦
+  - 胆怯只会让自己更憔悴
+  - 麻痹也是勇敢表现
+  aligned_spans:
+  - start: 62.44
+    end: 65.2
+  - start: 65.62
+    end: 69.36
+  - start: 69.58
+    end: 72.58
+  - start: 72.84
+    end: 76.5
+- block_no: 3
+  line_nos:
+  - 9
+  - 10
+  - 11
+  - 12
+  hanzi_lines:
+  - 一个人睡也不怕不怕啦
+  - 勇气当棉被不怕不怕不怕啦
+  - 夜晚再黑我就当看不见
+  - 太阳一定就快出现
+  aligned_spans:
+  - start: 77.02
+    end: 79.96
+  - start: 80.68
+    end: 84.16
+  - start: 84.38
+    end: 87.38
+  - start: 87.58
+    end: 91.48
+- block_no: 4
+  line_nos:
+  - 13
+  - 14
+  - 15
+  - 16
+  hanzi_lines:
+  - HELLO 看我你在害怕什么
+  - 是我错没能够啊把自己变得成熟
+  - 伤口那么多没地方可以再受伤了
+  - 没什么转身以后我会练成护体神功
+  aligned_spans:
+  - start: 92.1
+    end: 98.06
+  - start: 99.2
+    end: 105.62
+  - start: 106.74
+    end: 113.18
+  - start: 114.14
+    end: 120.8

@@ -1,0 +1,18 @@
+title_zh: 不怕不怕
+title_pinyin: bù pà bù pà
+title_en: Not Afraid
+artist_zh: 郭美美
+artist_en: Jocie Kok
+url: https://www.youtube.com/watch?v=Y34An9RTSgE
+notes: |
+  Mandarin cover of O-Zone's "Dragostea Din Tei" (the "Numa Numa" song).
+  The non-lexical intro hook (MAI-A-HEE MAI-A-HU…) is dropped — it is an
+  ad-lib, not a sung lyric. The sung "HELLO" that opens verses 1 & 2 is
+  KEPT inline: English contributes no pinyin token (pypinyin errors=ignore)
+  and the ruby builder counts Han chars only, so it renders inline with no
+  pinyin and never desyncs the line.
+  Full sung sequence: Verse 1 / Chorus / Verse 2 / Chorus (24 lines).
+  V1 and V2 are identical except line 3:
+    V1: 伤口那么多已经不怕再痛
+    V2: 伤口那么多没地方可以再受伤了
+  Source lyrics were traditional; lyrics_simplified.txt is convert.py output.

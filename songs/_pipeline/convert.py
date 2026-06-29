@@ -14,6 +14,8 @@ from opencc import OpenCC
 EXTRA_FIXUPS = {
     "翦": "剪",  # opencc t2s leaves 翦 alone (it's a valid char), but the
                  #  modern simplified rendering of 一翦梅 is 一剪梅.
+    "痺": "痹",  # opencc t2s leaves the 痺 variant alone; modern simplified
+                 #  of 麻痺 (numbness) is 麻痹.
 }
 
 
