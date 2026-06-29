@@ -28,8 +28,10 @@ reset to a stale value on import). CONFIRMED by test import: CrowdAnki leaves th
 in-collection FSRS weights untouched when they're omitted, so a re-import never
 resets them.
 
-Note GUIDs are deterministic (role + the TSV Key), so re-imports update in
-place. Deck UUID is derived from the song slug.
+Note GUIDs are preserved across regenerations — reused from the existing
+deck.json (or an export passed via --guid-source), else minted deterministically
+from role + the TSV Key. So re-imports always update in place, never duplicate.
+Deck UUID is derived from the song slug.
 
 Run:  python songs/_pipeline/build_crowdanki.py --song-dir songs/<slug>
 Deps: standard library only.
@@ -39,6 +41,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import shutil
 import sys
 import uuid
@@ -69,10 +72,14 @@ DEFAULT_DECK_PARENT = "中文::神曲"
 
 
 # role -> (model name in crowdanki_models.json, TSV filename suffix)
+# ORDER MATTERS: notes are emitted in this order, and Anki's new-card queue
+# follows note creation (= array) order. cloze -> block -> basic matches the
+# user's existing exported decks (一剪梅 / 干嘛) and the pipeline README, so the
+# new-card flow is: word cloze -> block cloze -> recall -> reading.
 ROLE_MAP = [
-    ("line",  "Chinese (song-line)",       "_Lines_Basic.tsv"),
     ("cloze", "Chinese (song-line-cloze)", "_Lines_Cloze.tsv"),
     ("block", "Chinese (song-block)",      "_Blocks.tsv"),
+    ("line",  "Chinese (song-line)",       "_Lines_Basic.tsv"),
 ]
 
 
@@ -104,16 +111,38 @@ def read_tsv(path: Path) -> list[dict]:
     return out
 
 
-def build_notes(role: str, model: dict, rows: list[dict]) -> list[dict]:
+def needed_media(notes: list[dict], block_uuid: str, slug: str) -> set[str]:
+    """Filenames actually used by the deck: every [sound:] reference, the
+    block-cloze combos (c1..cK + full per block — JS-picked, so not in any
+    field), and the two template JS deps. Excludes orphan clips left in media/."""
+    snd = re.compile(r"\[sound:([^\]]+)\]")
+    want: set[str] = {"_ruby.js", "_song_ruby.js"}
+    for n in notes:
+        for f in n["fields"]:
+            want |= set(snd.findall(f))
+        if n["note_model_uuid"] == block_uuid:
+            bno = int(n["fields"][2])
+            k = n["fields"][3].count("{{c")
+            for i in range(1, k + 1):
+                want.add(f"{slug}_block_{bno:02d}_c{i}.mp3")
+            want.add(f"{slug}_block_{bno:02d}_full.mp3")
+    return want
+
+
+def build_notes(role: str, model: dict, rows: list[dict],
+                guid_map: dict) -> list[dict]:
     field_order = [f["name"] for f in model["flds"]]
     model_uuid = model["crowdanki_uuid"]
     notes = []
     for r in rows:
         key = r["Key"]
+        # Reuse an existing GUID for this (model, Key) if we have one, else mint
+        # a deterministic one. Keeps re-imports updating in place, never duping.
+        g = guid_map.get((model_uuid, key)) or guid(f"song-note-v1:{role}:{key}")
         notes.append({
             "__type__": "Note",
             "fields": [r.get(f, "") for f in field_order],
-            "guid": guid(f"song-note-v1:{role}:{key}"),
+            "guid": g,
             "note_model_uuid": model_uuid,
             "tags": sorted(r.get("Tags", "").split()),
         })
@@ -128,6 +157,11 @@ def main() -> None:
                     help="override full deck name; default 中文::神曲::<title_zh>")
     ap.add_argument("--no-copy-js", action="store_true",
                     help="don't copy _ruby.js / _song_ruby.js into media/")
+    ap.add_argument("--guid-source", type=Path, default=None,
+                    help="CrowdAnki deck.json (e.g. an Anki export) to copy note "
+                         "GUIDs from, matched by (note model, Key). Defaults to the "
+                         "existing target deck.json so re-runs stay stable; pass an "
+                         "export to seed GUIDs for an already-in-Anki deck.")
     args = ap.parse_args()
 
     song_dir = args.song_dir.resolve()
@@ -145,6 +179,18 @@ def main() -> None:
                 break
     deck_name = args.deck_name or f"{DEFAULT_DECK_PARENT}::{title_zh}"
 
+    # Preserve note GUIDs across regenerations: from --guid-source if given,
+    # else from the existing target deck.json. Keyed by (note model uuid, Key).
+    guid_src = args.guid_source or (song_dir / "deck.json")
+    guid_map: dict = {}
+    if guid_src.exists():
+        prev = json.loads(guid_src.read_text(encoding="utf-8"))
+        for n in prev.get("notes", []):
+            f = n.get("fields") or []
+            if f:
+                guid_map[(n["note_model_uuid"], f[0])] = n["guid"]
+        print(f"  preserving {len(guid_map)} GUID(s) from {guid_src.name}")
+
     note_models, notes = [], []
     for role, model_name, tsv_suffix in ROLE_MAP:
         if model_name not in models:
@@ -155,7 +201,7 @@ def main() -> None:
             raise SystemExit(f"missing TSV *{tsv_suffix} in {song_dir}")
         rows = read_tsv(matches[0])
         note_models.append(model)
-        notes.extend(build_notes(role, model, rows))
+        notes.extend(build_notes(role, model, rows, guid_map))
         print(f"  {model_name:<26} {len(rows):>2} notes  ({matches[0].name})")
 
     # Copy template JS deps into media/ so the import installs them too.
@@ -166,9 +212,18 @@ def main() -> None:
             else:
                 print(f"  warn: {js} not found — JS dep not bundled")
 
-    # media_files = every real file in media/ (flat) — mp3 clips, block combos
-    # (incl. the JS-referenced front combos), and the JS deps. Subdirs skipped.
-    media_files = sorted(p.name for p in media_dir.iterdir() if p.is_file())
+    # media_files = only what the deck actually uses (referenced [sound:] clips,
+    # JS-derived block combos, JS deps) — not every file in media/, so orphan
+    # clips are excluded. Referenced-but-absent files (e.g. a pre-existing broken
+    # clip) are reported and skipped so a missing-media entry can't fail import.
+    block_uuid = models["Chinese (song-block)"]["crowdanki_uuid"]
+    want = needed_media(notes, block_uuid, slug)
+    present = {p.name for p in media_dir.iterdir() if p.is_file()}
+    missing = sorted(f for f in want if f not in present)
+    media_files = sorted(f for f in want if f in present)
+    if missing:
+        print(f"  WARNING: {len(missing)} referenced media file(s) absent on disk "
+              f"— not bundled: {missing}")
 
     deck_config = json.loads(DECK_CONFIG_JSON.read_text(encoding="utf-8"))
     deck = {

@@ -1,7 +1,7 @@
 {
     "__type__": "Deck",
     "children": [],
-    "crowdanki_uuid": "a79a6635-3586-539c-8e6c-a8ff3118a595",
+    "crowdanki_uuid": "377ce391-73d6-5d2b-abb2-0b610c003ffd",
     "deck_config_uuid": "b67a11c6-73af-11f1-9ed0-d03957363e8a",
     "deck_configurations": [
         {
@@ -73,7 +73,7 @@
             "weightSearch": ""
         }
     ],
-    "desc": "Song deck: 不怕不怕. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
+    "desc": "Song deck: 一剪梅. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
     "desiredRetention": null,
     "dyn": 0,
     "extendNew": 0,
@@ -81,42 +81,40 @@
     "media_files": [
         "_ruby.js",
         "_song_ruby.js",
-        "bu_pa_bu_pa_001.mp3",
-        "bu_pa_bu_pa_002.mp3",
-        "bu_pa_bu_pa_003.mp3",
-        "bu_pa_bu_pa_004.mp3",
-        "bu_pa_bu_pa_005.mp3",
-        "bu_pa_bu_pa_006.mp3",
-        "bu_pa_bu_pa_007.mp3",
-        "bu_pa_bu_pa_008.mp3",
-        "bu_pa_bu_pa_009.mp3",
-        "bu_pa_bu_pa_010.mp3",
-        "bu_pa_bu_pa_011.mp3",
-        "bu_pa_bu_pa_012.mp3",
-        "bu_pa_bu_pa_014.mp3",
-        "bu_pa_bu_pa_015.mp3",
-        "bu_pa_bu_pa_block_01_c1.mp3",
-        "bu_pa_bu_pa_block_01_c2.mp3",
-        "bu_pa_bu_pa_block_01_c3.mp3",
-        "bu_pa_bu_pa_block_01_c4.mp3",
-        "bu_pa_bu_pa_block_01_full.mp3",
-        "bu_pa_bu_pa_block_02_c1.mp3",
-        "bu_pa_bu_pa_block_02_c2.mp3",
-        "bu_pa_bu_pa_block_02_c3.mp3",
-        "bu_pa_bu_pa_block_02_c4.mp3",
-        "bu_pa_bu_pa_block_02_full.mp3",
-        "bu_pa_bu_pa_block_03_c1.mp3",
-        "bu_pa_bu_pa_block_03_c2.mp3",
-        "bu_pa_bu_pa_block_03_c3.mp3",
-        "bu_pa_bu_pa_block_03_c4.mp3",
-        "bu_pa_bu_pa_block_03_full.mp3",
-        "bu_pa_bu_pa_block_04_c1.mp3",
-        "bu_pa_bu_pa_block_04_c2.mp3",
-        "bu_pa_bu_pa_block_04_c3.mp3",
-        "bu_pa_bu_pa_block_04_c4.mp3",
-        "bu_pa_bu_pa_block_04_full.mp3"
+        "yi_jian_mei_001.mp3",
+        "yi_jian_mei_002.mp3",
+        "yi_jian_mei_003.mp3",
+        "yi_jian_mei_004.mp3",
+        "yi_jian_mei_005.mp3",
+        "yi_jian_mei_006.mp3",
+        "yi_jian_mei_007.mp3",
+        "yi_jian_mei_008.mp3",
+        "yi_jian_mei_009.mp3",
+        "yi_jian_mei_010.mp3",
+        "yi_jian_mei_011.mp3",
+        "yi_jian_mei_012.mp3",
+        "yi_jian_mei_013.mp3",
+        "yi_jian_mei_014.mp3",
+        "yi_jian_mei_block_01_c1.mp3",
+        "yi_jian_mei_block_01_c2.mp3",
+        "yi_jian_mei_block_01_c3.mp3",
+        "yi_jian_mei_block_01_c4.mp3",
+        "yi_jian_mei_block_01_full.mp3",
+        "yi_jian_mei_block_02_c1.mp3",
+        "yi_jian_mei_block_02_c2.mp3",
+        "yi_jian_mei_block_02_c3.mp3",
+        "yi_jian_mei_block_02_c4.mp3",
+        "yi_jian_mei_block_02_full.mp3",
+        "yi_jian_mei_block_03_c1.mp3",
+        "yi_jian_mei_block_03_c2.mp3",
+        "yi_jian_mei_block_03_c3.mp3",
+        "yi_jian_mei_block_03_c4.mp3",
+        "yi_jian_mei_block_03_full.mp3",
+        "yi_jian_mei_block_04_c1.mp3",
+        "yi_jian_mei_block_04_c2.mp3",
+        "yi_jian_mei_block_04_full.mp3"
     ],
-    "name": "中文::神曲::不怕不怕",
+    "name": "中文::神曲::一剪梅",
     "newLimit": null,
     "newLimitToday": null,
     "note_models": [
@@ -655,657 +653,701 @@
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_001",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_001",
+                "yi_jian_mei",
                 "1",
-                "HELLO 看我你在{{c1::害怕}}什么",
-                "kàn wǒ nǐ zài hài pà shén me",
-                "Hello, look at me — what are you so afraid of?",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
-                "[sound:bu_pa_bu_pa_001.mp3]"
+                "{{c1::真情}}像{{c2::草原}}广阔",
+                "zhēn qíng xiàng cǎo yuán guǎng kuò",
+                "True love is as vast as the grassland",
+                "真 (true) 情 (feeling) 像 (like) 草 (grass) 原 (plain) 广 (wide) 阔 (broad)",
+                "[sound:yi_jian_mei_001.mp3]"
             ],
-            "guid": "ZgAT}=y3qq",
+            "guid": "bCO;0$OUW>",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-001",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_002",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_002",
+                "yi_jian_mei",
                 "2",
-                "是我错没能够啊把自己{{c1::变得}}{{c2::成熟}}",
-                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
-                "It's my fault, I couldn't make myself grow up.",
-                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
-                "[sound:bu_pa_bu_pa_002.mp3]"
+                "{{c1::层层}}{{c2::风雨}}不能{{c3::阻隔}}",
+                "céng céng fēng yǔ bù néng zǔ gé",
+                "Layer upon layer of wind and rain cannot block it",
+                "层 (layer) 风 (wind) 雨 (rain) 不 (no) 能 (can) 阻 (hinder) 隔 (separate)",
+                "[sound:yi_jian_mei_002.mp3]"
             ],
-            "guid": "4TbU>b;Fs;",
+            "guid": "sm;t;<)[HU",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-002",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_003",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_003",
+                "yi_jian_mei",
                 "3",
-                "{{c1::伤口}}那么多已经{{c2::不怕}}再{{c3::痛}}",
-                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
-                "So many wounds already, I'm not afraid of more pain.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
-                "[sound:bu_pa_bu_pa_003.mp3]"
+                "总有{{c1::云开日出}}时候",
+                "zǒng yǒu yún kāi rì chū shí hòu",
+                "There always comes a time when the clouds part and the sun rises",
+                "总 (always) 有 (have) 云 (cloud) 开 (open) 日 (sun) 出 (out) 时 (time) 候 (wait)",
+                "[sound:yi_jian_mei_003.mp3]"
             ],
-            "guid": "^4LJ+-,]OO",
+            "guid": "H=n;U}x>/g",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-003",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_004",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_004",
+                "yi_jian_mei",
                 "4",
-                "没什么{{c1::转身}}以后我会练成{{c2::护体神功}}",
-                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_004.mp3]"
+                "{{c1::万丈}}{{c2::阳光}}照耀你我",
+                "wàn zhàng yáng guāng zhào yào nǐ wǒ",
+                "Ten-thousand-zhang sunlight shines on you and me",
+                "万 (ten thousand) 丈 (ten feet) 阳 (sun) 光 (light) 照 (shine) 耀 (brilliant) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_004.mp3]"
             ],
-            "guid": "+_aHw&<~61",
+            "guid": "ww3NN_!Kr(",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-004",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_005",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_005",
+                "yi_jian_mei",
                 "5",
-                "{{c2::看见}}{{c1::蟑螂}}我不怕不怕啦",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
-                "I see a cockroach — not scared, not scared!",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_005.mp3]"
+                "真情像{{c1::梅花}}{{c2::开过}}",
+                "zhēn qíng xiàng méi huā kāi guò",
+                "True love is like plum blossoms that once bloomed",
+                "真 (true) 情 (feeling) 像 (like) 梅 (plum) 花 (flower) 开 (open) 过 (past-particle)",
+                "[sound:yi_jian_mei_005.mp3]"
             ],
-            "guid": "B+1g/JaAts",
+            "guid": "nRx./hw^xZ",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-005",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_006",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_006",
+                "yi_jian_mei",
                 "6",
-                "我{{c1::神经}}{{c2::比较}}大不怕不怕不怕啦",
-                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
-                "My nerves are pretty tough — not scared, not scared, not scared!",
-                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_006.mp3]"
+                "{{c1::冷冷}}{{c2::冰雪}}不能{{c3::掩没}}",
+                "lěng lěng bīng xuě bù néng yǎn méi",
+                "The coldest ice and snow cannot bury it",
+                "冷 (cold) 冰 (ice) 雪 (snow) 不 (no) 能 (can) 掩 (cover up) 没 (not)",
+                "[sound:yi_jian_mei_006.mp3]"
             ],
-            "guid": "?*!^Q<t%cy",
+            "guid": "z;Lprc{j=|",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-006",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_007",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_007",
+                "yi_jian_mei",
                 "7",
-                "{{c1::胆怯}}只会让自己更{{c2::憔悴}}",
-                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
-                "Being timid only leaves you more worn out.",
-                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
-                "[sound:bu_pa_bu_pa_007.mp3]"
+                "就在最冷{{c2::枝头}}{{c1::绽放}}",
+                "jiù zài zuì lěng zhī tóu zhàn fàng",
+                "On the very coldest branch it bursts into bloom",
+                "就 (just) 在 (at) 最 (most) 冷 (cold) 枝 (branch) 头 (head) 绽 (burst open) 放 (release)",
+                "[sound:yi_jian_mei_007.mp3]"
             ],
-            "guid": "/d>U,~1r*n",
+            "guid": "iwEqmm;9Wo",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-007",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_008",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_008",
+                "yi_jian_mei",
                 "8",
-                "{{c1::麻痹}}也是{{c2::勇敢}}表现",
-                "má bì yě shì yǒng gǎn biǎo xiàn",
-                "Going numb to it is its own kind of courage.",
-                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_008.mp3]"
+                "看见{{c1::春天}}{{c2::走向}}你我",
+                "kàn jiàn chūn tiān zǒu xiàng nǐ wǒ",
+                "Seeing spring walking toward you and me",
+                "看 (see) 见 (see) 春 (spring) 天 (sky) 走 (walk) 向 (toward) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_008.mp3]"
             ],
-            "guid": "vC>v[z`6YS",
+            "guid": "OfRY^1vR:0",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-008",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_009",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_009",
+                "yi_jian_mei",
                 "9",
-                "{{c1::一个人}}{{c2::睡}}也不怕不怕啦",
-                "yí gè rén shuì yě bù pà bù pà la",
-                "Even sleeping alone — not scared, not scared!",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_009.mp3]"
+                "{{c1::雪花}}飘飘{{c2::北风}}啸啸",
+                "xuě huā piāo piāo běi fēng xiào xiào",
+                "Snowflakes drift, the north wind howls",
+                "雪 (snow) 花 (flower) 飘 (float) 北 (north) 风 (wind) 啸 (howl)",
+                "[sound:yi_jian_mei_009.mp3]"
             ],
-            "guid": "/2|cT%sow)",
+            "guid": "N?33]Cn,5[",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-009",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_010",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_010",
+                "yi_jian_mei",
                 "10",
-                "{{c1::勇气}}当{{c2::棉被}}不怕不怕不怕啦",
-                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
-                "Courage as my quilt — not scared, not scared, not scared!",
-                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_010.mp3]"
+                "{{c1::天地}}一片{{c2::苍茫}}",
+                "tiān dì yī piàn cāng máng",
+                "Heaven and earth — a single vast expanse",
+                "天 (sky) 地 (earth) 一 (one) 片 (stretch) 苍 (dark blue) 茫 (vast)",
+                "[sound:yi_jian_mei_010.mp3]"
             ],
-            "guid": "n0j(s#~rP!",
+            "guid": "G:CbeG`~Te",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-010",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_011",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_011",
+                "yi_jian_mei",
                 "11",
-                "{{c1::夜晚}}再黑我就当{{c2::看不见}}",
-                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
-                "However dark the night gets, I'll just act like I can't see.",
-                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
-                "[sound:bu_pa_bu_pa_011.mp3]"
+                "{{c1::一剪}}{{c2::寒梅}}{{c3::傲立}}雪中",
+                "yī jiǎn hán méi ào lì xuě zhōng",
+                "A single sprig of cold plum stands proud in the snow",
+                "一 (one) 剪 (cut) 寒 (cold) 梅 (plum) 傲 (proud) 立 (stand) 雪 (snow) 中 (middle)",
+                "[sound:yi_jian_mei_011.mp3]"
             ],
-            "guid": "d/yP=ESy=w",
+            "guid": "GN^6ck<X)D",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-011",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_012",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_012",
+                "yi_jian_mei",
                 "12",
-                "{{c1::太阳}}一定就快{{c2::出现}}",
-                "tài yáng yí dìng jiù kuài chū xiàn",
-                "The sun is sure to show up soon.",
-                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_012.mp3]"
+                "只为{{c2::伊人}}{{c1::飘香}}",
+                "zhǐ wèi yī rén piāo xiāng",
+                "Only for that beloved one does it spread its fragrance",
+                "只 (only) 为 (for) 伊 (that) 人 (person) 飘 (float) 香 (fragrant)",
+                "[sound:yi_jian_mei_012.mp3]"
             ],
-            "guid": "S@X%WQ!p~a",
+            "guid": "gq8aIm;];k",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-012",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_015",
-                "bu_pa_bu_pa",
-                "15",
-                "{{c1::伤口}}那么多没地方可以再{{c2::受伤}}了",
-                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
-                "So many wounds, there's no room left to get hurt again.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
-                "[sound:bu_pa_bu_pa_015.mp3]"
+                "yi_jian_mei_013",
+                "yi_jian_mei",
+                "13",
+                "{{c1::爱我所爱}}{{c2::无怨无悔}}",
+                "ài wǒ suǒ ài wú yuàn wú huǐ",
+                "I love what I love, with no complaint, no regret",
+                "爱 (love) 我 (i) 所 (place) 无 (without) 怨 (blame) 悔 (regret)",
+                "[sound:yi_jian_mei_013.mp3]"
             ],
-            "guid": "t(Cr7ZIl/I",
+            "guid": "Fi+MgH@TVT",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-015",
+                "artist-fei-yu-ching",
+                "line-013",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_01",
-                "bu_pa_bu_pa",
-                "1",
-                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多已经不怕再痛}}<br>{{c4::没什么转身以后我会练成护体神功}}",
-                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō yǐ jīng bù pà zài tòng<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds already, I'm not afraid of more pain.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 已 (already) 经 (classics) 不 (no) 再 (again) 痛 (ache) 转 (turn) 身 (body) 以 (use) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_block_01_full.mp3]"
+                "yi_jian_mei_014",
+                "yi_jian_mei",
+                "14",
+                "此情{{c1::长留}}{{c2::心间}}",
+                "cǐ qíng zhǎng liú xīn jiān",
+                "This feeling will linger in the heart forever",
+                "此 (this) 情 (feeling) 长 (long) 留 (stay) 心 (heart) 间 (between)",
+                "[sound:yi_jian_mei_014.mp3]"
             ],
-            "guid": "JbHz+9&(5r",
+            "guid": "OA2O&^u!Hl",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-fei-yu-ching",
+                "line-014",
+                "song",
+                "song-yi-jian-mei"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "yi_jian_mei_block_01",
+                "yi_jian_mei",
+                "1",
+                "{{c1::真情像草原广阔}}<br>{{c2::层层风雨不能阻隔}}<br>{{c3::总有云开日出时候}}<br>{{c4::万丈阳光照耀你我}}",
+                "zhēn qíng xiàng cǎo yuán guǎng kuò<br>céng céng fēng yǔ bù néng zǔ gé<br>zǒng yǒu yún kāi rì chū shí hòu<br>wàn zhàng yáng guāng zhào yào nǐ wǒ",
+                "True love is as vast as the grassland<br>Layer upon layer of wind and rain cannot block it<br>There always comes a time when the clouds part and the sun rises<br>Ten-thousand-zhang sunlight shines on you and me",
+                "真 (true) 情 (feeling) 像 (like) 草 (grass) 原 (plain) 广 (wide) 阔 (broad) 层 (layer) 风 (wind) 雨 (rain) 不 (no) 能 (can) 阻 (hinder) 隔 (separate) 总 (always) 有 (have) 云 (cloud) 开 (open) 日 (sun) 出 (out) 时 (time) 候 (wait) 万 (ten thousand) 丈 (ten feet) 阳 (sun) 光 (light) 照 (shine) 耀 (brilliant) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_block_01_full.mp3]"
+            ],
+            "guid": "eGRJL4{7@*",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "block-01",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_02",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_block_02",
+                "yi_jian_mei",
                 "2",
-                "{{c1::看见蟑螂我不怕不怕啦}}<br>{{c2::我神经比较大不怕不怕不怕啦}}<br>{{c3::胆怯只会让自己更憔悴}}<br>{{c4::麻痹也是勇敢表现}}",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la<br>wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la<br>dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì<br>má bì yě shì yǒng gǎn biǎo xiàn",
-                "I see a cockroach — not scared, not scared!<br>My nerves are pretty tough — not scared, not scared, not scared!<br>Being timid only leaves you more worn out.<br>Going numb to it is its own kind of courage.",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard) 麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_block_02_full.mp3]"
+                "{{c1::真情像梅花开过}}<br>{{c2::冷冷冰雪不能掩没}}<br>{{c3::就在最冷枝头绽放}}<br>{{c4::看见春天走向你我}}",
+                "zhēn qíng xiàng méi huā kāi guò<br>lěng lěng bīng xuě bù néng yǎn méi<br>jiù zài zuì lěng zhī tóu zhàn fàng<br>kàn jiàn chūn tiān zǒu xiàng nǐ wǒ",
+                "True love is like plum blossoms that once bloomed<br>The coldest ice and snow cannot bury it<br>On the very coldest branch it bursts into bloom<br>Seeing spring walking toward you and me",
+                "真 (true) 情 (feeling) 像 (like) 梅 (plum) 花 (flower) 开 (open) 过 (past-particle) 冷 (cold) 冰 (ice) 雪 (snow) 不 (no) 能 (can) 掩 (cover up) 没 (not) 就 (just) 在 (at) 最 (most) 枝 (branch) 头 (head) 绽 (burst open) 放 (release) 看 (see) 见 (see) 春 (spring) 天 (sky) 走 (walk) 向 (toward) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_block_02_full.mp3]"
             ],
-            "guid": "pjk:J0Nqys",
+            "guid": "w0xv<Hs&&>",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "block-02",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_03",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_block_03",
+                "yi_jian_mei",
                 "3",
-                "{{c1::一个人睡也不怕不怕啦}}<br>{{c2::勇气当棉被不怕不怕不怕啦}}<br>{{c3::夜晚再黑我就当看不见}}<br>{{c4::太阳一定就快出现}}",
-                "yí gè rén shuì yě bù pà bù pà la<br>yǒng qì dāng mián bèi bù pà bù pà bù pà la<br>yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn<br>tài yáng yí dìng jiù kuài chū xiàn",
-                "Even sleeping alone — not scared, not scared!<br>Courage as my quilt — not scared, not scared, not scared!<br>However dark the night gets, I'll just act like I can't see.<br>The sun is sure to show up soon.",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle) 勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 看 (see) 见 (see) 太 (highest) 阳 (sun) 定 (fix) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_block_03_full.mp3]"
+                "{{c1::雪花飘飘北风啸啸}}<br>{{c2::天地一片苍茫}}<br>{{c3::一剪寒梅傲立雪中}}<br>{{c4::只为伊人飘香}}",
+                "xuě huā piāo piāo běi fēng xiào xiào<br>tiān dì yī piàn cāng máng<br>yī jiǎn hán méi ào lì xuě zhōng<br>zhǐ wèi yī rén piāo xiāng",
+                "Snowflakes drift, the north wind howls<br>Heaven and earth — a single vast expanse<br>A single sprig of cold plum stands proud in the snow<br>Only for that beloved one does it spread its fragrance",
+                "雪 (snow) 花 (flower) 飘 (float) 北 (north) 风 (wind) 啸 (howl) 天 (sky) 地 (earth) 一 (one) 片 (stretch) 苍 (dark blue) 茫 (vast) 剪 (cut) 寒 (cold) 梅 (plum) 傲 (proud) 立 (stand) 中 (middle) 只 (only) 为 (for) 伊 (that) 人 (person) 香 (fragrant)",
+                "[sound:yi_jian_mei_block_03_full.mp3]"
             ],
-            "guid": "C!m;e188O]",
+            "guid": "PSRi9fNVVp",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "block-03",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_04",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_block_04",
+                "yi_jian_mei",
                 "4",
-                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多没地方可以再受伤了}}<br>{{c4::没什么转身以后我会练成护体神功}}",
-                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds, there's no room left to get hurt again.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle) 转 (turn) 身 (body) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_block_04_full.mp3]"
+                "{{c1::爱我所爱无怨无悔}}<br>{{c2::此情长留心间}}",
+                "ài wǒ suǒ ài wú yuàn wú huǐ<br>cǐ qíng zhǎng liú xīn jiān",
+                "I love what I love, with no complaint, no regret<br>This feeling will linger in the heart forever",
+                "爱 (love) 我 (i) 所 (place) 无 (without) 怨 (blame) 悔 (regret) 此 (this) 情 (feeling) 长 (long) 留 (stay) 心 (heart) 间 (between)",
+                "[sound:yi_jian_mei_block_04_full.mp3]"
             ],
-            "guid": "V1u_M^5o$]",
+            "guid": "Dg!Q,6RPWp",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "block-04",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_001",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_001",
+                "yi_jian_mei",
                 "1",
-                "HELLO 看我你在害怕什么",
-                "kàn wǒ nǐ zài hài pà shén me",
-                "Hello, look at me — what are you so afraid of?",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
-                "[sound:bu_pa_bu_pa_001.mp3]",
+                "真情像草原广阔",
+                "zhēn qíng xiàng cǎo yuán guǎng kuò",
+                "True love is as vast as the grassland",
+                "真 (true) 情 (feeling) 像 (like) 草 (grass) 原 (plain) 广 (wide) 阔 (broad)",
+                "[sound:yi_jian_mei_001.mp3]",
                 "",
                 ""
             ],
-            "guid": "5;TV2:Ondz",
+            "guid": "nDh>OIp(ya",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-001",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_002",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_002",
+                "yi_jian_mei",
                 "2",
-                "是我错没能够啊把自己变得成熟",
-                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
-                "It's my fault, I couldn't make myself grow up.",
-                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
-                "[sound:bu_pa_bu_pa_002.mp3]",
-                "HELLO 看我你在害怕什么",
-                "[sound:bu_pa_bu_pa_001.mp3]"
+                "层层风雨不能阻隔",
+                "céng céng fēng yǔ bù néng zǔ gé",
+                "Layer upon layer of wind and rain cannot block it",
+                "层 (layer) 风 (wind) 雨 (rain) 不 (no) 能 (can) 阻 (hinder) 隔 (separate)",
+                "[sound:yi_jian_mei_002.mp3]",
+                "真情像草原广阔",
+                "[sound:yi_jian_mei_001.mp3]"
             ],
-            "guid": "IqRn3~wYQ2",
+            "guid": "EWg?aROL0H",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-002",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_003",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_003",
+                "yi_jian_mei",
                 "3",
-                "伤口那么多已经不怕再痛",
-                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
-                "So many wounds already, I'm not afraid of more pain.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
-                "[sound:bu_pa_bu_pa_003.mp3]",
-                "是我错没能够啊把自己变得成熟",
-                "[sound:bu_pa_bu_pa_002.mp3]"
+                "总有云开日出时候",
+                "zǒng yǒu yún kāi rì chū shí hòu",
+                "There always comes a time when the clouds part and the sun rises",
+                "总 (always) 有 (have) 云 (cloud) 开 (open) 日 (sun) 出 (out) 时 (time) 候 (wait)",
+                "[sound:yi_jian_mei_003.mp3]",
+                "层层风雨不能阻隔",
+                "[sound:yi_jian_mei_002.mp3]"
             ],
-            "guid": "61B4h4%H^J",
+            "guid": "J];+7,a238",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-003",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_004",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_004",
+                "yi_jian_mei",
                 "4",
-                "没什么转身以后我会练成护体神功",
-                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_004.mp3]",
-                "伤口那么多已经不怕再痛",
-                "[sound:bu_pa_bu_pa_003.mp3]"
+                "万丈阳光照耀你我",
+                "wàn zhàng yáng guāng zhào yào nǐ wǒ",
+                "Ten-thousand-zhang sunlight shines on you and me",
+                "万 (ten thousand) 丈 (ten feet) 阳 (sun) 光 (light) 照 (shine) 耀 (brilliant) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_004.mp3]",
+                "总有云开日出时候",
+                "[sound:yi_jian_mei_003.mp3]"
             ],
-            "guid": "TF{UFR0ICo",
+            "guid": "ft?AAj|Adh",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-004",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_005",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_005",
+                "yi_jian_mei",
                 "5",
-                "看见蟑螂我不怕不怕啦",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
-                "I see a cockroach — not scared, not scared!",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_005.mp3]",
-                "没什么转身以后我会练成护体神功",
-                "[sound:bu_pa_bu_pa_004.mp3]"
+                "真情像梅花开过",
+                "zhēn qíng xiàng méi huā kāi guò",
+                "True love is like plum blossoms that once bloomed",
+                "真 (true) 情 (feeling) 像 (like) 梅 (plum) 花 (flower) 开 (open) 过 (past-particle)",
+                "[sound:yi_jian_mei_005.mp3]",
+                "万丈阳光照耀你我",
+                "[sound:yi_jian_mei_004.mp3]"
             ],
-            "guid": "-+|2r)L*%g",
+            "guid": "I8@%gO}fXZ",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-005",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_006",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_006",
+                "yi_jian_mei",
                 "6",
-                "我神经比较大不怕不怕不怕啦",
-                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
-                "My nerves are pretty tough — not scared, not scared, not scared!",
-                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_006.mp3]",
-                "看见蟑螂我不怕不怕啦",
-                "[sound:bu_pa_bu_pa_005.mp3]"
+                "冷冷冰雪不能掩没",
+                "lěng lěng bīng xuě bù néng yǎn méi",
+                "The coldest ice and snow cannot bury it",
+                "冷 (cold) 冰 (ice) 雪 (snow) 不 (no) 能 (can) 掩 (cover up) 没 (not)",
+                "[sound:yi_jian_mei_006.mp3]",
+                "真情像梅花开过",
+                "[sound:yi_jian_mei_005.mp3]"
             ],
-            "guid": "$_BUG_4:Gj",
+            "guid": "FSVCzNiS8b",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-006",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_007",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_007",
+                "yi_jian_mei",
                 "7",
-                "胆怯只会让自己更憔悴",
-                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
-                "Being timid only leaves you more worn out.",
-                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
-                "[sound:bu_pa_bu_pa_007.mp3]",
-                "我神经比较大不怕不怕不怕啦",
-                "[sound:bu_pa_bu_pa_006.mp3]"
+                "就在最冷枝头绽放",
+                "jiù zài zuì lěng zhī tóu zhàn fàng",
+                "On the very coldest branch it bursts into bloom",
+                "就 (just) 在 (at) 最 (most) 冷 (cold) 枝 (branch) 头 (head) 绽 (burst open) 放 (release)",
+                "[sound:yi_jian_mei_007.mp3]",
+                "冷冷冰雪不能掩没",
+                "[sound:yi_jian_mei_006.mp3]"
             ],
-            "guid": "z.BVh^aU44",
+            "guid": "POtz,D@LIL",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-007",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_008",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_008",
+                "yi_jian_mei",
                 "8",
-                "麻痹也是勇敢表现",
-                "má bì yě shì yǒng gǎn biǎo xiàn",
-                "Going numb to it is its own kind of courage.",
-                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_008.mp3]",
-                "胆怯只会让自己更憔悴",
-                "[sound:bu_pa_bu_pa_007.mp3]"
+                "看见春天走向你我",
+                "kàn jiàn chūn tiān zǒu xiàng nǐ wǒ",
+                "Seeing spring walking toward you and me",
+                "看 (see) 见 (see) 春 (spring) 天 (sky) 走 (walk) 向 (toward) 你 (you) 我 (i)",
+                "[sound:yi_jian_mei_008.mp3]",
+                "就在最冷枝头绽放",
+                "[sound:yi_jian_mei_007.mp3]"
             ],
-            "guid": "q]h&lq0>)B",
+            "guid": "rPLAOm2dg+",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-008",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_009",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_009",
+                "yi_jian_mei",
                 "9",
-                "一个人睡也不怕不怕啦",
-                "yí gè rén shuì yě bù pà bù pà la",
-                "Even sleeping alone — not scared, not scared!",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_009.mp3]",
-                "麻痹也是勇敢表现",
-                "[sound:bu_pa_bu_pa_008.mp3]"
+                "雪花飘飘北风啸啸",
+                "xuě huā piāo piāo běi fēng xiào xiào",
+                "Snowflakes drift, the north wind howls",
+                "雪 (snow) 花 (flower) 飘 (float) 北 (north) 风 (wind) 啸 (howl)",
+                "[sound:yi_jian_mei_009.mp3]",
+                "看见春天走向你我",
+                "[sound:yi_jian_mei_008.mp3]"
             ],
-            "guid": "p2c7t;^6Vb",
+            "guid": "s1QQbYg/tC",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-009",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_010",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_010",
+                "yi_jian_mei",
                 "10",
-                "勇气当棉被不怕不怕不怕啦",
-                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
-                "Courage as my quilt — not scared, not scared, not scared!",
-                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_010.mp3]",
-                "一个人睡也不怕不怕啦",
-                "[sound:bu_pa_bu_pa_009.mp3]"
+                "天地一片苍茫",
+                "tiān dì yī piàn cāng máng",
+                "Heaven and earth — a single vast expanse",
+                "天 (sky) 地 (earth) 一 (one) 片 (stretch) 苍 (dark blue) 茫 (vast)",
+                "[sound:yi_jian_mei_010.mp3]",
+                "雪花飘飘北风啸啸",
+                "[sound:yi_jian_mei_009.mp3]"
             ],
-            "guid": "PAjC%m5J||",
+            "guid": "Qy`C3#lhP`",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-010",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_011",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_011",
+                "yi_jian_mei",
                 "11",
-                "夜晚再黑我就当看不见",
-                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
-                "However dark the night gets, I'll just act like I can't see.",
-                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
-                "[sound:bu_pa_bu_pa_011.mp3]",
-                "勇气当棉被不怕不怕不怕啦",
-                "[sound:bu_pa_bu_pa_010.mp3]"
+                "一剪寒梅傲立雪中",
+                "yī jiǎn hán méi ào lì xuě zhōng",
+                "A single sprig of cold plum stands proud in the snow",
+                "一 (one) 剪 (cut) 寒 (cold) 梅 (plum) 傲 (proud) 立 (stand) 雪 (snow) 中 (middle)",
+                "[sound:yi_jian_mei_011.mp3]",
+                "天地一片苍茫",
+                "[sound:yi_jian_mei_010.mp3]"
             ],
-            "guid": "^IActn{q0[",
+            "guid": "woF&~ANhzw",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-011",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_012",
-                "bu_pa_bu_pa",
+                "yi_jian_mei_012",
+                "yi_jian_mei",
                 "12",
-                "太阳一定就快出现",
-                "tài yáng yí dìng jiù kuài chū xiàn",
-                "The sun is sure to show up soon.",
-                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_012.mp3]",
-                "夜晚再黑我就当看不见",
-                "[sound:bu_pa_bu_pa_011.mp3]"
+                "只为伊人飘香",
+                "zhǐ wèi yī rén piāo xiāng",
+                "Only for that beloved one does it spread its fragrance",
+                "只 (only) 为 (for) 伊 (that) 人 (person) 飘 (float) 香 (fragrant)",
+                "[sound:yi_jian_mei_012.mp3]",
+                "一剪寒梅傲立雪中",
+                "[sound:yi_jian_mei_011.mp3]"
             ],
-            "guid": "3-9SY4kn6b",
+            "guid": "nRf090gF[~",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-fei-yu-ching",
                 "line-012",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_015",
-                "bu_pa_bu_pa",
-                "15",
-                "伤口那么多没地方可以再受伤了",
-                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
-                "So many wounds, there's no room left to get hurt again.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
-                "[sound:bu_pa_bu_pa_015.mp3]",
-                "是我错没能够啊把自己变得成熟",
-                "[sound:bu_pa_bu_pa_014.mp3]"
+                "yi_jian_mei_013",
+                "yi_jian_mei",
+                "13",
+                "爱我所爱无怨无悔",
+                "ài wǒ suǒ ài wú yuàn wú huǐ",
+                "I love what I love, with no complaint, no regret",
+                "爱 (love) 我 (i) 所 (place) 无 (without) 怨 (blame) 悔 (regret)",
+                "[sound:yi_jian_mei_013.mp3]",
+                "只为伊人飘香",
+                "[sound:yi_jian_mei_012.mp3]"
             ],
-            "guid": "HhF1#9Mq{y",
+            "guid": "LMuo@R&Vu<",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-015",
+                "artist-fei-yu-ching",
+                "line-013",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-yi-jian-mei"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "yi_jian_mei_014",
+                "yi_jian_mei",
+                "14",
+                "此情长留心间",
+                "cǐ qíng zhǎng liú xīn jiān",
+                "This feeling will linger in the heart forever",
+                "此 (this) 情 (feeling) 长 (long) 留 (stay) 心 (heart) 间 (between)",
+                "[sound:yi_jian_mei_014.mp3]",
+                "爱我所爱无怨无悔",
+                "[sound:yi_jian_mei_013.mp3]"
+            ],
+            "guid": "f@BJPf@+*4",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-fei-yu-ching",
+                "line-014",
+                "song",
+                "song-yi-jian-mei"
             ]
         }
     ],

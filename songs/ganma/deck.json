@@ -1,7 +1,7 @@
 {
     "__type__": "Deck",
     "children": [],
-    "crowdanki_uuid": "a79a6635-3586-539c-8e6c-a8ff3118a595",
+    "crowdanki_uuid": "da4b1270-2961-5908-9767-610ee1da4adb",
     "deck_config_uuid": "b67a11c6-73af-11f1-9ed0-d03957363e8a",
     "deck_configurations": [
         {
@@ -73,7 +73,7 @@
             "weightSearch": ""
         }
     ],
-    "desc": "Song deck: 不怕不怕. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
+    "desc": "Song deck: 干嘛. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
     "desiredRetention": null,
     "dyn": 0,
     "extendNew": 0,
@@ -81,42 +81,58 @@
     "media_files": [
         "_ruby.js",
         "_song_ruby.js",
-        "bu_pa_bu_pa_001.mp3",
-        "bu_pa_bu_pa_002.mp3",
-        "bu_pa_bu_pa_003.mp3",
-        "bu_pa_bu_pa_004.mp3",
-        "bu_pa_bu_pa_005.mp3",
-        "bu_pa_bu_pa_006.mp3",
-        "bu_pa_bu_pa_007.mp3",
-        "bu_pa_bu_pa_008.mp3",
-        "bu_pa_bu_pa_009.mp3",
-        "bu_pa_bu_pa_010.mp3",
-        "bu_pa_bu_pa_011.mp3",
-        "bu_pa_bu_pa_012.mp3",
-        "bu_pa_bu_pa_014.mp3",
-        "bu_pa_bu_pa_015.mp3",
-        "bu_pa_bu_pa_block_01_c1.mp3",
-        "bu_pa_bu_pa_block_01_c2.mp3",
-        "bu_pa_bu_pa_block_01_c3.mp3",
-        "bu_pa_bu_pa_block_01_c4.mp3",
-        "bu_pa_bu_pa_block_01_full.mp3",
-        "bu_pa_bu_pa_block_02_c1.mp3",
-        "bu_pa_bu_pa_block_02_c2.mp3",
-        "bu_pa_bu_pa_block_02_c3.mp3",
-        "bu_pa_bu_pa_block_02_c4.mp3",
-        "bu_pa_bu_pa_block_02_full.mp3",
-        "bu_pa_bu_pa_block_03_c1.mp3",
-        "bu_pa_bu_pa_block_03_c2.mp3",
-        "bu_pa_bu_pa_block_03_c3.mp3",
-        "bu_pa_bu_pa_block_03_c4.mp3",
-        "bu_pa_bu_pa_block_03_full.mp3",
-        "bu_pa_bu_pa_block_04_c1.mp3",
-        "bu_pa_bu_pa_block_04_c2.mp3",
-        "bu_pa_bu_pa_block_04_c3.mp3",
-        "bu_pa_bu_pa_block_04_c4.mp3",
-        "bu_pa_bu_pa_block_04_full.mp3"
+        "ganma_001.mp3",
+        "ganma_002.mp3",
+        "ganma_003.mp3",
+        "ganma_004.mp3",
+        "ganma_005.mp3",
+        "ganma_006.mp3",
+        "ganma_007.mp3",
+        "ganma_008.mp3",
+        "ganma_009.mp3",
+        "ganma_010.mp3",
+        "ganma_011.mp3",
+        "ganma_012.mp3",
+        "ganma_013.mp3",
+        "ganma_014.mp3",
+        "ganma_021.mp3",
+        "ganma_022.mp3",
+        "ganma_023.mp3",
+        "ganma_024.mp3",
+        "ganma_025.mp3",
+        "ganma_026.mp3",
+        "ganma_block_01_c1.mp3",
+        "ganma_block_01_c2.mp3",
+        "ganma_block_01_c3.mp3",
+        "ganma_block_01_c4.mp3",
+        "ganma_block_01_full.mp3",
+        "ganma_block_02_c1.mp3",
+        "ganma_block_02_c2.mp3",
+        "ganma_block_02_c3.mp3",
+        "ganma_block_02_c4.mp3",
+        "ganma_block_02_full.mp3",
+        "ganma_block_03_c1.mp3",
+        "ganma_block_03_c2.mp3",
+        "ganma_block_03_c3.mp3",
+        "ganma_block_03_c4.mp3",
+        "ganma_block_03_full.mp3",
+        "ganma_block_04_c1.mp3",
+        "ganma_block_04_c2.mp3",
+        "ganma_block_04_c3.mp3",
+        "ganma_block_04_c4.mp3",
+        "ganma_block_04_full.mp3",
+        "ganma_block_05_c1.mp3",
+        "ganma_block_05_c2.mp3",
+        "ganma_block_05_c3.mp3",
+        "ganma_block_05_c4.mp3",
+        "ganma_block_05_full.mp3",
+        "ganma_block_06_c1.mp3",
+        "ganma_block_06_c2.mp3",
+        "ganma_block_06_c3.mp3",
+        "ganma_block_06_c4.mp3",
+        "ganma_block_06_full.mp3"
     ],
-    "name": "中文::神曲::不怕不怕",
+    "name": "中文::神曲::干嘛",
     "newLimit": null,
     "newLimitToday": null,
     "note_models": [
@@ -655,657 +671,919 @@
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_001",
-                "bu_pa_bu_pa",
+                "ganma_001",
+                "ganma",
                 "1",
-                "HELLO 看我你在{{c1::害怕}}什么",
-                "kàn wǒ nǐ zài hài pà shén me",
-                "Hello, look at me — what are you so afraid of?",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
-                "[sound:bu_pa_bu_pa_001.mp3]"
+                "八点半吃{{c1::早餐}}就{{c2::下楼}}",
+                "bā diǎn bàn chī zǎo cān jiù xià lóu",
+                "8:30, breakfast then head downstairs",
+                "八 (eight) 点 (o'clock) 半 (half) 吃 (eat) 早 (early) 餐 (meal) 就 (just) 下 (down) 楼 (floor)",
+                "[sound:ganma_001.mp3]"
             ],
-            "guid": "ZgAT}=y3qq",
+            "guid": "r,lqL,KBvM",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-001",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_002",
-                "bu_pa_bu_pa",
+                "ganma_002",
+                "ganma",
                 "2",
-                "是我错没能够啊把自己{{c1::变得}}{{c2::成熟}}",
-                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
-                "It's my fault, I couldn't make myself grow up.",
-                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
-                "[sound:bu_pa_bu_pa_002.mp3]"
+                "九点半就{{c1::上班}}{{c2::无厘头}}",
+                "jiǔ diǎn bàn jiù shàng bān wú lí tóu",
+                "9:30, off to nonsense work",
+                "九 (nine) 点 (o'clock) 半 (half) 就 (just) 上 (up) 班 (shift) 无 (without) 厘 (centi) 头 (head)",
+                "[sound:ganma_002.mp3]"
             ],
-            "guid": "4TbU>b;Fs;",
+            "guid": "G#{~|GQ+_t",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-002",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_003",
-                "bu_pa_bu_pa",
+                "ganma_003",
+                "ganma",
                 "3",
-                "{{c1::伤口}}那么多已经{{c2::不怕}}再{{c3::痛}}",
-                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
-                "So many wounds already, I'm not afraid of more pain.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
-                "[sound:bu_pa_bu_pa_003.mp3]"
+                "然后{{c1::瘫}}{{c2::桌子}}上明天还要{{c3::上班}}",
+                "rán hòu tān zhuō zi shàng míng tiān hái yào shàng bān",
+                "Slumped on the desk — still gotta work tomorrow",
+                "然 (thus) 后 (after) 瘫 (paralyzed) 桌 (table) 子 (suffix) 上 (up) 明 (bright) 天 (sky) 还 (still) 要 (demand) 班 (shift)",
+                "[sound:ganma_003.mp3]"
             ],
-            "guid": "^4LJ+-,]OO",
+            "guid": "u^?_bDx7&A",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-003",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_004",
-                "bu_pa_bu_pa",
+                "ganma_004",
+                "ganma",
                 "4",
-                "没什么{{c1::转身}}以后我会练成{{c2::护体神功}}",
-                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_004.mp3]"
+                "八点半才{{c2::下班}}{{c1::没理由}}",
+                "bā diǎn bàn cái xià bān méi lǐ yóu",
+                "8:30 off work, no reason at all",
+                "八 (eight) 点 (o'clock) 半 (half) 才 (only) 下 (down) 班 (shift) 没 (not) 理 (reason) 由 (cause)",
+                "[sound:ganma_004.mp3]"
             ],
-            "guid": "+_aHw&<~61",
+            "guid": "h]>L^rJ)*a",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-004",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_005",
-                "bu_pa_bu_pa",
+                "ganma_005",
+                "ganma",
                 "5",
-                "{{c2::看见}}{{c1::蟑螂}}我不怕不怕啦",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
-                "I see a cockroach — not scared, not scared!",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_005.mp3]"
+                "九点半吃{{c1::晚餐}}再{{c2::洗头}}",
+                "jiǔ diǎn bàn chī wǎn cān zài xǐ tóu",
+                "9:30 dinner then wash my hair",
+                "九 (nine) 点 (o'clock) 半 (half) 吃 (eat) 晚 (evening) 餐 (meal) 再 (again) 洗 (wash) 头 (head)",
+                "[sound:ganma_005.mp3]"
             ],
-            "guid": "B+1g/JaAts",
+            "guid": "r3p3pbDh~1",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-005",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_006",
-                "bu_pa_bu_pa",
+                "ganma_006",
+                "ganma",
                 "6",
-                "我{{c1::神经}}{{c2::比较}}大不怕不怕不怕啦",
-                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
-                "My nerves are pretty tough — not scared, not scared, not scared!",
-                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_006.mp3]"
+                "然后瘫{{c1::沙发}}上明天还要{{c2::上班}}",
+                "rán hòu tān shā fā shàng míng tiān hái yào shàng bān",
+                "Slumped on the couch — still gotta work tomorrow",
+                "然 (thus) 后 (after) 瘫 (paralyzed) 沙 (granule) 发 (send) 上 (up) 明 (bright) 天 (sky) 还 (still) 要 (demand) 班 (shift)",
+                "[sound:ganma_006.mp3]"
             ],
-            "guid": "?*!^Q<t%cy",
+            "guid": "Rc.Fmal?[e",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-006",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_007",
-                "bu_pa_bu_pa",
+                "ganma_007",
+                "ganma",
                 "7",
-                "{{c1::胆怯}}只会让自己更{{c2::憔悴}}",
-                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
-                "Being timid only leaves you more worn out.",
-                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
-                "[sound:bu_pa_bu_pa_007.mp3]"
+                "{{c1::干嘛}}?不睡?{{c3::周一}}的夜干嘛{{c2::喝醉}}",
+                "gàn má bù shuì zhōu yī de yè gàn má hē zuì",
+                "Why not sleep? Why get drunk on a Monday night?",
+                "干 (do) 嘛 ((question)) 不 (no) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 喝 (drink) 醉 (drunk)",
+                "[sound:ganma_007.mp3]"
             ],
-            "guid": "/d>U,~1r*n",
+            "guid": "tO`22Xm!y5",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-007",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_008",
-                "bu_pa_bu_pa",
+                "ganma_008",
+                "ganma",
                 "8",
-                "{{c1::麻痹}}也是{{c2::勇敢}}表现",
-                "má bì yě shì yǒng gǎn biǎo xiàn",
-                "Going numb to it is its own kind of courage.",
-                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_008.mp3]"
+                "可我睡睡睡睡{{c1::睡不着}}",
+                "kě wǒ shuì shuì shuì shuì shuì bù zhe",
+                "But I can't sleeeeeeep",
+                "可 (can) 我 (i) 睡 (sleep) 不 (no) 着 ((state-particle))",
+                "[sound:ganma_008.mp3]"
             ],
-            "guid": "vC>v[z`6YS",
+            "guid": "Ft|pwL!R:=",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-008",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_009",
-                "bu_pa_bu_pa",
+                "ganma_009",
+                "ganma",
                 "9",
-                "{{c1::一个人}}{{c2::睡}}也不怕不怕啦",
-                "yí gè rén shuì yě bù pà bù pà la",
-                "Even sleeping alone — not scared, not scared!",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_009.mp3]"
+                "闭上眼睛连{{c2::一秒钟}}都{{c1::受不了}}",
+                "bì shàng yǎn jīng lián yī miǎo zhōng dōu shòu bù liǎo",
+                "Can't stand even one second with my eyes shut",
+                "闭 (close) 上 (up) 眼 (eye) 睛 (eye) 连 (even) 一 (one) 秒 (second) 钟 (clock) 都 (all) 受 (endure) 不 (no) 了 (particle)",
+                "[sound:ganma_009.mp3]"
             ],
-            "guid": "/2|cT%sow)",
+            "guid": "CTC1b0uKl#",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-009",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_010",
-                "bu_pa_bu_pa",
+                "ganma_010",
+                "ganma",
                 "10",
-                "{{c1::勇气}}当{{c2::棉被}}不怕不怕不怕啦",
-                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
-                "Courage as my quilt — not scared, not scared, not scared!",
-                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_010.mp3]"
+                "{{c1::干嘛}}?{{c2::装睡}}?周一的夜一样要{{c3::派对}}",
+                "gàn má zhuāng shuì zhōu yī de yè yī yàng yào pài duì",
+                "Why fake-sleep? Monday night still calls for a party",
+                "干 (do) 嘛 ((question)) 装 (pretend) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 样 (manner) 要 (demand) 派 (send) 对 (right)",
+                "[sound:ganma_010.mp3]"
             ],
-            "guid": "n0j(s#~rP!",
+            "guid": "b#qsVfU@!]",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-010",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_011",
-                "bu_pa_bu_pa",
+                "ganma_011",
+                "ganma",
                 "11",
-                "{{c1::夜晚}}再黑我就当{{c2::看不见}}",
-                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
-                "However dark the night gets, I'll just act like I can't see.",
-                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
-                "[sound:bu_pa_bu_pa_011.mp3]"
+                "因为睡睡睡睡{{c1::睡不着}}",
+                "yīn wèi shuì shuì shuì shuì shuì bù zhe",
+                "Because I can't sleeeeeeep",
+                "因 (cause) 为 (for) 睡 (sleep) 不 (no) 着 ((state-particle))",
+                "[sound:ganma_011.mp3]"
             ],
-            "guid": "d/yP=ESy=w",
+            "guid": "eCJH6WYGj`",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-011",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_012",
-                "bu_pa_bu_pa",
-                "12",
-                "{{c1::太阳}}一定就快{{c2::出现}}",
-                "tài yáng yí dìng jiù kuài chū xiàn",
-                "The sun is sure to show up soon.",
-                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_012.mp3]"
+                "ganma_013",
+                "ganma",
+                "13",
+                "让我们开始今天的{{c2::睡前}}{{c1::冥想}}",
+                "ràng wǒ men kāi shǐ jīn tiān de shuì qián míng xiǎng",
+                "Let's start today's bedtime meditation",
+                "让 (let) 我 (i) 们 ((plural)) 开 (open) 始 (begin) 今 (now) 天 (sky) 的 (of) 睡 (sleep) 前 (front) 冥 (dark) 想 (think)",
+                "[sound:ganma_013.mp3]"
             ],
-            "guid": "S@X%WQ!p~a",
+            "guid": "c0{x&{=>_3",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-012",
+                "artist-lexie-liu",
+                "line-013",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_015",
-                "bu_pa_bu_pa",
-                "15",
-                "{{c1::伤口}}那么多没地方可以再{{c2::受伤}}了",
-                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
-                "So many wounds, there's no room left to get hurt again.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
-                "[sound:bu_pa_bu_pa_015.mp3]"
+                "ganma_014",
+                "ganma",
+                "14",
+                "首先,轻柔地{{c3::闭上眼睛}},将{{c2::注意力}}放在缓慢的{{c1::呼吸}}上。吸气",
+                "shǒu xiān qīng róu dì bì shàng yǎn jīng jiāng zhù yì lì fàng zài huǎn màn de hū xī shàng xī qì",
+                "First, gently close your eyes; bring your attention to your slow breathing. Inhale…",
+                "首 (first) 先 (before) 轻 (light) 柔 (soft) 地 (earth) 闭 (close) 上 (up) 眼 (eye) 睛 (eye) 将 ((will)) 注 (pour) 意 (meaning) 力 (force) 放 (release) 在 (at) 缓 (slow) 慢 (slow) 的 (of) 呼 (exhale) 吸 (inhale) 气 (air)",
+                "[sound:ganma_014.mp3]"
             ],
-            "guid": "t(Cr7ZIl/I",
+            "guid": "dJtH0/c)2$",
             "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-015",
+                "artist-lexie-liu",
+                "line-014",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_01",
-                "bu_pa_bu_pa",
+                "ganma_021",
+                "ganma",
+                "21",
+                "{{c1::随便}}几点睡",
+                "suí biàn jǐ diǎn shuì",
+                "Whatever time I crash",
+                "随 (follow) 便 (convenient) 几 (how-many) 点 (o'clock) 睡 (sleep)",
+                "[sound:ganma_021.mp3]"
+            ],
+            "guid": "G]i6EFg3.-",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-021",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_022",
+                "ganma",
+                "22",
+                "{{c1::管他呢}}{{c2::无所谓}}",
+                "guǎn tā ne wú suǒ wèi",
+                "Whatever, who cares",
+                "管 (manage) 他 (he) 呢 ((question)) 无 (without) 所 (place) 谓 (call)",
+                "[sound:ganma_022.mp3]"
+            ],
+            "guid": "G,S:1GNs_-",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-022",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_024",
+                "ganma",
+                "24",
+                "{{c2::明天}}再说{{c1::后悔}}",
+                "míng tiān zài shuō hòu huǐ",
+                "I'll deal with the regret tomorrow",
+                "明 (bright) 天 (sky) 再 (again) 说 (say) 后 (after) 悔 (regret)",
+                "[sound:ganma_024.mp3]"
+            ],
+            "guid": "yFFH,]C#i<",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-024",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_025",
+                "ganma",
+                "25",
+                "{{c1::头疼}}",
+                "tóu téng",
+                "Headache?",
+                "头 (head) 疼 (hurt)",
+                "[sound:ganma_025.mp3]"
+            ],
+            "guid": "s;g(x>Xd>s",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-025",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_026",
+                "ganma",
+                "26",
+                "不{{c1::疼}}",
+                "bù téng",
+                "Nah, no pain",
+                "不 (no) 疼 (hurt)",
+                "[sound:ganma_026.mp3]"
+            ],
+            "guid": "PyM2;E<wrP",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-026",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_block_01",
+                "ganma",
                 "1",
-                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多已经不怕再痛}}<br>{{c4::没什么转身以后我会练成护体神功}}",
-                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō yǐ jīng bù pà zài tòng<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds already, I'm not afraid of more pain.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 已 (already) 经 (classics) 不 (no) 再 (again) 痛 (ache) 转 (turn) 身 (body) 以 (use) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_block_01_full.mp3]"
+                "{{c1::八点半吃早餐就下楼}}<br>{{c2::九点半就上班无厘头}}<br>{{c3::然后瘫桌子上明天还要上班}}<br>{{c4::八点半才下班没理由}}",
+                "bā diǎn bàn chī zǎo cān jiù xià lóu<br>jiǔ diǎn bàn jiù shàng bān wú lí tóu<br>rán hòu tān zhuō zi shàng míng tiān hái yào shàng bān<br>bā diǎn bàn cái xià bān méi lǐ yóu",
+                "8:30, breakfast then head downstairs<br>9:30, off to nonsense work<br>Slumped on the desk — still gotta work tomorrow<br>8:30 off work, no reason at all",
+                "八 (eight) 点 (o'clock) 半 (half) 吃 (eat) 早 (early) 餐 (meal) 就 (just) 下 (down) 楼 (floor) 九 (nine) 上 (up) 班 (shift) 无 (without) 厘 (centi) 头 (head) 然 (thus) 后 (after) 瘫 (paralyzed) 桌 (table) 子 (suffix) 明 (bright) 天 (sky) 还 (still) 要 (demand) 才 (only) 没 (not) 理 (reason) 由 (cause)",
+                "[sound:ganma_block_01_full.mp3]"
             ],
-            "guid": "JbHz+9&(5r",
+            "guid": "i,z5v#h}K?",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "block-01",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_02",
-                "bu_pa_bu_pa",
+                "ganma_block_02",
+                "ganma",
                 "2",
-                "{{c1::看见蟑螂我不怕不怕啦}}<br>{{c2::我神经比较大不怕不怕不怕啦}}<br>{{c3::胆怯只会让自己更憔悴}}<br>{{c4::麻痹也是勇敢表现}}",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la<br>wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la<br>dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì<br>má bì yě shì yǒng gǎn biǎo xiàn",
-                "I see a cockroach — not scared, not scared!<br>My nerves are pretty tough — not scared, not scared, not scared!<br>Being timid only leaves you more worn out.<br>Going numb to it is its own kind of courage.",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard) 麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_block_02_full.mp3]"
+                "{{c1::九点半吃晚餐再洗头}}<br>{{c2::然后瘫沙发上明天还要上班}}<br>{{c3::干嘛?不睡?周一的夜干嘛喝醉}}<br>{{c4::可我睡睡睡睡睡不着}}",
+                "jiǔ diǎn bàn chī wǎn cān zài xǐ tóu<br>rán hòu tān shā fā shàng míng tiān hái yào shàng bān<br>gàn má bù shuì zhōu yī de yè gàn má hē zuì<br>kě wǒ shuì shuì shuì shuì shuì bù zhe",
+                "9:30 dinner then wash my hair<br>Slumped on the couch — still gotta work tomorrow<br>Why not sleep? Why get drunk on a Monday night?<br>But I can't sleeeeeeep",
+                "九 (nine) 点 (o'clock) 半 (half) 吃 (eat) 晚 (evening) 餐 (meal) 再 (again) 洗 (wash) 头 (head) 然 (thus) 后 (after) 瘫 (paralyzed) 沙 (granule) 发 (send) 上 (up) 明 (bright) 天 (sky) 还 (still) 要 (demand) 班 (shift) 干 (do) 嘛 ((question)) 不 (no) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 喝 (drink) 醉 (drunk) 可 (can) 我 (i) 着 ((state-particle))",
+                "[sound:ganma_block_02_full.mp3]"
             ],
-            "guid": "pjk:J0Nqys",
+            "guid": "fEs&c/tUmb",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "block-02",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_03",
-                "bu_pa_bu_pa",
+                "ganma_block_03",
+                "ganma",
                 "3",
-                "{{c1::一个人睡也不怕不怕啦}}<br>{{c2::勇气当棉被不怕不怕不怕啦}}<br>{{c3::夜晚再黑我就当看不见}}<br>{{c4::太阳一定就快出现}}",
-                "yí gè rén shuì yě bù pà bù pà la<br>yǒng qì dāng mián bèi bù pà bù pà bù pà la<br>yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn<br>tài yáng yí dìng jiù kuài chū xiàn",
-                "Even sleeping alone — not scared, not scared!<br>Courage as my quilt — not scared, not scared, not scared!<br>However dark the night gets, I'll just act like I can't see.<br>The sun is sure to show up soon.",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle) 勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 看 (see) 见 (see) 太 (highest) 阳 (sun) 定 (fix) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_block_03_full.mp3]"
+                "{{c1::闭上眼睛连一秒钟都受不了}}<br>{{c2::干嘛?装睡?周一的夜一样要派对}}<br>{{c3::因为睡睡睡睡睡不着}}<br>{{c4::闭上眼睛连一秒钟都受不了}}",
+                "bì shàng yǎn jīng lián yī miǎo zhōng dōu shòu bù liǎo<br>gàn má zhuāng shuì zhōu yī de yè yī yàng yào pài duì<br>yīn wèi shuì shuì shuì shuì shuì bù zhe<br>bì shàng yǎn jīng lián yī miǎo zhōng dōu shòu bù liǎo",
+                "Can't stand even one second with my eyes shut<br>Why fake-sleep? Monday night still calls for a party<br>Because I can't sleeeeeeep<br>Can't stand even one second with my eyes shut",
+                "闭 (close) 上 (up) 眼 (eye) 睛 (eye) 连 (even) 一 (one) 秒 (second) 钟 (clock) 都 (all) 受 (endure) 不 (no) 了 (particle) 干 (do) 嘛 ((question)) 装 (pretend) 睡 (sleep) 周 (week) 的 (of) 夜 (night) 样 (manner) 要 (demand) 派 (send) 对 (right) 因 (cause) 为 (for) 着 ((state-particle))",
+                "[sound:ganma_block_03_full.mp3]"
             ],
-            "guid": "C!m;e188O]",
+            "guid": "DAW@lTm}W|",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "block-03",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_block_04",
-                "bu_pa_bu_pa",
+                "ganma_block_04",
+                "ganma",
                 "4",
-                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多没地方可以再受伤了}}<br>{{c4::没什么转身以后我会练成护体神功}}",
-                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds, there's no room left to get hurt again.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle) 转 (turn) 身 (body) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_block_04_full.mp3]"
+                "{{c1::让我们开始今天的睡前冥想}}<br>{{c2::首先,轻柔地闭上眼睛,将注意力放在缓慢的呼吸上。吸气}}<br>{{c3::干嘛?不睡?周一的夜干嘛喝醉}}<br>{{c4::可我睡睡睡睡睡不着}}",
+                "ràng wǒ men kāi shǐ jīn tiān de shuì qián míng xiǎng<br>shǒu xiān qīng róu dì bì shàng yǎn jīng jiāng zhù yì lì fàng zài huǎn màn de hū xī shàng xī qì<br>gàn má bù shuì zhōu yī de yè gàn má hē zuì<br>kě wǒ shuì shuì shuì shuì shuì bù zhe",
+                "Let's start today's bedtime meditation<br>First, gently close your eyes; bring your attention to your slow breathing. Inhale…<br>Why not sleep? Why get drunk on a Monday night?<br>But I can't sleeeeeeep",
+                "让 (let) 我 (i) 们 ((plural)) 开 (open) 始 (begin) 今 (now) 天 (sky) 的 (of) 睡 (sleep) 前 (front) 冥 (dark) 想 (think) 首 (first) 先 (before) 轻 (light) 柔 (soft) 地 (earth) 闭 (close) 上 (up) 眼 (eye) 睛 (eye) 将 ((will)) 注 (pour) 意 (meaning) 力 (force) 放 (release) 在 (at) 缓 (slow) 慢 (slow) 呼 (exhale) 吸 (inhale) 气 (air) 干 (do) 嘛 ((question)) 不 (no) 周 (week) 一 (one) 夜 (night) 喝 (drink) 醉 (drunk) 可 (can) 着 ((state-particle))",
+                "[sound:ganma_block_04_full.mp3]"
             ],
-            "guid": "V1u_M^5o$]",
+            "guid": "qjF$J2[IqI",
             "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "block-04",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_001",
-                "bu_pa_bu_pa",
+                "ganma_block_05",
+                "ganma",
+                "5",
+                "{{c1::随便几点睡}}<br>{{c2::管他呢无所谓}}<br>{{c3::随便几点睡}}<br>{{c4::明天再说后悔}}",
+                "suí biàn jǐ diǎn shuì<br>guǎn tā ne wú suǒ wèi<br>suí biàn jǐ diǎn shuì<br>míng tiān zài shuō hòu huǐ",
+                "Whatever time I crash<br>Whatever, who cares<br>Whatever time I crash<br>I'll deal with the regret tomorrow",
+                "随 (follow) 便 (convenient) 几 (how-many) 点 (o'clock) 睡 (sleep) 管 (manage) 他 (he) 呢 ((question)) 无 (without) 所 (place) 谓 (call) 明 (bright) 天 (sky) 再 (again) 说 (say) 后 (after) 悔 (regret)",
+                "[sound:ganma_block_05_full.mp3]"
+            ],
+            "guid": "o=/bMO5QU%",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "block-05",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_block_06",
+                "ganma",
+                "6",
+                "{{c1::头疼}}<br>{{c2::不疼}}<br>{{c3::干嘛?不睡?周一的夜干嘛喝醉}}<br>{{c4::可我睡睡睡睡睡不着}}",
+                "tóu téng<br>bù téng<br>gàn má bù shuì zhōu yī de yè gàn má hē zuì<br>kě wǒ shuì shuì shuì shuì shuì bù zhe",
+                "Headache?<br>Nah, no pain<br>Why not sleep? Why get drunk on a Monday night?<br>But I can't sleeeeeeep",
+                "头 (head) 疼 (hurt) 不 (no) 干 (do) 嘛 ((question)) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 喝 (drink) 醉 (drunk) 可 (can) 我 (i) 着 ((state-particle))",
+                "[sound:ganma_block_06_full.mp3]"
+            ],
+            "guid": "KG6!5y,R=(",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "block-06",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_001",
+                "ganma",
                 "1",
-                "HELLO 看我你在害怕什么",
-                "kàn wǒ nǐ zài hài pà shén me",
-                "Hello, look at me — what are you so afraid of?",
-                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
-                "[sound:bu_pa_bu_pa_001.mp3]",
+                "八点半吃早餐就下楼",
+                "bā diǎn bàn chī zǎo cān jiù xià lóu",
+                "8:30, breakfast then head downstairs",
+                "八 (eight) 点 (o'clock) 半 (half) 吃 (eat) 早 (early) 餐 (meal) 就 (just) 下 (down) 楼 (floor)",
+                "[sound:ganma_001.mp3]",
                 "",
                 ""
             ],
-            "guid": "5;TV2:Ondz",
+            "guid": "nifk#2i7$Y",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-001",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_002",
-                "bu_pa_bu_pa",
+                "ganma_002",
+                "ganma",
                 "2",
-                "是我错没能够啊把自己变得成熟",
-                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
-                "It's my fault, I couldn't make myself grow up.",
-                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
-                "[sound:bu_pa_bu_pa_002.mp3]",
-                "HELLO 看我你在害怕什么",
-                "[sound:bu_pa_bu_pa_001.mp3]"
+                "九点半就上班无厘头",
+                "jiǔ diǎn bàn jiù shàng bān wú lí tóu",
+                "9:30, off to nonsense work",
+                "九 (nine) 点 (o'clock) 半 (half) 就 (just) 上 (up) 班 (shift) 无 (without) 厘 (centi) 头 (head)",
+                "[sound:ganma_002.mp3]",
+                "八点半吃早餐就下楼",
+                "[sound:ganma_001.mp3]"
             ],
-            "guid": "IqRn3~wYQ2",
+            "guid": "l~KQp?:L~v",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-002",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_003",
-                "bu_pa_bu_pa",
+                "ganma_003",
+                "ganma",
                 "3",
-                "伤口那么多已经不怕再痛",
-                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
-                "So many wounds already, I'm not afraid of more pain.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
-                "[sound:bu_pa_bu_pa_003.mp3]",
-                "是我错没能够啊把自己变得成熟",
-                "[sound:bu_pa_bu_pa_002.mp3]"
+                "然后瘫桌子上明天还要上班",
+                "rán hòu tān zhuō zi shàng míng tiān hái yào shàng bān",
+                "Slumped on the desk — still gotta work tomorrow",
+                "然 (thus) 后 (after) 瘫 (paralyzed) 桌 (table) 子 (suffix) 上 (up) 明 (bright) 天 (sky) 还 (still) 要 (demand) 班 (shift)",
+                "[sound:ganma_003.mp3]",
+                "九点半就上班无厘头",
+                "[sound:ganma_002.mp3]"
             ],
-            "guid": "61B4h4%H^J",
+            "guid": "lfP`gWLJKe",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-003",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_004",
-                "bu_pa_bu_pa",
+                "ganma_004",
+                "ganma",
                 "4",
-                "没什么转身以后我会练成护体神功",
-                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
-                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
-                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
-                "[sound:bu_pa_bu_pa_004.mp3]",
-                "伤口那么多已经不怕再痛",
-                "[sound:bu_pa_bu_pa_003.mp3]"
+                "八点半才下班没理由",
+                "bā diǎn bàn cái xià bān méi lǐ yóu",
+                "8:30 off work, no reason at all",
+                "八 (eight) 点 (o'clock) 半 (half) 才 (only) 下 (down) 班 (shift) 没 (not) 理 (reason) 由 (cause)",
+                "[sound:ganma_004.mp3]",
+                "然后瘫桌子上明天还要上班",
+                "[sound:ganma_003.mp3]"
             ],
-            "guid": "TF{UFR0ICo",
+            "guid": "d|xSy!gg)5",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-004",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_005",
-                "bu_pa_bu_pa",
+                "ganma_005",
+                "ganma",
                 "5",
-                "看见蟑螂我不怕不怕啦",
-                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
-                "I see a cockroach — not scared, not scared!",
-                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_005.mp3]",
-                "没什么转身以后我会练成护体神功",
-                "[sound:bu_pa_bu_pa_004.mp3]"
+                "九点半吃晚餐再洗头",
+                "jiǔ diǎn bàn chī wǎn cān zài xǐ tóu",
+                "9:30 dinner then wash my hair",
+                "九 (nine) 点 (o'clock) 半 (half) 吃 (eat) 晚 (evening) 餐 (meal) 再 (again) 洗 (wash) 头 (head)",
+                "[sound:ganma_005.mp3]",
+                "八点半才下班没理由",
+                "[sound:ganma_004.mp3]"
             ],
-            "guid": "-+|2r)L*%g",
+            "guid": "tn}w(=[C*L",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-005",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_006",
-                "bu_pa_bu_pa",
+                "ganma_006",
+                "ganma",
                 "6",
-                "我神经比较大不怕不怕不怕啦",
-                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
-                "My nerves are pretty tough — not scared, not scared, not scared!",
-                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_006.mp3]",
-                "看见蟑螂我不怕不怕啦",
-                "[sound:bu_pa_bu_pa_005.mp3]"
+                "然后瘫沙发上明天还要上班",
+                "rán hòu tān shā fā shàng míng tiān hái yào shàng bān",
+                "Slumped on the couch — still gotta work tomorrow",
+                "然 (thus) 后 (after) 瘫 (paralyzed) 沙 (granule) 发 (send) 上 (up) 明 (bright) 天 (sky) 还 (still) 要 (demand) 班 (shift)",
+                "[sound:ganma_006.mp3]",
+                "九点半吃晚餐再洗头",
+                "[sound:ganma_005.mp3]"
             ],
-            "guid": "$_BUG_4:Gj",
+            "guid": "w4#^8.<qbR",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-006",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_007",
-                "bu_pa_bu_pa",
+                "ganma_007",
+                "ganma",
                 "7",
-                "胆怯只会让自己更憔悴",
-                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
-                "Being timid only leaves you more worn out.",
-                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
-                "[sound:bu_pa_bu_pa_007.mp3]",
-                "我神经比较大不怕不怕不怕啦",
-                "[sound:bu_pa_bu_pa_006.mp3]"
+                "干嘛?不睡?周一的夜干嘛喝醉",
+                "gàn má bù shuì zhōu yī de yè gàn má hē zuì",
+                "Why not sleep? Why get drunk on a Monday night?",
+                "干 (do) 嘛 ((question)) 不 (no) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 喝 (drink) 醉 (drunk)",
+                "[sound:ganma_007.mp3]",
+                "然后瘫沙发上明天还要上班",
+                "[sound:ganma_006.mp3]"
             ],
-            "guid": "z.BVh^aU44",
+            "guid": "qRD`p?yq6h",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-007",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_008",
-                "bu_pa_bu_pa",
+                "ganma_008",
+                "ganma",
                 "8",
-                "麻痹也是勇敢表现",
-                "má bì yě shì yǒng gǎn biǎo xiàn",
-                "Going numb to it is its own kind of courage.",
-                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
-                "[sound:bu_pa_bu_pa_008.mp3]",
-                "胆怯只会让自己更憔悴",
-                "[sound:bu_pa_bu_pa_007.mp3]"
+                "可我睡睡睡睡睡不着",
+                "kě wǒ shuì shuì shuì shuì shuì bù zhe",
+                "But I can't sleeeeeeep",
+                "可 (can) 我 (i) 睡 (sleep) 不 (no) 着 ((state-particle))",
+                "[sound:ganma_008.mp3]",
+                "干嘛?不睡?周一的夜干嘛喝醉",
+                "[sound:ganma_007.mp3]"
             ],
-            "guid": "q]h&lq0>)B",
+            "guid": "vr#Kc1G_x&",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-008",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_009",
-                "bu_pa_bu_pa",
+                "ganma_009",
+                "ganma",
                 "9",
-                "一个人睡也不怕不怕啦",
-                "yí gè rén shuì yě bù pà bù pà la",
-                "Even sleeping alone — not scared, not scared!",
-                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_009.mp3]",
-                "麻痹也是勇敢表现",
-                "[sound:bu_pa_bu_pa_008.mp3]"
+                "闭上眼睛连一秒钟都受不了",
+                "bì shàng yǎn jīng lián yī miǎo zhōng dōu shòu bù liǎo",
+                "Can't stand even one second with my eyes shut",
+                "闭 (close) 上 (up) 眼 (eye) 睛 (eye) 连 (even) 一 (one) 秒 (second) 钟 (clock) 都 (all) 受 (endure) 不 (no) 了 (particle)",
+                "[sound:ganma_009.mp3]",
+                "可我睡睡睡睡睡不着",
+                "[sound:ganma_008.mp3]"
             ],
-            "guid": "p2c7t;^6Vb",
+            "guid": "DNdAWW7U[7",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-009",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_010",
-                "bu_pa_bu_pa",
+                "ganma_010",
+                "ganma",
                 "10",
-                "勇气当棉被不怕不怕不怕啦",
-                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
-                "Courage as my quilt — not scared, not scared, not scared!",
-                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
-                "[sound:bu_pa_bu_pa_010.mp3]",
-                "一个人睡也不怕不怕啦",
-                "[sound:bu_pa_bu_pa_009.mp3]"
+                "干嘛?装睡?周一的夜一样要派对",
+                "gàn má zhuāng shuì zhōu yī de yè yī yàng yào pài duì",
+                "Why fake-sleep? Monday night still calls for a party",
+                "干 (do) 嘛 ((question)) 装 (pretend) 睡 (sleep) 周 (week) 一 (one) 的 (of) 夜 (night) 样 (manner) 要 (demand) 派 (send) 对 (right)",
+                "[sound:ganma_010.mp3]",
+                "闭上眼睛连一秒钟都受不了",
+                "[sound:ganma_009.mp3]"
             ],
-            "guid": "PAjC%m5J||",
+            "guid": "J^;{qr[(?#",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-010",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_011",
-                "bu_pa_bu_pa",
+                "ganma_011",
+                "ganma",
                 "11",
-                "夜晚再黑我就当看不见",
-                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
-                "However dark the night gets, I'll just act like I can't see.",
-                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
-                "[sound:bu_pa_bu_pa_011.mp3]",
-                "勇气当棉被不怕不怕不怕啦",
-                "[sound:bu_pa_bu_pa_010.mp3]"
+                "因为睡睡睡睡睡不着",
+                "yīn wèi shuì shuì shuì shuì shuì bù zhe",
+                "Because I can't sleeeeeeep",
+                "因 (cause) 为 (for) 睡 (sleep) 不 (no) 着 ((state-particle))",
+                "[sound:ganma_011.mp3]",
+                "干嘛?装睡?周一的夜一样要派对",
+                "[sound:ganma_010.mp3]"
             ],
-            "guid": "^IActn{q0[",
+            "guid": "Jm!yz.]!L?",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
+                "artist-lexie-liu",
                 "line-011",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_012",
-                "bu_pa_bu_pa",
-                "12",
-                "太阳一定就快出现",
-                "tài yáng yí dìng jiù kuài chū xiàn",
-                "The sun is sure to show up soon.",
-                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
-                "[sound:bu_pa_bu_pa_012.mp3]",
-                "夜晚再黑我就当看不见",
-                "[sound:bu_pa_bu_pa_011.mp3]"
+                "ganma_013",
+                "ganma",
+                "13",
+                "让我们开始今天的睡前冥想",
+                "ràng wǒ men kāi shǐ jīn tiān de shuì qián míng xiǎng",
+                "Let's start today's bedtime meditation",
+                "让 (let) 我 (i) 们 ((plural)) 开 (open) 始 (begin) 今 (now) 天 (sky) 的 (of) 睡 (sleep) 前 (front) 冥 (dark) 想 (think)",
+                "[sound:ganma_013.mp3]",
+                "闭上眼睛连一秒钟都受不了",
+                "[sound:ganma_012.mp3]"
             ],
-            "guid": "3-9SY4kn6b",
+            "guid": "tE7-`>=RA)",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-012",
+                "artist-lexie-liu",
+                "line-013",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
             ]
         },
         {
             "__type__": "Note",
             "fields": [
-                "bu_pa_bu_pa_015",
-                "bu_pa_bu_pa",
-                "15",
-                "伤口那么多没地方可以再受伤了",
-                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
-                "So many wounds, there's no room left to get hurt again.",
-                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
-                "[sound:bu_pa_bu_pa_015.mp3]",
-                "是我错没能够啊把自己变得成熟",
-                "[sound:bu_pa_bu_pa_014.mp3]"
+                "ganma_014",
+                "ganma",
+                "14",
+                "首先,轻柔地闭上眼睛,将注意力放在缓慢的呼吸上。吸气",
+                "shǒu xiān qīng róu dì bì shàng yǎn jīng jiāng zhù yì lì fàng zài huǎn màn de hū xī shàng xī qì",
+                "First, gently close your eyes; bring your attention to your slow breathing. Inhale…",
+                "首 (first) 先 (before) 轻 (light) 柔 (soft) 地 (earth) 闭 (close) 上 (up) 眼 (eye) 睛 (eye) 将 ((will)) 注 (pour) 意 (meaning) 力 (force) 放 (release) 在 (at) 缓 (slow) 慢 (slow) 的 (of) 呼 (exhale) 吸 (inhale) 气 (air)",
+                "[sound:ganma_014.mp3]",
+                "让我们开始今天的睡前冥想",
+                "[sound:ganma_013.mp3]"
             ],
-            "guid": "HhF1#9Mq{y",
+            "guid": "myLpO)Xi#e",
             "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "artist-jocie-kok",
-                "line-015",
+                "artist-lexie-liu",
+                "line-014",
                 "song",
-                "song-bu-pa-bu-pa"
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_021",
+                "ganma",
+                "21",
+                "随便几点睡",
+                "suí biàn jǐ diǎn shuì",
+                "Whatever time I crash",
+                "随 (follow) 便 (convenient) 几 (how-many) 点 (o'clock) 睡 (sleep)",
+                "[sound:ganma_021.mp3]",
+                "闭上眼睛连一秒钟都受不了",
+                "[sound:ganma_020.mp3]"
+            ],
+            "guid": "hu:^lx.Sr-",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-021",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_022",
+                "ganma",
+                "22",
+                "管他呢无所谓",
+                "guǎn tā ne wú suǒ wèi",
+                "Whatever, who cares",
+                "管 (manage) 他 (he) 呢 ((question)) 无 (without) 所 (place) 谓 (call)",
+                "[sound:ganma_022.mp3]",
+                "随便几点睡",
+                "[sound:ganma_021.mp3]"
+            ],
+            "guid": "B}~E6lbE2~",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-022",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_024",
+                "ganma",
+                "24",
+                "明天再说后悔",
+                "míng tiān zài shuō hòu huǐ",
+                "I'll deal with the regret tomorrow",
+                "明 (bright) 天 (sky) 再 (again) 说 (say) 后 (after) 悔 (regret)",
+                "[sound:ganma_024.mp3]",
+                "随便几点睡",
+                "[sound:ganma_023.mp3]"
+            ],
+            "guid": "ddqdy?f*(.",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-024",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_025",
+                "ganma",
+                "25",
+                "头疼",
+                "tóu téng",
+                "Headache?",
+                "头 (head) 疼 (hurt)",
+                "[sound:ganma_025.mp3]",
+                "明天再说后悔",
+                "[sound:ganma_024.mp3]"
+            ],
+            "guid": "I^+IeDUU~D",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-025",
+                "song",
+                "song-ganma"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ganma_026",
+                "ganma",
+                "26",
+                "不疼",
+                "bù téng",
+                "Nah, no pain",
+                "不 (no) 疼 (hurt)",
+                "[sound:ganma_026.mp3]",
+                "头疼",
+                "[sound:ganma_025.mp3]"
+            ],
+            "guid": "jIuB]x_dTZ",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "tags": [
+                "artist-lexie-liu",
+                "line-026",
+                "song",
+                "song-ganma"
             ]
         }
     ],
