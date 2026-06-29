@@ -223,11 +223,17 @@ checkpoints** marked below.
     user ever edits a note type in Anki, re-export and overwrite that
     file to keep it in sync.
 
-    Deck config is OMITTED on purpose: the deck references the user's
-    中文-song options group by UUID (auto-assign) but does NOT include it
-    in deck_configurations, so importing never resets their FSRS params.
-    Stable note GUIDs → re-import updates. TSVs stay; this is an extra
-    format on top.
+    Deck config: CrowdAnki requires the referenced config to be PRESENT
+    in the file (an empty deck_configurations errors — bug #106). So the
+    deck includes the user's REAL 中文-song options group
+    (songs/_note_types/crowdanki_deck_config.json — their exact settings,
+    same UUID b67a11c6) but with the auto-trained FSRS weight arrays
+    stripped (fsrsParams5/6, fsrsWeights). CONFIRMED by test import:
+    CrowdAnki leaves the in-collection FSRS weights untouched when they're
+    omitted, so a re-import never resets them — and the deck auto-assigns
+    to 中文-song (no manual move needed). Re-export + re-strip if the user
+    retunes the group's non-FSRS settings. Stable note GUIDs → re-import
+    updates. TSVs stay; this is an extra format on top.
 
 12. Commit
     git add songs/<slug>/ <any pipeline tweaks>
@@ -247,9 +253,11 @@ Two import routes — CrowdAnki is the one-click path:
 2. File → CrowdAnki: Import from folder → pick `songs/<slug>/`. This
    creates the deck (`中文::神曲::<title>`), imports all notes into the
    user's existing 3 note types (pinned by UUID), and installs the audio
-   + template JS in one step. Re-importing updates in place (stable
-   GUIDs, pinned note types) — no duplicates, and the deck's FSRS config
-   is left untouched.
+   + template JS in one step. The deck auto-assigns to your 中文-song
+   options group, and your trained FSRS params are preserved (the export
+   omits the FSRS weights and CrowdAnki leaves the in-collection ones
+   alone). Re-importing updates in place (stable GUIDs, pinned note
+   types) — no duplicates.
 
 **B. Manual TSV (if not using CrowdAnki):**
 1. Copy `songs/<slug>/media/*.mp3` into Anki's `collection.media/`.

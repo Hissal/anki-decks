@@ -18,10 +18,15 @@ UPDATES those note types in place (it never creates duplicates) and only the
 NOTES change. Keep crowdanki_models.json in sync if you ever edit a note type
 in Anki (re-export and overwrite that file).
 
-Deck config is deliberately OMITTED: the deck references the user's `中文-song`
-options group by UUID (so a fresh import auto-assigns to it) but the config is
-NOT included in `deck_configurations`, so importing never overwrites it — the
-constantly-retraining FSRS params are left untouched.
+Deck config: CrowdAnki requires the referenced config to be PRESENT in the file
+(otherwise "deck config uuid not present" — CrowdAnki bug #106). We include the
+user's real `中文-song` options group (songs/_note_types/crowdanki_deck_config.json,
+their exact settings) but with the auto-trained FSRS weight arrays stripped
+(fsrsParams5 / fsrsParams6 / fsrsWeights). Intent: the deck auto-assigns to
+中文-song and the constantly-retraining weights are not carried (so they can't be
+reset to a stale value on import). CONFIRMED by test import: CrowdAnki leaves the
+in-collection FSRS weights untouched when they're omitted, so a re-import never
+resets them.
 
 Note GUIDs are deterministic (role + the TSV Key), so re-imports update in
 place. Deck UUID is derived from the song slug.
@@ -48,6 +53,7 @@ PIPELINE_DIR = Path(__file__).resolve().parent
 SONGS_DIR = PIPELINE_DIR.parent
 NOTE_TYPES_DIR = SONGS_DIR / "_note_types"
 MODELS_JSON = NOTE_TYPES_DIR / "crowdanki_models.json"
+DECK_CONFIG_JSON = NOTE_TYPES_DIR / "crowdanki_deck_config.json"
 SONG_RUBY_JS = NOTE_TYPES_DIR / "_song_ruby.js"
 RUBY_JS = SONGS_DIR.parent / "note_type" / "Chinese_anki_decks" / "_ruby.js"
 
@@ -61,10 +67,6 @@ _BASE91 = (
 
 DEFAULT_DECK_PARENT = "中文::神曲"
 
-# The user's `中文-song` deck-options group UUID. Referenced (so a new deck
-# auto-assigns to it) but NOT redefined in deck_configurations, so importing
-# never resets its FSRS params.
-SONG_CONFIG_UUID = "b67a11c6-73af-11f1-9ed0-d03957363e8a"
 
 # role -> (model name in crowdanki_models.json, TSV filename suffix)
 ROLE_MAP = [
@@ -168,12 +170,13 @@ def main() -> None:
     # (incl. the JS-referenced front combos), and the JS deps. Subdirs skipped.
     media_files = sorted(p.name for p in media_dir.iterdir() if p.is_file())
 
+    deck_config = json.loads(DECK_CONFIG_JSON.read_text(encoding="utf-8"))
     deck = {
         "__type__": "Deck",
         "children": [],
         "crowdanki_uuid": str(uuid.uuid5(NS, "song-deck:" + slug)),
-        "deck_config_uuid": SONG_CONFIG_UUID,   # reference only — see below
-        "deck_configurations": [],              # omitted on purpose (no FSRS reset)
+        "deck_config_uuid": deck_config["crowdanki_uuid"],
+        "deck_configurations": [deck_config],
         "desc": f"Song deck: {title_zh}. Generated from the song TSVs by "
                 f"songs/_pipeline/build_crowdanki.py.",
         "desiredRetention": None,
@@ -192,7 +195,7 @@ def main() -> None:
     print(f"wrote {out}")
     print(f"  deck name   : {deck_name}")
     print(f"  models      : {len(note_models)} (pinned)  notes: {len(notes)}")
-    print(f"  deck config : referenced {SONG_CONFIG_UUID} (not imported)")
+    print(f"  deck config : {deck_config['name']} {deck_config['crowdanki_uuid']} (FSRS weights omitted)")
     print(f"  media_files : {len(media_files)}")
 
 
