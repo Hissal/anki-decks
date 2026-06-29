@@ -2,6 +2,8 @@
 
 Setup guide for the note types the song pipeline targets. Create these once; each new song just imports its TSVs into the matching note types.
 
+> **Shortcut:** if you import via the **CrowdAnki `deck.json`** (`build_crowdanki.py`, see [../README.md](../README.md)) you can skip this manual setup entirely — that import auto-creates the note types, templates, CSS, and JS deps. This guide is for the manual TSV route, or for editing templates afterward. The note types are named **`Chinese (song-line)`** (Basic), **`Chinese (song-line-cloze)`** (Cloze), **`Chinese (song-block)`** (Cloze) — these strings are the global model identities the CrowdAnki export keys on.
+
 ## The note types
 
 | Note type | Anki base | Cards per note | Source TSV |

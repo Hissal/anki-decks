@@ -7,8 +7,9 @@ description: >
   raw lyrics. Walks the full songs/ pipeline (convert → align → slice →
   gloss → cloze pick → block plan → combo audio → TSV emit → media
   cleanup) with two interactive review checkpoints (cloze plan + English
-  glosses). End result: three importable TSVs + a media/ folder ready to
-  drop into Anki's collection.media/.
+  glosses). End result: three importable TSVs + a CrowdAnki deck.json
+  (one-click import) + a media/ folder ready to drop into Anki's
+  collection.media/.
 ---
 
 # song-deck-add
@@ -206,7 +207,20 @@ checkpoints** marked below.
     Removes line clips for skipped duplicate lines + orphan combo files
     from deduped blocks. Always run as the last step.
 
-11. Commit
+11. CrowdAnki deck.json (one-click import format, layered on the TSVs)
+    python songs/_pipeline/build_crowdanki.py --song-dir songs/<slug>
+
+    Reads the 3 TSVs + note-type templates + media/, writes
+    songs/<slug>/deck.json and drops _ruby.js + _song_ruby.js into
+    media/ so a CrowdAnki "Import from folder" installs everything (note
+    types, cards, audio, JS) in one step — no manual collection.media
+    copy, no template paste. Deck name defaults to
+    Chinese::Songs::<title_zh>; override with --deck-name. Stable UUIDs →
+    re-import UPDATES instead of duplicating. The 3 note-type names are
+    global constants (MODELS) in the script — edit there if the user
+    renamed their note types. TSVs stay; this is an additional format.
+
+12. Commit
     git add songs/<slug>/ <any pipeline tweaks>
     git commit -m "feat(songs): add <Title> (<Artist>)"
 
@@ -216,10 +230,18 @@ checkpoints** marked below.
 
 ## After the pipeline — user-facing instructions
 
-End the run with a summary aimed at the user actually opening Anki:
+End the run with a summary aimed at the user actually opening Anki.
+Two import routes — CrowdAnki is the one-click path:
 
-1. Copy `songs/<slug>/media/*.mp3` into Anki's `collection.media/`
-   folder.
+**A. CrowdAnki (recommended — one click, auto-installs everything):**
+1. Install the CrowdAnki add-on if not already present.
+2. File → CrowdAnki: Import from folder → pick `songs/<slug>/`. This
+   creates the deck (`Chinese::Songs::<title>`), the 3 note types, all
+   notes, the audio, and the template JS in one step. Re-importing
+   updates in place (stable GUIDs) — no duplicates.
+
+**B. Manual TSV (if not using CrowdAnki):**
+1. Copy `songs/<slug>/media/*.mp3` into Anki's `collection.media/`.
 2. Import the three TSVs in order — Cloze, Block, Basic — each into
    its matching note type. Sequence matters for deck-wide new-card
    order (cloze cards introduced first, reading cards last).

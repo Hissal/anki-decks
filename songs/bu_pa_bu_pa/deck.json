@@ -1,0 +1,1340 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "a79a6635-3586-539c-8e6c-a8ff3118a595",
+    "deck_config_uuid": "0aae2ec8-4006-5309-92cd-aaf55b1eb6f0",
+    "deck_configurations": [
+        {
+            "__type__": "DeckConfig",
+            "answerAction": 0,
+            "autoplay": true,
+            "buryInterdayLearning": true,
+            "crowdanki_uuid": "0aae2ec8-4006-5309-92cd-aaf55b1eb6f0",
+            "desiredRetention": 0.9,
+            "dyn": false,
+            "easyDaysPercentages": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "fsrsParams5": [],
+            "fsrsParams6": [],
+            "fsrsWeights": [],
+            "ignoreRevlogsBeforeDate": "1970-01-01",
+            "interdayLearningMix": 2,
+            "lapse": {
+                "delays": [
+                    10.0
+                ],
+                "leechAction": 1,
+                "leechFails": 8,
+                "minInt": 1,
+                "mult": 0.0
+            },
+            "maxTaken": 60,
+            "name": "chinese-songs",
+            "new": {
+                "bury": true,
+                "delays": [
+                    10.0
+                ],
+                "initialFactor": 2500,
+                "ints": [
+                    1,
+                    4,
+                    0
+                ],
+                "order": 1,
+                "perDay": 20
+            },
+            "newGatherPriority": 0,
+            "newMix": 1,
+            "newPerDayMinimum": 0,
+            "newSortOrder": 0,
+            "questionAction": 0,
+            "replayq": true,
+            "rev": {
+                "bury": true,
+                "ease4": 1.3,
+                "hardFactor": 1.2,
+                "ivlFct": 1.0,
+                "maxIvl": 36500,
+                "perDay": 9999
+            },
+            "reviewOrder": 11,
+            "secondsToShowAnswer": 0.0,
+            "secondsToShowQuestion": 0.0,
+            "sm2Retention": 0.9,
+            "stopTimerOnAnswer": false,
+            "timer": 0,
+            "waitForAudio": true,
+            "weightSearch": ""
+        }
+    ],
+    "desc": "Song deck: 不怕不怕. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
+    "desiredRetention": null,
+    "dyn": 0,
+    "extendNew": 0,
+    "extendRev": 0,
+    "media_files": [
+        "_ruby.js",
+        "_song_ruby.js",
+        "bu_pa_bu_pa_001.mp3",
+        "bu_pa_bu_pa_002.mp3",
+        "bu_pa_bu_pa_003.mp3",
+        "bu_pa_bu_pa_004.mp3",
+        "bu_pa_bu_pa_005.mp3",
+        "bu_pa_bu_pa_006.mp3",
+        "bu_pa_bu_pa_007.mp3",
+        "bu_pa_bu_pa_008.mp3",
+        "bu_pa_bu_pa_009.mp3",
+        "bu_pa_bu_pa_010.mp3",
+        "bu_pa_bu_pa_011.mp3",
+        "bu_pa_bu_pa_012.mp3",
+        "bu_pa_bu_pa_013.mp3",
+        "bu_pa_bu_pa_014.mp3",
+        "bu_pa_bu_pa_015.mp3",
+        "bu_pa_bu_pa_016.mp3",
+        "bu_pa_bu_pa_block_01_c1.mp3",
+        "bu_pa_bu_pa_block_01_c2.mp3",
+        "bu_pa_bu_pa_block_01_c3.mp3",
+        "bu_pa_bu_pa_block_01_c4.mp3",
+        "bu_pa_bu_pa_block_01_full.mp3",
+        "bu_pa_bu_pa_block_02_c1.mp3",
+        "bu_pa_bu_pa_block_02_c2.mp3",
+        "bu_pa_bu_pa_block_02_c3.mp3",
+        "bu_pa_bu_pa_block_02_c4.mp3",
+        "bu_pa_bu_pa_block_02_full.mp3",
+        "bu_pa_bu_pa_block_03_c1.mp3",
+        "bu_pa_bu_pa_block_03_c2.mp3",
+        "bu_pa_bu_pa_block_03_c3.mp3",
+        "bu_pa_bu_pa_block_03_c4.mp3",
+        "bu_pa_bu_pa_block_03_full.mp3",
+        "bu_pa_bu_pa_block_04_c1.mp3",
+        "bu_pa_bu_pa_block_04_c2.mp3",
+        "bu_pa_bu_pa_block_04_c3.mp3",
+        "bu_pa_bu_pa_block_04_c4.mp3",
+        "bu_pa_bu_pa_block_04_full.mp3"
+    ],
+    "name": "Chinese::Songs::不怕不怕",
+    "newLimit": null,
+    "newLimitToday": null,
+    "note_models": [
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Key",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "SongSlug",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "LineNo",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "HanziPlain",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Pinyin",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "English",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Breakdown",
+                    "ord": 6,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Audio",
+                    "ord": 7,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "PrevHanzi",
+                    "ord": 8,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "PrevAudio",
+                    "ord": 9,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Chinese (song-line)",
+            "originalId": null,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        3
+                    ]
+                ],
+                [
+                    1,
+                    "any",
+                    [
+                        3
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n{{#PrevHanzi}}\n<div class=\"hanzi-block prev\">{{PrevHanzi}}</div>\n<hr>\n{{/PrevHanzi}}\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songline-recall-hanzi\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<div class=\"english\">{{English}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-recall-hanzi\", { revealed: true });\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "Recall-line",
+                    "ord": 0,
+                    "qfmt": "{{#PrevHanzi}}\n<div class=\"meta\">{{SongSlug}} · what's the next line?</div>\n\n<div class=\"audio\">{{PrevAudio}}</div>\n\n<div class=\"hanzi-block prev\">{{PrevHanzi}}</div>\n\n<div class=\"prompt\">→ what comes next?</div>\n{{/PrevHanzi}}\n\n{{^PrevHanzi}}\n<div class=\"meta\">{{SongSlug}} · first line</div>\n\n<div class=\"prompt\">→ how does the song start?</div>\n{{/PrevHanzi}}"
+                },
+                {
+                    "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songline-hanzi-back\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-hanzi-back\", { revealed: true });\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "Reading",
+                    "ord": 1,
+                    "qfmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block\"\n     id=\"songline-hanzi\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<button class=\"toggle-btn\" id=\"toggle-pinyin-btn\" type=\"button\">Toggle Pinyin</button>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-hanzi\", { revealed: false });\n  window.ankiDecks.attachToggle(\"songline-hanzi\", \"toggle-pinyin-btn\");\n</script>"
+                }
+            ],
+            "type": 0,
+            "vers": []
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Key",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "SongSlug",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "LineNo",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Hanzi",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Pinyin",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "English",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Breakdown",
+                    "ord": 6,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Audio",
+                    "ord": 7,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Chinese (song-line-cloze)",
+            "originalId": null,
+            "req": [
+                [
+                    0,
+                    "all",
+                    [
+                        3
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}} · cloze</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songcloze-back-hanzi\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Hanzi}}</div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.songsRuby.mountElement(\"songcloze-back-hanzi\");\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "Cloze",
+                    "ord": 0,
+                    "qfmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}} · cloze</div>\n\n<div class=\"hanzi-block\">{{cloze:Hanzi}}</div>"
+                }
+            ],
+            "type": 1,
+            "vers": []
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Key",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "SongSlug",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "BlockNo",
+                    "ord": 2,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Lines",
+                    "ord": 3,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Pinyin",
+                    "ord": 4,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "English",
+                    "ord": 5,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "Breakdown",
+                    "ord": 6,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": null,
+                    "media": [],
+                    "name": "BlockAudio",
+                    "ord": 7,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Chinese (song-block)",
+            "originalId": null,
+            "req": [
+                [
+                    0,
+                    "all",
+                    [
+                        3
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tags": [],
+            "tmpls": [
+                {
+                    "afmt": "<div class=\"meta\">{{SongSlug}} · block {{BlockNo}}</div>\n\n<div class=\"audio-mount\" data-soundfile=\"{{soundfile:BlockAudio}}\"></div>\n\n<div class=\"lines-block show-all-ruby\"\n     id=\"songblock-lines-back\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Lines}}</div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountAutoplayAudio(\".audio-mount\", { controls: true });\n  window.songsRuby.mountLines(\"songblock-lines-back\");\n</script>",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": null,
+                    "name": "Block cloze",
+                    "ord": 0,
+                    "qfmt": "<div class=\"meta\">{{SongSlug}} · block {{BlockNo}}</div>\n\n<div class=\"audio-mount\" id=\"songblock-audio\"></div>\n\n<div class=\"lines-block\"\n     id=\"songblock-lines\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Lines}}</div>\n\n<button class=\"toggle-btn\" id=\"toggle-pinyin-btn\" type=\"button\">Toggle Pinyin</button>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.songsRuby.playBlockAudio(\"songblock-lines\", \"songblock-audio\", \"{{SongSlug}}\", \"{{BlockNo}}\");\n  window.songsRuby.mountLines(\"songblock-lines\");\n  window.ankiDecks.attachToggle(\"songblock-lines\", \"toggle-pinyin-btn\");\n</script>"
+                }
+            ],
+            "type": 1,
+            "vers": []
+        }
+    ],
+    "notes": [
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_001",
+                "bu_pa_bu_pa",
+                "1",
+                "HELLO 看我你在害怕什么",
+                "kàn wǒ nǐ zài hài pà shén me",
+                "Hello, look at me — what are you so afraid of?",
+                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
+                "[sound:bu_pa_bu_pa_001.mp3]",
+                "",
+                ""
+            ],
+            "guid": "5;TV2:Ondz",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-001"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_002",
+                "bu_pa_bu_pa",
+                "2",
+                "是我错没能够啊把自己变得成熟",
+                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
+                "It's my fault, I couldn't make myself grow up.",
+                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
+                "[sound:bu_pa_bu_pa_002.mp3]",
+                "HELLO 看我你在害怕什么",
+                "[sound:bu_pa_bu_pa_001.mp3]"
+            ],
+            "guid": "IqRn3~wYQ2",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-002"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_003",
+                "bu_pa_bu_pa",
+                "3",
+                "伤口那么多已经不怕再痛",
+                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
+                "So many wounds already, I'm not afraid of more pain.",
+                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
+                "[sound:bu_pa_bu_pa_003.mp3]",
+                "是我错没能够啊把自己变得成熟",
+                "[sound:bu_pa_bu_pa_002.mp3]"
+            ],
+            "guid": "61B4h4%H^J",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-003"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_004",
+                "bu_pa_bu_pa",
+                "4",
+                "没什么转身以后我会练成护体神功",
+                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
+                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
+                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
+                "[sound:bu_pa_bu_pa_004.mp3]",
+                "伤口那么多已经不怕再痛",
+                "[sound:bu_pa_bu_pa_003.mp3]"
+            ],
+            "guid": "TF{UFR0ICo",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-004"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_005",
+                "bu_pa_bu_pa",
+                "5",
+                "看见蟑螂我不怕不怕啦",
+                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
+                "I see a cockroach — not scared, not scared!",
+                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_005.mp3]",
+                "没什么转身以后我会练成护体神功",
+                "[sound:bu_pa_bu_pa_004.mp3]"
+            ],
+            "guid": "-+|2r)L*%g",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-005"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_006",
+                "bu_pa_bu_pa",
+                "6",
+                "我神经比较大不怕不怕不怕啦",
+                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
+                "My nerves are pretty tough — not scared, not scared, not scared!",
+                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_006.mp3]",
+                "看见蟑螂我不怕不怕啦",
+                "[sound:bu_pa_bu_pa_005.mp3]"
+            ],
+            "guid": "$_BUG_4:Gj",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-006"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_007",
+                "bu_pa_bu_pa",
+                "7",
+                "胆怯只会让自己更憔悴",
+                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
+                "Being timid only leaves you more worn out.",
+                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
+                "[sound:bu_pa_bu_pa_007.mp3]",
+                "我神经比较大不怕不怕不怕啦",
+                "[sound:bu_pa_bu_pa_006.mp3]"
+            ],
+            "guid": "z.BVh^aU44",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-007"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_008",
+                "bu_pa_bu_pa",
+                "8",
+                "麻痹也是勇敢表现",
+                "má bì yě shì yǒng gǎn biǎo xiàn",
+                "Going numb to it is its own kind of courage.",
+                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
+                "[sound:bu_pa_bu_pa_008.mp3]",
+                "胆怯只会让自己更憔悴",
+                "[sound:bu_pa_bu_pa_007.mp3]"
+            ],
+            "guid": "q]h&lq0>)B",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-008"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_009",
+                "bu_pa_bu_pa",
+                "9",
+                "一个人睡也不怕不怕啦",
+                "yí gè rén shuì yě bù pà bù pà la",
+                "Even sleeping alone — not scared, not scared!",
+                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_009.mp3]",
+                "麻痹也是勇敢表现",
+                "[sound:bu_pa_bu_pa_008.mp3]"
+            ],
+            "guid": "p2c7t;^6Vb",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-009"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_010",
+                "bu_pa_bu_pa",
+                "10",
+                "勇气当棉被不怕不怕不怕啦",
+                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
+                "Courage as my quilt — not scared, not scared, not scared!",
+                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_010.mp3]",
+                "一个人睡也不怕不怕啦",
+                "[sound:bu_pa_bu_pa_009.mp3]"
+            ],
+            "guid": "PAjC%m5J||",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-010"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_011",
+                "bu_pa_bu_pa",
+                "11",
+                "夜晚再黑我就当看不见",
+                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
+                "However dark the night gets, I'll just act like I can't see.",
+                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
+                "[sound:bu_pa_bu_pa_011.mp3]",
+                "勇气当棉被不怕不怕不怕啦",
+                "[sound:bu_pa_bu_pa_010.mp3]"
+            ],
+            "guid": "^IActn{q0[",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-011"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_012",
+                "bu_pa_bu_pa",
+                "12",
+                "太阳一定就快出现",
+                "tài yáng yí dìng jiù kuài chū xiàn",
+                "The sun is sure to show up soon.",
+                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
+                "[sound:bu_pa_bu_pa_012.mp3]",
+                "夜晚再黑我就当看不见",
+                "[sound:bu_pa_bu_pa_011.mp3]"
+            ],
+            "guid": "3-9SY4kn6b",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-012"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_015",
+                "bu_pa_bu_pa",
+                "15",
+                "伤口那么多没地方可以再受伤了",
+                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
+                "So many wounds, there's no room left to get hurt again.",
+                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
+                "[sound:bu_pa_bu_pa_015.mp3]",
+                "是我错没能够啊把自己变得成熟",
+                "[sound:bu_pa_bu_pa_014.mp3]"
+            ],
+            "guid": "HhF1#9Mq{y",
+            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-015"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_001",
+                "bu_pa_bu_pa",
+                "1",
+                "HELLO 看我你在{{c1::害怕}}什么",
+                "kàn wǒ nǐ zài hài pà shén me",
+                "Hello, look at me — what are you so afraid of?",
+                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix)",
+                "[sound:bu_pa_bu_pa_001.mp3]"
+            ],
+            "guid": "ZgAT}=y3qq",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-001"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_002",
+                "bu_pa_bu_pa",
+                "2",
+                "是我错没能够啊把自己{{c1::变得}}{{c2::成熟}}",
+                "shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú",
+                "It's my fault, I couldn't make myself grow up.",
+                "是 (be) 我 (i) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe)",
+                "[sound:bu_pa_bu_pa_002.mp3]"
+            ],
+            "guid": "4TbU>b;Fs;",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-002"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_003",
+                "bu_pa_bu_pa",
+                "3",
+                "{{c1::伤口}}那么多已经{{c2::不怕}}再{{c3::痛}}",
+                "shāng kǒu nà me duō yǐ jīng bù pà zài tòng",
+                "So many wounds already, I'm not afraid of more pain.",
+                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 已 (already) 经 (classics) 不 (no) 怕 (afraid) 再 (again) 痛 (ache)",
+                "[sound:bu_pa_bu_pa_003.mp3]"
+            ],
+            "guid": "^4LJ+-,]OO",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-003"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_004",
+                "bu_pa_bu_pa",
+                "4",
+                "没什么{{c1::转身}}以后我会练成{{c2::护体神功}}",
+                "méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
+                "It's nothing — once I turn around, I'll master my body-shielding kung fu.",
+                "没 (not) 什 (what) 么 (suffix) 转 (turn) 身 (body) 以 (use) 后 (after) 我 (i) 会 (can) 练 (practice) 成 (succeed) 护 (protect) 体 (body) 神 (god) 功 (skill)",
+                "[sound:bu_pa_bu_pa_004.mp3]"
+            ],
+            "guid": "+_aHw&<~61",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-004"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_005",
+                "bu_pa_bu_pa",
+                "5",
+                "{{c2::看见}}{{c1::蟑螂}}我不怕不怕啦",
+                "kàn jiàn zhāng láng wǒ bù pà bù pà la",
+                "I see a cockroach — not scared, not scared!",
+                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_005.mp3]"
+            ],
+            "guid": "B+1g/JaAts",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-005"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_006",
+                "bu_pa_bu_pa",
+                "6",
+                "我{{c1::神经}}{{c2::比较}}大不怕不怕不怕啦",
+                "wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la",
+                "My nerves are pretty tough — not scared, not scared, not scared!",
+                "我 (i) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_006.mp3]"
+            ],
+            "guid": "?*!^Q<t%cy",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-006"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_007",
+                "bu_pa_bu_pa",
+                "7",
+                "{{c1::胆怯}}只会让自己更{{c2::憔悴}}",
+                "dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì",
+                "Being timid only leaves you more worn out.",
+                "胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard)",
+                "[sound:bu_pa_bu_pa_007.mp3]"
+            ],
+            "guid": "/d>U,~1r*n",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-007"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_008",
+                "bu_pa_bu_pa",
+                "8",
+                "{{c1::麻痹}}也是{{c2::勇敢}}表现",
+                "má bì yě shì yǒng gǎn biǎo xiàn",
+                "Going numb to it is its own kind of courage.",
+                "麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
+                "[sound:bu_pa_bu_pa_008.mp3]"
+            ],
+            "guid": "vC>v[z`6YS",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-008"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_009",
+                "bu_pa_bu_pa",
+                "9",
+                "{{c1::一个人}}{{c2::睡}}也不怕不怕啦",
+                "yí gè rén shuì yě bù pà bù pà la",
+                "Even sleeping alone — not scared, not scared!",
+                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_009.mp3]"
+            ],
+            "guid": "/2|cT%sow)",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-009"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_010",
+                "bu_pa_bu_pa",
+                "10",
+                "{{c1::勇气}}当{{c2::棉被}}不怕不怕不怕啦",
+                "yǒng qì dāng mián bèi bù pà bù pà bù pà la",
+                "Courage as my quilt — not scared, not scared, not scared!",
+                "勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 不 (no) 怕 (afraid) 啦 (particle)",
+                "[sound:bu_pa_bu_pa_010.mp3]"
+            ],
+            "guid": "n0j(s#~rP!",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-010"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_011",
+                "bu_pa_bu_pa",
+                "11",
+                "{{c1::夜晚}}再黑我就当{{c2::看不见}}",
+                "yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn",
+                "However dark the night gets, I'll just act like I can't see.",
+                "夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 当 (treat as) 看 (see) 不 (no) 见 (see)",
+                "[sound:bu_pa_bu_pa_011.mp3]"
+            ],
+            "guid": "d/yP=ESy=w",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-011"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_012",
+                "bu_pa_bu_pa",
+                "12",
+                "{{c1::太阳}}一定就快{{c2::出现}}",
+                "tài yáng yí dìng jiù kuài chū xiàn",
+                "The sun is sure to show up soon.",
+                "太 (highest) 阳 (sun) 一 (one) 定 (fix) 就 (just) 快 (rapid) 出 (out) 现 (appear)",
+                "[sound:bu_pa_bu_pa_012.mp3]"
+            ],
+            "guid": "S@X%WQ!p~a",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-012"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_015",
+                "bu_pa_bu_pa",
+                "15",
+                "{{c1::伤口}}那么多没地方可以再{{c2::受伤}}了",
+                "shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le",
+                "So many wounds, there's no room left to get hurt again.",
+                "伤 (injure) 口 (mouth) 那 (that) 么 (suffix) 多 (many) 没 (not) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle)",
+                "[sound:bu_pa_bu_pa_015.mp3]"
+            ],
+            "guid": "t(Cr7ZIl/I",
+            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "line-015"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_block_01",
+                "bu_pa_bu_pa",
+                "1",
+                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多已经不怕再痛}}<br>{{c4::没什么转身以后我会练成护体神功}}",
+                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō yǐ jīng bù pà zài tòng<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
+                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds already, I'm not afraid of more pain.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
+                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 已 (already) 经 (classics) 不 (no) 再 (again) 痛 (ache) 转 (turn) 身 (body) 以 (use) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
+                "[sound:bu_pa_bu_pa_block_01_full.mp3]"
+            ],
+            "guid": "JbHz+9&(5r",
+            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "block-01"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_block_02",
+                "bu_pa_bu_pa",
+                "2",
+                "{{c1::看见蟑螂我不怕不怕啦}}<br>{{c2::我神经比较大不怕不怕不怕啦}}<br>{{c3::胆怯只会让自己更憔悴}}<br>{{c4::麻痹也是勇敢表现}}",
+                "kàn jiàn zhāng láng wǒ bù pà bù pà la<br>wǒ shén jīng bǐ jiào dà bù pà bù pà bù pà la<br>dǎn qiè zhǐ huì ràng zì jǐ gèng qiáo cuì<br>má bì yě shì yǒng gǎn biǎo xiàn",
+                "I see a cockroach — not scared, not scared!<br>My nerves are pretty tough — not scared, not scared, not scared!<br>Being timid only leaves you more worn out.<br>Going numb to it is its own kind of courage.",
+                "看 (see) 见 (see) 蟑 (cockroach) 螂 (cockroach) 我 (i) 不 (no) 怕 (afraid) 啦 (particle) 神 (god) 经 (classics) 比 (compare) 较 (compare) 大 (big) 胆 (gall bladder) 怯 (timid) 只 (only) 会 (can) 让 (let) 自 (self) 己 (self) 更 (more) 憔 (haggard) 悴 (haggard) 麻 (hemp) 痹 (paralysis) 也 (also) 是 (be) 勇 (brave) 敢 (dare) 表 (exterior surface) 现 (appear)",
+                "[sound:bu_pa_bu_pa_block_02_full.mp3]"
+            ],
+            "guid": "pjk:J0Nqys",
+            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "block-02"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_block_03",
+                "bu_pa_bu_pa",
+                "3",
+                "{{c1::一个人睡也不怕不怕啦}}<br>{{c2::勇气当棉被不怕不怕不怕啦}}<br>{{c3::夜晚再黑我就当看不见}}<br>{{c4::太阳一定就快出现}}",
+                "yí gè rén shuì yě bù pà bù pà la<br>yǒng qì dāng mián bèi bù pà bù pà bù pà la<br>yè wǎn zài hēi wǒ jiù dāng kàn bú jiàn<br>tài yáng yí dìng jiù kuài chū xiàn",
+                "Even sleeping alone — not scared, not scared!<br>Courage as my quilt — not scared, not scared, not scared!<br>However dark the night gets, I'll just act like I can't see.<br>The sun is sure to show up soon.",
+                "一 (one) 个 (individual) 人 (person) 睡 (sleep) 也 (also) 不 (no) 怕 (afraid) 啦 (particle) 勇 (brave) 气 (air) 当 (treat as) 棉 (cotton) 被 (quilt) 夜 (night) 晚 (evening) 再 (again) 黑 (black) 我 (i) 就 (just) 看 (see) 见 (see) 太 (highest) 阳 (sun) 定 (fix) 快 (rapid) 出 (out) 现 (appear)",
+                "[sound:bu_pa_bu_pa_block_03_full.mp3]"
+            ],
+            "guid": "C!m;e188O]",
+            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "block-03"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "bu_pa_bu_pa_block_04",
+                "bu_pa_bu_pa",
+                "4",
+                "{{c1::HELLO 看我你在害怕什么}}<br>{{c2::是我错没能够啊把自己变得成熟}}<br>{{c3::伤口那么多没地方可以再受伤了}}<br>{{c4::没什么转身以后我会练成护体神功}}",
+                "kàn wǒ nǐ zài hài pà shén me<br>shì wǒ cuò méi néng gòu a bǎ zì jǐ biàn dé chéng shú<br>shāng kǒu nà me duō méi dì fāng kě yǐ zài shòu shāng le<br>méi shén me zhuǎn shēn yǐ hòu wǒ huì liàn chéng hù tǐ shén gōng",
+                "Hello, look at me — what are you so afraid of?<br>It's my fault, I couldn't make myself grow up.<br>So many wounds, there's no room left to get hurt again.<br>It's nothing — once I turn around, I'll master my body-shielding kung fu.",
+                "看 (see) 我 (i) 你 (you) 在 (at) 害 (do harm to) 怕 (afraid) 什 (what) 么 (suffix) 是 (be) 错 (mistake) 没 (not) 能 (can) 够 (enough) 啊 (ah!) 把 (hold) 自 (self) 己 (self) 变 (change) 得 (particle) 成 (succeed) 熟 (ripe) 伤 (injure) 口 (mouth) 那 (that) 多 (many) 地 (earth) 方 (square) 可 (can) 以 (use) 再 (again) 受 (endure) 了 (particle) 转 (turn) 身 (body) 后 (after) 会 (can) 练 (practice) 护 (protect) 体 (body) 神 (god) 功 (skill)",
+                "[sound:bu_pa_bu_pa_block_04_full.mp3]"
+            ],
+            "guid": "V1u_M^5o$]",
+            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "tags": [
+                "song",
+                "song-bu-pa-bu-pa",
+                "artist-jocie-kok",
+                "block-04"
+            ]
+        }
+    ],
+    "reviewLimit": null,
+    "reviewLimitToday": null
+}

@@ -28,7 +28,8 @@ songs/
 │   ├── combo_audio.py                bakes block-cloze combo mp3s
 │   ├── build_tsv.py                  SongLine TSV emitter
 │   ├── build_blocks_tsv.py           SongBlock TSV emitter
-│   └── cleanup_media.py              prunes audio clips not referenced by any TSV
+│   ├── cleanup_media.py              prunes audio clips not referenced by any TSV
+│   └── build_crowdanki.py            CrowdAnki deck.json emitter (one-click import)
 └── <song_slug>/                      one dir per song
     ├── source.yaml                   title, artist, url, raw lyrics
     ├── audio.webm                    yt-dlp original (gitignored)
@@ -46,7 +47,8 @@ songs/
     │   └── _silence/                  silence file cache (gitignored)
     ├── Chinese_Song_<X>_Lines_Basic.tsv   → SongLineBasic note type
     ├── Chinese_Song_<X>_Lines_Cloze.tsv   → SongLineCloze note type
-    └── Chinese_Song_<X>_Blocks.tsv        → SongBlock note type
+    ├── Chinese_Song_<X>_Blocks.tsv        → SongBlock note type
+    └── deck.json                          CrowdAnki one-click import (generated; TSVs stay canonical)
 ```
 
 ## Tooling required
@@ -175,6 +177,7 @@ interactive review checkpoints (cloze plan + English glosses).
 - TSV directive block sets columns + tag column. Anki picks them up automatically.
 - Audio refs are `[sound:<slug>_NNN.mp3]`. Files must live in Anki's `collection.media/`.
 - Re-importing the same TSV updates rows by first column (Hanzi); no duplicate notes.
+- **CrowdAnki one-click alternative** (`build_crowdanki.py` → `songs/<slug>/deck.json`): a self-contained CrowdAnki deck bundling the 3 note types, all notes, the audio, and the template JS (`_ruby.js` / `_song_ruby.js`). Import via CrowdAnki → *Import from folder* → the song dir; it installs everything — no manual `collection.media` copy, no template paste. Stable per-note GUIDs mean re-imports update in place. Model UUIDs derive from the note-type names (global → every song shares the same 3 note types). The TSVs stay the source of truth; the JSON is regenerated from them.
 
 ## Pipeline behavior — gotchas
 
