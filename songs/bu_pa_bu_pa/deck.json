@@ -2,79 +2,8 @@
     "__type__": "Deck",
     "children": [],
     "crowdanki_uuid": "a79a6635-3586-539c-8e6c-a8ff3118a595",
-    "deck_config_uuid": "0aae2ec8-4006-5309-92cd-aaf55b1eb6f0",
-    "deck_configurations": [
-        {
-            "__type__": "DeckConfig",
-            "answerAction": 0,
-            "autoplay": true,
-            "buryInterdayLearning": true,
-            "crowdanki_uuid": "0aae2ec8-4006-5309-92cd-aaf55b1eb6f0",
-            "desiredRetention": 0.9,
-            "dyn": false,
-            "easyDaysPercentages": [
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0,
-                1.0
-            ],
-            "fsrsParams5": [],
-            "fsrsParams6": [],
-            "fsrsWeights": [],
-            "ignoreRevlogsBeforeDate": "1970-01-01",
-            "interdayLearningMix": 2,
-            "lapse": {
-                "delays": [
-                    10.0
-                ],
-                "leechAction": 1,
-                "leechFails": 8,
-                "minInt": 1,
-                "mult": 0.0
-            },
-            "maxTaken": 60,
-            "name": "chinese-songs",
-            "new": {
-                "bury": true,
-                "delays": [
-                    10.0
-                ],
-                "initialFactor": 2500,
-                "ints": [
-                    1,
-                    4,
-                    0
-                ],
-                "order": 1,
-                "perDay": 20
-            },
-            "newGatherPriority": 0,
-            "newMix": 1,
-            "newPerDayMinimum": 0,
-            "newSortOrder": 0,
-            "questionAction": 0,
-            "replayq": true,
-            "rev": {
-                "bury": true,
-                "ease4": 1.3,
-                "hardFactor": 1.2,
-                "ivlFct": 1.0,
-                "maxIvl": 36500,
-                "perDay": 9999
-            },
-            "reviewOrder": 11,
-            "secondsToShowAnswer": 0.0,
-            "secondsToShowQuestion": 0.0,
-            "sm2Retention": 0.9,
-            "stopTimerOnAnswer": false,
-            "timer": 0,
-            "waitForAudio": true,
-            "weightSearch": ""
-        }
-    ],
+    "deck_config_uuid": "b67a11c6-73af-11f1-9ed0-d03957363e8a",
+    "deck_configurations": [],
     "desc": "Song deck: 不怕不怕. Generated from the song TSVs by songs/_pipeline/build_crowdanki.py.",
     "desiredRetention": null,
     "dyn": 0,
@@ -120,22 +49,21 @@
         "bu_pa_bu_pa_block_04_c4.mp3",
         "bu_pa_bu_pa_block_04_full.mp3"
     ],
-    "name": "Chinese::Songs::不怕不怕",
+    "name": "中文::神曲::不怕不怕",
     "newLimit": null,
     "newLimitToday": null,
     "note_models": [
         {
             "__type__": "NoteModel",
-            "crowdanki_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
-            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
+            "crowdanki_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
+            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
             "flds": [
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 2365170234370247516,
                     "name": "Key",
                     "ord": 0,
                     "plainText": false,
@@ -150,8 +78,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 7869119965969953918,
                     "name": "SongSlug",
                     "ord": 1,
                     "plainText": false,
@@ -166,8 +93,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 7009294002807526735,
                     "name": "LineNo",
                     "ord": 2,
                     "plainText": false,
@@ -182,8 +108,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 3260759186165657189,
                     "name": "HanziPlain",
                     "ord": 3,
                     "plainText": false,
@@ -198,8 +123,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 7582759733900403781,
                     "name": "Pinyin",
                     "ord": 4,
                     "plainText": false,
@@ -214,8 +138,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 3128840559799103460,
                     "name": "English",
                     "ord": 5,
                     "plainText": false,
@@ -230,8 +153,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -5798801469056782928,
                     "name": "Breakdown",
                     "ord": 6,
                     "plainText": false,
@@ -246,8 +168,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -9021741560550181771,
                     "name": "Audio",
                     "ord": 7,
                     "plainText": false,
@@ -262,8 +183,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 2868617534095680327,
                     "name": "PrevHanzi",
                     "ord": 8,
                     "plainText": false,
@@ -278,8 +198,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -2107014881622324238,
                     "name": "PrevAudio",
                     "ord": 9,
                     "plainText": false,
@@ -291,28 +210,32 @@
                 }
             ],
             "latexPost": "\\end{document}",
-            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
             "latexsvg": false,
             "name": "Chinese (song-line)",
-            "originalId": null,
+            "originalStockKind": 1,
             "req": [
                 [
                     0,
                     "any",
                     [
-                        3
+                        1,
+                        8
                     ]
                 ],
                 [
                     1,
                     "any",
                     [
-                        3
+                        1,
+                        2,
+                        3,
+                        4,
+                        7
                     ]
                 ]
             ],
             "sortf": 0,
-            "tags": [],
             "tmpls": [
                 {
                     "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n{{#PrevHanzi}}\n<div class=\"hanzi-block prev\">{{PrevHanzi}}</div>\n<hr>\n{{/PrevHanzi}}\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songline-recall-hanzi\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<div class=\"english\">{{English}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-recall-hanzi\", { revealed: true });\n</script>",
@@ -321,8 +244,8 @@
                     "bqfmt": "",
                     "bsize": 0,
                     "did": null,
-                    "id": null,
-                    "name": "Recall-line",
+                    "id": 3180452035316376613,
+                    "name": "Recall",
                     "ord": 0,
                     "qfmt": "{{#PrevHanzi}}\n<div class=\"meta\">{{SongSlug}} · what's the next line?</div>\n\n<div class=\"audio\">{{PrevAudio}}</div>\n\n<div class=\"hanzi-block prev\">{{PrevHanzi}}</div>\n\n<div class=\"prompt\">→ what comes next?</div>\n{{/PrevHanzi}}\n\n{{^PrevHanzi}}\n<div class=\"meta\">{{SongSlug}} · first line</div>\n\n<div class=\"prompt\">→ how does the song start?</div>\n{{/PrevHanzi}}"
                 },
@@ -330,46 +253,43 @@
                     "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songline-hanzi-back\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-hanzi-back\", { revealed: true });\n</script>",
                     "bafmt": "",
                     "bfont": "",
-                    "bqfmt": "",
+                    "bqfmt": "{{Key}}",
                     "bsize": 0,
                     "did": null,
-                    "id": null,
+                    "id": 8195058941740296869,
                     "name": "Reading",
                     "ord": 1,
                     "qfmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}}</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block\"\n     id=\"songline-hanzi\"\n     data-hanzi=\"{{text:HanziPlain}}\"\n     data-pinyin=\"{{text:Pinyin}}\"></div>\n\n<button class=\"toggle-btn\" id=\"toggle-pinyin-btn\" type=\"button\">Toggle Pinyin</button>\n\n<script src=\"_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountRuby(\"songline-hanzi\", { revealed: false });\n  window.ankiDecks.attachToggle(\"songline-hanzi\", \"toggle-pinyin-btn\");\n</script>"
                 }
             ],
-            "type": 0,
-            "vers": []
+            "type": 0
         },
         {
             "__type__": "NoteModel",
-            "crowdanki_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
-            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
+            "crowdanki_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
+            "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
             "flds": [
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -3907427109608673940,
                     "name": "Key",
                     "ord": 0,
                     "plainText": false,
-                    "preventDeletion": false,
+                    "preventDeletion": true,
                     "rtl": false,
                     "size": 20,
                     "sticky": false,
-                    "tag": null
+                    "tag": 0
                 },
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 2109968677670472674,
                     "name": "SongSlug",
                     "ord": 1,
                     "plainText": false,
@@ -377,15 +297,14 @@
                     "rtl": false,
                     "size": 20,
                     "sticky": false,
-                    "tag": null
+                    "tag": 1
                 },
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 8213606662285021324,
                     "name": "LineNo",
                     "ord": 2,
                     "plainText": false,
@@ -400,8 +319,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -4640479392121090838,
                     "name": "Hanzi",
                     "ord": 3,
                     "plainText": false,
@@ -416,8 +334,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 6060158009408532690,
                     "name": "Pinyin",
                     "ord": 4,
                     "plainText": false,
@@ -432,8 +349,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -8714588512819724270,
                     "name": "English",
                     "ord": 5,
                     "plainText": false,
@@ -448,8 +364,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 3390155974161875521,
                     "name": "Breakdown",
                     "ord": 6,
                     "plainText": false,
@@ -464,8 +379,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 2758084628638075729,
                     "name": "Audio",
                     "ord": 7,
                     "plainText": false,
@@ -477,41 +391,41 @@
                 }
             ],
             "latexPost": "\\end{document}",
-            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
             "latexsvg": false,
             "name": "Chinese (song-line-cloze)",
-            "originalId": null,
+            "originalStockKind": 5,
             "req": [
                 [
                     0,
-                    "all",
+                    "any",
                     [
+                        1,
+                        2,
                         3
                     ]
                 ]
             ],
             "sortf": 0,
-            "tags": [],
             "tmpls": [
                 {
-                    "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}} · cloze</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songcloze-back-hanzi\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Hanzi}}</div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.songsRuby.mountElement(\"songcloze-back-hanzi\");\n</script>",
-                    "bafmt": "",
+                    "afmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}} · cloze</div>\n\n<div class=\"audio\">{{Audio}}</div>\n\n<div class=\"hanzi-block show-all-ruby\"\n     id=\"songcloze-back-hanzi\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Hanzi}}</div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  // Anki's back-side cloze render reveals all clozes, so .textContent\n  // matches the Pinyin field syllable count. .show-all-ruby on the\n  // container makes all rt visible by default.\n  window.songsRuby.mountElement(\"songcloze-back-hanzi\");\n</script>",
+                    "bafmt": "{{cloze:Key}}",
                     "bfont": "",
-                    "bqfmt": "",
+                    "bqfmt": "{{cloze:Key}}",
                     "bsize": 0,
                     "did": null,
-                    "id": null,
+                    "id": -3812140605437027756,
                     "name": "Cloze",
                     "ord": 0,
                     "qfmt": "<div class=\"meta\">{{SongSlug}} · line {{LineNo}} · cloze</div>\n\n<div class=\"hanzi-block\">{{cloze:Hanzi}}</div>"
                 }
             ],
-            "type": 1,
-            "vers": []
+            "type": 1
         },
         {
             "__type__": "NoteModel",
-            "crowdanki_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "crowdanki_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "css": "/* Shared styling for the song note types. Paste into each note type's\n * \"Styling\" tab in Anki's note-type editor.\n *\n * Borrows the Kaiti SC font stack + hover-to-reveal ruby pinyin from the\n * word-deck note type (note_type/Chinese_anki_decks/styles.css) so the\n * song cards feel consistent with the rest of the deck collection.\n *\n * Depends on `_ruby.js` being present in Anki's collection.media/ — the\n * word decks already ship it; song templates just re-use it.\n */\n\n.card {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  font-size: 18px;\n  line-height: 1.55;\n  text-align: center;\n  color: #1a1a1a;\n  background-color: #fafafa;\n  padding: 18px 14px 24px;\n  max-width: 720px;\n  margin: 0 auto;\n}\n\n.night_mode .card,\n.nightMode .card {\n  color: #e8e8e8;\n  background-color: #1c1c1e;\n}\n\n@media (prefers-color-scheme: dark) {\n  body:not(.day_mode) .card {\n    color: #e8e8e8;\n    background-color: #1c1c1e;\n  }\n}\n\n/* ---------- Tiny header ---------- */\n.meta {\n  font-size: 11px;\n  color: #888;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  margin-bottom: 14px;\n}\n.night_mode .meta,\n.nightMode .meta { color: #777; }\n\n/* ---------- Hanzi + ruby block (single line) ---------- */\n\n.hanzi-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 48px;\n  line-height: 1.7;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .hanzi-block { font-size: 38px; }\n}\n\n/* Previous-line variant on Recall cards — dimmed. */\n.hanzi-block.prev { font-size: 34px; color: #888; }\n.night_mode .hanzi-block.prev,\n.nightMode .hanzi-block.prev { color: #aaa; }\n\n.hanzi-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.hanzi-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  font-weight: 400;\n  font-style: normal;\n  letter-spacing: 0;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n  user-select: none;\n}\n\n.night_mode .hanzi-block ruby rt,\n.nightMode .hanzi-block ruby rt {\n  color: #c4b5fd;\n}\n\n/* Reveal: hover on desktop, .revealed for per-char tap on mobile,\n * .show-all-ruby for the global toggle. */\n.hanzi-block ruby:hover rt,\n.hanzi-block ruby.revealed rt,\n.hanzi-block.show-all-ruby ruby rt {\n  opacity: 1;\n}\n\n/* ---------- Multi-line stanza (SongBlock cards) ---------- */\n\n.lines-block {\n  font-family: \"Kaiti SC\", \"STKaiti\", \"KaiTi\", \"楷体\", \"Noto Serif CJK SC\",\n    \"Source Han Serif SC\", \"Songti SC\", \"SimSun\", \"宋体\", serif;\n  font-size: 34px;\n  line-height: 1.9;\n  letter-spacing: 0.03em;\n  margin: 8px 0;\n  word-break: keep-all;\n}\n\n@media (max-width: 480px) {\n  .lines-block { font-size: 26px; }\n}\n\n.lines-block .lines-line { display: block; margin: 4px 0; }\n\n.lines-block ruby,\n.lines-block ruby rt { /* same rules as .hanzi-block */ }\n\n.lines-block ruby {\n  position: relative;\n  cursor: pointer;\n  -webkit-user-select: none;\n  user-select: none;\n}\n\n.lines-block ruby rt {\n  font-family: \"Helvetica Neue\", \"Segoe UI\", system-ui, sans-serif;\n  font-size: 0.34em;\n  color: #a78bfa;\n  opacity: 0;\n  transition: opacity 120ms ease;\n}\n\n.night_mode .lines-block ruby rt,\n.nightMode .lines-block ruby rt { color: #c4b5fd; }\n\n.lines-block ruby:hover rt,\n.lines-block ruby.revealed rt,\n.lines-block.show-all-ruby ruby rt { opacity: 1; }\n\n/* The blanked-line slot inside a cloze-rendered Lines block (Anki replaces\n * the cloze content with `[...]` by default). Style it as a clear gap. */\n.lines-block .cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .lines-block .cloze,\n.nightMode .lines-block .cloze { color: #ff8080; }\n\n/* ---------- English / Breakdown ---------- */\n\n.english {\n  font-size: 22px;\n  font-style: italic;\n  font-weight: 500;\n  margin: 14px 0 6px;\n}\n\n.breakdown {\n  font-size: 15px;\n  color: #555;\n  margin: 8px auto;\n  line-height: 1.6;\n  max-width: 600px;\n}\n\n.night_mode .breakdown,\n.nightMode .breakdown { color: #a8a8a8; }\n\n/* ---------- Recall-line prompt ---------- */\n\n.prompt {\n  font-size: 14px;\n  color: #b34a4a;\n  margin-top: 18px;\n  letter-spacing: 0.5px;\n}\n.night_mode .prompt,\n.nightMode .prompt { color: #ff8080; }\n\n/* ---------- Cloze ---------- */\n\n.cloze {\n  color: #b34a4a;\n  font-weight: bold;\n}\n.night_mode .cloze,\n.nightMode .cloze { color: #ff8080; }\n\n/* When the back-side ruby builder runs, the .cloze wrapper still surrounds\n * the rebuilt <ruby> nodes. Inherit the color so the revealed answer (and\n * its pinyin) stay accent-red even though the <rt> normally has its own\n * lavender color rule. */\n.hanzi-block .cloze ruby,\n.hanzi-block .cloze ruby rt,\n.lines-block .cloze ruby,\n.lines-block .cloze ruby rt {\n  color: inherit;\n}\n\n/* ---------- Toggle button + audio replay ---------- */\n\n/* Native <audio controls> rendered by _ruby.js mountAutoplayAudio(...,\n * {controls:true}) — full play/pause + seek timeline, since block clips run\n * 10–15s. Routes through the same volume-aware helper as the word decks. */\n.audio-mount {\n  margin: 10px 0;\n}\n\n.media-audio {\n  width: 100%;\n  max-width: 420px;\n  height: 36px;\n  vertical-align: middle;\n}\n\n.toggle-btn {\n  appearance: none;\n  -webkit-appearance: none;\n  font-family: inherit;\n  font-size: 13px;\n  font-weight: 500;\n  padding: 6px 14px;\n  margin: 10px 4px 4px;\n  border: 1px solid #d1d5db;\n  border-radius: 6px;\n  background: #fff;\n  color: #374151;\n  cursor: pointer;\n  transition: background 120ms ease;\n}\n\n.toggle-btn:hover { background: #f3f4f6; }\n.toggle-btn:active { background: #e5e7eb; }\n\n.night_mode .toggle-btn,\n.nightMode .toggle-btn {\n  background: #2c2c2e;\n  border-color: #3a3a3c;\n  color: #e8e8e8;\n}\n.night_mode .toggle-btn:hover,\n.nightMode .toggle-btn:hover { background: #3a3a3c; }\n\n/* ---------- HR ---------- */\n\nhr { border: none; border-top: 1px solid #e5e7eb; margin: 18px auto; max-width: 560px; }\n.night_mode hr,\n.nightMode hr { border-top-color: #3a3a3c; }\n",
             "flds": [
                 {
@@ -519,24 +433,22 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 754140376422730415,
                     "name": "Key",
                     "ord": 0,
                     "plainText": false,
-                    "preventDeletion": false,
+                    "preventDeletion": true,
                     "rtl": false,
                     "size": 20,
                     "sticky": false,
-                    "tag": null
+                    "tag": 0
                 },
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 3042023738669119797,
                     "name": "SongSlug",
                     "ord": 1,
                     "plainText": false,
@@ -544,15 +456,14 @@
                     "rtl": false,
                     "size": 20,
                     "sticky": false,
-                    "tag": null
+                    "tag": 1
                 },
                 {
                     "collapsed": false,
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -2862734730749739304,
                     "name": "BlockNo",
                     "ord": 2,
                     "plainText": false,
@@ -567,8 +478,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 2002195952335831251,
                     "name": "Lines",
                     "ord": 3,
                     "plainText": false,
@@ -583,8 +493,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": 6135225652737360681,
                     "name": "Pinyin",
                     "ord": 4,
                     "plainText": false,
@@ -599,8 +508,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -6318011061325518082,
                     "name": "English",
                     "ord": 5,
                     "plainText": false,
@@ -615,8 +523,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -6599144064993248727,
                     "name": "Breakdown",
                     "ord": 6,
                     "plainText": false,
@@ -631,8 +538,7 @@
                     "description": "",
                     "excludeFromSearch": false,
                     "font": "Arial",
-                    "id": null,
-                    "media": [],
+                    "id": -6694334718627225601,
                     "name": "BlockAudio",
                     "ord": 7,
                     "plainText": false,
@@ -644,37 +550,38 @@
                 }
             ],
             "latexPost": "\\end{document}",
-            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
             "latexsvg": false,
             "name": "Chinese (song-block)",
-            "originalId": null,
+            "originalStockKind": 5,
             "req": [
                 [
                     0,
-                    "all",
+                    "any",
                     [
-                        3
+                        1,
+                        2,
+                        3,
+                        4
                     ]
                 ]
             ],
             "sortf": 0,
-            "tags": [],
             "tmpls": [
                 {
                     "afmt": "<div class=\"meta\">{{SongSlug}} · block {{BlockNo}}</div>\n\n<div class=\"audio-mount\" data-soundfile=\"{{soundfile:BlockAudio}}\"></div>\n\n<div class=\"lines-block show-all-ruby\"\n     id=\"songblock-lines-back\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Lines}}</div>\n\n<hr>\n\n<div class=\"english\">{{English}}</div>\n<div class=\"breakdown\">{{Breakdown}}</div>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.ankiDecks.mountAutoplayAudio(\".audio-mount\", { controls: true });\n  window.songsRuby.mountLines(\"songblock-lines-back\");\n</script>",
-                    "bafmt": "",
+                    "bafmt": "{{cloze:Key}}",
                     "bfont": "",
-                    "bqfmt": "",
+                    "bqfmt": "{{cloze:Key}}",
                     "bsize": 0,
                     "did": null,
-                    "id": null,
-                    "name": "Block cloze",
+                    "id": -5694062297607629482,
+                    "name": "Cloze",
                     "ord": 0,
-                    "qfmt": "<div class=\"meta\">{{SongSlug}} · block {{BlockNo}}</div>\n\n<div class=\"audio-mount\" id=\"songblock-audio\"></div>\n\n<div class=\"lines-block\"\n     id=\"songblock-lines\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Lines}}</div>\n\n<button class=\"toggle-btn\" id=\"toggle-pinyin-btn\" type=\"button\">Toggle Pinyin</button>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  window.songsRuby.playBlockAudio(\"songblock-lines\", \"songblock-audio\", \"{{SongSlug}}\", \"{{BlockNo}}\");\n  window.songsRuby.mountLines(\"songblock-lines\");\n  window.ankiDecks.attachToggle(\"songblock-lines\", \"toggle-pinyin-btn\");\n</script>"
+                    "qfmt": "<div class=\"meta\">{{SongSlug}} · block {{BlockNo}}</div>\n\n<div class=\"audio-mount\" id=\"songblock-audio\"></div>\n\n<div class=\"lines-block\"\n     id=\"songblock-lines\"\n     data-pinyin=\"{{text:Pinyin}}\">{{cloze:Lines}}</div>\n\n<button class=\"toggle-btn\" id=\"toggle-pinyin-btn\" type=\"button\">Toggle Pinyin</button>\n\n<script src=\"_ruby.js\"></script>\n<script src=\"_song_ruby.js\"></script>\n<script>\n  // Detect the blanked slot and play only that slot's combo (via the shared\n  // volume-aware mountAutoplayAudio). Must run BEFORE mountLines, which\n  // rewrites the lines container's innerHTML.\n  window.songsRuby.playBlockAudio(\"songblock-lines\", \"songblock-audio\", \"{{SongSlug}}\", \"{{BlockNo}}\");\n  window.songsRuby.mountLines(\"songblock-lines\");\n  window.ankiDecks.attachToggle(\"songblock-lines\", \"toggle-pinyin-btn\");\n</script>"
                 }
             ],
-            "type": 1,
-            "vers": []
+            "type": 1
         }
     ],
     "notes": [
@@ -693,12 +600,12 @@
                 ""
             ],
             "guid": "5;TV2:Ondz",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-001"
+                "line-001",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -716,12 +623,12 @@
                 "[sound:bu_pa_bu_pa_001.mp3]"
             ],
             "guid": "IqRn3~wYQ2",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-002"
+                "line-002",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -739,12 +646,12 @@
                 "[sound:bu_pa_bu_pa_002.mp3]"
             ],
             "guid": "61B4h4%H^J",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-003"
+                "line-003",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -762,12 +669,12 @@
                 "[sound:bu_pa_bu_pa_003.mp3]"
             ],
             "guid": "TF{UFR0ICo",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-004"
+                "line-004",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -785,12 +692,12 @@
                 "[sound:bu_pa_bu_pa_004.mp3]"
             ],
             "guid": "-+|2r)L*%g",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-005"
+                "line-005",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -808,12 +715,12 @@
                 "[sound:bu_pa_bu_pa_005.mp3]"
             ],
             "guid": "$_BUG_4:Gj",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-006"
+                "line-006",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -831,12 +738,12 @@
                 "[sound:bu_pa_bu_pa_006.mp3]"
             ],
             "guid": "z.BVh^aU44",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-007"
+                "line-007",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -854,12 +761,12 @@
                 "[sound:bu_pa_bu_pa_007.mp3]"
             ],
             "guid": "q]h&lq0>)B",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-008"
+                "line-008",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -877,12 +784,12 @@
                 "[sound:bu_pa_bu_pa_008.mp3]"
             ],
             "guid": "p2c7t;^6Vb",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-009"
+                "line-009",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -900,12 +807,12 @@
                 "[sound:bu_pa_bu_pa_009.mp3]"
             ],
             "guid": "PAjC%m5J||",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-010"
+                "line-010",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -923,12 +830,12 @@
                 "[sound:bu_pa_bu_pa_010.mp3]"
             ],
             "guid": "^IActn{q0[",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-011"
+                "line-011",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -946,12 +853,12 @@
                 "[sound:bu_pa_bu_pa_011.mp3]"
             ],
             "guid": "3-9SY4kn6b",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-012"
+                "line-012",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -969,12 +876,12 @@
                 "[sound:bu_pa_bu_pa_014.mp3]"
             ],
             "guid": "HhF1#9Mq{y",
-            "note_model_uuid": "d002f587-1090-57fc-ad37-0517338e648f",
+            "note_model_uuid": "b67a82f8-73af-11f1-aa56-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-015"
+                "line-015",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -990,12 +897,12 @@
                 "[sound:bu_pa_bu_pa_001.mp3]"
             ],
             "guid": "ZgAT}=y3qq",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-001"
+                "line-001",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1011,12 +918,12 @@
                 "[sound:bu_pa_bu_pa_002.mp3]"
             ],
             "guid": "4TbU>b;Fs;",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-002"
+                "line-002",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1032,12 +939,12 @@
                 "[sound:bu_pa_bu_pa_003.mp3]"
             ],
             "guid": "^4LJ+-,]OO",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-003"
+                "line-003",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1053,12 +960,12 @@
                 "[sound:bu_pa_bu_pa_004.mp3]"
             ],
             "guid": "+_aHw&<~61",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-004"
+                "line-004",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1074,12 +981,12 @@
                 "[sound:bu_pa_bu_pa_005.mp3]"
             ],
             "guid": "B+1g/JaAts",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-005"
+                "line-005",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1095,12 +1002,12 @@
                 "[sound:bu_pa_bu_pa_006.mp3]"
             ],
             "guid": "?*!^Q<t%cy",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-006"
+                "line-006",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1116,12 +1023,12 @@
                 "[sound:bu_pa_bu_pa_007.mp3]"
             ],
             "guid": "/d>U,~1r*n",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-007"
+                "line-007",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1137,12 +1044,12 @@
                 "[sound:bu_pa_bu_pa_008.mp3]"
             ],
             "guid": "vC>v[z`6YS",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-008"
+                "line-008",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1158,12 +1065,12 @@
                 "[sound:bu_pa_bu_pa_009.mp3]"
             ],
             "guid": "/2|cT%sow)",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-009"
+                "line-009",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1179,12 +1086,12 @@
                 "[sound:bu_pa_bu_pa_010.mp3]"
             ],
             "guid": "n0j(s#~rP!",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-010"
+                "line-010",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1200,12 +1107,12 @@
                 "[sound:bu_pa_bu_pa_011.mp3]"
             ],
             "guid": "d/yP=ESy=w",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-011"
+                "line-011",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1221,12 +1128,12 @@
                 "[sound:bu_pa_bu_pa_012.mp3]"
             ],
             "guid": "S@X%WQ!p~a",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-012"
+                "line-012",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1242,12 +1149,12 @@
                 "[sound:bu_pa_bu_pa_015.mp3]"
             ],
             "guid": "t(Cr7ZIl/I",
-            "note_model_uuid": "49dd1a35-4933-55c5-92ae-65c89efbf177",
+            "note_model_uuid": "b67a7305-73af-11f1-b44a-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "line-015"
+                "line-015",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1263,12 +1170,12 @@
                 "[sound:bu_pa_bu_pa_block_01_full.mp3]"
             ],
             "guid": "JbHz+9&(5r",
-            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "block-01"
+                "block-01",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1284,12 +1191,12 @@
                 "[sound:bu_pa_bu_pa_block_02_full.mp3]"
             ],
             "guid": "pjk:J0Nqys",
-            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "block-02"
+                "block-02",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1305,12 +1212,12 @@
                 "[sound:bu_pa_bu_pa_block_03_full.mp3]"
             ],
             "guid": "C!m;e188O]",
-            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "block-03"
+                "block-03",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         },
         {
@@ -1326,12 +1233,12 @@
                 "[sound:bu_pa_bu_pa_block_04_full.mp3]"
             ],
             "guid": "V1u_M^5o$]",
-            "note_model_uuid": "b5bbc766-29db-5f83-be13-b836f4d0e49d",
+            "note_model_uuid": "b67a7f2d-73af-11f1-b626-d03957363e8a",
             "tags": [
-                "song",
-                "song-bu-pa-bu-pa",
                 "artist-jocie-kok",
-                "block-04"
+                "block-04",
+                "song",
+                "song-bu-pa-bu-pa"
             ]
         }
     ],

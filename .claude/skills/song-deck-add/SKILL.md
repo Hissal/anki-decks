@@ -210,15 +210,24 @@ checkpoints** marked below.
 11. CrowdAnki deck.json (one-click import format, layered on the TSVs)
     python songs/_pipeline/build_crowdanki.py --song-dir songs/<slug>
 
-    Reads the 3 TSVs + note-type templates + media/, writes
-    songs/<slug>/deck.json and drops _ruby.js + _song_ruby.js into
-    media/ so a CrowdAnki "Import from folder" installs everything (note
-    types, cards, audio, JS) in one step — no manual collection.media
-    copy, no template paste. Deck name defaults to
-    Chinese::Songs::<title_zh>; override with --deck-name. Stable UUIDs →
-    re-import UPDATES instead of duplicating. The 3 note-type names are
-    global constants (MODELS) in the script — edit there if the user
-    renamed their note types. TSVs stay; this is an additional format.
+    Reads the 3 TSVs + media/, writes songs/<slug>/deck.json and drops
+    _ruby.js + _song_ruby.js into media/ so a CrowdAnki "Import from
+    folder" installs everything (notes, audio, JS) in one step — no
+    manual collection.media copy. Deck name defaults to
+    中文::神曲::<title_zh>; override with --deck-name.
+
+    Note types are PINNED to the user's real Anki note types, stored
+    verbatim in songs/_note_types/crowdanki_models.json (exported from
+    their collection — same UUIDs). So re-import UPDATES those note types
+    in place and only the notes change; it never makes duplicates. If the
+    user ever edits a note type in Anki, re-export and overwrite that
+    file to keep it in sync.
+
+    Deck config is OMITTED on purpose: the deck references the user's
+    中文-song options group by UUID (auto-assign) but does NOT include it
+    in deck_configurations, so importing never resets their FSRS params.
+    Stable note GUIDs → re-import updates. TSVs stay; this is an extra
+    format on top.
 
 12. Commit
     git add songs/<slug>/ <any pipeline tweaks>
@@ -236,9 +245,11 @@ Two import routes — CrowdAnki is the one-click path:
 **A. CrowdAnki (recommended — one click, auto-installs everything):**
 1. Install the CrowdAnki add-on if not already present.
 2. File → CrowdAnki: Import from folder → pick `songs/<slug>/`. This
-   creates the deck (`Chinese::Songs::<title>`), the 3 note types, all
-   notes, the audio, and the template JS in one step. Re-importing
-   updates in place (stable GUIDs) — no duplicates.
+   creates the deck (`中文::神曲::<title>`), imports all notes into the
+   user's existing 3 note types (pinned by UUID), and installs the audio
+   + template JS in one step. Re-importing updates in place (stable
+   GUIDs, pinned note types) — no duplicates, and the deck's FSRS config
+   is left untouched.
 
 **B. Manual TSV (if not using CrowdAnki):**
 1. Copy `songs/<slug>/media/*.mp3` into Anki's `collection.media/`.
